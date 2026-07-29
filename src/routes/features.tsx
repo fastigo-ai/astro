@@ -243,36 +243,36 @@ export default function FeaturesPage() {
 
   useEffect(() => {
     if (!featuresGridRef.current) return;
-    const ctx = gsap.context(() => {
-      const items = featuresGridRef.current?.querySelectorAll("[data-feature-item]");
-      items?.forEach((el, index) => {
-        const fromLeft = index % 2 === 0;
-        gsap.fromTo(
-          el,
-          {
-            opacity: 0,
-            x: fromLeft ? -45 : 45,
-            y: 20,
-            scale: 0.98,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            scale: 1,
-            duration: 1.0,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 88%",
-              toggleActions: "play none none none",
-              once: true,
+    const timer = setTimeout(() => {
+      if (!featuresGridRef.current) return;
+      const ctx = gsap.context(() => {
+        const items = featuresGridRef.current?.querySelectorAll("[data-feature-item]");
+        items?.forEach((el, index) => {
+          const fromLeft = index % 2 === 0;
+          gsap.fromTo(
+            el,
+            {
+              opacity: 0,
+              x: fromLeft ? -75 : 75,
             },
-          }
-        );
-      });
-    }, featuresGridRef);
-    return () => ctx.revert();
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.85,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 88%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        });
+      }, featuresGridRef);
+      return () => ctx.revert();
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [selectedCategory, searchQuery]);
 
   const filteredFeatures = features.filter((f) => {
