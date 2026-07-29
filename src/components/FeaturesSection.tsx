@@ -203,7 +203,7 @@ export default function FeaturesSection() {
 
   return (
     <section
-      className="stories-premium relative isolate overflow-hidden bg-gradient-to-br from-[#FFF8FC] via-[#FAF3FF] to-[#F2EBFD] pt-14 md:pt-16 pb-12 md:pb-16 border-y border-pink-100/60"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60"
     >
       {/* Mandala & Sparkle Background Decorations */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">

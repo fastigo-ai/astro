@@ -48,7 +48,7 @@ export default function AboutSection() {
   const headingText = "Nurturing the Future, One Heartbeat at a Time.";
 
   return (
-    <section className="stories-premium relative isolate overflow-hidden bg-gradient-to-br from-[#FFF8FC] via-[#FAF3FF] to-[#F2EBFD] py-12 md:py-16 border-b border-pink-100/60">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] py-12 md:py-16 border-b border-pink-100/60">
       {/* Mandala & Sparkle Background Decorations */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="mandala absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />

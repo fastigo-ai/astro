@@ -66,7 +66,7 @@ export default function StoriesSlider() {
   }, [activeVideo]);
 
   return (
-    <section className="stories-premium relative isolate overflow-hidden pt-10 md:pt-12 pb-20 md:pb-28">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] pt-10 md:pt-12 pb-20 md:pb-28 border-b border-pink-100/60">
       <Mandala className="-left-36 top-24" />
       <Mandala className="-right-36 bottom-20" />
       <Decorations />

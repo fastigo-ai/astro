@@ -156,7 +156,7 @@ export default function Home() {
       <StoriesSlider />
 
       {/* Stats */}
-      <section className="py-14 relative z-10">
+      <section className="py-14 relative z-10 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] border-b border-pink-100/60">
         <div className="max-w-7xl mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1, ease: "easeOut" }}
-                className="stat-card text-center p-4 bg-[#eef1f5] rounded-xl hover:shadow-md transition-shadow"
+                className="stat-card text-center p-4 bg-white/70 backdrop-blur-md rounded-xl hover:shadow-md transition-all border border-white/80"
               >
                 <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F63D8E]/10 text-[#F63D8E] flex items-center justify-center font-bold text-lg">
                   ✦
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-14 relative z-10">
+      <section className="py-14 relative z-10 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] border-b border-pink-100/60">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
