@@ -201,187 +201,36 @@ export default function FeaturesSection() {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  // 2. Mouse radial follow glow
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      const rect = root.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      if (glowRef.current) {
-        gsap.to(glowRef.current, {
-          x: x - 150,
-          y: y - 150,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-      }
-    };
-
-    root.addEventListener("mousemove", handleGlobalMouseMove);
-    return () => root.removeEventListener("mousemove", handleGlobalMouseMove);
-  }, []);
-
-  // 3. GSAP Entrance and exit scroll anims
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Background Blobs floating
-      const blobs = rootRef.current?.querySelectorAll("[data-feature-blob]");
-      blobs?.forEach((blob) => {
-        gsap.to(blob, {
-          x: gsap.utils.random(-60, 60),
-          y: gsap.utils.random(-60, 60),
-          duration: gsap.utils.random(10, 16),
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      });
-
-      // Split heading reveal
-      gsap.to("[data-split-feature-word]", {
-        y: "0%",
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.04,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: "[data-split-feature-trigger]",
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      // iPhone mockup entrance reveal
-      gsap.fromTo(
-        "[data-iphone-mockup]",
-        {
-          scale: 0.82,
-          opacity: 0,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "back.out(1.1)",
-          scrollTrigger: {
-            trigger: "[data-iphone-mockup-trigger]",
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-
-      // Continuous float loop for phone
-      gsap.to("[data-iphone-mockup]", {
-        y: -12,
-        duration: 2.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      // Left cards stagger slide-in
-      gsap.from("[data-left-feature-card]", {
-        x: -40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "[data-cards-layout-trigger]",
-          start: "top 78%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      // Right cards stagger slide-in
-      gsap.from("[data-right-feature-card]", {
-        x: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "[data-cards-layout-trigger]",
-          start: "top 78%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      // Button fade-up entrance
-      gsap.from("[data-more-features-btn]", {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "[data-more-features-btn]",
-          start: "top 95%",
-          toggleActions: "play none none none",
-        },
-      });
-
-      // Parallax blobs tied to scroll
-      gsap.to("[data-parallax-feature-blob]", {
-        y: "25%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: rootRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }, rootRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={rootRef}
       className="relative overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] pt-12 md:pt-16 pb-0 md:pb-0"
     >
-      {/* Background radial spotlight glow layer */}
-      <div
-        ref={glowRef}
-        className="pointer-events-none absolute h-[300px] w-[300px] rounded-full bg-[#F63D8E]/10 blur-[90px] z-0 left-0 top-0"
-      />
-
       {/* Decorative floating blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div
-          data-feature-blob
-          data-parallax-feature-blob
           className="absolute top-20 left-12 h-80 w-80 rounded-full bg-[#2584F5]/10 blur-[90px]"
         />
         <div
-          data-feature-blob
-          data-parallax-feature-blob
           className="absolute bottom-20 right-12 h-96 w-96 rounded-full bg-[#F63D8E]/10 blur-[100px]"
         />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
         {/* Header Block */}
-        <div data-split-feature-trigger className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-white/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F63D8E] backdrop-blur-md shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-[#F63D8E]" /> Features
+        <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/80 bg-sky-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#3B82F6] backdrop-blur-sm mb-4">
+            <Sparkles className="h-2.5 w-2.5" /> Comprehensive Features
           </span>
 
-          <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[#1A3A6C] tracking-tight">
-            {headingWords.map((word, index) => (
-              <span key={index} className="inline-block overflow-hidden mr-2.5 pb-0.5">
-                <span data-split-feature-word className="inline-block translate-y-[110%] opacity-0">
-                  {word}
-                </span>
-              </span>
-            ))}
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#1a3a6c] tracking-tight mb-3"
+          >
+            {headingText}
+          </motion.h2>
 
           <p className="text-sm md:text-base leading-relaxed text-slate-600 font-sans">
             A comprehensive week-by-week guide to nurturing your body and your baby, combining
