@@ -141,7 +141,7 @@ const features: Feature[] = [
   },
   {
     title: "Garbh Sanskar QnA",
-    img: "feature_1675749163.png",
+    img: "/images/features/garbhsanskar_qna.jpg",
     tagline:
       "All of your questions, queries & concerns related to Garbh Sanskar & Life… Answered by our experts Live.",
     body: [
@@ -151,7 +151,7 @@ const features: Feature[] = [
   },
   {
     title: "Let's Smile Together",
-    img: "feature_1675749167.png",
+    img: "/images/features/lets_smile_together.jpg",
     tagline:
       "Live Interactive sessions full of fun, excitement & giveaways for pregnant ladies around the world.",
     body: [
@@ -161,7 +161,7 @@ const features: Feature[] = [
   },
   {
     title: "Sandhya Prarthana",
-    img: "feature_1675749170.png",
+    img: "/images/features/sandhya_prarthana.jpg",
     tagline:
       "Hundreds of Pregnant ladies across the world participate daily at the same time for 'Garbh-raksha' prarthna Live.",
     body: [
@@ -171,7 +171,7 @@ const features: Feature[] = [
   },
   {
     title: "Yoga Session",
-    img: "feature_1675749173.png",
+    img: "/images/features/yoga_session.jpg",
     tagline:
       "Safe Yogasans for pregnancy demonstrated by Yogasan experts as per your pregnancy month Live.",
     body: [
@@ -181,7 +181,7 @@ const features: Feature[] = [
   },
   {
     title: "Nutritionist Session",
-    img: "feature_1675749176.png",
+    img: "/images/features/nutritionist_session.jpg",
     tagline:
       "What To eat, What not to eat - Guidance of Nutritionists for various months of pregnancy.",
     body: [
