@@ -98,7 +98,7 @@ const features: Feature[] = [
   },
   {
     title: "Yognidra - The stress-relief session",
-    img: "feature_mo_yognidra.webp",
+    img: "/images/features/yognidra.jpg",
     tagline: "Your passage to inner peace",
     body: [
       "During pregnancy you are continuously dealing with many things that include ongoing physical changes, concerns for your baby, the nervousness of delivery, and unwarranted do's and don'ts from friends and family. So physical and mental fatigue is imminent.",
@@ -107,7 +107,7 @@ const features: Feature[] = [
   },
   {
     title: "Parv (Occasion) Based Sessions",
-    img: "feature_mo_nimitt_sutra.webp",
+    img: "/images/features/parv_based_sessions.jpg",
     tagline: "Garbh Sanskar sessions for important festivals",
     body: [
       "Garbh Sanskar is not just limited to mantra and music. It is a 24/7 lifestyle and pregnancy is a period where a pregnant lady transforms into a mother. The Parvnimitt or occasion-based session includes important time-specific activities with respect to garbhsanskar.",
@@ -116,7 +116,7 @@ const features: Feature[] = [
   },
   {
     title: "Supraj Santaanotpatti Havan",
-    img: "feature_mo_santanotpatti_havan.webp",
+    img: "/images/features/santanotpatti_havan.jpg",
     tagline: "Monthly vaidic havan for the safety and health of your child",
     body: [
       "Once a month during pregnancy, the pregnant woman and her husband and, if possible, all the family members perform a live Supraj Santaanotpatti Havan, under the guidance of the Vaidic Brahmin at Astro Baby.",
@@ -125,7 +125,7 @@ const features: Feature[] = [
   },
   {
     title: "Meditation",
-    img: "meditation.webp",
+    img: "/images/features/meditation.jpg",
     tagline: "To de-stress yourself",
     body: [
       "Meditation is an important aspect of garbh sanskar and is beneficial for the body as it de-stresses the mind. It involves getting into a zero state of mind, which can help bring peace and tranquility, and enhance concentration. Visualizing good things about the baby while doing meditation during pregnancy is also a great way to bond with the baby.",
@@ -133,7 +133,7 @@ const features: Feature[] = [
   },
   {
     title: "Monthly Calendar",
-    img: "monthly_planner.webp",
+    img: "/images/features/monthly_calendar.png",
     tagline: "Planner for all monthly garbh sanskar activities",
     body: [
       "The monthly activity planner provided in Astro Baby Garbh Sanskar app gives you the complete information, in advance, about the various activities lined up for the month. It gives you details about the date, time, and the expert associated with the respective activities/sessions.",
