@@ -1,17 +1,7 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
-const BASE = "https://www.krishnacoming.com";
-
-const navItems = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about-us" },
-  { label: "Courses & Features", to: "/features" },
-  { label: "User Stories", to: "/testimonial" },
-  { label: "Team", to: "/team" },
-  { label: "Awards & Accolades", to: "/awardsaccolades" },
-  { label: "Blogs", to: "/blog" },
-];
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "@/utils/gsapSetup";
+import HeaderNavbar from "@/components/common/HeaderNavbar";
+import AppDownloadSection from "@/components/common/AppDownloadSection";
 
 type Member = {
   img: string;
@@ -173,139 +163,22 @@ const members: Member[] = [
   },
 ];
 
-function Layout({ children, activeLabel }: { children: React.ReactNode; activeLabel: string }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+function Layout({ children }: { children: React.ReactNode; activeLabel?: string }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f8f9fc] via-white to-[#f4f7fb] text-slate-800">
-      <div className="hidden md:block bg-[#1a3a6c] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center flex-wrap gap-2">
-          <div className="flex items-center gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-7 h-7 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <span>info@krishnacoming.com</span>
-            <img src={`${BASE}/assets/img/icons/mail.svg`} alt="mail" className="w-4 h-4 invert" />
-          </div>
-        </div>
-      </div>
-
-      <header className="bg-transparent border-b border-slate-200/50">
-        <div className="hidden md:grid max-w-7xl mx-auto px-4 py-4 grid-cols-3 items-center gap-4">
-          <div className="md:hidden flex justify-center col-span-2 order-1">
-            <Link to="/">
-              <img src={"/images/logo.png"} alt="Krishna Coming" className="h-20" />
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 md:gap-3 order-2 md:order-1">
-            <img
-              src={`${BASE}/assets/img/call.svg`}
-              alt="call"
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <div>
-              <div className="text-[#1a3a6c] font-semibold text-xs md:text-base">Call Us</div>
-              <a
-                href="tel:+919109155039"
-                className="text-slate-700 text-xs md:text-sm whitespace-nowrap"
-              >
-                +91 9109155039
-              </a>
-            </div>
-          </div>
-          <div className="hidden md:flex justify-center order-none md:order-2">
-            <Link to="/">
-              <img src={"/images/logo.png"} alt="Krishna Coming" className="h-24" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-end order-3">
-            <div className="text-[#1a3a6c] font-semibold text-[10px] md:text-sm mb-1 uppercase tracking-wider hidden md:block">
-              Free Download
-            </div>
-            <div className="flex gap-1 md:gap-2">
-              <a href="http://bit.ly/KCGSapp">
-                <img
-                  src={`${BASE}/assets/img/playstore.jpg`}
-                  alt="playstore"
-                  className="h-7 md:h-10"
-                />
-              </a>
-              <a href="https://apple.co/3iEfg7K">
-                <img
-                  src={`${BASE}/assets/img/appstore.jpg`}
-                  alt="appstore"
-                  className="h-7 md:h-10"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-center">
-            <div className="md:hidden flex items-center justify-between py-3 w-full">
-              <Link to="/">
-                <img src={"/images/logo.png"} alt="Krishna Coming" className="h-12" />
-              </Link>
-              <button
-                className="flex items-center gap-2"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <div className="p-1.5 bg-[#f7f5f0] rounded-md border border-slate-200">
-                  <img src={`${BASE}/assets/img/hamburger.svg`} alt="menu" className="w-5 h-5" />
-                </div>
-              </button>
-            </div>
-            <ul
-              className={`${menuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row gap-1 md:gap-2 w-full md:w-auto py-2 md:py-0`}
-            >
-              {navItems.map((item) => {
-                const active = item.label === activeLabel;
-                return (
-                  <li key={item.label}>
-                    <Link
-                      to={item.to}
-                      className={`block px-4 py-3 rounded-full text-sm font-medium transition-colors ${active ? "bg-white shadow-sm ring-1 ring-slate-200/50 text-[#1a3a6c]" : "text-slate-700 hover:bg-slate-100"}`}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-              <li>
-                <button className="flex items-center gap-2 px-4 py-3 text-sm text-slate-700 border md:border-slate-300 md:rounded-full hover:bg-slate-100">
-                  Language <span className="text-xs">▼</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-[#FBDFFF] via-[#F7EEF3] to-[#FBDFFF] text-slate-800">
+      <HeaderNavbar />
 
       {children}
 
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
-          <div className="flex gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-8 h-8 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
+          <div className="flex gap-4 text-white/80 text-xs font-semibold">
+            <span className="hover:text-white transition">Facebook</span>
+            <span>•</span>
+            <span className="hover:text-white transition">Instagram</span>
+            <span>•</span>
+            <span className="hover:text-white transition">YouTube</span>
           </div>
         </div>
       </footer>
@@ -313,79 +186,241 @@ function Layout({ children, activeLabel }: { children: React.ReactNode; activeLa
   );
 }
 
+const CATEGORIES = [
+  "All",
+  "IITians & Scientists",
+  "Vedic Scholars",
+  "Medical & Gynecologists",
+  "Mindfulness & Yoga",
+  "Life Coaches & Astrologers",
+];
+
 export default function TeamPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const teamGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!teamGridRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        "[data-team-card]",
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.05,
+          ease: "power2.out",
+          clearProps: "opacity,transform",
+        }
+      );
+    }, teamGridRef);
+    return () => ctx.revert();
+  }, [selectedCategory, searchQuery]);
+
+  const filteredMembers = members.filter((m) => {
+    const matchesSearch =
+      m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.bio.some((b) => b.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (!matchesSearch) return false;
+
+    if (selectedCategory === "All") return true;
+    if (selectedCategory === "IITians & Scientists")
+      return m.name.includes("Vipin Joshi") || m.title.includes("IIT") || m.title.includes("Ph.D.");
+    if (selectedCategory === "Vedic Scholars")
+      return (
+        m.name.includes("Namboothiri") ||
+        m.name.includes("Maharaj") ||
+        m.name.includes("Ved") ||
+        m.title.includes("Vaidik")
+      );
+    if (selectedCategory === "Medical & Gynecologists") return m.title.includes("MBBS");
+    if (selectedCategory === "Mindfulness & Yoga")
+      return (
+        m.title.includes("Yoga") || m.title.includes("Meditation") || m.title.includes("Dietitian")
+      );
+    if (selectedCategory === "Life Coaches & Astrologers")
+      return (
+        m.title.includes("Coach") ||
+        m.title.includes("Jyotish") ||
+        m.title.includes("Panchang") ||
+        m.title.includes("Dainik Bhaskar")
+      );
+
+    return true;
+  });
+
   return (
     <Layout activeLabel="Team">
       {/* Banner */}
       <section className="border-b border-slate-200/50 relative z-10">
         <img
-          src={`${BASE}/assets/img/team/team-banner-en.png`}
+          src="/images/nurturing_life_banner.png"
           alt="Meet our team"
-          className="w-full"
+          className="w-full h-auto object-cover max-h-[360px]"
         />
       </section>
 
-      {/* Title */}
-      <section className="py-12 relative z-10">
+      {/* Header & Search */}
+      <section className="py-10 md:py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 border-b border-pink-200/60">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-semibold text-[#1a3a6c]">
-            Meet Our Team — <span className="text-red-600">The Garbh Sanskar Experts</span>
+          <span className="inline-block bg-[#F63D8E] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
+            Expert Advisory Council
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
+            Meet Our Team — <span className="text-[#F63D8E]">The Garbh Sanskar Experts</span>
           </h1>
-          <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
             A rare confluence of doctors, IITians, revered Vedic scholars, life coaches, yoga &
             nutrition experts and astrologers — together shaping the world's most trusted Garbh
             Sanskar curriculum.
           </p>
+
+          {/* Search bar */}
+          <div className="mt-8 max-w-md mx-auto relative">
+            <input
+              type="text"
+              placeholder="Search experts by name or specialty..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F63D8E]"
+            />
+            <svg
+              className="w-5 h-5 text-[#F63D8E]/70 absolute left-4 top-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#F63D8E] font-bold"
+              >
+                ✕
+              </button>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Members */}
-      <section className="py-8 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 space-y-8">
-          {members.map((m, i) => (
-            <article
-              key={m.name + i}
-              className="bg-white rounded-xl shadow-sm overflow-hidden grid md:grid-cols-3 gap-6 p-6 md:p-8 items-start"
-            >
-              <div className="md:col-span-1 flex justify-center">
-                <img
-                  src={`${BASE}/assets/img/team/${m.img}`}
-                  alt={m.name}
-                  className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-lg border border-slate-200 shadow"
-                  loading="lazy"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <h3 className="text-xl md:text-2xl font-semibold text-[#1a3a6c]">{m.name}</h3>
-                <p className="text-sm text-red-600 mt-1 mb-4 font-medium">{m.title}</p>
-                <div className="space-y-3 text-slate-700 leading-relaxed text-sm md:text-base">
-                  {m.bio.map((p, idx) => (
-                    <p key={idx}>{p}</p>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
+      {/* Category Filter Tabs */}
+      <section className="bg-white/90 backdrop-blur-md border-b border-pink-100 sticky top-0 z-20 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1">
+            {CATEGORIES.map((cat) => {
+              const active = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
+                    active
+                      ? "bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white shadow-md shadow-pink-500/20 scale-105"
+                      : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Members Grid */}
+      <section ref={teamGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
+            <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
+              {selectedCategory === "All" ? "All Faculty Members" : selectedCategory}
+            </h2>
+            <span className="text-xs font-bold px-3.5 py-1 bg-white border border-pink-200 rounded-full text-[#F63D8E] shadow-xs">
+              Showing {filteredMembers.length} Experts
+            </span>
+          </div>
+
+          {filteredMembers.length === 0 ? (
+            <div className="text-center py-16 bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 shadow-sm">
+              <p className="text-slate-600 text-lg font-medium">
+                No experts found matching "{searchQuery}".
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("All");
+                }}
+                className="mt-4 px-6 py-2.5 bg-[#F63D8E] text-white text-xs font-bold rounded-full hover:bg-[#E02B7B] transition shadow-sm"
+              >
+                Clear Search Filters
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {filteredMembers.map((m, i) => (
+                <article
+                  key={m.name + i}
+                  data-team-card
+                  className="bg-white/90 backdrop-blur-md rounded-3xl shadow-md border border-pink-100 overflow-hidden grid md:grid-cols-3 gap-6 p-6 md:p-8 items-start hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="md:col-span-1 flex flex-col items-center text-center">
+                    <div className="relative group">
+                      <img
+                        src={i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"}
+                        alt={m.name}
+                        className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                  <div className="md:col-span-2 flex flex-col justify-center">
+                    <div className="inline-block self-start bg-[#F63D8E]/10 text-[#F63D8E] font-bold text-xs px-3.5 py-1 rounded-full mb-2">
+                      Garbh Sanskar Expert
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A3A6C] tracking-tight">
+                      {m.name}
+                    </h3>
+                    <p className="text-sm md:text-base text-[#F63D8E] font-semibold mt-1 mb-4 leading-snug">
+                      {m.title}
+                    </p>
+                    <div className="space-y-3 text-slate-600 leading-relaxed text-sm md:text-base border-t border-slate-100 pt-4 font-sans">
+                      {m.bio.map((p, idx) => (
+                        <p key={idx} className="flex gap-2">
+                          <span className="text-[#2584F5] font-bold">✦</span>
+                          <span>{p}</span>
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-14 bg-[#1a3a6c] text-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-            Experience the wisdom of our experts
-          </h2>
-          <p className="text-white/80 mb-6">Download the Astro Baby Garbh Sanskar app today.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="http://bit.ly/KCGSapp">
-              <img src={`${BASE}/assets/img/playstore.jpg`} alt="playstore" className="h-12" />
-            </a>
-            <a href="https://apple.co/3iEfg7K">
-              <img src={`${BASE}/assets/img/appstore.jpg`} alt="appstore" className="h-12" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <AppDownloadSection
+        title={
+          <>
+            Experience the Wisdom of Our Experts on{" "}
+            <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
+              Astro Baby
+            </span>
+          </>
+        }
+        subtitle="Download the Astro Baby Garbh Sanskar app today and begin your positive pregnancy journey."
+      />
     </Layout>
   );
 }

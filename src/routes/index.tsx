@@ -3,25 +3,19 @@ import { useState } from "react";
 import HeroSlider from "@/components/HeroSlider";
 import StoriesSlider from "@/components/StoriesSlider";
 import MobileFeatureSlider from "@/components/MobileFeatureSlider";
-const BASE = "https://www.krishnacoming.com";
-
-const navItems = [
-  "Home",
-  "About Us",
-  "Courses & Features",
-  "User Stories",
-  "Team",
-  "Awards & Accolades",
-  "Blogs",
-];
+import AboutSection from "@/components/AboutSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import HomeBgDrawings from "@/components/HomeBgDrawings";
+import HeaderNavbar from "@/components/common/HeaderNavbar";
+import NewsletterSection from "@/components/common/NewsletterSection";
 
 const featuredLogos = [
-  "krishna-coming-garbh-sanskar-dainik-bhaskar.jpg",
-  "krishna-coming-garbh-sanskar-dainik-divya-marathi.jpg",
-  "krishna-coming-garbh-sanskar-nav-bharat-times.jpg",
-  "krishna-coming-garbh-sanskar-times-of-india.jpg",
-  "krishna-coming-garbh-sanskar-zee-news.jpg",
-  "krishna-coming-garbh-sanskar-bharat-24.jpg",
+  "astrobaby-garbh-sanskar-dainik-bhaskar.jpg",
+  "astrobaby-garbh-sanskar-dainik-divya-marathi.jpg",
+  "astrobaby-garbh-sanskar-nav-bharat-times.jpg",
+  "astrobaby-garbh-sanskar-times-of-india.jpg",
+  "astrobaby-garbh-sanskar-zee-news.jpg",
+  "astrobaby-garbh-sanskar-bharat-24.jpg",
 ];
 
 const featuresLeft = [
@@ -135,7 +129,7 @@ const faqs = [
   },
   {
     q: "I am in the 5th month of my pregnancy; am I too late to start GarbhSanskar with Astro Baby?",
-    a: "Whether you are in your 1st month of pregnancy or in 9th month of pregnancy, it is never too late to start the process of garbhsanskar. Krishna Coming is prepared in such a scientific way that even late joiners can benefit from this curriculum. Moreover, you can always subscribe to watch episodes of previous months of pregnancy that you've missed.",
+    a: "Whether you are in your 1st month of pregnancy or in 9th month of pregnancy, it is never too late to start the process of garbhsanskar. Astro Baby is prepared in such a scientific way that even late joiners can benefit from this curriculum. Moreover, you can always subscribe to watch episodes of previous months of pregnancy that you've missed.",
   },
 ];
 
@@ -144,131 +138,12 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f8f9fc] via-white to-[#f4f7fb] text-slate-800">
-      {/* Top bar */}
-      <div className="hidden md:block bg-[#1a3a6c] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center flex-wrap gap-2">
-          <div className="flex items-center gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-7 h-7 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <span>info@astrobaby.com</span>
-            <img src={`${BASE}/assets/img/icons/mail.svg`} alt="mail" className="w-4 h-4 invert" />
-          </div>
-        </div>
-      </div>
+    <div className="home-bg min-h-screen text-slate-800">
+      {/* SVG background drawings — home page only */}
+      <HomeBgDrawings />
 
-      {/* Header */}
-      <header className="bg-transparent border-b border-slate-200/50">
-        <div className="hidden md:grid max-w-7xl mx-auto px-4 py-4 grid-cols-3 items-center gap-4">
-          <div className="flex items-center gap-3">
-            <img
-              src={`${BASE}/assets/img/call.svg`}
-              alt="call"
-              className="w-10 h-10"
-            />
-            <div>
-              <div className="text-[#1a3a6c] font-semibold text-base">Call Us</div>
-              <a
-                href="tel:+919109155039"
-                className="text-slate-700 text-sm whitespace-nowrap"
-              >
-                +91 9109155039
-              </a>
-            </div>
-          </div>
-          <div className="flex justify-center">
-            <Link to="/">
-              <img src={"/images/logo.png"} alt="Astro Baby" className="h-28 -p-8" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-end">
-            <div className="text-[#1a3a6c] font-semibold text-sm mb-1 uppercase tracking-wider">
-              Free Download
-            </div>
-            <div className="flex gap-2">
-              <a href="http://bit.ly/KCGSapp">
-                <img
-                  src={`${BASE}/assets/img/playstore.jpg`}
-                  alt="playstore"
-                  className="h-10"
-                />
-              </a>
-              <a href="https://apple.co/3iEfg7K">
-                <img
-                  src={`${BASE}/assets/img/appstore.jpg`}
-                  alt="appstore"
-                  className="h-10"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-center">
-            <div className="md:hidden flex items-center justify-between py-3 w-full">
-              <Link to="/">
-                <img src={"/images/logo.png"} alt="Krishna Coming" className="h-12" />
-              </Link>
-              <button
-                className="flex items-center gap-2"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <div className="p-1.5 bg-[#f7f5f0] rounded-md border border-slate-200">
-                  <img src={`${BASE}/assets/img/hamburger.svg`} alt="menu" className="w-5 h-5" />
-                </div>
-              </button>
-            </div>
-            <ul
-              className={`${
-                menuOpen ? "flex" : "hidden"
-              } md:flex flex-col md:flex-row gap-1 md:gap-2 w-full md:w-auto py-2 md:py-0`}
-            >
-              {navItems.map((item, i) => (
-                <li key={item}>
-                  <Link
-                    to={
-                      item === "About Us"
-                        ? "/about-us"
-                        : item === "Courses & Features"
-                          ? "/features"
-                          : item === "User Stories"
-                            ? "/testimonial"
-                            : item === "Team"
-                              ? "/team"
-                              : item === "Awards & Accolades"
-                                ? "/awardsaccolades"
-                                : item === "Blogs"
-                                  ? "/blog"
-                                  : "/"
-                    }
-                    className={`block px-4 py-3 rounded-full text-sm font-medium transition-colors ${
-                      i === 0 ? "bg-white shadow-sm ring-1 ring-slate-200/50 text-[#1a3a6c]" : "text-slate-700 hover:bg-slate-100"
-                    }`}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <button className="flex items-center gap-2 px-4 py-3 text-sm text-slate-700 border md:border-slate-300 md:rounded-full hover:bg-slate-100">
-                  Language <span className="text-xs">▼</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      {/* Header & Navbar */}
+      <HeaderNavbar />
 
       {/* Hero */}
       <HeroSlider />
@@ -283,7 +158,7 @@ export default function Home() {
             {featuredLogos.map((logo) => (
               <a key={logo} href="#" className="block p-2">
                 <img
-                  src={`${BASE}/assets/img/logos-slider/${logo}`}
+                  src="/images/logo.png"
                   alt="featured logo"
                   className="w-full h-auto object-contain"
                 />
@@ -293,191 +168,12 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* About Us */}
-       <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-2">
-            About Us <span className="text-slate-500 font-light">Garbh Sanskar</span>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-10 mt-10">
-            <div>
-              <h3 className="text-2xl font-semibold text-[#1a3a6c] mb-4">
-                What is Garbh Sanskar?
-              </h3>
-              <p className="italic text-slate-700 leading-relaxed">
-                Multiplication of Virtues & Division of Defects is called{" "}
-                <strong>'Sanskar'</strong>. Garbh Sanskar is the ancient Indian practice of
-                teaching or imparting good values, health and wisdom to the growing baby in the
-                mother's womb.
-              </p>
-              <a
-                href="#"
-                className="inline-block mt-4 text-[#1a3a6c] font-semibold hover:underline"
-              >
-                READ MORE...
-              </a>
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-[#1a3a6c] mb-4">
-                What is Astro Baby?
-              </h3>
-              <p className="text-slate-700 leading-relaxed">
-                Astro Baby Garbh Sanskar App is a result of years of research on Garbh
-                Sanskar. It brings together modern science and ancient Indian wisdom to make
-                pregnancy a positive, happy and healthy experience.
-              </p>
-              <a
-                href="#"
-                className="inline-block mt-4 text-[#1a3a6c] font-semibold hover:underline"
-              >
-                READ MORE...
-              </a>
-            </div>
-          </div>
-        </div>
-      </section> 
+      <AboutSection />
 
-      {/* Team */}
-      <section className="py-14 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-          <img
-            src="/images/team.png"
-            alt="garbh sanskar experts"
-            className="w-full rounded-lg shadow"
-          />
-          <div>
-            <p className="text-[#1a3a6c] text-xl font-medium mb-3">A Team of</p>
-            <p className="text-slate-700 leading-relaxed mb-3">
-              IITians • Scientists • Gynaecologists • Garbh Sanskar Experts • Vedmurti Brahmins •
-              Life Trainers • Yoga Experts • Meditators • Nutritionists • Revered Astrologers &
-              more...
-            </p>
-            <p className="text-slate-700 leading-relaxed">
-              working towards making your pregnancy a more positive, happy & healthy experience.
-            </p>
-            <a
-              href="#"
-              className="inline-block mt-6 bg-[#1a3a6c] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#122a4f]"
-            >
-              READ MORE...
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
-            Features
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <ul className="space-y-3 flex flex-col items-end w-full">
-              {featuresLeft.slice(0, 5).map((f, i) => (
-                <li
-                  key={f}
-                  className="group flex items-center justify-end gap-3 w-full bg-white/40 hover:bg-white px-4 py-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-white/50 hover:border-[#1a3a6c]/20 transform hover:-translate-x-1"
-                >
-                  <span className="font-medium text-sm md:text-base text-slate-700 group-hover:text-[#1a3a6c] transition-colors text-right leading-tight">
-                    {f}
-                  </span>
-                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white group-hover:bg-gradient-to-br from-[#1a3a6c] to-[#2a5a9c] flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm group-hover:shadow-md">
-                    <svg
-                      className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#1a3a6c] group-hover:text-white transition-colors"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-center">
-              <MobileFeatureSlider />
-            </div>
-            <ul className="space-y-3 flex flex-col items-start w-full">
-              {featuresRight.slice(0, 5).map((f, i) => (
-                <li
-                  key={f}
-                  className="group flex items-center justify-start gap-3 w-full bg-white/40 hover:bg-white px-4 py-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-white/50 hover:border-[#1a3a6c]/20 transform hover:translate-x-1"
-                >
-                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white group-hover:bg-gradient-to-br from-[#1a3a6c] to-[#2a5a9c] flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm group-hover:shadow-md">
-                    <svg
-                      className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#1a3a6c] group-hover:text-white transition-colors"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <span className="font-medium text-sm md:text-base text-slate-700 group-hover:text-[#1a3a6c] transition-colors text-left leading-tight">
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              to="/features"
-              className="inline-block bg-[#1a3a6c] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#122a4f] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-            >
-              23+ Features
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       {/* Stories Slider */}
       <StoriesSlider />
-
-      {/* Awards */}
-      <section className="py-14 relative z-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
-            Awards & Accolades
-          </h2>
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="flex justify-center md:justify-end">
-              <img
-                src={`${BASE}/assets/img/en-krisna-coming-grabh-sanskar-awards.jpg`}
-                alt="award"
-                className="w-full max-w-md rounded-lg shadow object-contain"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-[#1a3a6c] mb-3">
-                Appreciated by the Dignitaries
-              </h3>
-              <p className="text-slate-700 leading-relaxed">
-                An initiative to change the entire generation - 'Astro Baby Garbh Sanskar' has
-                been appreciated by numerous dignitaries of National Stature. The team has been
-                appreciated by the Hon. President of India, Hon. Prime Minister of India, Lok Sabha
-                Speaker, Cabinet Minister, State Chief Ministers, and many others.
-              </p>
-              <a
-                href="#"
-                className="inline-block mt-6 bg-[#1a3a6c] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#122a4f]"
-              >
-                READ MORE
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* User Stories */}
       {/* <section className="py-14">
@@ -499,16 +195,12 @@ export default function Home() {
               >
                 <div className="relative rounded-lg overflow-hidden shadow">
                   <img
-                    src={`${BASE}/template/front/krishnaAssest/img/experiences/${s.img}`}
+                    src="/images/story_thumb_1.png"
                     alt={s.name}
                     className="w-full aspect-square object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30">
-                    <img
-                      src={`${BASE}/assets/img/yt-button.svg`}
-                      alt="play"
-                      className="w-12 h-12"
-                    />
+                    <span className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center font-bold">▶</span>
                   </div>
                 </div>
                 <div className="text-center mt-2">
@@ -539,11 +231,9 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {stats.map((st) => (
               <div key={st.label} className="text-center p-4 bg-[#eef1f5] rounded-lg">
-                <img
-                  src={`${BASE}/assets/img/features/${st.icon}`}
-                  alt=""
-                  className="w-14 h-14 mx-auto mb-3"
-                />
+                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F63D8E]/10 text-[#F63D8E] flex items-center justify-center font-bold text-lg">
+                  ✦
+                </div>
                 <div className="text-xl font-bold text-[#1a3a6c]">{st.num}</div>
                 <div className="text-sm text-slate-600 mt-1">{st.label}</div>
               </div>
@@ -565,7 +255,7 @@ export default function Home() {
             {scientificEvidences.map((e) => (
               <div key={e.img} className="bg-white rounded-lg shadow overflow-hidden">
                 <img
-                  src={`${BASE}/template/front/krishnaAssest/img/${e.img}`}
+                  src="/images/story_thumb_3.png"
                   alt={e.text}
                   className="w-full h-48 object-cover"
                 />
@@ -608,52 +298,22 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
         </div>
       </section>
 
       {/* Newsletter */}
-      <section className="py-14 bg-[#1a3a6c] text-white">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-          <img src={`${BASE}/assets/img/baby.png`} alt="baby" className="w-full max-w-sm mx-auto" />
-          <div>
-            <h3 className="text-2xl font-semibold mb-3">Subscribe to Our Newsletter</h3>
-            <p className="text-white/80 mb-4">
-              To get more Garbh Sanskar related content in your inbox subscribe to our newsletter by
-              submitting your email id here.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="flex-1 px-4 py-3 rounded-full bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500"
-              />
-              <button
-                type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <NewsletterSection />
 
       {/* Footer */}
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
-          <div className="flex gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-8 h-8 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
+          <div className="flex gap-4 text-white/80 text-xs font-semibold">
+            <span className="hover:text-white transition">Facebook</span>
+            <span>•</span>
+            <span className="hover:text-white transition">Instagram</span>
+            <span>•</span>
+            <span className="hover:text-white transition">YouTube</span>
           </div>
         </div>
       </footer>

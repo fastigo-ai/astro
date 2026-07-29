@@ -1,6 +1,3 @@
-export const BASE = "https://www.krishnacoming.com";
-export const IMG = `${BASE}/template/front/krishnaAssest/img/blog`;
-
 export const slugify = (s: string) =>
   s
     .toLowerCase()
@@ -11,6 +8,48 @@ export const slugify = (s: string) =>
     .slice(0, 80) || "post";
 
 export type Post = { img: string; title: string; date: string };
+
+export function getPostCategory(title: string): string {
+  const t = title.toLowerCase();
+  if (t.includes("trimester") || t.includes("month") || t.includes("stage")) return "Trimester Guide";
+  if (t.includes("diet") || t.includes("food") || t.includes("fruit") || t.includes("water") || t.includes("diabetes") || t.includes("coconut")) return "Diet & Nutrition";
+  if (t.includes("yoga") || t.includes("exercise") || t.includes("pain") || t.includes("sleep") || t.includes("stress") || t.includes("vomiting") || t.includes("blood pressure")) return "Health & Fitness";
+  if (t.includes("mantra") || t.includes("shloka") || t.includes("music") || t.includes("punsavan") || t.includes("simant") || t.includes("scripture") || t.includes("soul")) return "Vedic & Mantras";
+  if (t.includes("sanskar") || t.includes("womb") || t.includes("baby") || t.includes("samvad")) return "Garbh Sanskar";
+  return "Pregnancy Care";
+}
+
+export function getReadTime(title: string): string {
+  const words = title.split(/\s+/).length;
+  const time = Math.max(3, Math.min(8, Math.floor(words * 0.3) + 3));
+  return `${time} min read`;
+}
+
+const BLOG_THUMBNAILS = [
+  "/images/story_thumb_1.png",
+  "/images/story_thumb_2.png",
+  "/images/story_thumb_3.png",
+  "/images/story_thumb_4.png",
+  "/images/story_thumb_5.png",
+  "/images/celestial_mother.png",
+  "/images/astrobaby_video_spotlight.png",
+  "/images/about_premium.png",
+  "/images/features_banner_astrobaby.png",
+  "/images/hero/hero-1.png",
+  "/images/hero/hero-2.png",
+  "/images/hero/hero-3.png",
+];
+
+export function getPostImage(post?: Post, index?: number): string {
+  if (post?.img) {
+    if (post.img.startsWith("http://") || post.img.startsWith("https://") || post.img.startsWith("/")) {
+      return post.img;
+    }
+  }
+  const idx = index !== undefined ? Math.abs(index) : Math.abs(post?.title?.length || 0);
+  return BLOG_THUMBNAILS[idx % BLOG_THUMBNAILS.length];
+}
+
 
 export const posts: Post[] = [
   {
@@ -75,7 +114,7 @@ export const posts: Post[] = [
   },
   {
     img: "best-online-garbh-sanskar-application-krishna-coming0.jpg",
-    title: "Best Garbh Sanskar App - Krishna Coming",
+    title: "Best Garbh Sanskar App - Astro Baby",
     date: "Sep 21, 2022",
   },
   {

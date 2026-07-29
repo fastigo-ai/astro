@@ -44,8 +44,10 @@ export default function MobileFeatureSlider() {
 
         {/* Bottom Logo Area */}
         <div className="h-[120px] bg-white z-10 flex flex-col items-center justify-center border-t border-slate-100 relative shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-3xl -mt-6">
-          <img src="/images/logo.png" alt="Astro Baby" className="h-16 object-contain mb-1" />
-          <p className="text-[10px] text-slate-500 font-medium tracking-wide uppercase">Your Health & Pregnancy Companion</p>
+          <img src="/images/logo.png" alt="Astro Baby" className="h-14 object-contain mb-1" />
+          <p className="text-[10px] text-slate-500 font-medium tracking-wide uppercase">
+            Your Health & Pregnancy Companion
+          </p>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ export default function PrimaryButton(props: ButtonHTMLAttributes<HTMLButtonElem
   return (
     <button
       {...props}
-      className={`px-6 py-3 rounded-full bg-navy text-white font-semibold hover:bg-navy/90 transition-colors ${props.className || ""}`}
+      className={`px-7 py-3.5 rounded-full bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white font-bold shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ${props.className || ""}`}
     >
       {props.children}
     </button>

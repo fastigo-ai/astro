@@ -1,18 +1,8 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
-const BASE = "https://www.krishnacoming.com";
-const IMG = `${BASE}/template/front/krishnaAssest/img`;
-
-const navItems = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about-us" },
-  { label: "Courses & Features", to: "/features" },
-  { label: "User Stories", to: "/testimonial" },
-  { label: "Team", to: "/team" },
-  { label: "Awards & Accolades", to: "/awardsaccolades" },
-  { label: "Blogs", to: "/blog" },
-];
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "@/utils/gsapSetup";
+import HeaderNavbar from "@/components/common/HeaderNavbar";
+import NewsletterSection from "@/components/common/NewsletterSection";
+import AppDownloadSection from "@/components/common/AppDownloadSection";
 
 type Feature = { title: string; img: string; tagline: string; body: string[] };
 
@@ -31,7 +21,7 @@ const features: Feature[] = [
     img: "xxpunsavan_sanskar.webp",
     tagline: "An important sanskar performed during the third month of pregnancy",
     body: [
-      "The first mention of Punsavan Sanskar has been found in Atharva Veda. As per Vaidic tradition, it is the second sanskar of the sixteen sanksars. This sanskar is considered to be one of the most important rites for human life. The vaidic brahman group at Krishna Coming perform this sanskar during the third month of pregnancy as this is when the baby's nervous system starts developing.",
+      "The first mention of Punsavan Sanskar has been found in Atharva Veda. As per Vaidic tradition, it is the second sanskar of the sixteen sanksars. This sanskar is considered to be one of the most important rites for human life. The vaidic brahman group at Astro Baby perform this sanskar during the third month of pregnancy as this is when the baby's nervous system starts developing.",
       "The purpose of this sanskar is to give mental strength, superior intelligence and sanskar to the unborn child. If, for some reason, this sanskar could not be performed in the third month of pregnancy, then it should be performed during the seventh month.",
     ],
   },
@@ -166,7 +156,7 @@ const features: Feature[] = [
       "Live Interactive sessions full of fun, excitement & giveaways for pregnant ladies around the world.",
     body: [
       "Let's smile together, as the name suggests is a session that acts as a gust of fresh air for pregnant ladies. This session is a gateway to fun group activities away from the daily doldrums of physical issues, stress & tensions.",
-      "Exciting competitions, prizes, and fun interactions with fellow pregnant moms are all hosted by Krishna Coming Hosts in a power-packed live online session.",
+      "Exciting competitions, prizes, and fun interactions with fellow pregnant moms are all hosted by Astro Baby Hosts in a power-packed live online session.",
     ],
   },
   {
@@ -195,7 +185,7 @@ const features: Feature[] = [
     tagline:
       "What To eat, What not to eat - Guidance of Nutritionists for various months of pregnancy.",
     body: [
-      "Balanced diet is the basic fundamental of a healthy pregnancy. The growth of the baby in the womb depends on the diet of the expectant mother. Krishna Coming's nutritionist session guided by experts makes it easy to stay nourished and healthy at every stage of pregnancy.",
+      "Balanced diet is the basic fundamental of a healthy pregnancy. The growth of the baby in the womb depends on the diet of the expectant mother. Astro Baby's nutritionist session guided by experts makes it easy to stay nourished and healthy at every stage of pregnancy.",
       "In this session, you will also get a chance to ask anything to the expert about diet during pregnancy.",
     ],
   },
@@ -236,236 +226,268 @@ const features: Feature[] = [
   },
 ];
 
+const FEATURE_CATEGORIES = [
+  "All Features",
+  "Sanskars & Poojan",
+  "Vaidic Mantras & Music",
+  "Live Mentoring & Doctors",
+  "Mindfulness & Yoga",
+  "Interactive Games & Library",
+];
+
 export default function FeaturesPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All Features");
+  const [searchQuery, setSearchQuery] = useState("");
+  const featuresGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!featuresGridRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        "[data-feature-item]",
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.05,
+          ease: "power2.out",
+          clearProps: "opacity,transform",
+        }
+      );
+    }, featuresGridRef);
+    return () => ctx.revert();
+  }, [selectedCategory, searchQuery]);
+
+  const filteredFeatures = features.filter((f) => {
+    const matchesSearch =
+      f.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      f.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      f.body.some((b) => b.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (!matchesSearch) return false;
+
+    if (selectedCategory === "All Features") return true;
+    if (selectedCategory === "Sanskars & Poojan")
+      return f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
+    if (selectedCategory === "Vaidic Mantras & Music")
+      return f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana");
+    if (selectedCategory === "Live Mentoring & Doctors")
+      return (
+        f.title.includes("Jeevan Sutra") ||
+        f.title.includes("Doctor") ||
+        f.title.includes("Medi-Mitra") ||
+        f.title.includes("Mentoring") ||
+        f.title.includes("QnA")
+      );
+    if (selectedCategory === "Mindfulness & Yoga")
+      return (
+        f.title.includes("Yoga") ||
+        f.title.includes("Yognidra") ||
+        f.title.includes("Meditation") ||
+        f.title.includes("Nutritionist")
+      );
+    if (selectedCategory === "Interactive Games & Library")
+      return (
+        f.title.includes("Brainopedia") ||
+        f.title.includes("Library") ||
+        f.title.includes("Smile") ||
+        f.title.includes("Calendar")
+      );
+
+    return true;
+  });
 
   return (
-    <div className="min-h-screen bg-white text-slate-800">
-      {/* Top bar */}
-      <div className="hidden md:block bg-[#1a3a6c] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center flex-wrap gap-2">
-          <div className="flex items-center gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-7 h-7 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <span>info@krishnacoming.com</span>
-            <img src={`${BASE}/assets/img/icons/mail.svg`} alt="mail" className="w-4 h-4 invert" />
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-[#FBDFFF] via-[#F7EEF3] to-[#FBDFFF] text-slate-800">
+      {/* Header & Navbar */}
+      <HeaderNavbar />
 
-      {/* Header */}
-      <header className="bg-[#eef1f5]">
-        <div className="hidden md:grid max-w-7xl mx-auto px-4 py-4 grid-cols-3 items-center gap-4">
-          <div className="flex items-center gap-3">
-            <img src={`${BASE}/assets/img/call.svg`} alt="call" className="w-10 h-10" />
-            <div>
-              <div className="text-[#1a3a6c] font-semibold">Call Us</div>
-              <a href="tel:+919109155039" className="text-slate-700 text-sm">
-                +91 9109155039
-              </a>
-            </div>
-          </div>
-          <div className="hidden md:flex justify-center">
-            <Link to="/">
-              <img src={"/images/logo.png"} alt="Krishna Coming" className="h-24" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-end">
-            <div className="text-[#1a3a6c] font-semibold text-sm mb-1">Free Download</div>
-            <div className="flex gap-2">
-              <a href="http://bit.ly/KCGSapp">
-                <img src={`${BASE}/assets/img/playstore.jpg`} alt="playstore" className="h-10" />
-              </a>
-              <a href="https://apple.co/3iEfg7K">
-                <img src={`${BASE}/assets/img/appstore.jpg`} alt="appstore" className="h-10" />
-              </a>
-            </div>
-          </div>
-          <div className="md:hidden flex justify-center col-span-2">
-            <Link to="/">
-              <img src={"/images/logo.png"} alt="Krishna Coming" className="h-20" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Nav */}
-        <nav className="bg-white border-t border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-center">
-            <div className="md:hidden flex items-center justify-between py-3 w-full">
-              <Link to="/">
-                <img src={"/images/logo.png"} alt="Krishna Coming" className="h-12" />
-              </Link>
-              <button
-                className="flex items-center gap-2"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <div className="p-1.5 bg-[#f7f5f0] rounded-md border border-slate-200">
-                  <img src={`${BASE}/assets/img/hamburger.svg`} alt="menu" className="w-5 h-5" />
-                </div>
-              </button>
-            </div>
-            <ul
-              className={`${
-                menuOpen ? "flex" : "hidden"
-              } md:flex flex-col md:flex-row gap-1 md:gap-2 w-full md:w-auto py-2 md:py-0`}
-            >
-              {navItems.map((item) => {
-                const active = item.label === "Courses & Features";
-                return (
-                  <li key={item.label}>
-                    <Link
-                      to={item.to}
-                      className={`block px-4 py-3 rounded-full text-sm font-medium transition-colors ${
-                        active ? "bg-white shadow-sm ring-1 ring-slate-200/50 text-[#1a3a6c]" : "text-slate-700 hover:bg-slate-100"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-              <li>
-                <button className="flex items-center gap-2 px-4 py-3 text-sm text-slate-700 border md:border-slate-300 md:rounded-full hover:bg-slate-100">
-                  Language <span className="text-xs">▼</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      {/* Banner */}
-      <section className="bg-[#eef1f5]">
+      {/* Hero Banner Image */}
+      <section className="w-full relative z-10 border-b border-pink-200/60 overflow-hidden bg-[#FAF2FF]">
         <img
-          src={`${BASE}/assets/img/features/features-banner.png`}
-          alt="Garbh Sanskar Course & Features"
-          className="w-full h-auto block"
+          src="/images/nurturing_life_banner.png"
+          alt="Nurturing Life, Inspiring Futures - Garbh Sanskar"
+          className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02]"
         />
       </section>
 
-      {/* Title */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-semibold text-[#1a3a6c]">
-            Garbh Sanskar Course & Features
+      {/* Header & Search */}
+      <section className="py-10 md:py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 border-b border-pink-200/60">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <span className="inline-block bg-[#F63D8E] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
+            23+ Comprehensive Features
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
+            Garbh Sanskar <span className="text-[#F63D8E]">Course & Features</span>
           </h1>
-          <p className="mt-4 text-slate-600 text-lg">
-            Garbh Sanskar Online Classes Through An Intuitive App.
+          <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
+            A unique combination of ancient Shaastra wisdom & modern obstetric science delivered through an intuitive mobile application.
           </p>
-          <p className="mt-2 text-[#1a3a6c] font-semibold">
-            23+ Features | Unique Combination of Shaastra & Modern Science
-          </p>
-          <div className="mt-6 w-24 h-1 bg-[#1a3a6c] mx-auto rounded-full" />
+
+          {/* Search bar */}
+          <div className="mt-8 max-w-md mx-auto relative">
+            <input
+              type="text"
+              placeholder="Search features (e.g., Mantra, Music, Yoga, Doctor)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F63D8E]"
+            />
+            <svg
+              className="w-5 h-5 text-[#F63D8E]/70 absolute left-4 top-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#F63D8E] font-bold"
+              >
+                ✕
+              </button>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Feature blocks */}
-      <section className="pb-8">
-        <div className="max-w-6xl mx-auto px-4 space-y-14">
-          {features.map((f, i) => {
-            const reverse = i % 2 === 1;
-            return (
-              <article
-                key={f.title}
-                className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-xl"
+      {/* Category Filter Tabs */}
+      <section className="bg-white/90 backdrop-blur-md border-b border-pink-100 sticky top-0 z-20 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1">
+            {FEATURE_CATEGORIES.map((cat) => {
+              const active = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${active
+                      ? "bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white shadow-md shadow-pink-500/20 scale-105"
+                      : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
+                    }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature blocks Grid */}
+      <section ref={featuresGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
+            <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
+              {selectedCategory === "All Features" ? "All Course Features" : selectedCategory}
+            </h2>
+            <span className="text-xs font-bold px-3.5 py-1 bg-white border border-pink-200 rounded-full text-[#F63D8E] shadow-xs">
+              Showing {filteredFeatures.length} Features
+            </span>
+          </div>
+
+          {filteredFeatures.length === 0 ? (
+            <div className="text-center py-16 bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 shadow-sm">
+              <p className="text-slate-600 text-lg font-medium">
+                No features found matching "{searchQuery}".
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("All Features");
+                }}
+                className="mt-4 px-6 py-2.5 bg-[#F63D8E] text-white text-xs font-bold rounded-full hover:bg-[#E02B7B] transition shadow-sm"
               >
-                <div className={`${reverse ? "md:order-2" : ""}`}>
-                  <img
-                    src={`${IMG}/${f.img}`}
-                    alt={f.title}
-                    className="w-full h-auto rounded-xl shadow-md"
-                    loading="lazy"
-                  />
-                </div>
-                <div className={`${reverse ? "md:order-1" : ""}`}>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-[#1a3a6c] mb-3">
-                    {f.title}
-                  </h2>
-                  <p className="text-red-600 italic font-medium mb-4">{f.tagline}</p>
-                  {f.body.map((p, idx) => (
-                    <p key={idx} className="text-slate-700 leading-relaxed mb-3">
-                      {p}
-                    </p>
-                  ))}
-                </div>
-              </article>
-            );
-          })}
+                Clear Search Filters
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-10">
+              {filteredFeatures.map((f, i) => {
+                const reverse = i % 2 === 1;
+                return (
+                  <article
+                    key={f.title}
+                    data-feature-item
+                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-white/90 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-pink-100 shadow-md shadow-pink-500/5 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    <div className={`${reverse ? "md:order-2" : ""} flex justify-center`}>
+                      <div className="relative group w-full max-w-md">
+                        <img
+                          src={
+                            i % 4 === 0
+                              ? "/images/story_thumb_1.png"
+                              : i % 4 === 1
+                              ? "/images/story_thumb_2.png"
+                              : i % 4 === 2
+                              ? "/images/story_thumb_3.png"
+                              : "/images/astrobaby_video_spotlight.png"
+                          }
+                          alt={f.title}
+                          className="w-full h-auto object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    <div className={`${reverse ? "md:order-1" : ""}`}>
+                      <span className="inline-block bg-[#F63D8E]/10 text-[#F63D8E] font-bold text-xs px-3.5 py-1 rounded-full mb-3">
+                        ✦ Feature {i + 1}
+                      </span>
+                      <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A3A6C] mb-2 tracking-tight">
+                        {f.title}
+                      </h2>
+                      <p className="text-[#F63D8E] font-semibold italic text-sm md:text-base mb-4">
+                        "{f.tagline}"
+                      </p>
+                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-slate-100 pt-4 font-sans">
+                        {f.body.map((p, idx) => (
+                          <p key={idx}>{p}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-14 bg-[#eef1f5]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#1a3a6c] mb-3">
-            Experience all 23+ features
-          </h2>
-          <p className="text-slate-600 mb-6">
-            Download the Krishna Coming Garbh Sanskar app and begin your journey today.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="http://bit.ly/KCGSapp">
-              <img src={`${BASE}/assets/img/playstore.jpg`} alt="playstore" className="h-12" />
-            </a>
-            <a href="https://apple.co/3iEfg7K">
-              <img src={`${BASE}/assets/img/appstore.jpg`} alt="appstore" className="h-12" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <AppDownloadSection
+        title={
+          <>
+            Experience All 23+ Features on{" "}
+            <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
+              Astro Baby
+            </span>
+          </>
+        }
+        subtitle="Download the Astro Baby Garbh Sanskar app and begin your positive pregnancy journey today."
+      />
 
       {/* Newsletter */}
-      <section className="py-14 bg-[#1a3a6c] text-white">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-          <img src={`${BASE}/assets/img/baby.png`} alt="baby" className="w-full max-w-sm mx-auto" />
-          <div>
-            <h3 className="text-2xl font-semibold mb-3">Subscribe to Our Newsletter</h3>
-            <p className="text-white/80 mb-4">
-              To get more Garbh Sanskar related content in your inbox subscribe to our newsletter by
-              submitting your email id here.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="flex-1 px-4 py-3 rounded-full text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
-              />
-              <button
-                type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <NewsletterSection />
 
       {/* Footer */}
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Krishna Coming Garbh Sanskar. All rights reserved.</div>
-          <div className="flex gap-3">
-            {["facebook", "insta", "youtube", "in", "pinterest"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-8 h-8 border border-white/40 rounded flex items-center justify-center hover:bg-white/10"
-                aria-label={s}
-              >
-                <img src={`${BASE}/assets/img/social/${s}.svg`} alt={s} className="w-4 h-4" />
-              </a>
-            ))}
+          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div className="flex gap-4 text-white/80 text-xs font-semibold">
+            <span className="hover:text-white transition">Facebook</span>
+            <span>•</span>
+            <span className="hover:text-white transition">Instagram</span>
+            <span>•</span>
+            <span className="hover:text-white transition">YouTube</span>
           </div>
         </div>
       </footer>

@@ -10,9 +10,18 @@ const Testimonial = lazy(() => import("./routes/testimonial"));
 const Blog = lazy(() => import("./routes/blog"));
 const BlogPost = lazy(() => import("./routes/blog.$slug"));
 
+import ScrollToTop from "@/components/common/ScrollToTop";
+
 export default function App() {
   return (
-    <Suspense fallback={<div className="flex h-screen items-center justify-center text-lg font-semibold text-[#1a3a6c]">Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="flex h-screen items-center justify-center text-lg font-semibold text-[#1a3a6c]">
+          Loading...
+        </div>
+      }
+    >
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />

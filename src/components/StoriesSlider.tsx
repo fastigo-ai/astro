@@ -26,6 +26,14 @@ const stats = [
   { icon: FiThumbsUp, value: "98%", label: "Recommend Us" },
 ];
 
+const AI_THUMBNAILS = [
+  "/images/story_thumb_1.png",
+  "/images/story_thumb_2.png",
+  "/images/story_thumb_3.png",
+  "/images/story_thumb_4.png",
+  "/images/story_thumb_5.png",
+];
+
 export default function StoriesSlider() {
   const sectionRef = useGsapReveal<HTMLElement>();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -60,7 +68,7 @@ export default function StoriesSlider() {
   return (
     <section
       ref={sectionRef}
-      className="stories-premium relative isolate overflow-hidden py-20 md:py-28"
+      className="stories-premium relative isolate overflow-hidden pt-10 md:pt-12 pb-20 md:pb-28"
     >
       <Mandala className="-left-36 top-24" />
       <Mandala className="-right-36 bottom-20" />
@@ -71,8 +79,7 @@ export default function StoriesSlider() {
             USER STORIES
           </span>
           <h2 className="mt-5 text-3xl md:text-4xl font-semibold leading-tight text-[#1a3a6c]">
-            Real Journeys,{" "}
-            <em className="font-semibold text-slate-700">Beautiful Experiences</em>
+            Real Journeys, <em className="font-semibold text-slate-700">Beautiful Experiences</em>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
             Heartfelt stories from families who found calm, confidence, and a deeper connection
@@ -97,12 +104,8 @@ export default function StoriesSlider() {
                 aria-label={`Play ${story.name}'s story`}
               >
                 <img
-                  src={`https://img.youtube.com/vi/${story.videoId}/maxresdefault.jpg`}
-                  onError={(e) => {
-                    // Fallback to hqdefault if maxresdefault doesn't exist
-                    e.currentTarget.src = `https://img.youtube.com/vi/${story.videoId}/hqdefault.jpg`;
-                  }}
-                  alt={`${story.name}, a Krishna Coming family`}
+                  src={AI_THUMBNAILS[index % AI_THUMBNAILS.length]}
+                  alt={`${story.name}, an Astro Baby family`}
                   className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-transparent to-transparent" />
@@ -119,9 +122,7 @@ export default function StoriesSlider() {
               <div className="p-6 pt-7">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1a3a6c]">
-                      {story.name}
-                    </h3>
+                    <h3 className="text-xl font-semibold text-[#1a3a6c]">{story.name}</h3>
                     <p className="mt-1 text-xs font-medium uppercase tracking-[0.15em] text-slate-500">
                       Verified family
                     </p>
@@ -166,7 +167,9 @@ export default function StoriesSlider() {
                 <Icon />
               </span>
               <div>
-                <strong className="block text-base sm:text-lg font-semibold text-[#1a3a6c]">{value}</strong>
+                <strong className="block text-base sm:text-lg font-semibold text-[#1a3a6c]">
+                  {value}
+                </strong>
                 <span className="text-[11px] sm:text-xs text-slate-600">{label}</span>
               </div>
             </div>

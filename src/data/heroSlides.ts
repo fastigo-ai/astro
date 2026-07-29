@@ -1,12 +1,10 @@
-const BASE = "https://www.krishnacoming.com";
-
 export const heroSlides = [
   {
-    eyebrow: "Positive Motherhood",
-    heading: ["Welcome to", "Krishna Coming"],
+    eyebrow: "HOLISTIC PREGNANCY CARE",
+    heading: ["Welcome to", "Astro Baby"],
     description:
-      "Multiplication of Virtues & Division of Defects is called 'Sanskar'. Experience the ancient Indian practice of Garbh Sanskar.",
-    programs: ["Garbh Sanskar", "Yoga Session"],
+      "Empowering every expecting mother with personalized pregnancy guidance, mindful wellness, expert support, and carefully curated baby essentials—all in one beautiful journey.",
+    programs: ["Week-by-Week Journey", "Meditation & Yoga"],
     image: "/images/hero/hero-1.png",
   },
   {

@@ -65,40 +65,35 @@ export default function HeroSlider() {
         if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
         touchStartX.current = null;
       }}
-      className="relative overflow-hidden"
-      style={{ background: "var(--gradient-hero)" }}
+      className="relative overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]"
       aria-roledescription="carousel"
       aria-label="Hero"
     >
       {/* decorative glow */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-sky/30 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-blush/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#2584F5]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#F63D8E]/10 blur-3xl" />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:px-6 md:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
         <div className="order-2 lg:order-1 flex flex-col justify-center">
           <div
             data-hero-eyebrow
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-blush shadow-soft"
+            className="inline-flex w-fit items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F63D8E] border border-pink-200/80 shadow-xs"
           >
-            <FiHeart /> {slide.eyebrow}
+            <FiHeart className="text-[#F63D8E]" /> {slide.eyebrow}
           </div>
           <h1
             data-hero-heading
-            className="font-display mt-5 text-4xl md:text-6xl font-semibold leading-[1.05] text-navy"
+            className="font-sans mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#1A3A6C] tracking-tight"
           >
             {slide.heading.map((line, i) => (
               <span key={i} className="block overflow-hidden">
-                <span className="block">
-                  {i === slide.heading.length - 1 ? (
-                    <span className="gradient-text italic">{line}</span>
-                  ) : (
-                    line
-                  )}
+                <span className="block text-[#1A3A6C] not-italic">
+                  {line}
                 </span>
               </span>
             ))}
           </h1>
-          <p data-hero-desc className="mt-5 max-w-lg text-base md:text-lg text-ink-soft">
+          <p data-hero-desc className="mt-5 max-w-lg text-base md:text-lg text-slate-600 font-sans leading-relaxed">
             {slide.description}
           </p>
           <div className="mt-8 grid grid-cols-2 gap-3 max-w-md">
@@ -106,12 +101,12 @@ export default function HeroSlider() {
               <div
                 key={p}
                 data-hero-card
-                className="rounded-2xl border border-white/60 bg-white/70 p-4 shadow-soft backdrop-blur"
+                className="rounded-2xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <div className="text-[10px] uppercase tracking-wider text-blush font-semibold">
+                <div className="text-[10px] uppercase tracking-wider text-[#F63D8E] font-bold">
                   Program
                 </div>
-                <div className="mt-1 font-display text-lg font-semibold text-navy">{p}</div>
+                <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#1A3A6C]">{p}</div>
               </div>
             ))}
           </div>
@@ -119,18 +114,18 @@ export default function HeroSlider() {
             <PrimaryButton>Start Your Journey</PrimaryButton>
             <SecondaryButton>Watch Story</SecondaryButton>
           </div>
-          <div className="mt-10 flex items-center gap-6 text-xs text-ink-soft">
+          <div className="mt-10 flex items-center gap-6 text-xs text-slate-500 font-medium">
             <div>
-              <span className="font-display text-2xl font-semibold text-navy">4.8★</span> App rating
+              <span className="font-sans text-2xl font-extrabold text-[#F8B62D]">4.8★</span> App rating
             </div>
-            <div className="h-8 w-px bg-navy/15" />
+            <div className="h-8 w-px bg-slate-200" />
             <div>
-              <span className="font-display text-2xl font-semibold text-navy">500k+</span> Mothers
+              <span className="font-sans text-2xl font-extrabold text-[#2584F5]">500k+</span> Mothers
             </div>
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 relative flex flex-col h-[400px] md:h-[500px] lg:h-auto">
+        <div className="order-1 lg:order-2 relative flex flex-col h-[280px] sm:h-[380px] md:h-[480px] lg:h-auto">
           <div className="relative flex-1 overflow-hidden rounded-[36px] shadow-glow">
             <img
               data-hero-image

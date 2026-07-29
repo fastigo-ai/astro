@@ -4,7 +4,7 @@ export default function SecondaryButton(props: ButtonHTMLAttributes<HTMLButtonEl
   return (
     <button
       {...props}
-      className={`px-6 py-3 rounded-full bg-white/80 border-2 border-white text-navy font-semibold hover:bg-white transition-colors shadow-soft backdrop-blur ${props.className || ""}`}
+      className={`px-7 py-3.5 rounded-full bg-white/90 border-2 border-[#2584F5]/30 text-[#2584F5] font-bold hover:bg-[#2584F5]/10 hover:border-[#2584F5] transition-all duration-300 shadow-xs backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] ${props.className || ""}`}
     >
       {props.children}
     </button>
