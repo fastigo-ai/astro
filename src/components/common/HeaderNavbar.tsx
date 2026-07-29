@@ -223,12 +223,12 @@ export default function HeaderNavbar() {
                         : "text-slate-700 hover:text-[#F43F5E] hover:bg-rose-50/70"
                     }`}
                   >
-                    <span className={active ? "text-white" : "text-[#7E22CE]"}>
+                    <span className={active ? "text-white" : "text-[#1C83FF]"}>
                       {item.icon}
                     </span>
                     <span className="whitespace-nowrap">{item.label}</span>
                     {item.hasDropdown && (
-                      <svg className={`w-3 h-3 lg:w-3.5 lg:h-3.5 ${active ? "text-white" : "text-[#7E22CE]"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-3 h-3 lg:w-3.5 lg:h-3.5 ${active ? "text-white" : "text-[#1C83FF]"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
@@ -241,20 +241,20 @@ export default function HeaderNavbar() {
             <li className="relative ml-1 lg:ml-2 pl-1 lg:pl-2 border-l border-slate-200/80" ref={langRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 lg:px-4 py-1.5 lg:py-2 text-[11px] lg:text-xs xl:text-sm font-semibold text-[#6B21A8] bg-[#F3E8FF]/80 hover:bg-[#E9D5FF] border border-purple-200/80 rounded-full transition-all"
+                className="flex items-center gap-1.5 px-3 lg:px-4 py-1.5 lg:py-2 text-[11px] lg:text-xs xl:text-sm font-semibold text-[#1C83FF] bg-blue-50/80 hover:bg-blue-100/80 border border-blue-200/80 rounded-full transition-all"
               >
-                <svg className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#7E22CE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#1C83FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
                 <span>{selectedLang.label}</span>
-                <svg className={`w-3 h-3 lg:w-3.5 lg:h-3.5 text-[#7E22CE] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-3 h-3 lg:w-3.5 lg:h-3.5 text-[#1C83FF] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
               {langOpen && (
-                <div className="absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-xl border border-purple-100 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="px-3 py-1.5 text-[10px] font-bold text-purple-400 uppercase tracking-wider border-b border-slate-100">
+                <div className="absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-xl border border-blue-100 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-3 py-1.5 text-[10px] font-bold text-[#1C83FF] uppercase tracking-wider border-b border-slate-100">
                     Select Language
                   </div>
                   {languages.map((lang) => (
@@ -264,13 +264,13 @@ export default function HeaderNavbar() {
                         setSelectedLang(lang);
                         setLangOpen(false);
                       }}
-                      className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between hover:bg-purple-50 transition-colors ${
-                        selectedLang.code === lang.code ? "text-[#7E22CE] font-bold bg-purple-50/70" : "text-slate-700"
+                      className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between hover:bg-blue-50 transition-colors ${
+                        selectedLang.code === lang.code ? "text-[#1C83FF] font-bold bg-blue-50/70" : "text-slate-700"
                       }`}
                     >
                       <span>{lang.name} ({lang.label})</span>
                       {selectedLang.code === lang.code && (
-                        <svg className="w-4 h-4 text-[#7E22CE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[#1C83FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                         </svg>
                       )}
@@ -285,7 +285,7 @@ export default function HeaderNavbar() {
 
         {/* Mobile Navigation Drawer */}
         {menuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-xl rounded-3xl border border-purple-100 shadow-2xl mt-2 px-4 py-4 space-y-4 animate-in slide-in-from-top duration-300">
+          <div className="md:hidden bg-white/95 backdrop-blur-xl rounded-3xl border border-slate-100 shadow-2xl mt-2 px-4 py-4 space-y-4 animate-in slide-in-from-top duration-300">
             <div className="space-y-1">
               {navItems.map((item) => {
                 const active = isActive(item.to);
@@ -300,7 +300,7 @@ export default function HeaderNavbar() {
                         : "text-slate-700 hover:bg-rose-50"
                     }`}
                   >
-                    <span className={active ? "text-white" : "text-[#7E22CE]"}>
+                    <span className={active ? "text-white" : "text-[#1C83FF]"}>
                       {item.icon}
                     </span>
                     <span>{item.label}</span>
