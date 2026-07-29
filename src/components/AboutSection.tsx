@@ -184,9 +184,13 @@ export default function AboutSection() {
               </div>
             )}
 
-            {/* CTA Option with Magnetic Pull */}
+            {/* CTA Option with Framer Motion hover scale */}
             <div className="pt-2 flex items-center justify-start">
-              <div ref={btnRef} className="inline-block">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
+                className="inline-block"
+              >
                 <a
                   href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
                   target="_blank"
@@ -198,7 +202,7 @@ export default function AboutSection() {
                     <ArrowUpRight className="h-3 w-3" />
                   </span>
                 </a>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
