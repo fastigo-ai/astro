@@ -455,7 +455,7 @@ export default function FeaturesPage() {
                       </div>
                     </div>
                     <div className={`${reverse ? "md:order-1" : ""}`}>
-                      <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F43F5E] to-[#E11D48] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-rose-500/20 mb-3.5">
+                      <div className="inline-flex items-center gap-1.5 bg-[#EA3484] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-[#EA3484]/30 mb-3.5">
                         <span>✦</span>
                         <span>Feature {i + 1}</span>
                       </div>

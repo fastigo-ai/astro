@@ -104,8 +104,8 @@ export default function AboutSection() {
           <div className="flex flex-col justify-center md:col-span-7 space-y-5 md:space-y-6">
             {/* Badge & Heading & Description */}
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/80 bg-sky-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#3B82F6] backdrop-blur-sm">
-                <Sparkles className="h-2.5 w-2.5" /> About Astro Baby
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm">
+                <Sparkles className="h-2.5 w-2.5" /> About <span className="font-extrabold text-[#EA3484]">Astro Baby</span>
               </span>
 
               <motion.h2
@@ -125,7 +125,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-sm md:text-base leading-relaxed text-slate-600 font-sans max-w-xl"
               >
-                Astro Baby Garbh Sanskar is India's leading digital platform combining ancient Vedic
+                <strong className="text-[#EA3484] font-bold">Astro Baby</strong> <strong className="text-[#EA3484] font-bold">Garbh Sanskar</strong> is India's leading digital platform combining ancient Vedic
                 wisdom with modern obstetric science. Created by a passionate team of experts, we
                 make pregnancy a happy, healthy, and spiritually rich journey.
               </motion.p>

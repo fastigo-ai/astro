@@ -220,8 +220,8 @@ export default function FeaturesSection() {
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
         {/* Header Block */}
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200/80 bg-sky-50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#3B82F6] backdrop-blur-sm shadow-xs mb-4">
-            <Sparkles className="h-3 w-3 text-[#3B82F6]" /> Comprehensive Features
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs mb-4">
+            <Sparkles className="h-3 w-3 text-[#EA3484]" /> Comprehensive Features
           </span>
 
           <motion.h2

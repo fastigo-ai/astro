@@ -148,7 +148,7 @@ export default function HeaderNavbar() {
           </Link>
           <div className="text-xs md:text-sm font-bold -mt-2 md:-mt-3 flex items-center justify-center gap-2">
             <span className="text-emerald-500 font-bold">✔</span>
-            <span className="text-[#F43F5E] font-semibold tracking-wide">
+            <span className="text-[#EA3484] font-semibold tracking-wide">
               Nurturing Every Life with Love &amp; Wisdom
             </span>
             <span className="text-emerald-500 font-bold">✔</span>

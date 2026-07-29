@@ -54,8 +54,8 @@ export default function HeroSlider() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="order-2 lg:order-1 flex flex-col justify-center"
           >
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F63D8E] border border-pink-200/80 shadow-xs">
-              <FiHeart className="text-[#F63D8E]" /> {slide.eyebrow}
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] border border-pink-200/80 shadow-xs">
+              <FiHeart className="text-[#EA3484]" /> {slide.eyebrow}
             </div>
             <h1 className="font-sans mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#1A3A6C] tracking-tight">
               {slide.heading.map((line, i) => (
@@ -75,7 +75,7 @@ export default function HeroSlider() {
                   key={p}
                   className="rounded-2xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5"
                 >
-                  <div className="text-[10px] uppercase tracking-wider text-[#F63D8E] font-bold">
+                  <div className="text-[10px] uppercase tracking-wider text-[#EA3484] font-bold">
                     Program
                   </div>
                   <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#1A3A6C]">{p}</div>
