@@ -104,17 +104,15 @@ export default function HeaderNavbar() {
   return (
     <div className="w-full relative font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Contact & Announcement Bar */}
-      <div className="hidden md:block bg-gradient-to-r from-[#4A154B] via-[#5C2494] to-[#4A154B] text-white text-xs py-2 border-b border-white/10 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div className="hidden md:block bg-[#5C2494] text-white text-xs py-2 border-b border-white/10 shadow-xs">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-400/20 text-amber-300 text-xs">
-              ✨
-            </span>
-            <span className="font-semibold text-white/95 tracking-wide">
+            <span className="text-amber-300 text-xs">✨</span>
+            <span className="font-semibold text-white tracking-wide text-[12px]">
               Astro Baby Garbh Sanskar — Divine Wisdom & Scientific Pregnancy Care
             </span>
           </div>
-          <div className="flex items-center gap-4 text-white/90 text-xs">
+          <div className="flex items-center gap-5 text-white/90 text-[12px]">
             <a
               href="mailto:info@astrobaby.com"
               className="flex items-center gap-1.5 hover:text-amber-200 transition-colors"
@@ -124,96 +122,37 @@ export default function HeaderNavbar() {
               </svg>
               info@astrobaby.com
             </a>
-            <span className="text-white/30">|</span>
+            <span className="text-white/40">|</span>
             <a
-              href="tel:+919109155039"
-              className="flex items-center gap-1.5 hover:text-amber-200 transition-colors font-bold text-amber-300"
+              href="tel:+919018567465"
+              className="flex items-center gap-1.5 hover:text-amber-200 transition-colors font-semibold text-amber-200"
             >
-              <svg className="w-3.5 h-3.5 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-amber-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              +91 9109155039
+              +91 9018567465
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Logo & Cards Header (Desktop) */}
-      <header className="hidden md:block bg-gradient-to-b from-[#F7EEFF] via-[#FAF5FF] to-[#F3E8FF]/30 border-b border-purple-100/50 py-3.5 md:py-4">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-3 lg:gap-6">
-          
-          {/* Left Card: Talk to Our Expert */}
-          <div className="bg-white rounded-[30px] p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex items-center gap-2.5 lg:gap-3.5">
-            <div className="w-9 h-9 lg:w-11 lg:h-11 rounded-full bg-gradient-to-tr from-[#F43F5E] to-[#FB7185] text-white flex items-center justify-center shadow-md shadow-rose-500/20 flex-shrink-0">
-              <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <div>
-              <div className="text-slate-500 font-semibold text-[11px] lg:text-xs leading-tight">Talk to Our Expert</div>
-              <a
-                href="tel:+919109155039"
-                className="text-slate-900 font-extrabold text-xs lg:text-sm whitespace-nowrap hover:text-[#7E22CE] transition-colors block"
-              >
-                +91 9109155039
-              </a>
-              <div className="text-[10px] lg:text-[11px] text-slate-400 font-medium leading-tight">9 AM - 7 PM (Mon - Sat)</div>
-            </div>
-          </div>
-
-          {/* Logo Center with Tagline */}
-          <div className="flex flex-col items-center text-center">
-            <Link to="/" className="inline-block group">
-              <img
-                src="/images/logo.png"
-                alt="Astro Baby Logo"
-                className="h-14 md:h-18 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-xs"
-              />
-            </Link>
-            <div className="text-[10px] md:text-[11px] lg:text-xs font-semibold text-[#B45309] tracking-wide mt-0.5 flex items-center gap-1">
-              <span>🍃</span>
-              <span className="whitespace-nowrap">Divine Blessings. Blessed Beginnings.</span>
-              <span>🍃</span>
-            </div>
-          </div>
-
-          {/* Right Card: Download Our App */}
-          <div className="bg-white rounded-[30px] p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex flex-col items-center justify-center gap-1">
-            <span className="text-[#6B21A8] font-bold text-[9px] lg:text-[11px] tracking-wider uppercase flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#EC4899] animate-pulse"></span>
-              DOWNLOAD OUR APP
+      {/* Main Large Logo & Tagline Header (Desktop) */}
+      <header className="hidden md:block bg-white py-1 md:py-1.5">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+          <Link to="/" className="inline-block group">
+            <img
+              src="/images/logo.png"
+              alt="Astro Baby Logo"
+              className="h-28 md:h-36 lg:h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
+          <div className="text-xs md:text-sm font-bold -mt-2 md:-mt-3 flex items-center justify-center gap-2">
+            <span className="text-emerald-500 font-bold">✔</span>
+            <span className="text-[#F43F5E] font-semibold tracking-wide">
+              Nurturing Every Life with Love &amp; Wisdom
             </span>
-            <div className="flex items-center gap-1.5 lg:gap-2">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center transition-transform duration-200 hover:scale-105 active:scale-95"
-                title="Get Astro Baby on Google Play Store"
-              >
-                <img
-                  src="/images/google-play-badge.png"
-                  alt="Get it on Google Play"
-                  className="h-8 lg:h-9 w-auto object-contain drop-shadow-xs"
-                />
-              </a>
-
-              <a
-                href="https://apple.co/3iEfg7K"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center transition-transform duration-200 hover:scale-105 active:scale-95"
-                title="Download Astro Baby on Apple App Store"
-              >
-                <img
-                  src="/images/app-store-badge.png"
-                  alt="Download on the App Store"
-                  className="h-8 lg:h-9 w-auto object-contain drop-shadow-xs"
-                />
-              </a>
-            </div>
+            <span className="text-emerald-500 font-bold">✔</span>
           </div>
-
         </div>
       </header>
 

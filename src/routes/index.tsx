@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "@/utils/gsapSetup";
 import HeroSlider from "@/components/HeroSlider";
 import StoriesSlider from "@/components/StoriesSlider";
 import MobileFeatureSlider from "@/components/MobileFeatureSlider";
@@ -134,8 +135,48 @@ const faqs = [
 ];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (statsRef.current) {
+      gsap.fromTo(
+        statsRef.current.querySelectorAll(".stat-card"),
+        { opacity: 0, y: 30, scale: 0.92 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.75,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: "top 85%",
+          },
+        }
+      );
+    }
+
+    if (faqRef.current) {
+      gsap.fromTo(
+        faqRef.current.querySelectorAll(".faq-item"),
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: faqRef.current,
+            start: "top 85%",
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <div className="home-bg min-h-screen text-slate-800">
@@ -148,26 +189,6 @@ export default function Home() {
       {/* Hero */}
       <HeroSlider />
 
-      {/* Featured On */}
-      {/* <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-8">
-            Featured On
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-center">
-            {featuredLogos.map((logo) => (
-              <a key={logo} href="#" className="block p-2">
-                <img
-                  src="/images/logo.png"
-                  alt="featured logo"
-                  className="w-full h-auto object-contain"
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       <AboutSection />
 
       <FeaturesSection />
@@ -175,54 +196,8 @@ export default function Home() {
       {/* Stories Slider */}
       <StoriesSlider />
 
-      {/* User Stories */}
-      {/* <section className="py-14">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c]">
-            User Stories
-          </h2>
-          <p className="text-center text-slate-600 mt-2 mb-10">
-            From India & Abroad, their lives have changed for better...
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {userStories.map((s) => (
-              <a
-                key={s.yt}
-                href={`https://www.youtube.com/watch?v=${s.yt}`}
-                target="_blank"
-                rel="noreferrer"
-                className="group block"
-              >
-                <div className="relative rounded-lg overflow-hidden shadow">
-                  <img
-                    src="/images/story_thumb_1.png"
-                    alt={s.name}
-                    className="w-full aspect-square object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30">
-                    <span className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center font-bold">▶</span>
-                  </div>
-                </div>
-                <div className="text-center mt-2">
-                  <div className="font-semibold text-slate-800 text-sm">{s.name}</div>
-                  <div className="text-xs text-slate-500">{s.loc}</div>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <a
-              href="#"
-              className="inline-block bg-[#1a3a6c] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#122a4f]"
-            >
-              SEE MORE...
-            </a>
-          </div>
-        </div>
-      </section> */}
-
       {/* Stats */}
-      <section className="py-14 relative z-10">
+      <section ref={statsRef} className="py-14 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-center text-2xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
             A Glimpse of <span className="text-red-600">Positive motherhood</span> and happier
@@ -230,7 +205,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {stats.map((st) => (
-              <div key={st.label} className="text-center p-4 bg-[#eef1f5] rounded-lg">
+              <div key={st.label} className="stat-card text-center p-4 bg-[#eef1f5] rounded-xl hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F63D8E]/10 text-[#F63D8E] flex items-center justify-center font-bold text-lg">
                   ✦
                 </div>
@@ -242,59 +217,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Scientific Evidences */}
-      {/* <section className="py-14 bg-[#eef1f5]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c]">
-            Scientific Evidences
-          </h2>
-          <p className="text-center text-slate-600 mt-2 mb-10">
-            Modern Science now in unison with Ancient Indian Science...
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {scientificEvidences.map((e) => (
-              <div key={e.img} className="bg-white rounded-lg shadow overflow-hidden">
-                <img
-                  src="/images/story_thumb_3.png"
-                  alt={e.text}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <p className="text-slate-700 mb-3">{e.text}</p>
-                  <a
-                    href={e.src}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[#1a3a6c] font-semibold text-sm hover:underline"
-                  >
-                    Click here to visit source...
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* FAQ */}
-      <section className="py-14 relative z-10">
+      <section ref={faqRef} className="py-14 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
             Frequently Asked Questions (FAQs)
           </h2>
           <div className="space-y-3">
             {faqs.map((f, i) => (
-              <div key={i} className="border border-slate-200 rounded-lg overflow-hidden">
+              <div key={i} className="faq-item border border-slate-200 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex justify-between items-center text-left px-5 py-4 bg-[#eef1f5] hover:bg-slate-200"
+                  className="w-full flex justify-between items-center text-left px-5 py-4 bg-[#eef1f5] hover:bg-slate-200 transition-colors"
                 >
                   <span className="font-semibold text-[#1a3a6c]">{f.q}</span>
                   <span className="text-[#1a3a6c] text-2xl leading-none">
                     {openFaq === i ? "−" : "+"}
                   </span>
                 </button>
-                {openFaq === i && <div className="p-5 text-slate-700 leading-relaxed">{f.a}</div>}
+                {openFaq === i && <div className="p-5 text-slate-700 leading-relaxed bg-white">{f.a}</div>}
               </div>
             ))}
           </div>

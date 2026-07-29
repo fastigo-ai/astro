@@ -202,21 +202,36 @@ export default function TeamPage() {
 
   useEffect(() => {
     if (!teamGridRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-team-card]",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.05,
-          ease: "power2.out",
-          clearProps: "opacity,transform",
-        }
-      );
-    }, teamGridRef);
-    return () => ctx.revert();
+    const timer = setTimeout(() => {
+      if (!teamGridRef.current) return;
+      const ctx = gsap.context(() => {
+        const items = teamGridRef.current?.querySelectorAll("[data-team-card]");
+        items?.forEach((el, index) => {
+          const fromLeft = index % 2 === 0;
+          gsap.fromTo(
+            el,
+            {
+              opacity: 0,
+              x: fromLeft ? -100 : 100,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.9,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        });
+      }, teamGridRef);
+      return () => ctx.revert();
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [selectedCategory, searchQuery]);
 
   const filteredMembers = members.filter((m) => {
@@ -256,12 +271,14 @@ export default function TeamPage() {
   return (
     <Layout activeLabel="Team">
       {/* Banner */}
-      <section className="border-b border-slate-200/50 relative z-10">
-        <img
-          src="/images/nurturing_life_banner.png"
-          alt="Meet our team"
-          className="w-full h-auto object-cover max-h-[360px]"
-        />
+      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90">
+          <img
+            src="/images/nurturing_life_banner.png"
+            alt="Meet our team"
+            className="w-full h-auto object-cover max-h-[360px] rounded-[30px]"
+          />
+        </div>
       </section>
 
       {/* Header & Search */}
@@ -365,45 +382,49 @@ export default function TeamPage() {
               </button>
             </div>
           ) : (
-            <div className="space-y-8">
-              {filteredMembers.map((m, i) => (
-                <article
-                  key={m.name + i}
-                  data-team-card
-                  className="bg-white/90 backdrop-blur-md rounded-3xl shadow-md border border-pink-100 overflow-hidden grid md:grid-cols-3 gap-6 p-6 md:p-8 items-start hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="md:col-span-1 flex flex-col items-center text-center">
-                    <div className="relative group">
-                      <img
-                        src={i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"}
-                        alt={m.name}
-                        className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="space-y-12">
+              {filteredMembers.map((m, i) => {
+                const reverse = i % 2 === 1;
+                return (
+                  <article
+                    key={m.name + i}
+                    data-team-card
+                    className="grid md:grid-cols-3 gap-8 md:gap-10 items-center bg-gradient-to-br from-white via-[#FFF8FD] to-[#FAF2FF] p-7 md:p-10 rounded-[32px] border border-pink-200/90 shadow-[0_15px_40px_-10px_rgba(244,63,94,0.1)] hover:shadow-[0_25px_50px_-5px_rgba(244,63,94,0.2)] transition-shadow duration-500 overflow-hidden relative group/card"
+                  >
+                    <div className={`${reverse ? "md:order-2" : ""} md:col-span-1 flex justify-center`}>
+                      <div className="relative group w-full max-w-xs">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
+                        <img
+                          src={i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"}
+                          alt={m.name}
+                          className="relative w-full aspect-square object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="md:col-span-2 flex flex-col justify-center">
-                    <div className="inline-block self-start bg-[#F63D8E]/10 text-[#F63D8E] font-bold text-xs px-3.5 py-1 rounded-full mb-2">
-                      Garbh Sanskar Expert
+                    <div className={`${reverse ? "md:order-1" : ""} md:col-span-2 flex flex-col justify-center`}>
+                      <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F43F5E] to-[#E11D48] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-rose-500/20 mb-3.5 self-start">
+                        <span>✦</span>
+                        <span>Garbh Sanskar Expert</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E293B] mb-2.5 tracking-tight">
+                        {m.name}
+                      </h3>
+                      <div className="text-[#E11D48] font-bold text-xs md:text-sm mb-4 bg-rose-50/90 px-4 py-2 rounded-2xl border border-rose-200/60 inline-block shadow-xs self-start">
+                        {m.title}
+                      </div>
+                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-rose-100/80 pt-4 font-sans">
+                        {m.bio.map((p, idx) => (
+                          <p key={idx} className="flex gap-2">
+                            <span className="text-[#E11D48] font-bold">✦</span>
+                            <span>{p}</span>
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A3A6C] tracking-tight">
-                      {m.name}
-                    </h3>
-                    <p className="text-sm md:text-base text-[#F63D8E] font-semibold mt-1 mb-4 leading-snug">
-                      {m.title}
-                    </p>
-                    <div className="space-y-3 text-slate-600 leading-relaxed text-sm md:text-base border-t border-slate-100 pt-4 font-sans">
-                      {m.bio.map((p, idx) => (
-                        <p key={idx} className="flex gap-2">
-                          <span className="text-[#2584F5] font-bold">✦</span>
-                          <span>{p}</span>
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           )}
         </div>

@@ -244,18 +244,33 @@ export default function FeaturesPage() {
   useEffect(() => {
     if (!featuresGridRef.current) return;
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-feature-item]",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.05,
-          ease: "power2.out",
-          clearProps: "opacity,transform",
-        }
-      );
+      const items = featuresGridRef.current?.querySelectorAll("[data-feature-item]");
+      items?.forEach((el, index) => {
+        const fromLeft = index % 2 === 0;
+        gsap.fromTo(
+          el,
+          {
+            opacity: 0,
+            x: fromLeft ? -45 : 45,
+            y: 20,
+            scale: 0.98,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 1.0,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none none",
+              once: true,
+            },
+          }
+        );
+      });
     }, featuresGridRef);
     return () => ctx.revert();
   }, [selectedCategory, searchQuery]);
@@ -305,12 +320,14 @@ export default function FeaturesPage() {
       <HeaderNavbar />
 
       {/* Hero Banner Image */}
-      <section className="w-full relative z-10 border-b border-pink-200/60 overflow-hidden bg-[#FAF2FF]">
-        <img
-          src="/images/nurturing_life_banner.png"
-          alt="Nurturing Life, Inspiring Futures - Garbh Sanskar"
-          className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02]"
-        />
+      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90">
+          <img
+            src="/images/nurturing_life_banner.png"
+            alt="Nurturing Life, Inspiring Futures - Garbh Sanskar"
+            className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02] rounded-[30px]"
+          />
+        </div>
       </section>
 
       {/* Header & Search */}
@@ -411,36 +428,38 @@ export default function FeaturesPage() {
               </button>
             </div>
           ) : (
-            <div className="space-y-10">
+            <div className="space-y-12">
               {filteredFeatures.map((f, i) => {
                 const reverse = i % 2 === 1;
                 return (
                   <article
                     key={f.title}
                     data-feature-item
-                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-white/90 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-pink-100 shadow-md shadow-pink-500/5 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-gradient-to-br from-white via-[#FFF8FD] to-[#FAF2FF] p-7 md:p-10 rounded-[32px] border border-pink-200/90 shadow-[0_15px_40px_-10px_rgba(244,63,94,0.1)] hover:shadow-[0_25px_50px_-5px_rgba(244,63,94,0.2)] transition-shadow duration-500 overflow-hidden relative group/card"
                   >
                     <div className={`${reverse ? "md:order-2" : ""} flex justify-center`}>
                       <div className="relative group w-full max-w-md">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
                         <img
                           src={f.img ? (f.img.startsWith('/') ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png"}
                           alt={f.title}
-                          className="w-full h-64 md:h-72 object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
+                          className="relative w-full h-64 md:h-80 object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
                           loading="lazy"
                         />
                       </div>
                     </div>
                     <div className={`${reverse ? "md:order-1" : ""}`}>
-                      <span className="inline-block bg-[#F63D8E]/10 text-[#F63D8E] font-bold text-xs px-3.5 py-1 rounded-full mb-3">
-                        ✦ Feature {i + 1}
-                      </span>
-                      <h2 className="text-2xl md:text-3xl font-extrabold text-[#1A3A6C] mb-2 tracking-tight">
+                      <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#F43F5E] to-[#E11D48] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-rose-500/20 mb-3.5">
+                        <span>✦</span>
+                        <span>Feature {i + 1}</span>
+                      </div>
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E293B] mb-2.5 tracking-tight">
                         {f.title}
                       </h2>
-                      <p className="text-[#F63D8E] font-semibold italic text-sm md:text-base mb-4">
+                      <div className="text-[#E11D48] font-bold italic text-sm md:text-base mb-4 bg-rose-50/90 px-4 py-2 rounded-2xl border border-rose-200/60 inline-block shadow-xs">
                         "{f.tagline}"
-                      </p>
-                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-slate-100 pt-4 font-sans">
+                      </div>
+                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-rose-100/80 pt-4 font-sans">
                         {f.body.map((p, idx) => (
                           <p key={idx}>{p}</p>
                         ))}

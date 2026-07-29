@@ -101,12 +101,14 @@ export default function AwardsPage() {
 
   return (
     <Layout activeLabel="Awards & Accolades">
-      <section className="bg-[#eef1f5]">
-        <img
-          src="/images/awards_banner.png"
-          alt="Awards & Accolades"
-          className="w-full h-auto object-cover max-h-[380px]"
-        />
+      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90">
+          <img
+            src="/images/awards_banner.png"
+            alt="Awards & Accolades"
+            className="w-full h-auto object-cover max-h-[380px] rounded-[30px]"
+          />
+        </div>
       </section>
 
       <section className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
