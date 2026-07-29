@@ -143,7 +143,7 @@ export default function HeaderNavbar() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-3 lg:gap-6">
           
           {/* Left Card: Talk to Our Expert */}
-          <div className="bg-white rounded-2xl p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex items-center gap-2.5 lg:gap-3.5">
+          <div className="bg-white rounded-[30px] p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex items-center gap-2.5 lg:gap-3.5">
             <div className="w-9 h-9 lg:w-11 lg:h-11 rounded-full bg-gradient-to-tr from-[#F43F5E] to-[#FB7185] text-white flex items-center justify-center shadow-md shadow-rose-500/20 flex-shrink-0">
               <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -178,7 +178,7 @@ export default function HeaderNavbar() {
           </div>
 
           {/* Right Card: Download Our App */}
-          <div className="bg-white rounded-2xl p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex flex-col items-center justify-center gap-1">
+          <div className="bg-white rounded-[30px] p-2.5 lg:p-3.5 px-3.5 lg:px-5 border border-purple-100/90 shadow-[0_10px_25px_-5px_rgba(92,36,148,0.12)] hover:shadow-[0_15px_30px_-5px_rgba(92,36,148,0.18)] transition-all duration-300 flex flex-col items-center justify-center gap-1">
             <span className="text-[#6B21A8] font-bold text-[9px] lg:text-[11px] tracking-wider uppercase flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-[#EC4899] animate-pulse"></span>
               DOWNLOAD OUR APP
