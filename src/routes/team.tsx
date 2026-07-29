@@ -348,7 +348,7 @@ export default function TeamPage() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
                     active
-                      ? "bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white shadow-md shadow-pink-500/20 scale-105"
+                      ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 scale-105"
                       : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
                   }`}
                 >

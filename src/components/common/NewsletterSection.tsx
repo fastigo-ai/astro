@@ -115,11 +115,10 @@ export default function NewsletterSection() {
                     />
                   </div>
 
-                  {/* Single Premium Gradient CTA Button (#5A098F → #7C3AED) */}
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-8 py-4 bg-gradient-to-r from-[#5A098F] to-[#7C3AED] hover:from-[#4C0777] hover:to-[#6D28D9] text-white font-['Manrope',sans-serif] font-bold text-sm rounded-2xl shadow-[0_10px_25px_-5px_rgba(90,9,143,0.3)] hover:shadow-[0_15px_30px_-5px_rgba(90,9,143,0.4)] transition-all duration-300 flex items-center justify-center gap-2 active:scale-98 disabled:opacity-75 flex-shrink-0"
+                    className="px-8 py-4 bg-[#EA3484] hover:bg-[#d82a75] text-white font-['Manrope',sans-serif] font-bold text-sm rounded-2xl shadow-[0_10px_25px_-5px_rgba(234,52,132,0.35)] hover:shadow-[0_15px_30px_-5px_rgba(234,52,132,0.45)] transition-all duration-300 flex items-center justify-center gap-2 active:scale-98 disabled:opacity-75 flex-shrink-0"
                   >
                     {loading ? (
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

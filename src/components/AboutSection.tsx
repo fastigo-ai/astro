@@ -200,7 +200,7 @@ export default function AboutSection() {
                   href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#5D539B] hover:bg-[#483F80] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#5D539B]/15 transition-all duration-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#EA3484] hover:bg-[#d82a75] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#EA3484]/25 transition-all duration-300"
                 >
                   Begin Journey Today
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300">

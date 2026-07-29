@@ -219,8 +219,8 @@ export default function HeaderNavbar() {
                     to={item.to}
                     className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
                       active
-                        ? "bg-[#F43F5E] text-white shadow-md shadow-rose-500/30 font-bold"
-                        : "text-slate-700 hover:text-[#F43F5E] hover:bg-rose-50/70"
+                        ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 font-bold"
+                        : "text-slate-700 hover:text-[#EA3484] hover:bg-pink-50/70"
                     }`}
                   >
                     <span className={active ? "text-white" : "text-[#1C83FF]"}>
@@ -296,8 +296,8 @@ export default function HeaderNavbar() {
                     onClick={() => setMenuOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                       active
-                        ? "bg-[#F43F5E] text-white font-bold shadow-md shadow-rose-500/30"
-                        : "text-slate-700 hover:bg-rose-50"
+                        ? "bg-[#EA3484] text-white font-bold shadow-md shadow-[#EA3484]/30"
+                        : "text-slate-700 hover:bg-pink-50"
                     }`}
                   >
                     <span className={active ? "text-white" : "text-[#1C83FF]"}>

@@ -339,11 +339,11 @@ export default function FeaturesPage() {
       {/* Header & Search */}
       <section className="py-10 md:py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 border-b border-pink-200/60">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <span className="inline-block bg-[#F63D8E] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
+          <span className="inline-block bg-[#EA3484] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
             23+ Comprehensive Features
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Garbh Sanskar <span className="text-[#F63D8E]">Course & Features</span>
+            Garbh Sanskar <span className="text-[#EA3484]">Course & Features</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
             A unique combination of ancient Shaastra wisdom & modern obstetric science delivered through an intuitive mobile application.
@@ -356,10 +356,10 @@ export default function FeaturesPage() {
               placeholder="Search features (e.g., Mantra, Music, Yoga, Doctor)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F63D8E]"
+              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#EA3484]"
             />
             <svg
-              className="w-5 h-5 text-[#F63D8E]/70 absolute left-4 top-4"
+              className="w-5 h-5 text-[#EA3484]/70 absolute left-4 top-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -374,7 +374,7 @@ export default function FeaturesPage() {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#F63D8E] font-bold"
+                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#EA3484] font-bold"
               >
                 ✕
               </button>
@@ -394,7 +394,7 @@ export default function FeaturesPage() {
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${active
-                      ? "bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white shadow-md shadow-pink-500/20 scale-105"
+                      ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 scale-105"
                       : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
                     }`}
                 >
