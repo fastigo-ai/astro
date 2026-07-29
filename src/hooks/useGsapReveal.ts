@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { gsap } from "@/utils/gsapSetup";
+import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
 
 export function useGsapReveal<T extends HTMLElement>(options?: {
   y?: number;

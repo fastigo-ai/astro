@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { gsap } from "@/utils/gsapSetup";
+import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
