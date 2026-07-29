@@ -245,6 +245,7 @@ export default function FeaturesPage() {
     if (!featuresGridRef.current) return;
     const timer = setTimeout(() => {
       if (!featuresGridRef.current) return;
+      gsap.registerPlugin(ScrollTrigger);
       const ctx = gsap.context(() => {
         const items = featuresGridRef.current?.querySelectorAll("[data-feature-item]");
         items?.forEach((el, index) => {
@@ -253,22 +254,27 @@ export default function FeaturesPage() {
             el,
             {
               opacity: 0,
-              x: fromLeft ? -75 : 75,
+              x: fromLeft ? -60 : 60,
             },
             {
               opacity: 1,
               x: 0,
-              duration: 0.85,
+              duration: 0.8,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: el,
-                start: "top 88%",
-                toggleActions: "play none none reverse",
+                start: "top 90%",
+                toggleActions: "play none none none",
+                once: true,
+              },
+              onComplete: () => {
+                gsap.set(el, { clearProps: "opacity,transform" });
               },
             }
           );
         });
       }, featuresGridRef);
+      ScrollTrigger.refresh();
       return () => ctx.revert();
     }, 50);
 

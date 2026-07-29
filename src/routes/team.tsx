@@ -204,6 +204,7 @@ export default function TeamPage() {
     if (!teamGridRef.current) return;
     const timer = setTimeout(() => {
       if (!teamGridRef.current) return;
+      gsap.registerPlugin(ScrollTrigger);
       const ctx = gsap.context(() => {
         const items = teamGridRef.current?.querySelectorAll("[data-team-card]");
         items?.forEach((el, index) => {
@@ -212,22 +213,27 @@ export default function TeamPage() {
             el,
             {
               opacity: 0,
-              x: fromLeft ? -100 : 100,
+              x: fromLeft ? -75 : 75,
             },
             {
               opacity: 1,
               x: 0,
-              duration: 0.9,
+              duration: 0.85,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: el,
                 start: "top 90%",
-                toggleActions: "play none none reverse",
+                toggleActions: "play none none none",
+                once: true,
+              },
+              onComplete: () => {
+                gsap.set(el, { clearProps: "opacity,transform" });
               },
             }
           );
         });
       }, teamGridRef);
+      ScrollTrigger.refresh();
       return () => ctx.revert();
     }, 50);
 
