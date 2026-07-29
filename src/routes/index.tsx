@@ -165,7 +165,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center text-2xl md:text-4xl font-semibold text-[#1a3a6c] mb-10"
           >
-            A Glimpse of <span className="text-red-600">Positive motherhood</span> and happier
+            A Glimpse of <span className="text-[#F43F5E]">Positive motherhood</span> and happier
             lives...
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
