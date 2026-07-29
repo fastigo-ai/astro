@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
   FiAward,
   FiGlobe,
@@ -12,8 +13,8 @@ import {
   FiX,
 } from "react-icons/fi";
 import { storiesData } from "@/data/storiesData";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
+
 const benefits = [
   { icon: FiHeart, label: "Calmer journey" },
   { icon: FiShield, label: "Expert guidance" },
@@ -35,7 +36,6 @@ const AI_THUMBNAILS = [
 ];
 
 export default function StoriesSlider() {
-  const sectionRef = useGsapReveal<HTMLElement>();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -66,15 +66,18 @@ export default function StoriesSlider() {
   }, [activeVideo]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="stories-premium relative isolate overflow-hidden pt-10 md:pt-12 pb-20 md:pb-28"
-    >
+    <section className="stories-premium relative isolate overflow-hidden pt-10 md:pt-12 pb-20 md:pb-28">
       <Mandala className="-left-36 top-24" />
       <Mandala className="-right-36 bottom-20" />
       <Decorations />
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
-        <header className="mx-auto max-w-3xl text-center" data-reveal>
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
+        >
           <span className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-5 py-2 text-xs font-semibold tracking-[0.22em] text-[#1a3a6c]">
             USER STORIES
           </span>
@@ -85,16 +88,19 @@ export default function StoriesSlider() {
             Heartfelt stories from families who found calm, confidence, and a deeper connection
             through AstroBaby.
           </p>
-        </header>
+        </motion.header>
 
         <div
           ref={scrollRef}
           className="stories-track mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          data-reveal
         >
           {storiesData.map((story, index) => (
-            <article
+            <motion.article
               key={story.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               className="story-card group min-w-[85vw] snap-center overflow-hidden shrink-0 sm:min-w-[45vw] lg:min-w-[350px] max-w-[380px]"
             >
               <button
@@ -150,7 +156,7 @@ export default function StoriesSlider() {
                   ))}
                 </div> */}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
