@@ -191,7 +191,7 @@ const features: Feature[] = [
   },
   {
     title: "Mentoring",
-    img: "feature_1675749179.png",
+    img: "/images/features/mentoring.jpg",
     tagline: "Live mentoring sessions to guide you through life problems keeping you up at night.",
     body: [
       "Pregnancy is one of the most rewarding experiences a woman can have. But, at times you may have mixed feelings, insecurities, self-doubt, overwhelming feelings, anxiety, etc. Combat these negative feelings easily with Astro Baby Garbh Sanskar's mentoring session.",
@@ -199,7 +199,7 @@ const features: Feature[] = [
   },
   {
     title: "Brainopedia",
-    img: "feature_1675749182.png",
+    img: "/images/features/brainopedia.jpg",
     tagline: "Live brain exercises, games & activities to stimulate the mental growth.",
     body: [
       "A special Brainopedia session for pregnant women includes engaging games, challenging puzzles, a range of quizzes, and other brain-sharpening activities. In this great one-hour session, our amazing host will ensure you will have a lot of fun and joy with other expectant mothers.",
@@ -207,7 +207,7 @@ const features: Feature[] = [
   },
   {
     title: "Library",
-    img: "feature_1675749185.png",
+    img: "/images/features/library.jpg",
     tagline:
       "Handpicked Stories, biographies & inspirational stories from the golden history of India to impart the traits in your baby.",
     body: [
@@ -216,7 +216,7 @@ const features: Feature[] = [
   },
   {
     title: "Doctor's Session",
-    img: "feature_1675749188.png",
+    img: "/images/features/doctors_session.jpg",
     tagline:
       "Answers to all of your medical issues or concerns from the top gynecologists of the nation in a Live session.",
     body: [
