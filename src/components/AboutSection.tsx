@@ -48,15 +48,20 @@ export default function AboutSection() {
   const headingText = "Nurturing the Future, One Heartbeat at a Time.";
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] py-8 md:py-10">
-      {/* Decorative Floating Blobs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-12 -left-12 h-72 w-72 rounded-full bg-[#EAE6FA]/40 blur-[80px]" />
-        <div className="absolute top-1/3 -right-24 h-[400px] w-[400px] rounded-full bg-[#F3E8FF]/30 blur-[100px]" />
-        <div className="absolute -bottom-20 left-1/4 h-72 w-72 rounded-full bg-[#EAE6FA]/50 blur-[80px]" />
+    <section className="stories-premium relative isolate overflow-hidden bg-gradient-to-br from-[#FFF8FC] via-[#FAF3FF] to-[#F2EBFD] py-12 md:py-16 border-b border-pink-100/60">
+      {/* Mandala & Sparkle Background Decorations */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        <div className="mandala absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />
+        <div className="mandala absolute -right-32 bottom-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#F4C27A]" />
+        <span className="absolute left-[7%] top-[12%] h-2.5 w-2.5 rotate-45 bg-[#F4C27A] shadow-[0_0_18px_#F4C27A] opacity-70" />
+        <span className="story-float absolute right-[9%] top-[16%] text-2xl text-[#8B32BD]/40">✦</span>
+        <span className="story-float absolute bottom-[14%] left-[4%] text-xl text-[#F4C27A]/70 [animation-delay:1.2s]">✧</span>
+        <span className="absolute right-[5%] top-1/4 h-48 w-48 rounded-full bg-[#8B32BD]/10 blur-3xl" />
+        <span className="absolute bottom-[8%] left-[10%] h-56 w-56 rounded-full bg-[#F4C27A]/15 blur-3xl" />
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[480px] w-[480px] rounded-full bg-gradient-to-tr from-[#F63D8E]/5 via-[#2584F5]/5 to-transparent blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 md:px-6">
+      <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
         <div className="grid gap-6 md:grid-cols-12 md:gap-8 lg:gap-10">
           {/* Left Column: Image with Framer Motion reveal */}
           <div className="md:col-span-5 md:h-full">
