@@ -111,7 +111,7 @@ export default function BlogDetailPage() {
                 ) : (
                   <div className="relative w-full h-full">
                     <img
-                      src="/images/astrobaby_video_spotlight.png"
+                      src="/images/astrobaby_video_spotlight.jpg"
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

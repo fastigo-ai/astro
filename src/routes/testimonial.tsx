@@ -455,7 +455,7 @@ export default function TestimonialPage() {
               className="relative block group overflow-hidden rounded-2xl shadow-md border border-pink-100"
             >
               <img
-                src="/images/astrobaby_video_spotlight.png"
+                src="/images/astrobaby_video_spotlight.jpg"
                 alt="Astro Baby Garbh Sanskar User Stories Video Spotlight"
                 className="w-full h-auto object-cover max-h-[440px] rounded-2xl transition-transform duration-500 group-hover:scale-102"
               />

@@ -32,7 +32,7 @@ const BLOG_THUMBNAILS = [
   "/images/story_thumb_4.png",
   "/images/story_thumb_5.png",
   "/images/celestial_mother.png",
-  "/images/astrobaby_video_spotlight.png",
+  "/images/astrobaby_video_spotlight.jpg",
   "/images/about_premium.png",
   "/images/features_banner_astrobaby.png",
   "/images/hero/hero-1.png",
