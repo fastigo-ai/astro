@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
+import { motion } from "framer-motion";
 import {
   Sparkles,
   GraduationCap,
@@ -398,7 +398,13 @@ export default function FeaturesSection() {
           {/* Left Column: 5 Features (Right-aligned details on desktop) */}
           <div className="lg:col-span-4 space-y-5 order-2 lg:order-1">
             {leftFeatures.map((item, idx) => (
-              <div key={idx} data-left-feature-card>
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+              >
                 <FeatureCard
                   icon={item.icon}
                   title={item.title}
@@ -407,7 +413,7 @@ export default function FeaturesSection() {
                   iconColor={item.iconColor}
                   alignRight={true}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -422,8 +428,11 @@ export default function FeaturesSection() {
               </div>
 
               {/* iPhone Mockup wrapper */}
-              <div
-                data-iphone-mockup
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 className="relative z-10 w-[260px] h-[530px] bg-slate-900 rounded-[44px] p-2.5 shadow-[0_25px_60px_rgba(0,0,0,0.12)] border-[5.5px] border-slate-800 overflow-hidden"
               >
                 {/* Speaker notch */}
@@ -446,14 +455,20 @@ export default function FeaturesSection() {
                   {/* Subtle glass screen reflection overlay */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Right Column: 5 Features */}
           <div className="lg:col-span-4 space-y-5 order-3">
             {rightFeatures.map((item, idx) => (
-              <div key={idx} data-right-feature-card>
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+              >
                 <FeatureCard
                   icon={item.icon}
                   title={item.title}
@@ -462,7 +477,7 @@ export default function FeaturesSection() {
                   iconColor={item.iconColor}
                   alignRight={false}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

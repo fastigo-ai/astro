@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
-import { gsap } from "@/utils/gsapSetup";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import HeroSlider from "@/components/HeroSlider";
 import StoriesSlider from "@/components/StoriesSlider";
 import MobileFeatureSlider from "@/components/MobileFeatureSlider";
@@ -136,56 +136,6 @@ const faqs = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const faqRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        if (statsRef.current) {
-          gsap.fromTo(
-            statsRef.current.querySelectorAll(".stat-card"),
-            { opacity: 0, y: 30, scale: 0.94 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.75,
-              stagger: 0.1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: statsRef.current,
-                start: "top 88%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        }
-
-        if (faqRef.current) {
-          gsap.fromTo(
-            faqRef.current.querySelectorAll(".faq-item"),
-            { opacity: 0, y: 25 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.65,
-              stagger: 0.08,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: faqRef.current,
-                start: "top 88%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        }
-      });
-      return () => ctx.revert();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="home-bg min-h-screen text-slate-800">
@@ -206,35 +156,61 @@ export default function Home() {
       <StoriesSlider />
 
       {/* Stats */}
-      <section ref={statsRef} className="py-14 relative z-10">
+      <section className="py-14 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center text-2xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-2xl md:text-4xl font-semibold text-[#1a3a6c] mb-10"
+          >
             A Glimpse of <span className="text-red-600">Positive motherhood</span> and happier
             lives...
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {stats.map((st) => (
-              <div key={st.label} className="stat-card text-center p-4 bg-[#eef1f5] rounded-xl hover:shadow-md transition-shadow">
+            {stats.map((st, i) => (
+              <motion.div
+                key={st.label}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.1, ease: "easeOut" }}
+                className="stat-card text-center p-4 bg-[#eef1f5] rounded-xl hover:shadow-md transition-shadow"
+              >
                 <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F63D8E]/10 text-[#F63D8E] flex items-center justify-center font-bold text-lg">
                   ✦
                 </div>
                 <div className="text-xl font-bold text-[#1a3a6c]">{st.num}</div>
                 <div className="text-sm text-slate-600 mt-1">{st.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section ref={faqRef} className="py-14 relative z-10">
+      <section className="py-14 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10"
+          >
             Frequently Asked Questions (FAQs)
-          </h2>
+          </motion.h2>
           <div className="space-y-3">
             {faqs.map((f, i) => (
-              <div key={i} className="faq-item border border-slate-200 rounded-xl overflow-hidden">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                className="faq-item border border-slate-200 rounded-xl overflow-hidden"
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex justify-between items-center text-left px-5 py-4 bg-[#eef1f5] hover:bg-slate-200 transition-colors"
@@ -244,8 +220,18 @@ export default function Home() {
                     {openFaq === i ? "−" : "+"}
                   </span>
                 </button>
-                {openFaq === i && <div className="p-5 text-slate-700 leading-relaxed bg-white">{f.a}</div>}
-              </div>
+                {openFaq === i && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="p-5 text-slate-700 leading-relaxed bg-white"
+                  >
+                    {f.a}
+                  </motion.div>
+                )}
+              </motion.div>
             ))}
           </div>
         </div>
