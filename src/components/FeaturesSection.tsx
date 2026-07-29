@@ -135,9 +135,11 @@ export default function FeaturesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    "/images/features/slide1.png",
-    "/images/features/slide2.png",
-    "/images/features/slide3.png",
+    "/images/features/sankalp_poojan.jpg",
+    "/images/features/punsavan_sanskar.jpg",
+    "/images/features/simantonnayana_sanskar.jpg",
+    "/images/features/garbhsanskar_sutra.jpg",
+    "/images/features/vaidic_mantra_vrushti.jpg",
   ];
 
   const leftFeatures = [

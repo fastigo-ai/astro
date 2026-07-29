@@ -9,7 +9,7 @@ type Feature = { title: string; img: string; tagline: string; body: string[] };
 const features: Feature[] = [
   {
     title: "Sankalp Poojan",
-    img: "feature_mo_sanklap.webp",
+    img: "/images/features/sankalp_poojan.jpg",
     tagline: "Live Sankalp Poojan before starting Garbh Sanskar",
     body: [
       "In Vaidic Indian tradition, every auspicious work starts with Sankalp poojan. At Astro Baby, Vaidic Sankalp poojan is done live under the guidance of our Vaidic Brahmin. Through Sankalp Poojan, you pray to God, the Navagrahas and the Nakshatras to give strength and determination to carry this pregnancy for the whole term and to bless you and your child with the divine qualities of wisdom, health and positivity.",
@@ -18,7 +18,7 @@ const features: Feature[] = [
   },
   {
     title: "Punsavan Sanskar",
-    img: "xxpunsavan_sanskar.webp",
+    img: "/images/features/punsavan_sanskar.jpg",
     tagline: "An important sanskar performed during the third month of pregnancy",
     body: [
       "The first mention of Punsavan Sanskar has been found in Atharva Veda. As per Vaidic tradition, it is the second sanskar of the sixteen sanksars. This sanskar is considered to be one of the most important rites for human life. The vaidic brahman group at Astro Baby perform this sanskar during the third month of pregnancy as this is when the baby's nervous system starts developing.",
@@ -27,7 +27,7 @@ const features: Feature[] = [
   },
   {
     title: "Simantonnayana Sanskar",
-    img: "simantonayan_sanskar.webp",
+    img: "/images/features/simantonnayana_sanskar.jpg",
     tagline: "An important sanskar performed during the seventh/eighth month of pregnancy",
     body: [
       "Simantonnayana Sanskar is the third sanskar of the sixteen sanskars according to vaidic tradition. This sanskar is performed in order to prevent miscarriage, to ensure the safety of the baby in the womb, and to develop the baby's fortune.",
@@ -36,7 +36,7 @@ const features: Feature[] = [
   },
   {
     title: "GarbhSanskar Sutra",
-    img: "features.webp",
+    img: "/images/features/garbhsanskar_sutra.jpg",
     tagline: "Sutras to impart mann, buddhi and sanskars in your child",
     body: [
       "During the 9 months of pregnancy, each month, there is a phased development of the various physical and mental dimensions of the baby. Astro Baby is a pure science, which provides Garbh Sanskar Sutras, according to the present developmental stage of the fetus. These sutras turn your pregnancy into a wonderful, joyous experience and prepares you to welcome a wise, sanskari and healthy baby.",
@@ -44,7 +44,7 @@ const features: Feature[] = [
   },
   {
     title: "Vaidic Mantra Vrushti",
-    img: "features3.webp",
+    img: "/images/features/vaidic_mantra_vrushti.jpg",
     tagline: "Miraculous vaidic chants for the promotion of special qualities in the child",
     body: [
       "The Vedas mention special mantras for pregnancy, which have miraculous effects on the fetus. Originated from Rigveda, Yajurveda, Samaveda and Atharvaveda these mantras are available in the Astro Baby App.",
@@ -423,17 +423,9 @@ export default function FeaturesPage() {
                     <div className={`${reverse ? "md:order-2" : ""} flex justify-center`}>
                       <div className="relative group w-full max-w-md">
                         <img
-                          src={
-                            i % 4 === 0
-                              ? "/images/story_thumb_1.png"
-                              : i % 4 === 1
-                              ? "/images/story_thumb_2.png"
-                              : i % 4 === 2
-                              ? "/images/story_thumb_3.png"
-                              : "/images/astrobaby_video_spotlight.png"
-                          }
+                          src={f.img ? (f.img.startsWith('/') ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png"}
                           alt={f.title}
-                          className="w-full h-auto object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
+                          className="w-full h-64 md:h-72 object-cover rounded-2xl border-4 border-white shadow-md transition-transform duration-300 group-hover:scale-105"
                           loading="lazy"
                         />
                       </div>
