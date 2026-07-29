@@ -140,42 +140,51 @@ export default function Home() {
   const faqRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (statsRef.current) {
-      gsap.fromTo(
-        statsRef.current.querySelectorAll(".stat-card"),
-        { opacity: 0, y: 30, scale: 0.92 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.75,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: "top 85%",
-          },
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
+        if (statsRef.current) {
+          gsap.fromTo(
+            statsRef.current.querySelectorAll(".stat-card"),
+            { opacity: 0, y: 30, scale: 0.94 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.75,
+              stagger: 0.1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: statsRef.current,
+                start: "top 88%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
         }
-      );
-    }
 
-    if (faqRef.current) {
-      gsap.fromTo(
-        faqRef.current.querySelectorAll(".faq-item"),
-        { opacity: 0, y: 25 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: faqRef.current,
-            start: "top 85%",
-          },
+        if (faqRef.current) {
+          gsap.fromTo(
+            faqRef.current.querySelectorAll(".faq-item"),
+            { opacity: 0, y: 25 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.65,
+              stagger: 0.08,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: faqRef.current,
+                start: "top 88%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
         }
-      );
-    }
+      });
+      return () => ctx.revert();
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

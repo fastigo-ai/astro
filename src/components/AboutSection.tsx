@@ -99,18 +99,22 @@ export default function AboutSection() {
       });
 
       // 3. SplitText Heading Reveal Stagger
-      gsap.to("[data-split-word]", {
-        y: "0%",
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.04,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: "[data-split-trigger]",
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
+      gsap.fromTo(
+        "[data-split-word]",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.04,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "[data-split-trigger]",
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
 
       // 4. Stagger cards reveal (only if they exist)
       if (document.querySelectorAll("[data-feature-card]").length > 0) {
@@ -274,7 +278,7 @@ export default function AboutSection() {
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#1a3a6c] tracking-tight">
                 {headingWords.map((word, index) => (
                   <span key={index} className="inline-block overflow-hidden mr-2 pb-0.5">
-                    <span data-split-word className="inline-block translate-y-[110%] opacity-0">
+                    <span data-split-word className="inline-block">
                       {word}
                     </span>
                   </span>
