@@ -53,7 +53,7 @@ const features: Feature[] = [
   },
   {
     title: "GarbhSanskar Music",
-    img: "features2.webp",
+    img: "/images/features/garbhsanskar_music.jpg",
     tagline: "Music based on specific ragas for the ideal development of a child",
     body: [
       "Indian ragas and Garbh Sanskar music have a positive impact on our mood, mind and body. This fact is now recognized by the world's top scientists and universities as well. Children who have been exposed to traditional ragas before birth develop many qualities such as intelligence, health and calmness in nature.",
@@ -62,7 +62,7 @@ const features: Feature[] = [
   },
   {
     title: "Jeevan Sutra - The Life Training",
-    img: "features8.webp",
+    img: "/images/features/jeevan_sutra.jpg",
     tagline: "Sutra to guide you through the ups and downs of life",
     body: [
       "The influence of the mother's state of mind during pregnancy has a huge impact on the baby and its effects can last for the rest of their life. A pregnant woman faces many ups and downs and has to deal with negative emotions like worry, stress, sadness etc. while still keeping her mind stable, calm, and positive.",
@@ -71,7 +71,7 @@ const features: Feature[] = [
   },
   {
     title: "Medi-Mitra Sessions",
-    img: "features5.webp",
+    img: "/images/features/medi_mitra_sessions.jpg",
     tagline: "Your friend and guide for all your medical concerns",
     body: [
       "During pregnancy, the role of doctors should not be limited to medical prescriptions, they should be like a friend or an elder member of the family. Someone who can gently and accurately guide you through the physical and mental issues that arise during pregnancy.",
@@ -80,7 +80,7 @@ const features: Feature[] = [
   },
   {
     title: "Isht Mantra",
-    img: "features4.webp",
+    img: "/images/features/isht_mantra.jpg",
     tagline: "Unique Isht Mantra calculated according to the parents' date and time of birth",
     body: [
       "Astro Baby App calculates a raashi-yugm based on the time and date of birth of the mother and father-to-be. This calculation is based on astrology and there is a unique Isht mantra for each parent-couple.",
@@ -89,7 +89,7 @@ const features: Feature[] = [
   },
   {
     title: "GarbhSamvad",
-    img: "feature_mo_garbhsamvad.webp",
+    img: "/images/features/garbhsamvad.jpg",
     tagline: "Laying the foundation of the bond of a lifetime",
     body: [
       "Samvad - dialogue or communication, is one of the most crucial aspects of Garbh Sanskar. Your baby may not be able to listen or understand your words especially during early pregnancy but they can certainly sense the emotions and feelings behind your words.",
