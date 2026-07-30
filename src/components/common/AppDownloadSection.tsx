@@ -34,29 +34,29 @@ export default function AppDownloadSection({
         duration: 1,
         ease: "power3.out",
       })
-      // Card scale 0.95 -> 1 with ease
-      .from(
-        cardRef.current,
-        {
-          scale: 0.95,
-          opacity: 0,
-          duration: 0.9,
-          ease: "power3.out",
-        },
-        "-=0.7"
-      )
-      // Stagger heading, text, divider, and buttons (0.15s delay)
-      .from(
-        ".gsap-stagger-item",
-        {
-          y: 25,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      );
+        // Card scale 0.95 -> 1 with ease
+        .from(
+          cardRef.current,
+          {
+            scale: 0.95,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
+          },
+          "-=0.7",
+        )
+        // Stagger heading, text, divider, and buttons (0.15s delay)
+        .from(
+          ".gsap-stagger-item",
+          {
+            y: 25,
+            opacity: 0,
+            duration: 0.7,
+            stagger: 0.15,
+            ease: "power2.out",
+          },
+          "-=0.5",
+        );
 
       // 2. Infinite floating animation for spiritual icons (stars, moon, lotus)
       gsap.to(".gsap-floating-icon-1", {

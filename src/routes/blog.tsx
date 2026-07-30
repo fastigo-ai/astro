@@ -63,11 +63,8 @@ export default function BlogPage() {
   const filteredPosts = useMemo(() => {
     return posts.filter((p) => {
       const category = getPostCategory(p.title);
-      const matchesCategory =
-        selectedCategory === "All" || category === selectedCategory;
-      const matchesSearch = p.title
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase().trim());
+      const matchesCategory = selectedCategory === "All" || category === selectedCategory;
+      const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase().trim());
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
@@ -96,7 +93,7 @@ export default function BlogPage() {
           stagger: 0.05,
           ease: "power2.out",
           clearProps: "opacity,transform",
-        }
+        },
       );
     }, blogSectionRef);
     return () => ctx.revert();
@@ -239,7 +236,10 @@ export default function BlogPage() {
       </section>
 
       {/* Main Blog Grid Section */}
-      <section ref={blogSectionRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] min-h-[600px]">
+      <section
+        ref={blogSectionRef}
+        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] min-h-[600px]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Header Stats / Filters info */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-4 border-b border-pink-200/80 gap-3">
@@ -376,12 +376,7 @@ export default function BlogPage() {
             /* No Results state */
             <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
               <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -412,8 +407,8 @@ export default function BlogPage() {
             <div className="mt-14 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-sm text-slate-500">
                 Page <span className="font-bold text-[#1a3a6c]">{safeCurrentPage}</span> of{" "}
-                <span className="font-bold text-[#1a3a6c]">{totalPages}</span> ({filteredPosts.length}{" "}
-                total articles)
+                <span className="font-bold text-[#1a3a6c]">{totalPages}</span> (
+                {filteredPosts.length} total articles)
               </div>
 
               {/* Pagination controls */}
@@ -497,4 +492,3 @@ export default function BlogPage() {
     </Layout>
   );
 }
-

@@ -60,9 +60,7 @@ export default function HeroSlider() {
             <h1 className="font-sans mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#1A3A6C] tracking-tight">
               {slide.heading.map((line, i) => (
                 <span key={i} className="block overflow-hidden">
-                  <span className="block text-[#1A3A6C] not-italic">
-                    {line}
-                  </span>
+                  <span className="block text-[#1A3A6C] not-italic">{line}</span>
                 </span>
               ))}
             </h1>
@@ -73,12 +71,14 @@ export default function HeroSlider() {
               {slide.programs.map((p) => (
                 <div
                   key={p}
-                  className="rounded-2xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5"
+                  className="rounded-[16px] md:rounded-[20px] border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5"
                 >
                   <div className="text-[10px] uppercase tracking-wider text-[#EA3484] font-bold">
                     Program
                   </div>
-                  <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#1A3A6C]">{p}</div>
+                  <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#1A3A6C]">
+                    {p}
+                  </div>
                 </div>
               ))}
             </div>
@@ -88,11 +88,13 @@ export default function HeroSlider() {
             </div>
             <div className="mt-10 flex items-center gap-6 text-xs text-slate-500 font-medium">
               <div>
-                <span className="font-sans text-2xl font-extrabold text-[#F8B62D]">4.8★</span> App rating
+                <span className="font-sans text-2xl font-extrabold text-[#F8B62D]">4.8★</span> App
+                rating
               </div>
               <div className="h-8 w-px bg-slate-200" />
               <div>
-                <span className="font-sans text-2xl font-extrabold text-[#2584F5]">500k+</span> Mothers
+                <span className="font-sans text-2xl font-extrabold text-[#2584F5]">500k+</span>{" "}
+                Mothers
               </div>
             </div>
           </motion.div>

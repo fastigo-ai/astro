@@ -54,8 +54,12 @@ export default function AboutSection() {
         <div className="mandala absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />
         <div className="mandala absolute -right-32 bottom-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#F4C27A]" />
         <span className="absolute left-[7%] top-[12%] h-2.5 w-2.5 rotate-45 bg-[#F4C27A] shadow-[0_0_18px_#F4C27A] opacity-70" />
-        <span className="story-float absolute right-[9%] top-[16%] text-2xl text-[#8B32BD]/40">✦</span>
-        <span className="story-float absolute bottom-[14%] left-[4%] text-xl text-[#F4C27A]/70 [animation-delay:1.2s]">✧</span>
+        <span className="story-float absolute right-[9%] top-[16%] text-2xl text-[#8B32BD]/40">
+          ✦
+        </span>
+        <span className="story-float absolute bottom-[14%] left-[4%] text-xl text-[#F4C27A]/70 [animation-delay:1.2s]">
+          ✧
+        </span>
         <span className="absolute right-[5%] top-1/4 h-48 w-48 rounded-full bg-[#8B32BD]/10 blur-3xl" />
         <span className="absolute bottom-[8%] left-[10%] h-56 w-56 rounded-full bg-[#F4C27A]/15 blur-3xl" />
         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[480px] w-[480px] rounded-full bg-gradient-to-tr from-[#F63D8E]/5 via-[#2584F5]/5 to-transparent blur-3xl" />
@@ -105,7 +109,8 @@ export default function AboutSection() {
             {/* Badge & Heading & Description */}
             <div className="space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm">
-                <Sparkles className="h-2.5 w-2.5" /> About <span className="font-extrabold text-[#EA3484]">Astro Baby</span>
+                <Sparkles className="h-2.5 w-2.5" /> About{" "}
+                <span className="font-extrabold text-[#EA3484]">Astro Baby</span>
               </span>
 
               <motion.h2
@@ -125,9 +130,11 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-sm md:text-base leading-relaxed text-slate-600 font-sans max-w-xl"
               >
-                <strong className="text-[#EA3484] font-bold">Astro Baby</strong> <strong className="text-[#EA3484] font-bold">Garbh Sanskar</strong> is India's leading digital platform combining ancient Vedic
-                wisdom with modern obstetric science. Created by a passionate team of experts, we
-                make pregnancy a happy, healthy, and spiritually rich journey.
+                <strong className="text-[#EA3484] font-bold">Astro Baby</strong>{" "}
+                <strong className="text-[#EA3484] font-bold">Garbh Sanskar</strong> is India's
+                leading digital platform combining ancient Vedic wisdom with modern obstetric
+                science. Created by a passionate team of experts, we make pregnancy a happy,
+                healthy, and spiritually rich journey.
               </motion.p>
 
               {isHomePage && (

@@ -25,7 +25,6 @@ export default function NewsletterSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* White Glassmorphism Luxury Card */}
         <div className="bg-white/90 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#ECE5F6] shadow-[0_20px_60px_-15px_rgba(90,9,143,0.08)] grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          
           {/* Left Side: Large AI Generated Image with Rounded Corners & Soft Shadow */}
           <div className="lg:col-span-5 relative group">
             <div className="relative aspect-[4/3] sm:aspect-square rounded-[28px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(90,9,143,0.25)] hover:shadow-[0_35px_70px_-12px_rgba(90,9,143,0.35)] border-2 border-white/80 ring-1 ring-[#5A098F]/15 bg-[#FAF8FD] transition-all duration-500">
@@ -35,7 +34,7 @@ export default function NewsletterSection() {
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1E1B2E]/50 via-transparent to-transparent opacity-70" />
-              
+
               {/* Soft Luxury Image Badge */}
               <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md text-[#1E1B2E] px-4 py-3 rounded-2xl shadow-xl border border-white/80 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-[#FAF8FD] text-[#5A098F] flex items-center justify-center font-bold text-base flex-shrink-0 border border-[#ECE5F6] shadow-xs">
@@ -58,7 +57,6 @@ export default function NewsletterSection() {
 
           {/* Right Side: Content & Subscription Form */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6 lg:space-y-8">
-            
             {/* Header Badge & Title */}
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8FD] text-[#5A098F] border border-[#ECE5F6] text-xs font-semibold tracking-wider uppercase">
@@ -75,7 +73,8 @@ export default function NewsletterSection() {
               </h2>
 
               <p className="text-[#5F5B73] text-sm sm:text-base leading-relaxed font-['Plus_Jakarta_Sans',sans-serif] font-normal pt-1">
-                To get more Garbh Sanskar related content in your inbox, subscribe to our newsletter by submitting your email address.
+                To get more Garbh Sanskar related content in your inbox, subscribe to our newsletter
+                by submitting your email address.
               </p>
             </div>
 
@@ -91,7 +90,8 @@ export default function NewsletterSection() {
                       You're Subscribed!
                     </h4>
                     <p className="text-xs text-[#5F5B73] mt-0.5 font-['Plus_Jakarta_Sans',sans-serif]">
-                      Thank you for joining our newsletter. We've sent your welcome guide to your inbox.
+                      Thank you for joining our newsletter. We've sent your welcome guide to your
+                      inbox.
                     </p>
                   </div>
                 </div>
@@ -101,8 +101,18 @@ export default function NewsletterSection() {
                 <div className="flex flex-col sm:flex-row gap-3.5">
                   <div className="relative flex-1">
                     <div className="absolute inset-y-0 left-0 pl-4.5 flex items-center pointer-events-none text-[#948EAD]">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.8"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
                       </svg>
                     </div>
                     <input
@@ -125,8 +135,18 @@ export default function NewsletterSection() {
                     ) : (
                       <>
                         <span>Subscribe</span>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2.5"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
                         </svg>
                       </>
                     )}
@@ -144,9 +164,7 @@ export default function NewsletterSection() {
                 </div>
               </form>
             )}
-
           </div>
-
         </div>
       </div>
     </section>

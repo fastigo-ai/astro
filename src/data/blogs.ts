@@ -11,11 +11,39 @@ export type Post = { img: string; title: string; date: string };
 
 export function getPostCategory(title: string): string {
   const t = title.toLowerCase();
-  if (t.includes("trimester") || t.includes("month") || t.includes("stage")) return "Trimester Guide";
-  if (t.includes("diet") || t.includes("food") || t.includes("fruit") || t.includes("water") || t.includes("diabetes") || t.includes("coconut")) return "Diet & Nutrition";
-  if (t.includes("yoga") || t.includes("exercise") || t.includes("pain") || t.includes("sleep") || t.includes("stress") || t.includes("vomiting") || t.includes("blood pressure")) return "Health & Fitness";
-  if (t.includes("mantra") || t.includes("shloka") || t.includes("music") || t.includes("punsavan") || t.includes("simant") || t.includes("scripture") || t.includes("soul")) return "Vedic & Mantras";
-  if (t.includes("sanskar") || t.includes("womb") || t.includes("baby") || t.includes("samvad")) return "Garbh Sanskar";
+  if (t.includes("trimester") || t.includes("month") || t.includes("stage"))
+    return "Trimester Guide";
+  if (
+    t.includes("diet") ||
+    t.includes("food") ||
+    t.includes("fruit") ||
+    t.includes("water") ||
+    t.includes("diabetes") ||
+    t.includes("coconut")
+  )
+    return "Diet & Nutrition";
+  if (
+    t.includes("yoga") ||
+    t.includes("exercise") ||
+    t.includes("pain") ||
+    t.includes("sleep") ||
+    t.includes("stress") ||
+    t.includes("vomiting") ||
+    t.includes("blood pressure")
+  )
+    return "Health & Fitness";
+  if (
+    t.includes("mantra") ||
+    t.includes("shloka") ||
+    t.includes("music") ||
+    t.includes("punsavan") ||
+    t.includes("simant") ||
+    t.includes("scripture") ||
+    t.includes("soul")
+  )
+    return "Vedic & Mantras";
+  if (t.includes("sanskar") || t.includes("womb") || t.includes("baby") || t.includes("samvad"))
+    return "Garbh Sanskar";
   return "Pregnancy Care";
 }
 
@@ -42,14 +70,17 @@ const BLOG_THUMBNAILS = [
 
 export function getPostImage(post?: Post, index?: number): string {
   if (post?.img) {
-    if (post.img.startsWith("http://") || post.img.startsWith("https://") || post.img.startsWith("/")) {
+    if (
+      post.img.startsWith("http://") ||
+      post.img.startsWith("https://") ||
+      post.img.startsWith("/")
+    ) {
       return post.img;
     }
   }
   const idx = index !== undefined ? Math.abs(index) : Math.abs(post?.title?.length || 0);
   return BLOG_THUMBNAILS[idx % BLOG_THUMBNAILS.length];
 }
-
 
 export const posts: Post[] = [
   {

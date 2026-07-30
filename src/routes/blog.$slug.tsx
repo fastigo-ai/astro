@@ -124,7 +124,10 @@ export default function BlogDetailPage() {
                       aria-label="Play video guide"
                     >
                       <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-[#5A098F] to-[#7C3AED] text-white rounded-full flex items-center justify-center shadow-xl group-hover/btn:scale-110 transition-transform">
-                        <svg className="w-8 h-8 md:w-10 md:h-10 fill-current ml-1" viewBox="0 0 24 24">
+                        <svg
+                          className="w-8 h-8 md:w-10 md:h-10 fill-current ml-1"
+                          viewBox="0 0 24 24"
+                        >
                           <path d="M8 5v14l11-7z" />
                         </svg>
                       </div>
@@ -154,8 +157,18 @@ export default function BlogDetailPage() {
                     {category}
                   </span>
                   <span className="text-xs font-semibold text-slate-600 bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-2xs flex items-center gap-1">
-                    <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-3 h-3 text-slate-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                     {readTime}
                   </span>
@@ -172,16 +185,18 @@ export default function BlogDetailPage() {
                     AB
                   </div>
                   <div>
-                    <span className="font-semibold text-slate-800 block">Astro Baby Expert Team</span>
+                    <span className="font-semibold text-slate-800 block">
+                      Astro Baby Expert Team
+                    </span>
                     <span className="text-slate-500">{post.date}</span>
                   </div>
                 </div>
 
                 {/* Short Excerpt */}
                 <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed line-clamp-3">
-                  {post.title} — pregnancy is one of the most beautiful and transformative phases in a
-                  woman's life. This guide explores its significance through Garbh Sanskar, ancient wisdom,
-                  and practical well-being practices.
+                  {post.title} — pregnancy is one of the most beautiful and transformative phases in
+                  a woman's life. This guide explores its significance through Garbh Sanskar,
+                  ancient wisdom, and practical well-being practices.
                 </p>
               </div>
 
@@ -201,8 +216,18 @@ export default function BlogDetailPage() {
                     className="px-4 py-2.5 sm:py-3 rounded-full bg-white border border-slate-300 text-slate-700 text-xs sm:text-sm font-semibold hover:bg-slate-50 hover:border-[#1a3a6c] transition-all flex items-center gap-2 shadow-xs"
                     aria-label="Share article"
                   >
-                    <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-5.368 3 3 0 000 5.368zm0 9.316a3 3 0 100-5.368 3 3 0 000 5.368z" />
+                    <svg
+                      className="w-4 h-4 text-red-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-5.368 3 3 0 000 5.368zm0 9.316a3 3 0 100-5.368 3 3 0 000 5.368z"
+                      />
                     </svg>
                     <span>Share</span>
                   </button>
@@ -288,16 +313,17 @@ export default function BlogDetailPage() {
 
           {/* Expanded Full Article Section (Toggled by Read More) */}
           {isExpanded && (
-            <div ref={fullArticleRef} className="mt-10 bg-white rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-lg animate-fadeIn">
+            <div
+              ref={fullArticleRef}
+              className="mt-10 bg-white rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-lg animate-fadeIn"
+            >
               <div className="max-w-3xl mx-auto prose prose-slate max-w-none text-slate-700 leading-relaxed text-base md:text-lg">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mb-4">
-                  Introduction
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mb-4">Introduction</h2>
                 <p>
-                  Garbh Sanskar is the practice of educating and nurturing the unborn child in the womb.
-                  Rooted in ancient Indian scriptures, it emphasizes the powerful bond between mother and baby,
-                  and how a mother's thoughts, food, environment, and spiritual practices influence the
-                  child's physical, mental, and emotional development.
+                  Garbh Sanskar is the practice of educating and nurturing the unborn child in the
+                  womb. Rooted in ancient Indian scriptures, it emphasizes the powerful bond between
+                  mother and baby, and how a mother's thoughts, food, environment, and spiritual
+                  practices influence the child's physical, mental, and emotional development.
                 </p>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
@@ -306,7 +332,10 @@ export default function BlogDetailPage() {
                 <ul className="list-disc pl-6 space-y-2 text-slate-700">
                   <li>Supports healthy fetal brain development and emotional bonding.</li>
                   <li>Reduces maternal stress, anxiety, and mood swings during pregnancy.</li>
-                  <li>Encourages a positive lifestyle, nutritious sattvic diet, and daily wellness routine.</li>
+                  <li>
+                    Encourages a positive lifestyle, nutritious sattvic diet, and daily wellness
+                    routine.
+                  </li>
                   <li>Instills sanskaars (positive virtues) in the baby even before birth.</li>
                 </ul>
 
@@ -314,23 +343,24 @@ export default function BlogDetailPage() {
                   Practical Guidance & Daily Tips
                 </h2>
                 <p>
-                  Include daily meditation, mantra chanting, satsang, spiritual reading, gentle yoga, and a
-                  balanced diet in your routine. Communicate lovingly with your baby (Garbh Samvad), listen to
-                  soothing Garbh Sanskar music, and surround yourself with positive thoughts and environment.
+                  Include daily meditation, mantra chanting, satsang, spiritual reading, gentle
+                  yoga, and a balanced diet in your routine. Communicate lovingly with your baby
+                  (Garbh Samvad), listen to soothing Garbh Sanskar music, and surround yourself with
+                  positive thoughts and environment.
                 </p>
 
                 <blockquote className="border-l-4 border-red-600 bg-[#f7f5f0] p-5 my-8 rounded-r-xl text-slate-800 italic font-serif text-lg md:text-xl shadow-xs">
-                  "A calm, happy, and spiritually connected mother gives birth to a healthy, intelligent,
-                  and virtuous child."
+                  "A calm, happy, and spiritually connected mother gives birth to a healthy,
+                  intelligent, and virtuous child."
                 </blockquote>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
                   Conclusion
                 </h2>
                 <p>
-                  Every moment of pregnancy is a golden opportunity to shape the future of your child. With
-                  the guidance of Astro Baby Garbh Sanskar, thousands of mothers have experienced a
-                  joyful, mindful, and spiritually enriched pregnancy journey.
+                  Every moment of pregnancy is a golden opportunity to shape the future of your
+                  child. With the guidance of Astro Baby Garbh Sanskar, thousands of mothers have
+                  experienced a joyful, mindful, and spiritually enriched pregnancy journey.
                 </p>
 
                 <div className="mt-8 pt-6 border-t border-slate-200 flex justify-between items-center">
@@ -352,7 +382,6 @@ export default function BlogDetailPage() {
           )}
         </div>
       </section>
-
 
       {/* SCROLLABLE RELATED ARTICLES SECTION */}
       {related.length > 0 && (
@@ -418,8 +447,18 @@ export default function BlogDetailPage() {
                         {cat}
                       </span>
                       <span className="absolute top-3 right-3 bg-slate-900/75 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
-                        <svg className="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          className="w-3 h-3 text-slate-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                         {rTime}
                       </span>
@@ -438,8 +477,18 @@ export default function BlogDetailPage() {
 
                       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-red-600 group-hover:text-red-700">
                         <span>Read Full Article</span>
-                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        <svg
+                          className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
                         </svg>
                       </div>
                     </div>
@@ -453,7 +502,6 @@ export default function BlogDetailPage() {
 
       {/* Newsletter */}
       <NewsletterSection />
-
     </Layout>
   );
 }
@@ -490,4 +538,3 @@ function BlogError() {
     </Layout>
   );
 }
-

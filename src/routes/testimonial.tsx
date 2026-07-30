@@ -310,10 +310,7 @@ export default function TestimonialPage() {
     return stories.filter((s) => {
       const q = searchQuery.toLowerCase().trim();
       if (!q) return true;
-      return (
-        s.name.toLowerCase().includes(q) ||
-        s.city.toLowerCase().includes(q)
-      );
+      return s.name.toLowerCase().includes(q) || s.city.toLowerCase().includes(q);
     });
   }, [searchQuery]);
 
@@ -339,7 +336,7 @@ export default function TestimonialPage() {
           stagger: 0.04,
           ease: "power2.out",
           clearProps: "opacity,transform",
-        }
+        },
       );
     }, storiesGridRef);
     return () => ctx.revert();
@@ -384,8 +381,7 @@ export default function TestimonialPage() {
       {/* Top Banner */}
       <section
         style={{
-          background:
-            "linear-gradient(135deg, #FFF6FB 0%, #F9F4FF 30%, #F4F9FF 65%, #EDF5FF 100%)",
+          background: "linear-gradient(135deg, #FFF6FB 0%, #F9F4FF 30%, #F4F9FF 65%, #EDF5FF 100%)",
         }}
         className="relative py-14 md:py-16 px-4 overflow-hidden border-b border-pink-200/60"
       >
@@ -397,8 +393,8 @@ export default function TestimonialPage() {
             Astro Baby User Stories
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans font-medium">
-            From India and across the world, hear directly from thousands of happy parents whose lives,
-            pregnancies, and babies were blessed through Garbh Sanskar.
+            From India and across the world, hear directly from thousands of happy parents whose
+            lives, pregnancies, and babies were blessed through Garbh Sanskar.
           </p>
 
           {/* Search Input Box */}
@@ -491,7 +487,10 @@ export default function TestimonialPage() {
       </section>
 
       {/* Main Stories Grid Section */}
-      <section ref={storiesGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] min-h-[600px]">
+      <section
+        ref={storiesGridRef}
+        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] min-h-[600px]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Header Stats / Filters info */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-4 border-b border-pink-200/80 gap-3">
@@ -503,10 +502,8 @@ export default function TestimonialPage() {
                 <p className="text-xs md:text-sm text-slate-500 mt-0.5">
                   Showing <span className="font-semibold text-slate-800">{startIndex}</span> to{" "}
                   <span className="font-semibold text-slate-800">{endIndex}</span> of{" "}
-                  <span className="font-bold text-[#1a3a6c]">
-                    {filteredStories.length}
-                  </span>{" "}
-                  user stories
+                  <span className="font-bold text-[#1a3a6c]">{filteredStories.length}</span> user
+                  stories
                 </p>
               )}
             </div>
@@ -541,62 +538,66 @@ export default function TestimonialPage() {
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
 
-                    {/* YouTube Play Icon Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <svg className="w-6 h-6 fill-current ml-0.5" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
+                      {/* YouTube Play Icon Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                          <svg className="w-6 h-6 fill-current ml-0.5" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* Top Left: City Badge */}
+                      <span className="absolute top-3 left-3 bg-[#1a3a6c]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <svg
+                          className="w-3 h-3 text-red-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clipRule="evenodd"
+                          />
                         </svg>
+                        {s.city}
+                      </span>
+
+                      {/* Top Right: Tag */}
+                      <span className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm">
+                        Video Story
+                      </span>
+                    </div>
+
+                    {/* Content Box */}
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-base md:text-lg font-bold text-[#1a3a6c] group-hover:text-red-600 transition-colors leading-snug line-clamp-1">
+                          {s.name}
+                        </h3>
+                        <p className="mt-1 text-xs text-slate-500 font-medium">
+                          Astro Baby Garbh Sanskar App User
+                        </p>
+                      </div>
+
+                      {/* Watch Button */}
+                      <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span className="text-xs font-semibold text-red-600 group-hover:text-red-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                          <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                          Watch Video Story
+                        </span>
+                        <span className="text-xs text-slate-400 font-medium group-hover:text-[#1a3a6c]">
+                          YouTube →
+                        </span>
                       </div>
                     </div>
-
-                    {/* Top Left: City Badge */}
-                    <span className="absolute top-3 left-3 bg-[#1a3a6c]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                      <svg className="w-3 h-3 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                          fillRule="evenodd"
-                          d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {s.city}
-                    </span>
-
-                    {/* Top Right: Tag */}
-                    <span className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm">
-                      Video Story
-                    </span>
-                  </div>
-
-                  {/* Content Box */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-[#1a3a6c] group-hover:text-red-600 transition-colors leading-snug line-clamp-1">
-                        {s.name}
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-500 font-medium">
-                        Astro Baby Garbh Sanskar App User
-                      </p>
-                    </div>
-
-                    {/* Watch Button */}
-                    <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-xs font-semibold text-red-600 group-hover:text-red-700 flex items-center gap-1 group-hover:gap-2 transition-all">
-                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                        Watch Video Story
-                      </span>
-                      <span className="text-xs text-slate-400 font-medium group-hover:text-[#1a3a6c]">
-                        YouTube →
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
+                  </a>
+                );
+              })}
             </div>
           ) : (
             /* No Results state */
@@ -632,8 +633,8 @@ export default function TestimonialPage() {
             <div className="mt-14 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-sm text-slate-500">
                 Page <span className="font-bold text-[#1a3a6c]">{safeCurrentPage}</span> of{" "}
-                <span className="font-bold text-[#1a3a6c]">{totalPages}</span> ({filteredStories.length}{" "}
-                total stories)
+                <span className="font-bold text-[#1a3a6c]">{totalPages}</span> (
+                {filteredStories.length} total stories)
               </div>
 
               {/* Pagination controls */}
@@ -727,4 +728,3 @@ export default function TestimonialPage() {
     </Layout>
   );
 }
-

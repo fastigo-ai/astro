@@ -17,7 +17,7 @@ export function useGsapReveal<T extends HTMLElement>(options?: {
     const ctx = gsap.context(() => {
       // 1. Reveal headers and text headings
       const headings = containerRef.current?.querySelectorAll(
-        "[data-gsap='heading'], h1, h2, h3, .gsap-heading"
+        "[data-gsap='heading'], h1, h2, h3, .gsap-heading",
       );
       headings?.forEach((el) => {
         gsap.fromTo(
@@ -34,13 +34,13 @@ export function useGsapReveal<T extends HTMLElement>(options?: {
               start: options?.start ?? "top 88%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
 
       // 2. Stagger grid items, cards, and list items
       const cards = containerRef.current?.querySelectorAll(
-        "[data-gsap='card'], .gsap-card, article"
+        "[data-gsap='card'], .gsap-card, article",
       );
       if (cards && cards.length > 0) {
         gsap.fromTo(
@@ -58,7 +58,7 @@ export function useGsapReveal<T extends HTMLElement>(options?: {
               start: options?.start ?? "top 85%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
     }, containerRef);

@@ -93,7 +93,7 @@ export default function AwardsPage() {
           stagger: 0.05,
           ease: "power2.out",
           clearProps: "opacity,transform",
-        }
+        },
       );
     }, awardsGridRef);
     return () => ctx.revert();
@@ -127,7 +127,10 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      <section ref={awardsGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+      <section
+        ref={awardsGridRef}
+        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]"
+      >
         <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {awards.map((a, i) => (
             <article

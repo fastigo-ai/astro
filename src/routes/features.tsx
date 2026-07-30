@@ -270,7 +270,7 @@ export default function FeaturesPage() {
               onComplete: () => {
                 gsap.set(el, { clearProps: "opacity,transform" });
               },
-            }
+            },
           );
         });
       }, featuresGridRef);
@@ -293,7 +293,9 @@ export default function FeaturesPage() {
     if (selectedCategory === "Sanskars & Poojan")
       return f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
     if (selectedCategory === "Vaidic Mantras & Music")
-      return f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana");
+      return (
+        f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana")
+      );
     if (selectedCategory === "Live Mentoring & Doctors")
       return (
         f.title.includes("Jeevan Sutra") ||
@@ -346,7 +348,8 @@ export default function FeaturesPage() {
             Garbh Sanskar <span className="text-[#EA3484]">Course & Features</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
-            A unique combination of ancient Shaastra wisdom & modern obstetric science delivered through an intuitive mobile application.
+            A unique combination of ancient Shaastra wisdom & modern obstetric science delivered
+            through an intuitive mobile application.
           </p>
 
           {/* Search bar */}
@@ -393,10 +396,11 @@ export default function FeaturesPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${active
+                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
+                    active
                       ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 scale-105"
                       : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
-                    }`}
+                  }`}
                 >
                   {cat}
                 </button>
@@ -407,7 +411,10 @@ export default function FeaturesPage() {
       </section>
 
       {/* Feature blocks Grid */}
-      <section ref={featuresGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]">
+      <section
+        ref={featuresGridRef}
+        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]"
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
             <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
@@ -447,7 +454,13 @@ export default function FeaturesPage() {
                       <div className="relative group w-full max-w-md">
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
                         <img
-                          src={f.img ? (f.img.startsWith('/') ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png"}
+                          src={
+                            f.img
+                              ? f.img.startsWith("/")
+                                ? f.img
+                                : `/images/${f.img}`
+                              : "/images/story_thumb_1.png"
+                          }
                           alt={f.title}
                           className="relative w-full h-64 md:h-80 object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
                           loading="lazy"

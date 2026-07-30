@@ -229,7 +229,7 @@ export default function TeamPage() {
               onComplete: () => {
                 gsap.set(el, { clearProps: "opacity,transform" });
               },
-            }
+            },
           );
         });
       }, teamGridRef);
@@ -361,7 +361,10 @@ export default function TeamPage() {
       </section>
 
       {/* Members Grid */}
-      <section ref={teamGridRef} className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]">
+      <section
+        ref={teamGridRef}
+        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
             <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
@@ -397,18 +400,24 @@ export default function TeamPage() {
                     data-team-card
                     className="grid md:grid-cols-3 gap-8 md:gap-10 items-center bg-gradient-to-br from-white via-[#FFF8FD] to-[#FAF2FF] p-7 md:p-10 rounded-[32px] border border-pink-200/90 shadow-[0_15px_40px_-10px_rgba(244,63,94,0.1)] hover:shadow-[0_25px_50px_-5px_rgba(244,63,94,0.2)] transition-shadow duration-500 overflow-hidden relative group/card"
                   >
-                    <div className={`${reverse ? "md:order-2" : ""} md:col-span-1 flex justify-center`}>
+                    <div
+                      className={`${reverse ? "md:order-2" : ""} md:col-span-1 flex justify-center`}
+                    >
                       <div className="relative group w-full max-w-xs">
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
                         <img
-                          src={i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"}
+                          src={
+                            i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"
+                          }
                           alt={m.name}
                           className="relative w-full aspect-square object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
                           loading="lazy"
                         />
                       </div>
                     </div>
-                    <div className={`${reverse ? "md:order-1" : ""} md:col-span-2 flex flex-col justify-center`}>
+                    <div
+                      className={`${reverse ? "md:order-1" : ""} md:col-span-2 flex flex-col justify-center`}
+                    >
                       <div className="inline-flex items-center gap-1.5 bg-[#EA3484] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-[#EA3484]/30 mb-3.5 self-start">
                         <span>✦</span>
                         <span>Garbh Sanskar Expert</span>
