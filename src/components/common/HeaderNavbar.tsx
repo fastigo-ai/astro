@@ -32,8 +32,117 @@ const navItems = [
   },
   {
     label: "Courses & Features",
-    to: "/features",
+
     hasDropdown: true,
+    isMegaMenu: true,
+    dropdownItems: [
+      {
+        label: "Beej Sanskar",
+        to: "/features/biz-sanskar",
+        desc: "Holistic success and work-life balance",
+        icon: (
+          <svg
+            className="w-5 h-5 text-[#F43F5E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            />
+          </svg>
+        ),
+      },
+      {
+        label: "Garbh dhan",
+        to: "/features/garbh-dhan",
+        desc: "Divine planning for conception",
+        icon: (
+          <svg
+            className="w-5 h-5 text-[#F43F5E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            />
+          </svg>
+        ),
+      },
+      {
+        label: "Garbh Sanskar",
+        to: "/features/garbh-sanskar",
+        desc: "Vedic wisdom for pregnancy",
+        icon: (
+          <svg
+            className="w-5 h-5 text-[#F43F5E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        ),
+      },
+      {
+        label: "Baal Bhavish Fal",
+        to: "/features/baal-bhavish-fal",
+        desc: "Astrological guidance for kids",
+        icon: (
+          <svg
+            className="w-5 h-5 text-[#F43F5E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+        ),
+      },
+      {
+        label: "Parenting",
+        to: "/features/parenting",
+        desc: "Mindful and positive upbringing",
+        icon: (
+          <svg
+            className="w-5 h-5 text-[#F43F5E]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+        ),
+      },
+    ],
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -293,7 +402,7 @@ export default function HeaderNavbar() {
             {navItems.map((item) => {
               const active = isActive(item.to);
               return (
-                <li key={item.label}>
+                <li key={item.label} className="relative group">
                   <Link
                     to={item.to}
                     className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
@@ -306,7 +415,7 @@ export default function HeaderNavbar() {
                     <span className="whitespace-nowrap">{item.label}</span>
                     {item.hasDropdown && (
                       <svg
-                        className={`w-3 h-3 lg:w-3.5 lg:h-3.5 ${active ? "text-white" : "text-[#1C83FF]"}`}
+                        className={`w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 group-hover:rotate-180 ${active ? "text-white" : "text-[#1C83FF]"}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -320,6 +429,138 @@ export default function HeaderNavbar() {
                       </svg>
                     )}
                   </Link>
+                  {/* Mega / Modern Dropdown Menu */}
+                  {item.hasDropdown && item.dropdownItems && (
+                    <div className="absolute top-full -left-20 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 translate-y-1">
+                      {item.isMegaMenu ? (
+                        <div className="w-[850px] xl:w-[950px] bg-white rounded-3xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.15)] border border-pink-100/80 p-8 flex gap-10">
+                          {/* Left Side: Links Grid */}
+                          <div className="flex-1 flex flex-col justify-between">
+                            <div className="grid grid-cols-2 gap-x-6 gap-y-6">
+                              {item.dropdownItems.map((dropItem) => (
+                                <Link
+                                  key={dropItem.label}
+                                  to={dropItem.to}
+                                  className="group/item flex items-start gap-4 hover:bg-slate-50 p-2.5 rounded-2xl transition-colors"
+                                >
+                                  <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-white shadow-sm border border-pink-50 transition-transform group-hover/item:scale-110">
+                                    {dropItem.icon}
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="text-[15px] font-extrabold text-slate-800 leading-snug group-hover/item:text-[#EA3484] transition-colors">
+                                      {dropItem.label}
+                                    </h4>
+                                    <p className="text-[11.5px] text-slate-500 font-medium leading-relaxed mt-1 pr-2">
+                                      {dropItem.desc}
+                                    </p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+
+                            {/* Bottom Links (like "Read the Research") */}
+                            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-6">
+                              <Link
+                                to="/features"
+                                className="flex items-center gap-2 text-[12px] font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+                              >
+                                <svg
+                                  className="w-4 h-4"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2.5"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                  ></path>
+                                </svg>
+                                Read the Research
+                              </Link>
+                              <Link
+                                to="/about-us"
+                                className="flex items-center gap-2 text-[12px] font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+                              >
+                                <svg
+                                  className="w-4 h-4"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2.5"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                  ></path>
+                                </svg>
+                                Centre Partner
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Right Side: Image Banner */}
+                          <div className="w-[280px] flex-shrink-0 relative rounded-2xl overflow-hidden shadow-sm group/banner">
+                            <img
+                              src="/images/celestial_mother.png"
+                              alt="Astro Baby App"
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover/banner:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+                            <div className="absolute bottom-4 left-4 right-4 text-white z-10">
+                              <p className="text-[9px] font-bold text-pink-300 tracking-wider uppercase mb-1">
+                                TRUSTED BY 2.5M+ MOTHERS
+                              </p>
+                              <h3 className="text-[17px] font-bold leading-tight">
+                                Astro Baby App
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="w-[300px] bg-white rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] border border-pink-100/50 p-1.5">
+                          <div className="flex flex-col">
+                            {item.dropdownItems.map((dropItem) => (
+                              <Link
+                                key={dropItem.label}
+                                to={dropItem.to}
+                                className="group/item flex items-center gap-3 p-2 rounded-xl hover:bg-pink-50/80 transition-all duration-200"
+                              >
+                                <div className="flex-shrink-0 w-10 h-10 bg-slate-50 group-hover/item:bg-white group-hover/item:shadow-sm rounded-lg flex items-center justify-center text-xl transition-all duration-200 group-hover/item:scale-105">
+                                  {dropItem.icon}
+                                </div>
+                                <div className="flex-1">
+                                  <h4 className="text-[13px] font-bold text-slate-800 group-hover/item:text-[#EA3484] transition-colors leading-snug">
+                                    {dropItem.label}
+                                  </h4>
+                                  <p className="text-[11px] text-slate-500 font-medium leading-tight">
+                                    {dropItem.desc}
+                                  </p>
+                                </div>
+                                <div className="text-slate-300 group-hover/item:text-[#EA3484] transition-all group-hover/item:translate-x-0.5 duration-200 opacity-0 group-hover/item:opacity-100">
+                                  <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2.5"
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </li>
               );
             })}
@@ -413,19 +654,61 @@ export default function HeaderNavbar() {
               {navItems.map((item) => {
                 const active = isActive(item.to);
                 return (
-                  <Link
-                    key={item.label}
-                    to={item.to}
-                    onClick={() => setMenuOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
-                      active
-                        ? "bg-[#EA3484] text-white font-bold shadow-md shadow-[#EA3484]/30"
-                        : "text-slate-700 hover:bg-pink-50"
-                    }`}
-                  >
-                    <span className={active ? "text-white" : "text-[#1C83FF]"}>{item.icon}</span>
-                    <span>{item.label}</span>
-                  </Link>
+                  <div key={item.label} className="space-y-1">
+                    <Link
+                      to={item.to}
+                      onClick={() => !item.hasDropdown && setMenuOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
+                        active
+                          ? "bg-[#EA3484] text-white font-bold shadow-md shadow-[#EA3484]/30"
+                          : "text-slate-700 hover:bg-pink-50"
+                      }`}
+                    >
+                      <span className={active ? "text-white" : "text-[#1C83FF]"}>{item.icon}</span>
+                      <span className="flex-1">{item.label}</span>
+                      {item.hasDropdown && (
+                        <svg
+                          className={`w-4 h-4 ${active ? "text-white" : "text-[#1C83FF]"}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2.5"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      )}
+                    </Link>
+
+                    {/* Mobile Dropdown Menu */}
+                    {item.hasDropdown && item.dropdownItems && (
+                      <div className="pl-6 pr-2 space-y-2 pb-3 pt-1">
+                        {item.dropdownItems.map((dropItem) => (
+                          <Link
+                            key={dropItem.label}
+                            to={dropItem.to}
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-3 p-3 rounded-2xl hover:bg-pink-50 border border-transparent transition-all group/mobile"
+                          >
+                            <div className="w-10 h-10 bg-slate-50 group-hover/mobile:bg-white shadow-sm rounded-xl flex items-center justify-center text-xl">
+                              {dropItem.icon}
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-[13px] font-bold text-slate-700 group-hover/mobile:text-[#EA3484]">
+                                {dropItem.label}
+                              </h4>
+                              <p className="text-[10px] text-slate-500 line-clamp-1 leading-snug">
+                                {dropItem.desc}
+                              </p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
