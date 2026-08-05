@@ -32,7 +32,7 @@ const navItems = [
   },
   {
     label: "Courses & Features",
-
+    to: "#",
     hasDropdown: true,
     isMegaMenu: true,
     dropdownItems: [
@@ -224,6 +224,7 @@ export default function HeaderNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const langRef = useRef<HTMLLIElement>(null);
 
   // Close language menu on outside click
@@ -238,7 +239,8 @@ export default function HeaderNavbar() {
   }, []);
 
   // Helper to determine if link is active
-  const isActive = (to: string) => {
+  const isActive = (to?: string) => {
+    if (!to || to === "#") return false;
     if (to === "/") {
       return location.pathname === "/";
     }
@@ -246,7 +248,7 @@ export default function HeaderNavbar() {
   };
 
   return (
-    <div className="w-full relative font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="w-full relative z-50 font-['Plus_Jakarta_Sans',sans-serif]" style={{ zIndex: 9999 }}>
       {/* Top Contact & Announcement Bar */}
       <div className="hidden md:block bg-[#5C2494] text-white text-xs py-2 border-b border-white/10 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -404,7 +406,12 @@ export default function HeaderNavbar() {
               return (
                 <li key={item.label} className="relative group">
                   <Link
-                    to={item.to}
+                    to={item.to || "#"}
+                    onClick={(e) => {
+                      if (item.hasDropdown && (!item.to || item.to === "#")) {
+                        e.preventDefault();
+                      }
+                    }}
                     className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
                       active
                         ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 font-bold"
@@ -653,11 +660,20 @@ export default function HeaderNavbar() {
             <div className="space-y-1">
               {navItems.map((item) => {
                 const active = isActive(item.to);
+                const isDropdownOpen = mobileDropdownOpen === item.label;
+
                 return (
                   <div key={item.label} className="space-y-1">
                     <Link
-                      to={item.to}
-                      onClick={() => !item.hasDropdown && setMenuOpen(false)}
+                      to={item.to || "#"}
+                      onClick={(e) => {
+                        if (item.hasDropdown) {
+                          e.preventDefault();
+                          setMobileDropdownOpen(isDropdownOpen ? null : item.label);
+                        } else {
+                          setMenuOpen(false);
+                        }
+                      }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                         active
                           ? "bg-[#EA3484] text-white font-bold shadow-md shadow-[#EA3484]/30"
@@ -668,7 +684,9 @@ export default function HeaderNavbar() {
                       <span className="flex-1">{item.label}</span>
                       {item.hasDropdown && (
                         <svg
-                          className={`w-4 h-4 ${active ? "text-white" : "text-[#1C83FF]"}`}
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            isDropdownOpen ? "rotate-180" : ""
+                          } ${active ? "text-white" : "text-[#1C83FF]"}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -684,8 +702,8 @@ export default function HeaderNavbar() {
                     </Link>
 
                     {/* Mobile Dropdown Menu */}
-                    {item.hasDropdown && item.dropdownItems && (
-                      <div className="pl-6 pr-2 space-y-2 pb-3 pt-1">
+                    {item.hasDropdown && item.dropdownItems && isDropdownOpen && (
+                      <div className="pl-6 pr-2 space-y-2 pb-3 pt-1 animate-in slide-in-from-top-2 fade-in duration-200">
                         {item.dropdownItems.map((dropItem) => (
                           <Link
                             key={dropItem.label}
