@@ -227,6 +227,7 @@ export default function HeaderNavbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState(languages[0]);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const langRef = useRef<HTMLLIElement>(null);
 
   // Close language menu on outside click
@@ -354,13 +355,6 @@ export default function HeaderNavbar() {
                 </svg>
               </a>
 
-              {/* Mobile Language Trigger */}
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#6B21A8] bg-purple-50 hover:bg-purple-100 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-purple-200/80 transition-colors"
-              >
-                🌐 {selectedLang.label}
-              </button>
 
               {/* Mobile Hamburger Toggle */}
               <button
@@ -691,6 +685,59 @@ export default function HeaderNavbar() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Mobile Language Selection */}
+            <div className="pt-3 border-t border-blue-100 space-y-2">
+              <span className="text-xs font-bold text-[#172554] uppercase tracking-wider px-1 block">
+                Select Language
+              </span>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setMobileLangOpen(!mobileLangOpen)}
+                  className="w-full flex items-center justify-between bg-slate-50 hover:bg-pink-50/50 border border-slate-200/80 hover:border-pink-300 text-slate-800 text-xs font-bold rounded-2xl px-4 py-3 transition-all cursor-pointer shadow-xs"
+                >
+                  <span className="flex items-center gap-2">
+                    <span className="text-[#3B82F6]">🌐</span>
+                    <span>{selectedLang.name}</span>
+                    <span className="text-slate-400 font-normal">({selectedLang.label})</span>
+                  </span>
+                  <svg
+                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileLangOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {mobileLangOpen && (
+                  <div className="mt-2 bg-white rounded-2xl border border-pink-100 shadow-lg p-1.5 space-y-1 animate-in fade-in slide-in-from-top-1 duration-150">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        type="button"
+                        onClick={() => {
+                          setSelectedLang(lang);
+                          setMobileLangOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                          selectedLang.code === lang.code
+                            ? "bg-[#F45B8A] text-white shadow-xs"
+                            : "text-slate-700 hover:bg-pink-50"
+                        }`}
+                      >
+                        <span>{lang.name}</span>
+                        <span className={selectedLang.code === lang.code ? "text-white/90" : "text-slate-400"}>
+                          {lang.label}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile App Download Buttons */}
