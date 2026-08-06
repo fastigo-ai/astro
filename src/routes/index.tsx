@@ -155,39 +155,6 @@ export default function Home() {
       {/* Stories Slider */}
       <StoriesSlider />
 
-      {/* Stats */}
-      <section className="py-14 relative z-10 bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] border-b border-pink-100/60">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center text-2xl md:text-4xl font-semibold text-[#172554] mb-10"
-          >
-            A Glimpse of <span className="text-[#F45B8A]">Positive motherhood</span> and happier
-            lives...
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {stats.map((st, i) => (
-              <motion.div
-                key={st.label}
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: "easeOut" }}
-                className="stat-card text-center p-4 bg-white/80 backdrop-blur-md rounded-2xl hover:shadow-[0_8px_25px_rgba(244,91,138,0.1)] transition-all duration-300 border border-white/90 hover:border-pink-100"
-              >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F45B8A]/10 text-[#F45B8A] flex items-center justify-center font-bold text-lg">
-                    ✦
-                  </div>
-                  <div className="text-xl font-bold text-[#172554]">{st.num}</div>
-                <div className="text-sm text-slate-600 mt-1">{st.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-14 relative z-10 bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] border-b border-blue-100/60">

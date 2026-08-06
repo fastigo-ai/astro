@@ -160,27 +160,7 @@ export default function StoriesSlider() {
           ))}
         </div>
 
-        <div
-          className="mt-12 grid grid-cols-2 overflow-hidden rounded-[28px] border border-slate-200 bg-white/80 px-4 py-6 shadow-[0_14px_40px_rgba(26,58,108,0.05)] backdrop-blur-xl lg:grid-cols-4 gap-y-6 lg:gap-y-0"
-          data-reveal
-        >
-          {stats.map(({ icon: Icon, value, label }, index) => (
-            <div
-              key={label}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-2 sm:px-4 text-center sm:text-left ${index ? "lg:border-l lg:border-slate-200" : ""}`}
-            >
-              <span className="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full bg-slate-100 text-lg sm:text-xl text-[#1a3a6c]">
-                <Icon />
-              </span>
-              <div>
-                <strong className="block text-base sm:text-lg font-semibold text-[#1a3a6c]">
-                  {value}
-                </strong>
-                <span className="text-[11px] sm:text-xs text-slate-600">{label}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+
       </div>
 
       {activeVideo && (
