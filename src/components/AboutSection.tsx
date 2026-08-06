@@ -48,7 +48,7 @@ export default function AboutSection() {
   const headingText = "Nurturing the Future, One Heartbeat at a Time.";
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] py-12 md:py-16 border-b border-pink-100/60">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] py-12 md:py-16 border-b border-pink-100/60">
       {/* Mandala & Sparkle Background Decorations */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="mandala absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />
@@ -62,7 +62,7 @@ export default function AboutSection() {
         </span>
         <span className="absolute right-[5%] top-1/4 h-48 w-48 rounded-full bg-[#8B32BD]/10 blur-3xl" />
         <span className="absolute bottom-[8%] left-[10%] h-56 w-56 rounded-full bg-[#F4C27A]/15 blur-3xl" />
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[480px] w-[480px] rounded-full bg-gradient-to-tr from-[#F63D8E]/5 via-[#2584F5]/5 to-transparent blur-3xl" />
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[480px] w-[480px] rounded-full bg-gradient-to-tr from-[#F45B8A]/5 via-[#3B82F6]/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
@@ -108,9 +108,9 @@ export default function AboutSection() {
           <div className="flex flex-col justify-center md:col-span-7 space-y-5 md:space-y-6">
             {/* Badge & Heading & Description */}
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm">
                 <Sparkles className="h-2.5 w-2.5" /> About{" "}
-                <span className="font-extrabold text-[#EA3484]">Astro Baby</span>
+                <span className="font-extrabold text-[#F45B8A]">Astro Baby</span>
               </span>
 
               <motion.h2
@@ -118,7 +118,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#1a3a6c] tracking-tight"
+                className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#172554] tracking-tight"
               >
                 {headingText}
               </motion.h2>
@@ -130,8 +130,8 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-sm md:text-base leading-relaxed text-slate-600 font-sans max-w-xl"
               >
-                <strong className="text-[#EA3484] font-bold">Astro Baby</strong>{" "}
-                <strong className="text-[#EA3484] font-bold">Garbh Sanskar</strong> is India's
+                <strong className="text-[#F45B8A] font-bold">Astro Baby</strong>{" "}
+                <strong className="text-[#F45B8A] font-bold">Garbh Sanskar</strong> is India's
                 leading digital platform combining ancient Vedic wisdom with modern obstetric
                 science. Created by a passionate team of experts, we make pregnancy a happy,
                 healthy, and spiritually rich journey.
@@ -183,11 +183,11 @@ export default function AboutSection() {
                       data-feature-card
                       className="flex gap-3 items-start p-3 bg-white/20 hover:bg-[#FAF6EE]/40 border border-white/40 rounded-2xl backdrop-blur-md transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm"
                     >
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#5D539B]/10 text-[#5D539B]">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#F45B8A]/10 text-[#F45B8A]">
                         <IconComponent className="h-4.5 w-4.5" />
                       </div>
                       <div>
-                        <h3 className="text-xs font-bold text-[#1a3a6c] mb-0.5">{item.title}</h3>
+                        <h3 className="text-xs font-bold text-[#172554] mb-0.5">{item.title}</h3>
                         <p className="text-[11px] leading-relaxed text-slate-500">{item.desc}</p>
                       </div>
                     </div>
@@ -207,7 +207,7 @@ export default function AboutSection() {
                   href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#EA3484] hover:bg-[#d82a75] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#EA3484]/25 transition-all duration-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#F45B8A]/25 transition-all duration-300"
                 >
                   Begin Journey Today
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300">

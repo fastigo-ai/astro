@@ -104,7 +104,7 @@ function FeatureCard({
       {/* Feature Details */}
       <div className="flex-1 space-y-1">
         <h4
-          className={`text-sm font-bold text-[#1a3a6c] flex items-center gap-1.5 group-hover:text-[#5D539B] transition-colors duration-300 ${
+          className={`text-sm font-bold text-[#172554] flex items-center gap-1.5 group-hover:text-[#F45B8A] transition-colors duration-300 ${
             alignRight ? "md:justify-end" : "justify-start"
           }`}
         >
@@ -120,7 +120,7 @@ function FeatureCard({
         }`}
       >
         <ArrowRight
-          className={`h-4 w-4 text-[#5D539B]/40 group-hover:text-[#5D539B] transition-transform duration-300 ${
+          className={`h-4 w-4 text-[#3B82F6]/40 group-hover:text-[#F45B8A] transition-transform duration-300 ${
             coords.isHovered ? "rotate-[-45deg]" : "rotate-0"
           }`}
         />
@@ -202,7 +202,7 @@ export default function FeaturesSection() {
   }, [slides.length]);
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
       {/* Mandala & Sparkle Background Decorations */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="mandala absolute -left-36 top-10 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />
@@ -216,14 +216,14 @@ export default function FeaturesSection() {
         </span>
         <span className="absolute right-[4%] top-1/3 h-48 w-48 rounded-full bg-[#8B32BD]/10 blur-3xl" />
         <span className="absolute bottom-[6%] left-[12%] h-56 w-56 rounded-full bg-[#F4C27A]/15 blur-3xl" />
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#F63D8E]/5 via-[#2584F5]/5 to-transparent blur-3xl" />
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#F45B8A]/5 via-[#3B82F6]/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
         {/* Header Block */}
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs mb-4">
-            <Sparkles className="h-3 w-3 text-[#EA3484]" /> Comprehensive Features
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs mb-4">
+            <Sparkles className="h-3 w-3 text-[#F45B8A]" /> Comprehensive Features
           </span>
 
           <motion.h2
@@ -231,7 +231,7 @@ export default function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#1a3a6c] tracking-tight mb-3"
+            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#172554] tracking-tight mb-3"
           >
             {headingText}
           </motion.h2>
@@ -339,7 +339,7 @@ export default function FeaturesSection() {
         <div data-more-features-btn className="flex justify-center mt-6 md:mt-8">
           <Link
             to="/features"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#5D539B] hover:bg-[#483F80] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#5D539B]/25 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#F45B8A]/25 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
           >
             Explore More Features
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 duration-300" />

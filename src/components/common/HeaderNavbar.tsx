@@ -182,6 +182,7 @@ const navItems = [
       </svg>
     ),
   },
+  /*
   {
     label: "Awards & Accolades",
     to: "/awardsaccolades",
@@ -196,6 +197,7 @@ const navItems = [
       </svg>
     ),
   },
+  */
   {
     label: "Blogs",
     to: "/blog",
@@ -250,7 +252,7 @@ export default function HeaderNavbar() {
   return (
     <div className="w-full relative z-50 font-['Plus_Jakarta_Sans',sans-serif]" style={{ zIndex: 9999 }}>
       {/* Top Contact & Announcement Bar */}
-      <div className="hidden md:block bg-[#5C2494] text-white text-xs py-2 border-b border-white/10 shadow-xs">
+      <div className="hidden md:block bg-[#172554] text-white text-xs py-2 border-b border-white/10 shadow-xs">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <span className="text-amber-300 text-xs">✨</span>
@@ -309,7 +311,7 @@ export default function HeaderNavbar() {
           </Link>
           <div className="text-xs md:text-sm font-bold -mt-2 md:-mt-3 flex items-center justify-center gap-2">
             <span className="text-emerald-500 font-bold">✔</span>
-            <span className="text-[#EA3484] font-semibold tracking-wide">
+            <span className="text-[#F45B8A] font-semibold tracking-wide">
               Nurturing Every Life with Love &amp; Wisdom
             </span>
             <span className="text-emerald-500 font-bold">✔</span>
@@ -414,15 +416,15 @@ export default function HeaderNavbar() {
                     }}
                     className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
                       active
-                        ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 font-bold"
-                        : "text-slate-700 hover:text-[#EA3484] hover:bg-pink-50/70"
+                        ? "bg-[#F45B8A] text-white shadow-md shadow-[#F45B8A]/30 font-bold"
+                        : "text-slate-700 hover:text-[#F45B8A] hover:bg-pink-50/70"
                     }`}
                   >
-                    <span className={active ? "text-white" : "text-[#1C83FF]"}>{item.icon}</span>
+                    <span className={active ? "text-white" : "text-[#3B82F6]"}>{item.icon}</span>
                     <span className="whitespace-nowrap">{item.label}</span>
                     {item.hasDropdown && (
                       <svg
-                        className={`w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 group-hover:rotate-180 ${active ? "text-white" : "text-[#1C83FF]"}`}
+                        className={`w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 group-hover:rotate-180 ${active ? "text-white" : "text-[#3B82F6]"}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -454,7 +456,7 @@ export default function HeaderNavbar() {
                                     {dropItem.icon}
                                   </div>
                                   <div className="flex-1">
-                                    <h4 className="text-[15px] font-extrabold text-slate-800 leading-snug group-hover/item:text-[#EA3484] transition-colors">
+                                    <h4 className="text-[15px] font-extrabold text-slate-800 leading-snug group-hover/item:text-[#F45B8A] transition-colors">
                                       {dropItem.label}
                                     </h4>
                                     <p className="text-[11.5px] text-slate-500 font-medium leading-relaxed mt-1 pr-2">
@@ -465,47 +467,7 @@ export default function HeaderNavbar() {
                               ))}
                             </div>
 
-                            {/* Bottom Links (like "Read the Research") */}
-                            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-6">
-                              <Link
-                                to="/features"
-                                className="flex items-center gap-2 text-[12px] font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
-                              >
-                                <svg
-                                  className="w-4 h-4"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2.5"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                  ></path>
-                                </svg>
-                                Read the Research
-                              </Link>
-                              <Link
-                                to="/about-us"
-                                className="flex items-center gap-2 text-[12px] font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
-                              >
-                                <svg
-                                  className="w-4 h-4"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2.5"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                                  ></path>
-                                </svg>
-                                Centre Partner
-                              </Link>
-                            </div>
+
                           </div>
 
                           {/* Right Side: Image Banner */}
@@ -539,14 +501,14 @@ export default function HeaderNavbar() {
                                   {dropItem.icon}
                                 </div>
                                 <div className="flex-1">
-                                  <h4 className="text-[13px] font-bold text-slate-800 group-hover/item:text-[#EA3484] transition-colors leading-snug">
+                                  <h4 className="text-[13px] font-bold text-slate-800 group-hover/item:text-[#F45B8A] transition-colors leading-snug">
                                     {dropItem.label}
                                   </h4>
                                   <p className="text-[11px] text-slate-500 font-medium leading-tight">
                                     {dropItem.desc}
                                   </p>
                                 </div>
-                                <div className="text-slate-300 group-hover/item:text-[#EA3484] transition-all group-hover/item:translate-x-0.5 duration-200 opacity-0 group-hover/item:opacity-100">
+                                <div className="text-slate-300 group-hover/item:text-[#F45B8A] transition-all group-hover/item:translate-x-0.5 duration-200 opacity-0 group-hover/item:opacity-100">
                                   <svg
                                     className="w-4 h-4"
                                     fill="none"
@@ -579,10 +541,10 @@ export default function HeaderNavbar() {
             >
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 lg:px-4 py-1.5 lg:py-2 text-[11px] lg:text-xs xl:text-sm font-semibold text-[#1C83FF] bg-blue-50/80 hover:bg-blue-100/80 border border-blue-200/80 rounded-full transition-all"
+                className="flex items-center gap-1.5 px-3 lg:px-4 py-1.5 lg:py-2 text-[11px] lg:text-xs xl:text-sm font-semibold text-[#3B82F6] bg-blue-50/80 hover:bg-blue-100/80 border border-blue-200/80 rounded-full transition-all"
               >
                 <svg
-                  className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#1C83FF]"
+                  className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-[#3B82F6]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -596,7 +558,7 @@ export default function HeaderNavbar() {
                 </svg>
                 <span>{selectedLang.label}</span>
                 <svg
-                  className={`w-3 h-3 lg:w-3.5 lg:h-3.5 text-[#1C83FF] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                  className={`w-3 h-3 lg:w-3.5 lg:h-3.5 text-[#3B82F6] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -612,7 +574,7 @@ export default function HeaderNavbar() {
 
               {langOpen && (
                 <div className="absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-xl border border-blue-100 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="px-3 py-1.5 text-[10px] font-bold text-[#1C83FF] uppercase tracking-wider border-b border-slate-100">
+                  <div className="px-3 py-1.5 text-[10px] font-bold text-[#3B82F6] uppercase tracking-wider border-b border-slate-100">
                     Select Language
                   </div>
                   {languages.map((lang) => (
@@ -624,7 +586,7 @@ export default function HeaderNavbar() {
                       }}
                       className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between hover:bg-blue-50 transition-colors ${
                         selectedLang.code === lang.code
-                          ? "text-[#1C83FF] font-bold bg-blue-50/70"
+                          ? "text-[#3B82F6] font-bold bg-blue-50/70"
                           : "text-slate-700"
                       }`}
                     >
@@ -633,7 +595,7 @@ export default function HeaderNavbar() {
                       </span>
                       {selectedLang.code === lang.code && (
                         <svg
-                          className="w-4 h-4 text-[#1C83FF]"
+                          className="w-4 h-4 text-[#3B82F6]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -676,17 +638,17 @@ export default function HeaderNavbar() {
                       }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
                         active
-                          ? "bg-[#EA3484] text-white font-bold shadow-md shadow-[#EA3484]/30"
+                          ? "bg-[#F45B8A] text-white font-bold shadow-md shadow-[#F45B8A]/30"
                           : "text-slate-700 hover:bg-pink-50"
                       }`}
                     >
-                      <span className={active ? "text-white" : "text-[#1C83FF]"}>{item.icon}</span>
+                      <span className={active ? "text-white" : "text-[#3B82F6]"}>{item.icon}</span>
                       <span className="flex-1">{item.label}</span>
                       {item.hasDropdown && (
                         <svg
                           className={`w-4 h-4 transition-transform duration-200 ${
                             isDropdownOpen ? "rotate-180" : ""
-                          } ${active ? "text-white" : "text-[#1C83FF]"}`}
+                          } ${active ? "text-white" : "text-[#3B82F6]"}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -715,7 +677,7 @@ export default function HeaderNavbar() {
                               {dropItem.icon}
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-[13px] font-bold text-slate-700 group-hover/mobile:text-[#EA3484]">
+                              <h4 className="text-[13px] font-bold text-slate-700 group-hover/mobile:text-[#F45B8A]">
                                 {dropItem.label}
                               </h4>
                               <p className="text-[10px] text-slate-500 line-clamp-1 leading-snug">
@@ -732,8 +694,8 @@ export default function HeaderNavbar() {
             </div>
 
             {/* Mobile App Download Buttons */}
-            <div className="pt-3 border-t border-purple-100 space-y-2">
-              <div className="text-xs font-bold text-purple-600 uppercase tracking-wider px-1">
+            <div className="pt-3 border-t border-blue-100 space-y-2">
+              <div className="text-xs font-bold text-[#172554] uppercase tracking-wider px-1">
                 Get Astro Baby App
               </div>
               <div className="grid grid-cols-2 gap-2">

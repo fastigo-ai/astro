@@ -78,7 +78,7 @@ export default function AboutAstroBabyDetail() {
       {/* ── 1. TOP SECTION: Main About Astro Baby Card ── */}
       <div
         data-about-card
-        className="relative overflow-hidden rounded-[28px] border border-sky-100 bg-white p-6 md:p-10 shadow-[0_12px_45px_rgba(26,58,108,0.06)] transition-all duration-300"
+        className="relative overflow-hidden rounded-[28px] border border-blue-100/80 bg-white p-6 md:p-10 shadow-[0_12px_45px_rgba(23,37,84,0.07)] transition-all duration-300"
       >
         {/* Subtle background glow */}
         <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sky-100/50 blur-3xl z-0" />
@@ -106,7 +106,7 @@ export default function AboutAstroBabyDetail() {
           <div className="lg:col-span-7 space-y-5">
             {/* Header Block */}
             <div className="text-center md:text-left space-y-2">
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a3a6c] tracking-tight">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#172554] tracking-tight">
                 About Astro Baby
               </h1>
 
@@ -178,7 +178,7 @@ export default function AboutAstroBabyDetail() {
       {/* ── 2. BOTTOM SECTION: Our Introduction Video ── */}
       <div
         data-video-container
-        className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#EAF2FD] via-[#F1F6FE] to-[#E5EFFC] border border-sky-100 p-6 md:p-10 shadow-[0_10px_35px_rgba(26,58,108,0.05)] text-center space-y-6"
+        className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#EAF2FD] via-[#F1F6FE] to-[#E5EFFC] border border-blue-100/80 p-6 md:p-10 shadow-[0_10px_35px_rgba(23,37,84,0.06)] text-center space-y-6"
       >
         {/* Subtle Constellation SVG Decorations */}
         <div className="pointer-events-none absolute inset-0 opacity-25 overflow-hidden">
@@ -204,7 +204,7 @@ export default function AboutAstroBabyDetail() {
 
         {/* Section Header */}
         <div className="relative z-10 max-w-xl mx-auto space-y-2">
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a3a6c]">
+          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-[#172554]">
             Our Introduction Video
           </h2>
           {/* Decorative Divider */}

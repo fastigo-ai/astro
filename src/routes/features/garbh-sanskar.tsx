@@ -217,6 +217,24 @@ export default function GarbhSanskarFeature() {
                     <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
                       {f.body.map((p, idx) => (<p key={idx}>{p}</p>))}
                     </div>
+
+                    {/* Contact Us Button */}
+                    <div className="mt-8">
+                      <a
+                        href="/contact-us"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-bold text-sm shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group"
+                      >
+                        Contact Us
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </article>
               );

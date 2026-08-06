@@ -217,6 +217,24 @@ export default function Parenting() {
                     <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
                       {f.body.map((p, idx) => (<p key={idx}>{p}</p>))}
                     </div>
+
+                    {/* Contact Us Button */}
+                    <div className="mt-8">
+                      <a
+                        href="/contact-us"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-bold text-sm shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group"
+                      >
+                        Contact Us
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </article>
               );
@@ -227,15 +245,15 @@ export default function Parenting() {
 
       {/* 5. Call to Action Banner */}
       <section className="py-16 px-4 mb-8">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-800 rounded-[40px] p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-400 opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+        <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#F45B8A] to-[#c93b68] rounded-[40px] p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-300 opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
           
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">Empower Your Parenting Journey</h2>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
+          <p className="text-pink-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
             Join thousands of parents who have transformed their family dynamics through our conscious parenting workshops and courses.
           </p>
-          <button className="relative z-10 bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
+          <button className="relative z-10 bg-white text-[#F45B8A] font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
             Explore Parenting Workshops
           </button>
         </div>

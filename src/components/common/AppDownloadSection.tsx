@@ -96,12 +96,12 @@ export default function AppDownloadSection({
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 lg:py-28 bg-[#FAF8FD] text-[#5F5B73] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]"
+      className="relative py-20 lg:py-28 bg-[#FFFCFE] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]"
     >
       {/* Soft Lavender & Rose Radial Ambient Glows (Behind Card) */}
       <div
         ref={glowRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[750px] h-[600px] sm:h-[750px] bg-gradient-to-br from-[#7C3AED]/12 via-[#F472B6]/8 to-[#5A098F]/12 rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[750px] h-[600px] sm:h-[750px] bg-gradient-to-br from-[#3B82F6]/10 via-[#F45B8A]/7 to-[#172554]/10 rounded-full blur-[140px] pointer-events-none"
       />
 
       {/* Subtle Spiritual Decor Overlay (5-10% Opacity Stars, Moon, Lotus & Sparkles) */}
@@ -118,17 +118,17 @@ export default function AppDownloadSection({
         {/* Floating White Glassmorphism Card (28px Radius) */}
         <div
           ref={cardRef}
-          className="bg-white/90 backdrop-blur-2xl rounded-3xl lg:rounded-[28px] p-8 sm:p-12 lg:p-16 border border-[#ECE5F6] shadow-[0_20px_60px_-15px_rgba(90,9,143,0.1)] text-center relative overflow-hidden group"
+          className="bg-white/90 backdrop-blur-2xl rounded-3xl lg:rounded-[28px] p-8 sm:p-12 lg:p-16 border border-[#EAF4FF] shadow-[0_20px_60px_-15px_rgba(23,37,84,0.08)] text-center relative overflow-hidden group"
         >
           {/* Subtle Inner Accent Glow */}
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-b from-[#7C3AED]/12 via-[#F472B6]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-b from-[#3B82F6]/10 via-[#F45B8A]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
           {/* Heading */}
-          <h2 className="gsap-stagger-item text-3xl sm:text-4xl md:text-5xl font-normal text-[#1E1B2E] leading-tight font-['Cormorant_Garamond',serif] mb-4 max-w-3xl mx-auto">
+          <h2 className="gsap-stagger-item text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554] leading-tight font-['Cormorant_Garamond',serif] mb-4 max-w-3xl mx-auto">
             {title || (
               <>
                 Begin Your Garbh Sanskar Journey Today on{" "}
-                <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
+                <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
                   Astro Baby
                 </span>
               </>
@@ -141,7 +141,7 @@ export default function AppDownloadSection({
           </p>
 
           {/* Thin Gradient Divider */}
-          <div className="gsap-stagger-item w-32 h-[1px] bg-gradient-to-r from-transparent via-[#7C3AED]/30 to-transparent mx-auto my-6 sm:my-8" />
+          <div className="gsap-stagger-item w-32 h-[1px] bg-gradient-to-r from-transparent via-[#F45B8A]/30 to-transparent mx-auto my-6 sm:my-8" />
 
           {/* Premium Store Badges (Slightly Curved on 4 Sides) */}
           <div className="gsap-stagger-item flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 font-['Manrope',sans-serif]">

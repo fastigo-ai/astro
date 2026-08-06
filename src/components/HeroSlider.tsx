@@ -36,13 +36,13 @@ export default function HeroSlider() {
         if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
         touchStartX.current = null;
       }}
-      className="relative overflow-hidden bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]"
+      className="relative overflow-hidden bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF]"
       aria-roledescription="carousel"
       aria-label="Hero"
     >
       {/* decorative glow */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#2584F5]/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#F63D8E]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#3B82F6]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#F45B8A]/10 blur-3xl" />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:px-6 md:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
         <AnimatePresence mode="wait">
@@ -54,13 +54,13 @@ export default function HeroSlider() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="order-2 lg:order-1 flex flex-col justify-center"
           >
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] border border-pink-200/80 shadow-xs">
-              <FiHeart className="text-[#EA3484]" /> {slide.eyebrow}
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] border border-pink-200/80 shadow-xs">
+              <FiHeart className="text-[#F45B8A]" /> {slide.eyebrow}
             </div>
-            <h1 className="font-sans mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#1A3A6C] tracking-tight">
+            <h1 className="font-sans mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#172554] tracking-tight">
               {slide.heading.map((line, i) => (
                 <span key={i} className="block overflow-hidden">
-                  <span className="block text-[#1A3A6C] not-italic">{line}</span>
+                  <span className="block text-[#172554] not-italic">{line}</span>
                 </span>
               ))}
             </h1>
@@ -71,12 +71,12 @@ export default function HeroSlider() {
               {slide.programs.map((p) => (
                 <div
                   key={p}
-                  className="rounded-[16px] md:rounded-[20px] border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5"
+                  className="rounded-[16px] md:rounded-[20px] border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-md hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(244,91,138,0.08)]"
                 >
-                  <div className="text-[10px] uppercase tracking-wider text-[#EA3484] font-bold">
+                  <div className="text-[10px] uppercase tracking-wider text-[#F45B8A] font-bold">
                     Program
                   </div>
-                  <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#1A3A6C]">
+                  <div className="mt-1 font-sans text-base md:text-lg font-bold text-[#172554]">
                     {p}
                   </div>
                 </div>
@@ -88,12 +88,12 @@ export default function HeroSlider() {
             </div>
             <div className="mt-10 flex items-center gap-6 text-xs text-slate-500 font-medium">
               <div>
-                <span className="font-sans text-2xl font-extrabold text-[#F8B62D]">4.8★</span> App
+                <span className="font-sans text-2xl font-extrabold text-amber-400">4.8★</span> App
                 rating
               </div>
               <div className="h-8 w-px bg-slate-200" />
               <div>
-                <span className="font-sans text-2xl font-extrabold text-[#2584F5]">500k+</span>{" "}
+                <span className="font-sans text-2xl font-extrabold text-blue-600">500k+</span>{" "}
                 Mothers
               </div>
             </div>
