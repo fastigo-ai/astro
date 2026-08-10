@@ -57,7 +57,7 @@ const navItems = [
         ),
       },
       {
-        label: "Garbh dhan",
+        label: "Garbh Dan",
         to: "/features/garbh-dhan",
         desc: "Divine planning for conception",
         icon: (

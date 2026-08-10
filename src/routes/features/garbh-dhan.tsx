@@ -133,12 +133,15 @@ export default function GarbhDhan() {
       {/* 1. Hero Banner Section */}
       <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
         <div className="overflow-hidden rounded-[30px] shadow-[0_20px_50px_-10px_rgba(34,197,94,0.15)] border border-green-100/90 relative group">
-          <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
-          <img 
-            src="/images/features_banner_new.png" 
-            alt="Garbh Dhan" 
-            className="w-full h-[250px] md:h-[400px] object-cover object-center block contrast-[1.05] saturate-[1.1] rounded-[30px] transition-transform duration-1000 group-hover:scale-105" 
-          />
+          <div className="absolute inset-0 bg-gradient-to-t from-green-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+          <picture className="w-full h-auto block">
+            <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
+            <img 
+              src="/images/garbh_dan_banner.png" 
+              alt="Garbh Dan - A Gift of Life, A Legacy of Love" 
+              className="w-full h-auto object-cover object-center block contrast-[1.02] saturate-[1.05] rounded-[30px] transition-transform duration-700 group-hover:scale-[1.01]" 
+            />
+          </picture>
         </div>
       </section>
 
@@ -150,13 +153,13 @@ export default function GarbhDhan() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
             </span>
-            The First Sacred Step
+            A Gift of Life, A Legacy of Love 💙
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A3A6C] tracking-tight mb-6">
-            Garbh Dhan <span className="text-green-500">🌱</span>
+            Garbh Dan <span className="text-green-500">🌱</span>
           </h1>
           <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
-            The foundation of a brilliant child begins before they are conceived. <strong>Garbh Dhan</strong> is the divine planning and purification process that combines Ayurveda, Astrology, and Spirituality to prepare the couple for a flawless conception.
+            Garbh Dan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever. Combined with Vaidic planning, Ayurveda, Astrology, and Spirituality, it prepares couples for a divine conception.
           </p>
         </div>
       </section>

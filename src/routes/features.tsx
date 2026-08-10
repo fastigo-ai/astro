@@ -8,6 +8,15 @@ type Feature = { title: string; img: string; tagline: string; body: string[] };
 
 const features: Feature[] = [
   {
+    title: "Garbh Dan",
+    img: "/images/garbh_dan_banner.png",
+    tagline: "A Gift of Life, A Legacy of Love 💙",
+    body: [
+      "Garbh Dan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever.",
+      "A complete pre-conception purification and preparation process combining Vaidic rituals, astrological alignment, and Ayurvedic detox to pave the way for a healthy, virtuous child.",
+    ],
+  },
+  {
     title: "Sankalp Poojan",
     img: "/images/features/sankalp_poojan.jpg",
     tagline: "Live Sankalp Poojan before starting Garbh Sanskar",
@@ -291,7 +300,7 @@ export default function FeaturesPage() {
 
     if (selectedCategory === "All Features") return true;
     if (selectedCategory === "Sanskars & Poojan")
-      return f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
+      return f.title.includes("Garbh Dan") || f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
     if (selectedCategory === "Vaidic Mantras & Music")
       return (
         f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana")
@@ -329,12 +338,15 @@ export default function FeaturesPage() {
 
       {/* Hero Banner Image */}
       <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90">
-          <img
-            src="/images/nurturing_life_banner.png"
-            alt="Nurturing Life, Inspiring Futures - Garbh Sanskar"
-            className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02] rounded-[30px]"
-          />
+        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90 bg-[#0A1A2F]">
+          <picture className="w-full h-auto block">
+            <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
+            <img
+              src="/images/garbh_dan_banner.png"
+              alt="Garbh Dan - A Gift of Life, A Legacy of Love"
+              className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02] rounded-[30px]"
+            />
+          </picture>
         </div>
       </section>
 
@@ -453,18 +465,25 @@ export default function FeaturesPage() {
                     <div className={`${reverse ? "md:order-2" : ""} flex justify-center`}>
                       <div className="relative group w-full max-w-md">
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
-                        <img
-                          src={
-                            f.img
-                              ? f.img.startsWith("/")
-                                ? f.img
-                                : `/images/${f.img}`
-                              : "/images/story_thumb_1.png"
-                          }
-                          alt={f.title}
-                          className="relative w-full h-64 md:h-80 object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
-                          loading="lazy"
-                        />
+                        {(() => {
+                          const imgSrc = f.img ? (f.img.startsWith("/") ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png";
+                          const isGarbhDan = f.title === "Garbh Dan" || imgSrc.includes("garbh_dan");
+                          return (
+                            <picture className="relative block w-full rounded-[24px] overflow-hidden border-4 border-white shadow-xl bg-slate-900/5">
+                              {isGarbhDan && (
+                                <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
+                              )}
+                              <img
+                                src={imgSrc}
+                                alt={f.title}
+                                className={`w-full ${
+                                  isGarbhDan ? "h-auto md:h-80 object-cover" : "h-64 md:h-80 object-cover"
+                                } transition-transform duration-500 group-hover:scale-[1.03]`}
+                                loading="lazy"
+                              />
+                            </picture>
+                          );
+                        })()}
                       </div>
                     </div>
                     <div className={`${reverse ? "md:order-1" : ""}`}>

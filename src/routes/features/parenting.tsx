@@ -132,12 +132,12 @@ export default function Parenting() {
 
       {/* 1. Hero Banner Section */}
       <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="overflow-hidden rounded-[30px] shadow-[0_20px_50px_-10px_rgba(59,130,246,0.15)] border border-blue-100/90 relative group">
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
+        <div className="overflow-hidden rounded-[30px] shadow-[0_20px_50px_-10px_rgba(59,130,246,0.15)] border border-blue-100/90 relative group bg-slate-900/5">
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
           <img 
             src="/images/features/lets_smile_together.jpg" 
-            alt="Parenting" 
-            className="w-full h-[250px] md:h-[400px] object-cover object-center block contrast-[1.05] saturate-[1.1] rounded-[30px] transition-transform duration-1000 group-hover:scale-105" 
+            alt="Parenting Session" 
+            className="w-full h-auto max-h-[450px] object-cover object-center block contrast-[1.03] saturate-[1.05] rounded-[30px] transition-transform duration-700 group-hover:scale-[1.01]" 
           />
         </div>
       </section>
@@ -201,9 +201,9 @@ export default function Parenting() {
                 <article key={f.title} data-feature-item className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div className={`${reverse ? "lg:order-2" : ""} relative group`}>
                     <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 via-indigo-200 to-sky-200 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-700" />
-                    <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl">
-                      <img src={f.img} alt={f.title} className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A6C]/40 to-transparent"></div>
+                    <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl bg-slate-900/5">
+                      <img src={f.img} alt={f.title} className="w-full h-auto max-h-[380px] md:max-h-[420px] object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A6C]/40 to-transparent pointer-events-none"></div>
                     </div>
                   </div>
                   

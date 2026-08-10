@@ -531,12 +531,12 @@ export default function TestimonialPage() {
                     className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col overflow-hidden group hover:-translate-y-1"
                   >
                     {/* Thumbnail Container */}
-                    <div className="relative aspect-video overflow-hidden bg-slate-900">
+                    <div className="relative aspect-video overflow-hidden bg-[#0A1A2F]">
                       <img
                         src={aiThumb}
                         alt={s.name}
                         loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
 

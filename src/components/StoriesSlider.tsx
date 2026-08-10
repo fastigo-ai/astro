@@ -105,14 +105,14 @@ export default function StoriesSlider() {
             >
               <button
                 type="button"
-                className="relative block aspect-[16/10] w-full overflow-hidden"
+                className="relative block aspect-[16/10] w-full overflow-hidden bg-[#0A1A2F]"
                 onClick={() => setActiveVideo(story.videoId)}
                 aria-label={`Play ${story.name}'s story`}
               >
                 <img
                   src={AI_THUMBNAILS[index % AI_THUMBNAILS.length]}
                   alt={`${story.name}, an Astro Baby family`}
-                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-transparent to-transparent" />
                 <span className="play-button absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/60 bg-white/90 text-[#1a3a6c] shadow-xl transition duration-300 group-hover:scale-110">
