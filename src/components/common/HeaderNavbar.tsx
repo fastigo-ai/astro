@@ -310,13 +310,6 @@ export default function HeaderNavbar() {
               className="h-28 md:h-36 lg:h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
-          <div className="text-xs md:text-sm font-bold -mt-2 md:-mt-3 flex items-center justify-center gap-2">
-            <span className="text-emerald-500 font-bold">✔</span>
-            <span className="text-[#F45B8A] font-semibold tracking-wide">
-              Nurturing Every Life with Love &amp; Wisdom
-            </span>
-            <span className="text-emerald-500 font-bold">✔</span>
-          </div>
         </div>
       </header>
 
