@@ -3,16 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, GraduationCap, Brain, Activity, Globe, ArrowUpRight } from "lucide-react";
 
-const statsData = [
-  { value: 100000, label: "App Downloads", format: (v: number) => `${Math.floor(v / 1000)}K+` },
-  {
-    value: 1200000,
-    label: "YouTube Views",
-    format: (v: number) => `${(v / 1000000).toFixed(1)}M+`,
-  },
-  { value: 62, label: "Countries Reached", format: (v: number) => `${Math.floor(v)}+` },
-  { value: 4.6, label: "App Rating", format: (v: number) => `${v.toFixed(1)}★` },
-];
+
 
 const features = [
   {
@@ -149,28 +140,7 @@ export default function AboutSection() {
               )}
             </div>
 
-            {/* Dynamic Counter Stats (Only on Home Page) */}
-            {isHomePage && (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-3 border-y border-sky-100">
-                {statsData.map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="space-y-0.5"
-                  >
-                    <div className="text-xl md:text-2xl font-extrabold text-[#3B82F6] tracking-tight">
-                      {stat.format(stat.value)}
-                    </div>
-                    <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">
-                      {stat.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+
 
             {/* Staggered Feature Cards */}
             {!isHomePage && (

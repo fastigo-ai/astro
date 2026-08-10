@@ -138,7 +138,6 @@ export default function FeaturesSection() {
     "/images/features/comprehensive_slide1.png",
     "/images/features/comprehensive_slide2.png",
     "/images/features/comprehensive_slide3.png",
-    "/images/features/comprehensive_slide4.png",
   ];
 
   const leftFeatures = [
@@ -292,8 +291,21 @@ export default function FeaturesSection() {
                   <div className="w-10 h-1 bg-slate-600 rounded-full" />
                 </div>
 
-                {/* Screen Content: 3-Image Automatic Slider */}
+                {/* Screen Content: Automatic Slider */}
                 <div className="relative h-full w-full bg-slate-100 overflow-hidden rounded-[34px]">
+                  {/* Top Astro Baby Branding Overlay Header Bar on every slide */}
+                  <div className="absolute top-0 left-0 right-0 z-20 pt-6 pb-2.5 px-3 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/70 to-transparent flex items-center justify-between text-white backdrop-blur-[3px] border-b border-white/10">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-amber-400 text-xs font-black animate-pulse">✦</span>
+                      <span className="font-extrabold tracking-wider text-[11px] bg-gradient-to-r from-amber-200 via-pink-200 to-white bg-clip-text text-transparent uppercase font-sans">
+                        Astro Baby
+                      </span>
+                    </div>
+                    <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-[#F45B8A] text-white shadow-xs tracking-wider uppercase">
+                      Garbh Sanskar
+                    </span>
+                  </div>
+
                   {slides.map((slide, idx) => (
                     <img
                       key={slide}
@@ -304,8 +316,17 @@ export default function FeaturesSection() {
                       }`}
                     />
                   ))}
+
+                  {/* Bottom Astro Baby Watermark / Label Badge Overlay on every slide */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 px-3 py-1 rounded-full bg-[#172554]/80 backdrop-blur-md border border-white/20 shadow-md flex items-center gap-1.5 pointer-events-none">
+                    <span className="text-[#F45B8A] text-[10px]">✦</span>
+                    <span className="text-[10px] font-bold text-white tracking-wider uppercase">
+                      Astro Baby App
+                    </span>
+                  </div>
+
                   {/* Subtle glass screen reflection overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none z-10" />
                 </div>
               </motion.div>
             </div>
