@@ -1,0 +1,10 @@
+export { default as NavbarSkeleton } from "./NavbarSkeleton";
+export { default as FooterSkeleton } from "./FooterSkeleton";
+export { default as HomeSkeleton } from "./HomeSkeleton";
+export { default as AboutUsSkeleton } from "./AboutUsSkeleton";
+export { default as TeamSkeleton } from "./TeamSkeleton";
+export { default as AwardsSkeleton } from "./AwardsSkeleton";
+export { default as TestimonialSkeleton } from "./TestimonialSkeleton";
+export { default as BlogSkeleton } from "./BlogSkeleton";
+export { default as BlogPostSkeleton } from "./BlogPostSkeleton";
+export { default as FeatureDetailSkeleton } from "./FeatureDetailSkeleton";

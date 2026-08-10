@@ -1,5 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import ScrollToTop from "@/components/common/ScrollToTop";
+import {
+  HomeSkeleton,
+  AboutUsSkeleton,
+  TeamSkeleton,
+  AwardsSkeleton,
+  TestimonialSkeleton,
+  BlogSkeleton,
+  BlogPostSkeleton,
+  FeatureDetailSkeleton,
+} from "@/components/skeletons";
 
 const Home = lazy(() => import("./routes/index"));
 const AboutUs = lazy(() => import("./routes/about-us"));
@@ -17,37 +28,119 @@ const GarbhSanskarFeature = lazy(() => import("./routes/features/garbh-sanskar")
 const BaalBhavishFal = lazy(() => import("./routes/features/baal-bhavish-fal"));
 const Parenting = lazy(() => import("./routes/features/parenting"));
 
-import ScrollToTop from "@/components/common/ScrollToTop";
-
 export default function App() {
   return (
-    <Suspense
-      fallback={
-        <div className="flex h-screen items-center justify-center text-lg font-semibold text-[#1a3a6c]">
-          Loading...
-        </div>
-      }
-    >
+    <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        {/* <Route path="/features" element={<Features />} /> */}
-        <Route path="/team" element={<Team />} />
-        <Route path="/awardsaccolades" element={<AwardsAccolades />} />
-        <Route path="/testimonial" element={<Testimonial />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        
-        {/* Feature Dropdown Pages */}
-        <Route path="/features/biz-sanskar" element={<BizSanskar />} />
-        <Route path="/features/garbh-dhan" element={<GarbhDhan />} />
-        <Route path="/features/garbh-sanskar" element={<GarbhSanskarFeature />} />
-        <Route path="/features/baal-bhavish-fal" element={<BaalBhavishFal />} />
-        <Route path="/features/parenting" element={<Parenting />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<HomeSkeleton />}>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/about-us"
+          element={
+            <Suspense fallback={<AboutUsSkeleton />}>
+              <AboutUs />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Features" />}>
+              <Features />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/team"
+          element={
+            <Suspense fallback={<TeamSkeleton />}>
+              <Team />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/awardsaccolades"
+          element={
+            <Suspense fallback={<AwardsSkeleton />}>
+              <AwardsAccolades />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/testimonial"
+          element={
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <Testimonial />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <Suspense fallback={<BlogSkeleton />}>
+              <Blog />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/blog/:slug"
+          element={
+            <Suspense fallback={<BlogPostSkeleton />}>
+              <BlogPost />
+            </Suspense>
+          }
+        />
 
-        {/* Add a catch-all route if needed */}
+        {/* Feature Dropdown Pages */}
+        <Route
+          path="/features/biz-sanskar"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Biz Sanskar" />}>
+              <BizSanskar />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/garbh-dhan"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Garbh Dhan" />}>
+              <GarbhDhan />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/garbh-sanskar"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Garbh Sanskar" />}>
+              <GarbhSanskarFeature />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/baal-bhavish-fal"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Baal Bhavish Fal" />}>
+              <BaalBhavishFal />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/parenting"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Parenting" />}>
+              <Parenting />
+            </Suspense>
+          }
+        />
       </Routes>
-    </Suspense>
+    </>
   );
 }
+
