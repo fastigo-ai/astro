@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
-export function useAutoSlider({ count, interval = 6000 }: { count: number; interval?: number }) {
+export function useAutoSlider({ count, interval = 4000 }: { count: number; interval?: number }) {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 

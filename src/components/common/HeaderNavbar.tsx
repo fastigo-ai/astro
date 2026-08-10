@@ -401,11 +401,10 @@ export default function HeaderNavbar() {
                         e.preventDefault();
                       }
                     }}
-                    className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
-                      active
+                    className={`px-2.5 lg:px-3.5 py-1.5 lg:py-2 rounded-full text-[11px] lg:text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${active
                         ? "bg-[#F45B8A] text-white shadow-md shadow-[#F45B8A]/30 font-bold"
                         : "text-slate-700 hover:text-[#F45B8A] hover:bg-pink-50/70"
-                    }`}
+                      }`}
                   >
                     <span className={active ? "text-white" : "text-[#3B82F6]"}>{item.icon}</span>
                     <span className="whitespace-nowrap">{item.label}</span>
@@ -571,11 +570,10 @@ export default function HeaderNavbar() {
                         setSelectedLang(lang);
                         setLangOpen(false);
                       }}
-                      className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between hover:bg-blue-50 transition-colors ${
-                        selectedLang.code === lang.code
+                      className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between hover:bg-blue-50 transition-colors ${selectedLang.code === lang.code
                           ? "text-[#3B82F6] font-bold bg-blue-50/70"
                           : "text-slate-700"
-                      }`}
+                        }`}
                     >
                       <span>
                         {lang.name} ({lang.label})
@@ -623,19 +621,17 @@ export default function HeaderNavbar() {
                           setMenuOpen(false);
                         }
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${
-                        active
+                      className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-colors ${active
                           ? "bg-[#F45B8A] text-white font-bold shadow-md shadow-[#F45B8A]/30"
                           : "text-slate-700 hover:bg-pink-50"
-                      }`}
+                        }`}
                     >
                       <span className={active ? "text-white" : "text-[#3B82F6]"}>{item.icon}</span>
                       <span className="flex-1">{item.label}</span>
                       {item.hasDropdown && (
                         <svg
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            isDropdownOpen ? "rotate-180" : ""
-                          } ${active ? "text-white" : "text-[#3B82F6]"}`}
+                          className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""
+                            } ${active ? "text-white" : "text-[#3B82F6]"}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -716,11 +712,10 @@ export default function HeaderNavbar() {
                           setSelectedLang(lang);
                           setMobileLangOpen(false);
                         }}
-                        className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                          selectedLang.code === lang.code
+                        className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${selectedLang.code === lang.code
                             ? "bg-[#F45B8A] text-white shadow-xs"
                             : "text-slate-700 hover:bg-pink-50"
-                        }`}
+                          }`}
                       >
                         <span>{lang.name}</span>
                         <span className={selectedLang.code === lang.code ? "text-white/90" : "text-slate-400"}>

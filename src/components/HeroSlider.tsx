@@ -11,7 +11,7 @@ import { FiHeart } from "react-icons/fi";
 export default function HeroSlider() {
   const { index, setIndex, next, prev, pause, resume } = useAutoSlider({
     count: heroSlides.length,
-    interval: 6000,
+    interval: 5000,
   });
   const slide = heroSlides[index];
   const touchStartX = useRef<number | null>(null);
@@ -85,17 +85,6 @@ export default function HeroSlider() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <PrimaryButton>Start Your Journey</PrimaryButton>
               <SecondaryButton>Watch Story</SecondaryButton>
-            </div>
-            <div className="mt-10 flex items-center gap-6 text-xs text-slate-500 font-medium">
-              <div>
-                <span className="font-sans text-2xl font-extrabold text-amber-400">4.8★</span> App
-                rating
-              </div>
-              <div className="h-8 w-px bg-slate-200" />
-              <div>
-                <span className="font-sans text-2xl font-extrabold text-blue-600">500k+</span>{" "}
-                Mothers
-              </div>
             </div>
           </motion.div>
         </AnimatePresence>
