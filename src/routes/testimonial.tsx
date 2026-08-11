@@ -528,7 +528,7 @@ export default function TestimonialPage() {
                     href={`https://www.youtube.com/watch?v=${s.yt}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col overflow-hidden group hover:-translate-y-1"
+                    className="bg-white rounded-2xl md:rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col overflow-hidden group hover:-translate-y-1"
                   >
                     {/* Thumbnail Container */}
                     <div className="relative aspect-video overflow-hidden bg-[#0A1A2F]">

@@ -101,7 +101,7 @@ export default function StoriesSlider() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="story-card group min-w-[85vw] snap-center overflow-hidden shrink-0 sm:min-w-[45vw] lg:min-w-[350px] max-w-[380px]"
+              className="story-card group min-w-[85vw] snap-center overflow-hidden shrink-0 sm:min-w-[45vw] lg:min-w-[350px] max-w-[380px] bg-white rounded-2xl md:rounded-3xl border border-pink-100/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <button
                 type="button"
