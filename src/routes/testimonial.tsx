@@ -284,7 +284,7 @@ function Layout({ children }: { children: React.ReactNode; activeLabel?: string 
 
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>
@@ -394,7 +394,7 @@ export default function TestimonialPage() {
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans font-medium">
             From India and across the world, hear directly from thousands of happy parents whose
-            lives, pregnancies, and babies were blessed through Garbh Sanskar.
+            lives, pregnancies, and babies were blessed through Garbhadhan Sanskar.
           </p>
 
           {/* Search Input Box */}
@@ -452,7 +452,7 @@ export default function TestimonialPage() {
             >
               <img
                 src="/images/astrobaby_video_spotlight.jpg"
-                alt="Astro Baby Garbh Sanskar User Stories Video Spotlight"
+                alt="Astro Baby Garbhadhan Sanskar User Stories Video Spotlight"
                 className="w-full h-auto object-cover max-h-[440px] rounded-2xl transition-transform duration-500 group-hover:scale-102"
               />
               <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors flex items-center justify-center">
@@ -468,7 +468,7 @@ export default function TestimonialPage() {
                 Inspiring Journey of 1,00,000+ Mothers Around The World
               </h2>
               <p className="mt-2 text-slate-600 text-sm md:text-base max-w-3xl mx-auto font-sans">
-                Watch how Astro Baby Garbh Sanskar brings peace of mind, positive parenting, and
+                Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, positive parenting, and
                 miraculous changes to expectant families worldwide.
               </p>
               <div className="mt-4">
@@ -578,7 +578,7 @@ export default function TestimonialPage() {
                           {s.name}
                         </h3>
                         <p className="mt-1 text-xs text-slate-500 font-medium">
-                          Astro Baby Garbh Sanskar App User
+                          Astro Baby Garbhadhan Sanskar App User
                         </p>
                       </div>
 
@@ -717,13 +717,13 @@ export default function TestimonialPage() {
       <AppDownloadSection
         title={
           <>
-            Begin Your Garbh Sanskar Journey Today on{" "}
+            Begin Your Garbhadhan Sanskar Journey Today on{" "}
             <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
               Astro Baby
             </span>
           </>
         }
-        subtitle="Join thousands of happy mothers. Download the Astro Baby app and experience the power of ancient Garbh Sanskar wisdom."
+        subtitle="Join thousands of happy mothers. Download the Astro Baby app and experience the power of ancient Garbhadhan Sanskar wisdom."
       />
     </Layout>
   );

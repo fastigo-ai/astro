@@ -45,7 +45,7 @@ export default function BlogDetailPage() {
       try {
         await navigator.share({
           title: post.title,
-          text: `Check out this Garbh Sanskar article: ${post.title}`,
+          text: `Check out this Garbhadhan Sanskar article: ${post.title}`,
           url: window.location.href,
         });
         return;
@@ -136,7 +136,7 @@ export default function BlogDetailPage() {
                     {/* Left Top Badge */}
                     <span className="absolute top-3 left-3 bg-[#5A098F]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-[#F472B6] animate-pulse" />
-                      Garbh Sanskar Video
+                      Garbhadhan Sanskar Video
                     </span>
 
                     {/* Bottom overlay text */}
@@ -195,7 +195,7 @@ export default function BlogDetailPage() {
                 {/* Short Excerpt */}
                 <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed line-clamp-3">
                   {post.title} — pregnancy is one of the most beautiful and transformative phases in
-                  a woman's life. This guide explores its significance through Garbh Sanskar,
+                  a woman's life. This guide explores its significance through Garbhadhan Sanskar,
                   ancient wisdom, and practical well-being practices.
                 </p>
               </div>
@@ -320,14 +320,14 @@ export default function BlogDetailPage() {
               <div className="max-w-3xl mx-auto prose prose-slate max-w-none text-slate-700 leading-relaxed text-base md:text-lg">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mb-4">Introduction</h2>
                 <p>
-                  Garbh Sanskar is the practice of educating and nurturing the unborn child in the
+                  Garbhadhan Sanskar is the practice of educating and nurturing the unborn child in the
                   womb. Rooted in ancient Indian scriptures, it emphasizes the powerful bond between
                   mother and baby, and how a mother's thoughts, food, environment, and spiritual
                   practices influence the child's physical, mental, and emotional development.
                 </p>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
-                  Why Garbh Sanskar Matters
+                  Why Garbhadhan Sanskar Matters
                 </h2>
                 <ul className="list-disc pl-6 space-y-2 text-slate-700">
                   <li>Supports healthy fetal brain development and emotional bonding.</li>
@@ -345,7 +345,7 @@ export default function BlogDetailPage() {
                 <p>
                   Include daily meditation, mantra chanting, satsang, spiritual reading, gentle
                   yoga, and a balanced diet in your routine. Communicate lovingly with your baby
-                  (Garbh Samvad), listen to soothing Garbh Sanskar music, and surround yourself with
+                  (Garbh Samvad), listen to soothing Garbhadhan Sanskar music, and surround yourself with
                   positive thoughts and environment.
                 </p>
 
@@ -359,7 +359,7 @@ export default function BlogDetailPage() {
                 </h2>
                 <p>
                   Every moment of pregnancy is a golden opportunity to shape the future of your
-                  child. With the guidance of Astro Baby Garbh Sanskar, thousands of mothers have
+                  child. With the guidance of Astro Baby Garbhadhan Sanskar, thousands of mothers have
                   experienced a joyful, mindful, and spiritually enriched pregnancy journey.
                 </p>
 

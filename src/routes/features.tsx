@@ -19,10 +19,10 @@ const features: Feature[] = [
   {
     title: "Sankalp Poojan",
     img: "/images/features/sankalp_poojan.jpg",
-    tagline: "Live Sankalp Poojan before starting Garbh Sanskar",
+    tagline: "Live Sankalp Poojan before starting Garbhadhan Sanskar",
     body: [
       "In Vaidic Indian tradition, every auspicious work starts with Sankalp poojan. At Astro Baby, Vaidic Sankalp poojan is done live under the guidance of our Vaidic Brahmin. Through Sankalp Poojan, you pray to God, the Navagrahas and the Nakshatras to give strength and determination to carry this pregnancy for the whole term and to bless you and your child with the divine qualities of wisdom, health and positivity.",
-      "Within 24 hours of subscribing to Astro Baby Garbh Sanskar, our representative will get in touch with you to inform you about the samagri required for poojan. Soon after that, we'll schedule a one-to-one live Sankalp Poojan for you as per your convenience on a pre-decided Sankalp muhurat. Both the husband and the wife must be present in this Sankalp poojan.",
+      "Within 24 hours of subscribing to Astro Baby Garbhadhan Sanskar, our representative will get in touch with you to inform you about the samagri required for poojan. Soon after that, we'll schedule a one-to-one live Sankalp Poojan for you as per your convenience on a pre-decided Sankalp muhurat. Both the husband and the wife must be present in this Sankalp poojan.",
     ],
   },
   {
@@ -44,11 +44,11 @@ const features: Feature[] = [
     ],
   },
   {
-    title: "GarbhSanskar Sutra",
+    title: "Garbhadhan Sanskar Sutra",
     img: "/images/features/garbhsanskar_sutra.jpg",
     tagline: "Sutras to impart mann, buddhi and sanskars in your child",
     body: [
-      "During the 9 months of pregnancy, each month, there is a phased development of the various physical and mental dimensions of the baby. Astro Baby is a pure science, which provides Garbh Sanskar Sutras, according to the present developmental stage of the fetus. These sutras turn your pregnancy into a wonderful, joyous experience and prepares you to welcome a wise, sanskari and healthy baby.",
+      "During the 9 months of pregnancy, each month, there is a phased development of the various physical and mental dimensions of the baby. Astro Baby is a pure science, which provides Garbhadhan Sanskar Sutras, according to the present developmental stage of the fetus. These sutras turn your pregnancy into a wonderful, joyous experience and prepares you to welcome a wise, sanskari and healthy baby.",
     ],
   },
   {
@@ -57,16 +57,16 @@ const features: Feature[] = [
     tagline: "Miraculous vaidic chants for the promotion of special qualities in the child",
     body: [
       "The Vedas mention special mantras for pregnancy, which have miraculous effects on the fetus. Originated from Rigveda, Yajurveda, Samaveda and Atharvaveda these mantras are available in the Astro Baby App.",
-      "They are chanted by the world's most knowledgeable Vaidic brahmins, following the stern and uncompromising rules of Varn, Swar, Matra, Balam, Saama and Santana. These Vaidic Garbh Sanskar Mantras have been found to have a divine and positive effect on both the child and the mother.",
+      "They are chanted by the world's most knowledgeable Vaidic brahmins, following the stern and uncompromising rules of Varn, Swar, Matra, Balam, Saama and Santana. These Vaidic Garbhadhan Sanskar Mantras have been found to have a divine and positive effect on both the child and the mother.",
     ],
   },
   {
-    title: "GarbhSanskar Music",
+    title: "Garbhadhan Sanskar Music",
     img: "/images/features/garbhsanskar_music.jpg",
     tagline: "Music based on specific ragas for the ideal development of a child",
     body: [
-      "Indian ragas and Garbh Sanskar music have a positive impact on our mood, mind and body. This fact is now recognized by the world's top scientists and universities as well. Children who have been exposed to traditional ragas before birth develop many qualities such as intelligence, health and calmness in nature.",
-      "The Garbh Sanskar music in Astro Baby App has been developed on the basis of Indian ragas, which not only enhance the virtues in the fetus, but also keep the pregnant woman calm, relaxed and positive.",
+      "Indian ragas and Garbhadhan Sanskar music have a positive impact on our mood, mind and body. This fact is now recognized by the world's top scientists and universities as well. Children who have been exposed to traditional ragas before birth develop many qualities such as intelligence, health and calmness in nature.",
+      "The Garbhadhan Sanskar music in Astro Baby App has been developed on the basis of Indian ragas, which not only enhance the virtues in the fetus, but also keep the pregnant woman calm, relaxed and positive.",
     ],
   },
   {
@@ -101,7 +101,7 @@ const features: Feature[] = [
     img: "/images/features/garbhsamvad.jpg",
     tagline: "Laying the foundation of the bond of a lifetime",
     body: [
-      "Samvad - dialogue or communication, is one of the most crucial aspects of Garbh Sanskar. Your baby may not be able to listen or understand your words especially during early pregnancy but they can certainly sense the emotions and feelings behind your words.",
+      "Samvad - dialogue or communication, is one of the most crucial aspects of Garbhadhan Sanskar. Your baby may not be able to listen or understand your words especially during early pregnancy but they can certainly sense the emotions and feelings behind your words.",
       "This communication, once prescribed by ancient Indian Rishis, is now a widely accepted practice proven by various scientific studies. Rejoice in these joyous moments of pregnancy and forge the bond that will last a lifetime.",
     ],
   },
@@ -117,9 +117,9 @@ const features: Feature[] = [
   {
     title: "Parv (Occasion) Based Sessions",
     img: "/images/features/parv_based_sessions.jpg",
-    tagline: "Garbh Sanskar sessions for important festivals",
+    tagline: "Garbhadhan Sanskar sessions for important festivals",
     body: [
-      "Garbh Sanskar is not just limited to mantra and music. It is a 24/7 lifestyle and pregnancy is a period where a pregnant lady transforms into a mother. The Parvnimitt or occasion-based session includes important time-specific activities with respect to garbhsanskar.",
+      "Garbhadhan Sanskar is not just limited to mantra and music. It is a 24/7 lifestyle and pregnancy is a period where a pregnant lady transforms into a mother. The Parvnimitt or occasion-based session includes important time-specific activities with respect to garbhadhan sanskar.",
       "It also includes discourses that plant sanskaras subconsciously in the mother as well as the baby. For instance, the occasions include Holi, Diwali, Navratri, Ekadashi, Ram Navami and much more.",
     ],
   },
@@ -137,25 +137,25 @@ const features: Feature[] = [
     img: "/images/features/meditation.jpg",
     tagline: "To de-stress yourself",
     body: [
-      "Meditation is an important aspect of garbh sanskar and is beneficial for the body as it de-stresses the mind. It involves getting into a zero state of mind, which can help bring peace and tranquility, and enhance concentration. Visualizing good things about the baby while doing meditation during pregnancy is also a great way to bond with the baby.",
+      "Meditation is an important aspect of garbhadhan sanskar and is beneficial for the body as it de-stresses the mind. It involves getting into a zero state of mind, which can help bring peace and tranquility, and enhance concentration. Visualizing good things about the baby while doing meditation during pregnancy is also a great way to bond with the baby.",
     ],
   },
   {
     title: "Monthly Calendar",
     img: "/images/features/monthly_calendar.png",
-    tagline: "Planner for all monthly garbh sanskar activities",
+    tagline: "Planner for all monthly garbhadhan sanskar activities",
     body: [
-      "The monthly activity planner provided in Astro Baby Garbh Sanskar app gives you the complete information, in advance, about the various activities lined up for the month. It gives you details about the date, time, and the expert associated with the respective activities/sessions.",
+      "The monthly activity planner provided in Astro Baby Garbhadhan Sanskar app gives you the complete information, in advance, about the various activities lined up for the month. It gives you details about the date, time, and the expert associated with the respective activities/sessions.",
     ],
   },
   {
-    title: "Garbh Sanskar QnA",
+    title: "Garbhadhan Sanskar QnA",
     img: "/images/features/garbhsanskar_qna.jpg",
     tagline:
-      "All of your questions, queries & concerns related to Garbh Sanskar & Life… Answered by our experts Live.",
+      "All of your questions, queries & concerns related to Garbhadhan Sanskar & Life… Answered by our experts Live.",
     body: [
-      "During pregnancy you often find yourself facing situations where you require guidance from a trusted friend & mentor. With GarbhSanskar QnA Session you get the guidance of Prof. Vipin Joshi Live.",
-      "Be it questions related to Garbh Sanskar, Shastras, situations related to day-to-day challenges of life, or dynamics of spouse relationships or in-laws. Users from India & abroad get their absolute guidance through this session.",
+      "During pregnancy you often find yourself facing situations where you require guidance from a trusted friend & mentor. With Garbhadhan Sanskar QnA Session you get the guidance of Prof. Vipin Joshi Live.",
+      "Be it questions related to Garbhadhan Sanskar, Shastras, situations related to day-to-day challenges of life, or dynamics of spouse relationships or in-laws. Users from India & abroad get their absolute guidance through this session.",
     ],
   },
   {
@@ -175,7 +175,7 @@ const features: Feature[] = [
       "Hundreds of Pregnant ladies across the world participate daily at the same time for 'Garbh-raksha' prarthna Live.",
     body: [
       "Sandhya Prarthna is a session of uninterrupted tranquility for pregnant women. Protective Ramraksha Stotra, effective Mantras, powerful Santan Gopal Mantra, and sacred Garbh Kalyan Prarthna will relieve pregnant women from daily life's hassles.",
-      "Regular chanting of these prayers and mantras with Astro Baby Garbh Sanskar's mentor protects the mother's womb from any kind of mishaps and ensures the baby's better future.",
+      "Regular chanting of these prayers and mantras with Astro Baby Garbhadhan Sanskar's mentor protects the mother's womb from any kind of mishaps and ensures the baby's better future.",
     ],
   },
   {
@@ -185,7 +185,7 @@ const features: Feature[] = [
       "Safe Yogasans for pregnancy demonstrated by Yogasan experts as per your pregnancy month Live.",
     body: [
       "Yoga during pregnancy is an ideal way to stay in shape, tone the muscles, and improve blood circulation– all with negligible impact on your joints. Prenatal Yoga also reduces stress, improves flexibility, lowers back pain, and prepares your body for labor and delivery.",
-      "With Astro Baby Garbh Sanskar's expert Yoga instructors, it's extremely easy to perform quick and effective Yoga exercises from the comfort of your home.",
+      "With Astro Baby Garbhadhan Sanskar's expert Yoga instructors, it's extremely easy to perform quick and effective Yoga exercises from the comfort of your home.",
     ],
   },
   {
@@ -203,7 +203,7 @@ const features: Feature[] = [
     img: "/images/features/mentoring.jpg",
     tagline: "Live mentoring sessions to guide you through life problems keeping you up at night.",
     body: [
-      "Pregnancy is one of the most rewarding experiences a woman can have. But, at times you may have mixed feelings, insecurities, self-doubt, overwhelming feelings, anxiety, etc. Combat these negative feelings easily with Astro Baby Garbh Sanskar's mentoring session.",
+      "Pregnancy is one of the most rewarding experiences a woman can have. But, at times you may have mixed feelings, insecurities, self-doubt, overwhelming feelings, anxiety, etc. Combat these negative feelings easily with Astro Baby Garbhadhan Sanskar's mentoring session.",
     ],
   },
   {
@@ -230,7 +230,7 @@ const features: Feature[] = [
       "Answers to all of your medical issues or concerns from the top gynecologists of the nation in a Live session.",
     body: [
       "Pregnant women often lack access to essential medical advice since they can't afford to visit a gynecologist every time they have a question. Get regular answers to all of your pregnancy-related questions through gynecologist sessions.",
-      "Astro Baby Garbh Sanskar's experienced gynecologist is available to answer any questions you may have.",
+      "Astro Baby Garbhadhan Sanskar's experienced gynecologist is available to answer any questions you may have.",
     ],
   },
 ];
@@ -357,7 +357,7 @@ export default function FeaturesPage() {
             23+ Comprehensive Features
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Garbh Sanskar <span className="text-[#EA3484]">Course & Features</span>
+            Garbhadhan Sanskar <span className="text-[#EA3484]">Course & Features</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
             A unique combination of ancient Shaastra wisdom & modern obstetric science delivered
@@ -521,7 +521,7 @@ export default function FeaturesPage() {
             </span>
           </>
         }
-        subtitle="Download the Astro Baby Garbh Sanskar app and begin your positive pregnancy journey today."
+        subtitle="Download the Astro Baby Garbhadhan Sanskar app and begin your positive pregnancy journey today."
       />
 
       {/* Newsletter */}
@@ -530,7 +530,7 @@ export default function FeaturesPage() {
       {/* Footer */}
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>

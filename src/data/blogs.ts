@@ -43,7 +43,7 @@ export function getPostCategory(title: string): string {
   )
     return "Vedic & Mantras";
   if (t.includes("sanskar") || t.includes("womb") || t.includes("baby") || t.includes("samvad"))
-    return "Garbh Sanskar";
+    return "Garbhadhan Sanskar";
   return "Pregnancy Care";
 }
 
@@ -100,17 +100,17 @@ export const posts: Post[] = [
   },
   {
     img: "garbh-sanskar-in-the-third-trimester.jpg",
-    title: "Nurturing Your Pregnancy: Garbh Sanskar in the Third Trimester",
+    title: "Nurturing Your Pregnancy: Garbhadhan Sanskar in the Third Trimester",
     date: "Oct 11, 2023",
   },
   {
     img: "garbh-sanskar-in-the-second-trimester.jpg",
-    title: "Garbh Sanskar in the Second Trimester: A Comprehensive Guide",
+    title: "Garbhadhan Sanskar in the Second Trimester: A Comprehensive Guide",
     date: "Oct 09, 2023",
   },
   {
     img: "garbh-sanskar-in-the-first-trimester.jpg",
-    title: "Unraveling The Power of Garbh Sanskar in The First Trimester",
+    title: "Unraveling The Power of Garbhadhan Sanskar in The First Trimester",
     date: "Oct 04, 2023",
   },
   {
@@ -120,7 +120,7 @@ export const posts: Post[] = [
   },
   {
     img: "from-which-month-should-you-start-garbh-sanskar.jpg",
-    title: "From Which Month Should You Start Garbh Sanskar?",
+    title: "From Which Month Should You Start Garbhadhan Sanskar?",
     date: "Jan 18, 2023",
   },
   {
@@ -130,7 +130,7 @@ export const posts: Post[] = [
   },
   {
     img: "how-to-do-garbh-sanskar-at-home-krishna-coming.jpg",
-    title: "How to Do Garbh Sanskar at Home",
+    title: "How to Do Garbhadhan Sanskar at Home",
     date: "Oct 27, 2022",
   },
   {
@@ -145,7 +145,7 @@ export const posts: Post[] = [
   },
   {
     img: "best-online-garbh-sanskar-application-krishna-coming0.jpg",
-    title: "Best Garbh Sanskar App - Astro Baby",
+    title: "Best Garbhadhan Sanskar App - Astro Baby",
     date: "Sep 21, 2022",
   },
   {
@@ -155,7 +155,7 @@ export const posts: Post[] = [
   },
   {
     img: "benefits-of-garbh-sanskar-during-pregnancy-krishna-coming0.jpg",
-    title: "Benefits of Garbh Sanskar During Pregnancy",
+    title: "Benefits of Garbhadhan Sanskar During Pregnancy",
     date: "Aug 26, 2022",
   },
   {
@@ -180,7 +180,7 @@ export const posts: Post[] = [
   },
   {
     img: "importance-of-garbh-sanskar-during-pregnancy.jpg",
-    title: "Importance of Garbh Sanskar During Pregnancy",
+    title: "Importance of Garbhadhan Sanskar During Pregnancy",
     date: "Jun 27, 2022",
   },
   {
@@ -240,7 +240,7 @@ export const posts: Post[] = [
   },
   {
     img: "krishna-coming-garbh-sanskar-story-read-these-real-mythological-stories.jpg",
-    title: "Garbh Sanskar Story - Read These Real Mythological Stories",
+    title: "Garbhadhan Sanskar Story - Read These Real Mythological Stories",
     date: "Dec 30, 2021",
   },
   {
@@ -280,7 +280,7 @@ export const posts: Post[] = [
   },
   {
     img: "krishna-coming-garbh-sanskar-mantra.jpg",
-    title: "Benefits of Garbh Sanskar Mantra and Shloka During Pregnancy",
+    title: "Benefits of Garbhadhan Sanskar Mantra and Shloka During Pregnancy",
     date: "Oct 17, 2021",
   },
   {
@@ -330,7 +330,7 @@ export const posts: Post[] = [
   },
   {
     img: "krishna-coming-garbh-sanskar-music-for-a-miraculous-pregnancy.jpg",
-    title: "Garbh Sanskar Music - For a Miraculous Pregnancy",
+    title: "Garbhadhan Sanskar Music - For a Miraculous Pregnancy",
     date: "Sep 01, 2021",
   },
   {

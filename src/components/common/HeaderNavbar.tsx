@@ -77,7 +77,7 @@ const navItems = [
         ),
       },
       {
-        label: "Garbh Sanskar",
+        label: "Garbhadhan Sanskar",
         to: "/features/garbh-sanskar",
         desc: "Vedic wisdom for pregnancy",
         icon: (
@@ -258,7 +258,7 @@ export default function HeaderNavbar() {
           <div className="flex items-center gap-2">
             <span className="text-amber-300 text-xs">✨</span>
             <span className="font-semibold text-white tracking-wide text-[12px]">
-              Astro Baby Garbh Sanskar — Divine Wisdom & Scientific Pregnancy Care
+              Astro Baby Garbhadhan Sanskar — Divine Wisdom & Scientific Pregnancy Care
             </span>
           </div>
           <div className="flex items-center gap-5 text-white/90 text-[12px]">

@@ -27,7 +27,7 @@ export function Layout({
 
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>
@@ -43,7 +43,7 @@ export function Layout({
 
 const CATEGORIES = [
   "All",
-  "Garbh Sanskar",
+  "Garbhadhan Sanskar",
   "Trimester Guide",
   "Diet & Nutrition",
   "Health & Fitness",
@@ -157,17 +157,17 @@ export default function BlogPage() {
             <span>✨</span> ASTRO BABY KNOWLEDGE CENTER
           </div>
 
-          {/* Heading: Cormorant Garamond font with purple-pink gradient ONLY on Garbh Sanskar */}
+          {/* Heading: Cormorant Garamond font with purple-pink gradient ONLY on Garbhadhan Sanskar */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1E1B2E] leading-tight font-['Cormorant_Garamond',serif]">
             <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
-              Garbh Sanskar
+              Garbhadhan Sanskar
             </span>{" "}
             & Pregnancy Blog
           </h1>
 
           {/* Body Text */}
           <p className="text-[#5F5B73] text-sm sm:text-base md:text-lg max-w-3xl mx-auto font-normal leading-relaxed font-['Plus_Jakarta_Sans',sans-serif]">
-            Explore authentic guidance on Garbh Sanskar, trimester care, nutrition, mantras, yoga,
+            Explore authentic guidance on Garbhadhan Sanskar, trimester care, nutrition, mantras, yoga,
             and pregnancy health — curated by experts for positive motherhood.
           </p>
 

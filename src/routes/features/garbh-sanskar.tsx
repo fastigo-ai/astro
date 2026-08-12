@@ -62,11 +62,11 @@ const garbhFeaturesList = [
     ],
   },
   {
-    title: "Garbh Sanskar Music Therapy",
+    title: "Garbhadhan Sanskar Music Therapy",
     img: "/images/features/garbhsanskar_music.jpg",
     tagline: "Music based on specific ragas for ideal development.",
     body: [
-      "Music is the language of the soul. Indian classical ragas and Garbh Sanskar music have a profound impact on the mood, mind, and body of both the mother and the baby.",
+      "Music is the language of the soul. Indian classical ragas and Garbhadhan Sanskar music have a profound impact on the mood, mind, and body of both the mother and the baby.",
       "Our curated musical tracks enhance virtues in the fetus, boost cognitive development, and keep the pregnant woman relaxed, stress-free, and positive throughout her 9-month journey."
     ],
   },
@@ -136,7 +136,7 @@ export default function GarbhSanskarFeature() {
           <div className="absolute inset-0 bg-gradient-to-t from-rose-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
           <img 
             src="/images/features_banner_astrobaby.png" 
-            alt="Garbh Sanskar" 
+            alt="Garbhadhan Sanskar" 
             className="w-full h-auto max-h-[450px] object-cover object-center block contrast-[1.03] saturate-[1.05] rounded-[30px] transition-transform duration-700 group-hover:scale-[1.01]" 
           />
         </div>
@@ -153,10 +153,10 @@ export default function GarbhSanskarFeature() {
             Holistic Pregnancy Care
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A3A6C] tracking-tight mb-6">
-            Garbh Sanskar <span className="text-[#EA3484]">🤰</span>
+            Garbhadhan Sanskar <span className="text-[#EA3484]">🤰</span>
           </h1>
           <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
-            Science meets spirituality. <strong>Garbh Sanskar</strong> is not just about physical health, but shaping the character, intellect, and emotional quotient of your child right from the womb. Experience a joyful, stress-free 9 months.
+            Science meets spirituality. <strong>Garbhadhan Sanskar</strong> is not just about physical health, but shaping the character, intellect, and emotional quotient of your child right from the womb. Experience a joyful, stress-free 9 months.
           </p>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default function GarbhSanskarFeature() {
       <section ref={pillarsRef} className="py-16 md:py-24 bg-gradient-to-br from-white via-rose-50/40 to-purple-50/40 relative border-y border-pink-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">The Essentials of Garbh Sanskar</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">The Essentials of Garbhadhan Sanskar</h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">Four powerful practices to nurture a genius, healthy, and happy baby.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -190,7 +190,7 @@ export default function GarbhSanskarFeature() {
       <section ref={featuresGridRef} className="py-16 md:py-24 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">Inside the Garbh Sanskar App</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">Inside the Garbhadhan Sanskar App</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full"></div>
           </div>
           
@@ -251,7 +251,7 @@ export default function GarbhSanskarFeature() {
           
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">Give Your Child the Best Start in Life</h2>
           <p className="text-rose-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
-            Join the Astro Baby Garbh Sanskar program today and embark on a 9-month journey of love, spirituality, and science.
+            Join the Astro Baby Garbhadhan Sanskar program today and embark on a 9-month journey of love, spirituality, and science.
           </p>
           <button className="relative z-10 bg-white text-[#E11D48] font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
             Download App & Start Free Trial
@@ -263,7 +263,7 @@ export default function GarbhSanskarFeature() {
       <NewsletterSection />
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
         </div>
       </footer>
     </div>

@@ -174,7 +174,7 @@ export default function FeaturesSection() {
     },
     {
       icon: Activity,
-      title: "Garbh Sanskar Music",
+      title: "Garbhadhan Sanskar Music",
       desc: "Ragas and frequencies tuned to encourage neural pathway growth.",
       iconBg: "bg-blue-100/50",
       iconColor: "text-blue-600",
@@ -302,7 +302,7 @@ export default function FeaturesSection() {
                       </span>
                     </div>
                     <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-[#F45B8A] text-white shadow-xs tracking-wider uppercase">
-                      Garbh Sanskar
+                      Garbhadhan Sanskar
                     </span>
                   </div>
 

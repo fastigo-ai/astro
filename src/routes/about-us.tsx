@@ -18,12 +18,12 @@ const missionPoints = [
   {
     icon: "feature3.svg",
     title: "Global Reach",
-    text: "Take the science of Garbh Sanskar to every home across the world, breaking language & geographical barriers.",
+    text: "Take the science of Garbhadhan Sanskar to every home across the world, breaking language & geographical barriers.",
   },
   {
     icon: "feature4.svg",
     title: "Scientific Approach",
-    text: "Combine ancient Indian Garbh Sanskar wisdom with modern medical & psychological science.",
+    text: "Combine ancient Indian Garbhadhan Sanskar wisdom with modern medical & psychological science.",
   },
 ];
 
@@ -31,7 +31,7 @@ const teamRoles = [
   "IITians",
   "Scientists",
   "Gynaecologists",
-  "Garbh Sanskar Experts",
+  "Garbhadhan Sanskar Experts",
   "Vedmurti Brahmins",
   "Life Trainers",
   "Yoga Experts",
@@ -54,7 +54,7 @@ const milestones = [
   {
     year: "2018",
     title: "The Vision",
-    text: "Astro Baby was envisioned as a bridge between ancient Garbh Sanskar wisdom and modern-day pregnant couples.",
+    text: "Astro Baby was envisioned as a bridge between ancient Garbhadhan Sanskar wisdom and modern-day pregnant couples.",
   },
   {
     year: "2019",
@@ -64,7 +64,7 @@ const milestones = [
   {
     year: "2020",
     title: "App Launch",
-    text: "The Astro Baby Garbh Sanskar mobile application launched on Android & iOS platforms.",
+    text: "The Astro Baby Garbhadhan Sanskar mobile application launched on Android & iOS platforms.",
   },
   {
     year: "2022",
@@ -74,7 +74,7 @@ const milestones = [
   {
     year: "Today",
     title: "A Movement",
-    text: "Now the world's most trusted Garbh Sanskar app, appreciated by dignitaries of national stature.",
+    text: "Now the world's most trusted Garbhadhan Sanskar app, appreciated by dignitaries of national stature.",
   },
 ];
 
@@ -141,7 +141,7 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>

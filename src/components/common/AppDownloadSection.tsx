@@ -8,7 +8,7 @@ interface AppDownloadSectionProps {
 
 export default function AppDownloadSection({
   title,
-  subtitle = "Download the Astro Baby Garbh Sanskar app today and experience ancient wisdom backed by modern science.",
+  subtitle = "Download the Astro Baby Garbhadhan Sanskar app today and experience ancient wisdom backed by modern science.",
 }: AppDownloadSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -127,7 +127,7 @@ export default function AppDownloadSection({
           <h2 className="gsap-stagger-item text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554] leading-tight font-['Cormorant_Garamond',serif] mb-4 max-w-3xl mx-auto">
             {title || (
               <>
-                Begin Your Garbh Sanskar Journey Today on{" "}
+                Begin Your Garbhadhan Sanskar Journey Today on{" "}
                 <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
                   Astro Baby
                 </span>

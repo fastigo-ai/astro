@@ -18,18 +18,18 @@ const members: Member[] = [
     bio: [
       "A man of many talents, Prof. Vipin Joshi is a teacher, an entrepreneur and a visionary. He established CatalyseR Eduventures (i) Pvt. Ltd to train students for competitive entrance examinations and has produced 5 IIT JEE Zone toppers in 4 consecutive years, a national record. He has also produced 750+ NTSE scholars.",
       "He received numerous awards from dignitaries for his contribution in the field of education, including Shri Satyapal Singh, Shri S. P. Singh Baghel, Shri Shivraj Singh Chouhan and Shri Deepak Joshi.",
-      "Along with an expert team of gynaecologists, scientists and IITians, he researched and made it a mission to revive the Ancient Indian Garbh Sanskar Process — today known as 'Astro Baby Garbh Sanskar'.",
+      "Along with an expert team of gynaecologists, scientists and IITians, he researched and made it a mission to revive the Ancient Indian Garbhadhan Sanskar Process — today known as 'Astro Baby Garbhadhan Sanskar'.",
     ],
   },
   {
     img: "award_1680693648.jpg",
     name: "P.P. Shri Praveen Nathji Maharaj",
     title:
-      "Garbh Sanskar Expert, M.A. (Sanskrit), Yog Visharad, Jyotish Martand, Prakrutik Chikitsak",
+      "Garbhadhan Sanskar Expert, M.A. (Sanskrit), Yog Visharad, Jyotish Martand, Prakrutik Chikitsak",
     bio: [
       "Initiated in the Nath Parampara of Sanatan Dharma, Acharya Praveen Nathji Maharaj taught students of science for many years.",
       "Under his Guru's guidance, his intellectual interest in spiritualism led him to the Himalayas. He studied Bhagwad Gita, Ramayana, Dasbodh and earned degrees in Yog Visharad, Jyotish Vidhya and Prakratik Chikitsa.",
-      "For the past 22 years, Acharya-Shri has tirelessly worked to revive the ancient Indian Garbh Sanskar process. Under his guidance, thousands of families have given birth to calm, intelligent and sanskarvaan progenies.",
+      "For the past 22 years, Acharya-Shri has tirelessly worked to revive the ancient Indian Garbhadhan Sanskar process. Under his guidance, thousands of families have given birth to calm, intelligent and sanskarvaan progenies.",
     ],
   },
   {
@@ -59,7 +59,7 @@ const members: Member[] = [
     bio: [
       "Known as one of the best gynaecologists in India for high-risk pregnancy cases.",
       "Completed MBBS in 1995 and M.D. (OBS & GYN) in 2001 and has successfully handled more than 1 lakh pregnancy cases in the past 20 years.",
-      "She has been spreading the science of being positive and stress-free during pregnancy through Garbh Sanskar for the past 17 years.",
+      "She has been spreading the science of being positive and stress-free during pregnancy through Garbhadhan Sanskar for the past 17 years.",
     ],
   },
   {
@@ -77,7 +77,7 @@ const members: Member[] = [
     title: "M.Sc (Gold Medalist), M.Phil, Ph.D.",
     bio: [
       "For the past 20 years, Prof. Pankaj Pimple has been an inspiration for many research scholars across India.",
-      "A man of science and a spiritual soul, his research helped shape the most credible and scientific Garbh Sanskar curriculum in the world.",
+      "A man of science and a spiritual soul, his research helped shape the most credible and scientific Garbhadhan Sanskar curriculum in the world.",
     ],
   },
   {
@@ -172,7 +172,7 @@ function Layout({ children }: { children: React.ReactNode; activeLabel?: string 
 
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>
@@ -294,11 +294,11 @@ export default function TeamPage() {
             Expert Advisory Council
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Meet Our Team — <span className="text-[#F63D8E]">The Garbh Sanskar Experts</span>
+            Meet Our Team — <span className="text-[#F63D8E]">The Garbhadhan Sanskar Experts</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
             A rare confluence of doctors, IITians, revered Vedic scholars, life coaches, yoga &
-            nutrition experts and astrologers — together shaping the world's most trusted Garbh
+            nutrition experts and astrologers — together shaping the world's most trusted Garbhadhan
             Sanskar curriculum.
           </p>
 
@@ -420,7 +420,7 @@ export default function TeamPage() {
                     >
                       <div className="inline-flex items-center gap-1.5 bg-[#EA3484] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-[#EA3484]/30 mb-3.5 self-start">
                         <span>✦</span>
-                        <span>Garbh Sanskar Expert</span>
+                        <span>Garbhadhan Sanskar Expert</span>
                       </div>
                       <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E293B] mb-2.5 tracking-tight">
                         {m.name}
@@ -455,7 +455,7 @@ export default function TeamPage() {
             </span>
           </>
         }
-        subtitle="Download the Astro Baby Garbh Sanskar app today and begin your positive pregnancy journey."
+        subtitle="Download the Astro Baby Garbhadhan Sanskar app today and begin your positive pregnancy journey."
       />
     </Layout>
   );

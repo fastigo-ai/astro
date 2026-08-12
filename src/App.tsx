@@ -118,7 +118,7 @@ export default function App() {
         <Route
           path="/features/garbh-sanskar"
           element={
-            <Suspense fallback={<FeatureDetailSkeleton title="Garbh Sanskar" />}>
+            <Suspense fallback={<FeatureDetailSkeleton title="Garbhadhan Sanskar" />}>
               <GarbhSanskarFeature />
             </Suspense>
           }

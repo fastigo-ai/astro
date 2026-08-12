@@ -63,7 +63,7 @@ function Layout({ children, activeLabel }: { children: React.ReactNode; activeLa
 
       <footer className="bg-[#0f2547] text-white/80 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>
@@ -117,10 +117,10 @@ export default function AwardsPage() {
             National Recognition
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Garbh Sanskar Program — <span className="text-[#F63D8E]">Awards & Accolades</span>
+            Garbhadhan Sanskar Program — <span className="text-[#F63D8E]">Awards & Accolades</span>
           </h1>
           <p className="mt-4 text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed text-base md:text-lg">
-            Astro Baby Garbh Sanskar has been honoured by the highest offices, ministries and
+            Astro Baby Garbhadhan Sanskar has been honoured by the highest offices, ministries and
             respected institutions across India for its contribution towards a healthier, wiser and
             more sanskarit generation.
           </p>

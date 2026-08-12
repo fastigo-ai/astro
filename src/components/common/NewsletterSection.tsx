@@ -30,7 +30,7 @@ export default function NewsletterSection() {
             <div className="relative aspect-[4/3] sm:aspect-square rounded-[28px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(23,37,84,0.18)] hover:shadow-[0_35px_70px_-12px_rgba(23,37,84,0.25)] border-2 border-white/80 ring-1 ring-[#172554]/10 bg-[#FFFCFE] transition-all duration-500">
               <img
                 src="/images/newsletter_illustration.jpg"
-                alt="Astro Baby Garbh Sanskar Expecting Mother"
+                alt="Astro Baby Garbhadhan Sanskar Expecting Mother"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1E1B2E]/50 via-transparent to-transparent opacity-70" />
@@ -42,7 +42,7 @@ export default function NewsletterSection() {
                 </div>
                 <div>
                   <div className="text-xs font-bold font-['Plus_Jakarta_Sans',sans-serif] text-[#172554] leading-snug">
-                    Garbh Sanskar Daily Sutras
+                    Garbhadhan Sanskar Daily Sutras
                   </div>
                   <div className="text-[11px] text-[#475569] font-medium">
                     Wisdom, Mantras & Trimester Care
@@ -67,13 +67,13 @@ export default function NewsletterSection() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#172554] leading-[1.15] font-['Cormorant_Garamond',serif]">
                 Subscribe to Our{" "}
                 <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
-                  Garbh Sanskar
+                  Garbhadhan Sanskar
                 </span>{" "}
                 Newsletter
               </h2>
 
               <p className="text-[#475569] text-sm sm:text-base leading-relaxed font-['Plus_Jakarta_Sans',sans-serif] font-normal pt-1">
-                To get more Garbh Sanskar related content in your inbox, subscribe to our newsletter
+                To get more Garbhadhan Sanskar related content in your inbox, subscribe to our newsletter
                 by submitting your email address.
               </p>
             </div>

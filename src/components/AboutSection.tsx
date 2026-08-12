@@ -15,7 +15,7 @@ const features = [
   {
     icon: Brain,
     title: "Cognitive Development",
-    desc: "Combines ancient Indian Garbh Sanskar practices with modern neuroscience to nurture early intellect and virtues.",
+    desc: "Combines ancient Indian Garbhadhan Sanskar practices with modern neuroscience to nurture early intellect and virtues.",
     color: "bg-blue-50 text-[#1a3a6c]",
   },
   {
@@ -71,7 +71,7 @@ export default function AboutSection() {
                 <div className="h-full w-full overflow-hidden rounded-[18px]">
                   <img
                     src="/images/about_premium.png"
-                    alt="Serene Motherhood Garbh Sanskar"
+                    alt="Serene Motherhood Garbhadhan Sanskar"
                     className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function AboutSection() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold leading-none mb-0.5">
-                        Garbh Sanskar
+                        Garbhadhan Sanskar
                       </p>
                       <h4 className="text-xs font-bold text-[#1a3a6c] leading-none">
                         Empowered Motherhood
@@ -122,7 +122,7 @@ export default function AboutSection() {
                 className="text-sm md:text-base leading-relaxed text-slate-600 font-sans max-w-xl"
               >
                 <strong className="text-[#F45B8A] font-bold">Astro Baby</strong>{" "}
-                <strong className="text-[#F45B8A] font-bold">Garbh Sanskar</strong> is India's
+                <strong className="text-[#F45B8A] font-bold">Garbhadhan Sanskar</strong> is India's
                 leading digital platform combining ancient Vedic wisdom with modern obstetric
                 science. Created by a passionate team of experts, we make pregnancy a happy,
                 healthy, and spiritually rich journey.

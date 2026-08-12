@@ -23,9 +23,9 @@ const featuresLeft = [
   "Sankalp Poojan",
   "Punsavan Sanskar",
   "Simantonnayana Sanskar",
-  "Garbhsanskar Sutra",
+  "Garbhadhansanskar Sutra",
   "Vaidic Mantra Vrushti",
-  "Garbhsanskar Music",
+  "Garbhadhansanskar Music",
   "Jeevan Sutra - The Life Training",
   "Medi-Mitra Sessions",
   "Isht Mantra",
@@ -38,7 +38,7 @@ const featuresRight = [
   "Supraj Santanotpatti Havan",
   "Meditation",
   "Monthly Calendar",
-  "Garbh Sanskar QnA",
+  "Garbhadhan Sanskar QnA",
   "Let's Smile Together",
   "Sandhya Prarthana",
   "Yoga Session",
@@ -94,7 +94,7 @@ const scientificEvidences = [
   },
   {
     img: "Scientific-Evidence-04.jpg",
-    text: "Garbhsanskar: Knowledge, attitude & practice among antenatal mothers...",
+    text: "Garbhadhansanskar: Knowledge, attitude & practice among antenatal mothers...",
     src: "https://www.researchgate.net/publication/285618390",
   },
   {
@@ -109,7 +109,7 @@ const scientificEvidences = [
   },
   {
     img: "Scientific-Evidence-05.jpg",
-    text: "Effects of selected aspect of Garbhsanskar on stress, coping",
+    text: "Effects of selected aspect of Garbhadhansanskar on stress, coping",
     src: "https://www.ijsr.net/archive/v5i3/NOV161925.pdf",
   },
   {
@@ -121,16 +121,16 @@ const scientificEvidences = [
 
 const faqs = [
   {
-    q: "How to start with Astro Baby GarbhSanskar?",
-    a: "To start using Astro Baby Garbhsanskar, you need to simply download 'Astro Baby' mobile application on your android device from the playstore. After installing the application just enter your basic details on the app for the free trial. After the free demo, to access full content you can select a premium plan to continue using it as per your pregnancy stage.",
+    q: "How to start with Astro Baby Garbhadhan Sanskar?",
+    a: "To start using Astro Baby Garbhadhan Sanskar, you need to simply download 'Astro Baby' mobile application on your android device from the playstore. After installing the application just enter your basic details on the app for the free trial. After the free demo, to access full content you can select a premium plan to continue using it as per your pregnancy stage.",
   },
   {
     q: "Can I use Astro Baby on my laptop or desktop computer?",
-    a: "No, 'Astro Baby Garbhsanskar' is a mobile application only service. You can access and use Astro Baby on your Android & Apple Mobile and tablet devices.",
+    a: "No, 'Astro Baby Garbhadhan Sanskar' is a mobile application only service. You can access and use Astro Baby on your Android & Apple Mobile and tablet devices.",
   },
   {
-    q: "I am in the 5th month of my pregnancy; am I too late to start GarbhSanskar with Astro Baby?",
-    a: "Whether you are in your 1st month of pregnancy or in 9th month of pregnancy, it is never too late to start the process of garbhsanskar. Astro Baby is prepared in such a scientific way that even late joiners can benefit from this curriculum. Moreover, you can always subscribe to watch episodes of previous months of pregnancy that you've missed.",
+    q: "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?",
+    a: "Whether you are in your 1st month of pregnancy or in 9th month of pregnancy, it is never too late to start the process of garbhadhan sanskar. Astro Baby is prepared in such a scientific way that even late joiners can benefit from this curriculum. Moreover, you can always subscribe to watch episodes of previous months of pregnancy that you've missed.",
   },
 ];
 
@@ -210,7 +210,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#172554] text-white/80 py-10">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbh Sanskar. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
             <span className="hover:text-white transition">Facebook</span>
             <span>•</span>
