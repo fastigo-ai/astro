@@ -57,7 +57,7 @@ const programFeatures = [
     img: "/images/features/nutritionist_session.jpg",
     tagline: "Purify your body for a healthy conception.",
     body: [
-      "Before inviting a new life, the physical vessel must be absolutely pure. Our Garbh Dhan program offers specialized Ayurvedic diets tailored to the mother and father to balance their doshas.",
+      "Before inviting a new life, the physical vessel must be absolutely pure. Our Garbhadhan program offers specialized Ayurvedic diets tailored to the mother and father to balance their doshas.",
       "Learn natural detoxification methods that clear out physical impurities, balance hormones, and significantly enhance fertility and egg/sperm quality."
     ],
   },
@@ -71,11 +71,11 @@ const programFeatures = [
     ],
   },
   {
-    title: "The Garbh Dhan Sanskar Ritual",
+    title: "The Garbhadhan Sanskar Ritual",
     img: "/images/features/santanotpatti_havan.jpg",
     tagline: "A divine invocation for a noble soul.",
     body: [
-      "Garbh Dhan is not merely a biological act, but a sacred spiritual ritual. We guide couples through the Santanotpatti Havan and specific Vaidic mantras.",
+      "Garbhadhan is not merely a biological act, but a sacred spiritual ritual. We guide couples through the Santanotpatti Havan and specific Vaidic mantras.",
       "By chanting these mantras and performing the ritual with a pure heart and clear intention, couples invite a healthy, virtuous, and spiritually evolved soul into their lives."
     ],
   },
@@ -138,7 +138,7 @@ export default function GarbhDhan() {
             <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
             <img 
               src="/images/garbh_dan_banner.png" 
-              alt="Garbh Dan - A Gift of Life, A Legacy of Love" 
+              alt="Garbhadhan - A Gift of Life, A Legacy of Love" 
               className="w-full h-auto object-cover object-center block contrast-[1.02] saturate-[1.05] rounded-[30px] transition-transform duration-700 group-hover:scale-[1.01]" 
             />
           </picture>
@@ -156,10 +156,10 @@ export default function GarbhDhan() {
             A Gift of Life, A Legacy of Love 💙
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A3A6C] tracking-tight mb-6">
-            Garbh Dan <span className="text-green-500">🌱</span>
+            Garbhadhan <span className="text-green-500">🌱</span>
           </h1>
           <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
-            Garbh Dan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever. Combined with Vaidic planning, Ayurveda, Astrology, and Spirituality, it prepares couples for a divine conception.
+            Garbhadhan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever. Combined with Vaidic planning, Ayurveda, Astrology, and Spirituality, it prepares couples for a divine conception.
           </p>
         </div>
       </section>
@@ -193,7 +193,7 @@ export default function GarbhDhan() {
       <section ref={featuresGridRef} className="py-16 md:py-24 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">Our Garbh Dhan Program</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">Our Garbhadhan Program</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
           </div>
           
@@ -257,7 +257,7 @@ export default function GarbhDhan() {
             Ensure the physical and spiritual purity required to invite a healthy and happy child into your family.
           </p>
           <button className="relative z-10 bg-white text-green-700 font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
-            Book a Garbh Dhan Consultation
+            Book a Garbhadhan Consultation
           </button>
         </div>
       </section>

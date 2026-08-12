@@ -8,11 +8,11 @@ type Feature = { title: string; img: string; tagline: string; body: string[] };
 
 const features: Feature[] = [
   {
-    title: "Garbh Dan",
+    title: "Garbhadhan",
     img: "/images/garbh_dan_banner.png",
     tagline: "A Gift of Life, A Legacy of Love 💙",
     body: [
-      "Garbh Dan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever.",
+      "Garbhadhan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever.",
       "A complete pre-conception purification and preparation process combining Vaidic rituals, astrological alignment, and Ayurvedic detox to pave the way for a healthy, virtuous child.",
     ],
   },
@@ -300,7 +300,7 @@ export default function FeaturesPage() {
 
     if (selectedCategory === "All Features") return true;
     if (selectedCategory === "Sanskars & Poojan")
-      return f.title.includes("Garbh Dan") || f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
+      return f.title.includes("Garbh Dan") || f.title.includes("Garbhadhan") || f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
     if (selectedCategory === "Vaidic Mantras & Music")
       return (
         f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana")
@@ -343,7 +343,7 @@ export default function FeaturesPage() {
             <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
             <img
               src="/images/garbh_dan_banner.png"
-              alt="Garbh Dan - A Gift of Life, A Legacy of Love"
+              alt="Garbhadhan - A Gift of Life, A Legacy of Love"
               className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02] rounded-[30px]"
             />
           </picture>
@@ -467,7 +467,7 @@ export default function FeaturesPage() {
                         <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
                         {(() => {
                           const imgSrc = f.img ? (f.img.startsWith("/") ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png";
-                          const isGarbhDan = f.title === "Garbh Dan" || imgSrc.includes("garbh_dan");
+                          const isGarbhDan = f.title === "Garbh Dan" || f.title === "Garbhadhan" || imgSrc.includes("garbh_dan");
                           return (
                             <picture className="relative block w-full rounded-[24px] overflow-hidden border-4 border-white shadow-xl bg-slate-900/5">
                               {isGarbhDan && (
