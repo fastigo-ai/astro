@@ -77,13 +77,27 @@ export default function HeroSlider() {
           >
 
             {/* Premium Heading */}
-            <h1 className={`font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-extrabold leading-[1.1] sm:leading-[1.05] text-[#1A3A6C] sm:text-white tracking-tight sm:drop-shadow-2xl ${isLeftAligned ? "" : "md:mr-[-4px]"}`}>
+            <motion.h1 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.15 } }
+              }}
+              className={`font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-extrabold leading-[1.1] sm:leading-[1.05] text-[#1A3A6C] sm:text-white tracking-tight sm:drop-shadow-2xl ${isLeftAligned ? "" : "md:mr-[-4px]"}`}
+            >
               {slide.heading.map((line, i) => (
-                <span key={i} className="block py-1 sm:drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
+                <motion.span 
+                  key={i} 
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+                  }}
+                  className="block py-1 sm:drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
+                >
                   {line}
-                </span>
+                </motion.span>
               ))}
-            </h1>
+            </motion.h1>
             
             {/* Premium Description */}
             <p className="mt-4 sm:mt-6 max-w-xl text-base sm:text-lg md:text-xl text-slate-600 sm:text-[#172554] font-medium sm:font-semibold leading-relaxed sm:drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] sm:bg-transparent sm:backdrop-blur-none sm:p-0">

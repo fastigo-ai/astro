@@ -67,9 +67,7 @@ export default function StoriesSlider() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-10 md:pt-12 pb-20 md:pb-28 border-b border-pink-100/60">
-      <Mandala className="-left-36 top-24" />
-      <Mandala className="-right-36 bottom-20" />
-      <Decorations />
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

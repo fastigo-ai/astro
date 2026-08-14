@@ -18,9 +18,7 @@ export default function NewsletterSection() {
 
   return (
     <section className="relative py-20 lg:py-28 bg-[#fcf2f7] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-      {/* Soft Luxury Ambient Glow Backgrounds */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#3B82F6]/8 to-[#F45B8A]/8 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#172554]/8 to-[#F45B8A]/8 rounded-full blur-[140px] pointer-events-none" />
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* White Glassmorphism Luxury Card */}
@@ -64,7 +62,7 @@ export default function NewsletterSection() {
                 Stay Connected with Astro Baby
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#172554] leading-[1.15] font-['Cormorant_Garamond',serif]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#172554] leading-[1.15] font-sans tracking-tight">
                 Subscribe to Our{" "}
                 <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
                   Garbhadhan Sanskar
@@ -86,7 +84,7 @@ export default function NewsletterSection() {
                     ✓
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-[#172554] font-['Cormorant_Garamond',serif]">
+                    <h4 className="text-base font-bold text-[#172554] font-sans tracking-tight">
                       You're Subscribed!
                     </h4>
                     <p className="text-xs text-[#475569] mt-0.5 font-['Plus_Jakarta_Sans',sans-serif]">

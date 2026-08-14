@@ -140,49 +140,39 @@ export default function FeaturesSection() {
     "/images/features/comprehensive_slide3.png",
   ];
 
-  const leftFeatures = [
+  const allFeatures = [
     {
       icon: Sparkles,
-      title: "Sankalp Poojan",
-      desc: "Sacred ceremony to establish pure mental intentions for pregnancy.",
+      title: "Beej Sanskar",
+      desc: "Holistic success and work-life balance through ancient wisdom.",
       iconBg: "bg-amber-100/50",
       iconColor: "text-amber-600",
     },
     {
+      icon: Heart,
+      title: "Garbhadhan",
+      desc: "Divine planning and preparation for conscious conception.",
+      iconBg: "bg-pink-100/50",
+      iconColor: "text-pink-600",
+    },
+    {
       icon: GraduationCap,
-      title: "Punsavan Sanskar",
-      desc: "Fetal wellness rituals designed to support sensory and cognitive cells.",
+      title: "Garbhadhan Sanskar",
+      desc: "Vedic wisdom and scientific practices for a healthy pregnancy.",
       iconBg: "bg-purple-100/50",
       iconColor: "text-purple-600",
     },
     {
-      icon: Heart,
-      title: "Simantonnayana Sanskar",
-      desc: "Deep psychological stress-relief practices ensuring maternal calm.",
-      iconBg: "bg-pink-100/50",
-      iconColor: "text-pink-600",
-    },
-  ];
-
-  const rightFeatures = [
-    {
-      icon: Music,
-      title: "Vaidic Mantra Vrushti",
-      desc: "Samavedic & Rigvedic audio echoes for cellular and structural peace.",
+      icon: Compass,
+      title: "Baal Bhavish Fal",
+      desc: "Astrological guidance and insights for your child's bright future.",
       iconBg: "bg-indigo-100/50",
       iconColor: "text-indigo-600",
     },
     {
       icon: Activity,
-      title: "Garbhadhan Sanskar Music",
-      desc: "Ragas and frequencies tuned to encourage neural pathway growth.",
-      iconBg: "bg-blue-100/50",
-      iconColor: "text-blue-600",
-    },
-    {
-      icon: Compass,
-      title: "Yoga & Pranayama",
-      desc: "Tailored postures and breathing patterns for body tone and delivery prep.",
+      title: "Parenting",
+      desc: "Mindful and positive upbringing strategies for modern parents.",
       iconBg: "bg-emerald-100/50",
       iconColor: "text-emerald-600",
     },
@@ -201,21 +191,7 @@ export default function FeaturesSection() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
-      {/* Mandala & Sparkle Background Decorations */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        <div className="mandala absolute -left-36 top-10 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />
-        <div className="mandala absolute -right-36 bottom-10 h-80 w-80 rounded-full opacity-[0.07] bg-[#F4C27A]" />
-        <span className="absolute left-[8%] top-[15%] h-2.5 w-2.5 rotate-45 bg-[#F4C27A] shadow-[0_0_18px_#F4C27A] opacity-70" />
-        <span className="story-float absolute right-[10%] top-[18%] text-2xl text-[#8B32BD]/40">
-          ✦
-        </span>
-        <span className="story-float absolute bottom-[18%] left-[5%] text-xl text-[#F4C27A]/70 [animation-delay:1.2s]">
-          ✧
-        </span>
-        <span className="absolute right-[4%] top-1/3 h-48 w-48 rounded-full bg-[#8B32BD]/10 blur-3xl" />
-        <span className="absolute bottom-[6%] left-[12%] h-56 w-56 rounded-full bg-[#F4C27A]/15 blur-3xl" />
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#F45B8A]/5 via-[#3B82F6]/5 to-transparent blur-3xl" />
-      </div>
+
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
         {/* Header Block */}
@@ -225,13 +201,26 @@ export default function FeaturesSection() {
           </span>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#172554] tracking-tight mb-3"
+            variants={{
+              visible: { transition: { staggerChildren: 0.1 } }
+            }}
+            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#172554] tracking-tight mb-3 flex flex-wrap justify-center gap-x-2"
           >
-            {headingText}
+            {headingWords.map((word, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120 } }
+                }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.h2>
 
           <p className="text-sm md:text-base leading-relaxed text-slate-600 font-sans">
@@ -246,9 +235,9 @@ export default function FeaturesSection() {
           data-iphone-mockup-trigger
           className="grid gap-8 lg:grid-cols-12 items-center"
         >
-          {/* Left Column: 5 Features (Right-aligned details on desktop) */}
-          <div className="lg:col-span-4 space-y-5 order-2 lg:order-1">
-            {leftFeatures.map((item, idx) => (
+          {/* Left Column: 5 Features Grid */}
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 order-2 lg:order-1">
+            {allFeatures.map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -40 }}
@@ -262,14 +251,14 @@ export default function FeaturesSection() {
                   desc={item.desc}
                   iconBg={item.iconBg}
                   iconColor={item.iconColor}
-                  alignRight={true}
+                  alignRight={false}
                 />
               </motion.div>
             ))}
           </div>
 
-          {/* Center Column: Phone Mockup & Gradient Rings */}
-          <div className="lg:col-span-4 flex justify-center items-center py-6 order-1 lg:order-2">
+          {/* Right Column: Phone Mockup & Gradient Rings */}
+          <div className="lg:col-span-5 flex justify-center items-center py-6 order-1 lg:order-2">
             <div className="relative flex justify-center items-center w-full max-w-[320px]">
               {/* Rotating Gradient Rings */}
               <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
@@ -330,28 +319,6 @@ export default function FeaturesSection() {
                 </div>
               </motion.div>
             </div>
-          </div>
-
-          {/* Right Column: 5 Features */}
-          <div className="lg:col-span-4 space-y-5 order-3">
-            {rightFeatures.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-              >
-                <FeatureCard
-                  icon={item.icon}
-                  title={item.title}
-                  desc={item.desc}
-                  iconBg={item.iconBg}
-                  iconColor={item.iconColor}
-                  alignRight={false}
-                />
-              </motion.div>
-            ))}
           </div>
         </div>
 
