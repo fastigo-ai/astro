@@ -165,12 +165,12 @@ export const posts: Post[] = [
   },
   {
     img: "krishna-coming-garbh-samvad-during-pregnancy.jpg",
-    title: "गर्भावस्था में गर्भ संवाद और इसके चमत्कारिक लाभ",
+    title: "Garbh Samvad During Pregnancy & Its Miraculous Benefits",
     date: "Aug 14, 2022",
   },
   {
     img: "simantonayana-sanskar-godh-bharai-ritual-krishna-coming-garbh-sanskar.jpg",
-    title: "क्या होता है सीमन्तोन्नयन संस्कार और इसे घर बैठे कैसे करें?",
+    title: "What is Simantonnayana Sanskar & How to Perform it at Home?",
     date: "Aug 02, 2022",
   },
   {
@@ -225,7 +225,7 @@ export const posts: Post[] = [
   },
   {
     img: "signs-of-healthy-baby-in-womb-krishna-coming-garbh-sanskar.jpg",
-    title: "ये छः संकेत बताते हैं कि गर्भ में शिशु सुरक्षित है",
+    title: "6 Signs That Indicate Your Baby is Healthy & Safe in the Womb",
     date: "Jan 22, 2022",
   },
   {

@@ -25,9 +25,13 @@ const Newsletter = lazy(() => import("./routes/newsletter"));
 
 // Feature Pages
 const BizSanskar = lazy(() => import("./routes/features/biz-sanskar"));
+const BeejSanskar = lazy(() => import("./routes/features/beej-sanskar"));
 const GarbhDhan = lazy(() => import("./routes/features/garbh-dhan"));
 const GarbhSanskarFeature = lazy(() => import("./routes/features/garbh-sanskar"));
+const BaalSanskar = lazy(() => import("./routes/features/baal-sanskar"));
+const InfantCare = lazy(() => import("./routes/features/infant-care"));
 const BaalBhavishFal = lazy(() => import("./routes/features/baal-bhavish-fal"));
+const BhavishyaFal = lazy(() => import("./routes/features/bhavishya-fal"));
 const Parenting = lazy(() => import("./routes/features/parenting"));
 
 export default function App() {
@@ -132,12 +136,29 @@ export default function App() {
           }
         />
 
+        <Route
+          path="/courses"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Courses" />}>
+              <Features />
+            </Suspense>
+          }
+        />
+
         {/* Feature Dropdown Pages */}
         <Route
           path="/features/biz-sanskar"
           element={
             <Suspense fallback={<FeatureDetailSkeleton title="Biz Sanskar" />}>
               <BizSanskar />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/beej-sanskar"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Beej Sanskar" />}>
+              <BeejSanskar />
             </Suspense>
           }
         />
@@ -158,10 +179,34 @@ export default function App() {
           }
         />
         <Route
+          path="/features/baal-sanskar"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Baal Sanskar" />}>
+              <BaalSanskar />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/infant-care"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Infant Care" />}>
+              <InfantCare />
+            </Suspense>
+          }
+        />
+        <Route
           path="/features/baal-bhavish-fal"
           element={
             <Suspense fallback={<FeatureDetailSkeleton title="Baal Bhavish Fal" />}>
               <BaalBhavishFal />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/bhavishya-fal"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Bhavishya Fal" />}>
+              <BhavishyaFal />
             </Suspense>
           }
         />

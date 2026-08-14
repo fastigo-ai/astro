@@ -1,6 +1,76 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Heart,
+  Sparkles,
+  Sun,
+  Baby,
+  ShieldCheck,
+  Smile,
+  Compass,
+  Phone,
+} from "lucide-react";
+
+// ── 7 Core Program Headings for Dropdown (Exact Names) ──
+export const PROGRAM_DROPDOWN_CATEGORIES = [
+  {
+    id: "garbhadhan",
+    title: "Garbhadhan Sanskar",
+    subtitle: "Sacred Preparation for Conception",
+    to: "/features/garbh-dhan",
+    icon: Heart,
+    iconBg: "bg-pink-50 text-[#F45B8A]",
+  },
+  {
+    id: "beej-sanskar",
+    title: "Beej Sanskar",
+    subtitle: "Preparing the Foundation for Conscious Conception",
+    to: "/features/beej-sanskar",
+    icon: Sparkles,
+    iconBg: "bg-amber-50 text-amber-600",
+  },
+  {
+    id: "garbh-sanskar",
+    title: "Garbh Sanskar",
+    subtitle: "9-Month Journey of Prenatal Nurturing",
+    to: "/features/garbh-sanskar",
+    icon: Sun,
+    iconBg: "bg-purple-50 text-purple-600",
+  },
+  {
+    id: "baal-sanskar",
+    title: "Baal Sanskar",
+    subtitle: "Sacred Milestones in Early Childhood",
+    to: "/features/baal-sanskar",
+    icon: Baby,
+    iconBg: "bg-blue-50 text-blue-600",
+  },
+  {
+    id: "infant-care",
+    title: "Infant Care",
+    subtitle: "Gentle Care for Your Baby's Early Years",
+    to: "/features/infant-care",
+    icon: ShieldCheck,
+    iconBg: "bg-teal-50 text-teal-600",
+  },
+  {
+    id: "parenting",
+    title: "Parenting",
+    subtitle: "Mindful Guidance for Raising Your Child",
+    to: "/features/parenting",
+    icon: Smile,
+    iconBg: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    id: "bhavishya-fal",
+    title: "Bhavishya Phal",
+    subtitle: "Astrological Insights for Your Child's Journey",
+    to: "/features/bhavishya-fal",
+    icon: Compass,
+    iconBg: "bg-indigo-50 text-indigo-600",
+  },
+];
 
 const navItems = [
   {
@@ -15,45 +85,53 @@ const navItems = [
       {
         label: "Our Story",
         to: "/about-us",
-        desc: "Learn about our journey",
       },
       {
         label: "Team",
         to: "/team",
-        desc: "Meet our experts",
       },
     ],
   },
   {
-    label: "Program",
-    to: "#",
+    label: "Courses & Features",
+    to: "/features",
     hasDropdown: true,
-    isMegaMenu: true,
+    isProgramMenu: true,
     dropdownItems: [
       {
-        label: "Beej Sanskar",
-        to: "/features/biz-sanskar",
-        desc: "Holistic success and work-life balance",
-      },
-      {
-        label: "Garbhadhan",
-        to: "/features/garbh-dhan",
-        desc: "Divine planning for conception",
-      },
-      {
         label: "Garbhadhan Sanskar",
-        to: "/features/garbh-sanskar",
-        desc: "Vedic wisdom for pregnancy",
+        desc: "Sacred Preparation for Conception",
+        to: "/features/garbh-dhan",
       },
       {
-        label: "Baal Bhavish Fal",
-        to: "/features/baal-bhavish-fal",
-        desc: "Astrological guidance for kids",
+        label: "Beej Sanskar",
+        desc: "Preparing the Foundation for Conscious Conception",
+        to: "/features/beej-sanskar",
+      },
+      {
+        label: "Garbh Sanskar",
+        desc: "9-Month Journey of Prenatal Nurturing",
+        to: "/features/garbh-sanskar",
+      },
+      {
+        label: "Baal Sanskar",
+        desc: "Sacred Milestones in Early Childhood",
+        to: "/features/baal-sanskar",
+      },
+      {
+        label: "Infant Care",
+        desc: "Gentle Care for Your Baby's Early Years",
+        to: "/features/infant-care",
       },
       {
         label: "Parenting",
+        desc: "Mindful Guidance for Raising Your Child",
         to: "/features/parenting",
-        desc: "Mindful and positive upbringing",
+      },
+      {
+        label: "Bhavishya Phal",
+        desc: "Astrological Insights for Your Child's Journey",
+        to: "/features/bhavishya-fal",
       },
     ],
   },
@@ -73,12 +151,10 @@ const navItems = [
       {
         label: "Contact Us",
         to: "/contact",
-        desc: "Get in touch with our counselors",
       },
       {
         label: "Newsletter",
         to: "/newsletter",
-        desc: "Weekly Vedic & obstetric insights",
       },
     ],
   },
@@ -86,9 +162,9 @@ const navItems = [
 
 const languages = [
   { code: "en", name: "English", label: "English" },
-  { code: "hi", name: "Hindi", label: "हिंदी" },
-  { code: "mr", name: "Marathi", label: "मराठी" },
-  { code: "gu", name: "Gujarati", label: "ગુજરાતી" },
+  { code: "hi", name: "Hindi", label: "Hindi" },
+  { code: "mr", name: "Marathi", label: "Marathi" },
+  { code: "gu", name: "Gujarati", label: "Gujarati" },
 ];
 
 export default function HeaderNavbar() {
@@ -112,7 +188,7 @@ export default function HeaderNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle scroll for sticky navbar 3D effect
+  // Handle scroll for sticky navbar effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -129,7 +205,7 @@ export default function HeaderNavbar() {
 
   return (
     <div className="w-full relative z-50 font-['Plus_Jakarta_Sans',sans-serif]" style={{ zIndex: 9999 }}>
-      {/* Top Bar - Kept for utility but minimal */}
+      {/* Top Bar */}
       <div className="hidden md:block bg-[#172554] text-white text-xs py-2 shadow-inner">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -137,18 +213,22 @@ export default function HeaderNavbar() {
             <span className="font-semibold text-white/90">Astro Baby Garbhadhan Sanskar</span>
           </div>
           <div className="flex items-center gap-4 text-white/90">
-            <a href="tel:+919018567465" className="hover:text-amber-200 transition-colors font-semibold">
-              +91 9018567465
+            <a href="tel:+919018567465" className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5" />
+              <span>+91 9018567465</span>
             </a>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className={`w-full transition-all duration-500 ease-in-out ${scrolled ? 'fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-md' : 'absolute top-0 bg-pink-50'}`}>
+      <nav
+        className={`w-full transition-all duration-500 ease-in-out ${
+          scrolled ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-md" : "absolute top-0 bg-pink-50"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 md:h-24">
-            
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="inline-block">
@@ -168,8 +248,8 @@ export default function HeaderNavbar() {
                 const active = isActive(item.to);
                 const isHovered = hoveredItem === item.label;
                 return (
-                  <div 
-                    key={item.label} 
+                  <div
+                    key={item.label}
                     className="relative"
                     onMouseEnter={() => setHoveredItem(item.label)}
                     onMouseLeave={() => setHoveredItem(null)}
@@ -188,7 +268,7 @@ export default function HeaderNavbar() {
                         <motion.svg
                           animate={{ rotate: isHovered ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
-                          className={`w-4 h-4 ${isHovered ? 'text-[#F45B8A]' : 'text-gray-400'}`}
+                          className={`w-4 h-4 ${isHovered ? "text-[#F45B8A]" : "text-gray-400"}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -196,7 +276,7 @@ export default function HeaderNavbar() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                         </motion.svg>
                       )}
-                      
+
                       {/* Underline Indicator */}
                       <motion.span
                         initial={false}
@@ -205,36 +285,58 @@ export default function HeaderNavbar() {
                       />
                     </Link>
 
-                    {/* Dropdowns */}
+                    {/* Small & Clean Dropdowns */}
                     <AnimatePresence>
                       {item.hasDropdown && isHovered && (
                         <motion.div
-                          initial={{ opacity: 0, y: 15 }}
+                          initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2, ease: "easeOut" }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 pt-5 z-50"
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.18, ease: "easeOut" }}
+                          className="absolute top-full pt-3 z-50 left-1/2 -translate-x-1/2"
                         >
-                          <div className={`${item.isMegaMenu ? 'w-[650px] p-6' : 'w-56 p-3'} bg-white rounded-2xl shadow-xl border border-pink-100`}>
-                             {item.isMegaMenu ? (
-                               <div className="grid grid-cols-2 gap-4">
-                                 {item.dropdownItems?.map((dropItem) => (
-                                   <Link key={dropItem.label} to={dropItem.to} className="flex flex-col p-4 rounded-xl hover:bg-pink-50 border border-transparent hover:border-pink-100 hover:shadow-sm transition-all group/item duration-200">
-                                     <span className="font-bold text-gray-800 group-hover/item:text-[#F45B8A] text-[15px]">{dropItem.label}</span>
-                                     <span className="text-[13px] text-gray-500 mt-1">{dropItem.desc}</span>
-                                   </Link>
-                                 ))}
-                               </div>
-                             ) : (
-                               <div className="flex flex-col gap-1">
-                                 {item.dropdownItems?.map((dropItem) => (
-                                   <Link key={dropItem.label} to={dropItem.to} className="px-4 py-3 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] hover:bg-pink-50 rounded-xl transition-all hover:translate-x-1">
-                                     {dropItem.label}
-                                   </Link>
-                                 ))}
-                               </div>
-                             )}
-                          </div>
+                          {item.isProgramMenu ? (
+                            /* ── COMPACT SMALL DROPDOWN (ONLY HEADINGS) ── */
+                            <div className="w-[500px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-[0_15px_45px_rgba(23,37,84,0.12)] border border-pink-100 p-3 grid grid-cols-2 gap-1.5">
+                              {PROGRAM_DROPDOWN_CATEGORIES.map((cat) => {
+                                const Icon = cat.icon;
+                                return (
+                                  <Link
+                                    key={cat.id}
+                                    to={cat.to}
+                                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-pink-50 text-gray-800 hover:text-[#F45B8A] transition-all group/item duration-150"
+                                  >
+                                    <div
+                                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${cat.iconBg}`}
+                                    >
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div className="flex flex-col min-w-0">
+                                      <span className="font-bold text-[13.5px] leading-tight text-[#172554] group-hover/item:text-[#F45B8A] transition-colors truncate">
+                                        {cat.title}
+                                      </span>
+                                      <span className="text-[11px] text-slate-400 group-hover/item:text-slate-500 transition-colors truncate">
+                                        {cat.subtitle}
+                                      </span>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            /* Regular Dropdown */
+                            <div className="w-52 p-2 bg-white/98 backdrop-blur-xl rounded-2xl shadow-xl border border-pink-100 flex flex-col gap-1">
+                              {item.dropdownItems?.map((dropItem) => (
+                                <Link
+                                  key={dropItem.label}
+                                  to={dropItem.to}
+                                  className="px-3.5 py-2.5 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] hover:bg-pink-50 rounded-xl transition-all"
+                                >
+                                  {dropItem.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -243,13 +345,12 @@ export default function HeaderNavbar() {
               })}
             </div>
 
-            {/* Right Side: Language & Join Now */}
+            {/* Right Side: Language Selector */}
             <div className="hidden md:flex items-center gap-6">
-              {/* Language Selector */}
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] transition-colors cursor-pointer"
                 >
                   <span className="text-lg">🌐</span>
                   <span>{selectedLang.code.toUpperCase()}</span>
@@ -267,10 +368,10 @@ export default function HeaderNavbar() {
                 <AnimatePresence>
                   {langOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5 }}
-                      className="absolute right-0 mt-3 w-36 bg-white rounded-2xl shadow-xl border border-pink-100 py-2 z-50"
+                      exit={{ opacity: 0, y: 4 }}
+                      className="absolute right-0 mt-2.5 w-36 bg-white rounded-2xl shadow-xl border border-pink-100 py-1.5 z-50"
                     >
                       {languages.map((lang) => (
                         <button
@@ -279,7 +380,11 @@ export default function HeaderNavbar() {
                             setSelectedLang(lang);
                             setLangOpen(false);
                           }}
-                          className={`w-full text-left px-5 py-2.5 text-[14px] font-bold transition-colors ${selectedLang.code === lang.code ? 'text-[#F45B8A] bg-pink-50' : 'text-gray-700 hover:bg-pink-50 hover:text-[#F45B8A]'}`}
+                          className={`w-full text-left px-4 py-2 text-[13.5px] font-bold transition-colors cursor-pointer ${
+                            selectedLang.code === lang.code
+                              ? "text-[#F45B8A] bg-pink-50"
+                              : "text-gray-700 hover:bg-pink-50 hover:text-[#F45B8A]"
+                          }`}
                         >
                           {lang.name}
                         </button>
@@ -288,17 +393,14 @@ export default function HeaderNavbar() {
                   )}
                 </AnimatePresence>
               </div>
-
-
             </div>
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden flex items-center gap-4">
-
-
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 text-gray-800 hover:text-[#F45B8A] transition-colors rounded-full hover:bg-pink-50"
+                className="p-2 text-gray-800 hover:text-[#F45B8A] transition-colors rounded-full hover:bg-pink-50 cursor-pointer"
+                aria-label="Toggle Navigation Menu"
               >
                 {menuOpen ? (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -317,12 +419,12 @@ export default function HeaderNavbar() {
         {/* Mobile Navigation Drawer */}
         <AnimatePresence>
           {menuOpen && (
-             <motion.div 
-               initial={{ opacity: 0, height: 0 }}
-               animate={{ opacity: 1, height: 'auto' }}
-               exit={{ opacity: 0, height: 0 }}
-               className="md:hidden bg-white border-t border-pink-100 shadow-2xl absolute top-full left-0 w-full rounded-b-3xl overflow-hidden"
-             >
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-t border-pink-100 shadow-2xl absolute top-full left-0 w-full rounded-b-3xl overflow-hidden max-h-[85vh] overflow-y-auto"
+            >
               <div className="px-4 py-4 space-y-1">
                 {navItems.map((item) => (
                   <div key={item.label}>
@@ -336,48 +438,84 @@ export default function HeaderNavbar() {
                           setMenuOpen(false);
                         }
                       }}
-                      className={`block px-4 py-3.5 rounded-xl text-[16px] font-bold transition-colors ${isActive(item.to) ? 'text-[#F45B8A] bg-pink-50' : 'text-gray-800 hover:bg-pink-50'}`}
+                      className={`block px-4 py-3 rounded-xl text-[15.5px] font-bold transition-colors ${
+                        isActive(item.to) ? "text-[#F45B8A] bg-pink-50" : "text-gray-800 hover:bg-pink-50"
+                      }`}
                     >
                       <div className="flex justify-between items-center">
                         {item.label}
                         {item.hasDropdown && (
-                          <motion.svg 
+                          <motion.svg
                             animate={{ rotate: mobileDropdownOpen === item.label ? 180 : 0 }}
-                            className={`w-5 h-5 ${mobileDropdownOpen === item.label ? 'text-[#F45B8A]' : 'text-gray-400'}`} 
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            className={`w-5 h-5 ${mobileDropdownOpen === item.label ? "text-[#F45B8A]" : "text-gray-400"}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                           </motion.svg>
                         )}
                       </div>
                     </Link>
+
+                    {/* Mobile Accordion Content (Simple Headings List) */}
                     <AnimatePresence>
                       {item.hasDropdown && mobileDropdownOpen === item.label && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
+                          animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="pl-6 pr-2 overflow-hidden"
+                          className="pl-3 pr-2 overflow-hidden"
                         >
-                          <div className="py-2 space-y-1">
-                            {item.dropdownItems?.map((dropItem) => (
-                              <Link
-                                key={dropItem.label}
-                                to={dropItem.to}
-                                onClick={() => setMenuOpen(false)}
-                                className="block px-3 py-2.5 text-[15px] font-bold text-gray-600 hover:text-[#F45B8A] hover:bg-pink-50 rounded-lg transition-colors"
-                              >
-                                {dropItem.label}
-                              </Link>
-                            ))}
-                          </div>
+                          {item.isProgramMenu ? (
+                            <div className="py-2 space-y-1">
+                              {PROGRAM_DROPDOWN_CATEGORIES.map((cat) => {
+                                const Icon = cat.icon;
+                                return (
+                                  <Link
+                                    key={cat.id}
+                                    to={cat.to}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="flex items-center gap-3 px-3 py-2 rounded-xl text-gray-800 hover:text-[#F45B8A] hover:bg-pink-50 transition-colors"
+                                  >
+                                    <div
+                                      className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${cat.iconBg}`}
+                                    >
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div className="flex flex-col min-w-0">
+                                      <span className="font-bold text-[14px] text-[#172554]">
+                                        {cat.title}
+                                      </span>
+                                      <span className="text-[11px] text-slate-400">
+                                        {cat.subtitle}
+                                      </span>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <div className="py-2 space-y-1">
+                              {item.dropdownItems?.map((dropItem) => (
+                                <Link
+                                  key={dropItem.label}
+                                  to={dropItem.to}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="block px-3 py-2 text-[14px] font-bold text-gray-600 hover:text-[#F45B8A] hover:bg-pink-50 rounded-lg transition-colors"
+                                >
+                                  {dropItem.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
                 ))}
               </div>
-             </motion.div>
+            </motion.div>
           )}
         </AnimatePresence>
       </nav>

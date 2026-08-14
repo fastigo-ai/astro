@@ -1,8 +1,131 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
+import {
+  Sparkles,
+  Heart,
+  Baby,
+  Smile,
+  ShieldCheck,
+  Compass,
+  ArrowRight,
+  Sun,
+  Search,
+  ChevronRight,
+  BookOpen,
+  Music,
+  Activity,
+  Flame,
+  Moon,
+  Calendar,
+  Layers,
+  GraduationCap,
+} from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
-import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+
+// ── 7 Core Developmental Course Pillars (Exact Names) ──
+export const CORE_COURSES = [
+  {
+    id: "garbhadhan",
+    title: "Garbhadhan Sanskar",
+    subTitle: "Sacred Preparation for Conception",
+    price: "₹11,000",
+    tagline: "Sacred Preparation for Conception",
+    desc: "Auspicious conception planning, couple spiritual alignment, Isht Mantra, and fertility tracking to welcome a healthy, virtuous soul.",
+    to: "/features/garbh-dhan",
+    icon: Heart,
+    iconBg: "bg-pink-100/80 text-[#F45B8A]",
+    badgeColor: "bg-pink-50 text-[#F45B8A] border-pink-200",
+    gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
+    benefits: ["Muhurat-Based Coitus Dates", "Isht Mantra & Meditation", "Fertility Tracker & Support"],
+  },
+  {
+    id: "beej-sanskar",
+    title: "Beej Sanskar",
+    subTitle: "Preparing the Foundation for Conscious Conception",
+    price: "Vitality Track",
+    tagline: "Preparing the Foundation for Conscious Conception",
+    desc: "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
+    to: "/features/beej-sanskar",
+    icon: Sparkles,
+    iconBg: "bg-amber-100/80 text-amber-600",
+    badgeColor: "bg-amber-50 text-amber-600 border-amber-200",
+    gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
+    benefits: ["Ayurvedic cellular detox", "Nutritional vitality charts", "Stress reduction & yoga"],
+  },
+  {
+    id: "garbh-sanskar",
+    title: "Garbh Sanskar",
+    subTitle: "9-Month Journey of Prenatal Nurturing",
+    price: "Starting ₹5,000",
+    isPopular: true,
+    tagline: "9-Month Journey of Prenatal Nurturing",
+    desc: "9-month comprehensive prenatal mastery available in Diamond (₹25,000), Gold (₹11,000), and Silver (₹5,000) tiers.",
+    to: "/features/garbh-sanskar",
+    icon: Sun,
+    iconBg: "bg-purple-100/80 text-purple-600",
+    badgeColor: "bg-purple-50 text-purple-600 border-purple-200",
+    gradient: "from-purple-500/10 via-pink-500/5 to-transparent",
+    benefits: ["Diamond, Gold & Silver Tiers", "Month-wise Mantra Vrushti", "Garbh Samvad & Raga Music"],
+  },
+  {
+    id: "baal-sanskar",
+    title: "Baal Sanskar",
+    subTitle: "Sacred Milestones in Early Childhood",
+    price: "₹6,000",
+    tagline: "Sacred Milestones in Early Childhood",
+    desc: "Namkaran, Nishkraman, Karnavedha, and Annaprashan ceremonies combined with moral bedtime stories and cognitive brain puzzles.",
+    to: "/features/baal-sanskar",
+    icon: Baby,
+    iconBg: "bg-blue-100/80 text-blue-600",
+    badgeColor: "bg-blue-50 text-blue-600 border-blue-200",
+    gradient: "from-blue-500/10 via-sky-500/5 to-transparent",
+    benefits: ["4 Sacred Childhood Sanskars", "Moral & Bedtime Stories", "Brain Puzzles & Shlokas"],
+  },
+  {
+    id: "infant-care",
+    title: "Infant Care",
+    subTitle: "Gentle Care for Your Baby's Early Years",
+    price: "₹5,000",
+    tagline: "Gentle Care for Your Baby's Early Years",
+    desc: "Personal parenting coach, customized post-partum diet, daily live yoga, lactation coaching, and astrological support.",
+    to: "/features/infant-care",
+    icon: ShieldCheck,
+    iconBg: "bg-teal-100/80 text-teal-600",
+    badgeColor: "bg-teal-50 text-teal-600 border-teal-200",
+    gradient: "from-teal-500/10 via-emerald-500/5 to-transparent",
+    benefits: ["Personal Parenting Coach", "Custom Diet & Lactation", "Daily Live Yoga & Milestones"],
+  },
+  {
+    id: "parenting",
+    title: "Parenting",
+    subTitle: "Mindful Guidance for Raising Your Child",
+    price: "Expert Guidance",
+    tagline: "Mindful Guidance for Raising Your Child",
+    desc: "Mindful parenting practices, emotional resilience techniques, child psychological growth, and pediatrician-backed nutrition.",
+    to: "/features/parenting",
+    icon: Smile,
+    iconBg: "bg-emerald-100/80 text-emerald-600",
+    badgeColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
+    gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
+    benefits: ["Parenting Coach & Support", "Child Development Milestones", "Emotional Wellbeing & Diet"],
+  },
+  {
+    id: "bhavishya-fal",
+    title: "Bhavishya Phal",
+    subTitle: "Astrological Insights for Your Child's Journey",
+    price: "Starting ₹3,100",
+    tagline: "Astrological Insights for Your Child's Journey",
+    desc: "Comprehensive Janam Kundali generation + Falit report (₹3,500) and live 1-on-1 Astrologer Consultation (₹3,100).",
+    to: "/features/bhavishya-fal",
+    icon: Compass,
+    iconBg: "bg-indigo-100/80 text-indigo-600",
+    badgeColor: "bg-indigo-50 text-indigo-600 border-indigo-200",
+    gradient: "from-indigo-500/10 via-purple-500/5 to-transparent",
+    benefits: ["Kundli + Falit Report (₹3,500)", "Live Astrologer Consultation (₹3,100)", "Lifelong Planetary Guidance"],
+  },
+];
 
 type Feature = { title: string; img: string; tagline: string; body: string[] };
 
@@ -10,9 +133,9 @@ const features: Feature[] = [
   {
     title: "Garbhadhan",
     img: "/images/garbh_dan_banner.png",
-    tagline: "A Gift of Life, A Legacy of Love 💙",
+    tagline: "Pre-conception guidance & divine preparation",
     body: [
-      "Garbhadhan is a noble initiative to support couples who dream of parenthood. Your kindness can light up a life forever.",
+      "Garbhadhan is a noble Vedic initiative to support couples preparing for parenthood. Your conscious planning lights up a new life with wisdom, health, and grace.",
       "A complete pre-conception purification and preparation process combining Vaidic rituals, astrological alignment, and Ayurvedic detox to pave the way for a healthy, virtuous child.",
     ],
   },
@@ -21,8 +144,8 @@ const features: Feature[] = [
     img: "/images/features/sankalp_poojan.jpg",
     tagline: "Live Sankalp Poojan before starting Garbhadhan Sanskar",
     body: [
-      "In Vaidic Indian tradition, every auspicious work starts with Sankalp poojan. At Astro Baby, Vaidic Sankalp poojan is done live under the guidance of our Vaidic Brahmin. Through Sankalp Poojan, you pray to God, the Navagrahas and the Nakshatras to give strength and determination to carry this pregnancy for the whole term and to bless you and your child with the divine qualities of wisdom, health and positivity.",
-      "Within 24 hours of subscribing to Astro Baby Garbhadhan Sanskar, our representative will get in touch with you to inform you about the samagri required for poojan. Soon after that, we'll schedule a one-to-one live Sankalp Poojan for you as per your convenience on a pre-decided Sankalp muhurat. Both the husband and the wife must be present in this Sankalp poojan.",
+      "In Vaidic Indian tradition, every auspicious work starts with Sankalp poojan. At Astro Baby, Vaidic Sankalp poojan is conducted live under the guidance of our learned Vaidic Brahmins.",
+      "Within 24 hours of enrolling, our representative coordinates the sacred samagri and schedules your personal one-on-one live Sankalp Poojan on an auspicious muhurat.",
     ],
   },
   {
@@ -30,17 +153,17 @@ const features: Feature[] = [
     img: "/images/features/punsavan_sanskar.jpg",
     tagline: "An important sanskar performed during the third month of pregnancy",
     body: [
-      "The first mention of Punsavan Sanskar has been found in Atharva Veda. As per Vaidic tradition, it is the second sanskar of the sixteen sanksars. This sanskar is considered to be one of the most important rites for human life. The vaidic brahman group at Astro Baby perform this sanskar during the third month of pregnancy as this is when the baby's nervous system starts developing.",
-      "The purpose of this sanskar is to give mental strength, superior intelligence and sanskar to the unborn child. If, for some reason, this sanskar could not be performed in the third month of pregnancy, then it should be performed during the seventh month.",
+      "The first mention of Punsavan Sanskar is found in Atharva Veda. Performed during the 3rd month as the baby's central nervous system rapidly forms.",
+      "Imparts mental resilience, superior intelligence, and noble sanskars to the developing fetus.",
     ],
   },
   {
     title: "Simantonnayana Sanskar",
     img: "/images/features/simantonnayana_sanskar.jpg",
-    tagline: "An important sanskar performed during the seventh/eighth month of pregnancy",
+    tagline: "Sacred sanskar performed during the seventh/eighth month of pregnancy",
     body: [
-      "Simantonnayana Sanskar is the third sanskar of the sixteen sanskars according to vaidic tradition. This sanskar is performed in order to prevent miscarriage, to ensure the safety of the baby in the womb, and to develop the baby's fortune.",
-      "The purpose of this sanskar is to mentally prepare the pregnant lady for delivery by guiding her with positive thoughts. This sanskar is performed in a live session under the guidance of a vaidic brahman group at Astro Baby. It must be done during the eighth month of pregnancy.",
+      "Simantonnayana Sanskar is the third of the 16 Vedic sanskars. Performed to protect the mother and child and ensure peaceful, safe delivery.",
+      "Mentally prepares the mother for labor through uplifting mantras, blessings, and joyful family ceremonies.",
     ],
   },
   {
@@ -48,7 +171,8 @@ const features: Feature[] = [
     img: "/images/features/garbhsanskar_sutra.jpg",
     tagline: "Sutras to impart mann, buddhi and sanskars in your child",
     body: [
-      "During the 9 months of pregnancy, each month, there is a phased development of the various physical and mental dimensions of the baby. Astro Baby is a pure science, which provides Garbhadhan Sanskar Sutras, according to the present developmental stage of the fetus. These sutras turn your pregnancy into a wonderful, joyous experience and prepares you to welcome a wise, sanskari and healthy baby.",
+      "Month-by-month developmental sutras tailored to the precise biological and spiritual stage of your fetus.",
+      "Turns pregnancy into a joyous, mindful journey that welcomes a wise and physically healthy newborn.",
     ],
   },
   {
@@ -56,8 +180,8 @@ const features: Feature[] = [
     img: "/images/features/vaidic_mantra_vrushti.jpg",
     tagline: "Miraculous vaidic chants for the promotion of special qualities in the child",
     body: [
-      "The Vedas mention special mantras for pregnancy, which have miraculous effects on the fetus. Originated from Rigveda, Yajurveda, Samaveda and Atharvaveda these mantras are available in the Astro Baby App.",
-      "They are chanted by the world's most knowledgeable Vaidic brahmins, following the stern and uncompromising rules of Varn, Swar, Matra, Balam, Saama and Santana. These Vaidic Garbhadhan Sanskar Mantras have been found to have a divine and positive effect on both the child and the mother.",
+      "Chanted by learned Vaidic scholars following the strict phonetics of Swar, Matra, Balam, and Saama.",
+      "Proven to produce measurable calming alpha brainwaves in both mother and baby.",
     ],
   },
   {
@@ -65,8 +189,8 @@ const features: Feature[] = [
     img: "/images/features/garbhsanskar_music.jpg",
     tagline: "Music based on specific ragas for the ideal development of a child",
     body: [
-      "Indian ragas and Garbhadhan Sanskar music have a positive impact on our mood, mind and body. This fact is now recognized by the world's top scientists and universities as well. Children who have been exposed to traditional ragas before birth develop many qualities such as intelligence, health and calmness in nature.",
-      "The Garbhadhan Sanskar music in Astro Baby App has been developed on the basis of Indian ragas, which not only enhance the virtues in the fetus, but also keep the pregnant woman calm, relaxed and positive.",
+      "Ancient Indian classical ragas crafted to balance maternal emotions and stimulate auditory cortex development.",
+      "Keeps the mother relaxed, positive, and deeply connected with her baby 24/7.",
     ],
   },
   {
@@ -74,178 +198,89 @@ const features: Feature[] = [
     img: "/images/features/jeevan_sutra.jpg",
     tagline: "Sutra to guide you through the ups and downs of life",
     body: [
-      "The influence of the mother's state of mind during pregnancy has a huge impact on the baby and its effects can last for the rest of their life. A pregnant woman faces many ups and downs and has to deal with negative emotions like worry, stress, sadness etc. while still keeping her mind stable, calm, and positive.",
-      "In the live Jeevan Sutra sessions, nationally-renowned life trainers will guide you on how to stay positive even while dealing with negative emotions and situations, helping you to become the best version of yourself and ultimately become a better mother.",
+      "Live interactive life coaching sessions helping expectant mothers overcome stress, anxiety, and mood fluctuations.",
+      "Empowers mothers with emotional equilibrium and positive parenting psychology.",
     ],
   },
   {
     title: "Medi-Mitra Sessions",
     img: "/images/features/medi_mitra_sessions.jpg",
-    tagline: "Your friend and guide for all your medical concerns",
+    tagline: "Your friend and guide for all medical & obstetric concerns",
     body: [
-      "During pregnancy, the role of doctors should not be limited to medical prescriptions, they should be like a friend or an elder member of the family. Someone who can gently and accurately guide you through the physical and mental issues that arise during pregnancy.",
-      "In the Medi-Mitra section, Dr. Newalkar will be playing the exact same role. With 22 years of experience, including at the world renowned AIIMS institute, she is well versed in handling high-risk pregnancies.",
+      "Guided by experienced obstetricians and AIIMS alumni with 20+ years of high-risk pregnancy expertise.",
+      "Gives accurate, compassionate medical answers whenever queries arise.",
     ],
   },
   {
     title: "Isht Mantra",
     img: "/images/features/isht_mantra.jpg",
-    tagline: "Unique Isht Mantra calculated according to the parents' date and time of birth",
+    tagline: "Personalized Isht Mantra calculated from parents' birth charts",
     body: [
-      "Astro Baby App calculates a raashi-yugm based on the time and date of birth of the mother and father-to-be. This calculation is based on astrology and there is a unique Isht mantra for each parent-couple.",
-      "The pregnant woman has to chant this personal Isht Mantra 108 times a day during her pregnancy. Isht Dev especially blesses children born by Isht Mantra's chanting. If due to some reason, a pregnant woman is not able to chant the Isht Mantra 108 times, it must at least be chanted either 51 or 11 times a day.",
+      "Calculated based on astrological Raashi-Yugm of both parents for maximum spiritual resonance.",
+      "Protects the womb and invokes divine blessings for the unborn baby.",
     ],
   },
   {
     title: "GarbhSamvad",
     img: "/images/features/garbhsamvad.jpg",
-    tagline: "Laying the foundation of the bond of a lifetime",
+    tagline: "Laying the foundation of a lifetime bond between mother & baby",
     body: [
-      "Samvad - dialogue or communication, is one of the most crucial aspects of Garbhadhan Sanskar. Your baby may not be able to listen or understand your words especially during early pregnancy but they can certainly sense the emotions and feelings behind your words.",
-      "This communication, once prescribed by ancient Indian Rishis, is now a widely accepted practice proven by various scientific studies. Rejoice in these joyous moments of pregnancy and forge the bond that will last a lifetime.",
+      "Daily structured conversation guides to communicate love, values, and knowledge to the baby in the womb.",
+      "Rooted in both ancient Vedic traditions (Abhimanyu) and modern fetal neuroscience.",
     ],
   },
   {
-    title: "Yognidra - The stress-relief session",
+    title: "Yognidra & Stress Relief",
     img: "/images/features/yognidra.jpg",
-    tagline: "Your passage to inner peace",
+    tagline: "Your 20-minute passage to deep restorative inner peace",
     body: [
-      "During pregnancy you are continuously dealing with many things that include ongoing physical changes, concerns for your baby, the nervousness of delivery, and unwarranted do's and don'ts from friends and family. So physical and mental fatigue is imminent.",
-      "This is exactly why team Astro Baby created these guided yognidra sessions. A 20 - 25 minute session helps you find a more calm and refreshed version of yourself.",
+      "Guided prenatal yoga nidra sessions that lower cortisol, relieve physical fatigue, and induce restful sleep.",
     ],
   },
   {
     title: "Parv (Occasion) Based Sessions",
     img: "/images/features/parv_based_sessions.jpg",
-    tagline: "Garbhadhan Sanskar sessions for important festivals",
+    tagline: "Celebratory festive sanskars for sacred occasions",
     body: [
-      "Garbhadhan Sanskar is not just limited to mantra and music. It is a 24/7 lifestyle and pregnancy is a period where a pregnant lady transforms into a mother. The Parvnimitt or occasion-based session includes important time-specific activities with respect to garbhadhan sanskar.",
-      "It also includes discourses that plant sanskaras subconsciously in the mother as well as the baby. For instance, the occasions include Holi, Diwali, Navratri, Ekadashi, Ram Navami and much more.",
+      "Special discourses and activities aligned with Diwali, Navratri, Ekadashi, and other sacred Indian festivals.",
     ],
   },
   {
     title: "Supraj Santaanotpatti Havan",
     img: "/images/features/santanotpatti_havan.jpg",
-    tagline: "Monthly vaidic havan for the safety and health of your child",
+    tagline: "Monthly vaidic havan for the protection and vitality of your child",
     body: [
-      "Once a month during pregnancy, the pregnant woman and her husband and, if possible, all the family members perform a live Supraj Santaanotpatti Havan, under the guidance of the Vaidic Brahmin at Astro Baby.",
-      "The main purpose of the Havan is to pray to the deities and the Navagrahas for the protection of the child and the enhancement of virtues. The date, time and samagri required for the Havan are shared with the subscribers in advance.",
+      "Live monthly fire rituals conducted by Astro Baby scholars for the physical and spiritual prosperity of your family.",
     ],
   },
   {
-    title: "Meditation",
-    img: "/images/features/meditation.jpg",
-    tagline: "To de-stress yourself",
-    body: [
-      "Meditation is an important aspect of garbhadhan sanskar and is beneficial for the body as it de-stresses the mind. It involves getting into a zero state of mind, which can help bring peace and tranquility, and enhance concentration. Visualizing good things about the baby while doing meditation during pregnancy is also a great way to bond with the baby.",
-    ],
-  },
-  {
-    title: "Monthly Calendar",
-    img: "/images/features/monthly_calendar.png",
-    tagline: "Planner for all monthly garbhadhan sanskar activities",
-    body: [
-      "The monthly activity planner provided in Astro Baby Garbhadhan Sanskar app gives you the complete information, in advance, about the various activities lined up for the month. It gives you details about the date, time, and the expert associated with the respective activities/sessions.",
-    ],
-  },
-  {
-    title: "Garbhadhan Sanskar QnA",
-    img: "/images/features/garbhsanskar_qna.jpg",
-    tagline:
-      "All of your questions, queries & concerns related to Garbhadhan Sanskar & Life… Answered by our experts Live.",
-    body: [
-      "During pregnancy you often find yourself facing situations where you require guidance from a trusted friend & mentor. With Garbhadhan Sanskar QnA Session you get the guidance of Prof. Vipin Joshi Live.",
-      "Be it questions related to Garbhadhan Sanskar, Shastras, situations related to day-to-day challenges of life, or dynamics of spouse relationships or in-laws. Users from India & abroad get their absolute guidance through this session.",
-    ],
-  },
-  {
-    title: "Let's Smile Together",
-    img: "/images/features/lets_smile_together.jpg",
-    tagline:
-      "Live Interactive sessions full of fun, excitement & giveaways for pregnant ladies around the world.",
-    body: [
-      "Let's smile together, as the name suggests is a session that acts as a gust of fresh air for pregnant ladies. This session is a gateway to fun group activities away from the daily doldrums of physical issues, stress & tensions.",
-      "Exciting competitions, prizes, and fun interactions with fellow pregnant moms are all hosted by Astro Baby Hosts in a power-packed live online session.",
-    ],
-  },
-  {
-    title: "Sandhya Prarthana",
-    img: "/images/features/sandhya_prarthana.jpg",
-    tagline:
-      "Hundreds of Pregnant ladies across the world participate daily at the same time for 'Garbh-raksha' prarthna Live.",
-    body: [
-      "Sandhya Prarthna is a session of uninterrupted tranquility for pregnant women. Protective Ramraksha Stotra, effective Mantras, powerful Santan Gopal Mantra, and sacred Garbh Kalyan Prarthna will relieve pregnant women from daily life's hassles.",
-      "Regular chanting of these prayers and mantras with Astro Baby Garbhadhan Sanskar's mentor protects the mother's womb from any kind of mishaps and ensures the baby's better future.",
-    ],
-  },
-  {
-    title: "Yoga Session",
+    title: "Yoga & Pranayama Sessions",
     img: "/images/features/yoga_session.jpg",
-    tagline:
-      "Safe Yogasans for pregnancy demonstrated by Yogasan experts as per your pregnancy month Live.",
+    tagline: "Safe trimester-specific prenatal yoga led by certified instructors",
     body: [
-      "Yoga during pregnancy is an ideal way to stay in shape, tone the muscles, and improve blood circulation– all with negligible impact on your joints. Prenatal Yoga also reduces stress, improves flexibility, lowers back pain, and prepares your body for labor and delivery.",
-      "With Astro Baby Garbhadhan Sanskar's expert Yoga instructors, it's extremely easy to perform quick and effective Yoga exercises from the comfort of your home.",
+      "Improves pelvic flexibility, reduces back strain, and prepares your body naturally for smooth labor.",
     ],
   },
   {
-    title: "Nutritionist Session",
+    title: "Nutritionist & Diet Guidance",
     img: "/images/features/nutritionist_session.jpg",
-    tagline:
-      "What To eat, What not to eat - Guidance of Nutritionists for various months of pregnancy.",
+    tagline: "Personalized Ayurvedic and modern pregnancy nutrition plans",
     body: [
-      "Balanced diet is the basic fundamental of a healthy pregnancy. The growth of the baby in the womb depends on the diet of the expectant mother. Astro Baby's nutritionist session guided by experts makes it easy to stay nourished and healthy at every stage of pregnancy.",
-      "In this session, you will also get a chance to ask anything to the expert about diet during pregnancy.",
-    ],
-  },
-  {
-    title: "Mentoring",
-    img: "/images/features/mentoring.jpg",
-    tagline: "Live mentoring sessions to guide you through life problems keeping you up at night.",
-    body: [
-      "Pregnancy is one of the most rewarding experiences a woman can have. But, at times you may have mixed feelings, insecurities, self-doubt, overwhelming feelings, anxiety, etc. Combat these negative feelings easily with Astro Baby Garbhadhan Sanskar's mentoring session.",
-    ],
-  },
-  {
-    title: "Brainopedia",
-    img: "/images/features/brainopedia.jpg",
-    tagline: "Live brain exercises, games & activities to stimulate the mental growth.",
-    body: [
-      "A special Brainopedia session for pregnant women includes engaging games, challenging puzzles, a range of quizzes, and other brain-sharpening activities. In this great one-hour session, our amazing host will ensure you will have a lot of fun and joy with other expectant mothers.",
-    ],
-  },
-  {
-    title: "Library",
-    img: "/images/features/library.jpg",
-    tagline:
-      "Handpicked Stories, biographies & inspirational stories from the golden history of India to impart the traits in your baby.",
-    body: [
-      "What you read during pregnancy has a great influence on a baby's mental development. Get access to a unique collection of educational stories through the library section. The perfect blend of entertainment and inspirational stories of saints, deities, sages, and great kings will induce good virtues in your baby.",
-    ],
-  },
-  {
-    title: "Doctor's Session",
-    img: "/images/features/doctors_session.jpg",
-    tagline:
-      "Answers to all of your medical issues or concerns from the top gynecologists of the nation in a Live session.",
-    body: [
-      "Pregnant women often lack access to essential medical advice since they can't afford to visit a gynecologist every time they have a question. Get regular answers to all of your pregnancy-related questions through gynecologist sessions.",
-      "Astro Baby Garbhadhan Sanskar's experienced gynecologist is available to answer any questions you may have.",
+      "Trimester-wise satvik diet recommendations ensuring peak nourishment for mother and growing baby.",
     ],
   },
 ];
 
 const FEATURE_CATEGORIES = [
   "All Features",
+  "7 Core Pillars",
   "Sanskars & Poojan",
   "Vaidic Mantras & Music",
   "Live Mentoring & Doctors",
   "Mindfulness & Yoga",
-  "Interactive Games & Library",
 ];
 
 export default function FeaturesPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All Features");
   const [searchQuery, setSearchQuery] = useState("");
   const featuresGridRef = useRef<HTMLDivElement>(null);
@@ -261,23 +296,17 @@ export default function FeaturesPage() {
           const fromLeft = index % 2 === 0;
           gsap.fromTo(
             el,
-            {
-              opacity: 0,
-              x: fromLeft ? -60 : 60,
-            },
+            { opacity: 0, x: fromLeft ? -40 : 40 },
             {
               opacity: 1,
               x: 0,
-              duration: 0.8,
-              ease: "power3.out",
+              duration: 0.6,
+              ease: "power2.out",
               scrollTrigger: {
                 trigger: el,
-                start: "top 90%",
+                start: "top 92%",
                 toggleActions: "play none none none",
                 once: true,
-              },
-              onComplete: () => {
-                gsap.set(el, { clearProps: "opacity,transform" });
               },
             },
           );
@@ -298,120 +327,189 @@ export default function FeaturesPage() {
 
     if (!matchesSearch) return false;
 
-    if (selectedCategory === "All Features") return true;
+    if (selectedCategory === "All Features" || selectedCategory === "7 Core Pillars") return true;
     if (selectedCategory === "Sanskars & Poojan")
-      return f.title.includes("Garbh Dan") || f.title.includes("Garbhadhan") || f.title.includes("Sanskar") || f.title.includes("Poojan") || f.title.includes("Havan");
-    if (selectedCategory === "Vaidic Mantras & Music")
       return (
-        f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Prarthana")
+        f.title.includes("Garbhadhan") ||
+        f.title.includes("Sanskar") ||
+        f.title.includes("Poojan") ||
+        f.title.includes("Havan")
       );
+    if (selectedCategory === "Vaidic Mantras & Music")
+      return f.title.includes("Mantra") || f.title.includes("Music") || f.title.includes("Samvad");
     if (selectedCategory === "Live Mentoring & Doctors")
       return (
-        f.title.includes("Jeevan Sutra") ||
+        f.title.includes("Jeevan") ||
         f.title.includes("Doctor") ||
         f.title.includes("Medi-Mitra") ||
-        f.title.includes("Mentoring") ||
-        f.title.includes("QnA")
+        f.title.includes("Mentoring")
       );
     if (selectedCategory === "Mindfulness & Yoga")
       return (
         f.title.includes("Yoga") ||
         f.title.includes("Yognidra") ||
-        f.title.includes("Meditation") ||
         f.title.includes("Nutritionist")
-      );
-    if (selectedCategory === "Interactive Games & Library")
-      return (
-        f.title.includes("Brainopedia") ||
-        f.title.includes("Library") ||
-        f.title.includes("Smile") ||
-        f.title.includes("Calendar")
       );
 
     return true;
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FBDFFF] via-[#F7EEF3] to-[#FBDFFF] text-slate-800">
-      {/* Header & Navbar */}
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
-      {/* Hero Banner Image */}
-      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90 bg-[#0A1A2F]">
-          <picture className="w-full h-auto block">
-            <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
-            <img
-              src="/images/garbh_dan_banner.png"
-              alt="Garbhadhan - A Gift of Life, A Legacy of Love"
-              className="w-full h-auto object-cover block contrast-[1.03] saturate-[1.02] rounded-[30px]"
-            />
-          </picture>
-        </div>
-      </section>
+      {/* ── Top Hero / Banner ── */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+        {/* Ambient Glow Spheres */}
+        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-sky-200/30 blur-3xl" />
 
-      {/* Header & Search */}
-      <section className="py-10 md:py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 border-b border-pink-200/60">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <span className="inline-block bg-[#EA3484] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
-            23+ Comprehensive Features
-          </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Garbhadhan Sanskar <span className="text-[#EA3484]">Course & Features</span>
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 text-[#F45B8A] border border-pink-200/80 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur-md shadow-sm">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>7 Core Pillars & Comprehensive Features</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#172554] leading-[1.15] font-['DM_Serif_Display',Georgia,serif] tracking-tight">
+            Vedic Sanskar Courses &{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              Interactive Features
+            </span>
           </h1>
-          <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
-            A unique combination of ancient Shaastra wisdom & modern obstetric science delivered
-            through an intuitive mobile application.
+
+          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-['Manrope',sans-serif]">
+            A complete developmental continuum from pre-conception planning and prenatal neuro-development to early childhood and mindful parenting.
           </p>
 
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500">
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">Courses & Features</span>
+          </div>
+
           {/* Search bar */}
-          <div className="mt-8 max-w-md mx-auto relative">
-            <input
-              type="text"
-              placeholder="Search features (e.g., Mantra, Music, Yoga, Doctor)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#EA3484]"
-            />
-            <svg
-              className="w-5 h-5 text-[#EA3484]/70 absolute left-4 top-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          <div className="pt-3 max-w-2xl mx-auto">
+            <div className="relative flex items-center">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search features (e.g. Garbhadhan, Mantras, Beej Sanskar, Yoga, Doctors)..."
+                className="w-full px-5 py-4 pl-12 pr-10 rounded-full bg-white/95 backdrop-blur-xl text-[#172554] text-sm md:text-base placeholder:text-slate-400 shadow-[0_10px_30px_rgba(23,37,84,0.06)] border border-pink-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] transition-all"
               />
-            </svg>
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#EA3484] font-bold"
-              >
-                ✕
-              </button>
-            )}
+              <Search className="w-5 h-5 text-[#F45B8A] absolute left-4.5 pointer-events-none" />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4.5 text-slate-400 hover:text-[#F45B8A] p-1 font-bold transition-colors text-sm"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Category Filter Tabs */}
-      <section className="bg-white/90 backdrop-blur-md border-b border-pink-100 sticky top-0 z-20 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1">
+      {/* ── 7 Core Developmental Courses Grid ── */}
+      <section className="py-16 md:py-24 bg-white/90 border-b border-pink-100 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs">
+              <Layers className="h-3.5 w-3.5" /> 7 Dedicated Course Tracks
+            </span>
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554]">
+              Choose Your Stage of Parenthood
+            </h2>
+            <p className="text-sm md:text-base text-[#475569] font-['Manrope',sans-serif]">
+              Tailored guidance for every sacred step — from conscious conception to flourishing childhood.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {CORE_COURSES.map((course, idx) => {
+              const Icon = course.icon;
+              return (
+                <div
+                  key={course.id}
+                  className={`bg-gradient-to-br ${course.gradient} bg-white/95 rounded-[30px] p-7 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5`}
+                >
+                  <div>
+                    {/* Icon & Badge */}
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <div className={`w-13 h-13 rounded-2xl flex items-center justify-center ${course.iconBg} shadow-xs group-hover:scale-105 transition-transform`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {course.price && (
+                          <span className="text-xs font-bold text-[#172554] bg-white/90 border border-pink-200 px-3 py-1 rounded-full shadow-2xs">
+                            {course.price}
+                          </span>
+                        )}
+                        <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${course.badgeColor}`}>
+                          Pillar 0{idx + 1}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Titles */}
+                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors">
+                      {course.title}
+                    </h3>
+                    <p className="text-xs font-bold text-[#F45B8A] uppercase tracking-wide mt-1">
+                      {course.subTitle}
+                    </p>
+
+                    <p className="mt-3 text-sm text-[#475569] leading-relaxed font-['Manrope',sans-serif]">
+                      {course.desc}
+                    </p>
+
+                    {/* Benefit bullets */}
+                    <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
+                      {course.benefits.map((b, bIdx) => (
+                        <div key={bIdx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F45B8A]" />
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Link */}
+                  <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      to={course.to}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#172554] group-hover:bg-gradient-to-r group-hover:from-[#F45B8A] group-hover:to-[#E91E63] text-white text-xs font-bold transition-all shadow-xs group-hover:shadow-md cursor-pointer"
+                    >
+                      <span>View Program</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <span className="text-[11px] font-bold text-slate-400">Available in App</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Category Filter Tabs ── */}
+      <section className="bg-white/90 backdrop-blur-md border-y border-pink-100 sticky top-20 z-20 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 py-3.5">
+          <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth py-1">
             {FEATURE_CATEGORIES.map((cat) => {
               const active = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
+                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs md:text-sm font-bold transition-all cursor-pointer ${
                     active
-                      ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 scale-105"
-                      : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
+                      ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/30 scale-105"
+                      : "bg-white text-[#172554] border border-pink-100 hover:bg-pink-50/70 shadow-xs"
                   }`}
                 >
                   {cat}
@@ -422,121 +520,97 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Feature blocks Grid */}
+      {/* ── Comprehensive Features Catalog ── */}
       <section
         ref={featuresGridRef}
-        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]"
+        className="py-16 md:py-24 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] min-h-[600px] relative z-10"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
-            <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
-              {selectedCategory === "All Features" ? "All Course Features" : selectedCategory}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl md:text-4xl font-normal text-[#172554]">
+              {selectedCategory === "All Features" ? "All Interactive Features" : selectedCategory}
             </h2>
-            <span className="text-xs font-bold px-3.5 py-1 bg-white border border-pink-200 rounded-full text-[#F63D8E] shadow-xs">
-              Showing {filteredFeatures.length} Features
-            </span>
+            <p className="text-xs md:text-sm text-slate-500 mt-1 font-['Manrope',sans-serif]">
+              Showing {filteredFeatures.length} specialized tools and rituals
+            </p>
           </div>
 
-          {filteredFeatures.length === 0 ? (
-            <div className="text-center py-16 bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 shadow-sm">
-              <p className="text-slate-600 text-lg font-medium">
-                No features found matching "{searchQuery}".
-              </p>
-              <button
-                onClick={() => {
-                  setSearchQuery("");
-                  setSelectedCategory("All Features");
-                }}
-                className="mt-4 px-6 py-2.5 bg-[#F63D8E] text-white text-xs font-bold rounded-full hover:bg-[#E02B7B] transition shadow-sm"
-              >
-                Clear Search Filters
-              </button>
-            </div>
-          ) : (
-            <div className="space-y-12">
-              {filteredFeatures.map((f, i) => {
-                const reverse = i % 2 === 1;
-                return (
-                  <article
-                    key={f.title}
-                    data-feature-item
-                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-gradient-to-br from-white via-[#FFF8FD] to-[#FAF2FF] p-7 md:p-10 rounded-[32px] border border-pink-200/90 shadow-[0_15px_40px_-10px_rgba(244,63,94,0.1)] hover:shadow-[0_25px_50px_-5px_rgba(244,63,94,0.2)] transition-shadow duration-500 overflow-hidden relative group/card"
-                  >
-                    <div className={`${reverse ? "md:order-2" : ""} flex justify-center`}>
-                      <div className="relative group w-full max-w-md">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
-                        {(() => {
-                          const imgSrc = f.img ? (f.img.startsWith("/") ? f.img : `/images/${f.img}`) : "/images/story_thumb_1.png";
-                          const isGarbhDan = f.title === "Garbh Dan" || f.title === "Garbhadhan" || imgSrc.includes("garbh_dan");
-                          return (
-                            <picture className="relative block w-full rounded-[24px] overflow-hidden border-4 border-white shadow-xl bg-slate-900/5">
-                              {isGarbhDan && (
-                                <source media="(max-width: 767px)" srcSet="/images/garbh_dan_mobile_banner.png" />
-                              )}
-                              <img
-                                src={imgSrc}
-                                alt={f.title}
-                                className={`w-full ${
-                                  isGarbhDan ? "h-auto md:h-80 object-cover" : "h-64 md:h-80 object-cover"
-                                } transition-transform duration-500 group-hover:scale-[1.03]`}
-                                loading="lazy"
-                              />
-                            </picture>
-                          );
-                        })()}
-                      </div>
+          <div className="space-y-12">
+            {filteredFeatures.map((f, i) => {
+              const isEven = i % 2 === 0;
+              return (
+                <div
+                  key={f.title + i}
+                  data-feature-item
+                  className="bg-white/95 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 md:p-10 border border-pink-100 shadow-[0_15px_45px_rgba(23,37,84,0.06)] grid lg:grid-cols-12 gap-8 items-center group hover:shadow-[0_20px_60px_rgba(244,91,138,0.12)] transition-all duration-400"
+                >
+                  {/* Image Column */}
+                  <div className={`lg:col-span-5 overflow-hidden rounded-[24px] bg-slate-900 border-2 border-white shadow-md ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                    <img
+                      src={f.img}
+                      alt={f.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = "/images/garbh_dan_banner.png";
+                      }}
+                      className="w-full h-[260px] sm:h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Content Column */}
+                  <div className={`lg:col-span-7 space-y-4 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                    <span className="inline-block px-3.5 py-1 rounded-full bg-pink-50 text-[#F45B8A] border border-pink-200/80 text-xs font-bold uppercase tracking-wider">
+                      Interactive Feature 0{i + 1}
+                    </span>
+
+                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-tight">
+                      {f.title}
+                    </h3>
+
+                    <p className="text-sm font-bold text-[#F45B8A] font-['Manrope',sans-serif]">
+                      {f.tagline}
+                    </p>
+
+                    <div className="space-y-3 text-sm sm:text-base text-[#475569] leading-relaxed font-['Manrope',sans-serif]">
+                      {f.body.map((paragraph, pIdx) => (
+                        <p key={pIdx}>{paragraph}</p>
+                      ))}
                     </div>
-                    <div className={`${reverse ? "md:order-1" : ""}`}>
-                      <div className="inline-flex items-center gap-1.5 bg-[#EA3484] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-[#EA3484]/30 mb-3.5">
-                        <span>✦</span>
-                        <span>Feature {i + 1}</span>
-                      </div>
-                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E293B] mb-2.5 tracking-tight">
-                        {f.title}
-                      </h2>
-                      <div className="text-[#E11D48] font-bold italic text-sm md:text-base mb-4 bg-rose-50/90 px-4 py-2 rounded-2xl border border-rose-200/60 inline-block shadow-xs">
-                        "{f.tagline}"
-                      </div>
-                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-rose-100/80 pt-4 font-sans">
-                        {f.body.map((p, idx) => (
-                          <p key={idx}>{p}</p>
-                        ))}
-                      </div>
+
+                    <div className="pt-3">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#172554] hover:bg-[#1e3a8a] text-white text-xs font-bold transition-all shadow-xs"
+                      >
+                        <span>Access in Astro Baby App</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
                     </div>
-                  </article>
-                );
-              })}
-            </div>
-          )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <AppDownloadSection
-        title={
-          <>
-            Experience All 23+ Features on{" "}
-            <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
-              Astro Baby
-            </span>
-          </>
-        }
-        subtitle="Download the Astro Baby Garbhadhan Sanskar app and begin your positive pregnancy journey today."
-      />
-
-      {/* Newsletter */}
-      <NewsletterSection />
+      {/* App Download Section */}
+      <AppDownloadSection />
 
       {/* Footer */}
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
+      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
+          </div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
+            <span className="hover:text-white transition cursor-pointer">Facebook</span>
             <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
+            <span className="hover:text-white transition cursor-pointer">Instagram</span>
             <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
+            <span className="hover:text-white transition cursor-pointer">YouTube</span>
           </div>
         </div>
       </footer>

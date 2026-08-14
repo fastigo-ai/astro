@@ -1,335 +1,383 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Sparkles,
-  GraduationCap,
   Heart,
-  Music,
-  Activity,
-  Flame,
-  Activity as Stethoscope,
-  Moon,
-  Calendar,
+  Sparkles,
+  Sun,
+  Baby,
+  ShieldCheck,
+  Smile,
   Compass,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   LucideIcon,
 } from "lucide-react";
 
-interface FeatureCardProps {
+interface ProgramItem {
   icon: LucideIcon;
   title: string;
+  subTitle: string;
   desc: string;
+  price?: string;
+  to: string;
   iconBg: string;
   iconColor: string;
-  alignRight?: boolean;
+  badge?: string;
+  features: string[];
 }
 
-function FeatureCard({
-  icon: Icon,
-  title,
-  desc,
-  iconBg,
-  iconColor,
-  alignRight = false,
-}: FeatureCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [coords, setCoords] = useState({
-    rotateX: 0,
-    rotateY: 0,
-    glowX: 0,
-    glowY: 0,
-    isHovered: false,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    // Calculate rotation limits (-12 to 12 deg) for premium 3D feel
-    const rotateY = (mouseX / width - 0.5) * 14;
-    const rotateX = (0.5 - mouseY / height) * 14;
-
-    setCoords({
-      rotateX,
-      rotateY,
-      glowX: mouseX,
-      glowY: mouseY,
-      isHovered: true,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setCoords({ rotateX: 0, rotateY: 0, glowX: 0, glowY: 0, isHovered: false });
-  };
-
-  const transformStyle = coords.isHovered
-    ? `perspective(1000px) rotateX(${coords.rotateX}deg) rotateY(${coords.rotateY}deg) translateY(-6px)`
-    : "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
-
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ transform: transformStyle }}
-      className={`group relative flex gap-4 p-5 bg-white/45 hover:bg-white/75 border border-white/50 hover:border-[#5D539B]/30 rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_50px_rgba(93,83,155,0.05)] transition-all duration-300 cursor-pointer overflow-hidden ${
-        alignRight ? "md:flex-row-reverse md:text-right" : "flex-row text-left"
-      }`}
-    >
-      {/* Radial Hover Glow Layer */}
-      {coords.isHovered && (
-        <div
-          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle 120px at ${coords.glowX}px ${coords.glowY}px, rgba(93, 83, 155, 0.08), transparent)`,
-          }}
-        />
-      )}
-
-      {/* Pastel circular icon wrapper */}
-      <div
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${iconBg} ${iconColor} transition-transform duration-300 group-hover:scale-105 shadow-sm`}
-      >
-        <Icon className="h-5 w-5" />
-      </div>
-
-      {/* Feature Details */}
-      <div className="flex-1 space-y-1">
-        <h4
-          className={`text-sm font-bold text-[#172554] flex items-center gap-1.5 group-hover:text-[#F45B8A] transition-colors duration-300 ${
-            alignRight ? "md:justify-end" : "justify-start"
-          }`}
-        >
-          {title}
-        </h4>
-        <p className="text-xs leading-relaxed text-slate-500 font-sans">{desc}</p>
-      </div>
-
-      {/* Rotating Arrow Icon */}
-      <div
-        className={`flex items-center shrink-0 self-center transition-transform duration-300 ${
-          coords.isHovered ? "scale-110 translate-x-0.5" : "scale-100"
-        }`}
-      >
-        <ArrowRight
-          className={`h-4 w-4 text-[#3B82F6]/40 group-hover:text-[#F45B8A] transition-transform duration-300 ${
-            coords.isHovered ? "rotate-[-45deg]" : "rotate-0"
-          }`}
-        />
-      </div>
-    </div>
-  );
-}
+const programs: ProgramItem[] = [
+  {
+    icon: Heart,
+    title: "Garbhadhan Sanskar",
+    subTitle: "Sacred Preparation for Conception",
+    desc: "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul.",
+    price: "₹11,000",
+    to: "/features/garbh-dhan",
+    iconBg: "bg-pink-100/80",
+    iconColor: "text-[#F45B8A]",
+    features: ["Muhurat-Based Coitus Dates", "Isht Mantra & Meditation", "Fertility Tracker & Support"],
+  },
+  {
+    icon: Sparkles,
+    title: "Beej Sanskar",
+    subTitle: "Preparing the Foundation for Conscious Conception",
+    desc: "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
+    price: "Vitality Track",
+    to: "/features/beej-sanskar",
+    iconBg: "bg-amber-100/80",
+    iconColor: "text-amber-600",
+    features: ["Ayurvedic Cellular Detox", "Satvik Diet & Vitality", "Stress Reduction & Yoga"],
+  },
+  {
+    icon: Sun,
+    title: "Garbh Sanskar",
+    subTitle: "9-Month Journey of Prenatal Nurturing",
+    desc: "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation.",
+    price: "Starting ₹5,000",
+    badge: "Most Popular",
+    to: "/features/garbh-sanskar",
+    iconBg: "bg-purple-100/80",
+    iconColor: "text-purple-600",
+    features: ["Diamond (₹25k), Gold (₹11k), Silver (₹5k)", "Month-wise Mantra Vrushti", "Garbh Samvad & Prenatal Yoga"],
+  },
+  {
+    icon: Baby,
+    title: "Baal Sanskar",
+    subTitle: "Sacred Milestones in Early Childhood",
+    desc: "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories.",
+    price: "₹6,000",
+    to: "/features/baal-sanskar",
+    iconBg: "bg-blue-100/80",
+    iconColor: "text-blue-600",
+    features: ["Namkaran, Nishkraman & Annaprashan", "Character & Value Building", "Cognitive Brain Puzzles"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Infant Care",
+    subTitle: "Gentle Care for Your Baby's Early Years",
+    desc: "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes.",
+    price: "₹5,000",
+    to: "/features/infant-care",
+    iconBg: "bg-teal-100/80",
+    iconColor: "text-teal-600",
+    features: ["Personal Parenting Coach", "Custom Diet & Lactation", "Daily Live Yoga & Milestones"],
+  },
+  {
+    icon: Smile,
+    title: "Parenting",
+    subTitle: "Mindful Guidance for Raising Your Child",
+    desc: "Evidence-based mindful parenting, emotional regulation strategies, positive discipline, and child nutrition.",
+    price: "Expert Guidance",
+    to: "/features/parenting",
+    iconBg: "bg-emerald-100/80",
+    iconColor: "text-emerald-600",
+    features: ["Parenting Coach & Support", "Child Psychological Growth", "Nutrition & Emotional Wellbeing"],
+  },
+  {
+    icon: Compass,
+    title: "Bhavishya Phal",
+    subTitle: "Astrological Insights for Your Child's Journey",
+    desc: "Astrological birth chart (Janam Kundali) analysis, planetary strengths, and senior astrologer consultation.",
+    price: "Starting ₹3,100",
+    to: "/features/bhavishya-fal",
+    iconBg: "bg-indigo-100/80",
+    iconColor: "text-indigo-600",
+    features: ["Kundli + Falit Report (₹3,500)", "Live Astrologer Consultation (₹3,100)", "Lifelong Nakshatra Guidance"],
+  },
+];
 
 export default function FeaturesSection() {
-  const rootRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const total = programs.length;
 
-  const slides = [
-    "/images/features/comprehensive_slide1.png",
-    "/images/features/comprehensive_slide2.png",
-    "/images/features/comprehensive_slide3.png",
-  ];
-
-  const allFeatures = [
-    {
-      icon: Sparkles,
-      title: "Beej Sanskar",
-      desc: "Holistic success and work-life balance through ancient wisdom.",
-      iconBg: "bg-amber-100/50",
-      iconColor: "text-amber-600",
-    },
-    {
-      icon: Heart,
-      title: "Garbhadhan",
-      desc: "Divine planning and preparation for conscious conception.",
-      iconBg: "bg-pink-100/50",
-      iconColor: "text-pink-600",
-    },
-    {
-      icon: GraduationCap,
-      title: "Garbhadhan Sanskar",
-      desc: "Vedic wisdom and scientific practices for a healthy pregnancy.",
-      iconBg: "bg-purple-100/50",
-      iconColor: "text-purple-600",
-    },
-    {
-      icon: Compass,
-      title: "Baal Bhavish Fal",
-      desc: "Astrological guidance and insights for your child's bright future.",
-      iconBg: "bg-indigo-100/50",
-      iconColor: "text-indigo-600",
-    },
-    {
-      icon: Activity,
-      title: "Parenting",
-      desc: "Mindful and positive upbringing strategies for modern parents.",
-      iconBg: "bg-emerald-100/50",
-      iconColor: "text-emerald-600",
-    },
-  ];
-
-  const headingText = "Everything You Need, All in One Place";
-  const headingWords = headingText.split(" ");
-
-  // 1. Automatic Slide Interval (3 slides)
+  // Window resize listener for dynamic responsive layout
   useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 3-Second Cylindrical Auto-Scroll Timer
+  useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setActiveIndex((prev) => (prev + 1) % total);
     }, 3000);
+
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [isPaused, total]);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % total);
+  };
+
+  // Touch Swipe Handlers for Mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 45) {
+      handleNext();
+    } else if (diff < -45) {
+      handlePrev();
+    }
+    setTouchStartX(null);
+    setIsPaused(false);
+  };
+
+  // Helper function to calculate 3D cylindrical position for each card
+  const getCardStyle = (index: number) => {
+    let offset = (index - activeIndex) % total;
+    if (offset > total / 2) offset -= total;
+    if (offset < -total / 2) offset += total;
+
+    const absOffset = Math.abs(offset);
+    const isMobile = windowWidth < 640;
+    const isTablet = windowWidth >= 640 && windowWidth < 1024;
+
+    // On mobile screens, only render adjacent cards to prevent horizontal overflow
+    const maxVisibleOffset = isMobile ? 1 : 2;
+    if (absOffset > maxVisibleOffset) {
+      return {
+        opacity: 0,
+        transform: `translateX(${offset * 120}%) scale(0.6) translateZ(-400px)`,
+        zIndex: 0,
+        pointerEvents: "none" as const,
+      };
+    }
+
+    // Dynamic responsive spread
+    const spacing = isMobile ? Math.min(windowWidth * 0.75, 250) : isTablet ? 280 : 340;
+    const translateX = offset * spacing;
+    const translateZ = -absOffset * (isMobile ? 60 : 110);
+    const rotateY = offset * (isMobile ? -12 : -18);
+    const scale = 1 - absOffset * (isMobile ? 0.12 : 0.1);
+    const opacity = 1 - absOffset * (isMobile ? 0.35 : 0.25);
+    const zIndex = 30 - absOffset * 10;
+
+    return {
+      opacity,
+      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
+      zIndex,
+      pointerEvents: "auto" as const,
+    };
+  };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#FFFDFE] via-[#FDF6FA] to-[#F7FAFF] pt-14 md:pt-20 pb-16 md:pb-24 border-b border-pink-100/60 font-['Plus_Jakarta_Sans',sans-serif]">
+      {/* Background Ambience */}
+      <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/25 blur-3xl" />
+      <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-purple-200/20 blur-3xl" />
 
-
-      <div className="relative mx-auto max-w-7xl px-4 md:px-6 z-10">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Header Block */}
-        <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs mb-4">
-            <Sparkles className="h-3 w-3 text-[#F45B8A]" /> Comprehensive Features
+        <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14 space-y-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs">
+            <Sparkles className="h-3.5 w-3.5 text-[#F45B8A]" /> AstroBaby Programs & Services
           </span>
 
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: { transition: { staggerChildren: 0.1 } }
-            }}
-            className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] text-[#172554] tracking-tight mb-3 flex flex-wrap justify-center gap-x-2"
-          >
-            {headingWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120 } }
-                }}
-                className="inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.h2>
+          <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] text-[#172554] tracking-tight">
+            Explore Our{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              Sacred Programs
+            </span>
+          </h2>
 
-          <p className="text-sm md:text-base leading-relaxed text-slate-600 font-sans">
-            A comprehensive week-by-week guide to nurturing your body and your baby, combining
-            wisdom and medicine to ensure full pregnancy growth.
+          <p className="text-sm md:text-base leading-relaxed text-[#475569] font-['Manrope',sans-serif] max-w-2xl mx-auto">
+            From conscious pre-conception preparation to prenatal nurturing, gentle infant care, and future astrological insights.
           </p>
         </div>
 
-        {/* Features Content layout */}
+        {/* ── 3D Cylindrical Carousel Container ── */}
         <div
-          data-cards-layout-trigger
-          data-iphone-mockup-trigger
-          className="grid gap-8 lg:grid-cols-12 items-center"
+          className="relative max-w-5xl mx-auto h-[380px] sm:h-[400px] flex items-center justify-center select-none overflow-hidden sm:overflow-visible touch-pan-y"
+          style={{ perspective: "1200px" }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
-          {/* Left Column: 5 Features Grid */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 order-2 lg:order-1">
-            {allFeatures.map((item, idx) => (
-              <motion.div
+          {programs.map((prog, idx) => {
+            const Icon = prog.icon;
+            const style = getCardStyle(idx);
+            const isCenter = idx === activeIndex;
+
+            return (
+              <div
                 key={idx}
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+                onClick={() => {
+                  if (!isCenter) setActiveIndex(idx);
+                }}
+                style={style}
+                className={`absolute w-[86vw] max-w-[310px] sm:w-[360px] md:w-[380px] transition-all duration-700 ease-out cursor-pointer ${
+                  isCenter ? "cursor-default" : "hover:brightness-105"
+                }`}
               >
-                <FeatureCard
-                  icon={item.icon}
-                  title={item.title}
-                  desc={item.desc}
-                  iconBg={item.iconBg}
-                  iconColor={item.iconColor}
-                  alignRight={false}
-                />
-              </motion.div>
-            ))}
-          </div>
+                <div
+                  className={`relative flex flex-col justify-between p-6 sm:p-7 rounded-[30px] transition-all duration-500 overflow-hidden ${
+                    isCenter
+                      ? "bg-white/98 backdrop-blur-2xl border-2 border-[#F45B8A]/70 shadow-[0_25px_65px_rgba(244,91,138,0.18)]"
+                      : "bg-white/85 backdrop-blur-md border border-pink-100/80 shadow-[0_10px_35px_rgba(23,37,84,0.06)]"
+                  }`}
+                >
+                  {/* Glowing Accent Top Border for Active Card */}
+                  {isCenter && (
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63]" />
+                  )}
 
-          {/* Right Column: Phone Mockup & Gradient Rings */}
-          <div className="lg:col-span-5 flex justify-center items-center py-6 order-1 lg:order-2">
-            <div className="relative flex justify-center items-center w-full max-w-[320px]">
-              {/* Rotating Gradient Rings */}
-              <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
-                <div className="absolute h-[420px] w-[420px] rounded-full border border-dashed border-[#5D539B]/15 animate-[spin_45s_linear_infinite]" />
-                <div className="absolute h-[330px] w-[330px] rounded-full border border-dashed border-[#EAE6FA]/40 animate-[spin_28s_linear_infinite_reverse]" />
-                <div className="absolute h-[260px] w-[260px] rounded-full bg-gradient-to-tr from-[#EAE6FA]/30 to-[#F3E8FF]/30 blur-[30px] opacity-70 animate-[spin_18s_linear_infinite]" />
-              </div>
+                  <div>
+                    {/* Top Header: Icon & Price / Badge */}
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div
+                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${prog.iconBg} ${prog.iconColor} transition-transform duration-300 shadow-xs`}
+                      >
+                        <Icon className="h-6 w-6" />
+                      </div>
 
-              {/* iPhone Mockup wrapper */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="relative z-10 w-[260px] h-[530px] bg-slate-900 rounded-[44px] p-2.5 shadow-[0_25px_60px_rgba(0,0,0,0.12)] border-[5.5px] border-slate-800 overflow-hidden"
-              >
-                {/* Speaker notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-800 rounded-b-2xl z-30 flex justify-center items-end pb-1">
-                  <div className="w-10 h-1 bg-slate-600 rounded-full" />
-                </div>
-
-                {/* Screen Content: Automatic Slider */}
-                <div className="relative h-full w-full bg-slate-100 overflow-hidden rounded-[34px]">
-                  {/* Top Astro Baby Branding Overlay Header Bar on every slide */}
-                  <div className="absolute top-0 left-0 right-0 z-20 pt-6 pb-2.5 px-3 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/70 to-transparent flex items-center justify-between text-white backdrop-blur-[3px] border-b border-white/10">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-amber-400 text-xs font-black animate-pulse">✦</span>
-                      <span className="font-extrabold tracking-wider text-[11px] bg-gradient-to-r from-amber-200 via-pink-200 to-white bg-clip-text text-transparent uppercase font-sans">
-                        Astro Baby
-                      </span>
+                      <div className="flex items-center gap-2">
+                        {prog.badge && (
+                          <span className="bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-2xs tracking-wider">
+                            {prog.badge}
+                          </span>
+                        )}
+                        {prog.price && (
+                          <span className="text-xs font-bold text-[#172554] bg-pink-50/90 border border-pink-100 px-3 py-1 rounded-full shadow-2xs">
+                            {prog.price}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-[#F45B8A] text-white shadow-xs tracking-wider uppercase">
-                      Garbhadhan Sanskar
-                    </span>
+
+                    {/* Title & Exact Subtitle */}
+                    <div className="space-y-1">
+                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl sm:text-2xl font-normal text-[#172554] transition-colors duration-300">
+                        {prog.title}
+                      </h3>
+                      <p className="text-xs font-bold text-[#F45B8A] font-['Manrope',sans-serif] leading-snug">
+                        {prog.subTitle}
+                      </p>
+                    </div>
+
+                    {/* Short Description */}
+                    <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif]">
+                      {prog.desc}
+                    </p>
                   </div>
 
-                  {slides.map((slide, idx) => (
-                    <img
-                      key={slide}
-                      src={slide}
-                      alt={`Feature Screen ${idx + 1}`}
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                        idx === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                  {/* CTA Button */}
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      to={prog.to}
+                      onClick={(e) => {
+                        if (!isCenter) {
+                          e.preventDefault();
+                          setActiveIndex(idx);
+                        }
+                      }}
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-xs ${
+                        isCenter
+                          ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/25 hover:scale-105 cursor-pointer"
+                          : "bg-[#172554] text-white/90 hover:bg-[#1e3a8a]"
                       }`}
-                    />
-                  ))}
-
-                  {/* Bottom Astro Baby Watermark / Label Badge Overlay on every slide */}
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 px-3 py-1 rounded-full bg-[#172554]/80 backdrop-blur-md border border-white/20 shadow-md flex items-center gap-1.5 pointer-events-none">
-                    <span className="text-[#F45B8A] text-[10px]">✦</span>
-                    <span className="text-[10px] font-bold text-white tracking-wider uppercase">
-                      Astro Baby App
-                    </span>
+                    >
+                      <span>View Program</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <span className="text-[11px] font-bold text-slate-400">Pillar 0{idx + 1}</span>
                   </div>
-
-                  {/* Subtle glass screen reflection overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none z-10" />
                 </div>
-              </motion.div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── Carousel Navigation Controls ── */}
+        <div className="flex flex-col items-center justify-center gap-5 mt-6">
+          {/* Controls: Prev, Next & 7 Tonal Pagination Dots */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handlePrev}
+              className="w-10 h-10 rounded-full bg-white border border-pink-100 shadow-md flex items-center justify-center text-[#172554] hover:bg-[#F45B8A] hover:text-white transition-all hover:scale-105 cursor-pointer"
+              aria-label="Previous Program"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* 7 Tonal Pagination Dots */}
+            <div className="flex items-center gap-2 px-3 py-2 bg-white/70 backdrop-blur-md rounded-full border border-pink-100/80 shadow-xs">
+              {programs.map((_, dotIdx) => {
+                const isActive = dotIdx === activeIndex;
+                return (
+                  <button
+                    key={dotIdx}
+                    onClick={() => setActiveIndex(dotIdx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      isActive
+                        ? "w-8 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] shadow-xs"
+                        : "w-2.5 bg-pink-200 hover:bg-pink-300"
+                    }`}
+                    aria-label={`Go to Program ${dotIdx + 1}`}
+                  />
+                );
+              })}
             </div>
+
+            <button
+              onClick={handleNext}
+              className="w-10 h-10 rounded-full bg-white border border-pink-100 shadow-md flex items-center justify-center text-[#172554] hover:bg-[#F45B8A] hover:text-white transition-all hover:scale-105 cursor-pointer"
+              aria-label="Next Program"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
 
-        {/* Explore More Features Button */}
-        <div data-more-features-btn className="flex justify-center mt-6 md:mt-8">
+        {/* Explore All Features Button */}
+        <div className="flex justify-center mt-12 md:mt-16">
           <Link
             to="/features"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#F45B8A]/25 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] hover:shadow-lg hover:shadow-[#F45B8A]/30 px-9 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
-            Explore More Features
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 duration-300" />
+            <span>Explore All Features & Courses</span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
           </Link>
         </div>
       </div>

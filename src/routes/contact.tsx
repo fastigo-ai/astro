@@ -444,9 +444,9 @@ export default function ContactPage() {
                             className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
                           >
                             <option>English</option>
-                            <option>Hindi (हिंदी)</option>
-                            <option>Marathi (मराठी)</option>
-                            <option>Gujarati (ગુજરાતી)</option>
+                            <option>Hindi</option>
+                            <option>Marathi</option>
+                            <option>Gujarati</option>
                           </select>
                         </div>
                       </div>
