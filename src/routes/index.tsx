@@ -60,30 +60,30 @@ const stats = [
 const userStories = [
   {
     img: "experience_1727683696.jpg",
-    yt: "vEltMP4qvhw",
+    yt: "HSHnKz5Po1w",
     name: "Mr. & Mrs. Patil",
     loc: "Kolhapur",
   },
   {
     img: "experience_1724400221.jpg",
-    yt: "5YhDhV9Eq4M",
+    yt: "HSHnKz5Po1w",
     name: "Mrs. Preeti Shree",
     loc: "Dhanbad",
   },
   {
     img: "experience_1724396585.jpg",
-    yt: "Q8V0cuHGBx4",
+    yt: "HSHnKz5Po1w",
     name: "Mr. & Mrs. Chaturkar",
     loc: "Pune",
   },
   {
     img: "experience_1723106769.jpg",
-    yt: "wGaFK-N_-eo",
+    yt: "HSHnKz5Po1w",
     name: "Mr. & Mrs. Sinha",
     loc: "Bangalore",
   },
-  { img: "experience_1698234576.jpg", yt: "tkXuMEOJCKo", name: "Mr. & Mrs. Dubey", loc: "Gwalior" },
-  { img: "experience_1697802459.jpg", yt: "6MgQ1sZ_tlI", name: "Mr. & Mrs. Jalan", loc: "Delhi" },
+  { img: "experience_1698234576.jpg", yt: "HSHnKz5Po1w", name: "Mr. & Mrs. Dubey", loc: "Gwalior" },
+  { img: "experience_1697802459.jpg", yt: "HSHnKz5Po1w", name: "Mr. & Mrs. Jalan", loc: "Delhi" },
 ];
 
 const scientificEvidences = [

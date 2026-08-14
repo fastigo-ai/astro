@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
+import { Sparkles, Heart, ChevronRight, Search, Star, Users, BookOpen, Activity, ArrowRight } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 
@@ -163,31 +165,8 @@ const members: Member[] = [
   },
 ];
 
-function Layout({ children }: { children: React.ReactNode; activeLabel?: string }) {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FBDFFF] via-[#F7EEF3] to-[#FBDFFF] text-slate-800">
-      <HeaderNavbar />
-
-      {children}
-
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
-
 const CATEGORIES = [
-  "All",
+  "All Faculty",
   "IITians & Scientists",
   "Vedic Scholars",
   "Medical & Gynecologists",
@@ -196,7 +175,7 @@ const CATEGORIES = [
 ];
 
 export default function TeamPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All Faculty");
   const [searchQuery, setSearchQuery] = useState("");
   const teamGridRef = useRef<HTMLDivElement>(null);
 
@@ -213,12 +192,12 @@ export default function TeamPage() {
             el,
             {
               opacity: 0,
-              x: fromLeft ? -75 : 75,
+              x: fromLeft ? -60 : 60,
             },
             {
               opacity: 1,
               x: 0,
-              duration: 0.85,
+              duration: 0.8,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: el,
@@ -248,7 +227,7 @@ export default function TeamPage() {
 
     if (!matchesSearch) return false;
 
-    if (selectedCategory === "All") return true;
+    if (selectedCategory === "All Faculty") return true;
     if (selectedCategory === "IITians & Scientists")
       return m.name.includes("Vipin Joshi") || m.title.includes("IIT") || m.title.includes("Ph.D.");
     if (selectedCategory === "Vedic Scholars")
@@ -275,59 +254,59 @@ export default function TeamPage() {
   });
 
   return (
-    <Layout activeLabel="Team">
-      {/* Banner */}
-      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="overflow-hidden rounded-[30px] shadow-lg border border-pink-100/90">
-          <img
-            src="/images/nurturing_life_banner.png"
-            alt="Meet our team"
-            className="w-full h-auto object-cover max-h-[360px] rounded-[30px]"
-          />
-        </div>
-      </section>
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+      <HeaderNavbar />
 
-      {/* Header & Search */}
-      <section className="py-10 md:py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 border-b border-pink-200/60">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <span className="inline-block bg-[#F63D8E] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 shadow-sm">
-            Expert Advisory Council
-          </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1A3A6C] tracking-tight">
-            Meet Our Team — <span className="text-[#F63D8E]">The Garbhadhan Sanskar Experts</span>
+      {/* ── Page Hero Banner: Team ── */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+        {/* Ambient Glow Spheres */}
+        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-sky-200/30 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4">
+            <Users className="h-3.5 w-3.5" />
+            <span>Multidisciplinary Advisory Council</span>
+          </div>
+
+          <h1 className="font-['DM_Serif_Display',Georgia,serif] text-4xl sm:text-5xl md:text-6xl font-normal text-[#172554] tracking-tight leading-[1.15] max-w-4xl mx-auto">
+            Meet Our Revered{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              Faculty & Experts
+            </span>
           </h1>
-          <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
-            A rare confluence of doctors, IITians, revered Vedic scholars, life coaches, yoga &
-            nutrition experts and astrologers — together shaping the world's most trusted Garbhadhan
-            Sanskar curriculum.
+
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-['Manrope',sans-serif] leading-relaxed">
+            A prestigious confluence of doctors, IITians, Vedmurti scholars, and psychologists who guide every step of your prenatal journey.
           </p>
+
+          {/* Breadcrumbs */}
+          <div className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500">
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <Link to="/about-us" className="hover:text-[#F45B8A] transition-colors">
+              About Us
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">Team</span>
+          </div>
 
           {/* Search bar */}
           <div className="mt-8 max-w-md mx-auto relative">
             <input
               type="text"
-              placeholder="Search experts by name or specialty..."
+              placeholder="Search faculty by name, specialty or discipline..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#1A3A6C] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F63D8E]"
+              className="w-full pl-11 pr-10 py-3.5 bg-white/95 backdrop-blur-md rounded-full border border-pink-200 text-[#172554] placeholder:text-slate-400 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F45B8A]"
             />
-            <svg
-              className="w-5 h-5 text-[#F63D8E]/70 absolute left-4 top-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search className="w-4.5 h-4.5 text-[#F45B8A] absolute left-4 top-3.5" />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-3.5 text-slate-400 hover:text-[#F63D8E] font-bold"
+                className="absolute right-4 top-3 text-slate-400 hover:text-[#F45B8A] font-bold text-sm"
               >
                 ✕
               </button>
@@ -336,20 +315,20 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Category Filter Tabs */}
-      <section className="bg-white/90 backdrop-blur-md border-b border-pink-100 sticky top-0 z-20 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1">
+      {/* ── Category Filter Tabs ── */}
+      <section className="bg-white/90 backdrop-blur-md border-b border-pink-100 sticky top-20 z-20 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 py-3.5">
+          <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth py-1">
             {CATEGORIES.map((cat) => {
               const active = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`whitespace-nowrap px-4.5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
+                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs md:text-sm font-bold transition-all ${
                     active
-                      ? "bg-[#EA3484] text-white shadow-md shadow-[#EA3484]/30 scale-105"
-                      : "bg-white/90 text-[#1A3A6C] border border-pink-100 hover:bg-pink-50/50 shadow-xs"
+                      ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/30 scale-105"
+                      : "bg-white text-[#172554] border border-pink-100 hover:bg-pink-50/70 shadow-xs"
                   }`}
                 >
                   {cat}
@@ -360,78 +339,84 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Members Grid */}
+      {/* ── Members Grid ── */}
       <section
         ref={teamGridRef}
-        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] relative z-10 min-h-[600px]"
+        className="py-14 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] relative z-10 min-h-[600px]"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center mb-8 pb-3 border-b border-pink-200/80">
-            <h2 className="text-xl md:text-2xl font-bold text-[#1A3A6C]">
-              {selectedCategory === "All" ? "All Faculty Members" : selectedCategory}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-10 pb-4 border-b border-pink-200/80">
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl font-normal text-[#172554]">
+              {selectedCategory === "All Faculty" ? "All Faculty Members" : selectedCategory}
             </h2>
-            <span className="text-xs font-bold px-3.5 py-1 bg-white border border-pink-200 rounded-full text-[#F63D8E] shadow-xs">
-              Showing {filteredMembers.length} Experts
+            <span className="text-xs font-bold px-4 py-1.5 bg-white border border-pink-200 rounded-full text-[#F45B8A] shadow-sm">
+              Showing {filteredMembers.length} Scholars
             </span>
           </div>
 
           {filteredMembers.length === 0 ? (
-            <div className="text-center py-16 bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 shadow-sm">
-              <p className="text-slate-600 text-lg font-medium">
-                No experts found matching "{searchQuery}".
+            <div className="text-center py-16 bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 shadow-sm max-w-xl mx-auto">
+              <p className="text-slate-600 text-base font-medium">
+                No faculty members found matching "{searchQuery}".
               </p>
               <button
                 onClick={() => {
                   setSearchQuery("");
-                  setSelectedCategory("All");
+                  setSelectedCategory("All Faculty");
                 }}
-                className="mt-4 px-6 py-2.5 bg-[#F63D8E] text-white text-xs font-bold rounded-full hover:bg-[#E02B7B] transition shadow-sm"
+                className="mt-4 px-6 py-2.5 bg-[#F45B8A] text-white text-xs font-bold rounded-full hover:bg-[#d94d7a] transition shadow-sm"
               >
                 Clear Search Filters
               </button>
             </div>
           ) : (
-            <div className="space-y-12">
+            <div className="space-y-10">
               {filteredMembers.map((m, i) => {
                 const reverse = i % 2 === 1;
                 return (
                   <article
                     key={m.name + i}
                     data-team-card
-                    className="grid md:grid-cols-3 gap-8 md:gap-10 items-center bg-gradient-to-br from-white via-[#FFF8FD] to-[#FAF2FF] p-7 md:p-10 rounded-[32px] border border-pink-200/90 shadow-[0_15px_40px_-10px_rgba(244,63,94,0.1)] hover:shadow-[0_25px_50px_-5px_rgba(244,63,94,0.2)] transition-shadow duration-500 overflow-hidden relative group/card"
+                    className="grid md:grid-cols-12 gap-8 items-center bg-white/95 backdrop-blur-xl p-6 sm:p-8 lg:p-10 rounded-[32px] border border-pink-100 shadow-[0_12px_40px_rgba(23,37,84,0.06)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-shadow duration-500 overflow-hidden relative group/card"
                   >
+                    {/* Portrait Image Column */}
                     <div
-                      className={`${reverse ? "md:order-2" : ""} md:col-span-1 flex justify-center`}
+                      className={`${reverse ? "md:order-2" : ""} md:col-span-4 flex justify-center`}
                     >
-                      <div className="relative group w-full max-w-xs">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-purple-300 to-rose-300 rounded-[28px] blur-xs opacity-50 group-hover:opacity-100 transition duration-500" />
+                      <div className="relative group w-full max-w-[280px]">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 via-sky-300 to-amber-200 rounded-[28px] blur-sm opacity-50 group-hover:opacity-100 transition duration-500" />
                         <img
                           src={
                             i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"
                           }
                           alt={m.name}
-                          className="relative w-full aspect-square object-cover rounded-[24px] border-4 border-white shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="relative w-full aspect-square object-cover rounded-[24px] border-4 border-white shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
                           loading="lazy"
                         />
                       </div>
                     </div>
+
+                    {/* Member Information Column */}
                     <div
-                      className={`${reverse ? "md:order-1" : ""} md:col-span-2 flex flex-col justify-center`}
+                      className={`${reverse ? "md:order-1" : ""} md:col-span-8 flex flex-col justify-center space-y-3`}
                     >
-                      <div className="inline-flex items-center gap-1.5 bg-[#EA3484] text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md shadow-[#EA3484]/30 mb-3.5 self-start">
-                        <span>✦</span>
-                        <span>Garbhadhan Sanskar Expert</span>
+                      <div className="inline-flex items-center gap-1.5 bg-[#F45B8A]/10 text-[#F45B8A] font-bold text-xs px-3.5 py-1 rounded-full border border-pink-200/60 self-start">
+                        <Sparkles className="h-3 w-3" />
+                        <span>Garbhadhan Sanskar Faculty</span>
                       </div>
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#1E293B] mb-2.5 tracking-tight">
+
+                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl lg:text-4xl font-normal text-[#172554] tracking-tight">
                         {m.name}
                       </h3>
-                      <div className="text-[#E11D48] font-bold text-xs md:text-sm mb-4 bg-rose-50/90 px-4 py-2 rounded-2xl border border-rose-200/60 inline-block shadow-xs self-start">
+
+                      <div className="text-[#3B82F6] font-bold text-xs sm:text-sm bg-blue-50/80 px-4 py-2 rounded-2xl border border-blue-200/60 inline-block self-start font-['Plus_Jakarta_Sans',sans-serif]">
                         {m.title}
                       </div>
-                      <div className="space-y-3 text-[#475569] leading-relaxed text-sm md:text-base border-t border-rose-100/80 pt-4 font-sans">
+
+                      <div className="space-y-2.5 text-[#475569] leading-relaxed text-sm md:text-[15px] border-t border-slate-100 pt-3.5 font-['Manrope',sans-serif]">
                         {m.bio.map((p, idx) => (
-                          <p key={idx} className="flex gap-2">
-                            <span className="text-[#E11D48] font-bold">✦</span>
+                          <p key={idx} className="flex items-start gap-2.5">
+                            <span className="text-[#F45B8A] font-bold mt-1 text-xs">✦</span>
                             <span>{p}</span>
                           </p>
                         ))}
@@ -445,18 +430,55 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── Separate Bridge Section: Read Our Story ── */}
+      <section className="py-14 bg-white border-t border-pink-100">
+        <div className="max-w-6xl mx-auto px-4 text-center space-y-4">
+          <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl text-[#172554]">
+            Want to learn how Astro Baby was created?
+          </h3>
+          <p className="text-sm text-[#475569] max-w-xl mx-auto font-['Manrope',sans-serif]">
+            Read our origin story, core mission pillars, research milestones, and our vision for conscious motherhood.
+          </p>
+          <div className="pt-2">
+            <Link
+              to="/about-us"
+              className="inline-flex items-center gap-2 rounded-full bg-[#172554] hover:bg-[#1e3a8a] text-white px-7 py-3.5 text-sm font-bold shadow-md hover:scale-105 transition-all"
+            >
+              <span>Read Our Full Story</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
       <AppDownloadSection
         title={
           <>
-            Experience the Wisdom of Our Experts on{" "}
-            <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
+            Experience the Guidance of Our Faculty on{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
               Astro Baby
             </span>
           </>
         }
         subtitle="Download the Astro Baby Garbhadhan Sanskar app today and begin your positive pregnancy journey."
       />
-    </Layout>
+
+      {/* ── Footer ── */}
+      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
+          </div>
+          <div className="flex gap-4 text-white/80 text-xs font-semibold">
+            <span className="hover:text-white transition cursor-pointer">Facebook</span>
+            <span>•</span>
+            <span className="hover:text-white transition cursor-pointer">Instagram</span>
+            <span>•</span>
+            <span className="hover:text-white transition cursor-pointer">YouTube</span>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

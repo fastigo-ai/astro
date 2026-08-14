@@ -74,23 +74,25 @@ export default function StoriesSlider() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-3xl text-center space-y-3"
         >
-          <span className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-5 py-2 text-xs font-semibold tracking-[0.22em] text-[#1a3a6c]">
-            USER STORIES
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+            <FiHeart className="h-3 w-3" /> USER STORIES
           </span>
-          <h2 className="mt-5 text-3xl md:text-4xl font-semibold leading-tight text-[#1a3a6c]">
-            Real Journeys, <em className="font-semibold text-slate-700">Beautiful Experiences</em>
+          <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-[#172554]">
+            Real Journeys,{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              Beautiful Experiences
+            </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-            Heartfelt stories from families who found calm, confidence, and a deeper connection
-            through AstroBaby.
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif] md:text-base">
+            Heartfelt stories from families across 62+ countries who found calm, confidence, and deeper spiritual connection through AstroBaby.
           </p>
         </motion.header>
 
         <div
           ref={scrollRef}
-          className="stories-track mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="stories-track mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {storiesData.map((story, index) => (
             <motion.article
@@ -99,11 +101,11 @@ export default function StoriesSlider() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="story-card group min-w-[85vw] snap-center overflow-hidden shrink-0 sm:min-w-[45vw] lg:min-w-[350px] max-w-[380px] bg-white rounded-2xl md:rounded-3xl border border-pink-100/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="story-card group min-w-[85vw] snap-center overflow-hidden shrink-0 sm:min-w-[45vw] lg:min-w-[350px] max-w-[380px] bg-white/95 backdrop-blur-xl rounded-[28px] border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-all duration-300 flex flex-col justify-between"
             >
               <button
                 type="button"
-                className="relative block aspect-[16/10] w-full overflow-hidden bg-[#0A1A2F]"
+                className="relative block aspect-[16/10] w-full overflow-hidden bg-slate-900 cursor-pointer"
                 onClick={() => setActiveVideo(story.videoId)}
                 aria-label={`Play ${story.name}'s story`}
               >
@@ -112,35 +114,35 @@ export default function StoriesSlider() {
                   alt={`${story.name}, an Astro Baby family`}
                   className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
                 />
-                <span className="absolute inset-0 bg-gradient-to-t from-slate-900/45 via-transparent to-transparent" />
-                <span className="play-button absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/60 bg-white/90 text-[#1a3a6c] shadow-xl transition duration-300 group-hover:scale-110">
-                  <FiPlay className="ml-1 fill-current text-2xl" />
+                <span className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-transparent to-transparent" />
+                <span className="play-button absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/80 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-2xl transition duration-300 group-hover:scale-110">
+                  <FiPlay className="ml-1 fill-current text-xl" />
                 </span>
-                <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-[#1a3a6c] backdrop-blur">
-                  <FiMapPin /> {story.city}
+                <span className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full bg-[#172554]/90 px-3 py-1 text-xs font-bold text-white backdrop-blur shadow-sm">
+                  <FiMapPin className="text-[#F45B8A]" /> {story.city}
                 </span>
-                <span className="absolute -bottom-5 right-5 grid h-12 w-12 place-items-center rounded-2xl bg-[#1a3a6c] text-3xl text-white shadow-lg font-serif">
+                <span className="absolute -bottom-4 right-4 grid h-10 w-10 place-items-center rounded-2xl bg-[#172554] text-2xl text-white shadow-lg font-['DM_Serif_Display',Georgia,serif]">
                   “
                 </span>
               </button>
-              <div className="p-6 pt-7">
+              <div className="p-6 pt-6">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1a3a6c]">{story.name}</h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.15em] text-slate-500">
+                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors">{story.name}</h3>
+                    <p className="mt-0.5 text-[11px] font-bold uppercase tracking-wider text-[#F45B8A]">
                       Verified family
                     </p>
                   </div>
                   <div
-                    className="flex gap-0.5 text-yellow-500"
+                    className="flex gap-0.5 text-amber-400"
                     aria-label={`${story.rating} out of 5 stars`}
                   >
                     {Array.from({ length: story.rating }).map((_, star) => (
-                      <FiStar key={star} className="fill-current" />
+                      <FiStar key={star} className="fill-current w-4 h-4" />
                     ))}
                   </div>
                 </div>
-                <p className="mt-5 min-h-20 text-sm leading-7 text-slate-700">“{story.quote}”</p>
+                <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif]">“{story.quote}”</p>
                 {/* <div className="mt-5 grid grid-cols-3 border-t border-slate-200 pt-5">
                   {benefits.map(({ icon: Icon, label }) => (
                     <div key={label} className="flex flex-col items-center gap-2 px-1 text-center">

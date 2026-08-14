@@ -17,7 +17,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-[#fcf2f7] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
+    <section id="newsletter" className="relative py-20 lg:py-28 bg-[#fcf2f7] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

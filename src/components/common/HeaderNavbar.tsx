@@ -68,6 +68,19 @@ const navItems = [
   {
     label: "Contact",
     to: "/contact",
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        label: "Contact Us",
+        to: "/contact",
+        desc: "Get in touch with our counselors",
+      },
+      {
+        label: "Newsletter",
+        to: "/newsletter",
+        desc: "Weekly Vedic & obstetric insights",
+      },
+    ],
   },
 ];
 
@@ -86,7 +99,7 @@ export default function HeaderNavbar() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const langRef = useRef<HTMLLIElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
 
   // Close language menu on outside click
   useEffect(() => {

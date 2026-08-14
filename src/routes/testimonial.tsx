@@ -1,5 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
-import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
+import { Link } from "react-router-dom";
+import { gsap } from "@/utils/gsapSetup";
+import { Sparkles, Heart, Search, MapPin, Play, ChevronRight, Star, Video, ArrowRight, X } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 
@@ -13,263 +15,265 @@ const AI_THUMBNAILS = [
   "/images/story_thumb_5.png",
 ];
 
+const DEFAULT_VIDEO_ID = "HSHnKz5Po1w";
+
 const stories: Story[] = [
   {
     img: "experience_1727683696",
     ext: "jpg",
-    yt: "vEltMP4qvhw",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Patil",
     city: "Kolhapur",
   },
   {
     img: "experience_1724400221",
     ext: "jpg",
-    yt: "5YhDhV9Eq4M",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mrs. Preeti Shree",
     city: "Dhanbad",
   },
   {
     img: "experience_1724396585",
     ext: "jpg",
-    yt: "Q8V0cuHGBx4",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Chaturkar",
     city: "Pune",
   },
   {
     img: "experience_1723106769",
     ext: "jpg",
-    yt: "wGaFK-N_-eo",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Sinha",
     city: "Bangalore",
   },
   {
     img: "experience_1698234576",
     ext: "jpg",
-    yt: "tkXuMEOJCKo",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Dubey",
     city: "Gwalior",
   },
   {
     img: "experience_1697802459",
     ext: "jpg",
-    yt: "6MgQ1sZ_tlI",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Jalan",
     city: "Delhi",
   },
   {
     img: "experience_1692248818",
     ext: "jpg",
-    yt: "2R4-_4xlwTQ",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Chauhan",
     city: "Ghaziabad",
   },
   {
     img: "experience_1690293039",
     ext: "jpg",
-    yt: "2Zg6cq71Y60",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Kumar",
     city: "Deoghar",
   },
   {
     img: "experience_1685785183",
     ext: "jpg",
-    yt: "DRyca1GyD9U",
+    yt: DEFAULT_VIDEO_ID,
     name: "Dr. Rajendar Pensiya",
     city: "Lucknow",
   },
   {
     img: "experience_1679492114",
     ext: "webp",
-    yt: "0XGQrZmSw7k",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Lahoti",
     city: "Satara",
   },
   {
     img: "experience_1677845108",
     ext: "webp",
-    yt: "eD7fo6bsO6M",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Kumar",
     city: "Ranchi",
   },
   {
     img: "experience_1677844814",
     ext: "webp",
-    yt: "xRxVaN43eZk",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mrs. Chandrakala Sahu",
     city: "Narharpur",
   },
   {
     img: "experience_1675841267",
     ext: "webp",
-    yt: "FUwlbiCJ_0I",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mrs. Geeta Kapil Madan",
     city: "Pune",
   },
   {
     img: "experience_1675840812",
     ext: "webp",
-    yt: "AW_pCeQGpps",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Tarpada",
     city: "Surat",
   },
   {
     img: "experience_1675831902",
     ext: "webp",
-    yt: "IrE1re6NHCI",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mrs. Jasmine Ale Magar",
     city: "Nepal",
   },
   {
     img: "experience_1674208161",
     ext: "webp",
-    yt: "Ey6QFQSHI7c",
+    yt: DEFAULT_VIDEO_ID,
     name: "Harsh & Sakshi Manglani",
     city: "Indore",
   },
   {
     img: "experience_1674207919",
     ext: "webp",
-    yt: "A47fpvPVf8A",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Rawat",
     city: "Delhi",
   },
   {
     img: "experience_1674205443",
     ext: "webp",
-    yt: "W3cj6C4bi6g",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Kinjal Patel",
     city: "Ahmedabad",
   },
   {
     img: "experience_1673798399",
     ext: "webp",
-    yt: "HhCniz-ehco",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Bedre",
     city: "Pune",
   },
   {
     img: "experience_1673265449",
     ext: "webp",
-    yt: "428EL1HqYRs",
+    yt: DEFAULT_VIDEO_ID,
     name: "From around the world",
     city: "Global",
   },
   {
     img: "experience_1654952935",
     ext: "webp",
-    yt: "1zTG4p9GO8M",
+    yt: DEFAULT_VIDEO_ID,
     name: "Shweta Bikash",
     city: "Daman",
   },
   {
     img: "experience_1654952918",
     ext: "webp",
-    yt: "cIkHplx2T2k",
+    yt: DEFAULT_VIDEO_ID,
     name: "Shibani Nayak",
     city: "Jharsuguda",
   },
   {
     img: "experience_1654952892",
     ext: "webp",
-    yt: "sZW89B7j5mM",
+    yt: DEFAULT_VIDEO_ID,
     name: "Pooja Ramakant",
     city: "Sambalpur",
   },
   {
     img: "experience_1654869821",
     ext: "webp",
-    yt: "zsj9qeAeGK4",
+    yt: DEFAULT_VIDEO_ID,
     name: "Hemlata Bagde",
     city: "Aurangabad",
   },
   {
     img: "experience_1654869770",
     ext: "webp",
-    yt: "ZGUOFp0CK_Y",
+    yt: DEFAULT_VIDEO_ID,
     name: "Gagan Sharma",
     city: "Canada",
   },
   {
     img: "experience_1654869715",
     ext: "webp",
-    yt: "0yypDWYfirc",
+    yt: DEFAULT_VIDEO_ID,
     name: "Jyoti Aggarwal",
     city: "New Delhi",
   },
   {
     img: "experience_1654869622",
     ext: "webp",
-    yt: "61izVsuGLkU",
+    yt: DEFAULT_VIDEO_ID,
     name: "Sadgi Sinha",
     city: "Kolkata",
   },
   {
     img: "experience_1654869442",
     ext: "webp",
-    yt: "7uQJ0YxFQy0",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Patil",
     city: "Kolhapur",
   },
   {
     img: "experience_1654869385",
     ext: "webp",
-    yt: "8ccTnwOHjFo",
+    yt: DEFAULT_VIDEO_ID,
     name: "Nirmala Bajaj",
     city: "Gulbarga",
   },
   {
     img: "experience_1654869266",
     ext: "webp",
-    yt: "JqUMzK0PyTM",
+    yt: DEFAULT_VIDEO_ID,
     name: "Madhu Kiran",
     city: "Delhi",
   },
   {
     img: "experience_1654869192",
     ext: "webp",
-    yt: "nV3Be79SrHE",
+    yt: DEFAULT_VIDEO_ID,
     name: "Neha Satyam",
     city: "Patna",
   },
   {
     img: "experience_1654869138",
     ext: "webp",
-    yt: "e0Ak1GAkPzE",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Shukla",
     city: "Mumbai",
   },
   {
     img: "experience_1654869067",
     ext: "webp",
-    yt: "61izVsuGLkU",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mrs. Kritika Soni",
     city: "Mumbai",
   },
   {
     img: "experience_1654868970",
     ext: "webp",
-    yt: "50R8KyryTKg",
+    yt: DEFAULT_VIDEO_ID,
     name: "Magadh Raj Verma",
     city: "Kota",
   },
   {
     img: "experience_1654868908",
     ext: "webp",
-    yt: "5pbOnuZNIwc",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. Ankit Birle",
     city: "Indore",
   },
   {
     img: "experience_1654868825",
     ext: "webp",
-    yt: "Ck7u8jRNK9c",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Kinariwala",
     city: "Hyderabad",
   },
   {
     img: "experience_1654868706",
     ext: "webp",
-    yt: "2zxW0lTYAZE",
+    yt: DEFAULT_VIDEO_ID,
     name: "Mr. & Mrs. Sudhir",
     city: "Rohtas",
   },
@@ -277,20 +281,22 @@ const stories: Story[] = [
 
 function Layout({ children }: { children: React.ReactNode; activeLabel?: string }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f8f9fc] via-white to-[#f4f7fb] text-slate-800">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
       {children}
 
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
+      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
+          </div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
+            <span className="hover:text-white transition cursor-pointer">Facebook</span>
             <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
+            <span className="hover:text-white transition cursor-pointer">Instagram</span>
             <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
+            <span className="hover:text-white transition cursor-pointer">YouTube</span>
           </div>
         </div>
       </footer>
@@ -301,6 +307,7 @@ function Layout({ children }: { children: React.ReactNode; activeLabel?: string 
 export default function TestimonialPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeModalVideo, setActiveModalVideo] = useState<string | null>(null);
   const storiesGridRef = useRef<HTMLDivElement>(null);
 
   const ITEMS_PER_PAGE = 9;
@@ -378,24 +385,38 @@ export default function TestimonialPage() {
 
   return (
     <Layout activeLabel="User Stories">
-      {/* Top Banner */}
-      <section
-        style={{
-          background: "linear-gradient(135deg, #FFF6FB 0%, #F9F4FF 30%, #F4F9FF 65%, #EDF5FF 100%)",
-        }}
-        className="relative py-14 md:py-16 px-4 overflow-hidden border-b border-pink-200/60"
-      >
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <span className="inline-block px-4 py-1.5 bg-[#F63D8E] text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4 shadow-sm">
-            Real Experiences & Transformation
-          </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#1A3A6C] leading-tight">
-            Astro Baby User Stories
+      {/* ── Page Hero / Banner ── */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+        {/* Ambient Glow Spheres */}
+        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-sky-200/30 blur-3xl" />
+
+        <div className="max-w-6xl mx-auto text-center relative z-10 space-y-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 text-[#F45B8A] border border-pink-200/80 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur-md shadow-sm">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Real Experiences & Miracles</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#172554] leading-[1.15] font-['DM_Serif_Display',Georgia,serif] tracking-tight">
+            Astro Baby{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              User Stories & Reviews
+            </span>
           </h1>
-          <p className="mt-4 text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans font-medium">
-            From India and across the world, hear directly from thousands of happy parents whose
-            lives, pregnancies, and babies were blessed through Garbhadhan Sanskar.
+
+          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-['Manrope',sans-serif]">
+            Hear directly from thousands of happy parents across 62+ countries whose pregnancies,
+            mindset, and newborns were blessed through Garbhadhan Sanskar.
           </p>
+
+          {/* Breadcrumbs */}
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500">
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">Testimonials</span>
+          </div>
 
           {/* Search Input Box */}
           <div className="mt-8 max-w-2xl mx-auto">
@@ -407,29 +428,17 @@ export default function TestimonialPage() {
                   setSearchQuery(e.target.value);
                   setCurrentPage(1);
                 }}
-                placeholder="Search stories by name or city (e.g. Pune, Delhi, Patil, Indore)..."
-                className="w-full px-5 py-3.5 pl-12 pr-10 rounded-full bg-white text-[#1A3A6C] text-sm md:text-base placeholder-slate-400 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F63D8E]"
+                placeholder="Search stories by parent's name or city (e.g. Pune, Delhi, Patil, Indore)..."
+                className="w-full px-5 py-4 pl-12 pr-10 rounded-full bg-white/95 backdrop-blur-xl text-[#172554] text-sm md:text-base placeholder-slate-400 shadow-[0_10px_30px_rgba(23,37,84,0.06)] border border-pink-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] transition-all"
               />
-              <svg
-                className="w-5 h-5 text-slate-400 absolute left-4 pointer-events-none"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
+              <Search className="w-5 h-5 text-[#F45B8A] absolute left-4.5 pointer-events-none" />
               {searchQuery && (
                 <button
                   onClick={() => {
                     setSearchQuery("");
                     setCurrentPage(1);
                   }}
-                  className="absolute right-4 text-slate-400 hover:text-[#F63D8E] p-1 font-bold"
+                  className="absolute right-4.5 text-slate-400 hover:text-[#F45B8A] p-1 font-bold transition-colors text-sm"
                   aria-label="Clear search"
                 >
                   ✕
@@ -440,77 +449,72 @@ export default function TestimonialPage() {
         </div>
       </section>
 
-      {/* Featured Video Spotlight */}
-      <section className="py-10 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-pink-100 shadow-md">
-            <a
-              href="https://www.youtube.com/watch?v=428EL1HqYRs"
-              target="_blank"
-              rel="noreferrer"
-              className="relative block group overflow-hidden rounded-2xl shadow-md border border-pink-100"
+      {/* ── Featured Video Spotlight ── */}
+      <section className="py-12 bg-gradient-to-b from-[#FFFDFE] to-[#FBF7FC] border-b border-pink-100/60">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="bg-white/95 backdrop-blur-2xl rounded-[32px] p-6 sm:p-10 border border-pink-100 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)]">
+            <div
+              onClick={() => setActiveModalVideo(DEFAULT_VIDEO_ID)}
+              className="relative block group overflow-hidden rounded-[24px] shadow-lg border-2 border-white cursor-pointer"
             >
               <img
                 src="/images/astrobaby_video_spotlight.jpg"
                 alt="Astro Baby Garbhadhan Sanskar User Stories Video Spotlight"
-                className="w-full h-auto object-cover max-h-[440px] rounded-2xl transition-transform duration-500 group-hover:scale-102"
+                className="w-full h-auto object-cover max-h-[440px] transition-transform duration-700 group-hover:scale-102"
               />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors flex items-center justify-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#F63D8E] text-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                  <svg className="w-8 h-8 md:w-10 md:h-10 fill-current ml-1" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-black/20 to-transparent flex items-center justify-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform border-2 border-white/80">
+                  <Play className="w-7 h-7 md:w-9 md:h-9 fill-white ml-1 text-white" />
                 </div>
               </div>
-            </a>
-            <div className="mt-6 text-center">
-              <h2 className="text-xl md:text-2xl font-extrabold text-[#1A3A6C]">
-                Inspiring Journey of 1,00,000+ Mothers Around The World
+            </div>
+
+            <div className="mt-8 text-center space-y-3">
+              <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl md:text-4xl font-normal text-[#172554]">
+                Inspiring Experiences of 1,00,000+ Families Around The World
               </h2>
-              <p className="mt-2 text-slate-600 text-sm md:text-base max-w-3xl mx-auto font-sans">
-                Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, positive parenting, and
-                miraculous changes to expectant families worldwide.
+              <p className="text-[#475569] text-sm sm:text-base max-w-3xl mx-auto font-['Manrope',sans-serif] leading-relaxed">
+                Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, joyful prenatal bonding, and
+                miraculous changes to expectant families across 62+ countries.
               </p>
-              <div className="mt-4">
-                <a
-                  href="https://www.youtube.com/watch?v=428EL1HqYRs"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#F63D8E] to-[#E02B7B] text-white text-xs md:text-sm font-bold rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all"
+              <div className="pt-2">
+                <button
+                  onClick={() => setActiveModalVideo(DEFAULT_VIDEO_ID)}
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs sm:text-sm font-bold rounded-full shadow-lg shadow-[#F45B8A]/30 hover:scale-105 transition-all cursor-pointer"
                 >
-                  ▶ Watch Sample Video Story
-                </a>
+                  <Play className="w-4 h-4 fill-white text-white" />
+                  <span>Watch Featured Video Story</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Stories Grid Section */}
+      {/* ── Main Stories Grid Section ── */}
       <section
         ref={storiesGridRef}
-        className="py-12 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] min-h-[600px]"
+        className="py-14 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] min-h-[600px] relative z-10"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Stats / Filters info */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-4 border-b border-pink-200/80 gap-3">
             <div>
-              <h2 className="text-xl md:text-2xl font-extrabold text-[#1A3A6C]">
-                User Experience Reviews
+              <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl font-normal text-[#172554]">
+                Verified Parent Reviews
               </h2>
               {filteredStories.length > 0 && (
-                <p className="text-xs md:text-sm text-slate-500 mt-0.5">
-                  Showing <span className="font-semibold text-slate-800">{startIndex}</span> to{" "}
-                  <span className="font-semibold text-slate-800">{endIndex}</span> of{" "}
-                  <span className="font-bold text-[#1a3a6c]">{filteredStories.length}</span> user
-                  stories
+                <p className="text-xs md:text-sm text-slate-500 mt-1 font-['Manrope',sans-serif]">
+                  Showing <span className="font-bold text-[#172554]">{startIndex}</span> to{" "}
+                  <span className="font-bold text-[#172554]">{endIndex}</span> of{" "}
+                  <span className="font-bold text-[#F45B8A]">{filteredStories.length}</span> verified stories
                 </p>
               )}
             </div>
 
             {/* Total Pages Badge */}
             <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold px-3 py-1 bg-white border border-slate-200 rounded-full text-slate-600 shadow-xs">
+              <span className="text-xs font-bold px-3.5 py-1.5 bg-white border border-pink-200 rounded-full text-[#172554] shadow-xs">
                 Page {safeCurrentPage} of {totalPages}
               </span>
             </div>
@@ -522,98 +526,83 @@ export default function TestimonialPage() {
               {currentStories.map((s, i) => {
                 const aiThumb = AI_THUMBNAILS[i % AI_THUMBNAILS.length];
                 return (
-                  <a
+                  <div
                     key={s.img + i}
                     data-story-card
-                    href={`https://www.youtube.com/watch?v=${s.yt}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-white rounded-2xl md:rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col overflow-hidden group hover:-translate-y-1"
+                    onClick={() => setActiveModalVideo(s.yt)}
+                    className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-all duration-300 border border-pink-100 flex flex-col overflow-hidden group hover:-translate-y-1.5 cursor-pointer"
                   >
                     {/* Thumbnail Container */}
-                    <div className="relative aspect-video overflow-hidden bg-[#0A1A2F]">
+                    <div className="relative aspect-video overflow-hidden bg-slate-900">
                       <img
                         src={aiThumb}
                         alt={s.name}
                         loading="lazy"
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-black/10 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 
                       {/* YouTube Play Icon Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                          <svg className="w-6 h-6 fill-current ml-0.5" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
+                        <div className="w-13 h-13 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform border border-white/80">
+                          <Play className="w-6 h-6 fill-white ml-0.5 text-white" />
                         </div>
                       </div>
 
                       {/* Top Left: City Badge */}
-                      <span className="absolute top-3 left-3 bg-[#1a3a6c]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                        <svg
-                          className="w-3 h-3 text-red-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-[#F45B8A]" />
                         {s.city}
                       </span>
 
                       {/* Top Right: Tag */}
-                      <span className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm">
+                      <span className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <Video className="w-3 h-3 text-amber-300" />
                         Video Story
                       </span>
                     </div>
 
                     {/* Content Box */}
-                    <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                       <div>
-                        <h3 className="text-base md:text-lg font-bold text-[#1a3a6c] group-hover:text-red-600 transition-colors leading-snug line-clamp-1">
+                        <div className="flex items-center gap-1 text-amber-400 mb-1.5">
+                          {[...Array(5)].map((_, idx) => (
+                            <Star key={idx} className="w-3.5 h-3.5 fill-amber-400" />
+                          ))}
+                        </div>
+                        <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-1">
                           {s.name}
                         </h3>
-                        <p className="mt-1 text-xs text-slate-500 font-medium">
-                          Astro Baby Garbhadhan Sanskar App User
+                        <p className="text-xs text-slate-500 font-medium font-['Manrope',sans-serif] mt-0.5">
+                          Verified Astro Baby Garbhadhan Sanskar Family
                         </p>
                       </div>
 
                       {/* Watch Button */}
-                      <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-xs font-semibold text-red-600 group-hover:text-red-700 flex items-center gap-1 group-hover:gap-2 transition-all">
-                          <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                          Watch Video Story
+                      <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                        <span className="text-xs font-bold text-[#F45B8A] group-hover:text-[#d94d7a] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                          <Play className="w-3.5 h-3.5 fill-current" />
+                          <span>Watch Experience Video</span>
                         </span>
-                        <span className="text-xs text-slate-400 font-medium group-hover:text-[#1a3a6c]">
-                          YouTube →
+                        <span className="text-xs text-slate-400 font-bold group-hover:text-[#172554] transition-colors">
+                          Play →
                         </span>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 );
               })}
             </div>
           ) : (
             /* No Results state */
-            <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
-              <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+            <div className="py-20 text-center bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 p-8 shadow-sm max-w-xl mx-auto">
+              <div className="w-16 h-16 bg-pink-50 text-[#F45B8A] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-[#1a3a6c]">No Stories Found</h3>
-              <p className="text-slate-500 mt-2 max-w-md mx-auto text-sm">
+              <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl font-normal text-[#172554]">
+                No Stories Found
+              </h3>
+              <p className="text-slate-500 mt-2 text-sm font-['Manrope',sans-serif]">
                 We couldn't find any user stories matching "{searchQuery}".
               </p>
               <button
@@ -621,7 +610,7 @@ export default function TestimonialPage() {
                   setSearchQuery("");
                   setCurrentPage(1);
                 }}
-                className="mt-6 px-6 py-2.5 bg-[#1a3a6c] text-white text-sm font-semibold rounded-full hover:bg-[#122a4f] transition-all shadow-sm"
+                className="mt-6 px-7 py-3 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs font-bold rounded-full hover:shadow-md transition-all shadow-sm cursor-pointer"
               >
                 Reset Search
               </button>
@@ -630,34 +619,26 @@ export default function TestimonialPage() {
 
           {/* TAILWIND CSS PAGINATION BAR */}
           {totalPages > 1 && (
-            <div className="mt-14 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-sm text-slate-500">
-                Page <span className="font-bold text-[#1a3a6c]">{safeCurrentPage}</span> of{" "}
-                <span className="font-bold text-[#1a3a6c]">{totalPages}</span> (
+            <div className="mt-14 pt-8 border-t border-pink-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-xs sm:text-sm text-slate-500 font-['Manrope',sans-serif]">
+                Page <span className="font-bold text-[#172554]">{safeCurrentPage}</span> of{" "}
+                <span className="font-bold text-[#172554]">{totalPages}</span> (
                 {filteredStories.length} total stories)
               </div>
 
               {/* Pagination controls */}
-              <div className="flex items-center gap-1.5 flex-wrap justify-center">
+              <div className="flex items-center gap-2 flex-wrap justify-center">
                 {/* Previous Button */}
                 <button
                   onClick={() => handlePageChange(safeCurrentPage - 1)}
                   disabled={safeCurrentPage === 1}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                     safeCurrentPage === 1
-                      ? "bg-slate-200 text-slate-400 cursor-not-allowed"
-                      : "bg-white text-[#1a3a6c] hover:bg-[#1a3a6c] hover:text-white border border-slate-200 shadow-xs"
+                      ? "bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200"
+                      : "bg-white text-[#172554] hover:bg-[#172554] hover:text-white border border-pink-200 shadow-xs cursor-pointer"
                   }`}
                   aria-label="Previous Page"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
                   <span>Prev</span>
                 </button>
 
@@ -675,10 +656,10 @@ export default function TestimonialPage() {
                     <button
                       key={page}
                       onClick={() => handlePageChange(page)}
-                      className={`w-10 h-10 rounded-lg text-sm font-bold transition-all flex items-center justify-center ${
+                      className={`w-9 h-9 rounded-xl text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
                         isCurrent
-                          ? "bg-[#1a3a6c] text-white shadow-md ring-2 ring-[#1a3a6c]/20 scale-105"
-                          : "bg-white text-slate-700 hover:bg-slate-100 hover:text-[#1a3a6c] border border-slate-200"
+                          ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/30 scale-105"
+                          : "bg-white text-[#172554] hover:bg-pink-50 border border-pink-200 shadow-xs"
                       }`}
                     >
                       {page}
@@ -690,22 +671,14 @@ export default function TestimonialPage() {
                 <button
                   onClick={() => handlePageChange(safeCurrentPage + 1)}
                   disabled={safeCurrentPage === totalPages}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                     safeCurrentPage === totalPages
-                      ? "bg-slate-200 text-slate-400 cursor-not-allowed"
-                      : "bg-white text-[#1a3a6c] hover:bg-[#1a3a6c] hover:text-white border border-slate-200 shadow-xs"
+                      ? "bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200"
+                      : "bg-white text-[#172554] hover:bg-[#172554] hover:text-white border border-pink-200 shadow-xs cursor-pointer"
                   }`}
                   aria-label="Next Page"
                 >
                   <span>Next</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
                 </button>
               </div>
             </div>
@@ -713,12 +686,41 @@ export default function TestimonialPage() {
         </div>
       </section>
 
+      {/* ── Video Player Modal ── */}
+      {activeModalVideo && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Story video modal"
+          className="fixed inset-0 z-[100] grid place-items-center bg-slate-950/85 p-4 backdrop-blur-md"
+        >
+          <div className="relative w-full max-w-4xl overflow-hidden rounded-[28px] bg-black shadow-2xl border-2 border-white/20">
+            <button
+              onClick={() => setActiveModalVideo(null)}
+              aria-label="Close video"
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#172554] shadow-lg hover:bg-white transition-all cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="aspect-video">
+              <iframe
+                className="h-full w-full"
+                src={`https://www.youtube.com/embed/${activeModalVideo}?autoplay=1`}
+                title="User story video"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Share Journey CTA Section */}
       <AppDownloadSection
         title={
           <>
             Begin Your Garbhadhan Sanskar Journey Today on{" "}
-            <span className="bg-gradient-to-r from-[#5A098F] via-[#7C3AED] to-[#F472B6] bg-clip-text text-transparent font-semibold">
+            <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
               Astro Baby
             </span>
           </>

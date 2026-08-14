@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useRef } from "react";
 import { Layout } from "./blog";
-import NewsletterSection from "@/components/common/NewsletterSection";
+import { Sparkles, Heart, Clock, Calendar, ChevronRight, Share2, Copy, Check, Play, ArrowRight, BookOpen } from "lucide-react";
+import AppDownloadSection from "@/components/common/AppDownloadSection";
 import {
   posts,
   slugify,
@@ -50,7 +51,7 @@ export default function BlogDetailPage() {
         });
         return;
       } catch {
-        // User cancelled or share failed, fallback to popover
+        // Fallback to modal
       }
     }
     setShowShareModal((prev) => !prev);
@@ -74,36 +75,33 @@ export default function BlogDetailPage() {
 
   return (
     <Layout activeLabel="Blogs">
-      {/* Article Main Hero Split Section */}
-      <section className="py-8 md:py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* ── Article Main Hero Split Section ── */}
+      <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#FFFCFE] border-b border-pink-100/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-xs md:text-sm text-slate-500 mb-6 flex-wrap font-medium">
-            <Link to="/" className="hover:text-[#1a3a6c] transition-colors flex items-center gap-1">
-              <svg className="w-3.5 h-3.5 text-[#1a3a6c]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-              </svg>
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
               Home
             </Link>
-            <span>/</span>
-            <Link to="/blog" className="hover:text-[#1a3a6c] transition-colors">
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <Link to="/blog" className="hover:text-[#F45B8A] transition-colors">
               Blogs
             </Link>
-            <span>/</span>
-            <span className="text-[#5A098F] font-semibold truncate max-w-[200px] sm:max-w-none">
-              Article
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold truncate max-w-[200px] sm:max-w-none">
+              {post.title}
             </span>
           </nav>
 
           {/* 2-Column Split: Video (Left) + Content (Right) */}
-          <div className="bg-gradient-to-br from-[#FAF8FD] via-white to-[#FAF8FD] rounded-3xl p-6 md:p-8 border border-[#ECE5F6] shadow-sm grid lg:grid-cols-12 gap-8 items-stretch">
+          <div className="bg-white/95 backdrop-blur-2xl rounded-[32px] p-6 sm:p-8 md:p-10 border border-pink-100 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.08)] grid lg:grid-cols-12 gap-8 items-center">
             {/* Left Side: Video Player Container */}
             <div className="lg:col-span-6 flex flex-col justify-center">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg bg-slate-900 border border-slate-200/60 group">
+              <div className="relative aspect-video rounded-[24px] overflow-hidden shadow-xl bg-slate-900 border-2 border-white group">
                 {isPlayingVideo ? (
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/428EL1HqYRs?autoplay=1"
+                    src="https://www.youtube.com/embed/HSHnKz5Po1w?autoplay=1"
                     title={post.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -113,9 +111,9 @@ export default function BlogDetailPage() {
                     <img
                       src="/images/astrobaby_video_spotlight.jpg"
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
                     {/* Play Video Center Overlay Button */}
                     <button
@@ -123,25 +121,20 @@ export default function BlogDetailPage() {
                       className="absolute inset-0 flex items-center justify-center group/btn"
                       aria-label="Play video guide"
                     >
-                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-[#5A098F] to-[#7C3AED] text-white rounded-full flex items-center justify-center shadow-xl group-hover/btn:scale-110 transition-transform">
-                        <svg
-                          className="w-8 h-8 md:w-10 md:h-10 fill-current ml-1"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
+                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white rounded-full flex items-center justify-center shadow-2xl group-hover/btn:scale-110 transition-transform border-2 border-white/80">
+                        <Play className="w-7 h-7 md:w-8 md:h-8 fill-white ml-1 text-white" />
                       </div>
                     </button>
 
                     {/* Left Top Badge */}
-                    <span className="absolute top-3 left-3 bg-[#5A098F]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[#F472B6] animate-pulse" />
-                      Garbhadhan Sanskar Video
+                    <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#F45B8A] animate-pulse" />
+                      Video Insight
                     </span>
 
                     {/* Bottom overlay text */}
-                    <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium drop-shadow-md">
-                      Click to watch expert video guide
+                    <div className="absolute bottom-3.5 left-4 right-4 text-white text-xs font-medium drop-shadow-md">
+                      Click to watch expert Garbhadhan Sanskar guidance
                     </div>
                   </div>
                 )}
@@ -149,62 +142,48 @@ export default function BlogDetailPage() {
             </div>
 
             {/* Right Side: Content Overview & Actions */}
-            <div className="lg:col-span-6 flex flex-col justify-between">
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
               <div>
                 {/* Category & Read Time Tag */}
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-3 py-1 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-xs">
+                  <span className="px-3.5 py-1 bg-[#F45B8A]/10 text-[#F45B8A] text-xs font-bold uppercase tracking-wider rounded-full border border-pink-200/60 shadow-xs">
                     {category}
                   </span>
-                  <span className="text-xs font-semibold text-slate-600 bg-white px-2.5 py-1 rounded-full border border-slate-200 shadow-2xs flex items-center gap-1">
-                    <svg
-                      className="w-3 h-3 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                  <span className="text-xs font-semibold text-slate-600 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-2xs flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#F45B8A]" />
                     {readTime}
                   </span>
                 </div>
 
                 {/* Article Title */}
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1a3a6c] leading-tight">
+                <h1 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl lg:text-4xl font-normal text-[#172554] leading-[1.2] tracking-tight">
                   {post.title}
                 </h1>
 
                 {/* Author & Date info */}
-                <div className="mt-4 flex items-center gap-3 text-xs text-slate-500 font-medium pb-4 border-b border-slate-200/60">
-                  <div className="w-8 h-8 rounded-full bg-[#1a3a6c] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                <div className="mt-4 flex items-center gap-3 text-xs text-slate-500 font-medium pb-4 border-b border-slate-100 font-['Manrope',sans-serif]">
+                  <div className="w-9 h-9 rounded-full bg-[#172554] text-white flex items-center justify-center font-bold text-xs shadow-xs">
                     AB
                   </div>
                   <div>
-                    <span className="font-semibold text-slate-800 block">
-                      Astro Baby Expert Team
+                    <span className="font-bold text-[#172554] block">
+                      Astro Baby Expert Faculty
                     </span>
-                    <span className="text-slate-500">{post.date}</span>
+                    <span className="text-slate-400">{post.date}</span>
                   </div>
                 </div>
 
                 {/* Short Excerpt */}
-                <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed line-clamp-3">
-                  {post.title} — pregnancy is one of the most beautiful and transformative phases in
-                  a woman's life. This guide explores its significance through Garbhadhan Sanskar,
-                  ancient wisdom, and practical well-being practices.
+                <p className="mt-4 text-[#475569] text-sm sm:text-base leading-relaxed font-['Manrope',sans-serif]">
+                  {post.title} — Pregnancy is one of the most transformative, divine milestones in life. This guide illuminates essential Vedic traditions, gynecological care, and conscious prenatal practices to ensure optimal development for both mother and child.
                 </p>
               </div>
 
               {/* Action Buttons: Read More & Share */}
-              <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center gap-2 sm:gap-3 flex-wrap">
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-3 flex-wrap">
                 <button
                   onClick={handleToggleExpand}
-                  className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#1a3a6c] text-white text-xs sm:text-sm font-semibold hover:bg-[#122a4f] transition-all shadow-md flex items-center gap-2"
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs sm:text-sm font-bold hover:shadow-lg hover:shadow-[#F45B8A]/30 transition-all shadow-md flex items-center gap-2 cursor-pointer"
                 >
                   <span>{isExpanded ? "Collapse Article ▲" : "Read Full Article ▼"}</span>
                 </button>
@@ -213,46 +192,33 @@ export default function BlogDetailPage() {
                 <div className="relative">
                   <button
                     onClick={handleShare}
-                    className="px-4 py-2.5 sm:py-3 rounded-full bg-white border border-slate-300 text-slate-700 text-xs sm:text-sm font-semibold hover:bg-slate-50 hover:border-[#1a3a6c] transition-all flex items-center gap-2 shadow-xs"
+                    className="px-5 py-3 rounded-full bg-white border border-pink-200 text-[#172554] text-xs sm:text-sm font-bold hover:bg-pink-50 transition-all flex items-center gap-2 shadow-xs cursor-pointer"
                     aria-label="Share article"
                   >
-                    <svg
-                      className="w-4 h-4 text-red-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 100-5.368 3 3 0 000 5.368zm0 9.316a3 3 0 100-5.368 3 3 0 000 5.368z"
-                      />
-                    </svg>
+                    <Share2 className="w-4 h-4 text-[#F45B8A]" />
                     <span>Share</span>
                   </button>
 
                   {/* Share Popover Menu */}
                   {showShareModal && (
-                    <div className="absolute left-0 sm:right-0 sm:left-auto top-full mt-2 w-60 bg-white rounded-2xl shadow-xl border border-slate-200 p-3 z-50 animate-fadeIn">
+                    <div className="absolute left-0 sm:right-0 sm:left-auto top-full mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-pink-100 p-3.5 z-50 animate-fadeIn">
                       <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 px-1">
-                        <span className="text-xs font-bold text-[#1a3a6c] uppercase tracking-wider">
+                        <span className="text-xs font-bold text-[#172554] uppercase tracking-wider">
                           Share Article
                         </span>
                         <button
                           onClick={() => setShowShareModal(false)}
-                          className="text-slate-400 hover:text-slate-600 text-xs p-1"
+                          className="text-slate-400 hover:text-[#172554] text-xs p-1"
                         >
                           ✕
                         </button>
                       </div>
-                      <div className="space-y-1">
-                        {/* WhatsApp */}
+                      <div className="space-y-1.5">
                         <a
                           href={`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + " - " + window.location.href)}`}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
                         >
                           <div className="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs">
                             WA
@@ -260,39 +226,12 @@ export default function BlogDetailPage() {
                           <span>WhatsApp</span>
                         </a>
 
-                        {/* Facebook */}
-                        <a
-                          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                        >
-                          <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
-                            f
-                          </div>
-                          <span>Facebook</span>
-                        </a>
-
-                        {/* Twitter / X */}
-                        <a
-                          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors"
-                        >
-                          <div className="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">
-                            𝕏
-                          </div>
-                          <span>Twitter / X</span>
-                        </a>
-
-                        {/* Copy Link */}
                         <button
                           onClick={handleCopyLink}
-                          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-red-50 hover:text-red-700 transition-colors text-left"
+                          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-pink-50 hover:text-[#F45B8A] transition-colors text-left cursor-pointer"
                         >
-                          <div className="w-7 h-7 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-xs">
-                            🔗
+                          <div className="w-7 h-7 rounded-full bg-pink-100 text-[#F45B8A] flex items-center justify-center font-bold text-xs">
+                            {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                           </div>
                           <span>{copied ? "Link Copied! ✓" : "Copy Link"}</span>
                         </button>
@@ -300,81 +239,59 @@ export default function BlogDetailPage() {
                     </div>
                   )}
                 </div>
-
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
-                  className="ml-auto text-xs font-semibold text-red-600 hover:underline hidden sm:inline-block"
-                >
-                  Download App →
-                </a>
               </div>
             </div>
           </div>
 
-          {/* Expanded Full Article Section (Toggled by Read More) */}
+          {/* ── Expanded Full Article Section ── */}
           {isExpanded && (
             <div
               ref={fullArticleRef}
-              className="mt-10 bg-white rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-lg animate-fadeIn"
+              className="mt-10 bg-white rounded-[32px] p-6 sm:p-10 md:p-14 border border-pink-100 shadow-xl animate-fadeIn"
             >
-              <div className="max-w-3xl mx-auto prose prose-slate max-w-none text-slate-700 leading-relaxed text-base md:text-lg">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mb-4">Introduction</h2>
+              <div className="max-w-3xl mx-auto space-y-6 text-[#475569] leading-relaxed text-base sm:text-lg font-['Manrope',sans-serif]">
+                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl text-[#172554]">
+                  Understanding the Science of Garbhadhan Sanskar
+                </h2>
                 <p>
-                  Garbhadhan Sanskar is the practice of educating and nurturing the unborn child in the
-                  womb. Rooted in ancient Indian scriptures, it emphasizes the powerful bond between
-                  mother and baby, and how a mother's thoughts, food, environment, and spiritual
-                  practices influence the child's physical, mental, and emotional development.
+                  Garbhadhan Sanskar is the sacred process of educating and nurturing the baby right inside the womb. Rooted in authentic Ayurvedic treatises and the Vedas, it emphasizes that a mother's mental state, satvik diet, sensory inputs, and environment directly sculpt the child's neurological and psychological development.
                 </p>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
-                  Why Garbhadhan Sanskar Matters
+                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl text-[#172554] pt-4">
+                  Why Garbhadhan Sanskar Is Essential in Modern Pregnancy
                 </h2>
-                <ul className="list-disc pl-6 space-y-2 text-slate-700">
-                  <li>Supports healthy fetal brain development and emotional bonding.</li>
-                  <li>Reduces maternal stress, anxiety, and mood swings during pregnancy.</li>
-                  <li>
-                    Encourages a positive lifestyle, nutritious sattvic diet, and daily wellness
-                    routine.
-                  </li>
-                  <li>Instills sanskaars (positive virtues) in the baby even before birth.</li>
+                <ul className="list-disc pl-6 space-y-2.5 text-[#475569]">
+                  <li>Fosters early cognitive development, neural synaptogenesis, and emotional equilibrium.</li>
+                  <li>Significantly reduces maternal stress hormone (cortisol) production.</li>
+                  <li>Promotes balanced nutrition, prenatal yoga flexibility, and joyful bonding between partners.</li>
+                  <li>Instills profound spiritual sanskars, courage, and virtue even before the child takes their first breath.</li>
                 </ul>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
-                  Practical Guidance & Daily Tips
-                </h2>
-                <p>
-                  Include daily meditation, mantra chanting, satsang, spiritual reading, gentle
-                  yoga, and a balanced diet in your routine. Communicate lovingly with your baby
-                  (Garbh Samvad), listen to soothing Garbhadhan Sanskar music, and surround yourself with
-                  positive thoughts and environment.
-                </p>
-
-                <blockquote className="border-l-4 border-red-600 bg-[#f7f5f0] p-5 my-8 rounded-r-xl text-slate-800 italic font-serif text-lg md:text-xl shadow-xs">
-                  "A calm, happy, and spiritually connected mother gives birth to a healthy,
-                  intelligent, and virtuous child."
+                <blockquote className="border-l-4 border-[#F45B8A] bg-gradient-to-r from-[#FFF6FA] to-white p-6 my-8 rounded-r-2xl text-[#172554] italic font-['DM_Serif_Display',Georgia,serif] text-xl md:text-2xl shadow-xs">
+                  "A serene, joyful, and spiritually attuned mother gifts the world a healthy, brilliant, and virtuous soul."
                 </blockquote>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-10 mb-4">
-                  Conclusion
+                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl text-[#172554] pt-4">
+                  Daily Practices for Expectant Mothers
                 </h2>
                 <p>
-                  Every moment of pregnancy is a golden opportunity to shape the future of your
-                  child. With the guidance of Astro Baby Garbhadhan Sanskar, thousands of mothers have
-                  experienced a joyful, mindful, and spiritually enriched pregnancy journey.
+                  Incorporate daily 15-minute Garbh Samvad (mother-baby dialogue), listening to specific Raga-based mantras, practicing gentle pelvic-floor pranayama, and maintaining an uplifting, peaceful atmosphere at home.
                 </p>
 
-                <div className="mt-8 pt-6 border-t border-slate-200 flex justify-between items-center">
+                <div className="mt-10 pt-6 border-t border-slate-200 flex flex-wrap justify-between items-center gap-4">
                   <button
                     onClick={() => setIsExpanded(false)}
-                    className="px-5 py-2 rounded-full bg-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-300 transition-colors"
+                    className="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition-colors cursor-pointer"
                   >
                     Close Full Article ▲
                   </button>
                   <a
                     href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
-                    className="px-5 py-2.5 rounded-full bg-red-600 text-white text-xs font-semibold hover:bg-red-700 transition-colors shadow-xs"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs font-bold hover:shadow-lg transition-all shadow-sm"
                   >
-                    Download Astro Baby App
+                    Download Astro Baby App →
                   </a>
                 </div>
               </div>
@@ -383,16 +300,16 @@ export default function BlogDetailPage() {
         </div>
       </section>
 
-      {/* SCROLLABLE RELATED ARTICLES SECTION */}
+      {/* ── Scrollable Related Articles Section ── */}
       {related.length > 0 && (
-        <section className="py-14 bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] border-t border-pink-200/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex items-center justify-between mb-8">
+        <section className="py-16 md:py-20 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] border-t border-pink-100/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-pink-200/80">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-                  Recommended For You
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm mb-1.5">
+                  <Sparkles className="h-3 w-3" /> Recommended Reads
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6c] mt-1">
+                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl font-normal text-[#172554]">
                   Related Articles
                 </h2>
               </div>
@@ -401,14 +318,14 @@ export default function BlogDetailPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => scroll("left")}
-                  className="w-10 h-10 rounded-full bg-white text-[#1a3a6c] border border-slate-200 shadow-sm flex items-center justify-center hover:bg-[#1a3a6c] hover:text-white transition-all text-xl font-bold"
+                  className="w-10 h-10 rounded-full bg-white text-[#172554] border border-pink-200 shadow-sm flex items-center justify-center hover:bg-[#172554] hover:text-white transition-all font-bold cursor-pointer"
                   aria-label="Scroll left"
                 >
                   ‹
                 </button>
                 <button
                   onClick={() => scroll("right")}
-                  className="w-10 h-10 rounded-full bg-white text-[#1a3a6c] border border-slate-200 shadow-sm flex items-center justify-center hover:bg-[#1a3a6c] hover:text-white transition-all text-xl font-bold"
+                  className="w-10 h-10 rounded-full bg-white text-[#172554] border border-pink-200 shadow-sm flex items-center justify-center hover:bg-[#172554] hover:text-white transition-all font-bold cursor-pointer"
                   aria-label="Scroll right"
                 >
                   ›
@@ -428,7 +345,7 @@ export default function BlogDetailPage() {
                   <Link
                     key={i}
                     to={`/blog/${slugify(p.title)}`}
-                    className="w-[290px] sm:w-[330px] md:w-[360px] flex-shrink-0 snap-start bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col overflow-hidden group hover:-translate-y-1"
+                    className="w-[290px] sm:w-[330px] md:w-[360px] shrink-0 snap-start bg-white rounded-[26px] shadow-[0_10px_30px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_45px_rgba(244,91,138,0.12)] transition-all duration-300 border border-pink-100 flex flex-col overflow-hidden group hover:-translate-y-1"
                   >
                     {/* Thumbnail */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -441,55 +358,25 @@ export default function BlogDetailPage() {
                         }}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                      <span className="absolute top-3 left-3 bg-[#1a3a6c]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                      <span className="absolute top-3 left-3 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-sm">
                         {cat}
                       </span>
-                      <span className="absolute top-3 right-3 bg-slate-900/75 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
-                        <svg
-                          className="w-3 h-3 text-slate-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
+                      <span className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-pink-300" />
                         {rTime}
                       </span>
                     </div>
 
-                    {/* Card Content */}
-                    <div className="p-5 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-base font-bold text-[#1a3a6c] group-hover:text-red-600 transition-colors leading-snug line-clamp-2">
-                          {p.title}
-                        </h3>
-                        <div className="mt-2 text-xs text-slate-500 font-medium">
-                          {p.date} • Astro Baby Team
-                        </div>
-                      </div>
-
-                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-red-600 group-hover:text-red-700">
-                        <span>Read Full Article</span>
-                        <svg
-                          className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
+                    {/* Content */}
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-lg font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-2">
+                        {p.title}
+                      </h3>
+                      <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#F45B8A]">
+                        <span>Read Article</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Link>
@@ -500,8 +387,8 @@ export default function BlogDetailPage() {
         </section>
       )}
 
-      {/* Newsletter */}
-      <NewsletterSection />
+      {/* App Download Section */}
+      <AppDownloadSection />
     </Layout>
   );
 }
@@ -509,32 +396,24 @@ export default function BlogDetailPage() {
 function BlogNotFound() {
   return (
     <Layout activeLabel="Blogs">
-      <section className="py-24 text-center bg-[#f7f5f0]">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#1a3a6c]">Article Not Found</h1>
-        <p className="mt-3 text-slate-600">The blog post you're looking for doesn't exist.</p>
+      <div className="py-28 text-center max-w-xl mx-auto px-4">
+        <div className="w-16 h-16 bg-pink-50 text-[#F45B8A] rounded-full flex items-center justify-center mx-auto mb-4">
+          <BookOpen className="w-8 h-8" />
+        </div>
+        <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl font-normal text-[#172554]">
+          Article Not Found
+        </h2>
+        <p className="text-slate-600 mt-2 text-sm font-['Manrope',sans-serif]">
+          The article you are looking for may have been moved or updated.
+        </p>
         <Link
           to="/blog"
-          className="inline-block mt-6 px-6 py-3 rounded-full bg-[#1a3a6c] text-white font-medium hover:bg-[#122a4f] shadow-sm"
+          className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#172554] text-white text-xs font-bold hover:bg-[#1e3a8a] transition-all"
         >
-          Browse All Articles
+          <span>Explore All Articles</span>
+          <ArrowRight className="w-3.5 h-3.5" />
         </Link>
-      </section>
-    </Layout>
-  );
-}
-
-function BlogError() {
-  return (
-    <Layout activeLabel="Blogs">
-      <section className="py-24 text-center bg-[#f7f5f0]">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#1a3a6c]">Something Went Wrong</h1>
-        <Link
-          to="/blog"
-          className="inline-block mt-6 px-6 py-3 rounded-full bg-[#1a3a6c] text-white font-medium hover:bg-[#122a4f] shadow-sm"
-        >
-          Back to Blogs
-        </Link>
-      </section>
+      </div>
     </Layout>
   );
 }

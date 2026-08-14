@@ -20,6 +20,8 @@ const AwardsAccolades = lazy(() => import("./routes/awardsaccolades"));
 const Testimonial = lazy(() => import("./routes/testimonial"));
 const Blog = lazy(() => import("./routes/blog"));
 const BlogPost = lazy(() => import("./routes/blog.$slug"));
+const Contact = lazy(() => import("./routes/contact"));
+const Newsletter = lazy(() => import("./routes/newsletter"));
 
 // Feature Pages
 const BizSanskar = lazy(() => import("./routes/features/biz-sanskar"));
@@ -94,6 +96,38 @@ export default function App() {
           element={
             <Suspense fallback={<BlogPostSkeleton />}>
               <BlogPost />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Suspense fallback={<AboutUsSkeleton />}>
+              <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contact-us"
+          element={
+            <Suspense fallback={<AboutUsSkeleton />}>
+              <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/our-story"
+          element={
+            <Suspense fallback={<AboutUsSkeleton />}>
+              <AboutUs />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/newsletter"
+          element={
+            <Suspense fallback={<AboutUsSkeleton />}>
+              <Newsletter />
             </Suspense>
           }
         />

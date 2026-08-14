@@ -1,153 +1,393 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Heart,
+  Globe,
+  GraduationCap,
+  Star,
+  ChevronRight,
+  Compass,
+  ArrowRight,
+  BookOpen,
+  Users
+} from "lucide-react";
 import AboutAstroBabyDetail from "@/components/AboutAstroBabyDetail";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 
-const missionPoints = [
+const storyPillars = [
   {
-    icon: "feature1.svg",
+    icon: Heart,
     title: "Positive Pregnancy",
-    text: "Empower every couple with knowledge, wisdom & tools for a happy and healthy pregnancy journey.",
+    text: "Empowering every expectant mother with serenity, emotional balance, and obstetric clarity for a peaceful gestational journey.",
+    gradient: "from-pink-500/10 to-rose-500/5",
+    iconColor: "text-[#F45B8A]",
+    borderColor: "border-pink-200/60 hover:border-[#F45B8A]/50",
   },
   {
-    icon: "feature2.svg",
-    title: "Great Children",
-    text: "Nurture the growing baby in the womb with good values, health and virtues for a brighter next generation.",
+    icon: Sparkles,
+    title: "Virtuous Next Generation",
+    text: "Nurturing the baby in the womb through authentic Garbhadhan Sanskar mantras, noble thoughts, and cognitive enrichment.",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    iconColor: "text-[#F6C85F]",
+    borderColor: "border-amber-200/60 hover:border-[#F6C85F]/50",
   },
   {
-    icon: "feature3.svg",
-    title: "Global Reach",
-    text: "Take the science of Garbhadhan Sanskar to every home across the world, breaking language & geographical barriers.",
+    icon: Globe,
+    title: "Global Vedic Heritage",
+    text: "Bringing authentic Garbhadhan Sanskar wisdom to families in over 62+ countries across languages and cultural boundaries.",
+    gradient: "from-blue-500/10 to-sky-500/5",
+    iconColor: "text-[#3B82F6]",
+    borderColor: "border-blue-200/60 hover:border-[#3B82F6]/50",
   },
   {
-    icon: "feature4.svg",
-    title: "Scientific Approach",
-    text: "Combine ancient Indian Garbhadhan Sanskar wisdom with modern medical & psychological science.",
+    icon: GraduationCap,
+    title: "Scientific & Medical Rigor",
+    text: "Synthesizing authentic Vedic scriptures with modern gynecological research, fetal neuroscience, and maternal nutrition.",
+    gradient: "from-purple-500/10 to-indigo-500/5",
+    iconColor: "text-purple-600",
+    borderColor: "border-purple-200/60 hover:border-purple-400/50",
   },
-];
-
-const teamRoles = [
-  "IITians",
-  "Scientists",
-  "Gynaecologists",
-  "Garbhadhan Sanskar Experts",
-  "Vedmurti Brahmins",
-  "Life Trainers",
-  "Yoga Experts",
-  "Meditators",
-  "Nutritionists",
-  "Revered Astrologers",
-  "Musicians",
-  "Child Psychologists",
 ];
 
 const stats = [
-  { icon: "feature1.svg", num: "1 Lakh+", label: "Downloads" },
-  { icon: "feature2.svg", num: "1200000+", label: "YouTube Views" },
-  { icon: "feature3.svg", num: "62+", label: "Countries" },
-  { icon: "feature4.svg", num: "4.6 Stars", label: "Rating on Google Play Store" },
-  { icon: "feature5.svg", num: "Thousands", label: "of Happy, Healthy & Stress free Pregnancies" },
+  { num: "1,00,000+", label: "Mobile App Downloads", sub: "Trusted Worldwide", icon: "📱" },
+  { num: "12,00,000+", label: "YouTube Community Views", sub: "Spiritual Guidance", icon: "▶️" },
+  { num: "62+ Countries", label: "Global Reach", sub: "Families Enriched", icon: "🌍" },
+  { num: "4.6 ★★★★★", label: "Google Play Store Rating", sub: "Verified Reviews", icon: "⭐" },
+  { num: "Thousands", label: "Happy & Calm Pregnancies", sub: "Healthy Newborns", icon: "🌸" },
 ];
 
 const milestones = [
   {
     year: "2018",
-    title: "The Vision",
-    text: "Astro Baby was envisioned as a bridge between ancient Garbhadhan Sanskar wisdom and modern-day pregnant couples.",
+    title: "The Genesis & Sacred Vision",
+    text: "Astro Baby was founded with a profound dream: to make the ancient, time-tested Vedic Garbhadhan Sanskar accessible, scientific, and practical for every modern couple.",
+    tag: "Inception",
   },
   {
     year: "2019",
-    title: "Research & Development",
-    text: "Years of research by IITians, doctors, scientists & Vedic scholars shaped the curriculum.",
+    title: "Rigorous R&D & Scientific Synthesis",
+    text: "Scholars from IIT, renowned obstetricians, pediatric neurologists, and Vedic masters spent thousands of hours structuring a daily 9-month prenatal curriculum.",
+    tag: "R&D Phase",
   },
   {
     year: "2020",
-    title: "App Launch",
-    text: "The Astro Baby Garbhadhan Sanskar mobile application launched on Android & iOS platforms.",
+    title: "Global Mobile Platform Launch",
+    text: "The official Astro Baby mobile application launched on Android & iOS, providing interactive shlokas, satvik diet plans, yoga videos, and personalized Isht Mantras.",
+    tag: "Digital Launch",
   },
   {
     year: "2022",
-    title: "1 Lakh Downloads",
-    text: "Reached 1,00,000+ downloads across 62+ countries, changing lives across the globe.",
+    title: "100,000+ Enriched Families",
+    text: "Surpassed 1,00,000+ active downloads across 62 nations, earning deep gratitude from parents who experienced calm, joyful, and healthy deliveries.",
+    tag: "Global Impact",
   },
   {
     year: "Today",
-    title: "A Movement",
-    text: "Now the world's most trusted Garbhadhan Sanskar app, appreciated by dignitaries of national stature.",
+    title: "A Worldwide Movement for Conscious Parenting",
+    text: "Astro Baby has evolved into a global sanctum of conscious prenatal parenting, continuously advancing fetal development science and Vedic spirituality.",
+    tag: "The Movement",
   },
 ];
 
 export default function AboutPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF] text-slate-800">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       {/* Header & Navbar */}
       <HeaderNavbar />
 
-      {/* Page title banner */}
-      <section className="py-10 border-b border-slate-200/50 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-semibold text-[#1a3a6c]">About Us</h1>
-          <p className="mt-3 text-slate-600 text-sm md:text-base">
-            <Link to="/" className="hover:underline">
+      {/* ── Page Hero / Banner: Our Story ── */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+        {/* Ambient Glow Spheres */}
+        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-sky-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 left-10 h-80 w-80 rounded-full bg-amber-100/40 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Our Origins & Sacred Journey</span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-['DM_Serif_Display',Georgia,serif] text-4xl sm:text-5xl md:text-6xl font-normal text-[#172554] tracking-tight leading-[1.15] max-w-4xl mx-auto"
+          >
+            The Story of{" "}
+            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+              Astro Baby
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-['Manrope',sans-serif] leading-relaxed"
+          >
+            How ancient Garbhadhan Sanskar wisdom and modern obstetric neuroscience united to guide thousands of parents toward joyful, divine childbirth.
+          </motion.p>
+
+          {/* Breadcrumb Navigation */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500"
+          >
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors flex items-center gap-1">
               Home
-            </Link>{" "}
-            / <span className="text-[#1a3a6c]">About Us</span>
-          </p>
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="text-slate-600">About Us</span>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">Our Story</span>
+          </motion.div>
         </div>
       </section>
 
-      {/* Premium About Astro Baby Section */}
+      {/* ── Main Detail Section (Celestial Mother, Philosophy & Intro Video) ── */}
       <AboutAstroBabyDetail />
 
-      {/* Journey / Milestones */}
-      <section className="py-14 relative z-10">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-center text-3xl md:text-4xl font-semibold text-[#1a3a6c] mb-10">
-            Our Journey
-          </h2>
+      {/* ── Core Mission & Vision Pillars ── */}
+      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] border-y border-pink-100/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+              <Heart className="h-3 w-3" /> Guiding Principles
+            </span>
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554] leading-tight">
+              Our Four Sacred Pillars
+            </h2>
+            <div className="flex items-center justify-center gap-2 text-[#F45B8A] py-1">
+              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
+              <span className="text-xs">✦</span>
+              <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
+              <span className="text-xs">✦</span>
+              <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
+            </div>
+            <p className="text-sm sm:text-base text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+              Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {storyPillars.map((item, index) => {
+              const IconComp = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`group relative overflow-hidden rounded-[26px] bg-white/90 p-6 sm:p-7 border ${item.borderColor} shadow-[0_10px_35px_rgba(23,37,84,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(23,37,84,0.09)] flex flex-col justify-between`}
+                >
+                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className="relative z-10 space-y-4">
+                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-white shadow-md border border-slate-100 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComp className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554]">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+                  <div className="relative z-10 pt-4 mt-4 border-t border-slate-100/80 flex items-center text-xs font-bold text-[#172554] group-hover:text-[#F45B8A] transition-colors">
+                    <span>Explore philosophy</span>
+                    <ArrowRight className="h-3 w-3 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Impact & Numbers Section ── */}
+      <section className="py-16 md:py-20 relative z-10 bg-[#172554] text-white overflow-hidden">
+        <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#F45B8A]/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#3B82F6]/20 blur-[120px]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F6C85F] backdrop-blur-md">
+              <Star className="h-3 w-3 fill-[#F6C85F]" /> Measurable Trust
+            </span>
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-white">
+              The Impact of Our Journey
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 font-['Manrope',sans-serif]">
+              Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-white/10 backdrop-blur-md rounded-2xl md:rounded-[24px] p-5 sm:p-6 border border-white/15 text-center flex flex-col items-center justify-center hover:bg-white/15 hover:border-white/30 transition-all duration-300 group shadow-lg"
+              >
+                <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform">
+                  {stat.icon}
+                </div>
+                <div className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl lg:text-4xl font-normal text-white mb-1 tracking-tight drop-shadow">
+                  {stat.num}
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-white/90 leading-tight">
+                  {stat.label}
+                </div>
+                <div className="text-[11px] text-[#F6C85F] font-medium mt-1">
+                  {stat.sub}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Journey & Milestones Timeline ── */}
+      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF8FC] via-[#F9F5FF] to-[#FFFDFE] border-t border-pink-100/60">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+              <Compass className="h-3 w-3" /> Historical Timeline
+            </span>
+            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554]">
+              Milestones in Our Evolution
+            </h2>
+            <div className="flex items-center justify-center gap-2 text-[#F45B8A] py-1">
+              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
+              <span className="text-xs">✦</span>
+              <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
+              <span className="text-xs">✦</span>
+              <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
+            </div>
+            <p className="text-sm sm:text-base text-[#475569] font-['Manrope',sans-serif]">
+              From a research initiative by IITians and Vedic scholars to the world's most comprehensive Garbhadhan Sanskar platform.
+            </p>
+          </div>
+
           <div className="relative">
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#1a3a6c]/20 -translate-x-1/2" />
-            <div className="space-y-8">
+            {/* Center Glowing Spine Line */}
+            <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-[#F45B8A] via-[#3B82F6] to-[#F6C85F] -translate-x-1/2 rounded-full opacity-30" />
+
+            <div className="space-y-8 md:space-y-12">
               {milestones.map((m, i) => (
-                <div
+                <motion.div
                   key={m.year}
-                  className={`md:grid md:grid-cols-2 md:gap-8 items-center ${
-                    i % 2 === 0 ? "" : "md:direction-rtl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className={`relative md:grid md:grid-cols-2 md:gap-12 items-center ${
+                    i % 2 === 0 ? "" : "md:rtl"
                   }`}
                 >
-                  <div
-                    className={`${i % 2 === 0 ? "md:text-right md:pr-8" : "md:order-2 md:pl-8"}`}
-                  >
-                    <div className="inline-block bg-[#1a3a6c] text-white font-bold px-4 py-1 rounded-full text-sm mb-2">
-                      {m.year}
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1a3a6c] mb-2">{m.title}</h3>
-                    <p className="text-slate-700 leading-relaxed">{m.text}</p>
+                  {/* Timeline Center Node Badge */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg border-2 border-[#F45B8A] z-20">
+                    <div className="h-3 w-3 rounded-full bg-[#F45B8A]" />
                   </div>
+
+                  {/* Content Card */}
+                  <div
+                    className={`${
+                      i % 2 === 0 ? "md:text-right" : "md:text-left md:order-2"
+                    }`}
+                  >
+                    <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-6 sm:p-8 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_45px_rgba(244,91,138,0.1)] transition-all duration-300 group">
+                      <div className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                        <span className="inline-block bg-gradient-to-r from-[#172554] to-[#3B82F6] text-white font-extrabold px-3.5 py-1 rounded-full text-xs shadow-sm">
+                          {m.year}
+                        </span>
+                        <span className="text-[11px] font-bold text-[#F45B8A] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">
+                          {m.tag}
+                        </span>
+                      </div>
+                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl sm:text-2xl font-normal text-[#172554] mb-2 group-hover:text-[#F45B8A] transition-colors">
+                        {m.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                        {m.text}
+                      </p>
+                    </div>
+                  </div>
+
                   <div className={`${i % 2 === 0 ? "" : "md:order-1"} hidden md:block`} />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* App Download CTA */}
+      {/* ── Separate Bridge Section: Direct Invitation to Meet the Team ── */}
+      <section className="py-16 md:py-20 relative z-10 bg-gradient-to-b from-[#FFFDFE] to-[#FFF5FA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#172554] via-[#1e3a8a] to-[#2563eb] p-8 sm:p-12 text-white shadow-2xl">
+            <div className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 rounded-full bg-[#F45B8A]/30 blur-3xl" />
+            
+            <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8 space-y-4 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#F6C85F] backdrop-blur-md">
+                  <Users className="h-3.5 w-3.5" /> Multidisciplinary Faculty
+                </div>
+                <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl md:text-4xl font-normal text-white">
+                  Meet the Masters & Scholars Behind Astro Baby
+                </h3>
+                <p className="text-sm md:text-base text-slate-200 font-['Manrope',sans-serif] max-w-xl leading-relaxed">
+                  Discover the distinguished team of doctors, IITians, Vedmurti Brahmins, yoga masters, and astrologers who crafted this curriculum.
+                </p>
+              </div>
+
+              <div className="md:col-span-4 flex justify-center md:justify-end">
+                <Link
+                  to="/team"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#F45B8A]/40 hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <span>Explore Team & Faculty</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── App Download CTA ── */}
       <AppDownloadSection />
 
-      {/* Footer */}
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
+      {/* ── Footer ── */}
+      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
+          </div>
           <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
+            <span className="hover:text-white transition cursor-pointer">Facebook</span>
             <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
+            <span className="hover:text-white transition cursor-pointer">Instagram</span>
             <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
+            <span className="hover:text-white transition cursor-pointer">YouTube</span>
           </div>
         </div>
       </footer>
