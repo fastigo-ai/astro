@@ -157,7 +157,7 @@ export default function Home() {
 
 
       {/* FAQ */}
-      <section className="py-14 relative z-10 bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] border-b border-blue-100/60">
+      <section className="py-14 relative z-10 bg-[#fcf2f7] border-b border-pink-100/60">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

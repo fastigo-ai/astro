@@ -17,7 +17,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-[#FFFCFE] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
+    <section className="relative py-20 lg:py-28 bg-[#fcf2f7] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Soft Luxury Ambient Glow Backgrounds */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#3B82F6]/8 to-[#F45B8A]/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#172554]/8 to-[#F45B8A]/8 rounded-full blur-[140px] pointer-events-none" />

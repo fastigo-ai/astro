@@ -200,7 +200,7 @@ export default function FeaturesSection() {
   }, [slides.length]);
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#FFFCFE] via-[#F9F5FF] to-[#EAF4FF] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
+    <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-14 md:pt-16 pb-12 md:pb-16 border-b border-pink-100/60">
       {/* Mandala & Sparkle Background Decorations */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="mandala absolute -left-36 top-10 h-80 w-80 rounded-full opacity-[0.07] bg-[#8B32BD]" />

@@ -8,23 +8,31 @@ export default function HomeSkeleton() {
       <NavbarSkeleton />
 
       {/* Hero Slider Skeleton */}
-      <section className="py-6 sm:py-12 md:py-16 px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-100/80 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <Skeleton className="h-6 w-44 sm:w-52 bg-pink-100/90 rounded-full border border-pink-200/60" />
-            <div className="space-y-3">
-              <Skeleton className="h-8 sm:h-12 md:h-14 w-full md:w-5/6 bg-[#1a3a6c]/20 rounded-2xl" />
-              <Skeleton className="h-8 sm:h-12 md:h-14 w-3/4 bg-[#1a3a6c]/20 rounded-2xl" />
+      <section className="relative w-full h-screen min-h-[600px] bg-slate-100 overflow-hidden flex items-center">
+        {/* Skeleton for Background Image */}
+        <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+        
+        {/* Content Container Skeleton */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+          <div className="w-full max-w-2xl space-y-6">
+            {/* Heading Skeleton */}
+            <div className="space-y-4">
+              <Skeleton className="h-12 sm:h-16 md:h-[72px] w-4/5 bg-slate-300/80 rounded-2xl" />
+              <Skeleton className="h-12 sm:h-16 md:h-[72px] w-3/4 bg-slate-300/80 rounded-2xl" />
             </div>
-            <Skeleton className="h-5 w-full bg-slate-200/90" />
-            <Skeleton className="h-5 w-4/5 bg-slate-200/90" />
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-3">
-              <Skeleton className="h-12 w-full sm:w-44 rounded-full bg-gradient-to-r from-pink-200 to-pink-300 shadow-xs" />
-              <Skeleton className="h-12 w-full sm:w-40 rounded-full bg-blue-100/90 border border-blue-200" />
+            
+            {/* Description Skeleton */}
+            <div className="space-y-3 pt-4">
+              <Skeleton className="h-5 w-full bg-slate-300/60 rounded-lg" />
+              <Skeleton className="h-5 w-11/12 bg-slate-300/60 rounded-lg" />
+              <Skeleton className="h-5 w-3/4 bg-slate-300/60 rounded-lg" />
             </div>
-          </div>
-          <div className="lg:col-span-5 flex justify-center">
-            <Skeleton className="w-full max-w-md aspect-[4/3] rounded-3xl bg-slate-300/80 shadow-md" />
+
+            {/* Buttons Skeleton */}
+            <div className="flex flex-wrap items-center gap-5 pt-8">
+              <Skeleton className="h-[52px] w-[200px] bg-pink-200 rounded-full shadow-sm" />
+              <Skeleton className="h-[52px] w-[180px] bg-blue-200 rounded-full shadow-sm" />
+            </div>
           </div>
         </div>
       </section>
