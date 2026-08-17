@@ -52,7 +52,7 @@ export const PROGRAM_DROPDOWN_CATEGORIES = [
     subtitle: "Gentle Care for Your Baby's Early Years",
     to: "/features/infant-care",
     icon: ShieldCheck,
-    iconBg: "bg-teal-50 text-teal-600",
+    iconBg: "bg-pink-50 text-[#F45B8A]",
   },
   {
     id: "parenting",
@@ -204,7 +204,7 @@ export default function HeaderNavbar() {
   };
 
   return (
-    <div className="w-full relative z-50 font-['Plus_Jakarta_Sans',sans-serif]" style={{ zIndex: 9999 }}>
+    <div className="w-full relative z-50 font-medium" style={{ zIndex: 9999 }}>
       {/* Top Bar */}
       <div className="hidden md:block bg-[#172554] text-white text-xs py-2 shadow-inner">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">

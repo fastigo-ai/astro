@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 const contactCards = [
   {
@@ -115,7 +116,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       {/* Header Navbar */}
       <HeaderNavbar />
 
@@ -131,7 +132,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
+            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
           >
             <Sparkles className="h-3.5 w-3.5" />
             <span>We Are Here For You</span>
@@ -141,7 +142,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['DM_Serif_Display',Georgia,serif] text-4xl sm:text-5xl md:text-6xl font-normal text-[#172554] tracking-tight leading-[1.15] max-w-4xl mx-auto"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] tracking-tight leading-[1.1] max-w-4xl mx-auto"
           >
             Connect with{" "}
             <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
@@ -153,7 +154,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-['Manrope',sans-serif] leading-relaxed"
+            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
             Have questions about Garbhadhan Sanskar, our mobile app features, or scheduling an expert consultation? Our caring advisors are ready to guide you.
           </motion.p>
@@ -163,13 +164,13 @@ export default function ContactPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500"
+            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-500"
           >
             <Link to="/" className="hover:text-[#F45B8A] transition-colors">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-[#172554] font-bold">Contact Us</span>
+            <span className="text-[#172554] font-semibold">Contact Us</span>
           </motion.div>
         </div>
       </section>
@@ -196,21 +197,21 @@ export default function ContactPage() {
                       <div className={`flex h-13 w-13 items-center justify-center rounded-2xl ${c.iconBg} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
                         <IconComp className="h-6 w-6" />
                       </div>
-                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border ${c.badgeColor}`}>
+                      <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border ${c.badgeColor}`}>
                         {c.badge}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554] mb-1">
+                      <h3 className="text-xl font-semibold text-[#172554] mb-1">
                         {c.title}
                       </h3>
-                      <p className="text-xs text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                      <p className="text-xs text-[#475569] font-normal leading-relaxed">
                         {c.subtitle}
                       </p>
                     </div>
 
-                    <div className="font-bold text-[#172554] text-sm md:text-base font-['Plus_Jakarta_Sans',sans-serif] pt-2">
+                    <div className="font-semibold text-[#172554] text-sm md:text-base pt-2">
                       {c.info}
                     </div>
                   </div>
@@ -220,7 +221,7 @@ export default function ContactPage() {
                       href={c.link}
                       target={c.link.startsWith("http") ? "_blank" : undefined}
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-[#172554]/5 text-[#172554] group-hover:bg-gradient-to-r group-hover:from-[#F45B8A] group-hover:to-[#E91E63] group-hover:text-white transition-all duration-300 shadow-xs"
+                      className="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-[#172554]/5 text-[#172554] group-hover:bg-gradient-to-r group-hover:from-[#F45B8A] group-hover:to-[#E91E63] group-hover:text-white transition-all duration-300 shadow-xs"
                     >
                       <span>{c.btnText}</span>
                     </a>
@@ -246,13 +247,13 @@ export default function ContactPage() {
               className="lg:col-span-5 space-y-6"
             >
               <div className="space-y-3">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
                   <Heart className="h-3 w-3" /> Personalized Support
                 </span>
-                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl font-normal text-[#172554] leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-tight">
                   How Our Experts Assist You
                 </h2>
-                <p className="text-sm text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                <p className="text-sm text-[#475569] font-normal leading-relaxed">
                   Every pregnancy is unique. Whether you are planning conception or navigating your third trimester, our multidisciplinary team provides personalized solutions.
                 </p>
               </div>
@@ -285,8 +286,8 @@ export default function ContactPage() {
                       <Sparkles className="h-4 w-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-[#172554] mb-0.5">{item.title}</h4>
-                      <p className="text-[11px] leading-relaxed text-[#475569] font-['Manrope',sans-serif]">{item.desc}</p>
+                      <h4 className="text-xs font-semibold text-[#172554] mb-0.5">{item.title}</h4>
+                      <p className="text-[11px] leading-relaxed text-[#475569] font-normal">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -300,7 +301,7 @@ export default function ContactPage() {
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-white">Direct Helpline Available</h4>
+                    <h4 className="font-semibold text-sm text-white">Direct Helpline Available</h4>
                     <p className="text-[11px] text-slate-300">Call +91 90185 67465 for immediate queries</p>
                   </div>
                 </div>
@@ -318,10 +319,10 @@ export default function ContactPage() {
               <div className="bg-white/95 backdrop-blur-2xl rounded-[32px] p-6 sm:p-10 lg:p-12 border border-pink-100 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.08)] relative overflow-hidden">
                 {/* Form Header */}
                 <div className="mb-8 space-y-2">
-                  <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl font-normal text-[#172554]">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#172554] leading-snug">
                     Send a Message or Consultation Request
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif]">
+                  <p className="text-xs sm:text-sm text-[#475569] font-normal">
                     Fill in your details and our senior counselor will connect with you promptly.
                   </p>
                 </div>
@@ -338,10 +339,10 @@ export default function ContactPage() {
                       <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-md">
                         <CheckCircle2 className="h-8 w-8" />
                       </div>
-                      <h4 className="font-['DM_Serif_Display',Georgia,serif] text-2xl text-[#172554]">
+                      <h4 className="text-2xl font-bold text-[#172554]">
                         Thank You, {formData.name || "Friend"}!
                       </h4>
-                      <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-normal">
                         Your message has been received with care. An Astro Baby counselor will contact you via WhatsApp or phone within 2-4 hours.
                       </p>
                       <button
@@ -356,7 +357,7 @@ export default function ContactPage() {
                             message: "",
                           });
                         }}
-                        className="inline-flex items-center gap-2 rounded-full bg-[#172554] text-white px-6 py-2.5 text-xs font-bold hover:bg-[#1e3a8a] transition-all shadow-sm"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#172554] text-white px-6 py-2.5 text-xs font-semibold hover:bg-[#1e3a8a] transition-all shadow-sm"
                       >
                         <span>Send Another Inquiry</span>
                       </button>
@@ -366,7 +367,7 @@ export default function ContactPage() {
                       {/* Name & Phone Grid */}
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                          <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                             <User className="h-3.5 w-3.5 text-[#F45B8A]" />
                             <span>Your Full Name *</span>
                           </label>
@@ -376,12 +377,12 @@ export default function ContactPage() {
                             placeholder="e.g. Priya Sharma"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                           />
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                          <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                             <Phone className="h-3.5 w-3.5 text-[#F45B8A]" />
                             <span>Phone Number / WhatsApp *</span>
                           </label>
@@ -391,14 +392,14 @@ export default function ContactPage() {
                             placeholder="+91 98765 43210"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                           />
                         </div>
                       </div>
 
                       {/* Email */}
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                        <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                           <Mail className="h-3.5 w-3.5 text-[#F45B8A]" />
                           <span>Email Address *</span>
                         </label>
@@ -408,21 +409,21 @@ export default function ContactPage() {
                           placeholder="e.g. priya@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                          className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                         />
                       </div>
 
                       {/* Stage & Language Selection */}
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                          <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                             <Calendar className="h-3.5 w-3.5 text-[#F45B8A]" />
                             <span>Pregnancy Stage</span>
                           </label>
                           <select
                             value={formData.stage}
                             onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                           >
                             <option>Planning Conception (Beej Sanskar)</option>
                             <option>1st Trimester (Months 1–3)</option>
@@ -434,14 +435,14 @@ export default function ContactPage() {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                          <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                             <Globe className="h-3.5 w-3.5 text-[#F45B8A]" />
                             <span>Preferred Language</span>
                           </label>
                           <select
                             value={formData.language}
                             onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                           >
                             <option>English</option>
                             <option>Hindi</option>
@@ -453,7 +454,7 @@ export default function ContactPage() {
 
                       {/* Message Textarea */}
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold text-[#172554] flex items-center gap-1.5">
+                        <label className="text-xs font-semibold text-[#172554] flex items-center gap-1.5">
                           <MessageCircle className="h-3.5 w-3.5 text-[#F45B8A]" />
                           <span>Your Message / Questions</span>
                         </label>
@@ -462,7 +463,7 @@ export default function ContactPage() {
                           placeholder="Tell us about your questions, trimester, or any specific guidance you're seeking..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all resize-none"
+                          className="w-full px-4 py-3 bg-slate-50/80 rounded-xl border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all resize-none font-normal"
                         />
                       </div>
 
@@ -471,7 +472,7 @@ export default function ContactPage() {
                         <button
                           type="submit"
                           disabled={loading}
-                          className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white py-4 px-8 text-sm font-bold shadow-lg shadow-[#F45B8A]/35 hover:shadow-xl hover:shadow-[#F45B8A]/45 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-70 cursor-pointer"
+                          className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white py-4 px-8 text-sm font-semibold shadow-lg shadow-[#F45B8A]/35 hover:shadow-xl hover:shadow-[#F45B8A]/45 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-70 cursor-pointer"
                         >
                           {loading ? (
                             <span className="flex items-center gap-2">
@@ -481,13 +482,13 @@ export default function ContactPage() {
                           ) : (
                             <>
                               <span>Submit Your Request</span>
-                              <Send className="h-4 w-4 ml-1" />
+                              <Send className="w-4 h-4 ml-1" />
                             </>
                           )}
                         </button>
                       </div>
 
-                      <p className="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1">
+                      <p className="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1 font-normal">
                         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
                         <span>Your data is protected by strict medical confidentiality.</span>
                       </p>
@@ -504,13 +505,13 @@ export default function ContactPage() {
       <section className="py-16 md:py-20 relative z-10 bg-gradient-to-b from-[#FFF6FA] via-[#F8FAFF] to-[#EAF4FF] border-t border-pink-100/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
               <HelpCircle className="h-3 w-3" /> Common Inquiries
             </span>
-            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl font-normal text-[#172554]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif]">
+            <p className="text-xs sm:text-sm text-[#475569] font-normal">
               Quick answers about contacting our counseling department and scheduling sessions.
             </p>
           </div>
@@ -523,9 +524,9 @@ export default function ContactPage() {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex justify-between items-center text-left px-6 py-4.5 bg-blue-50/40 hover:bg-blue-50/80 transition-colors"
+                  className="w-full flex justify-between items-center text-left px-6 py-4.5 bg-blue-50/40 hover:bg-blue-50/80 transition-colors cursor-pointer"
                 >
-                  <span className="font-bold text-[#172554] text-sm md:text-[15px]">{f.q}</span>
+                  <span className="font-semibold text-[#172554] text-sm md:text-[15px]">{f.q}</span>
                   <span className="text-[#F45B8A] text-xl font-bold ml-4">
                     {openFaq === i ? "−" : "+"}
                   </span>
@@ -536,7 +537,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="px-6 py-4 text-slate-600 text-xs md:text-sm leading-relaxed bg-white/95 border-t border-slate-100"
+                    className="px-6 py-4 text-slate-600 text-xs md:text-sm leading-relaxed bg-white/95 border-t border-slate-100 font-normal"
                   >
                     {f.a}
                   </motion.div>
@@ -551,20 +552,7 @@ export default function ContactPage() {
       <AppDownloadSection />
 
       {/* ── Footer ── */}
-      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div className="text-center md:text-left">
-            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
-          </div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition cursor-pointer">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

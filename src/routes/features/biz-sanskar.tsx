@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 
 
@@ -77,12 +78,12 @@ export default function BizSanskar() {
           />
 
           {/* Contrast Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-transparent sm:via-slate-900/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent sm:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/75 sm:to-transparent" />
+          <div className="absolute inset-0 bg-slate-950/30 sm:bg-transparent" />
 
-          {/* Banner Content Overlay */}
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-16 w-full">
-            <div className="max-w-2xl text-left">
+          {/* Banner Content Overlay (Right-Aligned) */}
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-16 w-full flex justify-end">
+            <div className="max-w-xl lg:max-w-2xl text-left">
               {/* Badge */}
               <motion.div
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold mb-4 shadow-sm"
@@ -99,13 +100,13 @@ export default function BizSanskar() {
 
               {/* Main Heading */}
               <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-4 drop-shadow-md"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 Beej Sanskar
-                <span className="text-pink-300 font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-4xl block mt-1.5 font-normal">
+                <span className="text-pink-300 font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl block mt-1.5">
                   Nurture Today, Bless Tomorrow
                 </span>
               </motion.h1>
@@ -129,7 +130,7 @@ export default function BizSanskar() {
               >
                 <a
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-bold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-semibold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300"
                 >
                   Start Beej Sanskar
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,7 +150,7 @@ export default function BizSanskar() {
       <section className="py-12 md:py-16 relative z-10">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-[#EA3484] text-sm font-bold mb-5"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-[#EA3484] text-xs font-semibold uppercase tracking-wider mb-5"
             initial={{ opacity: 0, y: -16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -158,7 +159,7 @@ export default function BizSanskar() {
             The Vaidic Foundation
           </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A3A6C] tracking-tight mb-5"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] tracking-tight leading-[1.2] mb-5"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -167,7 +168,7 @@ export default function BizSanskar() {
             Ancient Wisdom Backed by Science <span className="text-[#EA3484]">🌱</span>
           </motion.h2>
           <motion.p
-            className="text-slate-600 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
+            className="text-slate-600 text-base md:text-lg leading-relaxed max-w-3xl mx-auto font-normal"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -189,7 +190,7 @@ export default function BizSanskar() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A3A6C] mb-4">Inside the Beej Sanskar Program</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] mb-4 leading-[1.2] tracking-tight">Inside the Beej Sanskar Program</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
           </motion.div>
 
@@ -214,13 +215,13 @@ export default function BizSanskar() {
                   </div>
 
                   <div className={`${reverse ? "lg:order-1" : ""} flex flex-col justify-center`}>
-                    <div className="inline-flex items-center gap-2 bg-pink-100 text-[#EA3484] font-bold text-xs px-4 py-2 rounded-full mb-6 w-max">
+                    <div className="inline-flex items-center gap-2 bg-pink-100 text-[#EA3484] font-semibold text-xs px-4 py-2 rounded-full mb-6 w-max">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                       Phase {i + 1}
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-extrabold text-[#1E293B] mb-4 tracking-tight">{f.title}</h3>
-                    <h4 className="text-xl text-[#EA3484] font-serif italic mb-6">"{f.tagline}"</h4>
-                    <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">{f.title}</h3>
+                    <h4 className="text-lg text-[#EA3484] font-semibold mb-6">"{f.tagline}"</h4>
+                    <div className="space-y-4 text-slate-600 leading-relaxed text-base md:text-lg font-normal">
                       {f.body.map((p, idx) => (<p key={idx}>{p}</p>))}
                     </div>
 
@@ -228,7 +229,7 @@ export default function BizSanskar() {
                     <div className="mt-8">
                       <a
                         href="/contact-us"
-                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-bold text-sm shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group"
+                        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-semibold text-sm shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group"
                       >
                         Contact Us
                         <svg
@@ -273,11 +274,7 @@ export default function BizSanskar() {
 
       <AppDownloadSection title={<>Start Your Journey with <span className="text-[#EA3484]">Astro Baby</span></>} subtitle="Download the app to explore all features." />
       <NewsletterSection />
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

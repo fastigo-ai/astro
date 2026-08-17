@@ -20,6 +20,7 @@ interface ProgramItem {
   title: string;
   subTitle: string;
   desc: string;
+  img: string;
   price?: string;
   to: string;
   iconBg: string;
@@ -35,6 +36,7 @@ const programs: ProgramItem[] = [
     subTitle: "Sacred Preparation for Conception",
     desc: "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul.",
     price: "₹11,000",
+    img: "/images/garbh_dan_banner.png",
     to: "/features/garbh-dhan",
     iconBg: "bg-pink-100/80",
     iconColor: "text-[#F45B8A]",
@@ -46,6 +48,7 @@ const programs: ProgramItem[] = [
     subTitle: "Preparing the Foundation for Conscious Conception",
     desc: "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
     price: "Vitality Track",
+    img: "/images/beej_sanskar_banner.jpg",
     to: "/features/beej-sanskar",
     iconBg: "bg-amber-100/80",
     iconColor: "text-amber-600",
@@ -58,6 +61,7 @@ const programs: ProgramItem[] = [
     desc: "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation.",
     price: "Starting ₹5,000",
     badge: "Most Popular",
+    img: "/images/garbh_sanskar_banner.jpg",
     to: "/features/garbh-sanskar",
     iconBg: "bg-purple-100/80",
     iconColor: "text-purple-600",
@@ -69,9 +73,10 @@ const programs: ProgramItem[] = [
     subTitle: "Sacred Milestones in Early Childhood",
     desc: "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories.",
     price: "₹6,000",
+    img: "/images/baal_bhavish_banner.jpg",
     to: "/features/baal-sanskar",
-    iconBg: "bg-blue-100/80",
-    iconColor: "text-blue-600",
+    iconBg: "bg-pink-100/80",
+    iconColor: "text-[#EA3484]",
     features: ["Namkaran, Nishkraman & Annaprashan", "Character & Value Building", "Cognitive Brain Puzzles"],
   },
   {
@@ -80,9 +85,10 @@ const programs: ProgramItem[] = [
     subTitle: "Gentle Care for Your Baby's Early Years",
     desc: "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes.",
     price: "₹5,000",
+    img: "/images/nurturing_life_banner.png",
     to: "/features/infant-care",
-    iconBg: "bg-teal-100/80",
-    iconColor: "text-teal-600",
+    iconBg: "bg-pink-100/80",
+    iconColor: "text-[#F45B8A]",
     features: ["Personal Parenting Coach", "Custom Diet & Lactation", "Daily Live Yoga & Milestones"],
   },
   {
@@ -91,9 +97,10 @@ const programs: ProgramItem[] = [
     subTitle: "Mindful Guidance for Raising Your Child",
     desc: "Evidence-based mindful parenting, emotional regulation strategies, positive discipline, and child nutrition.",
     price: "Expert Guidance",
+    img: "/images/parenting_banner.jpg",
     to: "/features/parenting",
-    iconBg: "bg-emerald-100/80",
-    iconColor: "text-emerald-600",
+    iconBg: "bg-rose-100/80",
+    iconColor: "text-[#EA3484]",
     features: ["Parenting Coach & Support", "Child Psychological Growth", "Nutrition & Emotional Wellbeing"],
   },
   {
@@ -102,9 +109,10 @@ const programs: ProgramItem[] = [
     subTitle: "Astrological Insights for Your Child's Journey",
     desc: "Astrological birth chart (Janam Kundali) analysis, planetary strengths, and senior astrologer consultation.",
     price: "Starting ₹3,100",
+    img: "/images/about_premium.png",
     to: "/features/bhavishya-fal",
-    iconBg: "bg-indigo-100/80",
-    iconColor: "text-indigo-600",
+    iconBg: "bg-pink-100/80",
+    iconColor: "text-[#EA3484]",
     features: ["Kundli + Falit Report (₹3,500)", "Live Astrologer Consultation (₹3,100)", "Lifelong Nakshatra Guidance"],
   },
 ];
@@ -202,7 +210,7 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#FFFDFE] via-[#FDF6FA] to-[#F7FAFF] pt-14 md:pt-20 pb-16 md:pb-24 border-b border-pink-100/60 font-['Plus_Jakarta_Sans',sans-serif]">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#FFFDFE] via-[#FDF6FA] to-[#F7FAFF] pt-14 md:pt-20 pb-16 md:pb-24 border-b border-pink-100/60">
       {/* Background Ambience */}
       <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/25 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-purple-200/20 blur-3xl" />
@@ -210,18 +218,20 @@ export default function FeaturesSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Header Block */}
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14 space-y-3">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-[#F45B8A]" /> AstroBaby Programs & Services
           </span>
 
-          <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.15] text-[#172554] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#172554] tracking-tight">
             Explore Our{" "}
             <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
               Sacred Programs
             </span>
           </h2>
 
-          <p className="text-sm md:text-base leading-relaxed text-[#475569] font-['Manrope',sans-serif] max-w-2xl mx-auto">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+
+          <p className="text-sm md:text-base leading-relaxed text-[#475569] font-normal max-w-2xl mx-auto mt-2">
             From conscious pre-conception preparation to prenatal nurturing, gentle infant care, and future astrological insights.
           </p>
         </div>
@@ -264,40 +274,59 @@ export default function FeaturesSection() {
                   )}
 
                   <div>
-                    {/* Top Header: Icon & Price / Badge */}
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${prog.iconBg} ${prog.iconColor} transition-transform duration-300 shadow-xs`}
-                      >
-                        <Icon className="h-6 w-6" />
+                    {/* Thematic Image Header */}
+                    <div className="relative h-32 w-full rounded-2xl overflow-hidden mb-4 border border-pink-100/80">
+                      <img
+                        src={prog.img}
+                        alt={prog.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = "/images/garbh_dan_banner.png";
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
+
+                      {/* Top Badges & Icon Overlay */}
+                      <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
+                        <div
+                          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${prog.iconBg} ${prog.iconColor} shadow-xs backdrop-blur-md`}
+                        >
+                          <Icon className="h-4.5 w-4.5" />
+                        </div>
+
+                        <div className="flex items-center gap-1.5">
+                          {prog.badge && (
+                            <span className="bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-[9px] font-bold uppercase px-2 py-0.5 rounded-full shadow-2xs tracking-wider">
+                              {prog.badge}
+                            </span>
+                          )}
+                          {prog.price && (
+                            <span className="text-[10px] font-semibold text-[#172554] bg-white/95 backdrop-blur-md border border-pink-100 px-2 py-0.5 rounded-full shadow-2xs">
+                              {prog.price}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
-                        {prog.badge && (
-                          <span className="bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-2xs tracking-wider">
-                            {prog.badge}
-                          </span>
-                        )}
-                        {prog.price && (
-                          <span className="text-xs font-bold text-[#172554] bg-pink-50/90 border border-pink-100 px-3 py-1 rounded-full shadow-2xs">
-                            {prog.price}
-                          </span>
-                        )}
+                      {/* Subtitle tag at bottom */}
+                      <div className="absolute bottom-2 left-2.5 right-2.5">
+                        <span className="text-[10px] font-semibold text-pink-200 uppercase tracking-wide drop-shadow line-clamp-1">
+                          {prog.subTitle}
+                        </span>
                       </div>
                     </div>
 
-                    {/* Title & Exact Subtitle */}
-                    <div className="space-y-1">
-                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl sm:text-2xl font-normal text-[#172554] transition-colors duration-300">
+                    {/* Title */}
+                    <div className="space-y-0.5">
+                      <h3 className="text-lg sm:text-xl font-semibold text-[#172554] transition-colors duration-300 leading-snug">
                         {prog.title}
                       </h3>
-                      <p className="text-xs font-bold text-[#F45B8A] font-['Manrope',sans-serif] leading-snug">
-                        {prog.subTitle}
-                      </p>
                     </div>
 
                     {/* Short Description */}
-                    <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif]">
+                    <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">
                       {prog.desc}
                     </p>
                   </div>

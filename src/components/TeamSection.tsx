@@ -304,6 +304,8 @@ export default function TeamSection() {
                     data-parallax-team-img
                     src="/images/team_premium.png"
                     alt="Astro Baby Experts Panel"
+                    loading="lazy"
+                    decoding="async"
                     className="h-[112%] w-full object-cover scale-105"
                     style={{ transformOrigin: "center center" }}
                   />

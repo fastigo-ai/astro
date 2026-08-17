@@ -96,7 +96,7 @@ export default function AppDownloadSection({
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 lg:py-28 bg-[#FFFCFE] text-[#475569] overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]"
+      className="relative py-20 lg:py-28 bg-[#FFFCFE] text-[#475569] overflow-hidden"
     >
       {/* Soft Lavender & Rose Radial Ambient Glows (Behind Card) */}
       <div
@@ -124,11 +124,11 @@ export default function AppDownloadSection({
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-b from-[#3B82F6]/10 via-[#F45B8A]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
           {/* Heading */}
-          <h2 className="gsap-stagger-item text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554] leading-tight font-['Cormorant_Garamond',serif] mb-4 max-w-3xl mx-auto">
+          <h2 className="gsap-stagger-item text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-black leading-[1.2] tracking-tight mb-4 max-w-3xl mx-auto">
             {title || (
               <>
                 Begin Your Garbhadhan Sanskar Journey Today on{" "}
-                <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
+                <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
                   Astro Baby
                 </span>
               </>
@@ -136,7 +136,7 @@ export default function AppDownloadSection({
           </h2>
 
           {/* Subtitle */}
-          <p className="gsap-stagger-item text-[#5F5B73] text-base sm:text-lg max-w-xl mx-auto font-normal font-['Plus_Jakarta_Sans',sans-serif] leading-relaxed">
+          <p className="gsap-stagger-item text-[#5F5B73] text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed">
             {subtitle}
           </p>
 
@@ -144,7 +144,7 @@ export default function AppDownloadSection({
           <div className="gsap-stagger-item w-32 h-[1px] bg-gradient-to-r from-transparent via-[#F45B8A]/30 to-transparent mx-auto my-6 sm:my-8" />
 
           {/* Premium Store Badges (Slightly Curved on 4 Sides) */}
-          <div className="gsap-stagger-item flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 font-['Manrope',sans-serif]">
+          <div className="gsap-stagger-item flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
             {/* Google Play Button */}
             <a
               href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
@@ -155,6 +155,8 @@ export default function AppDownloadSection({
               <img
                 src="/images/google-play-badge.png"
                 alt="Get it on Google Play"
+                loading="lazy"
+                decoding="async"
                 className="h-11 sm:h-14 w-auto object-contain drop-shadow-md group-hover/btn:scale-105 transition-transform duration-300"
               />
             </a>
@@ -169,6 +171,8 @@ export default function AppDownloadSection({
               <img
                 src="/images/app-store-badge.png"
                 alt="Download on the App Store"
+                loading="lazy"
+                decoding="async"
                 className="h-11 sm:h-14 w-auto object-contain drop-shadow-md group-hover/btn:scale-105 transition-transform duration-300"
               />
             </a>

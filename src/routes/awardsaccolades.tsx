@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 const AI_AWARD_CARDS = [
   "/images/award_card_1.png",
@@ -61,18 +62,7 @@ function Layout({ children, activeLabel }: { children: React.ReactNode; activeLa
 
       {children}
 
-      <footer className="bg-[#0f2547] text-white/80 py-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

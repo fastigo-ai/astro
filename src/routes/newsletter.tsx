@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 export default function NewsletterPage() {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ export default function NewsletterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       {/* Header & Navbar */}
       <HeaderNavbar />
 
@@ -49,7 +50,7 @@ export default function NewsletterPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
+            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
           >
             <Sparkles className="h-3.5 w-3.5" />
             <span>Weekly Wisdom & Guidance</span>
@@ -59,7 +60,7 @@ export default function NewsletterPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['DM_Serif_Display',Georgia,serif] text-4xl sm:text-5xl md:text-6xl font-normal text-[#172554] tracking-tight leading-[1.15] max-w-4xl mx-auto"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] tracking-tight leading-[1.1] max-w-4xl mx-auto"
           >
             The Astro Baby{" "}
             <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
@@ -72,7 +73,7 @@ export default function NewsletterPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-['Manrope',sans-serif] leading-relaxed"
+            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
             Join over 50,000+ expectant parents receiving weekly Vedic shlokas, satvik recipes, trimester wellness tips, and astrological insights.
           </motion.p>
@@ -82,13 +83,13 @@ export default function NewsletterPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500"
+            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-500"
           >
             <Link to="/" className="hover:text-[#F45B8A] transition-colors">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-[#172554] font-bold">Newsletter</span>
+            <span className="text-[#172554] font-semibold">Newsletter</span>
           </motion.div>
         </div>
       </section>
@@ -114,10 +115,10 @@ export default function NewsletterPage() {
                     🌸
                   </div>
                   <div>
-                    <div className="text-xs font-bold font-['Plus_Jakarta_Sans',sans-serif] text-[#172554] leading-snug">
+                    <div className="text-xs font-semibold text-[#172554] leading-snug">
                       Weekly Garbhadhan Sutras
                     </div>
-                    <div className="text-[11px] text-[#475569] font-medium font-['Manrope',sans-serif]">
+                    <div className="text-[11px] text-[#475569] font-normal">
                       Ancient Mantras, Satvik Diet & Trimester Care
                     </div>
                   </div>
@@ -128,15 +129,15 @@ export default function NewsletterPage() {
             {/* Right Column: Subscription Form */}
             <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
                   <Mail className="h-3 w-3" /> Direct to Your Inbox
                 </div>
 
-                <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl lg:text-5xl font-normal text-[#172554] leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] leading-tight">
                   Subscribe & Receive Our Free 9-Month Starter Guide
                 </h2>
 
-                <p className="text-sm sm:text-base text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#475569] font-normal leading-relaxed">
                   Join a community of conscious parents. Delivered every Wednesday morning, completely free, with no spam.
                 </p>
               </div>
@@ -154,11 +155,11 @@ export default function NewsletterPage() {
                         <CheckCircle2 className="h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="font-['DM_Serif_Display',Georgia,serif] text-xl text-[#172554]">
+                        <h4 className="text-xl font-bold text-[#172554]">
                           Welcome to the Astro Baby Family!
                         </h4>
-                        <p className="text-xs text-slate-600 font-['Manrope',sans-serif]">
-                          We've sent a verification email and your free Garbhadhan Sanskar Starter PDF to <strong className="text-[#172554]">{email}</strong>.
+                        <p className="text-xs text-slate-600 font-normal">
+                          We've sent a verification email and your free Garbhadhan Sanskar Starter PDF to <strong className="text-[#172554] font-semibold">{email}</strong>.
                         </p>
                       </div>
                     </div>
@@ -166,7 +167,7 @@ export default function NewsletterPage() {
                     <div className="pt-2">
                       <button
                         onClick={() => setSubscribed(false)}
-                        className="inline-flex items-center gap-2 text-xs font-bold text-[#172554] hover:text-[#F45B8A] transition-colors"
+                        className="inline-flex items-center gap-2 text-xs font-semibold text-[#172554] hover:text-[#F45B8A] transition-colors"
                       >
                         <span>Subscribe with another email</span>
                         <ArrowRight className="h-3.5 w-3.5" />
@@ -181,13 +182,13 @@ export default function NewsletterPage() {
                         placeholder="Your First Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                        className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-sm text-[#172554] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                       />
 
                       <select
                         value={stage}
                         onChange={(e) => setStage(e.target.value)}
-                        className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                        className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-[#172554] focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                       >
                         <option>Planning Conception (Beej Sanskar)</option>
                         <option>1st Trimester (Months 1–3)</option>
@@ -205,7 +206,7 @@ export default function NewsletterPage() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="Enter your primary email address..."
-                          className="w-full pl-11 pr-4 py-4 rounded-2xl bg-slate-50 text-[#172554] placeholder:text-slate-400 text-sm border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all"
+                          className="w-full pl-11 pr-4 py-4 rounded-2xl bg-slate-50 text-[#172554] placeholder:text-slate-400 text-sm border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] focus:bg-white transition-all font-normal"
                         />
                         <Mail className="w-4.5 h-4.5 text-[#F45B8A] absolute left-4 top-4" />
                       </div>
@@ -213,7 +214,7 @@ export default function NewsletterPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="px-8 py-4 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white font-bold text-sm rounded-2xl shadow-[0_10px_25px_-5px_rgba(244,91,138,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(244,91,138,0.5)] transition-all duration-300 flex items-center justify-center gap-2 active:scale-98 disabled:opacity-75 shrink-0 cursor-pointer"
+                        className="px-8 py-4 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white font-semibold text-sm rounded-2xl shadow-[0_10px_25px_-5px_rgba(244,91,138,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(244,91,138,0.5)] transition-all duration-300 flex items-center justify-center gap-2 active:scale-98 disabled:opacity-75 shrink-0 cursor-pointer"
                       >
                         {loading ? (
                           <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -227,12 +228,12 @@ export default function NewsletterPage() {
                     </div>
 
                     {/* Trust Badges */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 pt-1 font-['Manrope',sans-serif]">
+                    <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 pt-1 font-normal">
                       <span className="flex items-center gap-1.5">
                         <ShieldCheck className="h-4 w-4 text-emerald-500" />
                         <span>100% Privacy. Unsubscribe with 1-click anytime.</span>
                       </span>
-                      <span className="flex items-center gap-1 text-[#172554] font-bold">
+                      <span className="flex items-center gap-1 text-[#172554] font-semibold">
                         <Star className="h-3.5 w-3.5 fill-[#F6C85F] text-[#F6C85F]" />
                         <span>Trusted by 50,000+ Parents</span>
                       </span>
@@ -249,20 +250,7 @@ export default function NewsletterPage() {
       <AppDownloadSection />
 
       {/* ── Footer ── */}
-      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div className="text-center md:text-left">
-            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
-          </div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition cursor-pointer">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

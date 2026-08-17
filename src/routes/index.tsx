@@ -9,6 +9,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HomeBgDrawings from "@/components/HomeBgDrawings";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
+import Footer from "@/components/common/Footer";
 
 const featuredLogos = [
   "astrobaby-garbh-sanskar-dainik-bhaskar.jpg",
@@ -208,18 +209,7 @@ export default function Home() {
       <NewsletterSection />
 
       {/* Footer */}
-      <footer className="bg-[#172554] text-white/80 py-10">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div>© {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.</div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

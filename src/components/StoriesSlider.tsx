@@ -76,16 +76,17 @@ export default function StoriesSlider() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center space-y-3"
         >
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
             <FiHeart className="h-3 w-3" /> USER STORIES
           </span>
-          <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-[#172554]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#172554] tracking-tight">
             Real Journeys,{" "}
             <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
               Beautiful Experiences
             </span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif] md:text-base">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#475569] font-normal md:text-base">
             Heartfelt stories from families across 62+ countries who found calm, confidence, and deeper spiritual connection through AstroBaby.
           </p>
         </motion.header>
@@ -112,24 +113,26 @@ export default function StoriesSlider() {
                 <img
                   src={AI_THUMBNAILS[index % AI_THUMBNAILS.length]}
                   alt={`${story.name}, an Astro Baby family`}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-transparent to-transparent" />
                 <span className="play-button absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/80 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-2xl transition duration-300 group-hover:scale-110">
                   <FiPlay className="ml-1 fill-current text-xl" />
                 </span>
-                <span className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full bg-[#172554]/90 px-3 py-1 text-xs font-bold text-white backdrop-blur shadow-sm">
+                <span className="absolute bottom-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full bg-[#172554]/90 px-3 py-1 text-xs font-semibold text-white backdrop-blur shadow-sm">
                   <FiMapPin className="text-[#F45B8A]" /> {story.city}
                 </span>
-                <span className="absolute -bottom-4 right-4 grid h-10 w-10 place-items-center rounded-2xl bg-[#172554] text-2xl text-white shadow-lg font-['DM_Serif_Display',Georgia,serif]">
+                <span className="absolute -bottom-4 right-4 grid h-10 w-10 place-items-center rounded-2xl bg-[#172554] text-xl font-bold text-white shadow-lg">
                   “
                 </span>
               </button>
               <div className="p-6 pt-6">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors">{story.name}</h3>
-                    <p className="mt-0.5 text-[11px] font-bold uppercase tracking-wider text-[#F45B8A]">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug">{story.name}</h3>
+                    <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-[#F45B8A]">
                       Verified family
                     </p>
                   </div>
@@ -142,7 +145,7 @@ export default function StoriesSlider() {
                     ))}
                   </div>
                 </div>
-                <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif]">“{story.quote}”</p>
+                <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">“{story.quote}”</p>
                 {/* <div className="mt-5 grid grid-cols-3 border-t border-slate-200 pt-5">
                   {benefits.map(({ icon: Icon, label }) => (
                     <div key={label} className="flex flex-col items-center gap-2 px-1 text-center">

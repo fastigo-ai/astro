@@ -58,6 +58,8 @@ export default function AboutSection() {
                   <img
                     src="/images/about_premium.png"
                     alt="Serene Motherhood Garbhadhan Sanskar"
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   />
                 </div>

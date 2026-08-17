@@ -8,9 +8,9 @@ const featureCards = [
     icon: Sparkles,
     title: "Personalized Pregnancy Care",
     subtitle: "Week-by-week updates, tips & health guidance.",
-    bgColor: "bg-sky-50/70 border-sky-200/60 hover:bg-sky-100/70",
-    iconBg: "bg-sky-500/10",
-    iconColor: "text-[#3B82F6]",
+    bgColor: "bg-pink-50/70 border-pink-200/60 hover:bg-pink-100/70",
+    iconBg: "bg-[#EA3484]/10",
+    iconColor: "text-[#EA3484]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -18,9 +18,9 @@ const featureCards = [
     icon: Moon,
     title: "Astrology Insights",
     subtitle: "Janam Kundli, auspicious dates & predictions.",
-    bgColor: "bg-purple-50/70 border-purple-200/60 hover:bg-purple-100/70",
-    iconBg: "bg-purple-500/10",
-    iconColor: "text-purple-600",
+    bgColor: "bg-rose-50/70 border-rose-200/60 hover:bg-rose-100/70",
+    iconBg: "bg-rose-500/10",
+    iconColor: "text-[#F45B8A]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -29,8 +29,8 @@ const featureCards = [
     title: "Expert Guidance",
     subtitle: "Consult doctors, astrologers & wellness experts.",
     bgColor: "bg-pink-50/70 border-pink-200/60 hover:bg-pink-100/70",
-    iconBg: "bg-[#F45B8A]/10",
-    iconColor: "text-[#F45B8A]",
+    iconBg: "bg-[#EA3484]/10",
+    iconColor: "text-[#EA3484]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -79,35 +79,37 @@ export default function AboutAstroBabyDetail() {
   }, []);
 
   return (
-    <div ref={rootRef} className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 space-y-12 md:space-y-16 font-['Plus_Jakarta_Sans',sans-serif]">
+    <div ref={rootRef} className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 space-y-12 md:space-y-16">
       {/* ── 1. TOP SECTION: Main About Astro Baby Card ── */}
       <div
         data-about-card
-        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] border border-white/80 bg-white/85 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)] transition-all duration-300"
+        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] border border-pink-100/80 bg-white/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)] transition-all duration-300"
       >
         {/* Subtle background glow */}
-        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-pink-100/40 blur-3xl z-0" />
-        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-sky-100/40 blur-3xl z-0" />
+        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-pink-100/50 blur-3xl z-0" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-rose-100/50 blur-3xl z-0" />
 
         <div className="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
           {/* Left Column: Celestial Pregnant Mother Image */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[440px] overflow-hidden rounded-[24px] shadow-[0_16px_40px_rgba(23,37,84,0.12)] border-4 border-white/90 bg-gradient-to-b from-white to-pink-50/30 group">
+            <div className="relative w-full max-w-[440px] overflow-hidden rounded-[24px] shadow-[0_16px_40px_rgba(23,37,84,0.12)] border-4 border-white/90 bg-gradient-to-b from-white to-pink-50/50 group">
               <img
                 src="/images/celestial_mother.png"
                 alt="Astro Baby Celestial Pregnant Mother"
+                loading="lazy"
+                decoding="async"
                 className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/60 via-transparent to-transparent pointer-events-none" />
               
               {/* Floating Badge */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold text-[#172554] shadow-md backdrop-blur-md border border-white/60">
+              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#172554] shadow-md backdrop-blur-md border border-white/60">
                 <Star className="h-3.5 w-3.5 fill-[#F6C85F] text-[#F6C85F]" />
                 <span>Ancient Vedic Science</span>
               </div>
 
               <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 p-3.5 backdrop-blur-md border border-white/70 text-center shadow-lg">
-                <p className="text-xs font-bold text-[#172554]">
+                <p className="text-xs font-semibold text-[#172554]">
                   Nurtured by Obstetric Science & Cosmic Wisdom
                 </p>
                 <p className="text-[10px] text-[#F45B8A] font-semibold mt-0.5">
@@ -121,32 +123,26 @@ export default function AboutAstroBabyDetail() {
           <div className="lg:col-span-7 space-y-5">
             {/* Header Block */}
             <div className="text-center md:text-left space-y-2.5">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
                 <Sparkles className="h-3 w-3" /> Essence of Astro Baby
               </div>
 
-              <h1 className="font-['DM_Serif_Display',Georgia,serif] text-3xl md:text-4xl lg:text-5xl font-normal text-[#172554] tracking-tight leading-[1.15]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] tracking-tight leading-[1.2]">
                 Bridging Ancient Vedic Roots with Modern Science
               </h1>
 
               {/* Decorative Divider */}
-              <div className="flex items-center justify-center md:justify-start gap-2 text-[#F45B8A] py-1">
-                <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
-                <span className="text-xs">✦</span>
-                <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
-                <span className="text-xs">✦</span>
-                <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
-              </div>
+              <div className="w-20 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto md:mx-0 my-2"></div>
 
-              <h2 className="text-base md:text-lg font-semibold text-[#3B82F6] leading-snug">
+              <h2 className="text-base md:text-lg font-semibold text-[#EA3484] leading-snug">
                 Nurturing Life with Compassionate Care, Medical Insights & Cosmic Wisdom
               </h2>
             </div>
 
             {/* Introduction Paragraphs */}
-            <div className="space-y-3 text-sm md:text-[15px] leading-relaxed text-[#475569] font-['Manrope',sans-serif]">
+            <div className="space-y-3 text-sm md:text-[15px] leading-relaxed text-[#475569] font-normal">
               <p>
-                <strong className="text-[#172554] font-bold">Astro Baby</strong> is India's pioneer digital Garbhadhan Sanskar platform designed to support parents-to-be on their sacred journey of pregnancy, motherhood, and conscious parenting with the perfect harmony of medical guidance, personalized wellness, and timeless astrological wisdom.
+                <strong className="text-[#172554] font-semibold">Astro Baby</strong> is India's pioneer digital Garbhadhan Sanskar platform designed to support parents-to-be on their sacred journey of pregnancy, motherhood, and conscious parenting with the perfect harmony of medical guidance, personalized wellness, and timeless astrological wisdom.
               </p>
 
               <p>
@@ -154,7 +150,7 @@ export default function AboutAstroBabyDetail() {
               </p>
 
               <p>
-                From trimester-wise Vedic mantras, satvik diet plans, and guided yoga, to personalized Janam Kundli insights – Astro Baby is your complete sanctum for a joyful, stress-free motherhood.
+                From trimester-wise Vedic mantras, satvik diet plans, and guided yoga, to personalized Janam Kundali insights – Astro Baby is your complete sanctum for a joyful, stress-free motherhood.
               </p>
             </div>
 
@@ -175,10 +171,10 @@ export default function AboutAstroBabyDetail() {
                     >
                       <Icon className="h-5.5 w-5.5" />
                     </div>
-                    <h3 className={`text-xs font-bold ${card.titleColor} mb-1.5 leading-tight`}>
+                    <h3 className={`text-xs font-semibold ${card.titleColor} mb-1.5 leading-tight`}>
                       {card.title}
                     </h3>
-                    <p className={`text-[11px] font-medium ${card.subtitleColor} leading-relaxed font-['Manrope',sans-serif]`}>
+                    <p className={`text-[11px] font-normal ${card.subtitleColor} leading-relaxed`}>
                       {card.subtitle}
                     </p>
                   </div>
@@ -192,7 +188,7 @@ export default function AboutAstroBabyDetail() {
       {/* ── 2. BOTTOM SECTION: Our Introduction Video ── */}
       <div
         data-video-container
-        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] bg-gradient-to-br from-[#FFF6FA] via-[#F8FAFF] to-[#EAF4FF] border border-white/90 p-6 md:p-10 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.06)] text-center space-y-6"
+        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#FFF0F5] border border-pink-100/80 p-6 md:p-10 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.06)] text-center space-y-6"
       >
         {/* Subtle Constellation SVG Decorations */}
         <div className="pointer-events-none absolute inset-0 opacity-20 overflow-hidden">
@@ -218,21 +214,14 @@ export default function AboutAstroBabyDetail() {
 
         {/* Section Header */}
         <div className="relative z-10 max-w-xl mx-auto space-y-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
             <Play className="h-3 w-3 fill-[#F45B8A]" /> Visual Experience
           </span>
-          <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl lg:text-4xl font-normal text-[#172554]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-[1.2] tracking-tight">
             Experience Astro Baby in Action
           </h2>
-          {/* Decorative Divider */}
-          <div className="flex items-center justify-center gap-2 text-[#F45B8A] py-1">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
-            <span className="text-xs">✦</span>
-            <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
-            <span className="text-xs">✦</span>
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
-          </div>
-          <p className="text-xs md:text-sm text-[#475569] font-['Manrope',sans-serif]">
+          <div className="w-20 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto my-2"></div>
+          <p className="text-xs md:text-sm text-[#475569] font-normal leading-relaxed">
             Watch how our personalized Garbhadhan Sanskar modules nurture both mother and baby.
           </p>
         </div>
@@ -259,6 +248,8 @@ export default function AboutAstroBabyDetail() {
               <img
                 src="/images/video_thumb.png"
                 alt="AstroBaby Introduction Video Thumbnail"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -271,16 +262,16 @@ export default function AboutAstroBabyDetail() {
                   <Moon className="h-6 w-6 text-[#F6C85F] fill-[#F6C85F]" />
                 </div>
                 <div>
-                  <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal leading-none tracking-wide text-white drop-shadow">
+                  <h3 className="text-xl font-bold leading-none tracking-wide text-white drop-shadow">
                     AstroBaby
                   </h3>
-                  <p className="text-[10px] text-pink-200 tracking-widest font-['Plus_Jakarta_Sans',sans-serif] uppercase mt-1">
+                  <p className="text-[10px] text-pink-200 tracking-widest uppercase mt-1 font-medium">
                     Guide • Nurture • Enlighten
                   </p>
                 </div>
               </div>
 
-              <div className="absolute top-20 left-6 max-w-xs text-left hidden sm:block text-white/90 text-xs font-['Manrope',sans-serif] leading-relaxed drop-shadow">
+              <div className="absolute top-20 left-6 max-w-xs text-left hidden sm:block text-white/90 text-xs font-normal leading-relaxed drop-shadow">
                 Your sacred companion from preconception to mindful parenting.
               </div>
 

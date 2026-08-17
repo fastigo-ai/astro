@@ -4,6 +4,7 @@ import { gsap } from "@/utils/gsapSetup";
 import { Sparkles, Heart, Search, MapPin, Play, ChevronRight, Star, Video, ArrowRight, X } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 type Story = { img: string; ext: string; yt: string; name: string; city: string };
 
@@ -281,25 +282,12 @@ const stories: Story[] = [
 
 function Layout({ children }: { children: React.ReactNode; activeLabel?: string }) {
   return (
-    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
       {children}
 
-      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div className="text-center md:text-left">
-            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
-          </div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition cursor-pointer">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -397,25 +385,25 @@ export default function TestimonialPage() {
             <span>Real Experiences & Miracles</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#172554] leading-[1.15] font-['DM_Serif_Display',Georgia,serif] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] leading-[1.1] tracking-tight">
             Astro Baby{" "}
             <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
               User Stories & Reviews
             </span>
           </h1>
 
-          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-['Manrope',sans-serif]">
+          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
             Hear directly from thousands of happy parents across 62+ countries whose pregnancies,
             mindset, and newborns were blessed through Garbhadhan Sanskar.
           </p>
 
           {/* Breadcrumbs */}
-          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500">
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-500">
             <Link to="/" className="hover:text-[#F45B8A] transition-colors">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-[#172554] font-bold">Testimonials</span>
+            <span className="text-[#172554] font-semibold">Testimonials</span>
           </div>
 
           {/* Search Input Box */}
@@ -429,7 +417,7 @@ export default function TestimonialPage() {
                   setCurrentPage(1);
                 }}
                 placeholder="Search stories by parent's name or city (e.g. Pune, Delhi, Patil, Indore)..."
-                className="w-full px-5 py-4 pl-12 pr-10 rounded-full bg-white/95 backdrop-blur-xl text-[#172554] text-sm md:text-base placeholder-slate-400 shadow-[0_10px_30px_rgba(23,37,84,0.06)] border border-pink-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] transition-all"
+                className="w-full px-5 py-4 pl-12 pr-10 rounded-full bg-white/95 backdrop-blur-xl text-[#172554] text-sm md:text-base placeholder-slate-400 shadow-[0_10px_30px_rgba(23,37,84,0.06)] border border-pink-200 focus:outline-none focus:ring-2 focus:ring-[#F45B8A] transition-all font-normal"
               />
               <Search className="w-5 h-5 text-[#F45B8A] absolute left-4.5 pointer-events-none" />
               {searchQuery && (
@@ -438,7 +426,7 @@ export default function TestimonialPage() {
                     setSearchQuery("");
                     setCurrentPage(1);
                   }}
-                  className="absolute right-4.5 text-slate-400 hover:text-[#F45B8A] p-1 font-bold transition-colors text-sm"
+                  className="absolute right-4.5 text-slate-400 hover:text-[#F45B8A] p-1 font-semibold transition-colors text-sm"
                   aria-label="Clear search"
                 >
                   ✕
@@ -470,17 +458,18 @@ export default function TestimonialPage() {
             </div>
 
             <div className="mt-8 text-center space-y-3">
-              <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl md:text-4xl font-normal text-[#172554]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-tight">
                 Inspiring Experiences of 1,00,000+ Families Around The World
               </h2>
-              <p className="text-[#475569] text-sm sm:text-base max-w-3xl mx-auto font-['Manrope',sans-serif] leading-relaxed">
+              <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+              <p className="text-[#475569] text-sm sm:text-base max-w-3xl mx-auto font-normal leading-relaxed">
                 Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, joyful prenatal bonding, and
                 miraculous changes to expectant families across 62+ countries.
               </p>
               <div className="pt-2">
                 <button
                   onClick={() => setActiveModalVideo(DEFAULT_VIDEO_ID)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs sm:text-sm font-bold rounded-full shadow-lg shadow-[#F45B8A]/30 hover:scale-105 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg shadow-[#F45B8A]/30 hover:scale-105 transition-all cursor-pointer"
                 >
                   <Play className="w-4 h-4 fill-white text-white" />
                   <span>Watch Featured Video Story</span>
@@ -500,21 +489,21 @@ export default function TestimonialPage() {
           {/* Header Stats / Filters info */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-4 border-b border-pink-200/80 gap-3">
             <div>
-              <h2 className="font-['DM_Serif_Display',Georgia,serif] text-2xl md:text-3xl font-normal text-[#172554]">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#172554] leading-tight">
                 Verified Parent Reviews
               </h2>
               {filteredStories.length > 0 && (
-                <p className="text-xs md:text-sm text-slate-500 mt-1 font-['Manrope',sans-serif]">
-                  Showing <span className="font-bold text-[#172554]">{startIndex}</span> to{" "}
-                  <span className="font-bold text-[#172554]">{endIndex}</span> of{" "}
-                  <span className="font-bold text-[#F45B8A]">{filteredStories.length}</span> verified stories
+                <p className="text-xs md:text-sm text-slate-500 mt-1 font-normal">
+                  Showing <span className="font-semibold text-[#172554]">{startIndex}</span> to{" "}
+                  <span className="font-semibold text-[#172554]">{endIndex}</span> of{" "}
+                  <span className="font-semibold text-[#F45B8A]">{filteredStories.length}</span> verified stories
                 </p>
               )}
             </div>
 
             {/* Total Pages Badge */}
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold px-3.5 py-1.5 bg-white border border-pink-200 rounded-full text-[#172554] shadow-xs">
+              <span className="text-xs font-semibold px-3.5 py-1.5 bg-white border border-pink-200 rounded-full text-[#172554] shadow-xs">
                 Page {safeCurrentPage} of {totalPages}
               </span>
             </div>
@@ -550,7 +539,7 @@ export default function TestimonialPage() {
                       </div>
 
                       {/* Top Left: City Badge */}
-                      <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                      <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
                         <MapPin className="w-3 h-3 text-[#F45B8A]" />
                         {s.city}
                       </span>
@@ -570,21 +559,21 @@ export default function TestimonialPage() {
                             <Star key={idx} className="w-3.5 h-3.5 fill-amber-400" />
                           ))}
                         </div>
-                        <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-1">
+                        <h3 className="text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-1">
                           {s.name}
                         </h3>
-                        <p className="text-xs text-slate-500 font-medium font-['Manrope',sans-serif] mt-0.5">
+                        <p className="text-xs text-slate-500 font-normal mt-0.5">
                           Verified Astro Baby Garbhadhan Sanskar Family
                         </p>
                       </div>
 
                       {/* Watch Button */}
                       <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-xs font-bold text-[#F45B8A] group-hover:text-[#d94d7a] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        <span className="text-xs font-semibold text-[#F45B8A] group-hover:text-[#d94d7a] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                           <Play className="w-3.5 h-3.5 fill-current" />
                           <span>Watch Experience Video</span>
                         </span>
-                        <span className="text-xs text-slate-400 font-bold group-hover:text-[#172554] transition-colors">
+                        <span className="text-xs text-slate-400 font-semibold group-hover:text-[#172554] transition-colors">
                           Play →
                         </span>
                       </div>
@@ -599,10 +588,10 @@ export default function TestimonialPage() {
               <div className="w-16 h-16 bg-pink-50 text-[#F45B8A] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-8 h-8" />
               </div>
-              <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl font-normal text-[#172554]">
+              <h3 className="text-2xl font-semibold text-[#172554]">
                 No Stories Found
               </h3>
-              <p className="text-slate-500 mt-2 text-sm font-['Manrope',sans-serif]">
+              <p className="text-slate-500 mt-2 text-sm font-normal">
                 We couldn't find any user stories matching "{searchQuery}".
               </p>
               <button
@@ -610,7 +599,7 @@ export default function TestimonialPage() {
                   setSearchQuery("");
                   setCurrentPage(1);
                 }}
-                className="mt-6 px-7 py-3 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs font-bold rounded-full hover:shadow-md transition-all shadow-sm cursor-pointer"
+                className="mt-6 px-7 py-3 bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white text-xs font-semibold rounded-full hover:shadow-md transition-all shadow-sm cursor-pointer"
               >
                 Reset Search
               </button>
@@ -620,9 +609,9 @@ export default function TestimonialPage() {
           {/* TAILWIND CSS PAGINATION BAR */}
           {totalPages > 1 && (
             <div className="mt-14 pt-8 border-t border-pink-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs sm:text-sm text-slate-500 font-['Manrope',sans-serif]">
-                Page <span className="font-bold text-[#172554]">{safeCurrentPage}</span> of{" "}
-                <span className="font-bold text-[#172554]">{totalPages}</span> (
+              <div className="text-xs sm:text-sm text-slate-500 font-normal">
+                Page <span className="font-semibold text-[#172554]">{safeCurrentPage}</span> of{" "}
+                <span className="font-semibold text-[#172554]">{totalPages}</span> (
                 {filteredStories.length} total stories)
               </div>
 
@@ -720,7 +709,7 @@ export default function TestimonialPage() {
         title={
           <>
             Begin Your Garbhadhan Sanskar Journey Today on{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#3B82F6] to-[#F45B8A] bg-clip-text text-transparent font-semibold">
+            <span className="text-black font-semibold">
               Astro Baby
             </span>
           </>

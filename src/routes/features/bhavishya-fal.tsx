@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 const SERVICES = [
   {
@@ -21,8 +22,9 @@ const SERVICES = [
     title: "Kundli + Falit Report",
     subTitle: "Detailed Astrological Life Predictions",
     price: "₹3,500",
+    img: "/images/features/monthly_calendar.png",
     badge: "Comprehensive",
-    badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
+    badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
     desc: "Complete Vedic Janam Kundali preparation along with thorough planetary analysis, Dasha timelines, and personalized remedy guides for your child's auspicious future.",
     features: [
       "Full Vedic Janam Kundali (Birth Chart Generation)",
@@ -38,8 +40,9 @@ const SERVICES = [
     title: "Astrologer Consultation",
     subTitle: "Live 1-on-1 Astrologer Session",
     price: "₹3,100",
+    img: "/images/features/isht_mantra.jpg",
     badge: "Direct 1-on-1",
-    badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
+    badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
     desc: "Direct live audio/video consultation with senior Vedic astrologers to ask specific questions about your newborn, naming syllables, and parenting alignment.",
     features: [
       "30-Minute Live 1-on-1 Astrologer Session",
@@ -53,56 +56,102 @@ const SERVICES = [
 
 export default function BhavishyaFalPage() {
   return (
-    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-gradient-to-b from-[#FAF5FF] via-white to-[#FFF6FA] text-slate-800 font-sans selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
-      {/* ── Hero Section ── */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
-        <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-indigo-200/30 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
+      {/* ── 1. Hero Banner Section with Text Overlay ── */}
+      <section className="relative z-10">
+        <motion.div
+          className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[560px] flex items-center"
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Background Banner Image */}
+          <img
+            src="/images/baal_bhavish_banner.jpg"
+            alt="Astro Baby Bhavishya Fal"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-5">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 text-indigo-700 border border-indigo-200/80 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur-md shadow-sm">
-            <Compass className="h-3.5 w-3.5" />
-            <span>Vedic Astrological Guidance • Starting ₹3,100</span>
+          {/* Contrast Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/75 sm:to-transparent" />
+          <div className="absolute inset-0 bg-slate-950/30 sm:bg-transparent" />
+
+          {/* Banner Content Overlay (Right-Aligned) */}
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-16 w-full flex justify-end">
+            <div className="max-w-xl lg:max-w-2xl text-left">
+              {/* Badge */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold mb-4 shadow-sm"
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Compass className="h-4 w-4 text-pink-300" />
+                Astro Baby • Vedic Astrological Guidance • Starting ₹3,100
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                Bhavishya Phal
+                <span className="text-pink-300 font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl block mt-1.5">
+                  Astrological Predictions & Consultations
+                </span>
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                className="text-pink-50/90 text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xl font-normal drop-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Unlocking your child's natural planetary strengths, innate talents, and life potentials through precise Vedic Janam Kundali analysis and scholar consultations.
+              </motion.p>
+
+              {/* Action Buttons & Highlights */}
+              <motion.div
+                className="flex flex-wrap items-center gap-3 pt-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-semibold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300"
+                >
+                  Book Consultation (₹3,100)
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <span className="text-white/85 text-xs sm:text-sm font-medium px-3.5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                  Janam Kundali • Falit Report • Live Astrologer
+                </span>
+              </motion.div>
+            </div>
           </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#172554] leading-[1.15] font-['DM_Serif_Display',Georgia,serif] tracking-tight">
-            Bhavishya Fal —{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-indigo-600 to-[#F45B8A] bg-clip-text text-transparent">
-              Astrological Services
-            </span>
-          </h1>
-
-          <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-['Manrope',sans-serif]">
-            Unlocking your child's natural planetary strengths, innate talents, and life potentials through precise Vedic Janam Kundali analysis and scholar consultations.
-          </p>
-
-          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500">
-            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
-              Home
-            </Link>
-            <span className="text-slate-400">/</span>
-            <Link to="/features" className="hover:text-[#F45B8A] transition-colors">
-              Courses
-            </Link>
-            <span className="text-slate-400">/</span>
-            <span className="text-[#172554] font-bold">Bhavishya Fal</span>
-          </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ── 2 Service Cards Section ── */}
-      <section className="py-16 md:py-24 bg-white/95">
+      <section className="py-16 md:py-24 bg-white/95 relative z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200/80 bg-indigo-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 backdrop-blur-sm shadow-xs">
-              <Sparkles className="h-3.5 w-3.5" /> 2 Dedicated Service Packages
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
+              <Sparkles className="h-3.5 w-3.5 text-[#EA3484]" /> 2 Dedicated Service Packages
             </span>
-            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] leading-[1.2] tracking-tight mb-4">
               Choose Your Astrological Consultation
             </h2>
-            <p className="text-sm md:text-base text-[#475569] font-['Manrope',sans-serif]">
+            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+            <p className="text-sm md:text-base text-[#475569] font-normal mt-2 leading-relaxed">
               Authentic Vedic calculations prepared by renowned astrologers.
             </p>
           </div>
@@ -111,47 +160,63 @@ export default function BhavishyaFalPage() {
             {SERVICES.map((srv) => (
               <div
                 key={srv.id}
-                className="bg-gradient-to-br from-indigo-50/25 via-white to-purple-50/20 rounded-[32px] p-8 sm:p-9 border border-indigo-100 shadow-[0_15px_45px_rgba(23,37,84,0.06)] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
+                className="bg-gradient-to-br from-pink-50/30 via-white to-rose-50/20 rounded-[32px] p-7 sm:p-8 border border-pink-100/90 shadow-[0_15px_45px_rgba(23,37,84,0.06)] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${srv.badgeColor}`}>
-                      {srv.badge}
-                    </span>
-                    <div className="flex items-center gap-1 text-amber-400">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                      ))}
+                  {/* Thematic Image Header */}
+                  <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 border border-white shadow-sm">
+                    <img
+                      src={srv.img}
+                      alt={srv.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                      <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border bg-white/95 backdrop-blur-md ${srv.badgeColor}`}>
+                        {srv.badge}
+                      </span>
+                      <div className="flex items-center gap-1 text-amber-400 bg-slate-900/60 backdrop-blur-md px-2 py-0.5 rounded-full">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-amber-400" />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-3 left-3">
+                      <span className="text-xs font-semibold text-pink-200 uppercase tracking-wide drop-shadow">
+                        {srv.subTitle}
+                      </span>
                     </div>
                   </div>
 
-                  <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl font-normal text-[#172554] group-hover:text-indigo-600 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#172554] group-hover:text-[#EA3484] transition-colors leading-snug">
                     {srv.title}
                   </h3>
-                  <p className="text-xs font-bold text-indigo-600 uppercase tracking-wide mt-0.5">
+                  <p className="text-xs font-semibold text-[#EA3484] uppercase tracking-wide mt-0.5">
                     {srv.subTitle}
                   </p>
 
                   {/* Price */}
-                  <div className="mt-4 pb-4 border-b border-indigo-100">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-[#172554] tracking-tight">
+                  <div className="mt-4 pb-4 border-b border-pink-100">
+                    <span className="text-3xl sm:text-4xl font-bold text-[#172554] tracking-tight">
                       {srv.price}
                     </span>
                   </div>
 
-                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-[#475569] font-['Manrope',sans-serif]">
+                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">
                     {srv.desc}
                   </p>
 
                   {/* Inclusions */}
                   <div className="mt-6 space-y-2.5">
-                    <p className="text-xs font-bold text-[#172554] uppercase tracking-wider">
+                    <p className="text-xs font-semibold text-[#172554] uppercase tracking-wider">
                       Service Inclusions:
                     </p>
                     <ul className="space-y-2">
                       {srv.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569]">
-                          <Check className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] font-normal">
+                          <Check className="w-4 h-4 text-[#EA3484] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}
@@ -164,7 +229,7 @@ export default function BhavishyaFalPage() {
                     href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-3.5 rounded-full bg-[#172554] hover:bg-indigo-900 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                    className="w-full py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)]"
                   >
                     <span>Book {srv.title}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -180,11 +245,7 @@ export default function BhavishyaFalPage() {
       <AppDownloadSection />
 
       {/* Footer */}
-      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-          © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

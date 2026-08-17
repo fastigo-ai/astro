@@ -15,6 +15,7 @@ import {
 import AboutAstroBabyDetail from "@/components/AboutAstroBabyDetail";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
+import Footer from "@/components/common/Footer";
 
 const storyPillars = [
   {
@@ -22,8 +23,8 @@ const storyPillars = [
     title: "Positive Pregnancy",
     text: "Empowering every expectant mother with serenity, emotional balance, and obstetric clarity for a peaceful gestational journey.",
     gradient: "from-pink-500/10 to-rose-500/5",
-    iconColor: "text-[#F45B8A]",
-    borderColor: "border-pink-200/60 hover:border-[#F45B8A]/50",
+    iconColor: "text-[#EA3484]",
+    borderColor: "border-pink-200/80 hover:border-[#EA3484]/50",
   },
   {
     icon: Sparkles,
@@ -31,23 +32,23 @@ const storyPillars = [
     text: "Nurturing the baby in the womb through authentic Garbhadhan Sanskar mantras, noble thoughts, and cognitive enrichment.",
     gradient: "from-amber-500/10 to-yellow-500/5",
     iconColor: "text-[#F6C85F]",
-    borderColor: "border-amber-200/60 hover:border-[#F6C85F]/50",
+    borderColor: "border-amber-200/80 hover:border-[#F6C85F]/50",
   },
   {
     icon: Globe,
     title: "Global Vedic Heritage",
     text: "Bringing authentic Garbhadhan Sanskar wisdom to families in over 62+ countries across languages and cultural boundaries.",
-    gradient: "from-blue-500/10 to-sky-500/5",
-    iconColor: "text-[#3B82F6]",
-    borderColor: "border-blue-200/60 hover:border-[#3B82F6]/50",
+    gradient: "from-pink-500/10 to-rose-500/5",
+    iconColor: "text-[#F45B8A]",
+    borderColor: "border-pink-200/80 hover:border-[#F45B8A]/50",
   },
   {
     icon: GraduationCap,
     title: "Scientific & Medical Rigor",
     text: "Synthesizing authentic Vedic scriptures with modern gynecological research, fetal neuroscience, and maternal nutrition.",
-    gradient: "from-purple-500/10 to-indigo-500/5",
-    iconColor: "text-purple-600",
-    borderColor: "border-purple-200/60 hover:border-purple-400/50",
+    gradient: "from-rose-500/10 to-pink-500/5",
+    iconColor: "text-[#EA3484]",
+    borderColor: "border-rose-200/80 hover:border-[#EA3484]/50",
   },
 ];
 
@@ -94,16 +95,16 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       {/* Header & Navbar */}
       <HeaderNavbar />
 
       {/* ── Page Hero / Banner: Our Story ── */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#EAF4FF]">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden border-b border-pink-100/60 bg-gradient-to-b from-[#FFF6FA] via-[#FFF8FD] to-[#FFFCFE]">
         {/* Ambient Glow Spheres */}
         <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-sky-200/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 left-10 h-80 w-80 rounded-full bg-amber-100/40 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-rose-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 left-10 h-80 w-80 rounded-full bg-pink-100/40 blur-3xl" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
@@ -111,7 +112,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-md shadow-sm mb-4"
+            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-md shadow-sm mb-4"
           >
             <Sparkles className="h-3.5 w-3.5" />
             <span>Our Origins & Sacred Journey</span>
@@ -122,10 +123,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-['DM_Serif_Display',Georgia,serif] text-4xl sm:text-5xl md:text-6xl font-normal text-[#172554] tracking-tight leading-[1.15] max-w-4xl mx-auto"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] tracking-tight leading-[1.1] max-w-4xl mx-auto"
           >
             The Story of{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
               Astro Baby
             </span>
           </motion.h1>
@@ -135,7 +136,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-['Manrope',sans-serif] leading-relaxed"
+            className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
             How ancient Garbhadhan Sanskar wisdom and modern obstetric neuroscience united to guide thousands of parents toward joyful, divine childbirth.
           </motion.p>
@@ -145,15 +146,15 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-500"
+            className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-slate-500"
           >
-            <Link to="/" className="hover:text-[#F45B8A] transition-colors flex items-center gap-1">
+            <Link to="/" className="hover:text-[#EA3484] transition-colors flex items-center gap-1">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
             <span className="text-slate-600">About Us</span>
             <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-[#172554] font-bold">Our Story</span>
+            <span className="text-[#172554] font-semibold">Our Story</span>
           </motion.div>
         </div>
       </section>
@@ -162,23 +163,17 @@ export default function AboutPage() {
       <AboutAstroBabyDetail />
 
       {/* ── Core Mission & Vision Pillars ── */}
-      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] border-y border-pink-100/60">
+      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#FFF6FA] border-y border-pink-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-sm">
               <Heart className="h-3 w-3" /> Guiding Principles
             </span>
-            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554] leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight">
               Our Four Sacred Pillars
             </h2>
-            <div className="flex items-center justify-center gap-2 text-[#F45B8A] py-1">
-              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
-              <span className="text-xs">✦</span>
-              <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
-              <span className="text-xs">✦</span>
-              <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
-            </div>
-            <p className="text-sm sm:text-base text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+            <p className="text-sm sm:text-base text-[#475569] font-normal leading-relaxed mt-2">
               Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.
             </p>
           </div>
@@ -194,21 +189,21 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`group relative overflow-hidden rounded-[26px] bg-white/90 p-6 sm:p-7 border ${item.borderColor} shadow-[0_10px_35px_rgba(23,37,84,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(23,37,84,0.09)] flex flex-col justify-between`}
+                  className={`group relative overflow-hidden rounded-[26px] bg-white/90 p-6 sm:p-7 border ${item.borderColor} shadow-[0_10px_35px_rgba(23,37,84,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(234,52,132,0.12)] flex flex-col justify-between`}
                 >
                   <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   <div className="relative z-10 space-y-4">
-                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-white shadow-md border border-slate-100 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-white shadow-md border border-pink-100 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
                       <IconComp className="h-6 w-6" />
                     </div>
-                    <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl font-normal text-[#172554]">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#172554] leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#475569] font-normal leading-relaxed">
                       {item.text}
                     </p>
                   </div>
-                  <div className="relative z-10 pt-4 mt-4 border-t border-slate-100/80 flex items-center text-xs font-bold text-[#172554] group-hover:text-[#F45B8A] transition-colors">
+                  <div className="relative z-10 pt-4 mt-4 border-t border-pink-100/80 flex items-center text-xs font-semibold text-[#172554] group-hover:text-[#EA3484] transition-colors">
                     <span>Explore philosophy</span>
                     <ArrowRight className="h-3 w-3 ml-1.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -220,19 +215,19 @@ export default function AboutPage() {
       </section>
 
       {/* ── Impact & Numbers Section ── */}
-      <section className="py-16 md:py-20 relative z-10 bg-[#172554] text-white overflow-hidden">
-        <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#F45B8A]/20 blur-[120px]" />
-        <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#3B82F6]/20 blur-[120px]" />
+      <section className="py-16 md:py-20 relative z-10 bg-gradient-to-b from-[#172554] via-[#1A3A6C] to-[#172554] text-white overflow-hidden">
+        <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#EA3484]/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#F45B8A]/20 blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F6C85F] backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F6C85F] backdrop-blur-md">
               <Star className="h-3 w-3 fill-[#F6C85F]" /> Measurable Trust
             </span>
-            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.2] tracking-tight">
               The Impact of Our Journey
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 font-['Manrope',sans-serif]">
+            <p className="text-xs sm:text-sm text-slate-300 font-normal">
               Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.
             </p>
           </div>
@@ -250,10 +245,10 @@ export default function AboutPage() {
                 <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform">
                   {stat.icon}
                 </div>
-                <div className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl lg:text-4xl font-normal text-white mb-1 tracking-tight drop-shadow">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight drop-shadow">
                   {stat.num}
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white/90 leading-tight">
+                <div className="text-xs sm:text-sm font-semibold text-white/90 leading-tight">
                   {stat.label}
                 </div>
                 <div className="text-[11px] text-[#F6C85F] font-medium mt-1">
@@ -266,30 +261,24 @@ export default function AboutPage() {
       </section>
 
       {/* ── Journey & Milestones Timeline ── */}
-      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF8FC] via-[#F9F5FF] to-[#FFFDFE] border-t border-pink-100/60">
+      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF8FC] via-[#FFF0F6] to-[#FFFDFE] border-t border-pink-100/60">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-sm">
               <Compass className="h-3 w-3" /> Historical Timeline
             </span>
-            <h2 className="font-['DM_Serif_Display',Georgia,serif] text-3xl sm:text-4xl md:text-5xl font-normal text-[#172554]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight">
               Milestones in Our Evolution
             </h2>
-            <div className="flex items-center justify-center gap-2 text-[#F45B8A] py-1">
-              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#F45B8A]/40" />
-              <span className="text-xs">✦</span>
-              <Heart className="h-3.5 w-3.5 fill-[#F45B8A] text-[#F45B8A]" />
-              <span className="text-xs">✦</span>
-              <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#F45B8A]/40" />
-            </div>
-            <p className="text-sm sm:text-base text-[#475569] font-['Manrope',sans-serif]">
+            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+            <p className="text-sm sm:text-base text-[#475569] font-normal mt-2 leading-relaxed">
               From a research initiative by IITians and Vedic scholars to the world's most comprehensive Garbhadhan Sanskar platform.
             </p>
           </div>
 
           <div className="relative">
             {/* Center Glowing Spine Line */}
-            <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-[#F45B8A] via-[#3B82F6] to-[#F6C85F] -translate-x-1/2 rounded-full opacity-30" />
+            <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-[#EA3484] via-[#F45B8A] to-[#F6C85F] -translate-x-1/2 rounded-full opacity-40" />
 
             <div className="space-y-8 md:space-y-12">
               {milestones.map((m, i) => (
@@ -304,8 +293,8 @@ export default function AboutPage() {
                   }`}
                 >
                   {/* Timeline Center Node Badge */}
-                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg border-2 border-[#F45B8A] z-20">
-                    <div className="h-3 w-3 rounded-full bg-[#F45B8A]" />
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-9 w-9 items-center justify-center rounded-full bg-white shadow-lg border-2 border-[#EA3484] z-20">
+                    <div className="h-3 w-3 rounded-full bg-[#EA3484]" />
                   </div>
 
                   {/* Content Card */}
@@ -314,19 +303,19 @@ export default function AboutPage() {
                       i % 2 === 0 ? "md:text-right" : "md:text-left md:order-2"
                     }`}
                   >
-                    <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-6 sm:p-8 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_45px_rgba(244,91,138,0.1)] transition-all duration-300 group">
+                    <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-6 sm:p-8 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_45px_rgba(234,52,132,0.12)] transition-all duration-300 group">
                       <div className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
-                        <span className="inline-block bg-gradient-to-r from-[#172554] to-[#3B82F6] text-white font-extrabold px-3.5 py-1 rounded-full text-xs shadow-sm">
+                        <span className="inline-block bg-gradient-to-r from-[#172554] to-[#EA3484] text-white font-semibold px-3.5 py-1 rounded-full text-xs shadow-sm">
                           {m.year}
                         </span>
-                        <span className="text-[11px] font-bold text-[#F45B8A] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">
+                        <span className="text-[11px] font-semibold text-[#EA3484] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">
                           {m.tag}
                         </span>
                       </div>
-                      <h3 className="font-['DM_Serif_Display',Georgia,serif] text-xl sm:text-2xl font-normal text-[#172554] mb-2 group-hover:text-[#F45B8A] transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-[#172554] mb-2 group-hover:text-[#EA3484] transition-colors leading-snug">
                         {m.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#475569] font-['Manrope',sans-serif] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#475569] font-normal leading-relaxed">
                         {m.text}
                       </p>
                     </div>
@@ -343,18 +332,18 @@ export default function AboutPage() {
       {/* ── Separate Bridge Section: Direct Invitation to Meet the Team ── */}
       <section className="py-16 md:py-20 relative z-10 bg-gradient-to-b from-[#FFFDFE] to-[#FFF5FA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#172554] via-[#1e3a8a] to-[#2563eb] p-8 sm:p-12 text-white shadow-2xl">
-            <div className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 rounded-full bg-[#F45B8A]/30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#172554] via-[#1A3A6C] to-[#2B1B47] p-8 sm:p-12 text-white shadow-2xl border border-pink-200/20">
+            <div className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 rounded-full bg-[#EA3484]/30 blur-3xl" />
             
             <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 space-y-4 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#F6C85F] backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#F6C85F] backdrop-blur-md">
                   <Users className="h-3.5 w-3.5" /> Multidisciplinary Faculty
                 </div>
-                <h3 className="font-['DM_Serif_Display',Georgia,serif] text-2xl sm:text-3xl md:text-4xl font-normal text-white">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
                   Meet the Masters & Scholars Behind Astro Baby
                 </h3>
-                <p className="text-sm md:text-base text-slate-200 font-['Manrope',sans-serif] max-w-xl leading-relaxed">
+                <p className="text-sm md:text-base text-slate-200 font-normal max-w-xl leading-relaxed">
                   Discover the distinguished team of doctors, IITians, Vedmurti Brahmins, yoga masters, and astrologers who crafted this curriculum.
                 </p>
               </div>
@@ -362,7 +351,7 @@ export default function AboutPage() {
               <div className="md:col-span-4 flex justify-center md:justify-end">
                 <Link
                   to="/team"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#F45B8A]/40 hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#EA3484]/40 hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
                   <span>Explore Team & Faculty</span>
                   <ArrowRight className="h-4 w-4" />
@@ -377,20 +366,7 @@ export default function AboutPage() {
       <AppDownloadSection />
 
       {/* ── Footer ── */}
-      <footer className="bg-[#172554] text-white/80 py-10 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div className="text-center md:text-left">
-            © {new Date().getFullYear()} Astro Baby Garbhadhan Sanskar. All rights reserved.
-          </div>
-          <div className="flex gap-4 text-white/80 text-xs font-semibold">
-            <span className="hover:text-white transition cursor-pointer">Facebook</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">Instagram</span>
-            <span>•</span>
-            <span className="hover:text-white transition cursor-pointer">YouTube</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
