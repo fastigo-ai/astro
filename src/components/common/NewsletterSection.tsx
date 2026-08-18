@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Sparkles, Mail, ArrowRight, CheckCircle2, ShieldCheck, Star } from "lucide-react";
 
 export default function NewsletterSection() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -48,10 +50,10 @@ export default function NewsletterSection() {
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-[#172554] leading-snug">
-                    Garbhadhan Sanskar Daily Sutras
+                    {t("programs.garbhadhan.title", "Garbhadhan Sanskar")}
                   </div>
                   <div className="text-[11px] text-[#475569] font-normal">
-                    Wisdom, Mantras & Trimester Care
+                    {t("programs.garbhadhan.subtitle", "Sacred Preparation for Conception")}
                   </div>
                 </div>
               </div>
@@ -67,20 +69,15 @@ export default function NewsletterSection() {
             <div className="space-y-3.5">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50/90 border border-pink-200/80 text-[#F45B8A] text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#F45B8A]" />
-                <span>Stay Connected with Astro Baby</span>
+                <span>{t("newsletter.badge", "Stay Connected")}</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#172554] leading-[1.2] tracking-tight">
-                Subscribe to Our{" "}
-                <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
-                  Garbhadhan Sanskar
-                </span>{" "}
-                Newsletter
+                {t("newsletter.heading", "Receive Sacred Vedic Pregnancy Wisdom Weekly")}
               </h2>
 
               <p className="text-[#475569] text-sm sm:text-base leading-relaxed font-normal pt-1">
-                To get more Garbhadhan Sanskar related content in your inbox, subscribe to our
-                newsletter by submitting your email address.
+                {t("newsletter.subtitle", "Join 25,000+ expecting parents receiving auspicious Muhurat dates, prenatal satvik recipes, and calming Vedic shlokas.")}
               </p>
             </div>
 
@@ -92,10 +89,9 @@ export default function NewsletterSection() {
                     <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#172554]">You're Subscribed!</h4>
+                    <h4 className="text-lg font-semibold text-[#172554]">{t("newsletter.successTitle", "Welcome to Astro Baby Family!")}</h4>
                     <p className="text-xs text-[#475569] mt-0.5 font-normal">
-                      Thank you for joining our newsletter. We've sent your welcome guide to{" "}
-                      <strong className="text-[#172554] font-semibold">{email}</strong>.
+                      {t("newsletter.successMsg", "You have been successfully subscribed. Check your inbox for your first Vedic welcome guide.")} (<strong>{email}</strong>)
                     </p>
                   </div>
                 </div>
@@ -112,7 +108,7 @@ export default function NewsletterSection() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email address..."
+                      placeholder={t("newsletter.placeholder", "Enter your email address...")}
                       className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-50/70 hover:bg-white focus:bg-white text-[#172554] placeholder:text-slate-400 text-sm font-normal border border-pink-100/90 focus:outline-none focus:border-[#F45B8A] focus:ring-4 focus:ring-[#F45B8A]/15 shadow-xs transition-all"
                     />
                   </div>
@@ -126,7 +122,7 @@ export default function NewsletterSection() {
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <>
-                        <span>Subscribe</span>
+                        <span>{t("newsletter.button", "Subscribe Free")}</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -137,11 +133,11 @@ export default function NewsletterSection() {
                 <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 font-normal pt-1">
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                    <span>No spam ever. Unsubscribe anytime.</span>
+                    <span>{t("newsletter.privacy", "We respect your privacy. Unsubscribe anytime with 1-click.")}</span>
                   </span>
                   <span className="flex items-center gap-1 text-[#172554] font-semibold">
                     <Star className="w-3.5 h-3.5 fill-[#F6C85F] text-[#F6C85F]" />
-                    <span>Rated 4.6★ by Expecting Mothers</span>
+                    <span>4.9 ★ (10K+ Families)</span>
                   </span>
                 </div>
               </form>

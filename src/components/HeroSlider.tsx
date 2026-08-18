@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { heroSlides } from "@/data/heroSlides";
 import { useAutoSlider } from "@/hooks/useAutoSlider";
 import SliderDots from "@/components/common/SliderDots";
@@ -10,6 +11,7 @@ import { FiHeart } from "react-icons/fi";
 import { TextEffect } from "@/components/core/text-effect";
 
 export default function HeroSlider() {
+  const { t } = useTranslation();
   const { index, setIndex, next, prev, pause, resume } = useAutoSlider({
     count: heroSlides.length,
     interval: 5000,
@@ -95,7 +97,7 @@ export default function HeroSlider() {
                   {slide.eyebrow && (
                     <span className="inline-flex items-center gap-1 bg-white/95 backdrop-blur-md text-[#EA3484] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs border border-pink-100">
                       <FiHeart className="h-3 w-3 text-[#EA3484] fill-[#EA3484]/20" />
-                      {slide.eyebrow}
+                      {t(`hero.slides.${index}.eyebrow`, slide.eyebrow)}
                     </span>
                   )}
                   <span className="bg-[#172554]/90 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">
@@ -107,7 +109,7 @@ export default function HeroSlider() {
                 {slide.programs && slide.programs[0] && (
                   <div className="absolute bottom-2.5 left-3 right-3 text-left">
                     <span className="text-[11px] font-semibold text-pink-100 drop-shadow line-clamp-1">
-                      ✦ {slide.programs[0]}
+                      ✦ {t(`hero.slides.${index}.programs.0`, slide.programs[0])}
                     </span>
                   </div>
                 )}
@@ -123,7 +125,7 @@ export default function HeroSlider() {
                 className="hidden sm:inline-flex items-center gap-2 rounded-full border border-pink-200/90 bg-white/95 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-md shadow-xs mb-3.5"
               >
                 <FiHeart className="h-3.5 w-3.5 text-[#EA3484] fill-[#EA3484]/20" />
-                <span>{slide.eyebrow}</span>
+                <span>{t(`hero.slides.${index}.eyebrow`, slide.eyebrow)}</span>
               </motion.div>
             )}
 
@@ -133,11 +135,11 @@ export default function HeroSlider() {
                 isLeftAligned ? "" : "md:mr-[-4px]"
               }`}
             >
-              {slide.heading.map((line, i) => (
+              {[t("hero.headingLine1", "Your Wellness"), t("hero.headingLine2", "Journey Begins")].map((line, i) => (
                 <TextEffect
                   key={`${index}-${i}-${line}`}
                   as="span"
-                  per="char"
+                  per="word"
                   delay={i * 0.15}
                   variants={{
                     container: {
@@ -178,13 +180,13 @@ export default function HeroSlider() {
 
             {/* Premium Description with TextEffect */}
             <TextEffect
-              key={`${index}-desc`}
+              key={`${index}-desc-${t(`hero.slides.${index}.description`, slide.description)}`}
               per="word"
               delay={0.4}
               preset="blur"
               className="mt-1.5 sm:mt-4 max-w-xl text-xs sm:text-base md:text-lg text-[#334155] sm:text-[#1E293B] font-normal leading-relaxed"
             >
-              {slide.description}
+              {t(`hero.slides.${index}.description`, slide.description)}
             </TextEffect>
 
             {/* Program Highlight Tags */}
@@ -202,7 +204,7 @@ export default function HeroSlider() {
                     className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-pink-50/90 text-[#EA3484] border border-pink-200/80 shadow-2xs"
                   >
                     <span className="text-[#EA3484] font-bold text-[10px]">✦</span>
-                    {prog}
+                    {t(`hero.slides.${index}.programs.${pIdx}`, prog)}
                   </span>
                 ))}
               </div>
@@ -216,7 +218,7 @@ export default function HeroSlider() {
             >
               <PrimaryButton className="relative overflow-hidden w-full max-w-xs sm:max-w-none sm:w-auto justify-center !bg-gradient-to-r !from-[#EA3484] !to-[#F45B8A] !text-white hover:!from-[#D81B60] hover:!to-[#E91E63] border-none shadow-[0_6px_20px_rgba(234,52,132,0.35)] transition-all duration-300 hover:shadow-[0_10px_28px_rgba(234,52,132,0.55)] hover:-translate-y-0.5 px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm md:text-base font-semibold group cursor-pointer rounded-full">
                 <span className="relative z-10 flex items-center gap-2 justify-center">
-                  Start Your Journey
+                  {t("hero.startJourney", "Start Your Journey")}
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -243,7 +245,7 @@ export default function HeroSlider() {
                   >
                     <path d="M8 5v14l11-7z" />
                   </svg>
-                  Watch Story
+                  {t("hero.watchStory", "Watch Story")}
                 </span>
               </SecondaryButton>
             </div>

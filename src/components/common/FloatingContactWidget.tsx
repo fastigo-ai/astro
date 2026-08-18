@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import {
   MessageCircle,
   X,
@@ -16,6 +17,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingContactWidget() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -120,19 +122,19 @@ export default function FloatingContactWidget() {
                 {/* Profile Details */}
                 <div className="pr-6">
                   <h3 className="font-bold text-sm text-white leading-tight flex items-center gap-1">
-                    Astro Baby Care
+                    {t("chatWidget.headerTitle", "Astro Baby Care")}
                     <Sparkles className="w-3 h-3 text-[#F6C85F]" />
                   </h3>
                   <div className="flex items-center gap-1 text-[11px] text-pink-100/90 mt-0.5">
                     <Clock className="w-2.5 h-2.5 text-emerald-300" />
-                    <span>Replies in ~5 mins</span>
+                    <span>{t("chatWidget.repliesIn", "Replies within 5 mins")}</span>
                   </div>
                 </div>
               </div>
 
               {/* Subtitle Banner */}
               <div className="mt-2 bg-white/10 backdrop-blur-md rounded-lg p-2 border border-white/15 text-[11px] text-white/95 leading-snug font-medium">
-                👋 Namaste! How can we help with Garbhadhan Sanskar?
+                {t("chatWidget.greeting", "👋 Namaste! How can we help with Garbhadhan Sanskar?")}
               </div>
             </div>
 
@@ -151,7 +153,7 @@ export default function FloatingContactWidget() {
                   className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100/80 transition-all font-semibold text-[11px] shadow-2xs group"
                 >
                   <FaWhatsapp className="w-3.5 h-3.5 text-emerald-600 group-hover:scale-110 transition-transform" />
-                  <span>WhatsApp</span>
+                  <span>{t("chatWidget.whatsApp", "WhatsApp")}</span>
                 </a>
 
                 {/* Call Now Quick Action */}
@@ -160,7 +162,7 @@ export default function FloatingContactWidget() {
                   className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-pink-50 text-[#EA3484] border border-pink-200 hover:bg-pink-100/80 transition-all font-semibold text-[11px] shadow-2xs group"
                 >
                   <Phone className="w-3 h-3 text-[#EA3484] group-hover:scale-110 transition-transform" />
-                  <span>Call Now</span>
+                  <span>{t("chatWidget.callNow", "Call Now")}</span>
                 </a>
               </div>
 
@@ -168,7 +170,7 @@ export default function FloatingContactWidget() {
               <div className="relative flex items-center justify-center my-0.5">
                 <div className="border-t border-pink-100 w-full" />
                 <span className="bg-[#FFFCFE] px-2 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                  or write a message
+                  {t("chatWidget.orWriteMessage", "or write a message")}
                 </span>
                 <div className="border-t border-pink-100 w-full" />
               </div>
@@ -184,10 +186,10 @@ export default function FloatingContactWidget() {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h4 className="font-bold text-sm text-[#172554]">
-                    Message Sent!
+                    {t("chatWidget.messageSent", "Message Sent Successfully!")}
                   </h4>
                   <p className="text-[11px] text-slate-600 max-w-xs mx-auto leading-relaxed">
-                    Thank you, <strong className="text-[#EA3484]">{formData.name}</strong>. We will connect with you shortly.
+                    {t("chatWidget.thankYou", { name: formData.name, defaultValue: `Thank you, ${formData.name}. Our prenatal consultant will connect with you shortly.` })}
                   </p>
                 </motion.div>
               ) : (
@@ -196,7 +198,7 @@ export default function FloatingContactWidget() {
                   {/* Name Input */}
                   <div>
                     <label className="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">
-                      Your Name <span className="text-rose-500">*</span>
+                      {t("chatWidget.yourName", "Your Name")} <span className="text-rose-500">*</span>
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
@@ -205,7 +207,7 @@ export default function FloatingContactWidget() {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="e.g. Priya Sharma"
+                        placeholder={t("chatWidget.namePlaceholder", "e.g. Priya Sharma")}
                         className={`w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-white border ${
                           errors.name ? "border-rose-400 bg-rose-50/20" : "border-pink-200/80"
                         } focus:outline-none focus:ring-2 focus:ring-pink-300 transition-all text-slate-800 placeholder:text-slate-400 shadow-2xs`}
@@ -221,7 +223,7 @@ export default function FloatingContactWidget() {
                   {/* Phone Input */}
                   <div>
                     <label className="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">
-                      Phone Number <span className="text-rose-500">*</span>
+                      {t("chatWidget.phoneNumber", "Phone Number")} <span className="text-rose-500">*</span>
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
@@ -230,7 +232,7 @@ export default function FloatingContactWidget() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+91 98765 43210"
+                        placeholder={t("chatWidget.phonePlaceholder", "+91 98765 43210")}
                         className={`w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-white border ${
                           errors.phone ? "border-rose-400 bg-rose-50/20" : "border-pink-200/80"
                         } focus:outline-none focus:ring-2 focus:ring-pink-300 transition-all text-slate-800 placeholder:text-slate-400 shadow-2xs`}
@@ -246,14 +248,14 @@ export default function FloatingContactWidget() {
                   {/* Message Input */}
                   <div>
                     <label className="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-0.5">
-                      How can we assist you? <span className="text-rose-500">*</span>
+                      {t("chatWidget.howCanWeAssist", "How can we assist you?")} <span className="text-rose-500">*</span>
                     </label>
                     <textarea
                       name="message"
                       rows={2}
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Ask about Garbhadhan Sanskar courses or prenatal care..."
+                      placeholder={t("chatWidget.messagePlaceholder", "Ask about Garbhadhan Sanskar courses or prenatal care...")}
                       className={`w-full p-2.5 text-xs rounded-lg bg-white border ${
                         errors.message ? "border-rose-400 bg-rose-50/20" : "border-pink-200/80"
                       } focus:outline-none focus:ring-2 focus:ring-pink-300 transition-all text-slate-800 placeholder:text-slate-400 shadow-2xs resize-none`}
@@ -271,7 +273,7 @@ export default function FloatingContactWidget() {
                     className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-gradient-to-r from-[#EA3484] via-[#F45B8A] to-[#FF70A6] text-white font-bold text-xs shadow-[0_4px_16px_rgba(234,52,132,0.35)] hover:shadow-[0_6px_20px_rgba(234,52,132,0.45)] transition-all cursor-pointer hover:scale-[1.01] active:scale-[0.98]"
                   >
                     <Send className="w-3 h-3" />
-                    <span>Send Message</span>
+                    <span>{t("chatWidget.sendMessage", "Send Message")}</span>
                   </button>
                 </form>
               )}
@@ -279,7 +281,7 @@ export default function FloatingContactWidget() {
               {/* Privacy Footer */}
               <div className="pt-1.5 text-center text-[9.5px] text-slate-400 flex items-center justify-center gap-1 border-t border-pink-100/80">
                 <Shield className="w-2.5 h-2.5 text-[#EA3484]" />
-                <span>100% Confidential & Secure Consultation</span>
+                <span>{t("chatWidget.confidentialFooter", "100% Confidential & Secure Consultation")}</span>
               </div>
             </div>
           </motion.div>

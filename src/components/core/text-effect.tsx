@@ -129,6 +129,18 @@ export function TextEffect({
 
   if (per === "char") {
     const words = children.split(/(\s+)/);
+    const splitIntoGraphemes = (text: string): string[] => {
+      if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+        try {
+          const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+          return Array.from(segmenter.segment(text), (s) => s.segment);
+        } catch {
+          // fallback
+        }
+      }
+      return text.split("");
+    };
+
     return (
       <MotionComponent
         initial="hidden"
@@ -146,9 +158,10 @@ export function TextEffect({
               </span>
             );
           }
+          const characters = splitIntoGraphemes(word);
           return (
             <span key={`word-${wordIndex}`} className="inline-block whitespace-nowrap">
-              {word.split("").map((char, charIndex) => (
+              {characters.map((char, charIndex) => (
                 <motion.span
                   key={`char-${wordIndex}-${charIndex}`}
                   variants={itemVariants}

@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { ReactLenis } from "lenis/react";
 import "lenis/dist/lenis.css";
+import "./i18n";
 import { LanguageProvider } from "./context/LanguageContext";
 import "./styles.css";
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   FiAward,
   FiGlobe,
@@ -15,18 +16,6 @@ import {
 import { storiesData } from "@/data/storiesData";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 
-const benefits = [
-  { icon: FiHeart, label: "Calmer journey" },
-  { icon: FiShield, label: "Expert guidance" },
-  { icon: FiAward, label: "Lasting confidence" },
-];
-const stats = [
-  { icon: FiUsers, value: "10K+", label: "Happy Families" },
-  { icon: FiGlobe, value: "25+", label: "Countries" },
-  { icon: FiStar, value: "4.9/5", label: "Average Rating" },
-  { icon: FiThumbsUp, value: "98%", label: "Recommend Us" },
-];
-
 const AI_THUMBNAILS = [
   "/images/story_thumb_1.png",
   "/images/story_thumb_2.png",
@@ -36,6 +25,7 @@ const AI_THUMBNAILS = [
 ];
 
 export default function StoriesSlider() {
+  const { t } = useTranslation();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -76,18 +66,14 @@ export default function StoriesSlider() {
           className="mx-auto max-w-3xl text-center space-y-3"
         >
           <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
-            <FiHeart className="h-3 w-3" /> USER STORIES
+            <FiHeart className="h-3 w-3" /> <span>{t("stories.badge", "Heartfelt Experiences")}</span>
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#172554] tracking-tight">
-            Real Journeys,{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
-              Beautiful Experiences
-            </span>
+            {t("stories.heading", "Loved by Over 10,000+ Happy Families")}
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
           <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#475569] font-normal md:text-base">
-            Heartfelt stories from families across 62+ countries who found calm, confidence, and
-            deeper spiritual connection through AstroBaby.
+            {t("stories.subtitle", "Real journeys and transformative stories from mothers and families across the globe.")}
           </p>
         </motion.header>
 

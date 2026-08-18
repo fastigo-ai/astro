@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
-import { Sparkles, HelpCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { HelpCircle } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
 import StoriesSlider from "@/components/StoriesSlider";
 import AboutSection from "@/components/AboutSection";
@@ -15,27 +16,28 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-const faqs = [
-  {
-    q: "How to start with Astro Baby Garbhadhan Sanskar?",
-    a: "To start using Astro Baby Garbhadhan Sanskar, you need to simply download 'Astro Baby' mobile application on your android device from the playstore. After installing the application just enter your basic details on the app for the free trial. After the free demo, to access full content you can select a premium plan to continue using it as per your pregnancy stage.",
-  },
-  {
-    q: "Can I use Astro Baby on my laptop or desktop computer?",
-    a: "No, 'Astro Baby Garbhadhan Sanskar' is a mobile application only service. You can access and use Astro Baby on your Android & Apple Mobile and tablet devices.",
-  },
-  {
-    q: "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?",
-    a: "Whether you are in your 1st month of pregnancy or in 9th month of pregnancy, it is never too late to start the process of garbhadhan sanskar. Astro Baby is prepared in such a scientific way that even late joiners can benefit from this curriculum. Moreover, you can always subscribe to watch episodes of previous months of pregnancy that you've missed.",
-  },
-  {
-    q: "What makes Astro Baby Garbhadhan Sanskar unique?",
-    a: "Astro Baby synthesizes authentic Vedic Garbhadhan Sanskar mantras, daily audio shlokas, and Ayurvedic satvik nutrition with cutting-edge fetal neuroscience and obstetric medical guidance curated by IITians and top doctors.",
-  },
-];
-
 export default function Home() {
+  const { t } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
+
+  const faqs = [
+    {
+      q: t("faqs.items.0.q", "How to start with Astro Baby Garbhadhan Sanskar?"),
+      a: t("faqs.items.0.a", "To start using Astro Baby Garbhadhan Sanskar, simply download the 'Astro Baby' mobile application on your device from the Play Store or App Store. Enter your details for a free trial. You can then choose a plan matching your pregnancy stage."),
+    },
+    {
+      q: t("faqs.items.1.q", "Can I use Astro Baby on my laptop or desktop computer?"),
+      a: t("faqs.items.1.a", "No, Astro Baby Garbhadhan Sanskar is currently a mobile and tablet application service, fully optimized for Android and iOS devices."),
+    },
+    {
+      q: t("faqs.items.2.q", "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?"),
+      a: t("faqs.items.2.a", "Whether you are in your 1st month or 9th month, it is never too late to begin. Astro Baby's scientific curriculum allows late joiners to benefit immediately and access all previous months' guidance."),
+    },
+    {
+      q: t("faqs.items.3.q", "What makes Astro Baby Garbhadhan Sanskar unique?"),
+      a: t("faqs.items.3.a", "Astro Baby synthesizes authentic Vedic Garbhadhan Sanskar mantras, daily audio shlokas, and Ayurvedic satvik nutrition with cutting-edge fetal neuroscience and obstetric medical guidance."),
+    },
+  ];
 
   return (
     <div className="home-bg min-h-screen text-slate-800">
@@ -72,15 +74,14 @@ export default function Home() {
             className="text-center max-w-2xl mx-auto mb-12 space-y-3"
           >
             <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-2xs">
-              <HelpCircle className="h-3.5 w-3.5" /> Answers to Your Questions
+              <HelpCircle className="h-3.5 w-3.5" /> <span>{t("faqs.badge", "Answers to Your Questions")}</span>
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] leading-[1.2] tracking-tight">
-              Frequently Asked Questions (FAQs)
+              {t("faqs.heading", "Frequently Asked Questions (FAQs)")}
             </h2>
             <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed">
-              Everything you need to know about the Astro Baby app and our prenatal Garbhadhan
-              Sanskar process.
+              {t("faqs.subtitle", "Everything you need to know about the Astro Baby app and our prenatal Garbhadhan Sanskar process.")}
             </p>
           </motion.div>
 

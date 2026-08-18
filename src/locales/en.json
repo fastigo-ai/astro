@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "topBanner": "Astro Baby Garbhadhan Sanskar",
+    "callUs": "+91 9018567465",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "programs": "Sacred Programs",
+    "exploreFeatures": "Explore Programs",
+    "exploreFeaturesDesc": "Vedic wisdom & modern science for your pregnancy journey",
+    "expertTeam": "Expert Team",
+    "testimonials": "Testimonials",
+    "blog": "Vedic Blog",
+    "contact": "Contact Us",
+    "allFeatures": "View All 7 Programs",
+    "allFeaturesSubtitle": "Complete Vedic & Obstetric Guide"
+  },
+  "hero": {
+    "headingLine1": "Your Wellness",
+    "headingLine2": "Journey Begins",
+    "startJourney": "Start Your Journey",
+    "watchStory": "Watch Story",
+    "courses": "Courses",
+    "rating": "4.9 ★★★★★",
+    "slides": [
+      {
+        "eyebrow": "HOLISTIC PREGNANCY CARE",
+        "description": "Empowering every expecting mother with personalized pregnancy guidance, mindful wellness, expert support, and carefully curated baby essentials—all in one beautiful journey.",
+        "programs": ["Week-by-Week Journey", "Meditation & Yoga"]
+      },
+      {
+        "eyebrow": "HEALTHY PREGNANCY",
+        "description": "Bringing together modern science and ancient Indian wisdom to make pregnancy a positive, happy and healthy experience.",
+        "programs": ["Meditation", "Nutritionist Session"]
+      },
+      {
+        "eyebrow": "HOLISTIC WELLNESS",
+        "description": "Empower yourself with daily practices designed to reduce stress and promote a calm environment for you and your baby.",
+        "programs": ["Vedic Mantra", "Yognidra"]
+      },
+      {
+        "eyebrow": "JOYFUL JOURNEY",
+        "description": "Join thousands of mothers in celebrating a joyful pregnancy with expert guidance from our renowned team.",
+        "programs": ["Let's Smile Together", "Brainopedia"]
+      }
+    ]
+  },
+  "about": {
+    "badge": "Bridging Ancient Vedic Wisdom & Modern Science",
+    "heading": "Empowering Parents for a Conscious, Divine Conception",
+    "description": "Astro Baby Garbhadhan Sanskar is India's leading digital platform combining ancient Vedic wisdom with modern obstetric science. Created by a passionate team of experts, we make pregnancy a happy, healthy, and spiritually rich journey.",
+    "readOurStory": "Read Our Story",
+    "beginJourney": "Begin Journey Today",
+    "features": [
+      {
+        "title": "Ancient Vedic Sanskar",
+        "desc": "Sacred mantras, astrological Muhurat coitus guidance, and positive prenatal neuro-stimulation."
+      },
+      {
+        "title": "Modern Medical Science",
+        "desc": "Curated by leading obstetricians, pediatricians, nutritionists, and fetal care experts."
+      },
+      {
+        "title": "Live Interactive Guidance",
+        "desc": "Daily satvik diet sessions, trimester-wise yoga, meditation, and direct doctor consultations."
+      },
+      {
+        "title": "100% Mobile Access",
+        "desc": "Convenient Android and iOS application accessible anytime, anywhere at your own pace."
+      }
+    ]
+  },
+  "featuresSection": {
+    "badge": "Sacred Vedic Programs",
+    "heading": "Holistic Sanskar for Every Stage of Parenthood",
+    "subtitle": "Discover our complete 7-stage curriculum bridging authentic Vedic rituals with modern obstetric medicine.",
+    "learnMore": "Learn More & Enroll",
+    "viewAll": "Explore All 7 Sanskar Programs"
+  },
+  "programs": {
+    "garbhadhan": {
+      "title": "Garbhadhan Sanskar",
+      "subtitle": "Sacred Preparation for Conception",
+      "desc": "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul.",
+      "f1": "Muhurat-Based Coitus Dates",
+      "f2": "Isht Mantra & Meditation",
+      "f3": "Fertility Tracker & Support"
+    },
+    "beejSanskar": {
+      "title": "Beej Sanskar",
+      "subtitle": "Preparing the Foundation for Conscious Conception",
+      "desc": "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
+      "f1": "Ayurvedic Cellular Detox",
+      "f2": "Satvik Diet & Vitality",
+      "f3": "Stress Reduction & Yoga"
+    },
+    "garbhSanskar": {
+      "title": "Garbh Sanskar",
+      "subtitle": "9-Month Journey of Prenatal Nurturing",
+      "desc": "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation.",
+      "badge": "Most Popular",
+      "f1": "Month-wise Mantra Vrushti",
+      "f2": "Garbh Samvad & Prenatal Yoga",
+      "f3": "Trimester-wise Satvik Diet"
+    },
+    "baalSanskar": {
+      "title": "Baal Sanskar",
+      "subtitle": "Sacred Milestones in Early Childhood",
+      "desc": "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories.",
+      "f1": "Namkaran, Nishkraman & Annaprashan",
+      "f2": "Character & Value Building",
+      "f3": "Cognitive Brain Puzzles"
+    },
+    "infantCare": {
+      "title": "Infant Care",
+      "subtitle": "Gentle Care for Your Baby's Early Years",
+      "desc": "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes.",
+      "f1": "Doctor-Led Live Sessions",
+      "f2": "Lactation & Postpartum Care",
+      "f3": "Gentle Sleep Techniques"
+    },
+    "parenting": {
+      "title": "Parenting",
+      "subtitle": "Mindful Guidance for Raising Your Child",
+      "desc": "Mindful parenting frameworks, positive emotional bonding, digital detox strategies, and screen-free routines.",
+      "f1": "Emotional Intelligence Coaching",
+      "f2": "Digital Detox & Play Techniques",
+      "f3": "Parent-Child Bonding Exercises"
+    },
+    "bhavishyaPhal": {
+      "title": "Bhavishya Phal",
+      "subtitle": "Astrological Insights for Your Child's Journey",
+      "desc": "Vedic Kundali charting, planetary nakshatra analysis, and life-path guidance prepared by senior astrologers.",
+      "f1": "Vedic Kundali & Janam Lagna",
+      "f2": "Planetary Nakshatra Guidance",
+      "f3": "Career & Spiritual Direction"
+    },
+    "bizSanskar": {
+      "title": "Biz Sanskar",
+      "subtitle": "Sacred Entrepreneurial & Purpose Guidance",
+      "desc": "Building ethical leadership, purpose-driven ventures, and dharmic abundance.",
+      "f1": "Dharmic Leadership",
+      "f2": "Ethical Business Models",
+      "f3": "Purpose Alignment"
+    }
+  },
+  "stories": {
+    "badge": "Heartfelt Experiences",
+    "heading": "Loved by Over 10,000+ Happy Families",
+    "subtitle": "Real journeys and transformative stories from mothers and families across the globe.",
+    "watchVideo": "Click to Watch Story",
+    "stats": {
+      "families": "Happy Families",
+      "countries": "Countries",
+      "rating": "Average Rating",
+      "recommend": "Recommend Us"
+    }
+  },
+  "faqs": {
+    "badge": "Answers to Your Questions",
+    "heading": "Frequently Asked Questions (FAQs)",
+    "subtitle": "Everything you need to know about the Astro Baby app and our prenatal Garbhadhan Sanskar process.",
+    "items": [
+      {
+        "q": "How to start with Astro Baby Garbhadhan Sanskar?",
+        "a": "To start using Astro Baby Garbhadhan Sanskar, simply download the 'Astro Baby' mobile application on your device from the Play Store or App Store. Enter your details for a free trial. You can then choose a plan matching your pregnancy stage."
+      },
+      {
+        "q": "Can I use Astro Baby on my laptop or desktop computer?",
+        "a": "No, Astro Baby Garbhadhan Sanskar is currently a mobile and tablet application service, fully optimized for Android and iOS devices."
+      },
+      {
+        "q": "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?",
+        "a": "Whether you are in your 1st month or 9th month, it is never too late to begin. Astro Baby's scientific curriculum allows late joiners to benefit immediately and access all previous months' guidance."
+      },
+      {
+        "q": "What makes Astro Baby Garbhadhan Sanskar unique?",
+        "a": "Astro Baby synthesizes authentic Vedic Garbhadhan Sanskar mantras, daily audio shlokas, and Ayurvedic satvik nutrition with cutting-edge fetal neuroscience and obstetric medical guidance."
+      }
+    ]
+  },
+  "newsletter": {
+    "badge": "Stay Connected",
+    "heading": "Receive Sacred Vedic Pregnancy Wisdom Weekly",
+    "subtitle": "Join 25,000+ expecting parents receiving auspicious Muhurat dates, prenatal satvik recipes, and calming Vedic shlokas.",
+    "cardTitle": "Sacred Vedic Pregnancy Newsletter",
+    "placeholder": "Enter your email address...",
+    "button": "Subscribe Free",
+    "subscribing": "Subscribing...",
+    "successTitle": "Welcome to Astro Baby Family!",
+    "successMsg": "You have been successfully subscribed. Check your inbox for your first Vedic welcome guide.",
+    "privacy": "We respect your privacy. Unsubscribe anytime with 1-click."
+  },
+  "appDownload": {
+    "heading": "Begin Your Garbhadhan Sanskar Journey Today on Astro Baby",
+    "subtitle": "Download the Astro Baby Garbhadhan Sanskar app today and experience ancient wisdom backed by modern science."
+  },
+  "chatWidget": {
+    "headerTitle": "Astro Baby Care",
+    "repliesIn": "Replies within 5 minutes",
+    "greeting": "👋 Namaste! How can we help with Garbhadhan Sanskar?",
+    "whatsApp": "WhatsApp",
+    "callNow": "Call Now",
+    "orWriteMessage": "or write a message",
+    "yourName": "Your Name",
+    "namePlaceholder": "e.g. Priya Sharma",
+    "phoneNumber": "Phone Number",
+    "phonePlaceholder": "+91 98765 43210",
+    "howCanWeAssist": "How can we assist you?",
+    "messagePlaceholder": "Ask about Garbhadhan Sanskar courses, Janam Kundali, or prenatal care...",
+    "sendMessage": "Send Message",
+    "messageSent": "Message Sent Successfully!",
+    "thankYou": "Thank you, {{name}}. Our prenatal consultant will connect with you shortly.",
+    "confidentialFooter": "100% Confidential & Secure Consultation"
+  },
+  "footer": {
+    "description": "Astro Baby bridges sacred ancient Vedic Garbhadhan Sanskar traditions with modern medical science, empowering expecting parents for healthy, conscious, and divine childbirth.",
+    "sacredPrograms": "Sacred Programs",
+    "explore": "Explore",
+    "getInTouch": "Get in Touch",
+    "callUs": "Call Us",
+    "emailSupport": "Email Support",
+    "downloadApp": "Download App",
+    "allRightsReserved": "© {{year}} Astro Baby Garbhadhan Sanskar. All rights reserved.",
+    "privacyTerms": "Privacy & Terms",
+    "support": "Support"
+  }
+}

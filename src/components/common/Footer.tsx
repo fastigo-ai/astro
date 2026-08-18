@@ -1,29 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Phone, Mail } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const programs = [
-    { name: "Garbhadhan Sanskar", to: "/features/garbh-dhan" },
-    { name: "Beej Sanskar", to: "/features/beej-sanskar" },
-    { name: "Garbh Sanskar (9M)", to: "/features/garbh-sanskar" },
-    { name: "Baal Sanskar", to: "/features/baal-sanskar" },
-    { name: "Infant Care", to: "/features/infant-care" },
-    { name: "Mindful Parenting", to: "/features/parenting" },
-    { name: "Bhavishya Phal", to: "/features/bhavishya-fal" },
+    { name: t("programs.garbhadhan.title", "Garbhadhan Sanskar"), to: "/features/garbh-dhan" },
+    { name: t("programs.beejSanskar.title", "Beej Sanskar"), to: "/features/beej-sanskar" },
+    { name: t("programs.garbhSanskar.title", "Garbh Sanskar (9M)"), to: "/features/garbh-sanskar" },
+    { name: t("programs.baalSanskar.title", "Baal Sanskar"), to: "/features/baal-sanskar" },
+    { name: t("programs.infantCare.title", "Infant Care"), to: "/features/infant-care" },
+    { name: t("programs.parenting.title", "Mindful Parenting"), to: "/features/parenting" },
+    { name: t("programs.bhavishyaPhal.title", "Bhavishya Phal"), to: "/features/bhavishya-fal" },
   ];
 
   const quickLinks = [
-    { name: "Home", to: "/" },
-    { name: "About Us", to: "/about-us" },
-    { name: "Our Expert Team", to: "/team" },
-    { name: "All Courses", to: "/features" },
-    { name: "Mother Testimonials", to: "/testimonial" },
-    { name: "Vedic Blog & Guides", to: "/blog" },
-    { name: "Contact & Support", to: "/contact" },
+    { name: t("nav.home", "Home"), to: "/" },
+    { name: t("nav.aboutUs", "About Us"), to: "/about-us" },
+    { name: t("nav.expertTeam", "Our Expert Team"), to: "/team" },
+    { name: t("nav.programs", "All Courses"), to: "/features" },
+    { name: t("nav.testimonials", "Mother Testimonials"), to: "/testimonial" },
+    { name: t("nav.blog", "Vedic Blog & Guides"), to: "/blog" },
+    { name: t("nav.contact", "Contact & Support"), to: "/contact" },
   ];
 
   return (
@@ -42,9 +44,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm leading-relaxed text-[#475569] font-normal max-w-md sm:max-w-none sm:pr-4">
-              Astro Baby bridges sacred ancient Vedic Garbhadhan Sanskar traditions with modern
-              medical science, empowering expecting parents for healthy, conscious, and divine
-              childbirth.
+              {t("footer.description", "Astro Baby bridges sacred ancient Vedic Garbhadhan Sanskar traditions with modern medical science, empowering expecting parents for healthy, conscious, and divine childbirth.")}
             </p>
 
             {/* Social Links (Centered on mobile) */}
@@ -83,7 +83,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-3 space-y-3 sm:space-y-4">
             <h3 className="text-sm sm:text-base md:text-lg font-bold sm:font-semibold text-[#172554] flex items-center gap-1.5 sm:gap-2">
               <span className="w-2 h-2 rounded-full bg-[#F45B8A] shrink-0" />
-              <span>Sacred Programs</span>
+              <span>{t("footer.sacredPrograms", "Sacred Programs")}</span>
             </h3>
             <ul className="space-y-2 sm:space-y-2.5">
               {programs.map((item, idx) => (
@@ -108,7 +108,7 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-2 space-y-3 sm:space-y-4">
             <h3 className="text-sm sm:text-base md:text-lg font-bold sm:font-semibold text-[#172554] flex items-center gap-1.5 sm:gap-2">
               <span className="w-2 h-2 rounded-full bg-[#3B82F6] shrink-0" />
-              <span>Explore</span>
+              <span>{t("footer.explore", "Explore")}</span>
             </h3>
             <ul className="space-y-2 sm:space-y-2.5">
               {quickLinks.map((item, idx) => (
@@ -142,7 +142,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <div className="text-[9px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
-                      Call Us
+                      {t("footer.callUs", "Call Us")}
                     </div>
                     <div className="text-xs sm:text-[13px] font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors">
                       +91 9018567465
@@ -159,7 +159,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <div className="text-[9px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
-                      Email Support
+                      {t("footer.emailSupport", "Email Support")}
                     </div>
                     <div className="text-xs sm:text-[13px] font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors break-all">
                       contact@astrobaby.org
@@ -172,7 +172,7 @@ export default function Footer() {
             {/* Playstore & App Store centered on mobile */}
             <div className="pt-1 flex flex-col items-center sm:items-start">
               <div className="text-[11px] font-bold text-[#172554] uppercase tracking-wider mb-2.5 text-center sm:text-left">
-                Download App
+                {t("footer.downloadApp", "Download App")}
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-3">
                 <a
@@ -214,24 +214,24 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="text-amber-300">✨</span>
-            <span>© {currentYear} Astro Baby Garbhadhan Sanskar. All rights reserved.</span>
+            <span>{t("footer.allRightsReserved", { year: currentYear, defaultValue: `© ${currentYear} Astro Baby Garbhadhan Sanskar. All rights reserved.` })}</span>
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-white/70">
             <Link to="/about-us" className="hover:text-white transition-colors">
-              About
+              {t("nav.aboutUs", "About")}
             </Link>
             <span>•</span>
             <Link to="/features" className="hover:text-white transition-colors">
-              Courses
+              {t("nav.programs", "Courses")}
             </Link>
             <span>•</span>
             <Link to="/contact" className="hover:text-white transition-colors">
-              Privacy & Terms
+              {t("footer.privacyTerms", "Privacy & Terms")}
             </Link>
             <span>•</span>
             <Link to="/contact" className="hover:text-white transition-colors">
-              Support
+              {t("footer.support", "Support")}
             </Link>
           </div>
         </div>

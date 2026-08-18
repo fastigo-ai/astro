@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export interface Language {
   code: string;
@@ -24,78 +25,33 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { i18n } = useTranslation();
+
   const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem("astrobaby_lang");
-    if (saved) {
-      const match = LANGUAGES.find((l) => l.code === saved);
-      if (match) return match;
-    }
-    const cookies = document.cookie.split(";");
-    const googtrans = cookies.find((c) => c.trim().startsWith("googtrans="));
-    if (googtrans) {
-      const val = googtrans.split("=")[1]?.trim();
-      const code = val?.split("/")?.pop();
-      const match = LANGUAGES.find((l) => l.code === code);
-      if (match) return match;
-    }
-    return LANGUAGES[0];
+    const activeCode = i18n.language?.startsWith("hi") ? "hi" : "en";
+    return LANGUAGES.find((l) => l.code === activeCode) || LANGUAGES[0];
   });
-
-  const applyGoogleTranslate = (langCode: string) => {
-    const hostname = window.location.hostname;
-    if (langCode === "en") {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${hostname}; path=/;`;
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${hostname}; path=/;`;
-    } else {
-      document.cookie = `googtrans=/en/${langCode}; path=/;`;
-      document.cookie = `googtrans=/en/${langCode}; domain=.${hostname}; path=/;`;
-      document.cookie = `googtrans=/en/${langCode}; domain=${hostname}; path=/;`;
-    }
-
-    const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event("change"));
-    } else {
-      // Reload to let Google translate hook the new cookie
-      window.location.reload();
-    }
-  };
 
   const changeLanguage = (lang: Language) => {
     setCurrentLanguage(lang);
+    i18n.changeLanguage(lang.code);
     localStorage.setItem("astrobaby_lang", lang.code);
-    applyGoogleTranslate(lang.code);
   };
 
   useEffect(() => {
-    // If a non-English language was saved previously, ensure cookie is active
-    if (currentLanguage.code !== "en") {
-      const hostname = window.location.hostname;
-      document.cookie = `googtrans=/en/${currentLanguage.code}; path=/;`;
-      document.cookie = `googtrans=/en/${currentLanguage.code}; domain=.${hostname}; path=/;`;
-      document.cookie = `googtrans=/en/${currentLanguage.code}; domain=${hostname}; path=/;`;
+    const handleLanguageChanged = (lng: string) => {
+      const activeCode = lng.startsWith("hi") ? "hi" : "en";
+      const match = LANGUAGES.find((l) => l.code === activeCode);
+      if (match && match.code !== currentLanguage.code) {
+        setCurrentLanguage(match);
+      }
+    };
 
-      // Check if google-te-combo is ready
-      const interval = setInterval(() => {
-        const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-        if (select) {
-          if (select.value !== currentLanguage.code) {
-            select.value = currentLanguage.code;
-            select.dispatchEvent(new Event("change"));
-          }
-          clearInterval(interval);
-        }
-      }, 500);
-
-      const timer = setTimeout(() => clearInterval(interval), 5000);
-      return () => {
-        clearInterval(interval);
-        clearTimeout(timer);
-      };
-    }
-  }, [currentLanguage.code]);
+    i18n.on("languageChanged", handleLanguageChanged);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChanged);
+    };
+  }, [i18n, currentLanguage.code]);
 
   return (
     <LanguageContext.Provider value={{ currentLanguage, changeLanguage, languages: LANGUAGES }}>

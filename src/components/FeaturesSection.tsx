@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   Heart,
   Sparkles,
@@ -29,125 +29,131 @@ interface ProgramItem {
   features: string[];
 }
 
-const programs: ProgramItem[] = [
-  {
-    icon: Heart,
-    title: "Garbhadhan Sanskar",
-    subTitle: "Sacred Preparation for Conception",
-    desc: "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul.",
-    price: "₹11,000",
-    img: "/images/garbh_dan_banner.png",
-    to: "/features/garbh-dhan",
-    iconBg: "bg-pink-100/80",
-    iconColor: "text-[#F45B8A]",
-    features: [
-      "Muhurat-Based Coitus Dates",
-      "Isht Mantra & Meditation",
-      "Fertility Tracker & Support",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Beej Sanskar",
-    subTitle: "Preparing the Foundation for Conscious Conception",
-    desc: "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
-    price: "Vitality Track",
-    img: "/images/beej_sanskar_banner.jpg",
-    to: "/features/beej-sanskar",
-    iconBg: "bg-amber-100/80",
-    iconColor: "text-amber-600",
-    features: ["Ayurvedic Cellular Detox", "Satvik Diet & Vitality", "Stress Reduction & Yoga"],
-  },
-  {
-    icon: Sun,
-    title: "Garbh Sanskar",
-    subTitle: "9-Month Journey of Prenatal Nurturing",
-    desc: "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation.",
-    price: "Starting ₹5,000",
-    badge: "Most Popular",
-    img: "/images/garbh_sanskar_banner.jpg",
-    to: "/features/garbh-sanskar",
-    iconBg: "bg-purple-100/80",
-    iconColor: "text-purple-600",
-    features: [
-      "Diamond (₹25k), Gold (₹11k), Silver (₹5k)",
-      "Month-wise Mantra Vrushti",
-      "Garbh Samvad & Prenatal Yoga",
-    ],
-  },
-  {
-    icon: Baby,
-    title: "Baal Sanskar",
-    subTitle: "Sacred Milestones in Early Childhood",
-    desc: "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories.",
-    price: "₹6,000",
-    img: "/images/baal_bhavish_banner.jpg",
-    to: "/features/baal-sanskar",
-    iconBg: "bg-pink-100/80",
-    iconColor: "text-[#EA3484]",
-    features: [
-      "Namkaran, Nishkraman & Annaprashan",
-      "Character & Value Building",
-      "Cognitive Brain Puzzles",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Infant Care",
-    subTitle: "Gentle Care for Your Baby's Early Years",
-    desc: "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes.",
-    price: "₹5,000",
-    img: "/images/nurturing_life_banner.png",
-    to: "/features/infant-care",
-    iconBg: "bg-pink-100/80",
-    iconColor: "text-[#F45B8A]",
-    features: [
-      "Personal Parenting Coach",
-      "Custom Diet & Lactation",
-      "Daily Live Yoga & Milestones",
-    ],
-  },
-  {
-    icon: Smile,
-    title: "Parenting",
-    subTitle: "Mindful Guidance for Raising Your Child",
-    desc: "Evidence-based mindful parenting, emotional regulation strategies, positive discipline, and child nutrition.",
-    price: "Expert Guidance",
-    img: "/images/parenting_banner.jpg",
-    to: "/features/parenting",
-    iconBg: "bg-rose-100/80",
-    iconColor: "text-[#EA3484]",
-    features: [
-      "Parenting Coach & Support",
-      "Child Psychological Growth",
-      "Nutrition & Emotional Wellbeing",
-    ],
-  },
-  {
-    icon: Compass,
-    title: "Bhavishya Phal",
-    subTitle: "Astrological Insights for Your Child's Journey",
-    desc: "Astrological birth chart (Janam Kundali) analysis, planetary strengths, and senior astrologer consultation.",
-    price: "Starting ₹3,100",
-    img: "/images/about_premium.png",
-    to: "/features/bhavishya-fal",
-    iconBg: "bg-pink-100/80",
-    iconColor: "text-[#EA3484]",
-    features: [
-      "Kundli + Falit Report (₹3,500)",
-      "Live Astrologer Consultation (₹3,100)",
-      "Lifelong Nakshatra Guidance",
-    ],
-  },
-];
-
 export default function FeaturesSection() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1200,
   );
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const programs: ProgramItem[] = [
+    {
+      icon: Heart,
+      title: t("programs.garbhadhan.title", "Garbhadhan Sanskar"),
+      subTitle: t("programs.garbhadhan.subtitle", "Sacred Preparation for Conception"),
+      desc: t("programs.garbhadhan.desc", "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul."),
+      price: "₹11,000",
+      img: "/images/garbh_dan_banner.png",
+      to: "/features/garbh-dhan",
+      iconBg: "bg-pink-100/80",
+      iconColor: "text-[#F45B8A]",
+      features: [
+        t("programs.garbhadhan.f1", "Muhurat-Based Coitus Dates"),
+        t("programs.garbhadhan.f2", "Isht Mantra & Meditation"),
+        t("programs.garbhadhan.f3", "Fertility Tracker & Support"),
+      ],
+    },
+    {
+      icon: Sparkles,
+      title: t("programs.beejSanskar.title", "Beej Sanskar"),
+      subTitle: t("programs.beejSanskar.subtitle", "Preparing the Foundation for Conscious Conception"),
+      desc: t("programs.beejSanskar.desc", "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving."),
+      price: "Vitality Track",
+      img: "/images/beej_sanskar_banner.jpg",
+      to: "/features/beej-sanskar",
+      iconBg: "bg-amber-100/80",
+      iconColor: "text-amber-600",
+      features: [
+        t("programs.beejSanskar.f1", "Ayurvedic Cellular Detox"),
+        t("programs.beejSanskar.f2", "Satvik Diet & Vitality"),
+        t("programs.beejSanskar.f3", "Stress Reduction & Yoga"),
+      ],
+    },
+    {
+      icon: Sun,
+      title: t("programs.garbhSanskar.title", "Garbh Sanskar"),
+      subTitle: t("programs.garbhSanskar.subtitle", "9-Month Journey of Prenatal Nurturing"),
+      desc: t("programs.garbhSanskar.desc", "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation."),
+      price: "Starting ₹5,000",
+      badge: t("programs.garbhSanskar.badge", "Most Popular"),
+      img: "/images/garbh_sanskar_banner.jpg",
+      to: "/features/garbh-sanskar",
+      iconBg: "bg-purple-100/80",
+      iconColor: "text-purple-600",
+      features: [
+        t("programs.garbhSanskar.f1", "Month-wise Mantra Vrushti"),
+        t("programs.garbhSanskar.f2", "Garbh Samvad & Prenatal Yoga"),
+        t("programs.garbhSanskar.f3", "Trimester-wise Satvik Diet"),
+      ],
+    },
+    {
+      icon: Baby,
+      title: t("programs.baalSanskar.title", "Baal Sanskar"),
+      subTitle: t("programs.baalSanskar.subtitle", "Sacred Milestones in Early Childhood"),
+      desc: t("programs.baalSanskar.desc", "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories."),
+      price: "₹6,000",
+      img: "/images/baal_bhavish_banner.jpg",
+      to: "/features/baal-sanskar",
+      iconBg: "bg-pink-100/80",
+      iconColor: "text-[#EA3484]",
+      features: [
+        t("programs.baalSanskar.f1", "Namkaran, Nishkraman & Annaprashan"),
+        t("programs.baalSanskar.f2", "Character & Value Building"),
+        t("programs.baalSanskar.f3", "Cognitive Brain Puzzles"),
+      ],
+    },
+    {
+      icon: ShieldCheck,
+      title: t("programs.infantCare.title", "Infant Care"),
+      subTitle: t("programs.infantCare.subtitle", "Gentle Care for Your Baby's Early Years"),
+      desc: t("programs.infantCare.desc", "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes."),
+      price: "₹5,000",
+      img: "/images/nurturing_life_banner.png",
+      to: "/features/infant-care",
+      iconBg: "bg-emerald-100/80",
+      iconColor: "text-emerald-600",
+      features: [
+        t("programs.infantCare.f1", "Doctor-Led Live Sessions"),
+        t("programs.infantCare.f2", "Lactation & Postpartum Care"),
+        t("programs.infantCare.f3", "Gentle Sleep Techniques"),
+      ],
+    },
+    {
+      icon: Smile,
+      title: t("programs.parenting.title", "Parenting"),
+      subTitle: t("programs.parenting.subtitle", "Mindful Guidance for Raising Your Child"),
+      desc: t("programs.parenting.desc", "Mindful parenting frameworks, positive emotional bonding, digital detox strategies, and screen-free routines."),
+      price: "₹4,000",
+      img: "/images/mindful_parenting_banner.png",
+      to: "/features/parenting",
+      iconBg: "bg-purple-100/80",
+      iconColor: "text-purple-600",
+      features: [
+        t("programs.parenting.f1", "Emotional Intelligence Coaching"),
+        t("programs.parenting.f2", "Digital Detox & Play Techniques"),
+        t("programs.parenting.f3", "Parent-Child Bonding Exercises"),
+      ],
+    },
+    {
+      icon: Compass,
+      title: t("programs.bhavishyaPhal.title", "Bhavishya Phal"),
+      subTitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Journey"),
+      desc: t("programs.bhavishyaPhal.desc", "Astrological birth chart (Janam Kundali) analysis, planetary strengths, and senior astrologer consultation."),
+      price: "Starting ₹3,100",
+      img: "/images/about_premium.png",
+      to: "/features/bhavishya-fal",
+      iconBg: "bg-pink-100/80",
+      iconColor: "text-[#EA3484]",
+      features: [
+        t("programs.bhavishyaPhal.f1", "Vedic Kundali & Janam Lagna"),
+        t("programs.bhavishyaPhal.f2", "Planetary Nakshatra Guidance"),
+        t("programs.bhavishyaPhal.f3", "Career & Spiritual Direction"),
+      ],
+    },
+  ];
+
   const total = programs.length;
 
   // Window resize listener for dynamic responsive layout
@@ -205,7 +211,6 @@ export default function FeaturesSection() {
     const isMobile = windowWidth < 640;
     const isTablet = windowWidth >= 640 && windowWidth < 1024;
 
-    // On mobile screens, only render adjacent cards to prevent horizontal overflow
     const maxVisibleOffset = isMobile ? 1 : 2;
     if (absOffset > maxVisibleOffset) {
       return {
@@ -216,48 +221,43 @@ export default function FeaturesSection() {
       };
     }
 
-    // Dynamic responsive spread
     const spacing = isMobile ? Math.min(windowWidth * 0.75, 250) : isTablet ? 280 : 340;
-    const translateX = offset * spacing;
-    const translateZ = -absOffset * (isMobile ? 60 : 110);
-    const rotateY = offset * (isMobile ? -12 : -18);
-    const scale = 1 - absOffset * (isMobile ? 0.12 : 0.1);
-    const opacity = 1 - absOffset * (isMobile ? 0.35 : 0.25);
-    const zIndex = 30 - absOffset * 10;
+    const x = offset * spacing;
+    const z = -Math.pow(absOffset, 1.4) * (isMobile ? 70 : 120);
+    const scale = Math.max(0.72, 1 - absOffset * (isMobile ? 0.16 : 0.12));
+    const rotateY = offset * (isMobile ? -14 : -18);
+    const opacity = Math.max(0.25, 1 - absOffset * (isMobile ? 0.45 : 0.35));
+    const zIndex = 30 - Math.round(absOffset * 10);
 
     return {
+      transform: `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`,
       opacity,
-      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
       zIndex,
-      pointerEvents: "auto" as const,
     };
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#FFFDFE] via-[#FDF6FA] to-[#F7FAFF] pt-14 md:pt-20 pb-16 md:pb-24 border-b border-pink-100/60">
-      {/* Background Ambience */}
-      <div className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-pink-200/25 blur-3xl" />
+    <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#FFFDFE] via-[#FFF5F9] to-[#FFF8FD] overflow-hidden border-b border-pink-100/70">
+      {/* Ambient decorative glowing blobs */}
+      <div className="pointer-events-none absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-pink-300/20 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-purple-200/20 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Header Block */}
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-14 space-y-3">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-[#F45B8A]" /> AstroBaby Programs & Services
+            <Sparkles className="h-3.5 w-3.5 text-[#F45B8A]" />
+            <span>{t("featuresSection.badge", "Sacred Vedic Programs")}</span>
           </span>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#172554] tracking-tight">
-            Explore Our{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
-              Sacred Programs
-            </span>
+            {t("featuresSection.heading", "Holistic Sanskar for Every Stage of Parenthood")}
           </h2>
 
           <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
 
           <p className="text-sm md:text-base leading-relaxed text-[#475569] font-normal max-w-2xl mx-auto mt-2">
-            From conscious pre-conception preparation to prenatal nurturing, gentle infant care, and
-            future astrological insights.
+            {t("featuresSection.subtitle", "Discover our complete 7-stage curriculum bridging authentic Vedic rituals with modern obstetric medicine.")}
           </p>
         </div>
 
@@ -373,7 +373,7 @@ export default function FeaturesSection() {
                           : "bg-[#172554] text-white/90 hover:bg-[#1e3a8a]"
                       }`}
                     >
-                      <span>View Program</span>
+                      <span>{t("featuresSection.learnMore", "View Program")}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                     <span className="text-[11px] font-bold text-slate-400">Pillar 0{idx + 1}</span>
@@ -386,7 +386,6 @@ export default function FeaturesSection() {
 
         {/* ── Carousel Navigation Controls ── */}
         <div className="flex flex-col items-center justify-center gap-5 mt-6">
-          {/* Controls: Prev, Next & 7 Tonal Pagination Dots */}
           <div className="flex items-center gap-4">
             <button
               onClick={handlePrev}
@@ -431,7 +430,7 @@ export default function FeaturesSection() {
             to="/features"
             className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] hover:shadow-lg hover:shadow-[#F45B8A]/30 px-9 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
-            <span>Explore All Features & Courses</span>
+            <span>{t("featuresSection.viewAll", "Explore All 7 Sanskar Programs")}</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
           </Link>
         </div>

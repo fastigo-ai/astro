@@ -1,163 +1,132 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useLanguage, Language } from "@/context/LanguageContext";
 import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass, Phone } from "lucide-react";
 import { TextEffect } from "@/components/core/text-effect";
 
-// ── 7 Core Program Headings for Dropdown (Exact Names) ──
-export const PROGRAM_DROPDOWN_CATEGORIES = [
-  {
-    id: "garbhadhan",
-    title: "Garbhadhan Sanskar",
-    subtitle: "Sacred Preparation for Conception",
-    to: "/features/garbh-dhan",
-    icon: Heart,
-    iconBg: "bg-pink-50 text-[#F45B8A]",
-  },
-  {
-    id: "beej-sanskar",
-    title: "Beej Sanskar",
-    subtitle: "Preparing the Foundation for Conscious Conception",
-    to: "/features/beej-sanskar",
-    icon: Sparkles,
-    iconBg: "bg-amber-50 text-amber-600",
-  },
-  {
-    id: "garbh-sanskar",
-    title: "Garbh Sanskar",
-    subtitle: "9-Month Journey of Prenatal Nurturing",
-    to: "/features/garbh-sanskar",
-    icon: Sun,
-    iconBg: "bg-purple-50 text-purple-600",
-  },
-  {
-    id: "baal-sanskar",
-    title: "Baal Sanskar",
-    subtitle: "Sacred Milestones in Early Childhood",
-    to: "/features/baal-sanskar",
-    icon: Baby,
-    iconBg: "bg-blue-50 text-blue-600",
-  },
-  {
-    id: "infant-care",
-    title: "Infant Care",
-    subtitle: "Gentle Care for Your Baby's Early Years",
-    to: "/features/infant-care",
-    icon: ShieldCheck,
-    iconBg: "bg-pink-50 text-[#F45B8A]",
-  },
-  {
-    id: "parenting",
-    title: "Parenting",
-    subtitle: "Mindful Guidance for Raising Your Child",
-    to: "/features/parenting",
-    icon: Smile,
-    iconBg: "bg-emerald-50 text-emerald-600",
-  },
-  {
-    id: "bhavishya-fal",
-    title: "Bhavishya Phal",
-    subtitle: "Astrological Insights for Your Child's Journey",
-    to: "/features/bhavishya-fal",
-    icon: Compass,
-    iconBg: "bg-indigo-50 text-indigo-600",
-  },
-];
-
-const navItems = [
-  {
-    label: "Home",
-    to: "/",
-  },
-  {
-    label: "About Us",
-    to: "/about-us",
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        label: "Our Story",
-        to: "/about-us",
-      },
-      {
-        label: "Team",
-        to: "/team",
-      },
-    ],
-  },
-  {
-    label: "Courses & Features",
-    to: "/features",
-    hasDropdown: true,
-    isProgramMenu: true,
-    dropdownItems: [
-      {
-        label: "Garbhadhan Sanskar",
-        desc: "Sacred Preparation for Conception",
-        to: "/features/garbh-dhan",
-      },
-      {
-        label: "Beej Sanskar",
-        desc: "Preparing the Foundation for Conscious Conception",
-        to: "/features/beej-sanskar",
-      },
-      {
-        label: "Garbh Sanskar",
-        desc: "9-Month Journey of Prenatal Nurturing",
-        to: "/features/garbh-sanskar",
-      },
-      {
-        label: "Baal Sanskar",
-        desc: "Sacred Milestones in Early Childhood",
-        to: "/features/baal-sanskar",
-      },
-      {
-        label: "Infant Care",
-        desc: "Gentle Care for Your Baby's Early Years",
-        to: "/features/infant-care",
-      },
-      {
-        label: "Parenting",
-        desc: "Mindful Guidance for Raising Your Child",
-        to: "/features/parenting",
-      },
-      {
-        label: "Bhavishya Phal",
-        desc: "Astrological Insights for Your Child's Journey",
-        to: "/features/bhavishya-fal",
-      },
-    ],
-  },
-  {
-    label: "Testimonial",
-    to: "/testimonial",
-  },
-  {
-    label: "Blogs",
-    to: "/blog",
-  },
-  {
-    label: "Contact",
-    to: "/contact",
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        label: "Contact Us",
-        to: "/contact",
-      },
-      {
-        label: "Newsletter",
-        to: "/newsletter",
-      },
-    ],
-  },
-];
-
 export default function HeaderNavbar() {
+  const { t } = useTranslation();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const { currentLanguage, changeLanguage, languages } = useLanguage();
+
+  const programCategories = [
+    {
+      id: "garbhadhan",
+      title: t("programs.garbhadhan.title", "Garbhadhan Sanskar"),
+      subtitle: t("programs.garbhadhan.subtitle", "Sacred Preparation for Conception"),
+      to: "/features/garbh-dhan",
+      icon: Heart,
+      iconBg: "bg-pink-50 text-[#F45B8A]",
+    },
+    {
+      id: "beej-sanskar",
+      title: t("programs.beejSanskar.title", "Beej Sanskar"),
+      subtitle: t("programs.beejSanskar.subtitle", "Preparing the Foundation for Conscious Conception"),
+      to: "/features/beej-sanskar",
+      icon: Sparkles,
+      iconBg: "bg-amber-50 text-amber-600",
+    },
+    {
+      id: "garbh-sanskar",
+      title: t("programs.garbhSanskar.title", "Garbh Sanskar"),
+      subtitle: t("programs.garbhSanskar.subtitle", "9-Month Journey of Prenatal Nurturing"),
+      to: "/features/garbh-sanskar",
+      icon: Sun,
+      iconBg: "bg-purple-50 text-purple-600",
+    },
+    {
+      id: "baal-sanskar",
+      title: t("programs.baalSanskar.title", "Baal Sanskar"),
+      subtitle: t("programs.baalSanskar.subtitle", "Sacred Milestones in Early Childhood"),
+      to: "/features/baal-sanskar",
+      icon: Baby,
+      iconBg: "bg-blue-50 text-blue-600",
+    },
+    {
+      id: "infant-care",
+      title: t("programs.infantCare.title", "Infant Care"),
+      subtitle: t("programs.infantCare.subtitle", "Gentle Care for Your Baby's Early Years"),
+      to: "/features/infant-care",
+      icon: ShieldCheck,
+      iconBg: "bg-pink-50 text-[#F45B8A]",
+    },
+    {
+      id: "parenting",
+      title: t("programs.parenting.title", "Parenting"),
+      subtitle: t("programs.parenting.subtitle", "Mindful Guidance for Raising Your Child"),
+      to: "/features/parenting",
+      icon: Smile,
+      iconBg: "bg-emerald-50 text-emerald-600",
+    },
+    {
+      id: "bhavishya-fal",
+      title: t("programs.bhavishyaPhal.title", "Bhavishya Phal"),
+      subtitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Journey"),
+      to: "/features/bhavishya-fal",
+      icon: Compass,
+      iconBg: "bg-indigo-50 text-indigo-600",
+    },
+  ];
+
+  const navItems = [
+    {
+      label: t("nav.home", "Home"),
+      to: "/",
+    },
+    {
+      label: t("nav.aboutUs", "About Us"),
+      to: "/about-us",
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          label: t("nav.aboutUs", "About Us"),
+          to: "/about-us",
+        },
+        {
+          label: t("nav.expertTeam", "Expert Team"),
+          to: "/team",
+        },
+      ],
+    },
+    {
+      label: t("nav.programs", "Sacred Programs"),
+      to: "/features",
+      hasDropdown: true,
+      isProgramMenu: true,
+      dropdownItems: programCategories.map((p) => ({
+        label: p.title,
+        desc: p.subtitle,
+        to: p.to,
+      })),
+    },
+    {
+      label: t("nav.testimonials", "Testimonials"),
+      to: "/testimonial",
+    },
+    {
+      label: t("nav.blog", "Blogs"),
+      to: "/blog",
+    },
+    {
+      label: t("nav.contact", "Contact"),
+      to: "/contact",
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          label: t("nav.contact", "Contact Us"),
+          to: "/contact",
+        },
+        {
+          label: "Newsletter",
+          to: "/newsletter",
+        },
+      ],
+    },
+  ];
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -179,37 +148,19 @@ export default function HeaderNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle scroll for sticky navbar effect and exit/entrance animation with rAF throttling
+  // Handle scroll for sticky navbar effect with rAF throttling
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          const shouldBeScrolled = currentScrollY > 20;
+          const shouldBeScrolled = currentScrollY > 15;
 
           if (shouldBeScrolled !== isScrolledRef.current) {
             isScrolledRef.current = shouldBeScrolled;
             setScrolled(shouldBeScrolled);
           }
 
-          // Exit animation when scrolling down, entrance animation when scrolling up
-          let shouldBeVisible = true;
-          if (currentScrollY > 70) {
-            if (currentScrollY > lastScrollY.current + 6) {
-              shouldBeVisible = false; // Smooth exit
-            } else if (currentScrollY < lastScrollY.current - 6) {
-              shouldBeVisible = true; // Smooth entrance
-            } else {
-              shouldBeVisible = isVisibleRef.current;
-            }
-          }
-
-          if (shouldBeVisible !== isVisibleRef.current) {
-            isVisibleRef.current = shouldBeVisible;
-            setIsVisible(shouldBeVisible);
-          }
-
-          lastScrollY.current = currentScrollY;
           ticking.current = false;
         });
         ticking.current = true;
@@ -227,67 +178,73 @@ export default function HeaderNavbar() {
   };
 
   return (
-    <div className="w-full relative z-50 font-medium" style={{ zIndex: 9999 }}>
-      {/* Top Bar with TextEffect */}
-      <div className="hidden md:block bg-[#172554] text-white text-xs py-2 shadow-inner">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-amber-300">✨</span>
-            <TextEffect
-              per="char"
-              delay={0.15}
-              className="font-semibold text-white/90"
-            >
-              Astro Baby Garbhadhan Sanskar
-            </TextEffect>
-          </div>
-          <div className="flex items-center gap-4 text-white/90">
-            <a
-              href="tel:+919018567465"
-              className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>+91 9018567465</span>
-            </a>
+    <header
+      className="w-full fixed top-0 left-0 z-50 font-medium select-none"
+      style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 99999 }}
+    >
+      <div className="w-full">
+        {/* Top Bar with smooth height & opacity collapse */}
+        <div
+          className={`hidden md:block bg-[#172554] text-white text-xs shadow-inner overflow-hidden transition-all duration-500 ease-in-out ${
+            scrolled ? "max-h-0 opacity-0 py-0" : "max-h-10 opacity-100 py-2"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <span className="text-amber-300">✨</span>
+              <TextEffect
+                key={currentLanguage.code}
+                per="word"
+                delay={0.15}
+                className="font-semibold text-white/90"
+              >
+                {t("nav.topBanner", "Astro Baby Garbhadhan Sanskar")}
+              </TextEffect>
+            </div>
+            <div className="flex items-center gap-4 text-white/90">
+              <a
+                href="tel:+919018567465"
+                className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>+91 9018567465</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Navbar with Exciting Scroll Exit & Entrance Animation */}
-      <motion.nav
-        initial={{ y: 0, opacity: 1 }}
-        animate={{
-          y: isVisible ? 0 : -100,
-          opacity: isVisible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.35,
-          ease: [0.21, 0.47, 0.32, 0.98],
-        }}
-        className={`w-full transition-colors duration-300 ${
-          scrolled
-            ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-lg border-b border-pink-200/70"
-            : "absolute top-0 bg-pink-50"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 md:h-24">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className="inline-block">
-                <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  src="/images/logo.png"
-                  alt="Astro Baby"
-                  className="h-16 md:h-20 w-auto object-contain drop-shadow-sm"
-                />
-              </Link>
-            </div>
+        {/* Main Navbar with smooth height, bg, border & shadow transitions */}
+        <nav
+          className={`w-full transition-all duration-500 ease-in-out ${
+            scrolled
+              ? "bg-white/95 backdrop-blur-2xl shadow-[0_10px_35px_rgba(23,37,84,0.08)] border-b border-pink-200/80"
+              : "bg-pink-50/95 backdrop-blur-md border-b border-pink-100/60"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
+                scrolled ? "h-16 md:h-[72px]" : "h-20 md:h-24"
+              }`}
+            >
+              {/* Logo */}
+              <div className="flex-shrink-0 flex items-center">
+                <Link to="/" className="inline-block">
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    src="/images/logo.png"
+                    alt="Astro Baby"
+                    className={`w-auto object-contain drop-shadow-2xs transition-all duration-500 ease-in-out ${
+                      scrolled ? "h-11 md:h-14" : "h-16 md:h-20"
+                    }`}
+                  />
+                </Link>
+              </div>
 
-            {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-2 lg:space-x-8">
-              {navItems.map((item) => {
+              {/* Desktop Navigation Links */}
+              <div className="hidden md:flex items-center space-x-2 lg:space-x-8">
+                {navItems.map((item) => {
                 const active = isActive(item.to);
                 const isHovered = hoveredItem === item.label;
                 return (
@@ -346,7 +303,7 @@ export default function HeaderNavbar() {
                           {item.isProgramMenu ? (
                             /* ── COMPACT SMALL DROPDOWN (ONLY HEADINGS) ── */
                             <div className="w-[500px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-[0_15px_45px_rgba(23,37,84,0.12)] border border-pink-100 p-3 grid grid-cols-2 gap-1.5">
-                              {PROGRAM_DROPDOWN_CATEGORIES.map((cat) => {
+                              {programCategories.map((cat) => {
                                 const Icon = cat.icon;
                                 return (
                                   <Link
@@ -548,7 +505,7 @@ export default function HeaderNavbar() {
                         >
                           {item.isProgramMenu ? (
                             <div className="py-2 space-y-1">
-                              {PROGRAM_DROPDOWN_CATEGORIES.map((cat) => {
+                              {programCategories.map((cat) => {
                                 const Icon = cat.icon;
                                 return (
                                   <Link
@@ -628,7 +585,8 @@ export default function HeaderNavbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.nav>
+      </nav>
     </div>
+  </header>
   );
 }

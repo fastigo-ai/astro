@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 interface AppDownloadSectionProps {
   title?: React.ReactNode;
@@ -8,9 +9,12 @@ interface AppDownloadSectionProps {
 
 export default function AppDownloadSection({
   title,
-  subtitle = "Download the Astro Baby Garbhadhan Sanskar app today and experience ancient wisdom backed by modern science.",
+  subtitle,
 }: AppDownloadSectionProps) {
+  const { t } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
+
+  const effectiveSubtitle = subtitle || t("appDownload.subtitle", "Download the Astro Baby Garbhadhan Sanskar app today and experience ancient wisdom backed by modern science.");
 
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
@@ -97,10 +101,7 @@ export default function AppDownloadSection({
           >
             {title || (
               <>
-                Begin Your Garbhadhan Sanskar Journey Today on{" "}
-                <span className="bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
-                  Astro Baby
-                </span>
+                {t("appDownload.heading", "Begin Your Garbhadhan Sanskar Journey Today on Astro Baby")}
               </>
             )}
           </motion.h2>
@@ -108,57 +109,66 @@ export default function AppDownloadSection({
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-[#475569] text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-[#475569] max-w-2xl mx-auto mb-8 font-normal leading-relaxed"
           >
-            {subtitle}
+            {effectiveSubtitle}
           </motion.p>
 
-          {/* Thin Gradient Divider */}
+          {/* App Store / Play Store Download CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="w-32 h-[1.5px] bg-gradient-to-r from-transparent via-[#EA3484]/40 to-transparent mx-auto my-6 sm:my-8"
-          />
-
-          {/* Premium Store Badges */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5"
+            className="flex flex-wrap items-center justify-center gap-4"
           >
-            {/* Google Play Button */}
-            <motion.a
-              whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
-              whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
+            <a
               href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto max-w-[210px] sm:max-w-none flex items-center justify-center cursor-pointer"
+              aria-label="Download Astro Baby on Google Play Store"
+              className="inline-block transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-xl rounded-xl overflow-hidden focus:outline-none focus:ring-4 focus:ring-pink-300"
             >
               <img
                 src="/images/google-play-badge.png"
                 alt="Get it on Google Play"
                 loading="lazy"
                 decoding="async"
-                className="h-11 sm:h-14 w-auto object-contain drop-shadow-md"
+                className="h-12 sm:h-13 w-auto object-contain"
               />
-            </motion.a>
+            </a>
 
-            {/* App Store Button */}
-            <motion.a
-              whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
-              whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
+            <a
               href="https://apple.co/3iEfg7K"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto max-w-[210px] sm:max-w-none flex items-center justify-center cursor-pointer"
+              aria-label="Download Astro Baby on Apple App Store"
+              className="inline-block transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-xl rounded-xl overflow-hidden focus:outline-none focus:ring-4 focus:ring-pink-300"
             >
               <img
                 src="/images/app-store-badge.png"
-                alt="Download on the App Store"
+                alt="Download on App Store"
                 loading="lazy"
                 decoding="async"
-                className="h-11 sm:h-14 w-auto object-contain drop-shadow-md"
+                className="h-12 sm:h-13 w-auto object-contain"
               />
-            </motion.a>
+            </a>
+          </motion.div>
+
+          {/* Trust Badges */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 pt-6 border-t border-pink-100 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-medium"
+          >
+            <span className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              100% Free Daily Trial
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#EA3484]" />
+              Android & iOS Compatible
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#172554]" />
+              Doctor & Vedic Scholar Backed
+            </span>
           </motion.div>
         </motion.div>
       </div>

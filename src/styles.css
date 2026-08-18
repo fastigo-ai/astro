@@ -556,8 +556,8 @@
   z-index: 0;
 }
 
-/* Ensure all home-page content sits above the bg decorations */
-.home-bg > * {
+/* Ensure all home-page content sits above the bg decorations except fixed header/widgets */
+.home-bg > *:not(header):not([class*="fixed"]) {
   position: relative;
   z-index: 1;
 }
@@ -627,14 +627,6 @@ body {
 .goog-text-highlight {
   background-color: transparent !important;
   box-shadow: none !important;
-}
-
-#google_translate_element {
-  display: none !important;
-}
-
-.skiptranslate:not(#root):not(#google_translate_element) {
-  display: none !important;
 }
 
 /* ── Radix Accordion Animations ── */
