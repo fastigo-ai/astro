@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 export interface Language {
   code: string;
@@ -25,20 +25,20 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { i18n } = useTranslation();
-
   const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
-    const activeCode = i18n.language?.startsWith("hi") ? "hi" : "en";
+    const activeCode = i18n?.language?.startsWith("hi") ? "hi" : "en";
     return LANGUAGES.find((l) => l.code === activeCode) || LANGUAGES[0];
   });
 
   const changeLanguage = (lang: Language) => {
     setCurrentLanguage(lang);
-    i18n.changeLanguage(lang.code);
+    i18n?.changeLanguage?.(lang.code);
     localStorage.setItem("astrobaby_lang", lang.code);
   };
 
   useEffect(() => {
+    if (!i18n || typeof i18n.on !== "function") return;
+
     const handleLanguageChanged = (lng: string) => {
       const activeCode = lng.startsWith("hi") ? "hi" : "en";
       const match = LANGUAGES.find((l) => l.code === activeCode);
@@ -49,9 +49,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     i18n.on("languageChanged", handleLanguageChanged);
     return () => {
-      i18n.off("languageChanged", handleLanguageChanged);
+      if (typeof i18n.off === "function") {
+        i18n.off("languageChanged", handleLanguageChanged);
+      }
     };
-  }, [i18n, currentLanguage.code]);
+  }, [currentLanguage.code]);
 
   return (
     <LanguageContext.Provider value={{ currentLanguage, changeLanguage, languages: LANGUAGES }}>
