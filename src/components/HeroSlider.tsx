@@ -66,7 +66,7 @@ export default function HeroSlider() {
       </div>
 
       {/* ── Main Container: Mobile Card + Desktop Split Layout ── */}
-      <div className="relative sm:absolute sm:inset-0 z-10 mx-auto w-full max-w-7xl px-4 pt-3 pb-6 sm:py-8 sm:px-6 lg:px-8 flex flex-col justify-center sm:flex-row sm:items-center sm:pt-24 lg:pt-20">
+      <div className="relative sm:absolute sm:inset-0 z-10 mx-auto w-full max-w-7xl px-4 pt-24 pb-8 sm:py-8 sm:px-6 lg:px-8 flex flex-col justify-center sm:flex-row sm:items-center sm:pt-24 lg:pt-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}

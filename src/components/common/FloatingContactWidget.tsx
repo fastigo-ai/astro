@@ -62,7 +62,7 @@ export default function FloatingContactWidget() {
   };
 
   return (
-    <aside aria-label="Live Contact Support Widget" className="fixed bottom-6 right-5 sm:right-7 z-50">
+    <aside aria-label="Live Contact Support Widget" className="fixed bottom-5 right-4 sm:bottom-6 sm:right-7 z-50">
       {/* ── Compact Modern Mobile Phone-Shaped Popup ── */}
       <AnimatePresence>
         {isOpen && (
@@ -76,7 +76,7 @@ export default function FloatingContactWidget() {
               damping: 26,
               stiffness: 320,
             }}
-            className="absolute bottom-16 right-0 w-[86vw] max-w-[320px] sm:w-[335px] max-h-[70vh] sm:max-h-[500px] overflow-hidden rounded-[30px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.22)] flex flex-col z-50 text-[#172554] overscroll-contain"
+            className="absolute bottom-16 right-0 w-[calc(100vw-32px)] max-w-[320px] sm:w-[335px] max-h-[70vh] sm:max-h-[500px] overflow-hidden rounded-[28px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.22)] flex flex-col z-50 text-[#172554] overscroll-contain"
           >
             {/* Phone Top Speaker & Status Notch */}
             <div className="bg-[#172554] px-4 pt-2 pb-1.5 flex items-center justify-between text-white/70 text-[10px] select-none shrink-0">
