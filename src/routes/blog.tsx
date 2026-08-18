@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useMemo, useRef, useEffect } from "react";
-import { gsap } from "@/utils/gsapSetup";
+import { useState, useMemo, useRef } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { Sparkles, Search, ChevronRight, Clock, Calendar, ArrowRight, BookOpen, User } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
@@ -70,24 +70,7 @@ export default function BlogPage() {
     return filteredPosts.slice(startIdx, startIdx + ITEMS_PER_PAGE);
   }, [filteredPosts, safeCurrentPage]);
 
-  useEffect(() => {
-    if (!blogSectionRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-blog-card]",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.05,
-          ease: "power2.out",
-          clearProps: "opacity,transform",
-        },
-      );
-    }, blogSectionRef);
-    return () => ctx.revert();
-  }, [safeCurrentPage, selectedCategory, searchQuery]);
+  const shouldReduceMotion = useReducedMotion();
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -262,12 +245,19 @@ export default function BlogPage() {
                 const category = getPostCategory(p.title);
                 const readTime = getReadTime(p.title);
                 return (
-                  <Link
+                  <motion.div
                     key={i}
-                    data-blog-card
-                    to={`/blog/${slugify(p.title)}`}
-                    className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-all duration-400 border border-pink-100 flex flex-col overflow-hidden group hover:-translate-y-1.5"
+                    initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: (i % 3) * 0.08 }}
+                    whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.2 } }}
+                    className="flex flex-col"
                   >
+                    <Link
+                      to={`/blog/${slugify(p.title)}`}
+                      className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-shadow duration-300 border border-pink-100 flex flex-col overflow-hidden group h-full"
+                    >
                     {/* Thumbnail Image Container */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                       <img
@@ -324,9 +314,10 @@ export default function BlogPage() {
                       </div>
                     </div>
                   </Link>
-                );
-              })}
-            </div>
+                </motion.div>
+              );
+            })}
+          </div>
           ) : (
             /* No Results state */
             <div className="py-20 text-center bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 p-8 shadow-sm max-w-xl mx-auto">

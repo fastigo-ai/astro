@@ -1,21 +1,17 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { ArrowUp } from "lucide-react";
-import { ScrollTrigger } from "@/utils/gsapSetup";
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   // Scroll to top automatically when navigating to a new route
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-    return () => clearTimeout(timer);
   }, [pathname]);
 
   // Track scroll depth and percentage for floating button
@@ -30,14 +26,14 @@ export default function ScrollToTop() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // initialize on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: shouldReduceMotion ? "auto" : "smooth",
     });
   };
 
@@ -52,17 +48,19 @@ export default function ScrollToTop() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.7, y: 20 }}
+          initial={{ opacity: 0, scale: 0.7, y: shouldReduceMotion ? 0 : 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.7, y: 20 }}
-          transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          exit={{ opacity: 0, scale: 0.7, y: shouldReduceMotion ? 0 : 20 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
           className="fixed bottom-6 right-5 sm:right-7 z-50 flex items-center justify-center group"
         >
-          <button
+          <motion.button
+            whileHover={shouldReduceMotion ? {} : { scale: 1.08 }}
+            whileTap={shouldReduceMotion ? {} : { scale: 0.94 }}
             type="button"
             onClick={scrollToTop}
             aria-label="Scroll back to top of page"
-            className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-[#EA3484] via-[#F45B8A] to-[#FF70A6] text-white shadow-[0_8px_25px_rgba(234,52,132,0.45)] hover:shadow-[0_12px_32px_rgba(234,52,132,0.65)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-3 focus:ring-pink-300/80"
+            className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-[#EA3484] via-[#F45B8A] to-[#FF70A6] text-white shadow-[0_8px_25px_rgba(234,52,132,0.45)] hover:shadow-[0_12px_32px_rgba(234,52,132,0.65)] transition-shadow duration-300 cursor-pointer focus:outline-none focus:ring-3 focus:ring-pink-300/80"
           >
             {/* Circular Progress Ring */}
             <svg
@@ -94,7 +92,7 @@ export default function ScrollToTop() {
 
             {/* Icon */}
             <ArrowUp className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-y-0.5" />
-          </button>
+          </motion.button>
         </motion.div>
       )}
     </AnimatePresence>

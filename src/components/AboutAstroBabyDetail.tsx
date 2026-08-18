@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Sparkles, Heart, Moon, Sun, Play, Star } from "lucide-react";
-import { gsap } from "@/utils/gsapSetup";
+import { motion, useReducedMotion } from "motion/react";
 
 const featureCards = [
   {
@@ -47,41 +47,17 @@ const featureCards = [
 
 export default function AboutAstroBabyDetail() {
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const rootRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Fade in main top card
-      gsap.from("[data-about-card]", {
-        y: 30,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-
-      // Video container reveal
-      gsap.from("[data-video-container]", {
-        scale: 0.97,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "[data-video-container]",
-          start: "top 85%",
-        },
-      });
-    }, rootRef);
-
-    return () => ctx.revert();
-  }, []);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div ref={rootRef} className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 space-y-12 md:space-y-16">
+    <div className="mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 space-y-12 md:space-y-16">
       {/* ── 1. TOP SECTION: Main About Astro Baby Card ── */}
-      <div
-        data-about-card
+      <motion.div
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative overflow-hidden rounded-[28px] md:rounded-[36px] border border-pink-100/80 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)] transition-all duration-300"
       >
         {/* Subtle background glow */}
@@ -89,7 +65,7 @@ export default function AboutAstroBabyDetail() {
         <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-rose-100/40 blur-3xl z-0" />
 
         <div className="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
-          {/* Left Column: Clean, Minimal Image Thumbnail according to Theme */}
+          {/* Left Column: Clean, Minimal Image Thumbnail */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[420px] overflow-hidden rounded-[26px] shadow-[0_16px_40px_rgba(234,52,132,0.09)] border-2 border-pink-100/80 bg-gradient-to-b from-white via-pink-50/30 to-pink-50/60 p-2.5 group">
               {/* Image Box */}
@@ -165,19 +141,21 @@ export default function AboutAstroBabyDetail() {
             </div>
 
             {/* 4 Premium Feature Cards Grid */}
-            <div
-              data-feature-cards-grid
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 items-stretch"
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 items-stretch">
               {featureCards.map((card, idx) => {
                 const Icon = card.icon;
                 return (
-                  <div
+                  <motion.div
                     key={idx}
-                    className={`flex flex-col items-center text-center p-4 rounded-[20px] border ${card.bgColor} shadow-xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer h-full group`}
+                    initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.2 } }}
+                    className={`flex flex-col items-center text-center p-4 rounded-[20px] border ${card.bgColor} shadow-xs backdrop-blur-sm transition-colors duration-200 cursor-pointer h-full group`}
                   >
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${card.iconBg} ${card.iconColor} shadow-xs mb-3 group-hover:scale-110 transition-transform`}
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${card.iconBg} ${card.iconColor} shadow-xs mb-3 group-hover:scale-110 transition-transform duration-200`}
                     >
                       <Icon className="h-5.5 w-5.5" />
                     </div>
@@ -187,17 +165,20 @@ export default function AboutAstroBabyDetail() {
                     <p className={`text-[11px] font-normal ${card.subtitleColor} leading-relaxed`}>
                       {card.subtitle}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ── 2. BOTTOM SECTION: Our Introduction Video ── */}
-      <div
-        data-video-container
+      <motion.div
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative overflow-hidden rounded-[28px] md:rounded-[36px] bg-gradient-to-br from-[#FFF6FA] via-[#FFF8FD] to-[#FFF0F5] border border-pink-100/80 p-6 md:p-10 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.06)] text-center space-y-6"
       >
         {/* Subtle Constellation SVG Decorations */}
@@ -236,7 +217,7 @@ export default function AboutAstroBabyDetail() {
           </p>
         </div>
 
-        {/* Video Player Box - Minimal & Clean Thumbnail */}
+        {/* Video Player Box */}
         <div className="relative z-10 max-w-4xl mx-auto rounded-[24px] md:rounded-[28px] overflow-hidden shadow-xl border-2 border-white bg-slate-950 group">
           {isPlaying ? (
             <div className="aspect-video w-full">
@@ -280,13 +261,15 @@ export default function AboutAstroBabyDetail() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative flex items-center justify-center">
                   <span className="absolute -inset-2 rounded-full bg-[#EA3484]/40 animate-ping pointer-events-none" />
-                  <button
+                  <motion.button
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
+                    whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                     type="button"
                     aria-label="Play Introduction Video"
-                    className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-[0_10px_30px_rgba(234,52,132,0.5)] transition-transform duration-300 group-hover:scale-110 border-2 border-white"
+                    className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-[0_10px_30px_rgba(234,52,132,0.5)] border-2 border-white"
                   >
                     <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-white ml-1 text-white" />
-                  </button>
+                  </motion.button>
                 </div>
               </div>
 
@@ -303,7 +286,7 @@ export default function AboutAstroBabyDetail() {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

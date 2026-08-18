@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { gsap, ScrollTrigger } from "@/utils/gsapSetup";
+import { motion, useReducedMotion } from "motion/react";
 import {
   Sparkles,
   Heart,
@@ -291,41 +291,7 @@ const FEATURE_CATEGORIES = [
 export default function FeaturesPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Features");
   const [searchQuery, setSearchQuery] = useState("");
-  const featuresGridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!featuresGridRef.current) return;
-    const timer = setTimeout(() => {
-      if (!featuresGridRef.current) return;
-      gsap.registerPlugin(ScrollTrigger);
-      const ctx = gsap.context(() => {
-        const items = featuresGridRef.current?.querySelectorAll("[data-feature-item]");
-        items?.forEach((el, index) => {
-          const fromLeft = index % 2 === 0;
-          gsap.fromTo(
-            el,
-            { opacity: 0, x: fromLeft ? -40 : 40 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 0.6,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: el,
-                start: "top 92%",
-                toggleActions: "play none none none",
-                once: true,
-              },
-            },
-          );
-        });
-      }, featuresGridRef);
-      ScrollTrigger.refresh();
-      return () => ctx.revert();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, [selectedCategory, searchQuery]);
+  const shouldReduceMotion = useReducedMotion();
 
   const filteredFeatures = features.filter((f) => {
     const matchesSearch =
@@ -558,10 +524,13 @@ export default function FeaturesPage() {
             {filteredFeatures.map((f, i) => {
               const isEven = i % 2 === 0;
               return (
-                <div
+                <motion.div
                   key={f.title + i}
-                  data-feature-item
-                  className="bg-white/95 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 md:p-10 border border-pink-100 shadow-[0_15px_45px_rgba(23,37,84,0.06)] grid lg:grid-cols-12 gap-8 items-center group hover:shadow-[0_20px_60px_rgba(244,91,138,0.12)] transition-all duration-400"
+                  initial={{ opacity: 0, x: shouldReduceMotion ? 0 : isEven ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="bg-white/95 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 md:p-10 border border-pink-100 shadow-[0_15px_45px_rgba(23,37,84,0.06)] grid lg:grid-cols-12 gap-8 items-center group hover:shadow-[0_20px_60px_rgba(244,91,138,0.12)] transition-shadow duration-300"
                 >
                   {/* Image Column */}
                   <div className={`lg:col-span-5 overflow-hidden rounded-[24px] bg-slate-900 border-2 border-white shadow-md ${isEven ? "lg:order-1" : "lg:order-2"}`}>
@@ -608,7 +577,7 @@ export default function FeaturesPage() {
                       </a>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

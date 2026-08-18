@@ -9,7 +9,9 @@ import {
   ChevronRight,
   Compass,
   ArrowRight,
-  Users
+  Users,
+  Smartphone,
+  PlayCircle
 } from "lucide-react";
 import AboutAstroBabyDetail from "@/components/AboutAstroBabyDetail";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
@@ -52,11 +54,46 @@ const storyPillars = [
 ];
 
 const stats = [
-  { num: "1,00,000+", label: "Mobile App Downloads", sub: "Trusted Worldwide", icon: "📱" },
-  { num: "12,00,000+", label: "YouTube Community Views", sub: "Spiritual Guidance", icon: "▶️" },
-  { num: "62+ Countries", label: "Global Reach", sub: "Families Enriched", icon: "🌍" },
-  { num: "4.6 ★★★★★", label: "Google Play Store Rating", sub: "Verified Reviews", icon: "⭐" },
-  { num: "Thousands", label: "Happy & Calm Pregnancies", sub: "Healthy Newborns", icon: "🌸" },
+  {
+    num: "1,00,000+",
+    label: "Mobile App Downloads",
+    sub: "Trusted Worldwide",
+    icon: Smartphone,
+    iconBg: "bg-pink-50 text-[#EA3484] border-pink-100",
+    badgeBg: "bg-pink-50/90 text-[#EA3484] border border-pink-100/80",
+  },
+  {
+    num: "12,00,000+",
+    label: "YouTube Community Views",
+    sub: "Spiritual Guidance",
+    icon: PlayCircle,
+    iconBg: "bg-rose-50 text-[#F45B8A] border-rose-100",
+    badgeBg: "bg-rose-50/90 text-[#F45B8A] border border-rose-100/80",
+  },
+  {
+    num: "62+ Countries",
+    label: "Global Reach",
+    sub: "Families Enriched",
+    icon: Globe,
+    iconBg: "bg-pink-50 text-[#EA3484] border-pink-100",
+    badgeBg: "bg-pink-50/90 text-[#EA3484] border border-pink-100/80",
+  },
+  {
+    num: "4.6 ★★★★★",
+    label: "Google Play Store Rating",
+    sub: "Verified Reviews",
+    icon: Star,
+    iconBg: "bg-amber-50 text-[#D97706] border-amber-100",
+    badgeBg: "bg-amber-50/90 text-[#D97706] border border-amber-100/80",
+  },
+  {
+    num: "Thousands",
+    label: "Happy & Calm Pregnancies",
+    sub: "Healthy Newborns",
+    icon: Heart,
+    iconBg: "bg-rose-50 text-[#EA3484] border-rose-100",
+    badgeBg: "bg-rose-50/90 text-[#EA3484] border border-rose-100/80",
+  },
 ];
 
 const milestones = [
@@ -213,45 +250,67 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Impact & Numbers Section ── */}
-      <section className="py-16 md:py-20 relative z-10 bg-gradient-to-b from-[#172554] via-[#1A3A6C] to-[#172554] text-white overflow-hidden">
-        <div className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#EA3484]/20 blur-[120px]" />
-        <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#F45B8A]/20 blur-[120px]" />
+      {/* ── Impact & Numbers Section: Light Luxury AstroBaby Theme ── */}
+      <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF5F9] via-[#FFFDFE] to-[#FFF6FA] border-y border-pink-100/70 overflow-hidden">
+        {/* Ambient Theme Glow Spheres */}
+        <div className="pointer-events-none absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-rose-200/30 blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.2] tracking-tight">
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-2xs">
+              <Sparkles className="h-3 w-3" /> Global Reach & Trust
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] leading-[1.2] tracking-tight">
               The Impact of Our Journey
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 font-normal">
+            <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
+            <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed">
               Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-white/10 backdrop-blur-md rounded-2xl md:rounded-[24px] p-5 sm:p-6 border border-white/15 text-center flex flex-col items-center justify-center hover:bg-white/15 hover:border-white/30 transition-all duration-300 group shadow-lg"
-              >
-                <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform">
-                  {stat.icon}
-                </div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight drop-shadow">
-                  {stat.num}
-                </div>
-                <div className="text-xs sm:text-sm font-semibold text-white/90 leading-tight">
-                  {stat.label}
-                </div>
-                <div className="text-[11px] text-[#F6C85F] font-medium mt-1">
-                  {stat.sub}
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
+            {stats.map((stat, i) => {
+              const IconComp = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="group relative bg-white/95 backdrop-blur-xl rounded-[24px] p-6 border border-pink-100/80 text-center flex flex-col items-center justify-between hover:border-pink-200 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(234,52,132,0.12)] transition-all duration-300 shadow-[0_10px_30px_rgba(23,37,84,0.04)]"
+                >
+                  {/* Subtle hover gradient */}
+                  <div className="pointer-events-none absolute inset-0 rounded-[24px] bg-gradient-to-b from-pink-50/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="relative z-10 flex flex-col items-center w-full">
+                    {/* Icon Badge */}
+                    <div className={`h-12 w-12 rounded-2xl flex items-center justify-center border shadow-2xs mb-4 group-hover:scale-110 transition-transform duration-300 ${stat.iconBg}`}>
+                      <IconComp className="h-6 w-6" />
+                    </div>
+
+                    {/* Stat Number */}
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#172554] mb-1.5 tracking-tight group-hover:text-[#EA3484] transition-colors">
+                      {stat.num}
+                    </div>
+
+                    {/* Stat Label */}
+                    <div className="text-xs sm:text-[13px] font-semibold text-[#475569] leading-snug">
+                      {stat.label}
+                    </div>
+                  </div>
+
+                  {/* Subtitle Badge */}
+                  <div className="relative z-10 mt-4 pt-3 border-t border-pink-100/60 w-full flex justify-center">
+                    <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${stat.badgeBg}`}>
+                      {stat.sub}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

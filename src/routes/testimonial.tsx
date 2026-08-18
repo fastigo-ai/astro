@@ -1,6 +1,6 @@
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "@/utils/gsapSetup";
+import { motion, useReducedMotion } from "motion/react";
 import { Sparkles, Heart, Search, MapPin, Play, ChevronRight, Star, Video, ArrowRight, X } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
@@ -318,24 +318,7 @@ export default function TestimonialPage() {
     return filteredStories.slice(startIdx, startIdx + ITEMS_PER_PAGE);
   }, [filteredStories, safeCurrentPage]);
 
-  useEffect(() => {
-    if (!storiesGridRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-story-card]",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.04,
-          ease: "power2.out",
-          clearProps: "opacity,transform",
-        },
-      );
-    }, storiesGridRef);
-    return () => ctx.revert();
-  }, [safeCurrentPage, searchQuery]);
+  const shouldReduceMotion = useReducedMotion();
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -515,11 +498,15 @@ export default function TestimonialPage() {
               {currentStories.map((s, i) => {
                 const aiThumb = AI_THUMBNAILS[i % AI_THUMBNAILS.length];
                 return (
-                  <div
+                  <motion.div
                     key={s.img + i}
-                    data-story-card
+                    initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: (i % 3) * 0.08 }}
+                    whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.2 } }}
                     onClick={() => setActiveModalVideo(s.yt)}
-                    className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-all duration-300 border border-pink-100 flex flex-col overflow-hidden group hover:-translate-y-1.5 cursor-pointer"
+                    className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-shadow duration-300 border border-pink-100 flex flex-col overflow-hidden group cursor-pointer"
                   >
                     {/* Thumbnail Container */}
                     <div className="relative aspect-video overflow-hidden bg-slate-900">
@@ -578,7 +565,7 @@ export default function TestimonialPage() {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
