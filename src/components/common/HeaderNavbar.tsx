@@ -3,8 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useLanguage, Language } from "@/context/LanguageContext";
-import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass, Phone } from "lucide-react";
-import { TextEffect } from "@/components/core/text-effect";
+import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass } from "lucide-react";
 
 export default function HeaderNavbar() {
   const { t } = useTranslation();
@@ -183,36 +182,6 @@ export default function HeaderNavbar() {
       style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 99999 }}
     >
       <div className="w-full">
-        {/* Top Bar with smooth height & opacity collapse */}
-        <div
-          className={`hidden md:block bg-[#172554] text-white text-xs shadow-inner overflow-hidden transition-all duration-500 ease-in-out ${
-            scrolled ? "max-h-0 opacity-0 py-0" : "max-h-10 opacity-100 py-2"
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <span className="text-amber-300">✨</span>
-              <TextEffect
-                key={currentLanguage.code}
-                per="word"
-                delay={0.15}
-                className="font-semibold text-white/90"
-              >
-                {t("nav.topBanner", "Astro Baby Garbhadhan Sanskar")}
-              </TextEffect>
-            </div>
-            <div className="flex items-center gap-4 text-white/90">
-              <a
-                href="tel:+919018567465"
-                className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                <span>+91 9018567465</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Main Navbar with smooth height, bg, border & shadow transitions */}
         <nav
           className={`w-full transition-all duration-500 ease-in-out ${
