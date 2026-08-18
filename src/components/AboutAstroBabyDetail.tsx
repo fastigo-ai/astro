@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Sparkles, Heart, Moon, Sun, Play, Volume2, Maximize2, ShieldCheck, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { Sparkles, Heart, Moon, Sun, Play, Star } from "lucide-react";
 import { gsap } from "@/utils/gsapSetup";
 
 const featureCards = [
@@ -8,7 +7,7 @@ const featureCards = [
     icon: Sparkles,
     title: "Personalized Pregnancy Care",
     subtitle: "Week-by-week updates, tips & health guidance.",
-    bgColor: "bg-pink-50/70 border-pink-200/60 hover:bg-pink-100/70",
+    bgColor: "bg-pink-50/70 border-pink-200/70 hover:bg-pink-100/70 hover:border-[#EA3484]/40",
     iconBg: "bg-[#EA3484]/10",
     iconColor: "text-[#EA3484]",
     titleColor: "text-[#172554]",
@@ -18,9 +17,9 @@ const featureCards = [
     icon: Moon,
     title: "Astrology Insights",
     subtitle: "Janam Kundli, auspicious dates & predictions.",
-    bgColor: "bg-rose-50/70 border-rose-200/60 hover:bg-rose-100/70",
-    iconBg: "bg-rose-500/10",
-    iconColor: "text-[#F45B8A]",
+    bgColor: "bg-amber-50/60 border-amber-200/70 hover:bg-amber-100/70 hover:border-[#F6C85F]/50",
+    iconBg: "bg-[#F6C85F]/20",
+    iconColor: "text-[#D97706]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -28,9 +27,9 @@ const featureCards = [
     icon: Heart,
     title: "Expert Guidance",
     subtitle: "Consult doctors, astrologers & wellness experts.",
-    bgColor: "bg-pink-50/70 border-pink-200/60 hover:bg-pink-100/70",
-    iconBg: "bg-[#EA3484]/10",
-    iconColor: "text-[#EA3484]",
+    bgColor: "bg-rose-50/70 border-rose-200/70 hover:bg-rose-100/70 hover:border-[#F45B8A]/40",
+    iconBg: "bg-[#F45B8A]/10",
+    iconColor: "text-[#F45B8A]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -38,9 +37,9 @@ const featureCards = [
     icon: Sun,
     title: "Holistic Wellness",
     subtitle: "Yoga, meditation, diet & mental well-being.",
-    bgColor: "bg-amber-50/70 border-amber-200/60 hover:bg-amber-100/70",
-    iconBg: "bg-amber-500/10",
-    iconColor: "text-amber-600",
+    bgColor: "bg-pink-50/60 border-pink-200/70 hover:bg-pink-100/70 hover:border-[#EA3484]/40",
+    iconBg: "bg-[#EA3484]/10",
+    iconColor: "text-[#EA3484]",
     titleColor: "text-[#172554]",
     subtitleColor: "text-slate-600",
   },
@@ -83,38 +82,49 @@ export default function AboutAstroBabyDetail() {
       {/* ── 1. TOP SECTION: Main About Astro Baby Card ── */}
       <div
         data-about-card
-        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] border border-pink-100/80 bg-white/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)] transition-all duration-300"
+        className="relative overflow-hidden rounded-[28px] md:rounded-[36px] border border-pink-100/80 bg-white/95 backdrop-blur-2xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.07)] transition-all duration-300"
       >
         {/* Subtle background glow */}
-        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-pink-100/50 blur-3xl z-0" />
-        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-rose-100/50 blur-3xl z-0" />
+        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-pink-100/40 blur-3xl z-0" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-rose-100/40 blur-3xl z-0" />
 
         <div className="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
-          {/* Left Column: Celestial Pregnant Mother Image */}
+          {/* Left Column: Clean, Minimal Image Thumbnail according to Theme */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[440px] overflow-hidden rounded-[24px] shadow-[0_16px_40px_rgba(23,37,84,0.12)] border-4 border-white/90 bg-gradient-to-b from-white to-pink-50/50 group">
-              <img
-                src="/images/celestial_mother.png"
-                alt="Astro Baby Celestial Pregnant Mother"
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/60 via-transparent to-transparent pointer-events-none" />
-              
-              {/* Floating Badge */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#172554] shadow-md backdrop-blur-md border border-white/60">
-                <Star className="h-3.5 w-3.5 fill-[#F6C85F] text-[#F6C85F]" />
-                <span>Ancient Vedic Science</span>
-              </div>
+            <div className="relative w-full max-w-[420px] overflow-hidden rounded-[26px] shadow-[0_16px_40px_rgba(234,52,132,0.09)] border-2 border-pink-100/80 bg-gradient-to-b from-white via-pink-50/30 to-pink-50/60 p-2.5 group">
+              {/* Image Box */}
+              <div className="relative overflow-hidden rounded-[20px] aspect-[4/5] bg-pink-50">
+                <img
+                  src="/images/celestial_mother.png"
+                  alt="Astro Baby Celestial Pregnant Mother"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                
+                {/* Subtle Theme Gradient Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/40 via-transparent to-transparent pointer-events-none" />
 
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 p-3.5 backdrop-blur-md border border-white/70 text-center shadow-lg">
-                <p className="text-xs font-semibold text-[#172554]">
-                  Nurtured by Obstetric Science & Cosmic Wisdom
-                </p>
-                <p className="text-[10px] text-[#F45B8A] font-semibold mt-0.5">
-                  Guidance for Body, Mind & Spirit
-                </p>
+                {/* Minimal Top Floating Badge */}
+                <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-[#EA3484] shadow-xs border border-pink-100">
+                  <Sparkles className="h-3 w-3 text-[#EA3484]" />
+                  <span>Garbhadhan Sanskar</span>
+                </div>
+
+                {/* Minimal Bottom Info Bar */}
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 rounded-xl bg-white/90 backdrop-blur-md px-3.5 py-2.5 border border-white/80 shadow-md flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-[#172554] leading-none">
+                      Holistic Prenatal Care
+                    </p>
+                    <p className="text-[10px] text-[#EA3484] font-medium mt-1 leading-none">
+                      Vedic Wisdom & Modern Science
+                    </p>
+                  </div>
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-pink-50 text-[#EA3484] border border-pink-100">
+                    <Star className="h-3.5 w-3.5 fill-[#F6C85F] text-[#F6C85F]" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -123,18 +133,18 @@ export default function AboutAstroBabyDetail() {
           <div className="lg:col-span-7 space-y-5">
             {/* Header Block */}
             <div className="text-center md:text-left space-y-2.5">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
                 <Sparkles className="h-3 w-3" /> Essence of Astro Baby
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] tracking-tight leading-[1.2]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] tracking-tight leading-[1.2]">
                 Bridging Ancient Vedic Roots with Modern Science
               </h1>
 
               {/* Decorative Divider */}
-              <div className="w-20 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto md:mx-0 my-2"></div>
+              <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto md:mx-0 my-2"></div>
 
-              <h2 className="text-base md:text-lg font-semibold text-[#EA3484] leading-snug">
+              <h2 className="text-sm md:text-base font-semibold text-[#EA3484] leading-snug">
                 Nurturing Life with Compassionate Care, Medical Insights & Cosmic Wisdom
               </h2>
             </div>
@@ -164,10 +174,10 @@ export default function AboutAstroBabyDetail() {
                 return (
                   <div
                     key={idx}
-                    className={`flex flex-col items-center text-center p-4 rounded-[20px] border ${card.bgColor} shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer h-full group`}
+                    className={`flex flex-col items-center text-center p-4 rounded-[20px] border ${card.bgColor} shadow-xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer h-full group`}
                   >
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${card.iconBg} ${card.iconColor} shadow-sm mb-3 group-hover:scale-110 transition-transform`}
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${card.iconBg} ${card.iconColor} shadow-xs mb-3 group-hover:scale-110 transition-transform`}
                     >
                       <Icon className="h-5.5 w-5.5" />
                     </div>
@@ -214,20 +224,20 @@ export default function AboutAstroBabyDetail() {
 
         {/* Section Header */}
         <div className="relative z-10 max-w-xl mx-auto space-y-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F45B8A] backdrop-blur-sm shadow-sm">
-            <Play className="h-3 w-3 fill-[#F45B8A]" /> Visual Experience
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
+            <Play className="h-3 w-3 fill-[#EA3484]" /> Visual Experience
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-[1.2] tracking-tight">
             Experience Astro Baby in Action
           </h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto my-2"></div>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
           <p className="text-xs md:text-sm text-[#475569] font-normal leading-relaxed">
             Watch how our personalized Garbhadhan Sanskar modules nurture both mother and baby.
           </p>
         </div>
 
-        {/* Video Player Box */}
-        <div className="relative z-10 max-w-4xl mx-auto rounded-[24px] md:rounded-[28px] overflow-hidden shadow-2xl border-4 border-white/95 bg-slate-950 group">
+        {/* Video Player Box - Minimal & Clean Thumbnail */}
+        <div className="relative z-10 max-w-4xl mx-auto rounded-[24px] md:rounded-[28px] overflow-hidden shadow-xl border-2 border-white bg-slate-950 group">
           {isPlaying ? (
             <div className="aspect-video w-full">
               <iframe
@@ -242,9 +252,9 @@ export default function AboutAstroBabyDetail() {
           ) : (
             <div
               onClick={() => setIsPlaying(true)}
-              className="relative aspect-video w-full cursor-pointer overflow-hidden"
+              className="relative aspect-video w-full cursor-pointer overflow-hidden group"
             >
-              {/* Video Thumbnail */}
+              {/* Clean Video Thumbnail */}
               <img
                 src="/images/video_thumb.png"
                 alt="AstroBaby Introduction Video Thumbnail"
@@ -253,48 +263,41 @@ export default function AboutAstroBabyDetail() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-[#172554]/30 group-hover:bg-[#172554]/20 transition-colors" />
+              {/* Refined Theme Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-[#172554]/20 to-black/20 group-hover:from-[#172554]/60 transition-colors" />
 
-              {/* AstroBaby Branding Overlay */}
-              <div className="absolute top-6 left-6 flex items-center gap-3 text-white text-left">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-lg">
-                  <Moon className="h-6 w-6 text-[#F6C85F] fill-[#F6C85F]" />
+              {/* Minimal Top Brand Badge */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-[#F6C85F] shadow-sm">
+                  <Moon className="h-4.5 w-4.5 fill-[#F6C85F]" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold leading-none tracking-wide text-white drop-shadow">
-                    AstroBaby
-                  </h3>
-                  <p className="text-[10px] text-pink-200 tracking-widest uppercase mt-1 font-medium">
-                    Guide • Nurture • Enlighten
-                  </p>
-                </div>
+                <span className="text-white font-bold text-sm tracking-wide drop-shadow-sm">
+                  AstroBaby Story
+                </span>
               </div>
 
-              <div className="absolute top-20 left-6 max-w-xs text-left hidden sm:block text-white/90 text-xs font-normal leading-relaxed drop-shadow">
-                Your sacred companion from preconception to mindful parenting.
-              </div>
-
-              {/* Pulsing Play Button */}
+              {/* Minimal Center Play Button with Pulsing Glow */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  type="button"
-                  aria-label="Play Introduction Video"
-                  className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-[0_10px_30px_rgba(244,91,138,0.5)] transition duration-300 group-hover:scale-110 border-2 border-white/80"
-                >
-                  <Play className="h-7 w-7 md:h-8 w-8 fill-white ml-1 text-white" />
-                </button>
+                <div className="relative flex items-center justify-center">
+                  <span className="absolute -inset-2 rounded-full bg-[#EA3484]/40 animate-ping pointer-events-none" />
+                  <button
+                    type="button"
+                    aria-label="Play Introduction Video"
+                    className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-[0_10px_30px_rgba(234,52,132,0.5)] transition-transform duration-300 group-hover:scale-110 border-2 border-white"
+                  >
+                    <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-white ml-1 text-white" />
+                  </button>
+                </div>
               </div>
 
-              {/* Interactive Mock Control Bar at Bottom */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-3">
-                  <Play className="h-4 w-4 fill-white cursor-pointer" />
-                  <span>0:00 / 1:48</span>
+              {/* Minimal Bottom Bar Pill */}
+              <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-6 flex items-center justify-between">
+                <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-white/90 text-xs font-medium">
+                  <span className="h-2 w-2 rounded-full bg-[#EA3484] animate-pulse" />
+                  <span>Watch 9-Month Prenatal Journey</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Volume2 className="h-4 w-4 cursor-pointer" />
-                  <Maximize2 className="h-4 w-4 cursor-pointer" />
+                <div className="inline-flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-white/80 text-xs">
+                  <span>1:48 min</span>
                 </div>
               </div>
             </div>

@@ -446,8 +446,6 @@ export default function ContactPage() {
                           >
                             <option>English</option>
                             <option>Hindi</option>
-                            <option>Marathi</option>
-                            <option>Gujarati</option>
                           </select>
                         </div>
                       </div>

@@ -9,7 +9,6 @@ import {
   ChevronRight,
   Compass,
   ArrowRight,
-  BookOpen,
   Users
 } from "lucide-react";
 import AboutAstroBabyDetail from "@/components/AboutAstroBabyDetail";
@@ -22,7 +21,7 @@ const storyPillars = [
     icon: Heart,
     title: "Positive Pregnancy",
     text: "Empowering every expectant mother with serenity, emotional balance, and obstetric clarity for a peaceful gestational journey.",
-    gradient: "from-pink-500/10 to-rose-500/5",
+    gradient: "from-[#EA3484]/10 to-[#F45B8A]/5",
     iconColor: "text-[#EA3484]",
     borderColor: "border-pink-200/80 hover:border-[#EA3484]/50",
   },
@@ -30,15 +29,15 @@ const storyPillars = [
     icon: Sparkles,
     title: "Virtuous Next Generation",
     text: "Nurturing the baby in the womb through authentic Garbhadhan Sanskar mantras, noble thoughts, and cognitive enrichment.",
-    gradient: "from-amber-500/10 to-yellow-500/5",
-    iconColor: "text-[#F6C85F]",
+    gradient: "from-[#F6C85F]/15 to-[#F6C85F]/5",
+    iconColor: "text-[#D97706]",
     borderColor: "border-amber-200/80 hover:border-[#F6C85F]/50",
   },
   {
     icon: Globe,
     title: "Global Vedic Heritage",
     text: "Bringing authentic Garbhadhan Sanskar wisdom to families in over 62+ countries across languages and cultural boundaries.",
-    gradient: "from-pink-500/10 to-rose-500/5",
+    gradient: "from-[#EA3484]/10 to-[#F45B8A]/5",
     iconColor: "text-[#F45B8A]",
     borderColor: "border-pink-200/80 hover:border-[#F45B8A]/50",
   },
@@ -46,7 +45,7 @@ const storyPillars = [
     icon: GraduationCap,
     title: "Scientific & Medical Rigor",
     text: "Synthesizing authentic Vedic scriptures with modern gynecological research, fetal neuroscience, and maternal nutrition.",
-    gradient: "from-rose-500/10 to-pink-500/5",
+    gradient: "from-[#F45B8A]/10 to-[#EA3484]/5",
     iconColor: "text-[#EA3484]",
     borderColor: "border-rose-200/80 hover:border-[#EA3484]/50",
   },
@@ -112,7 +111,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-md shadow-sm mb-4"
+            className="inline-flex items-center gap-2 rounded-full border border-pink-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-md shadow-xs mb-4"
           >
             <Sparkles className="h-3.5 w-3.5" />
             <span>Our Origins & Sacred Journey</span>
@@ -166,13 +165,13 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#FFF6FA] border-y border-pink-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
               <Heart className="h-3 w-3" /> Guiding Principles
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight">
               Our Four Sacred Pillars
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto"></div>
             <p className="text-sm sm:text-base text-[#475569] font-normal leading-relaxed mt-2">
               Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.
             </p>
@@ -221,9 +220,6 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F6C85F] backdrop-blur-md">
-              <Star className="h-3 w-3 fill-[#F6C85F]" /> Measurable Trust
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.2] tracking-tight">
               The Impact of Our Journey
             </h2>
@@ -264,13 +260,13 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF8FC] via-[#FFF0F6] to-[#FFFDFE] border-t border-pink-100/60">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
               <Compass className="h-3 w-3" /> Historical Timeline
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight">
               Milestones in Our Evolution
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto"></div>
             <p className="text-sm sm:text-base text-[#475569] font-normal mt-2 leading-relaxed">
               From a research initiative by IITians and Vedic scholars to the world's most comprehensive Garbhadhan Sanskar platform.
             </p>
@@ -305,7 +301,7 @@ export default function AboutPage() {
                   >
                     <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-6 sm:p-8 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_45px_rgba(234,52,132,0.12)] transition-all duration-300 group">
                       <div className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
-                        <span className="inline-block bg-gradient-to-r from-[#172554] to-[#EA3484] text-white font-semibold px-3.5 py-1 rounded-full text-xs shadow-sm">
+                        <span className="inline-block bg-gradient-to-r from-[#172554] to-[#EA3484] text-white font-semibold px-3.5 py-1 rounded-full text-xs shadow-xs">
                           {m.year}
                         </span>
                         <span className="text-[11px] font-semibold text-[#EA3484] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">

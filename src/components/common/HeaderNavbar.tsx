@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage, Language } from "@/context/LanguageContext";
 import {
   Heart,
   Sparkles,
@@ -160,18 +161,11 @@ const navItems = [
   },
 ];
 
-const languages = [
-  { code: "en", name: "English", label: "English" },
-  { code: "hi", name: "Hindi", label: "Hindi" },
-  { code: "mr", name: "Marathi", label: "Marathi" },
-  { code: "gu", name: "Gujarati", label: "Gujarati" },
-];
-
 export default function HeaderNavbar() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const { currentLanguage, changeLanguage, languages } = useLanguage();
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -350,14 +344,15 @@ export default function HeaderNavbar() {
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1.5 px-3 py-2 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3.5 py-2 text-[14px] font-bold text-gray-700 hover:text-[#F45B8A] bg-pink-50/50 hover:bg-pink-50 rounded-full border border-pink-100/80 transition-all cursor-pointer shadow-2xs"
+                  aria-label="Change Language"
                 >
-                  <span className="text-lg">🌐</span>
-                  <span>{selectedLang.code.toUpperCase()}</span>
+                  <span className="text-base">🌐</span>
+                  <span>{currentLanguage.name}</span>
                   <motion.svg
                     animate={{ rotate: langOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className="w-4 h-4"
+                    className="w-4 h-4 text-gray-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -368,25 +363,29 @@ export default function HeaderNavbar() {
                 <AnimatePresence>
                   {langOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 4 }}
-                      className="absolute right-0 mt-2.5 w-36 bg-white rounded-2xl shadow-xl border border-pink-100 py-1.5 z-50"
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 4, scale: 0.96 }}
+                      className="absolute right-0 mt-2.5 w-44 bg-white rounded-2xl shadow-xl border border-pink-100 py-2 z-50 overflow-hidden"
                     >
+                      <div className="px-3 py-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider border-b border-pink-50 mb-1">
+                        Select Language
+                      </div>
                       {languages.map((lang) => (
                         <button
                           key={lang.code}
                           onClick={() => {
-                            setSelectedLang(lang);
+                            changeLanguage(lang);
                             setLangOpen(false);
                           }}
-                          className={`w-full text-left px-4 py-2 text-[13.5px] font-bold transition-colors cursor-pointer ${
-                            selectedLang.code === lang.code
-                              ? "text-[#F45B8A] bg-pink-50"
-                              : "text-gray-700 hover:bg-pink-50 hover:text-[#F45B8A]"
+                          className={`w-full text-left px-3.5 py-2 text-[13.5px] font-semibold transition-colors cursor-pointer flex items-center justify-between ${
+                            currentLanguage.code === lang.code
+                              ? "text-[#F45B8A] bg-pink-50 font-bold"
+                              : "text-gray-700 hover:bg-pink-50/60 hover:text-[#F45B8A]"
                           }`}
                         >
-                          {lang.name}
+                          <span>{lang.name}</span>
+                          <span className="text-xs text-slate-400 font-normal">{lang.nativeName}</span>
                         </button>
                       ))}
                     </motion.div>
@@ -514,6 +513,35 @@ export default function HeaderNavbar() {
                     </AnimatePresence>
                   </div>
                 ))}
+
+                {/* Mobile Language Selector Row */}
+                <div className="pt-3 mt-2 border-t border-pink-100">
+                  <div className="px-3 pb-2 text-[12px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                    <span>🌐</span>
+                    <span>Language / भाषा</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          changeLanguage(lang);
+                          setMenuOpen(false);
+                        }}
+                        className={`flex flex-col items-center justify-center py-2.5 px-3 rounded-xl border text-xs transition-all cursor-pointer ${
+                          currentLanguage.code === lang.code
+                            ? "bg-[#F45B8A] text-white font-bold border-[#F45B8A] shadow-xs"
+                            : "bg-pink-50/50 text-slate-700 font-semibold border-pink-100 hover:bg-pink-100/60"
+                        }`}
+                      >
+                        <span>{lang.name}</span>
+                        <span className={`text-[10px] ${currentLanguage.code === lang.code ? "text-white/80" : "text-slate-400"}`}>
+                          {lang.nativeName}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
