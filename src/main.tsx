@@ -15,9 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         lerp: 0.1,
         duration: 1.2,
         smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.5,
-        infinite: false,
+        autoResize: true,
       }}
     >
       <BrowserRouter>

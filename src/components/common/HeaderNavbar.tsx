@@ -2,16 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage, Language } from "@/context/LanguageContext";
-import {
-  Heart,
-  Sparkles,
-  Sun,
-  Baby,
-  ShieldCheck,
-  Smile,
-  Compass,
-  Phone,
-} from "lucide-react";
+import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass, Phone } from "lucide-react";
 
 // ── 7 Core Program Headings for Dropdown (Exact Names) ──
 export const PROGRAM_DROPDOWN_CATEGORIES = [
@@ -207,7 +198,10 @@ export default function HeaderNavbar() {
             <span className="font-semibold text-white/90">Astro Baby Garbhadhan Sanskar</span>
           </div>
           <div className="flex items-center gap-4 text-white/90">
-            <a href="tel:+919018567465" className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5">
+            <a
+              href="tel:+919018567465"
+              className="hover:text-amber-200 transition-colors font-semibold flex items-center gap-1.5"
+            >
               <Phone className="w-3.5 h-3.5" />
               <span>+91 9018567465</span>
             </a>
@@ -218,7 +212,9 @@ export default function HeaderNavbar() {
       {/* Main Navbar */}
       <nav
         className={`w-full transition-all duration-500 ease-in-out ${
-          scrolled ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-md" : "absolute top-0 bg-pink-50"
+          scrolled
+            ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-md"
+            : "absolute top-0 bg-pink-50"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -267,7 +263,12 @@ export default function HeaderNavbar() {
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2.5"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </motion.svg>
                       )}
 
@@ -357,7 +358,12 @@ export default function HeaderNavbar() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </motion.svg>
                 </button>
                 <AnimatePresence>
@@ -385,7 +391,9 @@ export default function HeaderNavbar() {
                           }`}
                         >
                           <span>{lang.name}</span>
-                          <span className="text-xs text-slate-400 font-normal">{lang.nativeName}</span>
+                          <span className="text-xs text-slate-400 font-normal">
+                            {lang.nativeName}
+                          </span>
                         </button>
                       ))}
                     </motion.div>
@@ -403,11 +411,21 @@ export default function HeaderNavbar() {
               >
                 {menuOpen ? (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 ) : (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 )}
               </button>
@@ -432,13 +450,17 @@ export default function HeaderNavbar() {
                       onClick={(e) => {
                         if (item.hasDropdown) {
                           e.preventDefault();
-                          setMobileDropdownOpen(mobileDropdownOpen === item.label ? null : item.label);
+                          setMobileDropdownOpen(
+                            mobileDropdownOpen === item.label ? null : item.label,
+                          );
                         } else {
                           setMenuOpen(false);
                         }
                       }}
                       className={`block px-4 py-3 rounded-xl text-[15.5px] font-bold transition-colors ${
-                        isActive(item.to) ? "text-[#F45B8A] bg-pink-50" : "text-gray-800 hover:bg-pink-50"
+                        isActive(item.to)
+                          ? "text-[#F45B8A] bg-pink-50"
+                          : "text-gray-800 hover:bg-pink-50"
                       }`}
                     >
                       <div className="flex justify-between items-center">
@@ -451,7 +473,12 @@ export default function HeaderNavbar() {
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2.5"
+                              d="M19 9l-7 7-7-7"
+                            />
                           </motion.svg>
                         )}
                       </div>
@@ -535,7 +562,9 @@ export default function HeaderNavbar() {
                         }`}
                       >
                         <span>{lang.name}</span>
-                        <span className={`text-[10px] ${currentLanguage.code === lang.code ? "text-white/80" : "text-slate-400"}`}>
+                        <span
+                          className={`text-[10px] ${currentLanguage.code === lang.code ? "text-white/80" : "text-slate-400"}`}
+                        >
                           {lang.nativeName}
                         </span>
                       </button>

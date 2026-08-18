@@ -14,7 +14,7 @@ import {
   GraduationCap,
   RotateCcw,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
@@ -299,7 +299,8 @@ export default function TeamPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed">
-            A prestigious council of doctors, IITians, Vedmurti scholars, and psychologists guiding your prenatal journey.
+            A prestigious council of doctors, IITians, Vedmurti scholars, and psychologists guiding
+            your prenatal journey.
           </p>
 
           {/* Search bar & Mode Switch */}
@@ -420,8 +421,11 @@ export default function TeamPage() {
 
                   const isCenter = diff === 0;
                   const angle = diff * 28; // Degree spacing
-                  const translateX = diff * (typeof window !== "undefined" && window.innerWidth < 640 ? 110 : 210);
-                  const translateZ = -Math.abs(diff) * (typeof window !== "undefined" && window.innerWidth < 640 ? 120 : 160);
+                  const translateX =
+                    diff * (typeof window !== "undefined" && window.innerWidth < 640 ? 110 : 210);
+                  const translateZ =
+                    -Math.abs(diff) *
+                    (typeof window !== "undefined" && window.innerWidth < 640 ? 120 : 160);
                   const rotateY = diff * -18;
                   const scale = Math.max(0.72, 1 - Math.abs(diff) * 0.12);
                   const opacity = Math.max(0.2, 1 - Math.abs(diff) * 0.28);
@@ -464,7 +468,9 @@ export default function TeamPage() {
                       <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-slate-100 group">
                         <img
                           src={
-                            index % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"
+                            index % 2 === 0
+                              ? "/images/team_expert_1.png"
+                              : "/images/team_expert_2.png"
                           }
                           alt={member.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -702,7 +708,8 @@ export default function TeamPage() {
             Want to learn how Astro Baby was created?
           </h3>
           <p className="text-xs sm:text-sm text-[#475569] max-w-lg mx-auto font-normal leading-relaxed">
-            Read our origin story, core mission pillars, research milestones, and our vision for conscious motherhood.
+            Read our origin story, core mission pillars, research milestones, and our vision for
+            conscious motherhood.
           </p>
           <div className="pt-1">
             <Link

@@ -16,11 +16,17 @@ import {
   HelpCircle,
   Calendar,
   User,
-  Globe
+  Globe,
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const contactCards = [
   {
@@ -104,7 +110,6 @@ export default function ContactPage() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -156,7 +161,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            Have questions about Garbhadhan Sanskar, our mobile app features, or scheduling an expert consultation? Our caring advisors are ready to guide you.
+            Have questions about Garbhadhan Sanskar, our mobile app features, or scheduling an
+            expert consultation? Our caring advisors are ready to guide you.
           </motion.p>
 
           {/* Breadcrumbs */}
@@ -190,22 +196,26 @@ export default function ContactPage() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group relative overflow-hidden rounded-[28px] bg-white/95 p-6 sm:p-7 border border-pink-100/90 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
                 >
-                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${c.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  
+                  <div
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${c.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
+
                   <div className="relative z-10 space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className={`flex h-13 w-13 items-center justify-center rounded-2xl ${c.iconBg} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`flex h-13 w-13 items-center justify-center rounded-2xl ${c.iconBg} shadow-sm group-hover:scale-110 transition-transform duration-300`}
+                      >
                         <IconComp className="h-6 w-6" />
                       </div>
-                      <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border ${c.badgeColor}`}>
+                      <span
+                        className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border ${c.badgeColor}`}
+                      >
                         {c.badge}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-[#172554] mb-1">
-                        {c.title}
-                      </h3>
+                      <h3 className="text-xl font-semibold text-[#172554] mb-1">{c.title}</h3>
                       <p className="text-xs text-[#475569] font-normal leading-relaxed">
                         {c.subtitle}
                       </p>
@@ -237,7 +247,6 @@ export default function ContactPage() {
       <section className="py-16 md:py-24 relative z-10 bg-[#FFFCFE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
-            
             {/* Left Side: Counseling Benefits & Trust Points */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -254,7 +263,8 @@ export default function ContactPage() {
                   How Our Experts Assist You
                 </h2>
                 <p className="text-sm text-[#475569] font-normal leading-relaxed">
-                  Every pregnancy is unique. Whether you are planning conception or navigating your third trimester, our multidisciplinary team provides personalized solutions.
+                  Every pregnancy is unique. Whether you are planning conception or navigating your
+                  third trimester, our multidisciplinary team provides personalized solutions.
                 </p>
               </div>
 
@@ -287,7 +297,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="text-xs font-semibold text-[#172554] mb-0.5">{item.title}</h4>
-                      <p className="text-[11px] leading-relaxed text-[#475569] font-normal">{item.desc}</p>
+                      <p className="text-[11px] leading-relaxed text-[#475569] font-normal">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -302,7 +314,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-white">Direct Helpline Available</h4>
-                    <p className="text-[11px] text-slate-300">Call +91 90185 67465 for immediate queries</p>
+                    <p className="text-[11px] text-slate-300">
+                      Call +91 90185 67465 for immediate queries
+                    </p>
                   </div>
                 </div>
               </div>
@@ -343,7 +357,8 @@ export default function ContactPage() {
                         Thank You, {formData.name || "Friend"}!
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-normal">
-                        Your message has been received with care. An Astro Baby counselor will contact you via WhatsApp or phone within 2-4 hours.
+                        Your message has been received with care. An Astro Baby counselor will
+                        contact you via WhatsApp or phone within 2-4 hours.
                       </p>
                       <button
                         onClick={() => {
@@ -514,35 +529,14 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <Accordion type="single" collapsible defaultValue="item-0" variant="theme">
             {quickFaqs.map((f, i) => (
-              <div
-                key={i}
-                className="border border-blue-100/80 rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md shadow-sm transition-all"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex justify-between items-center text-left px-6 py-4.5 bg-blue-50/40 hover:bg-blue-50/80 transition-colors cursor-pointer"
-                >
-                  <span className="font-semibold text-[#172554] text-sm md:text-[15px]">{f.q}</span>
-                  <span className="text-[#F45B8A] text-xl font-bold ml-4">
-                    {openFaq === i ? "−" : "+"}
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 py-4 text-slate-600 text-xs md:text-sm leading-relaxed bg-white/95 border-t border-slate-100 font-normal"
-                  >
-                    {f.a}
-                  </motion.div>
-                )}
-              </div>
+              <AccordionItem key={i} value={`item-${i}`} variant="theme">
+                <AccordionTrigger variant="theme">{f.q}</AccordionTrigger>
+                <AccordionContent variant="theme">{f.a}</AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 

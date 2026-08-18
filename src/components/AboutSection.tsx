@@ -107,10 +107,10 @@ export default function AboutSection() {
                 className="text-sm md:text-base leading-relaxed text-[#475569] font-normal max-w-xl"
               >
                 <strong className="text-[#EA3484] font-semibold">Astro Baby</strong>{" "}
-                <strong className="text-[#EA3484] font-semibold">Garbhadhan Sanskar</strong> is India's
-                leading digital platform combining ancient Vedic wisdom with modern obstetric
-                science. Created by a passionate team of experts, we make pregnancy a happy,
-                healthy, and spiritually rich journey.
+                <strong className="text-[#EA3484] font-semibold">Garbhadhan Sanskar</strong> is
+                India's leading digital platform combining ancient Vedic wisdom with modern
+                obstetric science. Created by a passionate team of experts, we make pregnancy a
+                happy, healthy, and spiritually rich journey.
               </motion.p>
 
               {isHomePage && (
@@ -136,7 +136,9 @@ export default function AboutSection() {
                       data-feature-card
                       className="flex gap-3 items-start p-3.5 bg-white/80 hover:bg-white border border-pink-100 rounded-2xl backdrop-blur-md transition-all duration-300 transform hover:-translate-y-0.5 shadow-xs hover:shadow-sm"
                     >
-                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${item.color}`}>
+                      <div
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${item.color}`}
+                      >
                         <IconComponent className="h-4.5 w-4.5" />
                       </div>
                       <div>

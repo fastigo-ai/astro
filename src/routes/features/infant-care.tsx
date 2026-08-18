@@ -114,7 +114,8 @@ export default function InfantCarePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Comprehensive pediatrician-backed wellness, personal lactation coach, custom diet plans, and daily live classes for your baby's crucial first months.
+                Comprehensive pediatrician-backed wellness, personal lactation coach, custom diet
+                plans, and daily live classes for your baby's crucial first months.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -154,7 +155,8 @@ export default function InfantCarePage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed mt-2">
-              Personalized pediatrician, lactation, yoga, and astrology guidance for a joyful newborn journey.
+              Personalized pediatrician, lactation, yoga, and astrology guidance for a joyful
+              newborn journey.
             </p>
           </div>
 
@@ -209,7 +211,10 @@ export default function InfantCarePage() {
                       <Check className="w-3.5 h-3.5 text-[#F45B8A]" />
                       <span>Included in Program</span>
                     </div>
-                    <a href="/contact-us" className="text-[#F45B8A] hover:text-[#d94d7a] flex items-center gap-1">
+                    <a
+                      href="/contact-us"
+                      className="text-[#F45B8A] hover:text-[#d94d7a] flex items-center gap-1"
+                    >
                       Inquire <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>

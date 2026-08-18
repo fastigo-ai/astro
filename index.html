@@ -12,21 +12,27 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <!-- Hidden Google Translate Element -->
-    <div id="google_translate_element" style="display: none;"></div>
+    <div id="google_translate_element" style="display: none"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
         if (window.google && window.google.translate) {
           new window.google.translate.TranslateElement(
             {
-              pageLanguage: 'en',
-              includedLanguages: 'en,hi',
-              autoDisplay: false
+              pageLanguage: "en",
+              includedLanguages: "en,hi",
+              autoDisplay: false,
             },
-            'google_translate_element'
+            "google_translate_element",
           );
         }
       }

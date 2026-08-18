@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
+import LazyImage from "@/components/common/LazyImage";
 
 const awards = [
   {
@@ -113,10 +114,11 @@ export default function AwardsPage() {
               className="bg-white/90 backdrop-blur-md rounded-3xl shadow-md border border-pink-100 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300"
             >
               <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative group">
-                <img
+                <LazyImage
                   src={a.img}
                   alt={a.caption}
-                  loading="lazy"
+                  fallbackSrc="/images/award_card_1.png"
+                  containerClassName="w-full h-full"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

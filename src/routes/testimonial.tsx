@@ -1,10 +1,22 @@
 import { useState, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
-import { Sparkles, Heart, Search, MapPin, Play, ChevronRight, Star, Video, ArrowRight, X } from "lucide-react";
+import {
+  Sparkles,
+  Heart,
+  Search,
+  MapPin,
+  Play,
+  ChevronRight,
+  Star,
+  Video,
+  ArrowRight,
+  X,
+} from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
+import LazyImage from "@/components/common/LazyImage";
 
 type Story = { img: string; ext: string; yt: string; name: string; city: string };
 
@@ -446,8 +458,8 @@ export default function TestimonialPage() {
               </h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
               <p className="text-[#475569] text-sm sm:text-base max-w-3xl mx-auto font-normal leading-relaxed">
-                Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, joyful prenatal bonding, and
-                miraculous changes to expectant families across 62+ countries.
+                Watch how Astro Baby Garbhadhan Sanskar brings peace of mind, joyful prenatal
+                bonding, and miraculous changes to expectant families across 62+ countries.
               </p>
               <div className="pt-2">
                 <button
@@ -479,7 +491,8 @@ export default function TestimonialPage() {
                 <p className="text-xs md:text-sm text-slate-500 mt-1 font-normal">
                   Showing <span className="font-semibold text-[#172554]">{startIndex}</span> to{" "}
                   <span className="font-semibold text-[#172554]">{endIndex}</span> of{" "}
-                  <span className="font-semibold text-[#F45B8A]">{filteredStories.length}</span> verified stories
+                  <span className="font-semibold text-[#F45B8A]">{filteredStories.length}</span>{" "}
+                  verified stories
                 </p>
               )}
             </div>
@@ -510,13 +523,14 @@ export default function TestimonialPage() {
                   >
                     {/* Thumbnail Container */}
                     <div className="relative aspect-video overflow-hidden bg-slate-900">
-                      <img
+                      <LazyImage
                         src={aiThumb}
                         alt={s.name}
-                        loading="lazy"
+                        fallbackSrc="/images/story_thumb_1.png"
+                        containerClassName="w-full h-full"
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-black/10 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-black/10 to-transparent opacity-70 group-hover:opacity-50 transition-opacity pointer-events-none" />
 
                       {/* YouTube Play Icon Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -575,9 +589,7 @@ export default function TestimonialPage() {
               <div className="w-16 h-16 bg-pink-50 text-[#F45B8A] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-semibold text-[#172554]">
-                No Stories Found
-              </h3>
+              <h3 className="text-2xl font-semibold text-[#172554]">No Stories Found</h3>
               <p className="text-slate-500 mt-2 text-sm font-normal">
                 We couldn't find any user stories matching "{searchQuery}".
               </p>
@@ -696,9 +708,7 @@ export default function TestimonialPage() {
         title={
           <>
             Begin Your Garbhadhan Sanskar Journey Today on{" "}
-            <span className="text-black font-semibold">
-              Astro Baby
-            </span>
+            <span className="text-black font-semibold">Astro Baby</span>
           </>
         }
         subtitle="Join thousands of happy mothers. Download the Astro Baby app and experience the power of ancient Garbhadhan Sanskar wisdom."

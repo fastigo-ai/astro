@@ -4,10 +4,6 @@ import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
 
-
-
-
-
 const programFeatures = [
   {
     title: "Ayurvedic Consultation",
@@ -55,7 +51,6 @@ const programFeatures = [
     ],
   },
 ];
-
 
 export default function BizSanskar() {
   return (
@@ -118,7 +113,9 @@ export default function BizSanskar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Prepare your mind, body, and soul with <strong>Astro Baby Beej Sanskar</strong>. Align with sacred Vaidic science, customized Ayurvedic nutrition, cosmic Muhurat timing, and fertility yoga to invite a noble, healthy, and blessed child.
+                Prepare your mind, body, and soul with <strong>Astro Baby Beej Sanskar</strong>.
+                Align with sacred Vaidic science, customized Ayurvedic nutrition, cosmic Muhurat
+                timing, and fertility yoga to invite a noble, healthy, and blessed child.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -134,7 +131,12 @@ export default function BizSanskar() {
                 >
                   Start Beej Sanskar
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </a>
                 <span className="text-white/85 text-xs sm:text-sm font-medium px-3.5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
@@ -174,11 +176,13 @@ export default function BizSanskar() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Just as a farmer meticulously prepares the soil before planting a seed to ensure a bountiful harvest, parents must purify and nourish their physical body, mental calmness, and spiritual energy before conception. <strong>Beej Sanskar</strong> at Astro Baby provides a complete roadmap to lay the strongest foundation for your future generation.
+            Just as a farmer meticulously prepares the soil before planting a seed to ensure a
+            bountiful harvest, parents must purify and nourish their physical body, mental calmness,
+            and spiritual energy before conception. <strong>Beej Sanskar</strong> at Astro Baby
+            provides a complete roadmap to lay the strongest foundation for your future generation.
           </motion.p>
         </div>
       </section>
-
 
       {/* 4. Deep Dive Features List */}
       <section className="py-16 md:py-24 relative z-10">
@@ -190,7 +194,9 @@ export default function BizSanskar() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] mb-4 leading-[1.2] tracking-tight">Inside the Beej Sanskar Program</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] mb-4 leading-[1.2] tracking-tight">
+              Inside the Beej Sanskar Program
+            </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
           </motion.div>
 
@@ -209,20 +215,40 @@ export default function BizSanskar() {
                   <div className={`${reverse ? "lg:order-2" : ""} relative group`}>
                     <div className="absolute -inset-4 bg-gradient-to-r from-pink-200 via-purple-200 to-rose-200 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-700" />
                     <div className="relative rounded-[2rem] overflow-hidden border-8 border-white">
-                      <img src={f.img} alt={f.title} className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img
+                        src={f.img}
+                        alt={f.title}
+                        className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A6C]/40 to-transparent"></div>
                     </div>
                   </div>
 
                   <div className={`${reverse ? "lg:order-1" : ""} flex flex-col justify-center`}>
                     <div className="inline-flex items-center gap-2 bg-pink-100 text-[#EA3484] font-semibold text-xs px-4 py-2 rounded-full mb-6 w-max">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
                       Phase {i + 1}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">{f.title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">
+                      {f.title}
+                    </h3>
                     <h4 className="text-lg text-[#EA3484] font-semibold mb-6">"{f.tagline}"</h4>
                     <div className="space-y-4 text-slate-600 leading-relaxed text-base md:text-lg font-normal">
-                      {f.body.map((p, idx) => (<p key={idx}>{p}</p>))}
+                      {f.body.map((p, idx) => (
+                        <p key={idx}>{p}</p>
+                      ))}
                     </div>
 
                     {/* Contact Us Button */}
@@ -238,7 +264,12 @@ export default function BizSanskar() {
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
                         </svg>
                       </a>
                     </div>
@@ -262,9 +293,12 @@ export default function BizSanskar() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">Ready to Begin Your Sacred Journey?</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">
+            Ready to Begin Your Sacred Journey?
+          </h2>
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
-            Join thousands of couples who have embraced Beej Sanskar to lay a flawless foundation for their future child's health and intellect.
+            Join thousands of couples who have embraced Beej Sanskar to lay a flawless foundation
+            for their future child's health and intellect.
           </p>
           <button className="relative z-10 bg-white text-[#EA3484] font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
             Consult our Experts Today
@@ -272,7 +306,14 @@ export default function BizSanskar() {
         </div>
       </motion.section>
 
-      <AppDownloadSection title={<>Start Your Journey with <span className="text-[#EA3484]">Astro Baby</span></>} subtitle="Download the app to explore all features." />
+      <AppDownloadSection
+        title={
+          <>
+            Start Your Journey with <span className="text-[#EA3484]">Astro Baby</span>
+          </>
+        }
+        subtitle="Download the app to explore all features."
+      />
       <NewsletterSection />
       <Footer />
     </div>

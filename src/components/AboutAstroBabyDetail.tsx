@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Sparkles, Heart, Moon, Sun, Play, Star } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import LazyImage from "@/components/common/LazyImage";
 
 const featureCards = [
   {
@@ -70,14 +71,13 @@ export default function AboutAstroBabyDetail() {
             <div className="relative w-full max-w-[420px] overflow-hidden rounded-[26px] shadow-[0_16px_40px_rgba(234,52,132,0.09)] border-2 border-pink-100/80 bg-gradient-to-b from-white via-pink-50/30 to-pink-50/60 p-2.5 group">
               {/* Image Box */}
               <div className="relative overflow-hidden rounded-[20px] aspect-[4/5] bg-pink-50">
-                <img
+                <LazyImage
                   src="/images/celestial_mother.png"
                   alt="Astro Baby Celestial Pregnant Mother"
-                  loading="lazy"
-                  decoding="async"
+                  containerClassName="w-full h-full"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                
+
                 {/* Subtle Theme Gradient Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/40 via-transparent to-transparent pointer-events-none" />
 
@@ -173,7 +173,7 @@ export default function AboutAstroBabyDetail() {
         </div>
       </motion.div>
 
-      {/* ── 2. BOTTOM SECTION: Our Introduction Video ── */}
+      {/* ── 2. BOTTOM SECTION: Visual Experience Video Player with Decent Family Thumbnail & Logo ── */}
       <motion.div
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ export default function AboutAstroBabyDetail() {
         </div>
 
         {/* Video Player Box */}
-        <div className="relative z-10 max-w-4xl mx-auto rounded-[24px] md:rounded-[28px] overflow-hidden shadow-xl border-2 border-white bg-slate-950 group">
+        <div className="relative z-10 max-w-4xl mx-auto rounded-[24px] md:rounded-[28px] overflow-hidden shadow-2xl border-2 border-white bg-slate-950 group">
           {isPlaying ? (
             <div className="aspect-video w-full">
               <iframe
@@ -235,51 +235,63 @@ export default function AboutAstroBabyDetail() {
               onClick={() => setIsPlaying(true)}
               className="relative aspect-video w-full cursor-pointer overflow-hidden group"
             >
-              {/* Clean Video Thumbnail */}
-              <img
-                src="/images/video_thumb.png"
-                alt="AstroBaby Introduction Video Thumbnail"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              {/* Clean Decent Video Thumbnail with Family & Astrological Harmony */}
+              <LazyImage
+                src="/images/visual_experience_family.jpg"
+                alt="Astro Baby Vedic Garbhadhan Sanskar Family"
+                fallbackSrc="/images/video_thumb.png"
+                containerClassName="w-full h-full"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
 
               {/* Refined Theme Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/70 via-[#172554]/20 to-black/20 group-hover:from-[#172554]/60 transition-colors" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/75 via-[#172554]/20 to-black/30 group-hover:from-[#172554]/65 transition-colors pointer-events-none" />
 
-              {/* Minimal Top Brand Badge */}
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2.5">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-[#F6C85F] shadow-sm">
-                  <Moon className="h-4.5 w-4.5 fill-[#F6C85F]" />
+              {/* Top-Left: Decent Astro Baby Brand Logo Badge */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center z-20">
+                <div className="flex items-center bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-pink-200/80 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src="/images/logo.png"
+                    alt="Astro Baby"
+                    className="h-7 sm:h-8 w-auto object-contain"
+                  />
                 </div>
-                <span className="text-white font-bold text-sm tracking-wide drop-shadow-sm">
-                  AstroBaby Story
+              </div>
+
+              {/* Top-Right: Category Tag */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-20">
+                <div className="inline-flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/25 text-white text-[11px] font-semibold shadow-xs">
+                  <Sparkles className="h-3 w-3 text-[#F6C85F]" />
+                  <span>Vedic Prenatal Care</span>
+                </div>
+              </div>
+
+              {/* Center Play Button with Pulsing Glow & Text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
+                <div className="relative flex items-center justify-center">
+                  <span className="absolute -inset-3 rounded-full bg-[#EA3484]/40 animate-ping" />
+                  <motion.div
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.12 }}
+                    whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
+                    className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-[0_12px_36px_rgba(234,52,132,0.55)] border-2 border-white pointer-events-auto"
+                  >
+                    <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-white ml-1 text-white" />
+                  </motion.div>
+                </div>
+                <span className="mt-3 text-white text-xs sm:text-sm font-bold tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-black/30 backdrop-blur-sm px-3.5 py-1 rounded-full border border-white/20">
+                  Click to Watch
                 </span>
               </div>
 
-              {/* Minimal Center Play Button with Pulsing Glow */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative flex items-center justify-center">
-                  <span className="absolute -inset-2 rounded-full bg-[#EA3484]/40 animate-ping pointer-events-none" />
-                  <motion.button
-                    whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
-                    whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-                    type="button"
-                    aria-label="Play Introduction Video"
-                    className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-[0_10px_30px_rgba(234,52,132,0.5)] border-2 border-white"
-                  >
-                    <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-white ml-1 text-white" />
-                  </motion.button>
+              {/* Bottom Glass Bar with Video Info */}
+              <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-6 flex items-center justify-between z-20 pointer-events-none">
+                <div className="inline-flex items-center gap-2.5 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs sm:text-sm font-medium shadow-md">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#EA3484] animate-pulse" />
+                  <span className="drop-shadow-xs">Experience 9-Month Garbhadhan Sanskar Journey</span>
                 </div>
-              </div>
-
-              {/* Minimal Bottom Bar Pill */}
-              <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-6 flex items-center justify-between">
-                <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-white/90 text-xs font-medium">
-                  <span className="h-2 w-2 rounded-full bg-[#EA3484] animate-pulse" />
-                  <span>Watch 9-Month Prenatal Journey</span>
-                </div>
-                <div className="inline-flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-white/80 text-xs">
+                <div className="hidden sm:inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20 text-white/90 text-xs font-semibold shadow-md">
+                  <span>HD 1080p</span>
+                  <span>•</span>
                   <span>1:48 min</span>
                 </div>
               </div>

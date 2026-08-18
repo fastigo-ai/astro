@@ -1,16 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  Baby,
-  Sparkles,
-  Check,
-  BookOpen,
-  ArrowRight,
-  Sun,
-  ShieldCheck,
-  Award,
-} from "lucide-react";
+import { Baby, Sparkles, Check, BookOpen, ArrowRight, Sun, ShieldCheck, Award } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
@@ -44,9 +35,18 @@ const CORE_SANSKARS = [
 
 const ADDITIONAL_FEATURES = [
   { text: "Moral & Inspirational Bedtime Audio Stories", img: "/images/features/library.jpg" },
-  { text: "Cognitive Brain Sharpening Puzzles & Memory Games", img: "/images/features/brainopedia.jpg" },
-  { text: "Sanskrit Shloka & Peace Mantra Recitation Guides", img: "/images/features/vaidic_mantra_vrushti.jpg" },
-  { text: "Early Character & Virtue Building (Sanskar Sutras)", img: "/images/features/garbhsanskar_sutra.jpg" },
+  {
+    text: "Cognitive Brain Sharpening Puzzles & Memory Games",
+    img: "/images/features/brainopedia.jpg",
+  },
+  {
+    text: "Sanskrit Shloka & Peace Mantra Recitation Guides",
+    img: "/images/features/vaidic_mantra_vrushti.jpg",
+  },
+  {
+    text: "Early Character & Virtue Building (Sanskar Sutras)",
+    img: "/images/features/garbhsanskar_sutra.jpg",
+  },
 ];
 
 export default function BaalSanskarPage() {
@@ -107,7 +107,8 @@ export default function BaalSanskarPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Nurturing positive virtues, cognitive sharpness, and emotional security through the 4 sacred early childhood Vedic sanskars.
+                Nurturing positive virtues, cognitive sharpness, and emotional security through the
+                4 sacred early childhood Vedic sanskars.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -147,7 +148,8 @@ export default function BaalSanskarPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal mt-2 leading-relaxed">
-              Guided step-by-step by our senior Vaidic Brahmins with personalized muhurats and auspicious rituals.
+              Guided step-by-step by our senior Vaidic Brahmins with personalized muhurats and
+              auspicious rituals.
             </p>
           </div>
 
@@ -166,7 +168,7 @@ export default function BaalSanskarPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                    
+
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                       <span className="text-xs font-bold text-[#EA3484] bg-white/95 backdrop-blur-md border border-pink-200 px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
                         Sanskar 0{idx + 1}
@@ -216,8 +218,15 @@ export default function BaalSanskarPage() {
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {ADDITIONAL_FEATURES.map((feat, fIdx) => (
-                <div key={fIdx} className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-pink-100/80 shadow-2xs hover:shadow-xs transition-shadow">
-                  <img src={feat.img} alt={feat.text} className="w-12 h-12 rounded-xl object-cover shrink-0 border border-pink-50" />
+                <div
+                  key={fIdx}
+                  className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-pink-100/80 shadow-2xs hover:shadow-xs transition-shadow"
+                >
+                  <img
+                    src={feat.img}
+                    alt={feat.text}
+                    className="w-12 h-12 rounded-xl object-cover shrink-0 border border-pink-50"
+                  />
                   <div className="flex items-center gap-2 text-sm text-[#475569] font-normal">
                     <Check className="w-4 h-4 text-[#EA3484] shrink-0" />
                     <span>{feat.text}</span>

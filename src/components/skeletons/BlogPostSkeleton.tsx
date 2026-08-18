@@ -13,7 +13,7 @@ export default function BlogPostSkeleton() {
           <Skeleton className="h-8 w-28 bg-slate-100 rounded-full border border-slate-200" />
           <Skeleton className="h-6 w-28 bg-pink-100/90 rounded-full" />
         </div>
-        
+
         <div className="space-y-3">
           <Skeleton className="h-8 sm:h-12 w-full bg-[#1a3a6c]/20 rounded-2xl" />
           <Skeleton className="h-8 sm:h-12 w-4/5 bg-[#1a3a6c]/20 rounded-2xl" />

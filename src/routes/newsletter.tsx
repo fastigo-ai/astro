@@ -9,7 +9,7 @@ import {
   ChevronRight,
   Star,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
@@ -75,7 +75,8 @@ export default function NewsletterPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            Join over 50,000+ expectant parents receiving weekly Vedic shlokas, satvik recipes, trimester wellness tips, and astrological insights.
+            Join over 50,000+ expectant parents receiving weekly Vedic shlokas, satvik recipes,
+            trimester wellness tips, and astrological insights.
           </motion.p>
 
           {/* Breadcrumbs */}
@@ -98,7 +99,6 @@ export default function NewsletterPage() {
       <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/95 backdrop-blur-2xl rounded-[32px] p-6 sm:p-10 lg:p-14 border border-pink-100 shadow-[0_20px_60px_-15px_rgba(23,37,84,0.08)] grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            
             {/* Left Column: Artwork & Floating Badge */}
             <div className="lg:col-span-5 relative group">
               <div className="relative aspect-[4/3] sm:aspect-square rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(23,37,84,0.14)] border-4 border-white bg-[#FFFCFE]">
@@ -138,7 +138,8 @@ export default function NewsletterPage() {
                 </h2>
 
                 <p className="text-sm sm:text-base text-[#475569] font-normal leading-relaxed">
-                  Join a community of conscious parents. Delivered every Wednesday morning, completely free, with no spam.
+                  Join a community of conscious parents. Delivered every Wednesday morning,
+                  completely free, with no spam.
                 </p>
               </div>
 
@@ -159,7 +160,8 @@ export default function NewsletterPage() {
                           Welcome to the Astro Baby Family!
                         </h4>
                         <p className="text-xs text-slate-600 font-normal">
-                          We've sent a verification email and your free Garbhadhan Sanskar Starter PDF to <strong className="text-[#172554] font-semibold">{email}</strong>.
+                          We've sent a verification email and your free Garbhadhan Sanskar Starter
+                          PDF to <strong className="text-[#172554] font-semibold">{email}</strong>.
                         </p>
                       </div>
                     </div>

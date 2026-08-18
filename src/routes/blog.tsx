@@ -1,11 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState, useMemo, useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { Sparkles, Search, ChevronRight, Clock, Calendar, ArrowRight, BookOpen, User } from "lucide-react";
+import {
+  Sparkles,
+  Search,
+  ChevronRight,
+  Clock,
+  Calendar,
+  ArrowRight,
+  BookOpen,
+  User,
+} from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
+import LazyImage from "@/components/common/LazyImage";
 import {
   type Post,
   posts,
@@ -141,8 +151,8 @@ export default function BlogPage() {
 
           {/* Body Text */}
           <p className="text-[#475569] text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            Explore authentic guidance on Garbhadhan Sanskar, trimester care, nutrition, mantras, yoga,
-            and fetal neuroscience — curated by doctors & Vedic scholars.
+            Explore authentic guidance on Garbhadhan Sanskar, trimester care, nutrition, mantras,
+            yoga, and fetal neuroscience — curated by doctors & Vedic scholars.
           </p>
 
           {/* Breadcrumbs */}
@@ -222,9 +232,7 @@ export default function BlogPage() {
                 <p className="text-xs md:text-sm text-slate-500 mt-1 font-normal">
                   Showing <span className="font-semibold text-[#172554]">{startIndex}</span> to{" "}
                   <span className="font-semibold text-[#172554]">{endIndex}</span> of{" "}
-                  <span className="font-semibold text-[#F45B8A]">
-                    {filteredPosts.length}
-                  </span>{" "}
+                  <span className="font-semibold text-[#F45B8A]">{filteredPosts.length}</span>{" "}
                   published articles
                 </p>
               )}
@@ -258,75 +266,71 @@ export default function BlogPage() {
                       to={`/blog/${slugify(p.title)}`}
                       className="bg-white/95 backdrop-blur-xl rounded-[28px] shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_20px_50px_rgba(244,91,138,0.12)] transition-shadow duration-300 border border-pink-100 flex flex-col overflow-hidden group h-full"
                     >
-                    {/* Thumbnail Image Container */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                      <img
-                        src={getPostImage(p, i)}
-                        alt={p.title}
-                        loading="lazy"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = "/images/story_thumb_1.png";
-                        }}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/60 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+                      {/* Thumbnail Image Container */}
+                      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <LazyImage
+                          src={getPostImage(p, i)}
+                          alt={p.title}
+                          fallbackSrc="/images/story_thumb_1.png"
+                          containerClassName="w-full h-full"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#172554]/60 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity pointer-events-none" />
 
-                      {/* Top Left: Category Badge */}
-                      <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3.5 py-1 rounded-full shadow-sm">
-                        {category}
-                      </span>
+                        {/* Top Left: Category Badge */}
+                        <span className="absolute top-3.5 left-3.5 bg-[#172554]/90 backdrop-blur-md text-white text-[11px] font-semibold px-3.5 py-1 rounded-full shadow-sm">
+                          {category}
+                        </span>
 
-                      {/* Top Right: Read Time */}
-                      <span className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-                        <Clock className="w-3 h-3 text-pink-300" />
-                        {readTime}
-                      </span>
-                    </div>
+                        {/* Top Right: Read Time */}
+                        <span className="absolute top-3.5 right-3.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+                          <Clock className="w-3 h-3 text-pink-300" />
+                          {readTime}
+                        </span>
+                      </div>
 
-                    {/* Content Box */}
-                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
-                      <div>
-                        {/* Title */}
-                        <h3 className="text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-2">
-                          {p.title}
-                        </h3>
+                      {/* Content Box */}
+                      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                          {/* Title */}
+                          <h3 className="text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug line-clamp-2">
+                            {p.title}
+                          </h3>
 
-                        {/* Metadata */}
-                        <div className="mt-3 flex items-center gap-3 text-xs text-slate-500 font-normal">
-                          <span className="flex items-center gap-1.5 text-slate-600">
-                            <Calendar className="w-3.5 h-3.5 text-[#F45B8A]" />
-                            {p.date}
-                          </span>
-                          <span>•</span>
-                          <span className="flex items-center gap-1 text-slate-600">
-                            <User className="w-3.5 h-3.5 text-[#3B82F6]" />
-                            Astro Baby Team
+                          {/* Metadata */}
+                          <div className="mt-3 flex items-center gap-3 text-xs text-slate-500 font-normal">
+                            <span className="flex items-center gap-1.5 text-slate-600">
+                              <Calendar className="w-3.5 h-3.5 text-[#F45B8A]" />
+                              {p.date}
+                            </span>
+                            <span>•</span>
+                            <span className="flex items-center gap-1 text-slate-600">
+                              <User className="w-3.5 h-3.5 text-[#3B82F6]" />
+                              Astro Baby Team
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Read More link */}
+                        <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                          <span className="text-xs font-semibold text-[#F45B8A] group-hover:text-[#d94d7a] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                            <span>Read Full Article</span>
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                           </span>
                         </div>
                       </div>
-
-                      {/* Read More link */}
-                      <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-xs font-semibold text-[#F45B8A] group-hover:text-[#d94d7a] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                          <span>Read Full Article</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
           ) : (
             /* No Results state */
             <div className="py-20 text-center bg-white/90 backdrop-blur-md rounded-3xl border border-pink-200 p-8 shadow-sm max-w-xl mx-auto">
               <div className="w-16 h-16 bg-pink-50 text-[#F45B8A] rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-semibold text-[#172554]">
-                No Articles Found
-              </h3>
+              <h3 className="text-2xl font-semibold text-[#172554]">No Articles Found</h3>
               <p className="text-slate-500 mt-2 text-sm font-normal">
                 We couldn't find any articles matching your search query or selected category.
               </p>

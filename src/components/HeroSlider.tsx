@@ -168,7 +168,9 @@ export default function HeroSlider() {
             {slide.programs && slide.programs.length > 0 && (
               <div
                 className={`mt-2.5 sm:mt-4 flex flex-wrap items-center gap-1.5 sm:gap-2 ${
-                  isLeftAligned ? "justify-center sm:justify-start" : "justify-center sm:justify-start md:justify-end"
+                  isLeftAligned
+                    ? "justify-center sm:justify-start"
+                    : "justify-center sm:justify-start md:justify-end"
                 }`}
               >
                 {slide.programs.map((prog, pIdx) => (
@@ -233,17 +235,28 @@ export default function HeroSlider() {
           {String(index + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}
         </div>
       </div>
-      
+
       {/* Side Arrows (Desktop Only) */}
       <div className="absolute inset-y-0 left-4 z-20 hidden sm:flex items-center">
-        <button onClick={prev} className="p-3 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm transition-all border border-white/10">
+        <button
+          onClick={prev}
+          className="p-3 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm transition-all border border-white/10"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
       </div>
       <div className="absolute inset-y-0 right-4 z-20 hidden sm:flex items-center">
-        <button onClick={next} className="p-3 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm transition-all border border-white/10">
+        <button
+          onClick={next}
+          className="p-3 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm transition-all border border-white/10"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
           </svg>
@@ -252,4 +265,3 @@ export default function HeroSlider() {
     </section>
   );
 }
-

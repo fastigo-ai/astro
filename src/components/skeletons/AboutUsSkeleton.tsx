@@ -32,7 +32,7 @@ export default function AboutUsSkeleton() {
           <Skeleton className="h-6 w-36 bg-pink-100/90 rounded-full border border-pink-200" />
           <Skeleton className="h-8 sm:h-10 md:h-12 w-11/12 bg-[#1a3a6c]/20 rounded-xl" />
           <Skeleton className="h-8 sm:h-10 w-4/5 bg-[#1a3a6c]/20 rounded-xl" />
-          
+
           <div className="space-y-3.5 pt-2">
             <Skeleton className="h-4 w-full bg-slate-200/90" />
             <Skeleton className="h-4 w-full bg-slate-200/90" />
@@ -43,7 +43,10 @@ export default function AboutUsSkeleton() {
           {/* Quick Highlight Stats Grid Skeleton */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="p-3 sm:p-4 bg-white/90 backdrop-blur-md rounded-2xl space-y-2 border border-slate-100 shadow-xs">
+              <div
+                key={i}
+                className="p-3 sm:p-4 bg-white/90 backdrop-blur-md rounded-2xl space-y-2 border border-slate-100 shadow-xs"
+              >
                 <Skeleton className="h-6 sm:h-8 w-16 bg-blue-200/80 rounded-lg" />
                 <Skeleton className="h-3.5 w-20 bg-slate-200/80" />
               </div>
@@ -63,7 +66,10 @@ export default function AboutUsSkeleton() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="p-6 bg-white rounded-3xl shadow-xs border border-slate-100/80 space-y-4 flex flex-col justify-between">
+              <div
+                key={i}
+                className="p-6 bg-white rounded-3xl shadow-xs border border-slate-100/80 space-y-4 flex flex-col justify-between"
+              >
                 <div className="space-y-4">
                   <Skeleton className="h-12 w-12 rounded-2xl bg-pink-100/90 border border-pink-200/60" />
                   <Skeleton className="h-6 w-3/4 bg-[#1a3a6c]/20 rounded-lg" />
@@ -81,7 +87,10 @@ export default function AboutUsSkeleton() {
         <Skeleton className="h-7 w-64 mx-auto bg-[#1a3a6c]/20 rounded-xl" />
         <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
           {Array.from({ length: 10 }).map((_, i) => (
-            <Skeleton key={i} className="h-8 w-28 sm:w-32 rounded-full bg-white/90 border border-slate-200/80" />
+            <Skeleton
+              key={i}
+              className="h-8 w-28 sm:w-32 rounded-full bg-white/90 border border-slate-200/80"
+            />
           ))}
         </div>
       </section>
@@ -95,7 +104,10 @@ export default function AboutUsSkeleton() {
 
         <div className="space-y-4 sm:space-y-6">
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="flex flex-col sm:flex-row gap-4 items-start bg-white/90 p-5 rounded-3xl border border-slate-100 shadow-xs">
+            <div
+              key={i}
+              className="flex flex-col sm:flex-row gap-4 items-start bg-white/90 p-5 rounded-3xl border border-slate-100 shadow-xs"
+            >
               <Skeleton className="h-9 w-20 bg-blue-100/90 text-blue-600 rounded-xl shrink-0" />
               <div className="space-y-2.5 w-full">
                 <Skeleton className="h-5 sm:h-6 w-48 bg-[#1a3a6c]/20 rounded-md" />

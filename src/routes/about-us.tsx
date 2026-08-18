@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Users,
   Smartphone,
-  PlayCircle
+  PlayCircle,
 } from "lucide-react";
 import AboutAstroBabyDetail from "@/components/AboutAstroBabyDetail";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
@@ -174,7 +174,8 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-base sm:text-lg md:text-xl text-[#475569] max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            How ancient Garbhadhan Sanskar wisdom and modern obstetric neuroscience united to guide thousands of parents toward joyful, divine childbirth.
+            How ancient Garbhadhan Sanskar wisdom and modern obstetric neuroscience united to guide
+            thousands of parents toward joyful, divine childbirth.
           </motion.p>
 
           {/* Breadcrumb Navigation */}
@@ -210,7 +211,8 @@ export default function AboutPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto"></div>
             <p className="text-sm sm:text-base text-[#475569] font-normal leading-relaxed mt-2">
-              Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.
+              Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on
+              these foundational values.
             </p>
           </div>
 
@@ -227,9 +229,13 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`group relative overflow-hidden rounded-[26px] bg-white/90 p-6 sm:p-7 border ${item.borderColor} shadow-[0_10px_35px_rgba(23,37,84,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(234,52,132,0.12)] flex flex-col justify-between`}
                 >
-                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div
+                    className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
                   <div className="relative z-10 space-y-4">
-                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-white shadow-md border border-pink-100 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-white shadow-md border border-pink-100 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <IconComp className="h-6 w-6" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-semibold text-[#172554] leading-snug">
@@ -266,7 +272,8 @@ export default function AboutPage() {
             </h2>
             <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed">
-              Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.
+              Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+
+              countries.
             </p>
           </div>
 
@@ -287,7 +294,9 @@ export default function AboutPage() {
 
                   <div className="relative z-10 flex flex-col items-center w-full">
                     {/* Icon Badge */}
-                    <div className={`h-12 w-12 rounded-2xl flex items-center justify-center border shadow-2xs mb-4 group-hover:scale-110 transition-transform duration-300 ${stat.iconBg}`}>
+                    <div
+                      className={`h-12 w-12 rounded-2xl flex items-center justify-center border shadow-2xs mb-4 group-hover:scale-110 transition-transform duration-300 ${stat.iconBg}`}
+                    >
                       <IconComp className="h-6 w-6" />
                     </div>
 
@@ -304,7 +313,9 @@ export default function AboutPage() {
 
                   {/* Subtitle Badge */}
                   <div className="relative z-10 mt-4 pt-3 border-t border-pink-100/60 w-full flex justify-center">
-                    <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${stat.badgeBg}`}>
+                    <span
+                      className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${stat.badgeBg}`}
+                    >
                       {stat.sub}
                     </span>
                   </div>
@@ -327,7 +338,8 @@ export default function AboutPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto"></div>
             <p className="text-sm sm:text-base text-[#475569] font-normal mt-2 leading-relaxed">
-              From a research initiative by IITians and Vedic scholars to the world's most comprehensive Garbhadhan Sanskar platform.
+              From a research initiative by IITians and Vedic scholars to the world's most
+              comprehensive Garbhadhan Sanskar platform.
             </p>
           </div>
 
@@ -353,13 +365,11 @@ export default function AboutPage() {
                   </div>
 
                   {/* Content Card */}
-                  <div
-                    className={`${
-                      i % 2 === 0 ? "md:text-right" : "md:text-left md:order-2"
-                    }`}
-                  >
+                  <div className={`${i % 2 === 0 ? "md:text-right" : "md:text-left md:order-2"}`}>
                     <div className="bg-white/95 backdrop-blur-xl rounded-[24px] p-6 sm:p-8 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_45px_rgba(234,52,132,0.12)] transition-all duration-300 group">
-                      <div className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                      <div
+                        className={`flex items-center gap-2 mb-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}
+                      >
                         <span className="inline-block bg-gradient-to-r from-[#172554] to-[#EA3484] text-white font-semibold px-3.5 py-1 rounded-full text-xs shadow-xs">
                           {m.year}
                         </span>
@@ -389,7 +399,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#172554] via-[#1A3A6C] to-[#2B1B47] p-8 sm:p-12 text-white shadow-2xl border border-pink-200/20">
             <div className="pointer-events-none absolute -right-16 -bottom-16 h-72 w-72 rounded-full bg-[#EA3484]/30 blur-3xl" />
-            
+
             <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-8 space-y-4 text-center md:text-left">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#F6C85F] backdrop-blur-md">
@@ -399,7 +409,8 @@ export default function AboutPage() {
                   Meet the Masters & Scholars Behind Astro Baby
                 </h3>
                 <p className="text-sm md:text-base text-slate-200 font-normal max-w-xl leading-relaxed">
-                  Discover the distinguished team of doctors, IITians, Vedmurti Brahmins, yoga masters, and astrologers who crafted this curriculum.
+                  Discover the distinguished team of doctors, IITians, Vedmurti Brahmins, yoga
+                  masters, and astrologers who crafted this curriculum.
                 </p>
               </div>
 

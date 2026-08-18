@@ -42,7 +42,9 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed text-[#475569] font-normal pr-4">
-              Astro Baby bridges sacred ancient Vedic Garbhadhan Sanskar traditions with modern medical science, empowering expecting parents for healthy, conscious, and divine childbirth.
+              Astro Baby bridges sacred ancient Vedic Garbhadhan Sanskar traditions with modern
+              medical science, empowering expecting parents for healthy, conscious, and divine
+              childbirth.
             </p>
 
             {/* Social Links */}
@@ -219,13 +221,21 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-white/70">
-            <Link to="/about-us" className="hover:text-white transition-colors">About</Link>
+            <Link to="/about-us" className="hover:text-white transition-colors">
+              About
+            </Link>
             <span>•</span>
-            <Link to="/features" className="hover:text-white transition-colors">Courses</Link>
+            <Link to="/features" className="hover:text-white transition-colors">
+              Courses
+            </Link>
             <span>•</span>
-            <Link to="/contact" className="hover:text-white transition-colors">Privacy & Terms</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">
+              Privacy & Terms
+            </Link>
             <span>•</span>
-            <Link to="/contact" className="hover:text-white transition-colors">Support</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">
+              Support
+            </Link>
           </div>
         </div>
       </div>

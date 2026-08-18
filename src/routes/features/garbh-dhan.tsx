@@ -148,7 +148,7 @@ export default function GarbhDhan() {
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const [showAllInclusions, setShowAllInclusions] = useState(false);
   const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1200
+    typeof window !== "undefined" ? window.innerWidth : 1200,
   );
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const total = GARBHADHAN_SERVICES.length;
@@ -293,7 +293,9 @@ export default function GarbhDhan() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                A sacred pre-conception continuum combining astrological Muhurat calculation, Ayurvedic cellular detox, live Sankalp Poojan, and continuous doctor support to welcome a noble, healthy soul.
+                A sacred pre-conception continuum combining astrological Muhurat calculation,
+                Ayurvedic cellular detox, live Sankalp Poojan, and continuous doctor support to
+                welcome a noble, healthy soul.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -333,7 +335,8 @@ export default function GarbhDhan() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#334155] font-normal leading-relaxed mt-2">
-              A structured scientific and spiritual roadmap guiding couples from preparation to blissful conception.
+              A structured scientific and spiritual roadmap guiding couples from preparation to
+              blissful conception.
             </p>
           </div>
 
@@ -370,7 +373,8 @@ export default function GarbhDhan() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#334155] font-normal leading-relaxed mt-2">
-              Everything you need for conscious, spiritually empowered, and biologically optimized conception in a single ₹11,000 package.
+              Everything you need for conscious, spiritually empowered, and biologically optimized
+              conception in a single ₹11,000 package.
             </p>
           </div>
 
@@ -608,7 +612,9 @@ export default function GarbhDhan() {
               </h2>
 
               <p className="text-base sm:text-lg text-[#334155] leading-relaxed font-normal">
-                Ancient Ayurvedic texts and modern epigenetics agree: the mental harmony, spiritual vibration, and cellular health of both parents during conception form the lifelong foundation of your child's intellect, temperament, and biological vitality.
+                Ancient Ayurvedic texts and modern epigenetics agree: the mental harmony, spiritual
+                vibration, and cellular health of both parents during conception form the lifelong
+                foundation of your child's intellect, temperament, and biological vitality.
               </p>
 
               {/* 4 Feature Highlights Grid */}
@@ -619,7 +625,9 @@ export default function GarbhDhan() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-[#172554]">5,000+ Blessed Parents</h4>
-                    <p className="text-xs text-slate-600 font-normal mt-0.5">Couples experiencing blissful conscious conception.</p>
+                    <p className="text-xs text-slate-600 font-normal mt-0.5">
+                      Couples experiencing blissful conscious conception.
+                    </p>
                   </div>
                 </div>
 
@@ -629,7 +637,9 @@ export default function GarbhDhan() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-[#172554]">AIIMS Gynecologists</h4>
-                    <p className="text-xs text-slate-600 font-normal mt-0.5">Expert medical reassurance & fertility guidance.</p>
+                    <p className="text-xs text-slate-600 font-normal mt-0.5">
+                      Expert medical reassurance & fertility guidance.
+                    </p>
                   </div>
                 </div>
 
@@ -638,8 +648,12 @@ export default function GarbhDhan() {
                     <Check className="w-5 h-5 font-bold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm text-[#172554]">Learned Vaidic Scholars</h4>
-                    <p className="text-xs text-slate-600 font-normal mt-0.5">Authentic rituals, mantras & Muhurat calculation.</p>
+                    <h4 className="font-semibold text-sm text-[#172554]">
+                      Learned Vaidic Scholars
+                    </h4>
+                    <p className="text-xs text-slate-600 font-normal mt-0.5">
+                      Authentic rituals, mantras & Muhurat calculation.
+                    </p>
                   </div>
                 </div>
 
@@ -649,7 +663,9 @@ export default function GarbhDhan() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm text-[#172554]">100% Confidential Care</h4>
-                    <p className="text-xs text-slate-600 font-normal mt-0.5">Dedicated daily companion (Sahayata Sakhi).</p>
+                    <p className="text-xs text-slate-600 font-normal mt-0.5">
+                      Dedicated daily companion (Sahayata Sakhi).
+                    </p>
                   </div>
                 </div>
               </div>
@@ -667,13 +683,16 @@ export default function GarbhDhan() {
                     Begin Your Sacred Journey
                   </h3>
                   <p className="text-xs sm:text-sm text-[#334155] font-normal leading-relaxed">
-                    Download the AstroBaby app and schedule your live Sankalp Poojan with our senior Vedic acharyas today.
+                    Download the AstroBaby app and schedule your live Sankalp Poojan with our senior
+                    Vedic acharyas today.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-pink-50/70 border border-pink-100 text-left flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] text-slate-500 font-semibold uppercase block">All-Inclusive Fee</span>
+                    <span className="text-[11px] text-slate-500 font-semibold uppercase block">
+                      All-Inclusive Fee
+                    </span>
                     <span className="text-2xl font-black text-[#172554]">₹11,000</span>
                   </div>
                   <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">

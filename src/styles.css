@@ -55,35 +55,35 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* ── AstroBaby Premium Palette ── */
-  --pink:         #F45B8A;
-  --pink-hover:   #d94d7a;
-  --blue:         #3B82F6;
-  --blue-hover:   #2563EB;
-  --orange:       #FF9F43;
-  --gold:         #F6C85F;
-  --navy:         #172554;
-  --cloud:        #FFFCFE;
-  --slate-body:   #475569;
+  --pink: #f45b8a;
+  --pink-hover: #d94d7a;
+  --blue: #3b82f6;
+  --blue-hover: #2563eb;
+  --orange: #ff9f43;
+  --gold: #f6c85f;
+  --navy: #172554;
+  --cloud: #fffcfe;
+  --slate-body: #475569;
 
   /* Legacy aliases — keep for backward compat */
-  --primary-blue:       #3B82F6;
-  --color-navy:         #172554;
-  --color-blush:        #F45B8A;
-  --color-baby-blue:    #3B82F6;
-  --color-warm-gold:    #F6C85F;
-  --color-ink-soft:     #475569;
-  --color-sky:          #EAF4FF;
+  --primary-blue: #3b82f6;
+  --color-navy: #172554;
+  --color-blush: #f45b8a;
+  --color-baby-blue: #3b82f6;
+  --color-warm-gold: #f6c85f;
+  --color-ink-soft: #475569;
+  --color-sky: #eaf4ff;
 
   /* Shadows */
-  --shadow-soft:       0 4px 20px rgba(244, 91, 138, 0.06);
-  --shadow-glow:       0 0 35px rgba(255, 252, 254, 0.8);
-  --shadow-blue-glow:  0 0 28px rgba(59, 130, 246, 0.25);
-  --shadow-pink-glow:  0 0 28px rgba(244, 91, 138, 0.25);
-  --shadow-navy-glow:  0 0 28px rgba(23, 37, 84, 0.15);
+  --shadow-soft: 0 4px 20px rgba(244, 91, 138, 0.06);
+  --shadow-glow: 0 0 35px rgba(255, 252, 254, 0.8);
+  --shadow-blue-glow: 0 0 28px rgba(59, 130, 246, 0.25);
+  --shadow-pink-glow: 0 0 28px rgba(244, 91, 138, 0.25);
+  --shadow-navy-glow: 0 0 28px rgba(23, 37, 84, 0.15);
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #FFFCFE 0%, #EAF4FF 100%);
-  --gradient-section: linear-gradient(135deg, #FFFCFE 0%, #F0F7FF 50%, #FFF0F5 100%);
+  --gradient-hero: linear-gradient(135deg, #fffcfe 0%, #eaf4ff 100%);
+  --gradient-section: linear-gradient(135deg, #fffcfe 0%, #f0f7ff 50%, #fff0f5 100%);
 }
 
 :root {
@@ -162,21 +162,31 @@
   }
 
   html {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     text-rendering: optimizeLegibility;
-    overflow-x: clip;
   }
 
   body {
-    background-color: #FFFCFE;
+    background-color: #fffcfe;
     color: #475569;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
     width: 100%;
   }
 
@@ -195,7 +205,7 @@
   }
 
   .lenis.lenis-stopped {
-    overflow: hidden;
+    overflow: clip;
   }
 
   .lenis.lenis-smooth iframe {
@@ -212,8 +222,19 @@
     will-change: transform, opacity;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     letter-spacing: -0.022em;
     color: #172554;
   }
@@ -233,25 +254,45 @@
     line-height: 1.3;
   }
 
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     font-weight: 600;
     line-height: 1.4;
   }
 
   p {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     font-weight: 400;
     line-height: 1.6;
   }
 
   button {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     font-weight: 600;
     letter-spacing: -0.005em;
   }
 
   nav {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
     font-weight: 500;
   }
 
@@ -260,26 +301,32 @@
   textarea,
   label,
   .font-ui {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
   }
 }
 
 @layer utilities {
   /* ── Gradient Text ── */
   .gradient-text {
-    background: linear-gradient(to right, #172554, #F45B8A);
+    background: linear-gradient(to right, #172554, #f45b8a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
   .gradient-text-blue {
-    background: linear-gradient(to right, #3B82F6, #F45B8A);
+    background: linear-gradient(to right, #3b82f6, #f45b8a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
   .gradient-text-gold {
-    background: linear-gradient(to right, #F6C85F, #FF9F43);
+    background: linear-gradient(to right, #f6c85f, #ff9f43);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
@@ -287,16 +334,16 @@
 
   /* ── Section Backgrounds ── */
   .logo-header-bg {
-    background: linear-gradient(135deg, #FFFCFE 0%, #F9F2FF 40%, #EAF4FF 100%);
+    background: linear-gradient(135deg, #fffcfe 0%, #f9f2ff 40%, #eaf4ff 100%);
   }
   .bg-astrobaby-pink {
-    background: linear-gradient(135deg, #FFFCFE 0%, #EAF4FF 100%);
+    background: linear-gradient(135deg, #fffcfe 0%, #eaf4ff 100%);
   }
   .bg-astrobaby-section {
-    background: linear-gradient(135deg, #FFFCFE 0%, #F0F7FF 50%, #FFF0F5 100%);
+    background: linear-gradient(135deg, #fffcfe 0%, #f0f7ff 50%, #fff0f5 100%);
   }
   .section-bg {
-    background: linear-gradient(135deg, #FFFCFE 0%, #EAF4FF 100%);
+    background: linear-gradient(135deg, #fffcfe 0%, #eaf4ff 100%);
   }
 
   /* ── Glass Card ── */
@@ -309,26 +356,46 @@
   }
 
   /* ── Primary Blue Utilities (kept for compatibility) ── */
-  .text-primary-blue  { color: #3B82F6; }
-  .bg-primary-blue    { background-color: #3B82F6; }
-  .border-primary-blue{ border-color: #3B82F6; }
+  .text-primary-blue {
+    color: #3b82f6;
+  }
+  .bg-primary-blue {
+    background-color: #3b82f6;
+  }
+  .border-primary-blue {
+    border-color: #3b82f6;
+  }
 
   /* ── Semantic color utilities ── */
-  .text-navy   { color: #172554; }
-  .text-pink   { color: #F45B8A; }
-  .text-blue   { color: #3B82F6; }
-  .text-gold   { color: #F6C85F; }
-  .text-orange { color: #FF9F43; }
+  .text-navy {
+    color: #172554;
+  }
+  .text-pink {
+    color: #f45b8a;
+  }
+  .text-blue {
+    color: #3b82f6;
+  }
+  .text-gold {
+    color: #f6c85f;
+  }
+  .text-orange {
+    color: #ff9f43;
+  }
 
   /* ── Link styles ── */
   .link-primary {
-    color: #3B82F6;
+    color: #3b82f6;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition:
+      color 0.2s ease,
+      opacity 0.2s ease;
   }
-  .link-primary:hover { opacity: 0.8; }
+  .link-primary:hover {
+    opacity: 0.8;
+  }
 
   /* ── Primary Button (pink) ── */
   .btn-primary {
@@ -337,7 +404,7 @@
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    background: #F45B8A;
+    background: #f45b8a;
     color: #fff;
     font-weight: 700;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -349,7 +416,9 @@
     box-shadow: 0 8px 24px rgba(244, 91, 138, 0.4);
     transform: scale(1.02);
   }
-  .btn-primary:active { transform: scale(0.98); }
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
 
   /* ── Secondary Button (blue outlined) ── */
   .btn-secondary-blue {
@@ -358,8 +427,8 @@
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    border: 2px solid #3B82F6;
-    color: #3B82F6;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
     background: transparent;
     font-weight: 700;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -367,12 +436,14 @@
     box-shadow: 0 2px 12px rgba(59, 130, 246, 0.12);
   }
   .btn-secondary-blue:hover {
-    background: #3B82F6;
+    background: #3b82f6;
     color: #fff;
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
     transform: scale(1.02);
   }
-  .btn-secondary-blue:active { transform: scale(0.98); }
+  .btn-secondary-blue:active {
+    transform: scale(0.98);
+  }
 
   /* ── Badges ── */
   .badge-pink {
@@ -383,7 +454,7 @@
     border-radius: 9999px;
     background: rgba(244, 91, 138, 0.08);
     border: 1px solid rgba(244, 91, 138, 0.25);
-    color: #F45B8A;
+    color: #f45b8a;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -397,7 +468,7 @@
     border-radius: 9999px;
     background: rgba(59, 130, 246, 0.08);
     border: 1px solid rgba(59, 130, 246, 0.25);
-    color: #3B82F6;
+    color: #3b82f6;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -429,14 +500,16 @@
   }
 
   /* ── Navigation accent ── */
-  .nav-icon-blue { color: #3B82F6; }
+  .nav-icon-blue {
+    color: #3b82f6;
+  }
 }
 
 /* ── Home Page Background ── */
 .home-bg {
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #FFFCFE 0%, #EAF4FF 100%);
+  background: linear-gradient(135deg, #fffcfe 0%, #eaf4ff 100%);
 }
 
 /* Dot-grid pattern overlay */
@@ -473,7 +546,12 @@
   width: 550px;
   height: 550px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(244, 91, 138, 0.12) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(244, 91, 138, 0.12) 0%,
+    rgba(59, 130, 246, 0.06) 50%,
+    transparent 70%
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -559,4 +637,33 @@ body {
   display: none !important;
 }
 
+/* ── Radix Accordion Animations ── */
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
 
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}

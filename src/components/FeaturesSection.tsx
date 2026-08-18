@@ -40,7 +40,11 @@ const programs: ProgramItem[] = [
     to: "/features/garbh-dhan",
     iconBg: "bg-pink-100/80",
     iconColor: "text-[#F45B8A]",
-    features: ["Muhurat-Based Coitus Dates", "Isht Mantra & Meditation", "Fertility Tracker & Support"],
+    features: [
+      "Muhurat-Based Coitus Dates",
+      "Isht Mantra & Meditation",
+      "Fertility Tracker & Support",
+    ],
   },
   {
     icon: Sparkles,
@@ -65,7 +69,11 @@ const programs: ProgramItem[] = [
     to: "/features/garbh-sanskar",
     iconBg: "bg-purple-100/80",
     iconColor: "text-purple-600",
-    features: ["Diamond (₹25k), Gold (₹11k), Silver (₹5k)", "Month-wise Mantra Vrushti", "Garbh Samvad & Prenatal Yoga"],
+    features: [
+      "Diamond (₹25k), Gold (₹11k), Silver (₹5k)",
+      "Month-wise Mantra Vrushti",
+      "Garbh Samvad & Prenatal Yoga",
+    ],
   },
   {
     icon: Baby,
@@ -77,7 +85,11 @@ const programs: ProgramItem[] = [
     to: "/features/baal-sanskar",
     iconBg: "bg-pink-100/80",
     iconColor: "text-[#EA3484]",
-    features: ["Namkaran, Nishkraman & Annaprashan", "Character & Value Building", "Cognitive Brain Puzzles"],
+    features: [
+      "Namkaran, Nishkraman & Annaprashan",
+      "Character & Value Building",
+      "Cognitive Brain Puzzles",
+    ],
   },
   {
     icon: ShieldCheck,
@@ -89,7 +101,11 @@ const programs: ProgramItem[] = [
     to: "/features/infant-care",
     iconBg: "bg-pink-100/80",
     iconColor: "text-[#F45B8A]",
-    features: ["Personal Parenting Coach", "Custom Diet & Lactation", "Daily Live Yoga & Milestones"],
+    features: [
+      "Personal Parenting Coach",
+      "Custom Diet & Lactation",
+      "Daily Live Yoga & Milestones",
+    ],
   },
   {
     icon: Smile,
@@ -101,7 +117,11 @@ const programs: ProgramItem[] = [
     to: "/features/parenting",
     iconBg: "bg-rose-100/80",
     iconColor: "text-[#EA3484]",
-    features: ["Parenting Coach & Support", "Child Psychological Growth", "Nutrition & Emotional Wellbeing"],
+    features: [
+      "Parenting Coach & Support",
+      "Child Psychological Growth",
+      "Nutrition & Emotional Wellbeing",
+    ],
   },
   {
     icon: Compass,
@@ -113,7 +133,11 @@ const programs: ProgramItem[] = [
     to: "/features/bhavishya-fal",
     iconBg: "bg-pink-100/80",
     iconColor: "text-[#EA3484]",
-    features: ["Kundli + Falit Report (₹3,500)", "Live Astrologer Consultation (₹3,100)", "Lifelong Nakshatra Guidance"],
+    features: [
+      "Kundli + Falit Report (₹3,500)",
+      "Live Astrologer Consultation (₹3,100)",
+      "Lifelong Nakshatra Guidance",
+    ],
   },
 ];
 
@@ -121,7 +145,7 @@ export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1200
+    typeof window !== "undefined" ? window.innerWidth : 1200,
   );
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const total = programs.length;
@@ -232,7 +256,8 @@ export default function FeaturesSection() {
           <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
 
           <p className="text-sm md:text-base leading-relaxed text-[#475569] font-normal max-w-2xl mx-auto mt-2">
-            From conscious pre-conception preparation to prenatal nurturing, gentle infant care, and future astrological insights.
+            From conscious pre-conception preparation to prenatal nurturing, gentle infant care, and
+            future astrological insights.
           </p>
         </div>
 
@@ -283,7 +308,8 @@ export default function FeaturesSection() {
                         decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = "/images/garbh_dan_banner.png";
+                          (e.currentTarget as HTMLImageElement).src =
+                            "/images/garbh_dan_banner.png";
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />

@@ -64,7 +64,9 @@ export default function TeamSkeleton() {
                 </div>
 
                 {/* Content Side */}
-                <div className={`${reverse ? "md:order-1" : ""} md:col-span-2 space-y-4 flex flex-col justify-center`}>
+                <div
+                  className={`${reverse ? "md:order-1" : ""} md:col-span-2 space-y-4 flex flex-col justify-center`}
+                >
                   <Skeleton className="h-7 w-44 bg-[#EA3484]/90 rounded-full shadow-xs" />
                   <Skeleton className="h-8 sm:h-10 w-3/4 bg-[#1E293B]/20 rounded-xl" />
                   <Skeleton className="h-8 w-full sm:w-4/5 bg-rose-50 border border-rose-200/60 rounded-2xl" />

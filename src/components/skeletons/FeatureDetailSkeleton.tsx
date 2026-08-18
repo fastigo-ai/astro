@@ -70,7 +70,9 @@ export default function FeatureDetailSkeleton({ title }: { title?: string }) {
                   </div>
 
                   {/* Content Side */}
-                  <div className={`${reverse ? "lg:order-1" : ""} flex flex-col justify-center space-y-4`}>
+                  <div
+                    className={`${reverse ? "lg:order-1" : ""} flex flex-col justify-center space-y-4`}
+                  >
                     <Skeleton className="h-7 w-28 bg-pink-100/90 text-[#EA3484] rounded-full border border-pink-200" />
                     <Skeleton className="h-8 sm:h-10 md:h-12 w-4/5 bg-[#1E293B]/20 rounded-xl" />
                     <Skeleton className="h-6 w-3/4 bg-pink-200/80 rounded-md" />

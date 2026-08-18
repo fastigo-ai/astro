@@ -79,8 +79,8 @@ export default function NewsletterSection() {
               </h2>
 
               <p className="text-[#475569] text-sm sm:text-base leading-relaxed font-normal pt-1">
-                To get more Garbhadhan Sanskar related content in your inbox, subscribe to our newsletter
-                by submitting your email address.
+                To get more Garbhadhan Sanskar related content in your inbox, subscribe to our
+                newsletter by submitting your email address.
               </p>
             </div>
 
@@ -92,11 +92,10 @@ export default function NewsletterSection() {
                     <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#172554]">
-                      You're Subscribed!
-                    </h4>
+                    <h4 className="text-lg font-semibold text-[#172554]">You're Subscribed!</h4>
                     <p className="text-xs text-[#475569] mt-0.5 font-normal">
-                      Thank you for joining our newsletter. We've sent your welcome guide to <strong className="text-[#172554] font-semibold">{email}</strong>.
+                      Thank you for joining our newsletter. We've sent your welcome guide to{" "}
+                      <strong className="text-[#172554] font-semibold">{email}</strong>.
                     </p>
                   </div>
                 </div>

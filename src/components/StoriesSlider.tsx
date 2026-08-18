@@ -67,7 +67,6 @@ export default function StoriesSlider() {
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-10 md:pt-12 pb-20 md:pb-28 border-b border-pink-100/60">
-
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +86,8 @@ export default function StoriesSlider() {
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
           <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#475569] font-normal md:text-base">
-            Heartfelt stories from families across 62+ countries who found calm, confidence, and deeper spiritual connection through AstroBaby.
+            Heartfelt stories from families across 62+ countries who found calm, confidence, and
+            deeper spiritual connection through AstroBaby.
           </p>
         </motion.header>
 
@@ -131,7 +131,9 @@ export default function StoriesSlider() {
               <div className="p-6 pt-6">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug">{story.name}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#172554] group-hover:text-[#F45B8A] transition-colors leading-snug">
+                      {story.name}
+                    </h3>
                     <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-[#F45B8A]">
                       Verified family
                     </p>
@@ -145,7 +147,9 @@ export default function StoriesSlider() {
                     ))}
                   </div>
                 </div>
-                <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">“{story.quote}”</p>
+                <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">
+                  “{story.quote}”
+                </p>
                 {/* <div className="mt-5 grid grid-cols-3 border-t border-slate-200 pt-5">
                   {benefits.map(({ icon: Icon, label }) => (
                     <div key={label} className="flex flex-col items-center gap-2 px-1 text-center">
@@ -162,8 +166,6 @@ export default function StoriesSlider() {
             </motion.article>
           ))}
         </div>
-
-
       </div>
 
       {activeVideo && (

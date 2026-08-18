@@ -112,7 +112,8 @@ export default function BhavishyaFalPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Unlocking your child's natural planetary strengths, innate talents, and life potentials through precise Vedic Janam Kundali analysis and scholar consultations.
+                Unlocking your child's natural planetary strengths, innate talents, and life
+                potentials through precise Vedic Janam Kundali analysis and scholar consultations.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -173,7 +174,9 @@ export default function BhavishyaFalPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                      <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border bg-white/95 backdrop-blur-md ${srv.badgeColor}`}>
+                      <span
+                        className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border bg-white/95 backdrop-blur-md ${srv.badgeColor}`}
+                      >
                         {srv.badge}
                       </span>
                       <div className="flex items-center gap-1 text-amber-400 bg-slate-900/60 backdrop-blur-md px-2 py-0.5 rounded-full">
@@ -215,7 +218,10 @@ export default function BhavishyaFalPage() {
                     </p>
                     <ul className="space-y-2">
                       {srv.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] font-normal">
+                        <li
+                          key={fIdx}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] font-normal"
+                        >
                           <Check className="w-4 h-4 text-[#EA3484] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>

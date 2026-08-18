@@ -5,7 +5,7 @@ function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>)
     <div
       className={cn(
         "skeleton-shimmer rounded-xl bg-slate-200/70 dark:bg-slate-800/60 shadow-xs",
-        className
+        className,
       )}
       {...props}
     />
@@ -13,5 +13,3 @@ function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>)
 }
 
 export { Skeleton };
-
-

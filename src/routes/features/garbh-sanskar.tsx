@@ -47,7 +47,8 @@ const PRICING_PLANS = [
     tagline: "Our flagship end-to-end Vedic & obstetric prenatal mastery.",
     isPopular: true,
     badgeColor: "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-sm",
-    buttonClass: "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-lg shadow-[#F45B8A]/30 hover:scale-102",
+    buttonClass:
+      "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-lg shadow-[#F45B8A]/30 hover:scale-102",
     features: [
       "Sankalp Poojan (Live Personalized Ceremony)",
       "Punsavan Sanskar (Live Vedic Ceremony)",
@@ -226,7 +227,9 @@ export default function GarbhSanskarFeature() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Ancient Vedic mantras, classical raga stimulation, trimester-specific prenatal yoga, and obstetric neuroscience designed to shape a healthy, calm, and virtuous child in the womb.
+                Ancient Vedic mantras, classical raga stimulation, trimester-specific prenatal yoga,
+                and obstetric neuroscience designed to shape a healthy, calm, and virtuous child in
+                the womb.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -267,7 +270,9 @@ export default function GarbhSanskarFeature() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] mb-3">
               <Sparkles className="h-3.5 w-3.5" /> Program Highlights
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight mb-4">Inside the Garbh Sanskar Program</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#172554] leading-[1.2] tracking-tight mb-4">
+              Inside the Garbh Sanskar Program
+            </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
           </motion.div>
 
@@ -286,7 +291,11 @@ export default function GarbhSanskarFeature() {
                   <div className={`${reverse ? "lg:order-2" : ""} relative group`}>
                     <div className="absolute -inset-4 bg-gradient-to-r from-purple-200 via-pink-200 to-rose-200 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-700" />
                     <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-xl">
-                      <img src={f.img} alt={f.title} className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img
+                        src={f.img}
+                        alt={f.title}
+                        className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A6C]/40 to-transparent"></div>
                     </div>
                   </div>
@@ -296,10 +305,14 @@ export default function GarbhSanskarFeature() {
                       <Check className="w-4 h-4 text-[#EA3484]" />
                       Pillar 0{i + 1}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">{f.title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">
+                      {f.title}
+                    </h3>
                     <h4 className="text-lg text-[#EA3484] font-semibold mb-6">"{f.tagline}"</h4>
                     <div className="space-y-4 text-slate-600 leading-relaxed text-base md:text-lg font-normal">
-                      {f.body.map((p, idx) => (<p key={idx}>{p}</p>))}
+                      {f.body.map((p, idx) => (
+                        <p key={idx}>{p}</p>
+                      ))}
                     </div>
 
                     <div className="mt-8">
@@ -331,7 +344,8 @@ export default function GarbhSanskarFeature() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal mt-2 leading-relaxed">
-              Select the right level of live scholar guidance, poojan ceremonies, and health tracking for your pregnancy.
+              Select the right level of live scholar guidance, poojan ceremonies, and health
+              tracking for your pregnancy.
             </p>
           </div>
 
@@ -387,7 +401,9 @@ export default function GarbhSanskarFeature() {
                         </span>
                         <span className="text-xs text-slate-500 font-normal">/ 9 Months Care</span>
                       </div>
-                      <p className="text-[11px] text-[#F45B8A] font-semibold mt-1">One-time payment • All Poojan Included</p>
+                      <p className="text-[11px] text-[#F45B8A] font-semibold mt-1">
+                        One-time payment • All Poojan Included
+                      </p>
                     </div>
 
                     {/* Features list */}
@@ -397,7 +413,10 @@ export default function GarbhSanskarFeature() {
                       </p>
                       <ul className="space-y-2 max-h-[360px] overflow-y-auto pr-1">
                         {plan.features.map((item, fIdx) => (
-                          <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] leading-snug font-normal">
+                          <li
+                            key={fIdx}
+                            className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] leading-snug font-normal"
+                          >
                             <Check className="w-4 h-4 text-[#F45B8A] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
@@ -443,16 +462,26 @@ export default function GarbhSanskarFeature() {
               <table className="w-full text-left text-sm border-collapse">
                 <thead>
                   <tr className="bg-slate-50/80 border-b border-pink-100">
-                    <th className="p-4 sm:p-5 font-bold text-[#172554] text-xs sm:text-sm">Features & Rituals</th>
-                    <th className="p-4 sm:p-5 font-bold text-center text-slate-600 text-xs sm:text-sm">Silver (₹5k)</th>
-                    <th className="p-4 sm:p-5 font-bold text-center text-amber-700 text-xs sm:text-sm">Gold (₹11k)</th>
-                    <th className="p-4 sm:p-5 font-bold text-center text-[#F45B8A] text-xs sm:text-sm bg-pink-50/50">Diamond (₹25k)</th>
+                    <th className="p-4 sm:p-5 font-bold text-[#172554] text-xs sm:text-sm">
+                      Features & Rituals
+                    </th>
+                    <th className="p-4 sm:p-5 font-bold text-center text-slate-600 text-xs sm:text-sm">
+                      Silver (₹5k)
+                    </th>
+                    <th className="p-4 sm:p-5 font-bold text-center text-amber-700 text-xs sm:text-sm">
+                      Gold (₹11k)
+                    </th>
+                    <th className="p-4 sm:p-5 font-bold text-center text-[#F45B8A] text-xs sm:text-sm bg-pink-50/50">
+                      Diamond (₹25k)
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {COMPARISON_FEATURES.map((row, rIdx) => (
                     <tr key={rIdx} className="hover:bg-pink-50/30 transition-colors">
-                      <td className="p-4 sm:p-5 font-medium text-slate-700 text-xs sm:text-sm">{row.name}</td>
+                      <td className="p-4 sm:p-5 font-medium text-slate-700 text-xs sm:text-sm">
+                        {row.name}
+                      </td>
                       <td className="p-4 sm:p-5 text-center">
                         {row.silver ? (
                           <Check className="w-4 h-4 text-emerald-600 mx-auto" />

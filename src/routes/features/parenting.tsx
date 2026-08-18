@@ -138,7 +138,8 @@ export default function ParentingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Empowering parents with compassionate psychological tools, child nutrition plans, emotional wellbeing, and expert pediatric mentorship.
+                Empowering parents with compassionate psychological tools, child nutrition plans,
+                emotional wellbeing, and expert pediatric mentorship.
               </motion.p>
 
               {/* Action Buttons & Highlights */}
@@ -176,7 +177,8 @@ export default function ParentingPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal mt-2 leading-relaxed">
-              Explore the key pillars designed to bring joy, calm, and clarity to your parenting journey.
+              Explore the key pillars designed to bring joy, calm, and clarity to your parenting
+              journey.
             </p>
           </div>
 
@@ -196,7 +198,11 @@ export default function ParentingPage() {
                   <div className={`${reverse ? "lg:order-2" : ""} relative group`}>
                     <div className="absolute -inset-4 bg-gradient-to-r from-pink-200 via-purple-200 to-rose-200 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-700" />
                     <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-xl">
-                      <img src={sec.img} alt={sec.title} className="w-full h-[300px] md:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img
+                        src={sec.img}
+                        alt={sec.title}
+                        className="w-full h-[300px] md:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A6C]/40 to-transparent"></div>
                     </div>
                   </div>
@@ -206,7 +212,9 @@ export default function ParentingPage() {
                       <Icon className="w-4 h-4 text-[#EA3484]" />
                       Pillar 0{idx + 1}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">{sec.title}</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">
+                      {sec.title}
+                    </h3>
                     <h4 className="text-lg text-[#EA3484] font-semibold mb-4">"{sec.tagline}"</h4>
                     <p className="text-slate-600 leading-relaxed text-base mb-6 font-normal">
                       {sec.desc}
@@ -214,7 +222,10 @@ export default function ParentingPage() {
 
                     <div className="space-y-2.5 mb-8">
                       {sec.points.map((pt, pIdx) => (
-                        <div key={pIdx} className="flex items-center gap-2 text-sm text-slate-700 font-normal">
+                        <div
+                          key={pIdx}
+                          className="flex items-center gap-2 text-sm text-slate-700 font-normal"
+                        >
                           <Check className="w-4 h-4 text-[#EA3484] shrink-0" />
                           <span>{pt}</span>
                         </div>

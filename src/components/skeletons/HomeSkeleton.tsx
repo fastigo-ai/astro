@@ -11,7 +11,7 @@ export default function HomeSkeleton() {
       <section className="relative w-full h-screen min-h-[600px] bg-slate-100 overflow-hidden flex items-center">
         {/* Skeleton for Background Image */}
         <div className="absolute inset-0 bg-slate-200 animate-pulse" />
-        
+
         {/* Content Container Skeleton */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           <div className="w-full max-w-2xl space-y-6">
@@ -20,7 +20,7 @@ export default function HomeSkeleton() {
               <Skeleton className="h-12 sm:h-16 md:h-[72px] w-4/5 bg-slate-300/80 rounded-2xl" />
               <Skeleton className="h-12 sm:h-16 md:h-[72px] w-3/4 bg-slate-300/80 rounded-2xl" />
             </div>
-            
+
             {/* Description Skeleton */}
             <div className="space-y-3 pt-4">
               <Skeleton className="h-5 w-full bg-slate-300/60 rounded-lg" />
@@ -60,7 +60,10 @@ export default function HomeSkeleton() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4 space-y-3 sm:space-y-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-3 p-3 bg-white/80 rounded-2xl border border-slate-100 shadow-2xs">
+              <div
+                key={i}
+                className="flex items-center gap-3 p-3 bg-white/80 rounded-2xl border border-slate-100 shadow-2xs"
+              >
                 <Skeleton className="h-10 w-10 rounded-xl bg-pink-100/90 shrink-0" />
                 <Skeleton className="h-4 w-full bg-slate-200/80" />
               </div>
@@ -71,7 +74,10 @@ export default function HomeSkeleton() {
           </div>
           <div className="lg:col-span-4 space-y-3 sm:space-y-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-3 p-3 bg-white/80 rounded-2xl border border-slate-100 shadow-2xs">
+              <div
+                key={i}
+                className="flex items-center gap-3 p-3 bg-white/80 rounded-2xl border border-slate-100 shadow-2xs"
+              >
                 <Skeleton className="h-10 w-10 rounded-xl bg-blue-100/90 shrink-0" />
                 <Skeleton className="h-4 w-full bg-slate-200/80" />
               </div>
@@ -101,7 +107,10 @@ export default function HomeSkeleton() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-xs border border-slate-100 space-y-3 p-4">
+            <div
+              key={i}
+              className="bg-white rounded-3xl overflow-hidden shadow-xs border border-slate-100 space-y-3 p-4"
+            >
               <Skeleton className="w-full aspect-video rounded-2xl bg-slate-300/80" />
               <Skeleton className="h-5 w-3/4 bg-[#1a3a6c]/20 rounded-md" />
               <Skeleton className="h-4 w-1/2 bg-slate-200/80" />

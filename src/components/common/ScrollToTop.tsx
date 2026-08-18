@@ -1,40 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { useLenis } from "lenis/react";
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();
+  const prevPathname = useRef(pathname);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const shouldReduceMotion = useReducedMotion();
+  const lenis = useLenis();
 
-  // Scroll to top automatically when navigating to a new route
+  // Scroll to top ONLY when the route actually changes
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [pathname]);
-
-  // Track scroll depth and percentage for floating button
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const progress = Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100));
-        setScrollProgress(progress);
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      window.scrollTo(0, 0);
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
       }
-      setIsVisible(window.scrollY > 260);
-    };
+    }
+  }, [pathname, lenis]);
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Track scroll position and percentage smoothly using Lenis scroll callback
+  useLenis((instance) => {
+    const progress = Math.min(100, Math.max(0, (instance.progress || 0) * 100));
+    setScrollProgress(progress);
+    setIsVisible((instance.scroll || 0) > 260);
+  });
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: shouldReduceMotion ? "auto" : "smooth",
-    });
+    if (lenis) {
+      lenis.scrollTo(0, {
+        duration: shouldReduceMotion ? 0 : 1.2,
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: shouldReduceMotion ? "auto" : "smooth",
+      });
+    }
   };
 
   // Circular progress ring parameters

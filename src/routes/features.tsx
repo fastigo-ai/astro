@@ -24,6 +24,7 @@ import {
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
+import LazyImage from "@/components/common/LazyImage";
 
 // ── 7 Core Developmental Course Pillars (Exact Names) ──
 export const CORE_COURSES = [
@@ -40,7 +41,11 @@ export const CORE_COURSES = [
     iconBg: "bg-pink-100/80 text-[#F45B8A]",
     badgeColor: "bg-pink-50 text-[#F45B8A] border-pink-200",
     gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
-    benefits: ["Muhurat-Based Coitus Dates", "Isht Mantra & Meditation", "Fertility Tracker & Support"],
+    benefits: [
+      "Muhurat-Based Coitus Dates",
+      "Isht Mantra & Meditation",
+      "Fertility Tracker & Support",
+    ],
   },
   {
     id: "beej-sanskar",
@@ -55,7 +60,11 @@ export const CORE_COURSES = [
     iconBg: "bg-amber-100/80 text-amber-600",
     badgeColor: "bg-amber-50 text-amber-600 border-amber-200",
     gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
-    benefits: ["Ayurvedic cellular detox", "Nutritional vitality charts", "Stress reduction & yoga"],
+    benefits: [
+      "Ayurvedic cellular detox",
+      "Nutritional vitality charts",
+      "Stress reduction & yoga",
+    ],
   },
   {
     id: "garbh-sanskar",
@@ -71,7 +80,11 @@ export const CORE_COURSES = [
     iconBg: "bg-purple-100/80 text-purple-600",
     badgeColor: "bg-purple-50 text-purple-600 border-purple-200",
     gradient: "from-purple-500/10 via-pink-500/5 to-transparent",
-    benefits: ["Diamond, Gold & Silver Tiers", "Month-wise Mantra Vrushti", "Garbh Samvad & Raga Music"],
+    benefits: [
+      "Diamond, Gold & Silver Tiers",
+      "Month-wise Mantra Vrushti",
+      "Garbh Samvad & Raga Music",
+    ],
   },
   {
     id: "baal-sanskar",
@@ -101,7 +114,11 @@ export const CORE_COURSES = [
     iconBg: "bg-pink-100/80 text-[#F45B8A]",
     badgeColor: "bg-pink-50 text-[#F45B8A] border-pink-200",
     gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
-    benefits: ["Personal Parenting Coach", "Custom Diet & Lactation", "Daily Live Yoga & Milestones"],
+    benefits: [
+      "Personal Parenting Coach",
+      "Custom Diet & Lactation",
+      "Daily Live Yoga & Milestones",
+    ],
   },
   {
     id: "parenting",
@@ -116,7 +133,11 @@ export const CORE_COURSES = [
     iconBg: "bg-rose-100/80 text-[#EA3484]",
     badgeColor: "bg-rose-50 text-[#EA3484] border-rose-200",
     gradient: "from-rose-500/10 via-pink-500/5 to-transparent",
-    benefits: ["Parenting Coach & Support", "Child Development Milestones", "Emotional Wellbeing & Diet"],
+    benefits: [
+      "Parenting Coach & Support",
+      "Child Development Milestones",
+      "Emotional Wellbeing & Diet",
+    ],
   },
   {
     id: "bhavishya-fal",
@@ -131,7 +152,11 @@ export const CORE_COURSES = [
     iconBg: "bg-pink-100/80 text-[#EA3484]",
     badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
     gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
-    benefits: ["Kundli + Falit Report (₹3,500)", "Live Astrologer Consultation (₹3,100)", "Lifelong Planetary Guidance"],
+    benefits: [
+      "Kundli + Falit Report (₹3,500)",
+      "Live Astrologer Consultation (₹3,100)",
+      "Lifelong Planetary Guidance",
+    ],
   },
 ];
 
@@ -320,9 +345,7 @@ export default function FeaturesPage() {
       );
     if (selectedCategory === "Mindfulness & Yoga")
       return (
-        f.title.includes("Yoga") ||
-        f.title.includes("Yognidra") ||
-        f.title.includes("Nutritionist")
+        f.title.includes("Yoga") || f.title.includes("Yognidra") || f.title.includes("Nutritionist")
       );
 
     return true;
@@ -352,7 +375,8 @@ export default function FeaturesPage() {
           </h1>
 
           <p className="text-[#475569] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
-            A complete developmental continuum from pre-conception planning and prenatal neuro-development to early childhood and mindful parenting.
+            A complete developmental continuum from pre-conception planning and prenatal
+            neuro-development to early childhood and mindful parenting.
           </p>
 
           {/* Breadcrumbs */}
@@ -400,7 +424,8 @@ export default function FeaturesPage() {
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed mt-2">
-              Tailored guidance for every sacred step — from conscious conception to flourishing childhood.
+              Tailored guidance for every sacred step — from conscious conception to flourishing
+              childhood.
             </p>
           </div>
 
@@ -424,10 +449,14 @@ export default function FeaturesPage() {
 
                       {/* Floating Badges */}
                       <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
-                        <div className={`w-8 h-8 rounded-xl flex items-center justify-center backdrop-blur-md shadow-xs ${course.iconBg}`}>
+                        <div
+                          className={`w-8 h-8 rounded-xl flex items-center justify-center backdrop-blur-md shadow-xs ${course.iconBg}`}
+                        >
                           <Icon className="w-4 h-4" />
                         </div>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border backdrop-blur-md ${course.badgeColor}`}>
+                        <span
+                          className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border backdrop-blur-md ${course.badgeColor}`}
+                        >
                           {course.price}
                         </span>
                       </div>
@@ -454,7 +483,10 @@ export default function FeaturesPage() {
                     {/* Benefit bullets */}
                     <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                       {course.benefits.map((b, bIdx) => (
-                        <div key={bIdx} className="flex items-center gap-2 text-xs text-slate-600 font-normal">
+                        <div
+                          key={bIdx}
+                          className="flex items-center gap-2 text-xs text-slate-600 font-normal"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-[#F45B8A]" />
                           <span>{b}</span>
                         </div>
@@ -505,10 +537,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* ── Comprehensive Features Catalog ── */}
-      <section
-        ref={featuresGridRef}
-        className="py-16 md:py-24 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] min-h-[600px] relative z-10"
-      >
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#FFFDFE] via-[#FBF7FC] to-[#F7FAFF] min-h-[600px] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-[1.2] tracking-tight">
@@ -533,20 +562,22 @@ export default function FeaturesPage() {
                   className="bg-white/95 backdrop-blur-xl rounded-[32px] p-6 sm:p-8 md:p-10 border border-pink-100 shadow-[0_15px_45px_rgba(23,37,84,0.06)] grid lg:grid-cols-12 gap-8 items-center group hover:shadow-[0_20px_60px_rgba(244,91,138,0.12)] transition-shadow duration-300"
                 >
                   {/* Image Column */}
-                  <div className={`lg:col-span-5 overflow-hidden rounded-[24px] bg-slate-900 border-2 border-white shadow-md ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                    <img
+                  <div
+                    className={`lg:col-span-5 overflow-hidden rounded-[24px] bg-slate-900 border-2 border-white shadow-md ${isEven ? "lg:order-1" : "lg:order-2"}`}
+                  >
+                    <LazyImage
                       src={f.img}
                       alt={f.title}
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = "/images/garbh_dan_banner.png";
-                      }}
-                      className="w-full h-[260px] sm:h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      fallbackSrc="/images/garbh_dan_banner.png"
+                      containerClassName="w-full h-[260px] sm:h-[300px]"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
 
                   {/* Content Column */}
-                  <div className={`lg:col-span-7 space-y-4 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <div
+                    className={`lg:col-span-7 space-y-4 ${isEven ? "lg:order-2" : "lg:order-1"}`}
+                  >
                     <span className="inline-block px-3.5 py-1 rounded-full bg-pink-50 text-[#F45B8A] border border-pink-200/80 text-xs font-semibold uppercase tracking-wider">
                       Interactive Feature 0{i + 1}
                     </span>
@@ -555,9 +586,7 @@ export default function FeaturesPage() {
                       {f.title}
                     </h3>
 
-                    <p className="text-sm font-semibold text-[#F45B8A]">
-                      {f.tagline}
-                    </p>
+                    <p className="text-sm font-semibold text-[#F45B8A]">{f.tagline}</p>
 
                     <div className="space-y-3 text-sm sm:text-base text-[#475569] leading-relaxed font-normal">
                       {f.body.map((paragraph, pIdx) => (
