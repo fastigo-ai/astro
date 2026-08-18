@@ -8,7 +8,8 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
   const prevPathname = useRef(pathname);
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const isVisibleRef = useRef(false);
+  const circleRef = useRef<SVGCircleElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const lenis = useLenis();
 
@@ -23,11 +24,29 @@ export default function ScrollToTop() {
     }
   }, [pathname, lenis]);
 
-  // Track scroll position and percentage smoothly using Lenis scroll callback
+  // Circular progress ring parameters
+  const size = 48;
+  const strokeWidth = 3;
+  const radius = (size - strokeWidth * 2) / 2;
+  const circumference = radius * 2 * Math.PI;
+
+  // Ultra-performant scroll listener: updates DOM style directly with 0 component re-renders
   useLenis((instance) => {
-    const progress = Math.min(100, Math.max(0, (instance.progress || 0) * 100));
-    setScrollProgress(progress);
-    setIsVisible((instance.scroll || 0) > 260);
+    const scroll = instance.scroll || 0;
+    const progress = Math.min(1, Math.max(0, instance.progress || 0));
+
+    // Update SVG stroke-dashoffset directly without re-rendering
+    if (circleRef.current) {
+      const offset = circumference - progress * circumference;
+      circleRef.current.style.strokeDashoffset = `${offset}px`;
+    }
+
+    // Toggle button visibility only when state changes
+    const shouldShow = scroll > 260;
+    if (shouldShow !== isVisibleRef.current) {
+      isVisibleRef.current = shouldShow;
+      setIsVisible(shouldShow);
+    }
   });
 
   const scrollToTop = () => {
@@ -43,13 +62,6 @@ export default function ScrollToTop() {
     }
   };
 
-  // Circular progress ring parameters
-  const size = 48;
-  const strokeWidth = 3;
-  const radius = (size - strokeWidth * 2) / 2;
-  const circumference = radius * 2 * Math.PI;
-  const offset = circumference - (scrollProgress / 100) * circumference;
-
   return (
     <AnimatePresence>
       {isVisible && (
@@ -58,7 +70,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.7, y: shouldReduceMotion ? 0 : 20 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed bottom-6 right-5 sm:right-7 z-50 flex items-center justify-center group"
+          className="fixed bottom-23 right-5 sm:right-7 z-50 flex items-center justify-center group"
         >
           <motion.button
             whileHover={shouldReduceMotion ? {} : { scale: 1.08 }}
@@ -82,15 +94,16 @@ export default function ScrollToTop() {
                 strokeWidth={strokeWidth}
                 fill="none"
               />
-              {/* Active animated progress ring */}
+              {/* Active animated progress ring updated directly */}
               <circle
+                ref={circleRef}
                 cx={size / 2}
                 cy={size / 2}
                 r={radius}
-                className="stroke-white transition-all duration-150"
+                className="stroke-white transition-none"
                 strokeWidth={strokeWidth}
                 strokeDasharray={circumference}
-                strokeDashoffset={offset}
+                strokeDashoffset={circumference}
                 strokeLinecap="round"
                 fill="none"
               />

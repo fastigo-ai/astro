@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage, Language } from "@/context/LanguageContext";
 import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass, Phone } from "lucide-react";
+import { TextEffect } from "@/components/core/text-effect";
 
 // ── 7 Core Program Headings for Dropdown (Exact Names) ──
 export const PROGRAM_DROPDOWN_CATEGORIES = [
@@ -160,6 +161,11 @@ export default function HeaderNavbar() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const isScrolledRef = useRef(false);
+  const isVisibleRef = useRef(true);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   // Close language menu on outside click
@@ -173,12 +179,44 @@ export default function HeaderNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle scroll for sticky navbar effect
+  // Handle scroll for sticky navbar effect and exit/entrance animation with rAF throttling
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const shouldBeScrolled = currentScrollY > 20;
+
+          if (shouldBeScrolled !== isScrolledRef.current) {
+            isScrolledRef.current = shouldBeScrolled;
+            setScrolled(shouldBeScrolled);
+          }
+
+          // Exit animation when scrolling down, entrance animation when scrolling up
+          let shouldBeVisible = true;
+          if (currentScrollY > 70) {
+            if (currentScrollY > lastScrollY.current + 6) {
+              shouldBeVisible = false; // Smooth exit
+            } else if (currentScrollY < lastScrollY.current - 6) {
+              shouldBeVisible = true; // Smooth entrance
+            } else {
+              shouldBeVisible = isVisibleRef.current;
+            }
+          }
+
+          if (shouldBeVisible !== isVisibleRef.current) {
+            isVisibleRef.current = shouldBeVisible;
+            setIsVisible(shouldBeVisible);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -190,12 +228,18 @@ export default function HeaderNavbar() {
 
   return (
     <div className="w-full relative z-50 font-medium" style={{ zIndex: 9999 }}>
-      {/* Top Bar */}
+      {/* Top Bar with TextEffect */}
       <div className="hidden md:block bg-[#172554] text-white text-xs py-2 shadow-inner">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <span className="text-amber-300">✨</span>
-            <span className="font-semibold text-white/90">Astro Baby Garbhadhan Sanskar</span>
+            <TextEffect
+              per="char"
+              delay={0.15}
+              className="font-semibold text-white/90"
+            >
+              Astro Baby Garbhadhan Sanskar
+            </TextEffect>
           </div>
           <div className="flex items-center gap-4 text-white/90">
             <a
@@ -209,11 +253,20 @@ export default function HeaderNavbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <nav
-        className={`w-full transition-all duration-500 ease-in-out ${
+      {/* Main Navbar with Exciting Scroll Exit & Entrance Animation */}
+      <motion.nav
+        initial={{ y: 0, opacity: 1 }}
+        animate={{
+          y: isVisible ? 0 : -100,
+          opacity: isVisible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: [0.21, 0.47, 0.32, 0.98],
+        }}
+        className={`w-full transition-colors duration-300 ${
           scrolled
-            ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-md"
+            ? "fixed top-0 bg-pink-50/95 backdrop-blur-xl shadow-lg border-b border-pink-200/70"
             : "absolute top-0 bg-pink-50"
         }`}
       >
@@ -575,7 +628,7 @@ export default function HeaderNavbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </motion.nav>
     </div>
   );
 }

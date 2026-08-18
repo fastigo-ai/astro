@@ -7,6 +7,7 @@ import SliderArrows from "@/components/common/SliderArrows";
 import PrimaryButton from "@/components/common/PrimaryButton";
 import SecondaryButton from "@/components/common/SecondaryButton";
 import { FiHeart } from "react-icons/fi";
+import { TextEffect } from "@/components/core/text-effect";
 
 export default function HeroSlider() {
   const { index, setIndex, next, prev, pause, resume } = useAutoSlider({
@@ -126,43 +127,65 @@ export default function HeroSlider() {
               </motion.div>
             )}
 
-            {/* Premium Heading */}
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={{
-                visible: { transition: { staggerChildren: 0.15 } },
-              }}
-              className={`font-sans text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-[1.18] sm:leading-[1.08] tracking-tight ${
+            {/* Premium Heading with TextEffect */}
+            <h1
+              className={`font-sans text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold leading-[1.1] sm:leading-[1.05] tracking-normal space-y-1 ${
                 isLeftAligned ? "" : "md:mr-[-4px]"
               }`}
             >
               {slide.heading.map((line, i) => (
-                <motion.span
-                  key={i}
+                <TextEffect
+                  key={`${index}-${i}-${line}`}
+                  as="span"
+                  per="char"
+                  delay={i * 0.15}
                   variants={{
-                    hidden: { opacity: 0, y: 15 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { type: "spring", stiffness: 120, damping: 20 },
+                    container: {
+                      hidden: { opacity: 0 },
+                      visible: {
+                        opacity: 1,
+                        transition: {
+                          staggerChildren: 0.025,
+                        },
+                      },
+                    },
+                    item: {
+                      hidden: {
+                        opacity: 0,
+                        rotateX: 90,
+                        y: 10,
+                      },
+                      visible: {
+                        opacity: 1,
+                        rotateX: 0,
+                        y: 0,
+                        transition: {
+                          duration: 0.2,
+                        },
+                      },
                     },
                   }}
-                  className={`block py-0.5 ${
+                  className={`block m-0 p-0 leading-[1.1] sm:leading-[1.05] tracking-normal font-black sm:font-extrabold ${
                     i === 0
                       ? "text-[#172554] drop-shadow-xs"
                       : "bg-gradient-to-r from-[#EA3484] via-[#F45B8A] to-[#FF70A6] bg-clip-text text-transparent drop-shadow-xs"
                   }`}
                 >
                   {line}
-                </motion.span>
+                </TextEffect>
               ))}
-            </motion.h1>
+            </h1>
 
-            {/* Premium Description */}
-            <p className="mt-1.5 sm:mt-4 max-w-xl text-xs sm:text-base md:text-lg text-[#334155] sm:text-[#1E293B] font-normal leading-relaxed">
+            {/* Premium Description with TextEffect */}
+            <TextEffect
+              key={`${index}-desc`}
+              per="word"
+              delay={0.4}
+              preset="blur"
+              className="mt-1.5 sm:mt-4 max-w-xl text-xs sm:text-base md:text-lg text-[#334155] sm:text-[#1E293B] font-normal leading-relaxed"
+            >
               {slide.description}
-            </p>
+            </TextEffect>
 
             {/* Program Highlight Tags */}
             {slide.programs && slide.programs.length > 0 && (

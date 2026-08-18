@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import FloatingContactWidget from "@/components/common/FloatingContactWidget";
 import {
   HomeSkeleton,
   AboutUsSkeleton,
@@ -38,6 +39,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <FloatingContactWidget />
       <Routes>
         <Route
           path="/"

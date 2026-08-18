@@ -1,7 +1,7 @@
 export const heroSlides = [
   {
     eyebrow: "HOLISTIC PREGNANCY CARE",
-    heading: ["Welcome to", "Astro Baby"],
+    heading: ["Your Wellness", "Journey Begins"],
     description:
       "Empowering every expecting mother with personalized pregnancy guidance, mindful wellness, expert support, and carefully curated baby essentials—all in one beautiful journey.",
     programs: ["Week-by-Week Journey", "Meditation & Yoga"],
@@ -9,7 +9,7 @@ export const heroSlides = [
   },
   {
     eyebrow: "Healthy Pregnancy",
-    heading: ["Nurture Your", "Growing Baby"],
+    heading: ["Your Wellness", "Journey Begins"],
     description:
       "Bringing together modern science and ancient Indian wisdom to make pregnancy a positive, happy and healthy experience.",
     programs: ["Meditation", "Nutritionist Session"],
@@ -25,7 +25,7 @@ export const heroSlides = [
   },
   {
     eyebrow: "Joyful Journey",
-    heading: ["Smile Together", "Every Day"],
+    heading: ["Your Wellness", "Journey Begins"],
     description:
       "Join thousands of mothers in celebrating a joyful pregnancy with expert guidance from our renowned team.",
     programs: ["Let's Smile Together", "Brainopedia"],
