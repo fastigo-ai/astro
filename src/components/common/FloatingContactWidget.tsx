@@ -147,7 +147,7 @@ export default function FloatingContactWidget() {
               <div className="grid grid-cols-2 gap-2">
                 {/* WhatsApp Quick Action */}
                 <a
-                  href="https://wa.me/919018567465?text=Hello%20Astro%20Baby%2C%20I%20would%20like%20to%20know%20more%20about%20Garbhadhan%20Sanskar"
+                  href="https://wa.me/919205255631?text=Hello%20Astro%20Baby%2C%20I%20would%20like%20to%20know%20more%20about%20Garbhadhan%20Sanskar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100/80 transition-all font-semibold text-[11px] shadow-2xs group"
@@ -158,7 +158,7 @@ export default function FloatingContactWidget() {
 
                 {/* Call Now Quick Action */}
                 <a
-                  href="tel:+919018567465"
+                  href="tel:+919716091296"
                   className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-pink-50 text-[#EA3484] border border-pink-200 hover:bg-pink-100/80 transition-all font-semibold text-[11px] shadow-2xs group"
                 >
                   <Phone className="w-3 h-3 text-[#EA3484] group-hover:scale-110 transition-transform" />

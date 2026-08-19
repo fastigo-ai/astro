@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
@@ -134,7 +134,7 @@ export default function Footer() {
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-2.5 max-w-sm mx-auto sm:mx-0">
                 <a
-                  href="tel:+919018567465"
+                  href="tel:+919716091296"
                   className="flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl bg-white/95 hover:bg-white border border-pink-100/90 shadow-2xs hover:shadow-md hover:border-pink-300 transition-all duration-300 group text-left"
                 >
                   <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-pink-50 border border-pink-100 text-[#EA3484] flex items-center justify-center shrink-0 group-hover:bg-[#EA3484] group-hover:text-white transition-all duration-300 group-hover:scale-105 shadow-2xs">
@@ -145,7 +145,7 @@ export default function Footer() {
                       {t("footer.callUs", "Call Us")}
                     </div>
                     <div className="text-xs sm:text-[13px] font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors">
-                      +91 9018567465
+                      +91 9716091296
                     </div>
                   </div>
                 </a>
@@ -163,6 +163,25 @@ export default function Footer() {
                     </div>
                     <div className="text-xs sm:text-[13px] font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors break-all">
                       contact@astrobaby.org
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://maps.google.com/?q=Flat+number+5,+block+B,+pocket+3,+sector+G+2+and+G+6,+Narela,+Delhi"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl bg-white/95 hover:bg-white border border-pink-100/90 shadow-2xs hover:shadow-md hover:border-pink-300 transition-all duration-300 group text-left"
+                >
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-pink-50 border border-pink-100 text-[#EA3484] flex items-center justify-center shrink-0 group-hover:bg-[#EA3484] group-hover:text-white transition-all duration-300 group-hover:scale-105 shadow-2xs">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[9px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                      {t("footer.officeAddress", "Office Address")}
+                    </div>
+                    <div className="text-xs sm:text-[12px] font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors leading-snug">
+                      Flat 5, Block B, Pkt 3, Sec G2 & G6, Narela, Delhi
                     </div>
                   </div>
                 </a>
