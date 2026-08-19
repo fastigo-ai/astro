@@ -213,7 +213,6 @@ export default function Footer() {
       <div className="bg-[#172554] text-white/80 py-5 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
           <div className="flex items-center gap-2 text-center sm:text-left">
-            <span className="text-amber-300">✨</span>
             <span>{t("footer.allRightsReserved", { year: currentYear, defaultValue: `© ${currentYear} Astro Baby Garbhadhan Sanskar. All rights reserved.` })}</span>
           </div>
 
