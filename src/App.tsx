@@ -1,11 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import FloatingContactWidget from "@/components/common/FloatingContactWidget";
 import {
   HomeSkeleton,
   AboutUsSkeleton,
-  TeamSkeleton,
   AwardsSkeleton,
   TestimonialSkeleton,
   BlogSkeleton,
@@ -16,13 +15,18 @@ import {
 const Home = lazy(() => import("./routes/index"));
 const AboutUs = lazy(() => import("./routes/about-us"));
 const Features = lazy(() => import("./routes/features"));
-const Team = lazy(() => import("./routes/team"));
 const AwardsAccolades = lazy(() => import("./routes/awardsaccolades"));
 const Testimonial = lazy(() => import("./routes/testimonial"));
 const Blog = lazy(() => import("./routes/blog"));
 const BlogPost = lazy(() => import("./routes/blog.$slug"));
 const Contact = lazy(() => import("./routes/contact"));
 const Newsletter = lazy(() => import("./routes/newsletter"));
+
+// Content Hub Pages
+const GarbhSanskarHub = lazy(() => import("./routes/garbh-sanskar/index"));
+const PregnancyHub = lazy(() => import("./routes/pregnancy/index"));
+const HowToHub = lazy(() => import("./routes/how-to/index"));
+const ArticleDetailPage = lazy(() => import("./routes/article-detail"));
 
 // Feature Pages
 const BizSanskar = lazy(() => import("./routes/features/biz-sanskar"));
@@ -67,11 +71,7 @@ export default function App() {
         />
         <Route
           path="/team"
-          element={
-            <Suspense fallback={<TeamSkeleton />}>
-              <Team />
-            </Suspense>
-          }
+          element={<Navigate to="/about-us" replace />}
         />
         <Route
           path="/awardsaccolades"
@@ -143,6 +143,58 @@ export default function App() {
           element={
             <Suspense fallback={<FeatureDetailSkeleton title="Courses" />}>
               <Features />
+            </Suspense>
+          }
+        />
+
+        {/* ── Content Hub & Resource Routes ── */}
+        <Route
+          path="/garbh-sanskar"
+          element={
+            <Suspense fallback={<BlogSkeleton />}>
+              <GarbhSanskarHub />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/garbh-sanskar/:slug"
+          element={
+            <Suspense fallback={<BlogPostSkeleton />}>
+              <ArticleDetailPage defaultHub="garbh-sanskar" />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/pregnancy"
+          element={
+            <Suspense fallback={<BlogSkeleton />}>
+              <PregnancyHub />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/pregnancy/:slug"
+          element={
+            <Suspense fallback={<BlogPostSkeleton />}>
+              <ArticleDetailPage defaultHub="pregnancy" />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/how-to"
+          element={
+            <Suspense fallback={<BlogSkeleton />}>
+              <HowToHub />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/how-to/:slug"
+          element={
+            <Suspense fallback={<BlogPostSkeleton />}>
+              <ArticleDetailPage defaultHub="how-to" />
             </Suspense>
           }
         />

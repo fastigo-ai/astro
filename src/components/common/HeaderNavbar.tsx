@@ -64,10 +64,40 @@ export default function HeaderNavbar() {
     {
       id: "bhavishya-fal",
       title: t("programs.bhavishyaPhal.title", "Bhavishya Phal"),
-      subtitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Journey"),
+      subtitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Future"),
       to: "/features/bhavishya-fal",
       icon: Compass,
       iconBg: "bg-indigo-50 text-indigo-600",
+    },
+  ];
+
+  const resourceCategories = [
+    {
+      id: "garbh-sanskar-hub",
+      title: t("resources.garbhSanskar.title", "Garbh Sanskar"),
+      subtitle: t("resources.garbhSanskar.subtitle", "Ancient Vedic wisdom, mantras & music"),
+      to: "/garbh-sanskar",
+      icon: Sun,
+      iconBg: "bg-pink-50 text-[#F45B8A]",
+      badge: t("resources.garbhSanskar.badge", "Vedic Wisdom"),
+    },
+    {
+      id: "pregnancy-hub",
+      title: t("resources.pregnancy.title", "Pregnancy"),
+      subtitle: t("resources.pregnancy.subtitle", "Trimester care, yoga, nutrition & symptoms"),
+      to: "/pregnancy",
+      icon: Heart,
+      iconBg: "bg-rose-50 text-rose-600",
+      badge: t("resources.pregnancy.badge", "Complete Care"),
+    },
+    {
+      id: "how-to-hub",
+      title: t("resources.howTo.title", "How-To Guides"),
+      subtitle: t("resources.howTo.subtitle", "Step-by-step pregnancy & baby care guides"),
+      to: "/how-to",
+      icon: Sparkles,
+      iconBg: "bg-purple-50 text-purple-600",
+      badge: t("resources.howTo.badge", "Practical Steps"),
     },
   ];
 
@@ -79,39 +109,27 @@ export default function HeaderNavbar() {
     {
       label: t("nav.aboutUs", "About Us"),
       to: "/about-us",
-      hasDropdown: true,
-      dropdownItems: [
-        {
-          label: t("nav.aboutUs", "About Us"),
-          to: "/about-us",
-        },
-        {
-          label: t("nav.expertTeam", "Expert Team"),
-          to: "/team",
-        },
-      ],
     },
     {
-      label: t("nav.programs", "Sacred Programs"),
+      label: "Sacred Programs",
       to: "/features",
       hasDropdown: true,
       isProgramMenu: true,
-      dropdownItems: programCategories.map((p) => ({
-        label: p.title,
-        desc: p.subtitle,
-        to: p.to,
-      })),
+      programItems: programCategories,
     },
     {
-      label: t("nav.testimonials", "Testimonials"),
-      to: "/testimonial",
+      label: "Resources",
+      to: "/garbh-sanskar",
+      hasDropdown: true,
+      isResourceMenu: true,
+      resourceItems: resourceCategories,
     },
     {
-      label: t("nav.blog", "Blogs"),
+      label: t("nav.blog", "Vedic Blog"),
       to: "/blog",
     },
     {
-      label: t("nav.contact", "Contact"),
+      label: t("nav.contact", "Contact Us"),
       to: "/contact",
       hasDropdown: true,
       dropdownItems: [
@@ -270,18 +288,18 @@ export default function HeaderNavbar() {
                           className="absolute top-full pt-3 z-50 left-1/2 -translate-x-1/2"
                         >
                           {item.isProgramMenu ? (
-                            /* ── COMPACT SMALL DROPDOWN (ONLY HEADINGS) ── */
-                            <div className="w-[500px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-[0_15px_45px_rgba(23,37,84,0.12)] border border-pink-100 p-3 grid grid-cols-2 gap-1.5">
+                            /* ── COMPACT SACRED PROGRAMS DROPDOWN ── */
+                            <div className="w-[520px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-[0_15px_45px_rgba(23,37,84,0.12)] border border-pink-100 p-3 grid grid-cols-2 gap-2">
                               {programCategories.map((cat) => {
                                 const Icon = cat.icon;
                                 return (
                                   <Link
                                     key={cat.id}
                                     to={cat.to}
-                                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-pink-50 text-gray-800 hover:text-[#F45B8A] transition-all group/item duration-150"
+                                    className="flex items-start gap-2.5 px-3 py-2.5 rounded-xl hover:bg-pink-50 text-gray-800 hover:text-[#F45B8A] transition-all group/item duration-150"
                                   >
                                     <div
-                                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${cat.iconBg}`}
+                                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${cat.iconBg}`}
                                     >
                                       <Icon className="w-3.5 h-3.5" />
                                     </div>
@@ -289,8 +307,41 @@ export default function HeaderNavbar() {
                                       <span className="font-bold text-[13.5px] leading-tight text-[#172554] group-hover/item:text-[#F45B8A] transition-colors truncate">
                                         {cat.title}
                                       </span>
-                                      <span className="text-[11px] text-slate-400 group-hover/item:text-slate-500 transition-colors truncate">
+                                      <span className="text-[11px] text-slate-400 group-hover/item:text-slate-500 transition-colors line-clamp-1">
                                         {cat.subtitle}
+                                      </span>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          ) : item.isResourceMenu ? (
+                            /* ── RESOURCES CONTENT HUBS DROPDOWN ── */
+                            <div className="w-[400px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-[0_15px_45px_rgba(23,37,84,0.12)] border border-pink-100 p-2.5 flex flex-col gap-1.5">
+                              {resourceCategories.map((res) => {
+                                const Icon = res.icon;
+                                return (
+                                  <Link
+                                    key={res.id}
+                                    to={res.to}
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-pink-50 text-gray-800 hover:text-[#F45B8A] transition-all group/res duration-150 border border-transparent hover:border-pink-100"
+                                  >
+                                    <div
+                                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${res.iconBg} shadow-2xs`}
+                                    >
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div className="flex flex-col flex-1 min-w-0">
+                                      <div className="flex items-center justify-between gap-2">
+                                        <span className="font-bold text-[13.5px] leading-tight text-[#172554] group-hover/res:text-[#F45B8A] transition-colors">
+                                          {res.title}
+                                        </span>
+                                        <span className="text-[9.5px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-pink-100/60 text-[#F45B8A]">
+                                          {res.badge}
+                                        </span>
+                                      </div>
+                                      <span className="text-[11px] text-slate-400 group-hover/res:text-slate-500 transition-colors mt-0.5 leading-tight truncate">
+                                        {res.subtitle}
                                       </span>
                                     </div>
                                   </Link>
@@ -494,6 +545,39 @@ export default function HeaderNavbar() {
                                       </span>
                                       <span className="text-[11px] text-slate-400">
                                         {cat.subtitle}
+                                      </span>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          ) : item.isResourceMenu ? (
+                            <div className="py-2 space-y-1.5">
+                              {resourceCategories.map((res) => {
+                                const Icon = res.icon;
+                                return (
+                                  <Link
+                                    key={res.id}
+                                    to={res.to}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="flex items-start gap-3 p-2.5 rounded-xl text-gray-800 hover:text-[#F45B8A] hover:bg-pink-50 transition-colors bg-pink-50/40 border border-pink-100/60"
+                                  >
+                                    <div
+                                      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${res.iconBg}`}
+                                    >
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <div className="flex flex-col min-w-0 flex-1">
+                                      <div className="flex items-center justify-between">
+                                        <span className="font-bold text-[14px] text-[#172554]">
+                                          {res.title}
+                                        </span>
+                                        <span className="text-[9.5px] font-bold px-1.5 py-0.5 rounded bg-pink-100 text-[#F45B8A]">
+                                          {res.badge}
+                                        </span>
+                                      </div>
+                                      <span className="text-[11px] text-slate-500 line-clamp-2 mt-0.5">
+                                        {res.subtitle}
                                       </span>
                                     </div>
                                   </Link>

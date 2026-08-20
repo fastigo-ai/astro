@@ -227,7 +227,6 @@ export default function TeamPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
-  const [viewMode, setViewMode] = useState<"cylinder" | "grid">("cylinder");
   const cylinderContainerRef = useRef<HTMLDivElement>(null);
 
   // Filter members
@@ -323,30 +322,6 @@ export default function TeamPage() {
                 </button>
               )}
             </div>
-
-            {/* View Mode Toggle */}
-            <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-pink-200 shadow-xs shrink-0 text-xs font-semibold">
-              <button
-                onClick={() => setViewMode("cylinder")}
-                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
-                  viewMode === "cylinder"
-                    ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-xs"
-                    : "text-slate-600 hover:text-[#EA3484]"
-                }`}
-              >
-                3D Cylinder
-              </button>
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`px-3 py-1.5 rounded-full transition-all cursor-pointer ${
-                  viewMode === "grid"
-                    ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-xs"
-                    : "text-slate-600 hover:text-[#EA3484]"
-                }`}
-              >
-                Grid
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -394,7 +369,7 @@ export default function TeamPage() {
                 Reset Search
               </button>
             </div>
-          ) : viewMode === "cylinder" ? (
+          ) : (
             /* ── 3D CYLINDRICAL SCROLL SHOWCASE ── */
             <div className="flex flex-col items-center">
               {/* Cylindrical Stage */}
@@ -519,39 +494,46 @@ export default function TeamPage() {
               </div>
 
               {/* Cylindrical Controls & Indicator Bar */}
-              <div className="mt-4 flex items-center gap-4 z-20">
-                {/* Prev Button */}
-                <button
-                  onClick={handlePrev}
-                  className="w-11 h-11 rounded-full bg-white border border-pink-200 text-[#172554] shadow-sm flex items-center justify-center hover:bg-gradient-to-r hover:from-[#EA3484] hover:to-[#F45B8A] hover:text-white transition-all cursor-pointer font-bold"
-                  aria-label="Previous scholar"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
+              <div className="mt-6 flex flex-col items-center gap-4 z-20">
+                <div className="flex items-center gap-4">
+                  {/* Prev Button */}
+                  <button
+                    onClick={handlePrev}
+                    className="w-11 h-11 rounded-full bg-white border border-pink-200 text-[#172554] shadow-sm flex items-center justify-center hover:bg-gradient-to-r hover:from-[#EA3484] hover:to-[#F45B8A] hover:text-white transition-all cursor-pointer font-bold"
+                    aria-label="Previous scholar"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
 
-                {/* Progress Pill */}
-                <div className="flex items-center gap-2 bg-white/90 border border-pink-200 px-4 py-2 rounded-full shadow-xs text-xs font-semibold text-[#172554]">
-                  <span className="text-[#EA3484] font-bold">{activeIndex + 1}</span>
-                  <span className="text-slate-400">/</span>
-                  <span>{filteredMembers.length} Scholars</span>
+                  {/* Progress Pill */}
+                  <div className="flex items-center gap-2 bg-white/90 border border-pink-200 px-4 py-2 rounded-full shadow-xs text-xs font-semibold text-[#172554]">
+                    <span className="text-[#EA3484] font-bold">{activeIndex + 1}</span>
+                    <span className="text-slate-400">/</span>
+                    <span>{filteredMembers.length} Scholars</span>
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    onClick={handleNext}
+                    className="w-11 h-11 rounded-full bg-white border border-pink-200 text-[#172554] shadow-sm flex items-center justify-center hover:bg-gradient-to-r hover:from-[#EA3484] hover:to-[#F45B8A] hover:text-white transition-all cursor-pointer font-bold"
+                    aria-label="Next scholar"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
 
-                {/* Next Button */}
-                <button
-                  onClick={handleNext}
-                  className="w-11 h-11 rounded-full bg-white border border-pink-200 text-[#172554] shadow-sm flex items-center justify-center hover:bg-gradient-to-r hover:from-[#EA3484] hover:to-[#F45B8A] hover:text-white transition-all cursor-pointer font-bold"
-                  aria-label="Next scholar"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
+                <p className="text-[11px] text-slate-400 font-medium">
+                  ← Swipe or use arrow keys to rotate →
+                </p>
               </div>
 
-              {/* Quick Profile Snapshot Below Cylinder */}
+              {/* Active Member Focus Showcase Card below Cylinder */}
               {currentMember && (
-                <div className="mt-6 max-w-2xl w-full bg-white/95 backdrop-blur-xl rounded-[24px] p-5 sm:p-6 border border-pink-100 shadow-[0_10px_35px_rgba(23,37,84,0.05)] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="mt-8 max-w-2xl w-full bg-white rounded-3xl p-6 border border-pink-200/80 shadow-[0_15px_40px_rgba(23,37,84,0.06)] flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="space-y-1 text-center sm:text-left">
-                    <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#EA3484] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full">
-                      <Sparkles className="w-3 h-3" /> {currentMember.category}
+                    <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#EA3484] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">
+                      <GraduationCap className="w-3 h-3" />
+                      {currentMember.degrees}
                     </div>
                     <h4 className="text-base sm:text-lg font-bold text-[#172554]">
                       {currentMember.name}
@@ -570,47 +552,6 @@ export default function TeamPage() {
                   </button>
                 </div>
               )}
-            </div>
-          ) : (
-            /* ── COMPACT GRID VIEW (ALTERNATIVE) ── */
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredMembers.map((member, i) => (
-                <div
-                  key={member.name}
-                  onClick={() => setSelectedMember(member)}
-                  className="bg-white rounded-[24px] p-5 border border-pink-100 shadow-[0_10px_30px_rgba(23,37,84,0.05)] hover:shadow-[0_15px_40px_rgba(234,52,132,0.12)] transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1"
-                >
-                  <div>
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-3.5 bg-slate-100">
-                      <img
-                        src={
-                          i % 2 === 0 ? "/images/team_expert_1.png" : "/images/team_expert_2.png"
-                        }
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <span className="absolute top-2.5 left-2.5 bg-[#172554]/90 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
-                        {member.category}
-                      </span>
-                    </div>
-                    <h3 className="text-base font-bold text-[#172554] group-hover:text-[#EA3484] transition-colors line-clamp-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs font-semibold text-[#EA3484] line-clamp-1 mt-0.5">
-                      {member.title}
-                    </p>
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-normal mt-2">
-                      {member.bio[0]}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-pink-100/80 flex items-center justify-between text-xs font-semibold text-[#EA3484]">
-                    <span>View Profile</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              ))}
             </div>
           )}
         </div>

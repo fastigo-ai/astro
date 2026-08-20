@@ -659,3 +659,75 @@ body {
 .animate-accordion-up {
   animation: accordion-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ── Kokila Font for Hindi & Devanagari ── */
+@font-face {
+  font-family: "Kokila";
+  src: local("Kokila"), local("Kokila-Regular");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kokila";
+  src: local("Kokila Bold"), local("Kokila-Bold");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Universal Kokila & Devanagari font rules for all content pages */
+html[lang="hi"],
+html[lang="hi"] *,
+html[lang="hi"] body,
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] h5,
+html[lang="hi"] h6,
+html[lang="hi"] p,
+html[lang="hi"] span,
+html[lang="hi"] a,
+html[lang="hi"] button,
+html[lang="hi"] input,
+html[lang="hi"] textarea,
+html[lang="hi"] select,
+html[lang="hi"] blockquote,
+html[lang="hi"] li,
+html[lang="hi"] article,
+html[lang="hi"] section,
+.font-hindi,
+.font-hindi *,
+[lang="hi"],
+[lang="hi"] * {
+  font-family: "Kokila", "Noto Sans Devanagari", "Mukta", "Noto Serif Devanagari", "Mangal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "dlig" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Enhanced readability for Devanagari/Hindi typography */
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+.font-hindi h1,
+.font-hindi h2,
+.font-hindi h3 {
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+html[lang="hi"] p,
+html[lang="hi"] li,
+html[lang="hi"] blockquote,
+.font-hindi p,
+.font-hindi li,
+.font-hindi blockquote {
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+

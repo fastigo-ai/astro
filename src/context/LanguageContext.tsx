@@ -34,7 +34,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setCurrentLanguage(lang);
     i18n?.changeLanguage?.(lang.code);
     localStorage.setItem("astrobaby_lang", lang.code);
+    document.documentElement.lang = lang.code;
+    document.documentElement.classList.toggle("font-hindi", lang.code === "hi");
+    document.body.classList.toggle("font-hindi", lang.code === "hi");
   };
+
+  useEffect(() => {
+    document.documentElement.lang = currentLanguage.code;
+    document.documentElement.classList.toggle("font-hindi", currentLanguage.code === "hi");
+    document.body.classList.toggle("font-hindi", currentLanguage.code === "hi");
+  }, [currentLanguage.code]);
 
   useEffect(() => {
     if (!i18n || typeof i18n.on !== "function") return;

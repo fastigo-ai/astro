@@ -1,144 +1,181 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   Compass,
   Sparkles,
   Check,
   Star,
   ArrowRight,
-  BookOpen,
-  UserCheck,
-  Calendar,
-  Layers,
+  ChevronRight,
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
 
-const SERVICES = [
+const SERVICES_META = [
   {
     id: "kundli-falit",
-    title: "Kundli + Falit Report",
-    subTitle: "Detailed Astrological Life Predictions",
-    price: "₹3,500",
     img: "/images/features/monthly_calendar.png",
-    badge: "Comprehensive",
     badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
-    desc: "Complete Vedic Janam Kundali preparation along with thorough planetary analysis, Dasha timelines, and personalized remedy guides for your child's auspicious future.",
-    features: [
-      "Full Vedic Janam Kundali (Birth Chart Generation)",
-      "Planetary Strengths & Nakshatra Personality Traits",
-      "Mahadasha & Antardasha Life Timeline Analysis",
-      "Auspicious Career, Health & Education Guidance",
-      "Customized Vedic Shanti & Gemstone Guidance",
-      "Downloadable Comprehensive PDF Life Report",
-    ],
+    featuresCount: 6,
   },
   {
     id: "consultation",
-    title: "Astrologer Consultation",
-    subTitle: "Live 1-on-1 Astrologer Session",
-    price: "₹3,100",
     img: "/images/features/isht_mantra.jpg",
-    badge: "Direct 1-on-1",
     badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
-    desc: "Direct live audio/video consultation with senior Vedic astrologers to ask specific questions about your newborn, naming syllables, and parenting alignment.",
-    features: [
-      "30-Minute Live 1-on-1 Astrologer Session",
-      "Naming Syllable & Auspicious Muhurat Clarifications",
-      "Personalized Q&A on Child Health & Education",
-      "Immediate Vedic Solutions & Remedies",
-      "Follow-up Guidance via Astro Baby Chat",
-    ],
+    featuresCount: 5,
   },
 ];
 
 export default function BhavishyaFalPage() {
+  const { t } = useTranslation();
+
+  const services = useMemo(() => {
+    return SERVICES_META.map((meta, idx) => {
+      const title = t(`bhavishyaFalDetailPage.services.services.${idx}.title`, "");
+      const subTitle = t(`bhavishyaFalDetailPage.services.services.${idx}.subTitle`, "");
+      const price = t(`bhavishyaFalDetailPage.services.services.${idx}.price`, "");
+      const badge = t(`bhavishyaFalDetailPage.services.services.${idx}.badge`, "");
+      const desc = t(`bhavishyaFalDetailPage.services.services.${idx}.desc`, "");
+      const features: string[] = [];
+      for (let f = 0; f < meta.featuresCount; f++) {
+        const feat = t(`bhavishyaFalDetailPage.services.services.${idx}.features.${f}`, "");
+        if (feat) features.push(feat);
+      }
+
+      return {
+        ...meta,
+        title,
+        subTitle,
+        price,
+        badge,
+        desc,
+        features,
+      };
+    });
+  }, [t]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FAF5FF] via-white to-[#FFF6FA] text-slate-800 font-sans selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-sans selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
-      {/* ── 1. Hero Banner Section with Text Overlay ── */}
-      <section className="relative z-10">
-        <motion.div
-          className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[560px] flex items-center"
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          {/* Background Banner Image */}
-          <img
-            src="/images/baal_bhavish_banner.jpg"
-            alt="Astro Baby Bhavishya Fal"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
+      {/* ── 1. Hero Banner Section ── */}
+      <section className="relative pt-24 md:pt-32 pb-8 overflow-hidden bg-gradient-to-b from-[#FFF5F9] via-[#FFF8FD] to-[#FFFCFE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-xs md:text-sm text-slate-500 mb-6 flex-wrap font-medium">
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
+              {t("bhavishyaFalDetailPage.hero.breadcrumbHome", "Home")}
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <Link to="/features" className="hover:text-[#F45B8A] transition-colors">
+              {t("bhavishyaFalDetailPage.hero.breadcrumbPrograms", "Sacred Programs")}
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">
+              {t("bhavishyaFalDetailPage.hero.title", "Bhavishya Phal")}
+            </span>
+          </nav>
 
-          {/* Contrast Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/75 sm:to-transparent" />
-          <div className="absolute inset-0 bg-slate-950/30 sm:bg-transparent" />
+          {/* Hero Banner Card Container */}
+          <motion.div
+            className="relative w-full rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[420px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[560px] flex items-center shadow-xl border border-pink-100"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            {/* Background Banner Image */}
+            <img
+              src="/images/baal_bhavish_banner.jpg"
+              alt="Astro Baby Bhavishya Phal"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
 
-          {/* Banner Content Overlay (Right-Aligned) */}
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-16 w-full flex justify-end">
-            <div className="max-w-xl lg:max-w-2xl text-left">
-              {/* Badge */}
-              <motion.div
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold mb-4 shadow-sm"
-                initial={{ opacity: 0, y: -15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <Compass className="h-4 w-4 text-pink-300" />
-                Astro Baby • Vedic Astrological Guidance • Starting ₹3,100
-              </motion.div>
+            {/* Gradient Overlays for High Text Legibility & Left Artwork Visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/80 sm:to-transparent" />
+            <div className="absolute inset-0 bg-slate-950/20 sm:bg-transparent" />
 
-              {/* Main Heading */}
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-md"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                Bhavishya Phal
-                <span className="text-pink-300 font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl block mt-1.5">
-                  Astrological Predictions & Consultations
-                </span>
-              </motion.h1>
-
-              {/* Description */}
-              <motion.p
-                className="text-pink-50/90 text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xl font-normal drop-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Unlocking your child's natural planetary strengths, innate talents, and life
-                potentials through precise Vedic Janam Kundali analysis and scholar consultations.
-              </motion.p>
-
-              {/* Action Buttons & Highlights */}
-              <motion.div
-                className="flex flex-wrap items-center gap-3 pt-1"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-semibold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300"
+            {/* Content Container (Aligned to Right Side) */}
+            <div className="relative z-10 w-full flex justify-end p-6 sm:p-10 md:p-14 lg:p-16">
+              <div className="max-w-xl lg:max-w-2xl text-left space-y-5">
+                {/* Badge */}
+                <motion.div
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold shadow-sm"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Book Consultation (₹3,100)
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-                <span className="text-white/85 text-xs sm:text-sm font-medium px-3.5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                  Janam Kundali • Falit Report • Live Astrologer
-                </span>
-              </motion.div>
+                  <Compass className="h-3.5 w-3.5 text-pink-300" />
+                  <span>
+                    {t(
+                      "bhavishyaFalDetailPage.hero.badge",
+                      "Vedic Astrology & Planetary Guidance"
+                    )}
+                  </span>
+                </motion.div>
+
+                {/* Main Heading */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="space-y-1.5"
+                >
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+                    {t("bhavishyaFalDetailPage.hero.title", "Bhavishya Phal")}
+                  </h1>
+                  <span className="text-pink-300 font-semibold text-lg sm:text-2xl md:text-3xl block">
+                    {t(
+                      "bhavishyaFalDetailPage.hero.tagline",
+                      "Astrological Predictions & Future Guidance"
+                    )}
+                  </span>
+                </motion.div>
+
+                {/* Description */}
+                <motion.p
+                  className="text-pink-50/90 text-sm sm:text-base md:text-lg leading-relaxed font-normal drop-shadow-sm"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {t(
+                    "bhavishyaFalDetailPage.hero.subtitle",
+                    "Unlocking your child's natural planetary strengths, innate talents, and life potentials through precise Vedic Janam Kundali analysis and scholar consultations."
+                  )}
+                </motion.p>
+
+                {/* Action Buttons & Highlights */}
+                <motion.div
+                  className="flex flex-wrap items-center gap-3.5 pt-2"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-bold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+                  >
+                    <span>
+                      {t(
+                        "bhavishyaFalDetailPage.hero.enrollBtn",
+                        "Book Consultation"
+                      )}
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <span className="text-white/85 text-xs sm:text-sm font-medium px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                    {t("bhavishyaFalDetailPage.hero.price", "Starting ₹3,100")}
+                  </span>
+                </motion.div>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* ── 2 Service Cards Section ── */}
@@ -146,19 +183,26 @@ export default function BhavishyaFalPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
-              <Sparkles className="h-3.5 w-3.5 text-[#EA3484]" /> 2 Dedicated Service Packages
+              <Sparkles className="h-3.5 w-3.5 text-[#EA3484]" />{" "}
+              {t("bhavishyaFalDetailPage.services.badge", "Astrology Packages")}
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] leading-[1.2] tracking-tight mb-4">
-              Choose Your Astrological Consultation
+              {t(
+                "bhavishyaFalDetailPage.services.title",
+                "Choose Your Astrological Guidance"
+              )}
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full mx-auto"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal mt-2 leading-relaxed">
-              Authentic Vedic calculations prepared by renowned astrologers.
+              {t(
+                "bhavishyaFalDetailPage.services.subtitle",
+                "Authentic Vedic calculations prepared by renowned astrologers."
+              )}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-stretch">
-            {SERVICES.map((srv) => (
+            {services.map((srv) => (
               <div
                 key={srv.id}
                 className="bg-gradient-to-br from-pink-50/30 via-white to-rose-50/20 rounded-[32px] p-7 sm:p-8 border border-pink-100/90 shadow-[0_15px_45px_rgba(23,37,84,0.06)] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
@@ -235,7 +279,7 @@ export default function BhavishyaFalPage() {
                     href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)]"
+                    className="w-full py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] cursor-pointer"
                   >
                     <span>Book {srv.title}</span>
                     <ArrowRight className="w-4 h-4" />

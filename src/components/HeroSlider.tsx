@@ -57,7 +57,7 @@ export default function HeroSlider() {
             transition={{ duration: 0.7, ease: "easeInOut" }}
             src={slide.image}
             alt="Pregnancy wellness"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-top sm:object-[center_top]"
             fetchPriority="high"
           />
         </AnimatePresence>
@@ -88,7 +88,7 @@ export default function HeroSlider() {
                 <img
                   src={slide.image}
                   alt="Astro Baby Wellness"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top sm:object-[center_top]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent" />
 

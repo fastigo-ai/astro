@@ -1,190 +1,160 @@
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { Sparkles, ChevronRight, ArrowRight } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import NewsletterSection from "@/components/common/NewsletterSection";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import Footer from "@/components/common/Footer";
 
-const programFeatures = [
-  {
-    title: "Ayurvedic Consultation",
-    img: "/images/features/nutritionist_session.jpg",
-    tagline: "Heal the root, not just the symptoms.",
-    body: [
-      "Our certified Ayurvedic practitioners conduct an in-depth analysis of your Prakriti (body constitution) to design a personalized pre-conception wellness plan for both partners.",
-      "From herbal formulations (Rasayanas) that enhance reproductive health to Panchakarma detox protocols that cleanse accumulated toxins—every recommendation is rooted in thousands of years of Vaidic wisdom, backed by modern understanding.",
-    ],
-  },
-  {
-    title: "Lifestyle & Diet Consultation",
-    img: "/images/features/yoga_session.jpg",
-    tagline: "Your daily choices shape your child's future.",
-    body: [
-      "What you eat, how you sleep, and how you manage stress in the months before conception directly influences the genetic expression of your child. Our experts craft a holistic daily routine covering nutrition, sleep cycles, and mindful habits.",
-      "Receive a customized fertility-boosting diet plan with seasonal, Sattvic foods that balance hormones, improve egg and sperm quality, and prepare your body to be the perfect cradle for new life.",
-    ],
-  },
-  {
-    title: "Live Yoga (Fertility)",
-    img: "/images/features/sankalp_poojan.jpg",
-    tagline: "Move with intention. Breathe with purpose.",
-    body: [
-      "Join live, interactive Yoga sessions led by expert instructors specializing in fertility and pre-conception wellness. These sessions include targeted asanas that improve blood flow to reproductive organs, reduce cortisol levels, and balance hormonal activity.",
-      "Combined with Pranayama (breathwork) and guided meditation, each session cultivates a deep mind-body connection—creating the calm, receptive inner environment essential for a blessed conception.",
-    ],
-  },
-  {
-    title: "Astrological Consultation",
-    img: "/images/features/monthly_calendar.png",
-    tagline: "Let the cosmos guide your most sacred moment.",
-    body: [
-      "In Vaidic science, the exact time of conception is as important as the preparation for it. Our expert astrologers analyze the Janam Kundali of both partners to identify the most auspicious Garbhadhan Muhurat—the ideal cosmic window for conception.",
-      "Understand the planetary influences on your fertility, learn which celestial alignments support a healthy pregnancy, and receive Vaidic remedies to neutralize any negative doshas—ensuring your child enters the world under the most favorable stars.",
-    ],
-  },
-  {
-    title: "Community Support",
-    img: "/images/features/lets_smile_together.jpg",
-    tagline: "You are never alone on this journey.",
-    body: [
-      "The path to parenthood can be emotionally demanding. Our exclusive Beej Sanskar community connects you with hundreds of couples who share the same aspirations, fears, and dreams—creating a powerful support network built on empathy and shared wisdom.",
-      "Participate in moderated group sessions, access a library of shared experiences, and receive ongoing encouragement from certified counselors and community mentors who are with you every step of the way.",
-    ],
-  },
+const PROGRAM_FEATURE_IMAGES = [
+  "/images/features/nutritionist_session.jpg",
+  "/images/features/yoga_session.jpg",
+  "/images/features/sankalp_poojan.jpg",
+  "/images/features/monthly_calendar.png",
+  "/images/features/lets_smile_together.jpg",
 ];
 
 export default function BizSanskar() {
+  const { t } = useTranslation();
+
+  const programFeatures = useMemo(() => {
+    return PROGRAM_FEATURE_IMAGES.map((img, idx) => {
+      const title = t(`beejDetailPage.offerings.features.${idx}.title`, "");
+      const tagline = t(`beejDetailPage.offerings.features.${idx}.tagline`, "");
+      const body0 = t(`beejDetailPage.offerings.features.${idx}.body.0`, "");
+      const body1 = t(`beejDetailPage.offerings.features.${idx}.body.1`, "");
+      const body = body1 ? [body0, body1] : [body0];
+
+      return {
+        img,
+        title,
+        tagline,
+        body,
+      };
+    });
+  }, [t]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FAF5FF] via-white to-[#FFF6FA] text-slate-800 font-sans">
+    <div className="min-h-screen bg-[#FFFCFE] text-[#475569] font-sans selection:bg-[#F45B8A]/20 selection:text-[#F45B8A]">
       <HeaderNavbar />
 
-      {/* 1. Hero Banner Section with Text Overlay */}
-      <section className="relative z-10">
-        <motion.div
-          className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[560px] flex items-center"
-          initial={{ opacity: 0, scale: 1.03 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-        >
-          {/* Background Banner Image */}
-          <img
-            src="/images/beej_sanskar_banner.jpg"
-            alt="Astro Baby Beej Sanskar"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
+      {/* ── 1. Hero Banner Section ── */}
+      <section className="relative pt-24 md:pt-32 pb-8 overflow-hidden bg-gradient-to-b from-[#FFF5F9] via-[#FFF8FD] to-[#FFFCFE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-xs md:text-sm text-slate-500 mb-6 flex-wrap font-medium">
+            <Link to="/" className="hover:text-[#F45B8A] transition-colors">
+              {t("beejDetailPage.hero.breadcrumbHome", "Home")}
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <Link to="/features" className="hover:text-[#F45B8A] transition-colors">
+              {t("beejDetailPage.hero.breadcrumbPrograms", "Sacred Programs")}
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-[#172554] font-bold">
+              {t("beejDetailPage.hero.title", "Beej Sanskar")}
+            </span>
+          </nav>
 
-          {/* Contrast Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/50 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/75 sm:to-transparent" />
-          <div className="absolute inset-0 bg-slate-950/30 sm:bg-transparent" />
-
-          {/* Banner Content Overlay (Right-Aligned) */}
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-16 w-full flex justify-end">
-            <div className="max-w-xl lg:max-w-2xl text-left">
-              {/* Badge */}
-              <motion.div
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold mb-4 shadow-sm"
-                initial={{ opacity: 0, y: -15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-pink-400"></span>
-                </span>
-                Astro Baby • Sacred Pre-Conception
-              </motion.div>
-
-              {/* Main Heading */}
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-md"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                Beej Sanskar
-                <span className="text-pink-300 font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl block mt-1.5">
-                  Nurture Today, Bless Tomorrow
-                </span>
-              </motion.h1>
-
-              {/* Description */}
-              <motion.p
-                className="text-pink-50/90 text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xl font-normal drop-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Prepare your mind, body, and soul with <strong>Astro Baby Beej Sanskar</strong>.
-                Align with sacred Vaidic science, customized Ayurvedic nutrition, cosmic Muhurat
-                timing, and fertility yoga to invite a noble, healthy, and blessed child.
-              </motion.p>
-
-              {/* Action Buttons & Highlights */}
-              <motion.div
-                className="flex flex-wrap items-center gap-3 pt-1"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <a
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-semibold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300"
-                >
-                  Start Beej Sanskar
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-                <span className="text-white/85 text-xs sm:text-sm font-medium px-3.5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                  Ayurveda • Yoga • Astrological Muhurat
-                </span>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* 2. Vaidic Philosophy & Intro Section */}
-      <section className="py-12 md:py-16 relative z-10">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+          {/* Hero Banner Card Container */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-[#EA3484] text-xs font-semibold uppercase tracking-wider mb-5"
-            initial={{ opacity: 0, y: -16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            className="relative w-full rounded-[28px] sm:rounded-[32px] overflow-hidden min-h-[420px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[560px] flex items-center shadow-xl border border-pink-100"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            The Vaidic Foundation
+            {/* Background Banner Image */}
+            <img
+              src="/images/beej_sanskar_banner.jpg"
+              alt="Astro Baby Beej Sanskar"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+
+            {/* Gradient Overlays for High Text Legibility & Left Artwork Visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/80 sm:to-transparent" />
+            <div className="absolute inset-0 bg-slate-950/20 sm:bg-transparent" />
+
+            {/* Content Container (Aligned to Right Side) */}
+            <div className="relative z-10 w-full flex justify-end p-6 sm:p-10 md:p-14 lg:p-16">
+              <div className="max-w-xl lg:max-w-2xl text-left space-y-5">
+                {/* Badge */}
+                <motion.div
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold shadow-sm"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Sparkles className="h-3.5 w-3.5 text-pink-300" />
+                  <span>
+                    {t(
+                      "beejDetailPage.hero.badge",
+                      "Vedic Pre-Conception Mastery"
+                    )}
+                  </span>
+                </motion.div>
+
+                {/* Main Heading */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="space-y-1.5"
+                >
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+                    {t("beejDetailPage.hero.title", "Beej Sanskar")}
+                  </h1>
+                  <span className="text-pink-300 font-semibold text-lg sm:text-2xl md:text-3xl block">
+                    {t(
+                      "beejDetailPage.hero.tagline",
+                      "Preparing the Foundation for Conscious Conception"
+                    )}
+                  </span>
+                </motion.div>
+
+                {/* Description */}
+                <motion.p
+                  className="text-pink-50/90 text-sm sm:text-base md:text-lg leading-relaxed font-normal drop-shadow-sm"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {t(
+                    "beejDetailPage.hero.subtitle",
+                    "Preparing the Foundation for Conscious Conception. Purify, revitalize, and harmonize your mind, body, and soul before welcoming a divine soul."
+                  )}
+                </motion.p>
+
+                {/* Action Buttons & Highlights */}
+                <motion.div
+                  className="flex flex-wrap items-center gap-3.5 pt-2"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-bold text-sm shadow-[0_4px_20px_rgba(234,52,132,0.4)] hover:shadow-[0_6px_25px_rgba(234,52,132,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+                  >
+                    <span>
+                      {t("beejDetailPage.hero.enrollBtn", "Start Beej Sanskar")}
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <span className="text-white/85 text-xs sm:text-sm font-medium px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                    {t("beejDetailPage.hero.price", "Vitality Track")}
+                  </span>
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
-          <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] tracking-tight leading-[1.2] mb-5"
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Ancient Wisdom Backed by Science <span className="text-[#EA3484]">🌱</span>
-          </motion.h2>
-          <motion.p
-            className="text-slate-600 text-base md:text-lg leading-relaxed max-w-3xl mx-auto font-normal"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Just as a farmer meticulously prepares the soil before planting a seed to ensure a
-            bountiful harvest, parents must purify and nourish their physical body, mental calmness,
-            and spiritual energy before conception. <strong>Beej Sanskar</strong> at Astro Baby
-            provides a complete roadmap to lay the strongest foundation for your future generation.
-          </motion.p>
         </div>
       </section>
 
-      {/* 4. Deep Dive Features List */}
+      {/* 2. Deep Dive Features List */}
       <section className="py-16 md:py-24 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -194,10 +164,22 @@ export default function BizSanskar() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F45B8A] mb-3">
+              {t("beejDetailPage.offerings.badge", "Program Offerings")}
+            </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1A3A6C] mb-4 leading-[1.2] tracking-tight">
-              Inside the Beej Sanskar Program
+              {t(
+                "beejDetailPage.offerings.title",
+                "Holistic Pre-Conception Care"
+              )}
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full"></div>
+            <p className="text-slate-600 text-sm md:text-base mt-3 max-w-2xl font-normal">
+              {t(
+                "beejDetailPage.offerings.subtitle",
+                "Explore our five core offerings designed to purify and prepare both partners."
+              )}
+            </p>
           </motion.div>
 
           <div className="space-y-16 md:space-y-24">
@@ -205,7 +187,7 @@ export default function BizSanskar() {
               const reverse = i % 2 === 1;
               return (
                 <motion.article
-                  key={f.title}
+                  key={f.title + i}
                   className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
                   initial={{ opacity: 0, x: reverse ? 60 : -60 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -226,20 +208,8 @@ export default function BizSanskar() {
 
                   <div className={`${reverse ? "lg:order-1" : ""} flex flex-col justify-center`}>
                     <div className="inline-flex items-center gap-2 bg-pink-100 text-[#EA3484] font-semibold text-xs px-4 py-2 rounded-full mb-6 w-max">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      Phase {i + 1}
+                      <Sparkles className="w-4 h-4" />
+                      Feature 0{i + 1}
                     </div>
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E293B] mb-2 tracking-tight leading-tight">
                       {f.title}
@@ -251,26 +221,18 @@ export default function BizSanskar() {
                       ))}
                     </div>
 
-                    {/* Contact Us Button */}
+                    {/* Action Button */}
                     <div className="mt-8">
                       <a
-                        href="/contact-us"
+                        href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+                        target="_blank"
+                        rel="noreferrer"
                         className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#F45B8A] hover:bg-[#d94d7a] text-white font-semibold text-sm shadow-[0_4px_18px_rgba(244,91,138,0.28)] hover:shadow-[0_8px_24px_rgba(244,91,138,0.4)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group"
                       >
-                        Contact Us
-                        <svg
-                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
+                        <span>
+                          {t("beejDetailPage.cta.btn", "Enroll in Beej Sanskar")}
+                        </span>
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                       </a>
                     </div>
                   </div>
@@ -281,7 +243,7 @@ export default function BizSanskar() {
         </div>
       </section>
 
-      {/* 5. Call to Action Banner */}
+      {/* 3. Call to Action Banner */}
       <motion.section
         className="py-16 px-4 mb-8"
         initial={{ opacity: 0, y: 40 }}
@@ -294,26 +256,29 @@ export default function BizSanskar() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">
-            Ready to Begin Your Sacred Journey?
+            {t(
+              "beejDetailPage.cta.title",
+              "Ready to Prepare for Conscious Conception?"
+            )}
           </h2>
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">
-            Join thousands of couples who have embraced Beej Sanskar to lay a flawless foundation
-            for their future child's health and intellect.
+            {t(
+              "beejDetailPage.cta.subtitle",
+              "Join thousands of couples creating an auspicious foundation with Beej Sanskar."
+            )}
           </p>
-          <button className="relative z-10 bg-white text-[#EA3484] font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300">
-            Consult our Experts Today
-          </button>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block relative z-10 bg-white text-[#EA3484] font-bold text-lg px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300"
+          >
+            {t("beejDetailPage.cta.btn", "Enroll in Beej Sanskar")}
+          </a>
         </div>
       </motion.section>
 
-      <AppDownloadSection
-        title={
-          <>
-            Start Your Journey with <span className="text-[#EA3484]">Astro Baby</span>
-          </>
-        }
-        subtitle="Download the app to explore all features."
-      />
+      <AppDownloadSection />
       <NewsletterSection />
       <Footer />
     </div>

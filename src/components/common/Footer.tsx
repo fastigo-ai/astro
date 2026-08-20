@@ -8,33 +8,42 @@ export default function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
-  const programs = [
+  const sacredPrograms = [
     { name: t("programs.garbhadhan.title", "Garbhadhan Sanskar"), to: "/features/garbh-dhan" },
     { name: t("programs.beejSanskar.title", "Beej Sanskar"), to: "/features/beej-sanskar" },
-    { name: t("programs.garbhSanskar.title", "Garbh Sanskar (9M)"), to: "/features/garbh-sanskar" },
+    { name: t("programs.garbhSanskar.title", "Garbh Sanskar"), to: "/features/garbh-sanskar" },
     { name: t("programs.baalSanskar.title", "Baal Sanskar"), to: "/features/baal-sanskar" },
     { name: t("programs.infantCare.title", "Infant Care"), to: "/features/infant-care" },
     { name: t("programs.parenting.title", "Mindful Parenting"), to: "/features/parenting" },
     { name: t("programs.bhavishyaPhal.title", "Bhavishya Phal"), to: "/features/bhavishya-fal" },
+    { name: t("featuresSection.viewAll", "View All Programs"), to: "/features" },
   ];
 
-  const quickLinks = [
+  const resourceHubs = [
+    { name: t("resources.garbhSanskar.title", "Garbh Sanskar Hub"), to: "/garbh-sanskar" },
+    { name: t("resources.pregnancy.title", "Pregnancy Care Hub"), to: "/pregnancy" },
+    { name: t("resources.howTo.title", "How-To Guides Hub"), to: "/how-to" },
+    { name: "Vedic Mantras & Music", to: "/garbh-sanskar/garbh-sanskar-mantra" },
+    { name: "Trimester Care Guide", to: "/garbh-sanskar/first-trimester" },
+    { name: "Garbh Sanskar at Home", to: "/how-to/how-to-do-garbh-sanskar-at-home" },
+  ];
+
+  const exploreLinks = [
     { name: t("nav.home", "Home"), to: "/" },
     { name: t("nav.aboutUs", "About Us"), to: "/about-us" },
-    { name: t("nav.expertTeam", "Our Expert Team"), to: "/team" },
-    { name: t("nav.programs", "All Courses"), to: "/features" },
-    { name: t("nav.testimonials", "Mother Testimonials"), to: "/testimonial" },
-    { name: t("nav.blog", "Vedic Blog & Guides"), to: "/blog" },
-    { name: t("nav.contact", "Contact & Support"), to: "/contact" },
+    { name: t("nav.testimonials", "Testimonials"), to: "/testimonial" },
+    { name: t("nav.blog", "Vedic Blog"), to: "/blog" },
+    { name: t("nav.contact", "Contact Us"), to: "/contact" },
+    { name: "Newsletter", to: "/newsletter" },
   ];
 
   return (
     <footer className="w-full relative z-20 border-t border-pink-200/70 bg-gradient-to-b from-pink-50 via-[#FFF8FC] to-[#FFF1F6] text-[#475569]">
       {/* Upper Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-12">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-6 sm:gap-10 lg:gap-8">
-          {/* Brand Column (Full width on mobile, 4 cols on lg) */}
-          <div className="col-span-2 md:col-span-2 lg:col-span-4 space-y-4 flex flex-col items-center sm:items-start text-center sm:text-left">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-6 sm:gap-8 lg:gap-6">
+          {/* 1. Brand Column (4 cols on lg) */}
+          <div className="col-span-2 md:col-span-2 lg:col-span-3 space-y-4 flex flex-col items-center sm:items-start text-center sm:text-left">
             <Link to="/" className="inline-block group">
               <img
                 src="/images/logo.png"
@@ -79,43 +88,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Sacred Programs (Side-by-side Col 1 on mobile, 3 cols on lg) */}
-          <div className="col-span-1 lg:col-span-3 space-y-3 sm:space-y-4">
-            <h3 className="text-sm sm:text-base md:text-lg font-bold sm:font-semibold text-[#172554] flex items-center gap-1.5 sm:gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#F45B8A] shrink-0" />
-              <span>{t("footer.sacredPrograms", "Sacred Programs")}</span>
-            </h3>
-            <ul className="space-y-2 sm:space-y-2.5">
-              {programs.map((item, idx) => (
-                <li key={idx}>
-                  <Link
-                    to={item.to}
-                    className="text-xs sm:text-sm text-[#475569] hover:text-[#F45B8A] transition-colors flex items-center gap-1 group font-normal leading-snug"
-                  >
-                    <span className="text-[#F45B8A] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">
-                      ›
-                    </span>
-                    <span className="group-hover:translate-x-0.5 transition-transform">
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links (Side-by-side Col 2 on mobile, 2 cols on lg) */}
+          {/* 2. Sacred Programs Column (2.5 cols on lg) */}
           <div className="col-span-1 lg:col-span-2 space-y-3 sm:space-y-4">
-            <h3 className="text-sm sm:text-base md:text-lg font-bold sm:font-semibold text-[#172554] flex items-center gap-1.5 sm:gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#3B82F6] shrink-0" />
-              <span>{t("footer.explore", "Explore")}</span>
+            <h3 className="text-sm sm:text-base font-bold text-[#172554] flex items-center gap-1.5 sm:gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#F45B8A] shrink-0" />
+              <span>Sacred Programs</span>
             </h3>
             <ul className="space-y-2 sm:space-y-2.5">
-              {quickLinks.map((item, idx) => (
+              {sacredPrograms.map((item, idx) => (
                 <li key={idx}>
                   <Link
                     to={item.to}
-                    className="text-xs sm:text-sm text-[#475569] hover:text-[#F45B8A] transition-colors flex items-center gap-1 group font-normal leading-snug"
+                    className="text-xs sm:text-[13px] text-[#475569] hover:text-[#F45B8A] transition-colors flex items-center gap-1 group font-normal leading-snug"
                   >
                     <span className="text-[#F45B8A] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">
                       ›
@@ -129,8 +113,62 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & App Download (Full width on mobile, 3 cols on lg) */}
+          {/* 3. Resources & Guides Column (2.5 cols on lg) */}
+          <div className="col-span-1 lg:col-span-2 space-y-3 sm:space-y-4">
+            <h3 className="text-sm sm:text-base font-bold text-[#172554] flex items-center gap-1.5 sm:gap-2">
+              <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+              <span>Resources & Hubs</span>
+            </h3>
+            <ul className="space-y-2 sm:space-y-2.5">
+              {resourceHubs.map((item, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={item.to}
+                    className="text-xs sm:text-[13px] text-[#475569] hover:text-[#F45B8A] transition-colors flex items-center gap-1 group font-normal leading-snug"
+                  >
+                    <span className="text-[#F45B8A] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">
+                      ›
+                    </span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">
+                      {item.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 4. Explore & Company Column (2 cols on lg) */}
+          <div className="col-span-1 lg:col-span-2 space-y-3 sm:space-y-4">
+            <h3 className="text-sm sm:text-base font-bold text-[#172554] flex items-center gap-1.5 sm:gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#3B82F6] shrink-0" />
+              <span>Explore</span>
+            </h3>
+            <ul className="space-y-2 sm:space-y-2.5">
+              {exploreLinks.map((item, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={item.to}
+                    className="text-xs sm:text-[13px] text-[#475569] hover:text-[#F45B8A] transition-colors flex items-center gap-1 group font-normal leading-snug"
+                  >
+                    <span className="text-[#F45B8A] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">
+                      ›
+                    </span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">
+                      {item.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 5. Contact & App Download (Full width on mobile, 3 cols on lg) */}
           <div className="col-span-2 md:col-span-2 lg:col-span-3 space-y-4 text-center sm:text-left">
+            <h3 className="text-sm sm:text-base font-bold text-[#172554] flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+              <span>Get in Touch</span>
+            </h3>
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-2.5 max-w-sm mx-auto sm:mx-0">
                 <a

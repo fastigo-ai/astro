@@ -1,13 +1,12 @@
 import { useState, useRef } from "react";
 import { Sparkles, Heart, Moon, Sun, Play, Star } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import LazyImage from "@/components/common/LazyImage";
 
-const featureCards = [
+const featureCardStyles = [
   {
     icon: Sparkles,
-    title: "Personalized Pregnancy Care",
-    subtitle: "Week-by-week updates, tips & health guidance.",
     bgColor: "bg-pink-50/70 border-pink-200/70 hover:bg-pink-100/70 hover:border-[#EA3484]/40",
     iconBg: "bg-[#EA3484]/10",
     iconColor: "text-[#EA3484]",
@@ -16,8 +15,6 @@ const featureCards = [
   },
   {
     icon: Moon,
-    title: "Astrology Insights",
-    subtitle: "Janam Kundli, auspicious dates & predictions.",
     bgColor: "bg-amber-50/60 border-amber-200/70 hover:bg-amber-100/70 hover:border-[#F6C85F]/50",
     iconBg: "bg-[#F6C85F]/20",
     iconColor: "text-[#D97706]",
@@ -26,8 +23,6 @@ const featureCards = [
   },
   {
     icon: Heart,
-    title: "Expert Guidance",
-    subtitle: "Consult doctors, astrologers & wellness experts.",
     bgColor: "bg-rose-50/70 border-rose-200/70 hover:bg-rose-100/70 hover:border-[#F45B8A]/40",
     iconBg: "bg-[#F45B8A]/10",
     iconColor: "text-[#F45B8A]",
@@ -36,8 +31,6 @@ const featureCards = [
   },
   {
     icon: Sun,
-    title: "Holistic Wellness",
-    subtitle: "Yoga, meditation, diet & mental well-being.",
     bgColor: "bg-pink-50/60 border-pink-200/70 hover:bg-pink-100/70 hover:border-[#EA3484]/40",
     iconBg: "bg-[#EA3484]/10",
     iconColor: "text-[#EA3484]",
@@ -47,6 +40,7 @@ const featureCards = [
 ];
 
 export default function AboutAstroBabyDetail() {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLIFrameElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -84,17 +78,17 @@ export default function AboutAstroBabyDetail() {
                 {/* Minimal Top Floating Badge */}
                 <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-[#EA3484] shadow-xs border border-pink-100">
                   <Sparkles className="h-3 w-3 text-[#EA3484]" />
-                  <span>Garbhadhan Sanskar</span>
+                  <span>{t("aboutPage.detail.floatingSanskar", "Garbhadhan Sanskar")}</span>
                 </div>
 
                 {/* Minimal Bottom Info Bar */}
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 rounded-xl bg-white/90 backdrop-blur-md px-3.5 py-2.5 border border-white/80 shadow-md flex items-center justify-between">
                   <div>
                     <p className="text-xs font-bold text-[#172554] leading-none">
-                      Holistic Prenatal Care
+                      {t("aboutPage.detail.floatingCareTitle", "Holistic Prenatal Care")}
                     </p>
                     <p className="text-[10px] text-[#EA3484] font-medium mt-1 leading-none">
-                      Vedic Wisdom & Modern Science
+                      {t("aboutPage.detail.floatingCareSub", "Vedic Wisdom & Modern Science")}
                     </p>
                   </div>
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-pink-50 text-[#EA3484] border border-pink-100">
@@ -110,40 +104,54 @@ export default function AboutAstroBabyDetail() {
             {/* Header Block */}
             <div className="text-center md:text-left space-y-2.5">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
-                <Sparkles className="h-3 w-3" /> Essence of Astro Baby
+                <Sparkles className="h-3 w-3" /> {t("aboutPage.detail.badge", "Essence of Astro Baby")}
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] tracking-tight leading-[1.2]">
-                Bridging Ancient Vedic Roots with Modern Science
+                {t("aboutPage.detail.heading", "Bridging Ancient Vedic Roots with Modern Science")}
               </h1>
 
               {/* Decorative Divider */}
               <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto md:mx-0 my-2"></div>
 
               <h2 className="text-sm md:text-base font-semibold text-[#EA3484] leading-snug">
-                Nurturing Life with Compassionate Care, Medical Insights & Cosmic Wisdom
+                {t(
+                  "aboutPage.detail.subheading",
+                  "Nurturing Life with Compassionate Care, Medical Insights & Cosmic Wisdom"
+                )}
               </h2>
             </div>
 
             {/* Introduction Paragraphs */}
             <div className="space-y-3 text-sm md:text-[15px] leading-relaxed text-[#475569] font-normal">
               <p>
-                <strong className="text-[#172554] font-semibold">Astro Baby</strong> is India's pioneer digital Garbhadhan Sanskar platform designed to support parents-to-be on their sacred journey of pregnancy, motherhood, and conscious parenting with the perfect harmony of medical guidance, personalized wellness, and timeless astrological wisdom.
+                {t(
+                  "aboutPage.detail.p1",
+                  "Astro Baby is India's pioneer digital Garbhadhan Sanskar platform designed to support parents-to-be on their sacred journey of pregnancy, motherhood, and conscious parenting with the perfect harmony of medical guidance, personalized wellness, and timeless astrological wisdom."
+                )}
               </p>
 
               <p>
-                We believe that every child is a divine blessing, celebrated in the cosmos and nurtured with mindful love. Our mission is to empower prospective parents with trustworthy obstetric information, expert gynecological advice, and spiritual practices that elevate the mental and physical development of the baby.
+                {t(
+                  "aboutPage.detail.p2",
+                  "We believe that every child is a divine blessing, celebrated in the cosmos and nurtured with mindful love. Our mission is to empower prospective parents with trustworthy obstetric information, expert gynecological advice, and spiritual practices that elevate the mental and physical development of the baby."
+                )}
               </p>
 
               <p>
-                From trimester-wise Vedic mantras, satvik diet plans, and guided yoga, to personalized Janam Kundali insights – Astro Baby is your complete sanctum for a joyful, stress-free motherhood.
+                {t(
+                  "aboutPage.detail.p3",
+                  "From trimester-wise Vedic mantras, satvik diet plans, and guided yoga, to personalized Janam Kundali insights – Astro Baby is your complete sanctum for a joyful, stress-free motherhood."
+                )}
               </p>
             </div>
 
             {/* 4 Premium Feature Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 items-stretch">
-              {featureCards.map((card, idx) => {
+              {featureCardStyles.map((card, idx) => {
                 const Icon = card.icon;
+                const title = t(`aboutPage.detail.features.${idx}.title`, "");
+                const subtitle = t(`aboutPage.detail.features.${idx}.subtitle`, "");
                 return (
                   <motion.div
                     key={idx}
@@ -160,10 +168,10 @@ export default function AboutAstroBabyDetail() {
                       <Icon className="h-5.5 w-5.5" />
                     </div>
                     <h3 className={`text-xs font-semibold ${card.titleColor} mb-1.5 leading-tight`}>
-                      {card.title}
+                      {title}
                     </h3>
                     <p className={`text-[11px] font-normal ${card.subtitleColor} leading-relaxed`}>
-                      {card.subtitle}
+                      {subtitle}
                     </p>
                   </motion.div>
                 );
@@ -206,14 +214,17 @@ export default function AboutAstroBabyDetail() {
         {/* Section Header */}
         <div className="relative z-10 max-w-xl mx-auto space-y-2">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-pink-200/80 bg-pink-50/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#EA3484] backdrop-blur-sm shadow-xs">
-            <Play className="h-3 w-3 fill-[#EA3484]" /> Visual Experience
+            <Play className="h-3 w-3 fill-[#EA3484]" /> {t("aboutPage.video.badge", "Visual Experience")}
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#172554] leading-[1.2] tracking-tight">
-            Experience Astro Baby in Action
+            {t("aboutPage.video.heading", "Experience Astro Baby in Action")}
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
           <p className="text-xs md:text-sm text-[#475569] font-normal leading-relaxed">
-            Watch how our personalized Garbhadhan Sanskar modules nurture both mother and baby.
+            {t(
+              "aboutPage.video.subtitle",
+              "Watch how our personalized Garbhadhan Sanskar modules nurture both mother and baby."
+            )}
           </p>
         </div>
 
@@ -262,7 +273,7 @@ export default function AboutAstroBabyDetail() {
               <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-20">
                 <div className="inline-flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/25 text-white text-[11px] font-semibold shadow-xs">
                   <Sparkles className="h-3 w-3 text-[#F6C85F]" />
-                  <span>Vedic Prenatal Care</span>
+                  <span>{t("aboutPage.video.tag", "Vedic Prenatal Care")}</span>
                 </div>
               </div>
 
@@ -279,7 +290,7 @@ export default function AboutAstroBabyDetail() {
                   </motion.div>
                 </div>
                 <span className="mt-3 text-white text-xs sm:text-sm font-bold tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-black/30 backdrop-blur-sm px-3.5 py-1 rounded-full border border-white/20">
-                  Click to Watch
+                  {t("aboutPage.video.clickToWatch", "Click to Watch")}
                 </span>
               </div>
 
@@ -287,12 +298,14 @@ export default function AboutAstroBabyDetail() {
               <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-6 flex items-center justify-between z-20 pointer-events-none">
                 <div className="inline-flex items-center gap-2.5 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs sm:text-sm font-medium shadow-md">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#EA3484] animate-pulse" />
-                  <span className="drop-shadow-xs">Experience 9-Month Garbhadhan Sanskar Journey</span>
+                  <span className="drop-shadow-xs">
+                    {t("aboutPage.video.videoInfo", "Experience 9-Month Garbhadhan Sanskar Journey")}
+                  </span>
                 </div>
                 <div className="hidden sm:inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20 text-white/90 text-xs font-semibold shadow-md">
-                  <span>HD 1080p</span>
+                  <span>{t("aboutPage.video.hd", "HD 1080p")}</span>
                   <span>•</span>
-                  <span>1:48 min</span>
+                  <span>{t("aboutPage.video.duration", "1:48 min")}</span>
                 </div>
               </div>
             </div>

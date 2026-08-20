@@ -143,6 +143,23 @@
       "f3": "Purpose Alignment"
     }
   },
+  "resources": {
+    "garbhSanskar": {
+      "title": "Garbh Sanskar",
+      "subtitle": "Ancient Vedic wisdom, mantras & music",
+      "badge": "Vedic Wisdom"
+    },
+    "pregnancy": {
+      "title": "Pregnancy",
+      "subtitle": "Trimester care, yoga, nutrition & symptoms",
+      "badge": "Complete Care"
+    },
+    "howTo": {
+      "title": "How-To Guides",
+      "subtitle": "Step-by-step pregnancy & baby care guides",
+      "badge": "Practical Steps"
+    }
+  },
   "stories": {
     "badge": "Heartfelt Experiences",
     "heading": "Loved by Over 10,000+ Happy Families",
@@ -223,5 +240,1287 @@
     "allRightsReserved": "© {{year}} Astro Baby Garbhadhan Sanskar. All rights reserved.",
     "privacyTerms": "Privacy & Terms",
     "support": "Support"
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "Our Origins & Sacred Journey",
+      "title": "The Story of",
+      "brand": "Astro Baby",
+      "subtitle": "How ancient Garbhadhan Sanskar wisdom and modern obstetric neuroscience united to guide thousands of parents toward joyful, divine childbirth.",
+      "breadcrumbHome": "Home",
+      "breadcrumbAbout": "About Us",
+      "breadcrumbStory": "Our Story"
+    },
+    "detail": {
+      "floatingSanskar": "Garbhadhan Sanskar",
+      "floatingCareTitle": "Holistic Prenatal Care",
+      "floatingCareSub": "Vedic Wisdom & Modern Science",
+      "badge": "Essence of Astro Baby",
+      "heading": "Bridging Ancient Vedic Roots with Modern Science",
+      "subheading": "Nurturing Life with Compassionate Care, Medical Insights & Cosmic Wisdom",
+      "p1": "Astro Baby is India's pioneer digital Garbhadhan Sanskar platform designed to support parents-to-be on their sacred journey of pregnancy, motherhood, and conscious parenting with the perfect harmony of medical guidance, personalized wellness, and timeless astrological wisdom.",
+      "p2": "We believe that every child is a divine blessing, celebrated in the cosmos and nurtured with mindful love. Our mission is to empower prospective parents with trustworthy obstetric information, expert gynecological advice, and spiritual practices that elevate the mental and physical development of the baby.",
+      "p3": "From trimester-wise Vedic mantras, satvik diet plans, and guided yoga, to personalized Janam Kundali insights – Astro Baby is your complete sanctum for a joyful, stress-free motherhood.",
+      "features": [
+        {
+          "title": "Personalized Pregnancy Care",
+          "subtitle": "Week-by-week updates, tips & health guidance."
+        },
+        {
+          "title": "Astrology Insights",
+          "subtitle": "Janam Kundli, auspicious dates & predictions."
+        },
+        {
+          "title": "Expert Guidance",
+          "subtitle": "Consult doctors, astrologers & wellness experts."
+        },
+        {
+          "title": "Holistic Wellness",
+          "subtitle": "Yoga, meditation, diet & mental well-being."
+        }
+      ]
+    },
+    "video": {
+      "badge": "Visual Experience",
+      "heading": "Experience Astro Baby in Action",
+      "subtitle": "Watch how our personalized Garbhadhan Sanskar modules nurture both mother and baby.",
+      "tag": "Vedic Prenatal Care",
+      "clickToWatch": "Click to Watch",
+      "videoInfo": "Experience 9-Month Garbhadhan Sanskar Journey",
+      "hd": "HD 1080p",
+      "duration": "1:48 min"
+    },
+    "pillars": {
+      "badge": "Guiding Principles",
+      "heading": "Our Four Sacred Pillars",
+      "subtitle": "Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.",
+      "explore": "Explore philosophy",
+      "items": [
+        {
+          "title": "Positive Pregnancy",
+          "text": "Empowering every expectant mother with serenity, emotional balance, and obstetric clarity for a peaceful gestational journey."
+        },
+        {
+          "title": "Virtuous Next Generation",
+          "text": "Nurturing the baby in the womb through authentic Garbhadhan Sanskar mantras, noble thoughts, and cognitive enrichment."
+        },
+        {
+          "title": "Global Vedic Heritage",
+          "text": "Bringing authentic Garbhadhan Sanskar wisdom to families in over 62+ countries across languages and cultural boundaries."
+        },
+        {
+          "title": "Scientific & Medical Rigor",
+          "text": "Synthesizing authentic Vedic scriptures with modern gynecological research, fetal neuroscience, and maternal nutrition."
+        }
+      ]
+    },
+    "stats": {
+      "badge": "Global Reach & Trust",
+      "heading": "The Impact of Our Journey",
+      "subtitle": "Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.",
+      "items": [
+        {
+          "num": "1,00,000+",
+          "label": "Mobile App Downloads",
+          "sub": "Trusted Worldwide"
+        },
+        {
+          "num": "12,00,000+",
+          "label": "YouTube Community Views",
+          "sub": "Spiritual Guidance"
+        },
+        {
+          "num": "62+ Countries",
+          "label": "Global Reach",
+          "sub": "Families Enriched"
+        },
+        {
+          "num": "4.6 ★★★★★",
+          "label": "Google Play Store Rating",
+          "sub": "Verified Reviews"
+        },
+        {
+          "num": "Thousands",
+          "label": "Happy & Calm Pregnancies",
+          "sub": "Healthy Newborns"
+        }
+      ]
+    },
+    "timeline": {
+      "badge": "Historical Timeline",
+      "heading": "Milestones in Our Evolution",
+      "subtitle": "From a research initiative by IITians and Vedic scholars to the world's most comprehensive Garbhadhan Sanskar platform.",
+      "milestones": [
+        {
+          "year": "2018",
+          "tag": "Inception",
+          "title": "The Genesis & Sacred Vision",
+          "text": "Astro Baby was founded with a profound dream: to make the ancient, time-tested Vedic Garbhadhan Sanskar accessible, scientific, and practical for every modern couple."
+        },
+        {
+          "year": "2019",
+          "tag": "R&D Phase",
+          "title": "Rigorous R&D & Scientific Synthesis",
+          "text": "Scholars from IIT, renowned obstetricians, pediatric neurologists, and Vedic masters spent thousands of hours structuring a daily 9-month prenatal curriculum."
+        },
+        {
+          "year": "2020",
+          "tag": "Digital Launch",
+          "title": "Global Mobile Platform Launch",
+          "text": "The official Astro Baby mobile application launched on Android & iOS, providing interactive shlokas, satvik diet plans, yoga videos, and personalized Isht Mantras."
+        },
+        {
+          "year": "2022",
+          "tag": "Global Impact",
+          "title": "100,000+ Enriched Families",
+          "text": "Surpassed 1,00,000+ active downloads across 62 nations, earning deep gratitude from parents who experienced calm, joyful, and healthy deliveries."
+        },
+        {
+          "year": "Today",
+          "tag": "The Movement",
+          "title": "A Worldwide Movement for Conscious Parenting",
+          "text": "Astro Baby has evolved into a global sanctum of conscious prenatal parenting, continuously advancing fetal development science and Vedic spirituality."
+        }
+      ]
+    }
+  },
+  "featuresPage": {
+    "hero": {
+      "badge": "7 Core Pillars & Comprehensive Features",
+      "title": "Vedic Sanskar Courses &",
+      "titleHighlight": "Interactive Features",
+      "subtitle": "A complete developmental continuum from pre-conception planning and prenatal neuro-development to early childhood and mindful parenting.",
+      "breadcrumbHome": "Home",
+      "breadcrumbFeatures": "Courses & Features",
+      "searchPlaceholder": "Search features (e.g. Garbhadhan, Mantras, Beej Sanskar, Yoga, Doctors)..."
+    },
+    "coursesSection": {
+      "badge": "7 Dedicated Course Tracks",
+      "heading": "Choose Your Stage of Parenthood",
+      "subtitle": "Tailored guidance for every sacred step — from conscious conception to flourishing childhood.",
+      "viewProgram": "View Program",
+      "availableInApp": "Available in App"
+    },
+    "categories": {
+      "all": "All Features",
+      "pillars": "7 Core Pillars",
+      "sanskars": "Sanskars & Poojan",
+      "mantras": "Vaidic Mantras & Music",
+      "mentoring": "Live Mentoring & Doctors",
+      "mindfulness": "Mindfulness & Yoga"
+    },
+    "catalog": {
+      "allTitle": "All Interactive Features",
+      "showingCount": "Showing {{count}} specialized tools and rituals",
+      "featureBadge": "Interactive Feature 0{{num}}",
+      "accessInApp": "Access in Astro Baby App"
+    },
+    "courses": [
+      {
+        "id": "garbhadhan",
+        "title": "Garbhadhan Sanskar",
+        "subTitle": "Sacred Preparation for Conception",
+        "price": "₹11,000",
+        "desc": "Auspicious conception planning, couple spiritual alignment, Isht Mantra, and fertility tracking to welcome a healthy, virtuous soul.",
+        "benefits": [
+          "Muhurat-Based Coitus Dates",
+          "Isht Mantra & Meditation",
+          "Fertility Tracker & Support"
+        ]
+      },
+      {
+        "id": "beej-sanskar",
+        "title": "Beej Sanskar",
+        "subTitle": "Preparing the Foundation for Conscious Conception",
+        "price": "Vitality Track",
+        "desc": "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
+        "benefits": [
+          "Ayurvedic cellular detox",
+          "Nutritional vitality charts",
+          "Stress reduction & yoga"
+        ]
+      },
+      {
+        "id": "garbh-sanskar",
+        "title": "Garbh Sanskar",
+        "subTitle": "9-Month Journey of Prenatal Nurturing",
+        "price": "Starting ₹5,000",
+        "desc": "9-month comprehensive prenatal mastery available in Diamond (₹25,000), Gold (₹11,000), and Silver (₹5,000) tiers.",
+        "benefits": [
+          "Diamond, Gold & Silver Tiers",
+          "Month-wise Mantra Vrushti",
+          "Garbh Samvad & Raga Music"
+        ]
+      },
+      {
+        "id": "baal-sanskar",
+        "title": "Baal Sanskar",
+        "subTitle": "Sacred Milestones in Early Childhood",
+        "price": "₹6,000",
+        "desc": "Namkaran, Nishkraman, Karnavedha, and Annaprashan ceremonies combined with moral bedtime stories and cognitive brain puzzles.",
+        "benefits": [
+          "4 Sacred Childhood Sanskars",
+          "Moral & Bedtime Stories",
+          "Brain Puzzles & Shlokas"
+        ]
+      },
+      {
+        "id": "infant-care",
+        "title": "Infant Care",
+        "subTitle": "Gentle Care for Your Baby's Early Years",
+        "price": "₹5,000",
+        "desc": "Personal parenting coach, customized post-partum diet, daily live yoga, lactation coaching, and astrological support.",
+        "benefits": [
+          "Personal Parenting Coach",
+          "Custom Diet & Lactation",
+          "Daily Live Yoga & Milestones"
+        ]
+      },
+      {
+        "id": "parenting",
+        "title": "Parenting",
+        "subTitle": "Mindful Guidance for Raising Your Child",
+        "price": "Expert Guidance",
+        "desc": "Mindful parenting practices, emotional resilience techniques, child psychological growth, and pediatrician-backed nutrition.",
+        "benefits": [
+          "Parenting Coach & Support",
+          "Child Development Milestones",
+          "Emotional Wellbeing & Diet"
+        ]
+      },
+      {
+        "id": "bhavishya-fal",
+        "title": "Bhavishya Phal",
+        "subTitle": "Astrological Insights for Your Child's Journey",
+        "price": "Starting ₹3,100",
+        "desc": "Comprehensive Janam Kundali generation + Falit report (₹3,500) and live 1-on-1 Astrologer Consultation (₹3,100).",
+        "benefits": [
+          "Kundli + Falit Report (₹3,500)",
+          "Live Astrologer Consultation (₹3,100)",
+          "Lifelong Planetary Guidance"
+        ]
+      }
+    ],
+    "featuresList": [
+      {
+        "title": "Garbhadhan",
+        "tagline": "Pre-conception guidance & divine preparation",
+        "body": [
+          "Garbhadhan is a noble Vedic initiative to support couples preparing for parenthood. Your conscious planning lights up a new life with wisdom, health, and grace.",
+          "A complete pre-conception purification and preparation process combining Vaidic rituals, astrological alignment, and Ayurvedic detox to pave the way for a healthy, virtuous child."
+        ]
+      },
+      {
+        "title": "Sankalp Poojan",
+        "tagline": "Live Sankalp Poojan before starting Garbhadhan Sanskar",
+        "body": [
+          "In Vaidic Indian tradition, every auspicious work starts with Sankalp poojan. At Astro Baby, Vaidic Sankalp poojan is conducted live under the guidance of our learned Vaidic Brahmins.",
+          "Within 24 hours of enrolling, our representative coordinates the sacred samagri and schedules your personal one-on-one live Sankalp Poojan on an auspicious muhurat."
+        ]
+      },
+      {
+        "title": "Punsavan Sanskar",
+        "tagline": "An important sanskar performed during the third month of pregnancy",
+        "body": [
+          "The first mention of Punsavan Sanskar is found in Atharva Veda. Performed during the 3rd month as the baby's central nervous system rapidly forms.",
+          "Imparts mental resilience, superior intelligence, and noble sanskars to the developing fetus."
+        ]
+      },
+      {
+        "title": "Simantonnayana Sanskar",
+        "tagline": "Sacred sanskar performed during the seventh/eighth month of pregnancy",
+        "body": [
+          "Simantonnayana Sanskar is the third of the 16 Vedic sanskars. Performed to protect the mother and child and ensure peaceful, safe delivery.",
+          "Mentally prepares the mother for labor through uplifting mantras, blessings, and joyful family ceremonies."
+        ]
+      },
+      {
+        "title": "Garbhadhan Sanskar Sutra",
+        "tagline": "Sutras to impart mann, buddhi and sanskars in your child",
+        "body": [
+          "Month-by-month developmental sutras tailored to the precise biological and spiritual stage of your fetus.",
+          "Turns pregnancy into a joyous, mindful journey that welcomes a wise and physically healthy newborn."
+        ]
+      },
+      {
+        "title": "Vaidic Mantra Vrushti",
+        "tagline": "Miraculous vaidic chants for the promotion of special qualities in the child",
+        "body": [
+          "Chanted by learned Vaidic scholars following the strict phonetics of Swar, Matra, Balam, and Saama.",
+          "Proven to produce measurable calming alpha brainwaves in both mother and baby."
+        ]
+      },
+      {
+        "title": "Garbhadhan Sanskar Music",
+        "tagline": "Music based on specific ragas for the ideal development of a child",
+        "body": [
+          "Ancient Indian classical ragas crafted to balance maternal emotions and stimulate auditory cortex development.",
+          "Keeps the mother relaxed, positive, and deeply connected with her baby 24/7."
+        ]
+      },
+      {
+        "title": "Jeevan Sutra - The Life Training",
+        "tagline": "Sutra to guide you through the ups and downs of life",
+        "body": [
+          "Live interactive life coaching sessions helping expectant mothers overcome stress, anxiety, and mood fluctuations.",
+          "Empowers mothers with emotional equilibrium and positive parenting psychology."
+        ]
+      },
+      {
+        "title": "Medi-Mitra Sessions",
+        "tagline": "Your friend and guide for all medical & obstetric concerns",
+        "body": [
+          "Guided by experienced obstetricians and AIIMS alumni with 20+ years of high-risk pregnancy expertise.",
+          "Gives accurate, compassionate medical answers whenever queries arise."
+        ]
+      },
+      {
+        "title": "Isht Mantra",
+        "tagline": "Personalized Isht Mantra calculated from parents' birth charts",
+        "body": [
+          "Calculated based on astrological Raashi-Yugm of both parents for maximum spiritual resonance.",
+          "Protects the womb and invokes divine blessings for the unborn baby."
+        ]
+      },
+      {
+        "title": "GarbhSamvad",
+        "tagline": "Laying the foundation of a lifetime bond between mother & baby",
+        "body": [
+          "Daily structured conversation guides to communicate love, values, and knowledge to the baby in the womb.",
+          "Rooted in both ancient Vedic traditions (Abhimanyu) and modern fetal neuroscience."
+        ]
+      },
+      {
+        "title": "Yognidra & Stress Relief",
+        "tagline": "Your 20-minute passage to deep restorative inner peace",
+        "body": [
+          "Guided prenatal yoga nidra sessions that lower cortisol, relieve physical fatigue, and induce restful sleep."
+        ]
+      },
+      {
+        "title": "Parv (Occasion) Based Sessions",
+        "tagline": "Celebratory festive sanskars for sacred occasions",
+        "body": [
+          "Special discourses and activities aligned with Diwali, Navratri, Ekadashi, and other sacred Indian festivals."
+        ]
+      },
+      {
+        "title": "Supraj Santaanotpatti Havan",
+        "tagline": "Monthly vaidic havan for the protection and vitality of your child",
+        "body": [
+          "Live monthly fire rituals conducted by Astro Baby scholars for the physical and spiritual prosperity of your family."
+        ]
+      },
+      {
+        "title": "Yoga & Pranayama Sessions",
+        "tagline": "Safe trimester-specific prenatal yoga led by certified instructors",
+        "body": [
+          "Improves pelvic flexibility, reduces back strain, and prepares your body naturally for smooth labor."
+        ]
+      },
+      {
+        "title": "Nutritionist & Diet Guidance",
+        "tagline": "Personalized Ayurvedic and modern pregnancy nutrition plans",
+        "body": [
+          "Trimester-wise satvik diet recommendations ensuring peak nourishment for mother and growing baby."
+        ]
+      }
+    ]
+  },
+  "garbhadhanDetailPage": {
+    "hero": {
+      "badge": "Sacred Pre-Conception",
+      "title": "Garbhadhan Sanskar",
+      "subtitle": "Auspicious conception planning, spiritual alignment, Isht Mantra, and fertility support to invite a healthy, virtuous soul.",
+      "enrollBtn": "Enroll for ₹11,000",
+      "tagline": "Sacred Preparation for Conception",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "ctaSub": "Live Sankalp Poojan • Doctor Guidance • Personalized Isht Mantra"
+    },
+    "inclusions": {
+      "badge": "Sacred Inclusions",
+      "title": "11 Sacred Pillars of Garbhadhan",
+      "subtitle": "Everything you need for conscious, spiritually aligned conception.",
+      "services": [
+        {
+          "title": "Auspicious Conception Dates",
+          "subTitle": "Astrological Muhurat",
+          "desc": "Precise Vedic timing calculated from both parents' birth charts to align conception with auspicious planetary energies.",
+          "badge": "Astrology"
+        },
+        {
+          "title": "Personalized Isht Mantra",
+          "subTitle": "Vedic Chanting",
+          "desc": "Custom mantra based on your astrological planetary alignment for spiritual protection and positive energy.",
+          "badge": "Mantra"
+        },
+        {
+          "title": "Conception Meditation",
+          "subTitle": "Emotional Harmony",
+          "desc": "Guided mindfulness and visualization sessions designed to reduce stress and foster partner connection.",
+          "badge": "Mindfulness"
+        },
+        {
+          "title": "Daily Sandhya Prarthana",
+          "subTitle": "Live Evening Prayers",
+          "desc": "Daily live community prayers chanting the protective Ramraksha and Santan Gopal Stotras.",
+          "badge": "Daily Live"
+        },
+        {
+          "title": "Music Therapy",
+          "subTitle": "Fertility Ragas",
+          "desc": "Calming Indian classical ragas scientifically selected to balance hormones and ease anxiety.",
+          "badge": "Sound"
+        },
+        {
+          "title": "Live Sankalp Poojan",
+          "subTitle": "Vedic Initiation",
+          "desc": "A personalized live ceremony conducted by Vedic scholars to sanctify your path to parenthood.",
+          "badge": "Ritual"
+        },
+        {
+          "title": "Satvik Nutrition Plan",
+          "subTitle": "Ayurvedic Detox",
+          "desc": "Custom diet plans to cleanse reproductive tissues and enhance natural biological vitality.",
+          "badge": "Ayurveda"
+        },
+        {
+          "title": "Doctor Consultation",
+          "subTitle": "Gynecologist Guidance",
+          "desc": "Direct medical guidance and fertility health checks with experienced AIIMS-alumni gynecologists.",
+          "badge": "Medical"
+        },
+        {
+          "title": "Dedicated Sahayata Sakhi",
+          "subTitle": "Care Companion",
+          "desc": "A dedicated personal mentor available daily to answer questions and offer emotional reassurance.",
+          "badge": "Mentoring"
+        },
+        {
+          "title": "Trimester Planning",
+          "subTitle": "Holistic Roadmap",
+          "desc": "Comprehensive milestone guidance transitioning seamlessly from conception into early pregnancy.",
+          "badge": "Guidance"
+        },
+        {
+          "title": "Astrological Dosha Shanti",
+          "subTitle": "Planetary Harmony",
+          "desc": "Vedic planetary remedies to mitigate ancestral and astrological hurdles for effortless conception.",
+          "badge": "Remedies"
+        }
+      ]
+    },
+    "pricingCard": {
+      "badge": "Complete Package",
+      "title": "Garbhadhan Sanskar Complete Track",
+      "price": "₹11,000",
+      "period": "One-Time Enrolment",
+      "enrollNow": "Enroll in Garbhadhan Track",
+      "whatIncluded": "What's Included in This Program:",
+      "features": [
+        "Astrological Muhurat Conception Dates",
+        "Personalized Isht Mantra & Sound Therapy",
+        "Daily Live Sandhya Prarthana Access",
+        "Live Sankalp Poojan with Vedic Brahmins",
+        "Satvik Nutrition & Ayurvedic Cellular Detox",
+        "Doctor Consultation & Dedicated Sakhi Guide"
+      ]
+    },
+    "faq": {
+      "badge": "Got Questions?",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about Garbhadhan Sanskar.",
+      "items": [
+        {
+          "q": "What is the best time to start Garbhadhan Sanskar?",
+          "a": "Ideally 3 to 6 months prior to planned conception to allow complete Ayurvedic body purification, dietary optimization, and astrological alignment."
+        },
+        {
+          "q": "How is the Isht Mantra calculated?",
+          "a": "Our senior Vedic astrologers calculate it based on the Janam Kundali and planetary positions of both prospective parents."
+        },
+        {
+          "q": "Is medical guidance included along with Vedic rituals?",
+          "a": "Yes, our program uniquely integrates both: senior AIIMS-alumni gynecologists for medical support alongside Vedic scholars for spiritual rites."
+        },
+        {
+          "q": "Can working couples participate easily?",
+          "a": "Absolutely. All live sessions are held at convenient evening times, with on-demand recorded access available 24/7 on the Astro Baby App."
+        }
+      ]
+    }
+  },
+  "beejDetailPage": {
+    "hero": {
+      "badge": "Vedic Pre-Conception Mastery",
+      "title": "Beej Sanskar",
+      "subtitle": "Preparing the Foundation for Conscious Conception. Purify, revitalize, and harmonize your mind, body, and soul before welcoming a divine soul.",
+      "enrollBtn": "Start Beej Sanskar",
+      "tagline": "Preparing the Foundation for Conscious Conception",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "Vitality Track"
+    },
+    "offerings": {
+      "badge": "Program Offerings",
+      "title": "Holistic Pre-Conception Care",
+      "subtitle": "Explore our five core offerings designed to purify and prepare both partners.",
+      "features": [
+        {
+          "title": "Ayurvedic Consultation",
+          "tagline": "Heal the root, not just the symptoms.",
+          "body": [
+            "Our certified Ayurvedic practitioners conduct an in-depth analysis of your Prakriti (body constitution) to design a personalized pre-conception wellness plan for both partners.",
+            "From herbal formulations (Rasayanas) that enhance reproductive health to Panchakarma detox protocols that cleanse accumulated toxins—every recommendation is rooted in thousands of years of Vaidic wisdom, backed by modern understanding."
+          ]
+        },
+        {
+          "title": "Lifestyle & Diet Consultation",
+          "tagline": "Your daily choices shape your child's future.",
+          "body": [
+            "What you eat, how you sleep, and how you manage stress in the months before conception directly influences the genetic expression of your child. Our experts craft a holistic daily routine covering nutrition, sleep cycles, and mindful habits.",
+            "Receive a customized fertility-boosting diet plan with seasonal, Sattvic foods that balance hormones, improve egg and sperm quality, and prepare your body to be the perfect cradle for new life."
+          ]
+        },
+        {
+          "title": "Live Yoga (Fertility)",
+          "tagline": "Move with intention. Breathe with purpose.",
+          "body": [
+            "Join live, interactive Yoga sessions led by expert instructors specializing in fertility and pre-conception wellness. These sessions include targeted asanas that improve blood flow to reproductive organs, reduce cortisol levels, and balance hormonal activity.",
+            "Combined with Pranayama (breathwork) and guided meditation, each session cultivates a deep mind-body connection—creating the calm, receptive inner environment essential for a blessed conception."
+          ]
+        },
+        {
+          "title": "Astrological Consultation",
+          "tagline": "Let the cosmos guide your most sacred moment.",
+          "body": [
+            "In Vaidic science, the exact time of conception is as important as the preparation for it. Our expert astrologers analyze the Janam Kundali of both partners to identify the most auspicious Garbhadhan Muhurat—the ideal cosmic window for conception.",
+            "Understand the planetary influences on your fertility, learn which celestial alignments support a healthy pregnancy, and receive Vaidic remedies to neutralize any negative doshas—ensuring your child enters the world under the most favorable stars."
+          ]
+        },
+        {
+          "title": "Community Support",
+          "tagline": "You are never alone on this journey.",
+          "body": [
+            "The path to parenthood can be emotionally demanding. Our exclusive Beej Sanskar community connects you with hundreds of couples who share the same aspirations, fears, and dreams—creating a powerful support network built on empathy and shared wisdom.",
+            "Participate in moderated group sessions, access a library of shared experiences, and receive ongoing encouragement from certified counselors and community mentors who are with you every step of the way."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Prepare for Conscious Conception?",
+      "subtitle": "Join thousands of couples creating an auspicious foundation with Beej Sanskar.",
+      "btn": "Enroll in Beej Sanskar"
+    }
+  },
+  "garbhSanskarDetailPage": {
+    "hero": {
+      "badge": "Sacred Prenatal Mastery",
+      "title": "Garbh Sanskar",
+      "subtitle": "9-Month Journey of Prenatal Nurturing. Comprehensive Vedic rituals, classical ragas, doctor mentoring, and cognitive stimulation for mother and unborn baby.",
+      "enrollBtn": "Choose Your Plan",
+      "tagline": "9-Month Journey of Prenatal Nurturing",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "Starting ₹5,000"
+    },
+    "plansSection": {
+      "badge": "Pricing Plans",
+      "title": "Choose Your 9-Month Path",
+      "subtitle": "Flexible tiers designed for every expectant family's aspirations and budget.",
+      "mostPopular": "Most Popular",
+      "enrollPlan": "Enroll in {{plan}}",
+      "plans": [
+        {
+          "id": "silver",
+          "name": "Silver Plan",
+          "price": "₹5,000",
+          "period": "Complete 9-Month Care",
+          "tagline": "Essential Vedic Sanskars & foundational mantra guidance.",
+          "features": [
+            "Sankalp Pooja (Live Vedic Initiation)",
+            "Punsavan Sanskar (3rd Month Ritual)",
+            "Simantonnayana Sanskar (8th Month Ritual)",
+            "Isht Mantra (Personalized Astrological Chant)",
+            "Special Expert Guidance Sessions",
+            "Daily Sandhya Prarthana Access",
+            "Community Discussion Forum"
+          ]
+        },
+        {
+          "id": "diamond",
+          "name": "Diamond Plan",
+          "price": "₹25,000",
+          "period": "All-Inclusive 9-Month Premium",
+          "tagline": "Our flagship end-to-end Vedic & obstetric prenatal mastery.",
+          "features": [
+            "Sankalp Poojan (Live Personalized Ceremony)",
+            "Punsavan Sanskar (Live Vedic Ceremony)",
+            "Simantonnayana Sanskar (Live Vedic Ceremony)",
+            "Meditation & Deep Mindfulness",
+            "Isht Mantra (Astrological Calculation)",
+            "Yoga Sessions (Trimester-specific Prenatal Yoga)",
+            "Garbh Sanskar Music (Classical Raga Therapy)",
+            "Jeevan Sutra (Live Life Mentoring)",
+            "Vedic Mantra Vrushti (High-definition Chants)",
+            "Yoga Nidra Sessions (Deep Restorative Sleep)",
+            "Garbh Samvad (Mother-Baby Daily Guide)",
+            "Garbh Kalyan Prarthana (Womb Protection Chants)",
+            "Diet Guidance (Satvik Ayurvedic Nutrition)",
+            "Daily Evening Sandhya Prarthana",
+            "Garbh Sanskar Sutras & Wisdom",
+            "Vishnu Sahasranam Recitations",
+            "Special Festive Ritual Sessions",
+            "Sang Muskayen (Interactive Bonding Games)",
+            "Brainopedia (Fetal Brain Puzzles)",
+            "Nutritionist Live Sessions",
+            "Mentoring & Emotional Support",
+            "Medi-Mitra (Doctor On-Call Guide)",
+            "Vedic Audio & Story Library",
+            "Live Q&A Sessions with Experts",
+            "Baby Kick Counter (In-App Tool)",
+            "Weight Gain Tracker (In-App Tool)"
+          ]
+        },
+        {
+          "id": "gold",
+          "name": "Gold Plan",
+          "price": "₹11,000",
+          "period": "Standard 9-Month Comprehensive",
+          "tagline": "Comprehensive balance of Vedic rituals and digital trackers.",
+          "features": [
+            "Sankalp Pooja (Live Vedic Initiation)",
+            "Punsavan Sanskar (3rd Month Ritual)",
+            "Simantonnayana Sanskar (8th Month Ritual)",
+            "Supraj Santaanotpatti Havan (Monthly)",
+            "Meditation & Relaxation",
+            "Isht Mantra (Astrological Calculation)",
+            "Live Expert Q&A Sessions",
+            "Yoga Sessions (Live Instructor)",
+            "Baby Kick Counter (In-App Tool)",
+            "Weight Gain Tracker (In-App Tool)"
+          ]
+        }
+      ]
+    }
+  },
+  "baalSanskarDetailPage": {
+    "hero": {
+      "badge": "Early Childhood Milestones",
+      "title": "Baal Sanskar",
+      "subtitle": "Sacred Milestones in Early Childhood. Celebrate Namkaran, Nishkraman, Karnavedha, and Annaprashan with moral bedtime stories and brain puzzles.",
+      "enrollBtn": "Enroll for ₹6,000",
+      "tagline": "Sacred Milestones in Early Childhood",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "₹6,000 Total"
+    },
+    "sanskarsSection": {
+      "badge": "4 Sacred Sanskars",
+      "title": "Timeless Childhood Vedic Rituals",
+      "subtitle": "Guiding your newborn through the first crucial years with dharma and scientific mindfulness.",
+      "items": [
+        {
+          "title": "Namkaran Sanskar",
+          "subTitle": "Sacred Naming Ceremony",
+          "desc": "Auspicious naming based on astrological nakshatra syllables and planetary alignments to establish a powerful, positive identity."
+        },
+        {
+          "title": "Nishkraman Sanskar",
+          "subTitle": "First Outdoor Exploration",
+          "desc": "Sacred ceremony when the infant is first introduced to open air, sun (Surya Darshan), and the five natural elements (Pancha Mahabhuta)."
+        },
+        {
+          "title": "Karnavedha Sanskar",
+          "subTitle": "Ear Piercing & Neural Acuity",
+          "desc": "Ancient acupuncture and sensory enhancement tradition performed with holy mantras to stimulate auditory and intellectual neural pathways."
+        },
+        {
+          "title": "Annaprashan Sanskar",
+          "subTitle": "First Blessed Solid Food",
+          "desc": "The sacred first offering of blessed solid satvik food (kheer/grains), invoking the blessings of Devi Annapurna for lifelong health and digestion."
+        }
+      ]
+    },
+    "additionalSection": {
+      "badge": "Cognitive & Moral Development",
+      "title": "Additional Early Childhood Modules",
+      "items": [
+        "Moral & Inspirational Bedtime Audio Stories",
+        "Cognitive Brain Sharpening Puzzles & Memory Games",
+        "Sanskrit Shloka & Peace Mantra Recitation Guides",
+        "Early Character & Virtue Building (Sanskar Sutras)"
+      ]
+    },
+    "cta": {
+      "title": "Bless Your Child with Sacred Baal Sanskars",
+      "subtitle": "Give your infant the gift of virtuous values, sharp intellect, and divine protection.",
+      "btn": "Enroll in Baal Sanskar Program"
+    }
+  },
+  "infantCareDetailPage": {
+    "hero": {
+      "badge": "Newborn & Maternal Care",
+      "title": "Infant Care",
+      "subtitle": "Gentle Care for Your Baby's Early Years. Dedicated parenting coach, customized post-partum diet, daily live yoga, and expert lactation guidance.",
+      "enrollBtn": "Enroll for ₹5,000",
+      "tagline": "Gentle Care for Your Baby's Early Years",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "₹5,000 Total"
+    },
+    "servicesSection": {
+      "badge": "Comprehensive Services",
+      "title": "Everything Your Newborn & You Need",
+      "subtitle": "Personalized medical, nutritional, and emotional support for postpartum healing.",
+      "services": [
+        {
+          "title": "Personal Parenting Coach",
+          "subTitle": "Dedicated Mentor",
+          "desc": "1-on-1 guidance from a certified parenting expert to assist you through newborn crying patterns, sleep regression, and emotional bonding."
+        },
+        {
+          "title": "Custom Diet Plans",
+          "subTitle": "Maternal & Infant Nutrition",
+          "desc": "Personalized satvik post-partum nutrition charts designed to enhance breastmilk quality, boost recovery, and nourish your newborn."
+        },
+        {
+          "title": "Daily Live Yoga Classes",
+          "subTitle": "Postnatal Recovery Yoga",
+          "desc": "Gentle daily live yoga and pelvic floor rehabilitation classes led by instructors specialized in postnatal healing and vitality."
+        },
+        {
+          "title": "Lactation Coach",
+          "subTitle": "Breastfeeding Mastery",
+          "desc": "Expert lactation support to resolve latching issues, posture concerns, milk supply optimization, and weaning transitions."
+        },
+        {
+          "title": "Astrology Support",
+          "subTitle": "Newborn Astrological Care",
+          "desc": "Personalized planetary timing guidance for newborn milestones, naming syllables, and auspicious rituals for health and longevity."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Nurture Your Infant with Compassion & Care",
+      "subtitle": "Experience stress-free newborn parenting with expert doctors and mentors by your side.",
+      "btn": "Enroll in Infant Care Track"
+    }
+  },
+  "parentingDetailPage": {
+    "hero": {
+      "badge": "Conscious Family Guidance",
+      "title": "Parenting",
+      "subtitle": "Mindful Guidance for Raising Your Child. Positive discipline, emotional intelligence coaching, pediatric nutrition, and doctor-led masterclasses.",
+      "enrollBtn": "Get Expert Guidance",
+      "tagline": "Mindful Guidance for Raising Your Child",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "Expert Guidance"
+    },
+    "sections": {
+      "badge": "5 Core Focus Areas",
+      "title": "Mindful Parenting for Modern Times",
+      "subtitle": "A blend of timeless Vedic values and modern child psychology.",
+      "items": [
+        {
+          "title": "Personal Parenting Coach",
+          "tagline": "1-on-1 Certified Child Guidance",
+          "desc": "Direct access to empathetic parenting mentors who assist you through toddler tantrums, bedtime routines, digital screen limits, and positive reinforcement habits.",
+          "points": [
+            "Custom conflict resolution strategies",
+            "Positive discipline without yelling",
+            "Parent-child emotional bonding techniques"
+          ]
+        },
+        {
+          "title": "Child Development & Milestones",
+          "tagline": "Cognitive, Social & Motor Mastery",
+          "desc": "Age-wise developmental roadmaps combining modern developmental psychology with Vedic value-based nurturing (Sanskaras).",
+          "points": [
+            "Speech & language stimulation routines",
+            "Gross and fine motor coordination games",
+            "Social-emotional awareness & empathy building"
+          ]
+        },
+        {
+          "title": "Child Nutrition Guidance",
+          "tagline": "Holistic Satvik Child Diet",
+          "desc": "Pediatric nutritionists guide you on overcoming picky eating, ensuring micronutrient balance, and creating tasty, nutrient-dense satvik meals.",
+          "points": [
+            "Trimester and toddler growth meal plans",
+            "Ayurvedic immunity-boosting recipes",
+            "Healthy brain food & digestive health"
+          ]
+        },
+        {
+          "title": "Emotional Wellbeing",
+          "tagline": "Mindfulness & Resilience for Family",
+          "desc": "Tools to reduce maternal & paternal burnout, manage everyday family stress, and build an atmosphere of peace, patience, and love at home.",
+          "points": [
+            "Guided parent de-stress meditation",
+            "Anger management & calm communication",
+            "Creating an uplifting home spiritual environment"
+          ]
+        },
+        {
+          "title": "Expert Guidance & Live Sessions",
+          "tagline": "Live Masterclasses with Top Doctors & Psychologists",
+          "desc": "Weekly interactive live sessions with leading pediatricians, child psychologists, educationists, and Vedic scholars.",
+          "points": [
+            "Live Q&A to answer your specific challenges",
+            "Specialized sessions for school readiness",
+            "Sibling harmony & social confidence workshops"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Transform Your Parenting Journey Today",
+      "subtitle": "Raise resilient, compassionate, and joyful children with structured Vedic guidance.",
+      "btn": "Join Parenting Community"
+    }
+  },
+  "bhavishyaFalDetailPage": {
+    "hero": {
+      "badge": "Vedic Astrological Guidance",
+      "title": "Bhavishya Phal",
+      "subtitle": "Astrological Insights for Your Child's Journey. Comprehensive Janam Kundali generation, planetary Nakshatra analysis, and 1-on-1 Astrologer Consultation.",
+      "enrollBtn": "Explore Services",
+      "tagline": "Astrological Insights for Your Child's Journey",
+      "breadcrumbHome": "Home",
+      "breadcrumbPrograms": "Sacred Programs",
+      "price": "Starting ₹3,100"
+    },
+    "servicesSection": {
+      "badge": "Astrology Offerings",
+      "title": "Choose Your Astrological Consultation",
+      "subtitle": "Empower your child's life journey with celestial clarity and senior astrologer guidance.",
+      "services": [
+        {
+          "id": "kundli-falit",
+          "title": "Kundli + Falit Report",
+          "subTitle": "Detailed Astrological Life Predictions",
+          "price": "₹3,500",
+          "badge": "Comprehensive",
+          "desc": "Complete Vedic Janam Kundali preparation along with thorough planetary analysis, Dasha timelines, and personalized remedy guides for your child's auspicious future.",
+          "features": [
+            "Full Vedic Janam Kundali (Birth Chart Generation)",
+            "Planetary Strengths & Nakshatra Personality Traits",
+            "Mahadasha & Antardasha Life Timeline Analysis",
+            "Auspicious Career, Health & Education Guidance",
+            "Customized Vedic Shanti & Gemstone Guidance",
+            "Downloadable Comprehensive PDF Life Report"
+          ]
+        },
+        {
+          "id": "consultation",
+          "title": "Astrologer Consultation",
+          "subTitle": "Live 1-on-1 Astrologer Session",
+          "price": "₹3,100",
+          "badge": "Direct 1-on-1",
+          "desc": "Direct live audio/video consultation with senior Vedic astrologers to ask specific questions about your newborn, naming syllables, and parenting alignment.",
+          "features": [
+            "30-Minute Live 1-on-1 Astrologer Session",
+            "Naming Syllable & Auspicious Muhurat Clarifications",
+            "Personalized Q&A on Child Health & Education",
+            "Immediate Vedic Solutions & Remedies",
+            "Follow-up Guidance via Astro Baby Chat"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Unveil Your Child's Destiny with Vedic Astrology",
+      "subtitle": "Gain cosmic wisdom to nurture your child's unique talents and character from day one.",
+      "btn": "Book Consultation Now"
+    }
+  },
+  "garbhSanskarHubPage": {
+    "hero": {
+      "breadcrumbHome": "Home",
+      "breadcrumbResources": "Resources",
+      "breadcrumbCurrent": "Garbh Sanskar",
+      "badge": "Sacred Prenatal Wisdom Hub",
+      "title": "Complete Guide to",
+      "titleHighlight": "Garbh Sanskar",
+      "subtitle": "Discover ancient Vedic wisdom and modern prenatal neuroscience, including daily practices, soothing music, mantras, stories, scientific trials, and trimester-wise parenting.",
+      "exploreBtn": "Explore Garbh Sanskar Program",
+      "browseBtn": "Browse 17+ Vedic Articles ↓"
+    },
+    "whatIs": {
+      "badge": "Vedic Science & Philosophy",
+      "title": "What is Garbh Sanskar?",
+      "p1": "Garbh Sanskar is the ancient Vedic practice of educating and nurturing the unborn baby inside the mother's womb. Derived from the Sanskrit roots Garbh (womb/fetus) and Sanskar (refinement/purification), this tradition acknowledges that a child's mental, physical, and spiritual personality begins shaping from the very moment of conception.",
+      "p2": "A mother's emotional poise, peaceful mental state, satvik diet, and sensory inputs directly influence fetal neurogenesis. By creating an atmosphere filled with uplifting shlokas, classical ragas, and loving communication (Garbh Samvad), parents cultivate vitality and virtue in their baby.",
+      "readMore": "Read Full Article on What is Garbh Sanskar",
+      "highlightsTitle": "Core Highlights",
+      "highlights": [
+        "Holistic Brain Development: Stimulates auditory synapses from week 16.",
+        "Stress Reduction: Lowers maternal cortisol to protect fetal heart rate.",
+        "Soulful Bonding: Enhances deep emotional attachment between both parents and child."
+      ],
+      "essentialLink": "Learn Why It's Essential"
+    },
+    "benefits": {
+      "badge": "Proven Advantages",
+      "title": "Benefits & Importance of Garbh Sanskar",
+      "subtitle": "Discover how ancient Vedic methods translate into modern neurological and physical wellness.",
+      "readGuide": "Read Full Guide",
+      "cards": [
+        {
+          "title": "Importance During Pregnancy",
+          "desc": "Why cultivating a peaceful, virtuous womb environment is vital for lifelong emotional and cognitive health."
+        },
+        {
+          "title": "10 Proven Benefits",
+          "desc": "Explore 10 evidence-based advantages including calmer newborn temperament, higher IQ, and easier delivery."
+        },
+        {
+          "title": "Scientific Garbh Sanskar Evidence",
+          "desc": "Clinical trials and fetal psychology studies validating sensory learning and epigenetic modulation."
+        }
+      ]
+    },
+    "regimen": {
+      "badge": "Daily Regimen",
+      "title": "Core Garbh Sanskar Practices",
+      "subtitle": "Incorporate these practical Vedic rituals, sound therapy, sacred mantras, and mobile routines into your everyday schedule.",
+      "practices": [
+        {
+          "title": "Garbh Sanskar Vidhi",
+          "subTitle": "Vedic Daily Routines",
+          "desc": "Step-by-step daily rituals, morning prayers, satvik diet schedule, and calming evening routines for mother & baby.",
+          "tag": "Daily Vidhi"
+        },
+        {
+          "title": "Garbh Sanskar Music",
+          "subTitle": "Raga Sound Therapy",
+          "desc": "Healing Indian classical ragas (Yaman, Bhairav, Malkauns) specifically tuned for soothing fetal auditory senses.",
+          "tag": "Sound Therapy"
+        },
+        {
+          "title": "Garbh Sanskar Mantra",
+          "subTitle": "Sacred Chants & Shlokas",
+          "desc": "Sacred Vedic mantras including Garbharakshambika Stotram and Santana Gopala for divine spiritual aura and protection.",
+          "tag": "Vedic Chants"
+        },
+        {
+          "title": "Garbh Sanskar Story",
+          "subTitle": "Virtue & Valor Tales",
+          "desc": "Uplifting moral stories and timeless mythological tales of courage, compassion, and wisdom for daily womb reading.",
+          "tag": "Storytelling"
+        },
+        {
+          "title": "Best Garbh Sanskar App",
+          "subTitle": "Interactive Mobile Guidance",
+          "desc": "Why Astro Baby is rated #1 for guided daily mantras, personalized nutrition charts, doctor sessions, and Garbh Samvad.",
+          "tag": "Mobile App"
+        }
+      ]
+    },
+    "trimester": {
+      "badge": "Trimester Guidance",
+      "title": "Garbh Sanskar by Trimester",
+      "subtitle": "Tailored Vedic routines, nutritional priorities, and sensory activities for every stage of pregnancy.",
+      "trimesters": [
+        {
+          "num": "1st Trimester",
+          "weeks": "Weeks 1 - 12",
+          "tagline": "Cellular Formation & Isht Mantra",
+          "desc": "Focus on emotional calm, morning sickness relief, satvik diet, and sacred mantras to protect early fetal cellular development."
+        },
+        {
+          "num": "2nd Trimester",
+          "weeks": "Weeks 13 - 27",
+          "tagline": "Brain Synapses & Garbh Samvad",
+          "desc": "Auditory sensory development begins. Introduce classical ragas, virtuous storytelling, cognitive stimulation, and daily loving talks."
+        },
+        {
+          "num": "3rd Trimester",
+          "weeks": "Weeks 28 - 40",
+          "tagline": "Spiritual Readiness & Natural Birth",
+          "desc": "Prenatal pelvic yoga, peaceful Yoga Nidra sleep, soothing Vishnu Sahasranam chants, and mental empowerment for blissful birth."
+        }
+      ]
+    },
+    "articles": {
+      "badge": "Knowledge Library",
+      "title": "All Garbh Sanskar Articles & Guides",
+      "subtitle": "Explore in-depth articles on Vedic rituals, scientific validation, prenatal music, and maternal nutrition.",
+      "searchPlaceholder": "Search Garbh Sanskar articles, mantras, or tips...",
+      "all": "All",
+      "noResults": "No articles found matching your search.",
+      "clearFilters": "Clear search and filters",
+      "readArticle": "Read Full Article",
+      "pageOf": "Page {{current}} of {{total}}",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "pregnancyHubPage": {
+    "hero": {
+      "breadcrumbHome": "Home",
+      "breadcrumbResources": "Resources",
+      "breadcrumbCurrent": "Pregnancy Care",
+      "badge": "Complete Maternal Wellness Hub",
+      "title": "Complete Pregnancy",
+      "titleHighlight": "Care Guide",
+      "subtitle": "Explore pregnancy symptoms, trimester-by-trimester growth milestones, satvik nutrition, prenatal yoga, meditation, scans, and emotional health support.",
+      "exploreBtn": "Explore Holistic Prenatal Care",
+      "browseBtn": "Browse 17+ Pregnancy Guides ↓"
+    },
+    "understanding": {
+      "badge": "Pregnancy Fundamentals",
+      "title": "Understanding Pregnancy Stages & Bodily Changes",
+      "desc": "Pregnancy spans approximately 40 weeks, categorized into three distinct trimesters. Each phase brings profound anatomical, physiological, and emotional transitions. Staying educated about your body empowers you to distinguish normal sensations from symptoms requiring clinical attention.",
+      "cards": [
+        {
+          "title": "9 Stages Month by Month",
+          "desc": "Complete developmental roadmap of fetal growth and maternal bodily milestones.",
+          "tag": "Development"
+        },
+        {
+          "title": "Pregnancy Symptoms",
+          "desc": "Comprehensive guide to common sensations experienced across all three trimesters.",
+          "tag": "Symptoms"
+        },
+        {
+          "title": "Early Pregnancy Symptoms",
+          "desc": "How to identify the earliest signals of conception in weeks 1 to 4.",
+          "tag": "Early Signs"
+        },
+        {
+          "title": "7 Early Signs to Not Ignore",
+          "desc": "Vital early bodily cues indicating conception before your missed period.",
+          "tag": "Essential Checklist"
+        }
+      ]
+    },
+    "healthConcerns": {
+      "badge": "Medical & Comfort Care",
+      "title": "Pregnancy Health & Common Concerns",
+      "desc": "Clear, doctor-backed explanations for back aches, mood swings, blood pressure fluctuations, and ultrasound scans.",
+      "cards": [
+        {
+          "title": "Mood Swings During Pregnancy",
+          "desc": "Hormonal surges affecting neurotransmitters and gentle ways to restore emotional balance.",
+          "tag": "Emotional Health"
+        },
+        {
+          "title": "Back Pain During Pregnancy",
+          "desc": "Expert-recommended stretches, ergonomic sitting postures, and Ayurvedic oil compresses.",
+          "tag": "Physical Comfort"
+        },
+        {
+          "title": "Stomach Pain in Pregnancy",
+          "desc": "Differentiating normal round ligament twinges from warning signs needing a doctor.",
+          "tag": "Safety & Symptoms"
+        },
+        {
+          "title": "Low Blood Pressure in Pregnancy",
+          "desc": "Understanding why blood pressure drops in early trimesters and how to manage dizziness.",
+          "tag": "Vitals & Circulation"
+        },
+        {
+          "title": "Signs Baby Is Safe in Womb",
+          "desc": "Reassuring markers: kick counts, fundal height growth, and steady fetal heartbeat.",
+          "tag": "Fetal Wellbeing"
+        },
+        {
+          "title": "What Is Ultrasound? (Sonography)",
+          "desc": "A complete guide to NT scans, Level 2 anomaly scans, and Doppler growth checks.",
+          "tag": "Diagnostic Scans"
+        }
+      ]
+    },
+    "fitness": {
+      "badge": "Movement & Calmness",
+      "title": "Prenatal Fitness & Mindful Wellness",
+      "desc": "Gentle movement promotes placental blood flow, eases delivery, and uplifts maternal mood. Always consult your healthcare specialist before beginning any new fitness routine.",
+      "doctorNotice": "Doctor Notice: Practice gentle asanas under certified supervision. Avoid inversions, deep backbends, and high-intensity workouts.",
+      "cards": [
+        {
+          "title": "Meditation During Pregnancy",
+          "desc": "Daily guided breathing to lower heart rate variability, soothe cortisol, and foster womb attachment.",
+          "tag": "Mindfulness"
+        },
+        {
+          "title": "Yoga for Pregnant Women",
+          "desc": "Trimester-specific poses: Butterfly pose, Cat-Cow, and pelvic floor strengthening techniques.",
+          "tag": "Asanas & Breathing"
+        },
+        {
+          "title": "Exercise for Pregnant Women",
+          "desc": "Low impact walking, swimming, and light stretches to build labor stamina and prevent gestational diabetes.",
+          "tag": "Cardio & Stamina"
+        }
+      ]
+    },
+    "nutrition": {
+      "badge": "Satvik Pregnancy Diet",
+      "title": "Prenatal Nutrition & Dietary Guidelines",
+      "desc": "Nourish yourself and your developing baby with Ayurvedic dietary principles and superfoods.",
+      "cards": [
+        {
+          "title": "5 Amazing Benefits of Coconut Water",
+          "desc": "Replenishes electrolytes, maintains amniotic fluid, prevents heartburn, and provides pure natural hydration.",
+          "tag": "Super Drink"
+        },
+        {
+          "title": "Fruits Not to Eat During Pregnancy",
+          "desc": "Important precautions regarding raw papaya, excess pineapple, and washing guidelines to avoid uterine irritation.",
+          "tag": "Food Safety"
+        }
+      ]
+    },
+    "family": {
+      "badge": "Ecosystem of Care",
+      "title": "Family & Emotional Support System",
+      "desc": "Creating a peaceful, joyful home atmosphere filled with inspiring literature and supportive family bonds.",
+      "cards": [
+        {
+          "title": "Spiritual Books to Read During Pregnancy",
+          "desc": "Elevate your thoughts with timeless epics like the Ramayana, Bhagavad Gita, and inspiring moral stories.",
+          "tag": "Womb Reading"
+        },
+        {
+          "title": "Role of Mother-in-Law During Pregnancy",
+          "desc": "How traditional elder care and empathetic family communication create a protective sanctum for mother and baby.",
+          "tag": "Family Harmony"
+        }
+      ]
+    },
+    "articles": {
+      "badge": "Complete Library",
+      "title": "All Pregnancy Care Articles",
+      "searchPlaceholder": "Search pregnancy topics...",
+      "all": "All",
+      "noResults": "No articles found matching your criteria.",
+      "clearFilters": "Reset Filters",
+      "readArticle": "Read Full Guide",
+      "pageOf": "Showing {{from}} to {{to}} of {{total}} articles",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "howToHubPage": {
+    "hero": {
+      "breadcrumbHome": "Home",
+      "breadcrumbResources": "Resources",
+      "breadcrumbCurrent": "How-To Guides",
+      "badge": "Practical Step-by-Step Hub",
+      "title": "Pregnancy & Garbh Sanskar",
+      "titleHighlight": "How-To Guides",
+      "subtitle": "Simple, step-by-step practical guides to help you plan pregnancy, manage trimester challenges, master Garbh Sanskar rituals at home, and prepare for confident parenting.",
+      "featuredBtn": "Featured: Garbh Sanskar at Home",
+      "browseBtn": "Browse All How-To Guides ↓"
+    },
+    "planning": {
+      "badge": "Phase 1",
+      "title": "Preconception & Pregnancy Planning",
+      "desc": "Laying a wholesome, conscious foundation for conception with Ayurvedic detoxification and lifestyle prep.",
+      "cards": [
+        {
+          "title": "How to Plan Pregnancy: Step-by-Step Preparation",
+          "desc": "Complete roadmap: medical screenings, prenatal folic acid, Ayurvedic cellular detox, ovulation tracking, and emotional alignment for couples.",
+          "tag": "Preconception Checklist"
+        },
+        {
+          "title": "How to Get a Healthy and Intelligent Baby",
+          "desc": "Evidence-based and Vedic protocols: DHA & walnut nutrition, maternal mental visualization, classical ragas, and early sensory neuro-stimulation.",
+          "tag": "Brain & Body Boost"
+        }
+      ]
+    },
+    "challenges": {
+      "badge": "Real-Life Solutions",
+      "title": "Managing Pregnancy Challenges",
+      "desc": "Actionable, calming techniques to overcome daily physical discomforts and emotional stresses.",
+      "cards": [
+        {
+          "title": "How to Control Anger in Pregnancy",
+          "desc": "Quick 4-7-8 breathwork and cooling Sheetali pranayama to defuse emotional surges."
+        },
+        {
+          "title": "How to Control Vomiting & Nausea",
+          "desc": "Ayurvedic ginger-cardamom teas, dry crackers, and morning nausea lifestyle remedies."
+        },
+        {
+          "title": "How to Get Better Sleep",
+          "desc": "Left-lateral sleeping posture (SOS), soothing Yog Nidra, and bedtime rituals."
+        },
+        {
+          "title": "How to Manage Job Stress",
+          "desc": "Micro-meditation breaks, ergonomic adjustments, and setting boundaries at work."
+        }
+      ]
+    },
+    "babyHealth": {
+      "badge": "Nurturing & Partner Role",
+      "title": "Baby Health & Maternal Caregiving",
+      "desc": "Ensuring optimal growth inside the womb and guiding husbands on compassionate partner care.",
+      "cards": [
+        {
+          "title": "How to Make Baby Healthy Inside the Womb",
+          "desc": "Vital steps for fetal weight gain, bone mineralization, placental oxygenation, and eliminating environmental and mental toxins.",
+          "tag": "Fetal Vitality"
+        },
+        {
+          "title": "How to Take Care of Pregnant Women",
+          "desc": "Comprehensive guide for husbands: evening belly talk, emotional safety, hospital bag preparation, and providing physical support.",
+          "tag": "Husbands & Family"
+        }
+      ]
+    },
+    "featuredRoutine": {
+      "badge": "Featured Practical Routine",
+      "title": "How to Do Garbh Sanskar at Home",
+      "desc": "You don't need complex rituals or elaborate setups. Practicing authentic Garbh Sanskar at home requires just 20 mindful minutes a day to nurture your baby's intelligence, emotional resilience, and virtues.",
+      "steps": [
+        "Step 1: Morning Gayatri Mantra & Sun Salutation breathing (10 mins)",
+        "Step 2: Satvik nutrition with saffron milk & soaked almonds",
+        "Step 3: Afternoon creative reading or Vedic moral stories",
+        "Step 4: Evening Garbh Samvad & loving belly touch with partner",
+        "Step 5: Nighttime Indian classical ragas & relaxing Yog Nidra"
+      ],
+      "readGuide": "Read Complete Home Guide",
+      "exploreApp": "Explore Guided App Program →",
+      "appCardTitle": "Begin Your Daily 20-Min Home Routine",
+      "appCardDesc": "Join over 10,000+ mothers practicing effortless, guided home Garbh Sanskar with the Astro Baby mobile app.",
+      "appDownloadBtn": "Download Free Astro Baby App"
+    },
+    "categoryPills": [
+      {
+        "title": "Daily Routines",
+        "desc": "Morning to night satvik schedules and womb interaction habits."
+      },
+      {
+        "title": "Comfort & Rest",
+        "desc": "Sleep postures, nausea relief, backache hacks, and relaxation."
+      },
+      {
+        "title": "Working Mothers",
+        "desc": "Desk ergonomics, stress busting, and balancing corporate life."
+      },
+      {
+        "title": "Partner Involvement",
+        "desc": "Father-to-be duties, couple bonding, and emotional encouragement."
+      }
+    ],
+    "articles": {
+      "badge": "Step-by-Step Catalog",
+      "title": "All How-To Guides",
+      "searchPlaceholder": "Search How-To guides...",
+      "all": "All",
+      "noResults": "No guides found matching your criteria.",
+      "clearFilters": "Reset Filters",
+      "readArticle": "Read Full Guide",
+      "pageOf": "Showing {{from}} to {{to}} of {{total}} guides",
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
 }
