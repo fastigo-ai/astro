@@ -443,23 +443,27 @@ export default function GarbhDhan() {
                 )}
               </p>
 
-              {/* 4 Feature Highlights Grid */}
-              <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                {[0, 1, 2, 3].map((featIdx) => (
-                  <div
-                    key={featIdx}
-                    className="bg-white/90 backdrop-blur-md p-5 rounded-2xl border border-pink-100 shadow-xs flex items-start gap-3.5"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-pink-50 text-[#F45B8A] flex items-center justify-center shrink-0 mt-0.5 border border-pink-100">
-                      <Check className="w-5 h-5 font-bold" />
+              {/* All 11 Feature Highlights Grid */}
+              <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((featIdx) => {
+                  const featText = t(`garbhadhanDetailPage.pricingCard.features.${featIdx}`, "");
+                  if (!featText) return null;
+                  return (
+                    <div
+                      key={featIdx}
+                      className="bg-white/90 backdrop-blur-md p-3.5 rounded-2xl border border-pink-100 shadow-xs flex items-start gap-3"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-pink-50 text-[#F45B8A] flex items-center justify-center shrink-0 mt-0.5 border border-pink-100">
+                        <Check className="w-4 h-4 font-bold" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-xs sm:text-sm text-[#172554]">
+                          {featText}
+                        </h4>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-sm text-[#172554]">
-                        {t(`garbhadhanDetailPage.pricingCard.features.${featIdx}`, "")}
-                      </h4>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

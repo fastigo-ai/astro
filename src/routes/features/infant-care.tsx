@@ -23,7 +23,6 @@ const INFANT_CARE_META = [
   { icon: Utensils, img: "/images/features/nutritionist_session.jpg" },
   { icon: Activity, img: "/images/features/yoga_session.jpg" },
   { icon: Heart, img: "/images/features/medi_mitra_sessions.jpg" },
-  { icon: Compass, img: "/images/features/monthly_calendar.png" },
 ];
 
 export default function InfantCarePage() {

@@ -81,14 +81,16 @@
       "title": "Garbhadhan Sanskar",
       "subtitle": "Sacred Preparation for Conception",
       "desc": "Sacred pre-conception guidance, cosmic Muhurat coitus alignment, and fertility tracking to welcome a divine soul.",
-      "f1": "Muhurat-Based Coitus Dates",
-      "f2": "Isht Mantra & Meditation",
+      "price": "₹11,000",
+      "f1": "Muhurat-Based Conception Dates",
+      "f2": "Ishta Mantra & Meditation",
       "f3": "Fertility Tracker & Support"
     },
     "beejSanskar": {
       "title": "Beej Sanskar",
       "subtitle": "Preparing the Foundation for Conscious Conception",
       "desc": "Ayurvedic detoxification, cellular purification, satvik dietary routines, and reproductive vitality protocols before conceiving.",
+      "price": "Vitality Track",
       "f1": "Ayurvedic Cellular Detox",
       "f2": "Satvik Diet & Vitality",
       "f3": "Stress Reduction & Yoga"
@@ -96,16 +98,18 @@
     "garbhSanskar": {
       "title": "Garbh Sanskar",
       "subtitle": "9-Month Journey of Prenatal Nurturing",
-      "desc": "9-month comprehensive prenatal development with Vedic mantras, raga music therapy, and neuro-stimulation.",
+      "desc": "9-month comprehensive prenatal development with Diamond (₹25k), Gold (₹11k), and Silver (₹5k) plans.",
       "badge": "Most Popular",
-      "f1": "Month-wise Mantra Vrushti",
-      "f2": "Garbh Samvad & Prenatal Yoga",
-      "f3": "Trimester-wise Satvik Diet"
+      "price": "Starting ₹5,000",
+      "f1": "Diamond, Gold & Silver Plans",
+      "f2": "Month-wise Mantra Vrushti",
+      "f3": "Garbh Samvad & Prenatal Yoga"
     },
     "baalSanskar": {
       "title": "Baal Sanskar",
       "subtitle": "Sacred Milestones in Early Childhood",
       "desc": "Early childhood development, 4 sacred Vedic sanskars, cognitive puzzles, and virtue-building bedtime stories.",
+      "price": "₹6,000",
       "f1": "Namkaran, Nishkraman & Annaprashan",
       "f2": "Character & Value Building",
       "f3": "Cognitive Brain Puzzles"
@@ -113,15 +117,17 @@
     "infantCare": {
       "title": "Infant Care",
       "subtitle": "Gentle Care for Your Baby's Early Years",
-      "desc": "Pediatrician-backed newborn care, lactation coach guidance, gentle sleep routines, and daily live classes.",
-      "f1": "Doctor-Led Live Sessions",
-      "f2": "Lactation & Postpartum Care",
-      "f3": "Gentle Sleep Techniques"
+      "desc": "Dedicated parenting coach, customized diet plans, daily live yoga, and lactation coaching.",
+      "price": "₹5,000",
+      "f1": "Personal Parenting Coach",
+      "f2": "Customized Diet Plans",
+      "f3": "Daily Live Yoga & Lactation Coach"
     },
     "parenting": {
       "title": "Parenting",
       "subtitle": "Mindful Guidance for Raising Your Child",
       "desc": "Mindful parenting frameworks, positive emotional bonding, digital detox strategies, and screen-free routines.",
+      "price": "Expert Guidance",
       "f1": "Emotional Intelligence Coaching",
       "f2": "Digital Detox & Play Techniques",
       "f3": "Parent-Child Bonding Exercises"
@@ -129,9 +135,10 @@
     "bhavishyaPhal": {
       "title": "Bhavishya Phal",
       "subtitle": "Astrological Insights for Your Child's Journey",
-      "desc": "Vedic Kundali charting, planetary nakshatra analysis, and life-path guidance prepared by senior astrologers.",
-      "f1": "Vedic Kundali & Janam Lagna",
-      "f2": "Planetary Nakshatra Guidance",
+      "desc": "Complete Janam Kundali + Falit Report (₹3,500) and 1-on-1 Astrologer Consultation (₹3,100).",
+      "price": "Starting ₹3,100",
+      "f1": "Kundli + Falit (₹3,500)",
+      "f2": "Astrologer Consultation (₹3,100)",
       "f3": "Career & Spiritual Direction"
     },
     "bizSanskar": {
@@ -289,62 +296,6 @@
       "videoInfo": "Experience 9-Month Garbhadhan Sanskar Journey",
       "hd": "HD 1080p",
       "duration": "1:48 min"
-    },
-    "pillars": {
-      "badge": "Guiding Principles",
-      "heading": "Our Four Sacred Pillars",
-      "subtitle": "Every audio shloka, nutrition guide, and medical consult at Astro Baby is built on these foundational values.",
-      "explore": "Explore philosophy",
-      "items": [
-        {
-          "title": "Positive Pregnancy",
-          "text": "Empowering every expectant mother with serenity, emotional balance, and obstetric clarity for a peaceful gestational journey."
-        },
-        {
-          "title": "Virtuous Next Generation",
-          "text": "Nurturing the baby in the womb through authentic Garbhadhan Sanskar mantras, noble thoughts, and cognitive enrichment."
-        },
-        {
-          "title": "Global Vedic Heritage",
-          "text": "Bringing authentic Garbhadhan Sanskar wisdom to families in over 62+ countries across languages and cultural boundaries."
-        },
-        {
-          "title": "Scientific & Medical Rigor",
-          "text": "Synthesizing authentic Vedic scriptures with modern gynecological research, fetal neuroscience, and maternal nutrition."
-        }
-      ]
-    },
-    "stats": {
-      "badge": "Global Reach & Trust",
-      "heading": "The Impact of Our Journey",
-      "subtitle": "Thousands of happy, healthy, and stress-free pregnancies nurtured across 62+ countries.",
-      "items": [
-        {
-          "num": "1,00,000+",
-          "label": "Mobile App Downloads",
-          "sub": "Trusted Worldwide"
-        },
-        {
-          "num": "12,00,000+",
-          "label": "YouTube Community Views",
-          "sub": "Spiritual Guidance"
-        },
-        {
-          "num": "62+ Countries",
-          "label": "Global Reach",
-          "sub": "Families Enriched"
-        },
-        {
-          "num": "4.6 ★★★★★",
-          "label": "Google Play Store Rating",
-          "sub": "Verified Reviews"
-        },
-        {
-          "num": "Thousands",
-          "label": "Happy & Calm Pregnancies",
-          "sub": "Healthy Newborns"
-        }
-      ]
     },
     "timeline": {
       "badge": "Historical Timeline",
@@ -719,12 +670,17 @@
       "enrollNow": "Enroll in Garbhadhan Track",
       "whatIncluded": "What's Included in This Program:",
       "features": [
-        "Astrological Muhurat Conception Dates",
-        "Personalized Isht Mantra & Sound Therapy",
-        "Daily Live Sandhya Prarthana Access",
-        "Live Sankalp Poojan with Vedic Brahmins",
-        "Satvik Nutrition & Ayurvedic Cellular Detox",
-        "Doctor Consultation & Dedicated Sakhi Guide"
+        "Muhurat-Based Conception Dates",
+        "Personalized Ishta Mantra",
+        "Garbhadhana Meditation Session",
+        "Daily Evening Prayer",
+        "Special Garbhadhana Music",
+        "Sankalp Poojan",
+        "Nutritionist Consultation",
+        "Gynecologist Consultation",
+        "Sahayata Sakhi — Personal Support",
+        "Special Expert Sessions",
+        "Fertility Tracker"
       ]
     },
     "faq": {
@@ -826,81 +782,79 @@
       "breadcrumbPrograms": "Sacred Programs",
       "price": "Starting ₹5,000"
     },
-    "plansSection": {
+    "pricing": {
       "badge": "Pricing Plans",
-      "title": "Choose Your 9-Month Path",
-      "subtitle": "Flexible tiers designed for every expectant family's aspirations and budget.",
+      "title": "Choose Your Prenatal Plan",
+      "subtitle": "Select the right care package designed for your 9-month prenatal journey.",
       "mostPopular": "Most Popular",
       "enrollPlan": "Enroll in {{plan}}",
       "plans": [
         {
           "id": "silver",
-          "name": "Silver Plan",
+          "name": "Plan C — Silver",
           "price": "₹5,000",
           "period": "Complete 9-Month Care",
           "tagline": "Essential Vedic Sanskars & foundational mantra guidance.",
           "features": [
-            "Sankalp Pooja (Live Vedic Initiation)",
-            "Punsavan Sanskar (3rd Month Ritual)",
-            "Simantonnayana Sanskar (8th Month Ritual)",
-            "Isht Mantra (Personalized Astrological Chant)",
-            "Special Expert Guidance Sessions",
-            "Daily Sandhya Prarthana Access",
-            "Community Discussion Forum"
+            "Sankalp Puja",
+            "Punsavan Sanskar",
+            "Simantonnayana Sanskar",
+            "Ishta Mantra",
+            "Special Sessions"
           ]
         },
         {
           "id": "diamond",
-          "name": "Diamond Plan",
+          "name": "Plan A — Diamond",
           "price": "₹25,000",
           "period": "All-Inclusive 9-Month Premium",
           "tagline": "Our flagship end-to-end Vedic & obstetric prenatal mastery.",
           "features": [
-            "Sankalp Poojan (Live Personalized Ceremony)",
-            "Punsavan Sanskar (Live Vedic Ceremony)",
-            "Simantonnayana Sanskar (Live Vedic Ceremony)",
-            "Meditation & Deep Mindfulness",
-            "Isht Mantra (Astrological Calculation)",
-            "Yoga Sessions (Trimester-specific Prenatal Yoga)",
-            "Garbh Sanskar Music (Classical Raga Therapy)",
-            "Jeevan Sutra (Live Life Mentoring)",
-            "Vedic Mantra Vrushti (High-definition Chants)",
-            "Yoga Nidra Sessions (Deep Restorative Sleep)",
-            "Garbh Samvad (Mother-Baby Daily Guide)",
-            "Garbh Kalyan Prarthana (Womb Protection Chants)",
-            "Diet Guidance (Satvik Ayurvedic Nutrition)",
-            "Daily Evening Sandhya Prarthana",
-            "Garbh Sanskar Sutras & Wisdom",
-            "Vishnu Sahasranam Recitations",
-            "Special Festive Ritual Sessions",
-            "Sang Muskayen (Interactive Bonding Games)",
-            "Brainopedia (Fetal Brain Puzzles)",
-            "Nutritionist Live Sessions",
-            "Mentoring & Emotional Support",
-            "Medi-Mitra (Doctor On-Call Guide)",
-            "Vedic Audio & Story Library",
-            "Live Q&A Sessions with Experts",
-            "Baby Kick Counter (In-App Tool)",
-            "Weight Gain Tracker (In-App Tool)"
+            "Sankalp Pujan",
+            "Punsavan Sanskar",
+            "Simantonnayana Sanskar",
+            "Ishta Mantra",
+            "Garbh Sanskar Sutra",
+            "Garbh Kalyan Prarthana",
+            "Daily Evening Prayer",
+            "Vishnu Sahasranama",
+            "Vedic Mantra Varsha",
+            "Meditation",
+            "Yoga Sessions",
+            "Yoga Nidra Sessions",
+            "Garbh Samvad",
+            "Garbh Sanskar Music",
+            "Jeevan Sutra",
+            "Dietary Guidance",
+            "Festival-Based Sessions",
+            "Sang Muskurayen",
+            "Brainopedia",
+            "Live Nutritionist Sessions",
+            "Mentoring",
+            "Medi Mitra",
+            "Library",
+            "Q&A Sessions",
+            "Baby Kick Counter",
+            "Weight Gain Tracker"
           ]
         },
         {
           "id": "gold",
-          "name": "Gold Plan",
+          "name": "Plan B — Gold",
           "price": "₹11,000",
           "period": "Standard 9-Month Comprehensive",
           "tagline": "Comprehensive balance of Vedic rituals and digital trackers.",
           "features": [
-            "Sankalp Pooja (Live Vedic Initiation)",
-            "Punsavan Sanskar (3rd Month Ritual)",
-            "Simantonnayana Sanskar (8th Month Ritual)",
-            "Supraj Santaanotpatti Havan (Monthly)",
-            "Meditation & Relaxation",
-            "Isht Mantra (Astrological Calculation)",
-            "Live Expert Q&A Sessions",
-            "Yoga Sessions (Live Instructor)",
-            "Baby Kick Counter (In-App Tool)",
-            "Weight Gain Tracker (In-App Tool)"
+            "Sankalp Puja",
+            "Punsavan Sanskar",
+            "Simantonnayana Sanskar",
+            "Supraj Santanotpatti",
+            "Meditation",
+            "Ishta Mantra",
+            "Q&A Sessions",
+            "Yoga Sessions",
+            "Baby Kick Counter",
+            "Weight Gain Tracker"
           ]
         }
       ]
@@ -917,36 +871,35 @@
       "breadcrumbPrograms": "Sacred Programs",
       "price": "₹6,000 Total"
     },
-    "sanskarsSection": {
-      "badge": "4 Sacred Sanskars",
-      "title": "Timeless Childhood Vedic Rituals",
-      "subtitle": "Guiding your newborn through the first crucial years with dharma and scientific mindfulness.",
+    "sanskars": {
+      "badge": "Milestone Ceremonies",
+      "title": "The 4 Pillars of Baal Sanskar (₹6,000)",
+      "subtitle": "Authentic Vedic rituals performed at key developmental stages.",
       "items": [
         {
           "title": "Namkaran Sanskar",
-          "subTitle": "Sacred Naming Ceremony",
-          "desc": "Auspicious naming based on astrological nakshatra syllables and planetary alignments to establish a powerful, positive identity."
+          "subTitle": "Based on Vedic Nakshatra",
+          "desc": "Auspicious naming ceremony based on astrological nakshatra syllables and planetary alignments to establish a positive identity."
         },
         {
           "title": "Nishkraman Sanskar",
           "subTitle": "First Outdoor Exploration",
-          "desc": "Sacred ceremony when the infant is first introduced to open air, sun (Surya Darshan), and the five natural elements (Pancha Mahabhuta)."
+          "desc": "Sacred ceremony when the infant is first introduced to open air, sun (Surya Darshan), and the five natural elements."
         },
         {
           "title": "Karnavedha Sanskar",
           "subTitle": "Ear Piercing & Neural Acuity",
-          "desc": "Ancient acupuncture and sensory enhancement tradition performed with holy mantras to stimulate auditory and intellectual neural pathways."
+          "desc": "Ancient acupuncture and sensory enhancement tradition performed with holy mantras to stimulate auditory and intellectual pathways."
         },
         {
           "title": "Annaprashan Sanskar",
           "subTitle": "First Blessed Solid Food",
-          "desc": "The sacred first offering of blessed solid satvik food (kheer/grains), invoking the blessings of Devi Annapurna for lifelong health and digestion."
+          "desc": "The sacred first offering of blessed solid satvik food, invoking the blessings of Devi Annapurna for lifelong health and digestion."
         }
       ]
     },
-    "additionalSection": {
-      "badge": "Cognitive & Moral Development",
-      "title": "Additional Early Childhood Modules",
+    "additional": {
+      "title": "Additional Developmental Inclusions (Included in ₹6,000):",
       "items": [
         "Moral & Inspirational Bedtime Audio Stories",
         "Cognitive Brain Sharpening Puzzles & Memory Games",
@@ -964,47 +917,42 @@
     "hero": {
       "badge": "Newborn & Maternal Care",
       "title": "Infant Care",
-      "subtitle": "Gentle Care for Your Baby's Early Years. Dedicated parenting coach, customized post-partum diet, daily live yoga, and expert lactation guidance.",
+      "subtitle": "Gentle Care for Your Baby's Early Years. Dedicated personal parenting coach, customized diet plans, daily live yoga, and lactation coaching.",
       "enrollBtn": "Enroll for ₹5,000",
       "tagline": "Gentle Care for Your Baby's Early Years",
       "breadcrumbHome": "Home",
       "breadcrumbPrograms": "Sacred Programs",
-      "price": "₹5,000 Total"
+      "price": "₹5,000"
     },
-    "servicesSection": {
-      "badge": "Comprehensive Services",
-      "title": "Everything Your Newborn & You Need",
-      "subtitle": "Personalized medical, nutritional, and emotional support for postpartum healing.",
+    "services": {
+      "badge": "4 Care Pillars",
+      "title": "Dedicated Newborn & Postnatal Support (₹5,000)",
+      "subtitle": "Comprehensive care designed to support your postpartum recovery and newborn vitality.",
       "services": [
         {
           "title": "Personal Parenting Coach",
-          "subTitle": "Dedicated Mentor",
-          "desc": "1-on-1 guidance from a certified parenting expert to assist you through newborn crying patterns, sleep regression, and emotional bonding."
+          "subTitle": "Dedicated 1-on-1 Mentor",
+          "desc": "Individual parenting mentor guiding you through newborn routines, sleep rhythms, and empathetic care."
         },
         {
-          "title": "Custom Diet Plans",
-          "subTitle": "Maternal & Infant Nutrition",
-          "desc": "Personalized satvik post-partum nutrition charts designed to enhance breastmilk quality, boost recovery, and nourish your newborn."
+          "title": "Customized Diet Plans",
+          "subTitle": "Postpartum & Infant Nutrition",
+          "desc": "Tailored satvik dietary roadmaps for maternal recovery, rich lactation, and infant nutrition."
         },
         {
           "title": "Daily Live Yoga Classes",
-          "subTitle": "Postnatal Recovery Yoga",
-          "desc": "Gentle daily live yoga and pelvic floor rehabilitation classes led by instructors specialized in postnatal healing and vitality."
+          "subTitle": "Postnatal Vitality",
+          "desc": "Gentle live daily yoga sessions for pelvic floor strength, core healing, and stress relief."
         },
         {
           "title": "Lactation Coach",
-          "subTitle": "Breastfeeding Mastery",
-          "desc": "Expert lactation support to resolve latching issues, posture concerns, milk supply optimization, and weaning transitions."
-        },
-        {
-          "title": "Astrology Support",
-          "subTitle": "Newborn Astrological Care",
-          "desc": "Personalized planetary timing guidance for newborn milestones, naming syllables, and auspicious rituals for health and longevity."
+          "subTitle": "Breastfeeding Specialist",
+          "desc": "Certified lactation specialist guidance for comfortable, nourishing, and confident infant feeding."
         }
       ]
     },
     "cta": {
-      "title": "Nurture Your Infant with Compassion & Care",
+      "title": "Nurture Your Baby with Loving Confidence",
       "subtitle": "Experience stress-free newborn parenting with expert doctors and mentors by your side.",
       "btn": "Enroll in Infant Care Track"
     }
@@ -1094,40 +1042,37 @@
       "breadcrumbPrograms": "Sacred Programs",
       "price": "Starting ₹3,100"
     },
-    "servicesSection": {
-      "badge": "Astrology Offerings",
-      "title": "Choose Your Astrological Consultation",
-      "subtitle": "Empower your child's life journey with celestial clarity and senior astrologer guidance.",
+    "services": {
+      "badge": "Astrology Packages",
+      "title": "Choose Your Astrological Guidance",
+      "subtitle": "Authentic Vedic calculations prepared by renowned astrologers.",
       "services": [
         {
           "id": "kundli-falit",
-          "title": "Kundli + Falit Report",
-          "subTitle": "Detailed Astrological Life Predictions",
+          "title": "Kundli + Falit",
+          "subTitle": "Complete Birth Chart & Life Analysis",
           "price": "₹3,500",
           "badge": "Comprehensive",
-          "desc": "Complete Vedic Janam Kundali preparation along with thorough planetary analysis, Dasha timelines, and personalized remedy guides for your child's auspicious future.",
+          "desc": "Complete Janam Kundali generation and planetary future guidance.",
           "features": [
-            "Full Vedic Janam Kundali (Birth Chart Generation)",
-            "Planetary Strengths & Nakshatra Personality Traits",
-            "Mahadasha & Antardasha Life Timeline Analysis",
-            "Auspicious Career, Health & Education Guidance",
-            "Customized Vedic Shanti & Gemstone Guidance",
-            "Downloadable Comprehensive PDF Life Report"
+            "Birth Chart",
+            "Kundli Analysis",
+            "Future Predictions",
+            "Personalized Guidance"
           ]
         },
         {
           "id": "consultation",
-          "title": "Astrologer Consultation",
+          "title": "Consultation Only",
           "subTitle": "Live 1-on-1 Astrologer Session",
           "price": "₹3,100",
           "badge": "Direct 1-on-1",
-          "desc": "Direct live audio/video consultation with senior Vedic astrologers to ask specific questions about your newborn, naming syllables, and parenting alignment.",
+          "desc": "Live direct consultation with senior Vedic astrologers.",
           "features": [
-            "30-Minute Live 1-on-1 Astrologer Session",
-            "Naming Syllable & Auspicious Muhurat Clarifications",
-            "Personalized Q&A on Child Health & Education",
-            "Immediate Vedic Solutions & Remedies",
-            "Follow-up Guidance via Astro Baby Chat"
+            "Expert Consultation",
+            "Personalized Guidance",
+            "Questions & Answers",
+            "Individual Recommendations"
           ]
         }
       ]

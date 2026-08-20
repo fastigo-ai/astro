@@ -19,13 +19,13 @@ const SERVICES_META = [
     id: "kundli-falit",
     img: "/images/features/monthly_calendar.png",
     badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
-    featuresCount: 6,
+    featuresCount: 4,
   },
   {
     id: "consultation",
     img: "/images/features/isht_mantra.jpg",
     badgeColor: "bg-pink-50 text-[#EA3484] border-pink-200",
-    featuresCount: 5,
+    featuresCount: 4,
   },
 ];
 
