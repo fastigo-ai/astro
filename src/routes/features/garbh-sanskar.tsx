@@ -269,19 +269,21 @@ export default function GarbhSanskarFeature() {
                       </p>
                     </div>
 
-                    {/* Features list with inside scroll */}
+                    {/* Features list with sleek inside scroll */}
                     <div className="mt-4 space-y-2">
                       <div className="flex items-center justify-between">
                         <p className="text-[11px] font-bold text-[#172554] uppercase tracking-wider">
                           Inclusions ({plan.features.length} Features):
                         </p>
-                        <span className="text-[10px] text-slate-400 font-medium italic">
-                          Scroll to view all ↓
-                        </span>
+                        {plan.features.length > 5 && (
+                          <span className="text-[10px] text-pink-400 font-medium italic">
+                            Scroll to view all ↓
+                          </span>
+                        )}
                       </div>
                       
-                      {/* Scrollable Container */}
-                      <div className="h-[200px] sm:h-[210px] overflow-y-auto pr-1.5 space-y-2 rounded-xl border border-pink-50/80 bg-pink-50/20 p-2.5">
+                      {/* Scrollable Container with Sleek Custom Scrollbar */}
+                      <div className="h-[190px] overflow-y-auto pr-1.5 space-y-1.5 rounded-xl border border-pink-100/70 bg-pink-50/20 p-2.5 custom-scrollbar">
                         {plan.features.map((item, fIdx) => (
                           <div
                             key={fIdx}
@@ -297,15 +299,13 @@ export default function GarbhSanskarFeature() {
 
                   {/* CTA */}
                   <div className="mt-5 pt-4 border-t border-slate-100">
-                    <a
-                      href="https://play.google.com/store/apps/details?id=com.astrobaby.garbhsanskar"
-                      target="_blank"
-                      rel="noreferrer"
+                    <Link
+                      to={`/features/garbh-sanskar/${plan.id}`}
                       className={`w-full py-3 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${plan.buttonClass}`}
                     >
                       <span>Enroll in {plan.name}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               );

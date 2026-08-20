@@ -33,6 +33,7 @@ const BizSanskar = lazy(() => import("./routes/features/biz-sanskar"));
 const BeejSanskar = lazy(() => import("./routes/features/beej-sanskar"));
 const GarbhDhan = lazy(() => import("./routes/features/garbh-dhan"));
 const GarbhSanskarFeature = lazy(() => import("./routes/features/garbh-sanskar"));
+const GarbhSanskarPlanDetail = lazy(() => import("./routes/features/garbh-sanskar-plan"));
 const BaalSanskar = lazy(() => import("./routes/features/baal-sanskar"));
 const InfantCare = lazy(() => import("./routes/features/infant-care"));
 const BaalBhavishFal = lazy(() => import("./routes/features/baal-bhavish-fal"));
@@ -229,6 +230,14 @@ export default function App() {
           element={
             <Suspense fallback={<FeatureDetailSkeleton title="Garbhadhan Sanskar" />}>
               <GarbhSanskarFeature />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/features/garbh-sanskar/:planId"
+          element={
+            <Suspense fallback={<FeatureDetailSkeleton title="Garbh Sanskar Plan" />}>
+              <GarbhSanskarPlanDetail />
             </Suspense>
           }
         />
