@@ -183,24 +183,32 @@
   },
   "faqs": {
     "badge": "Answers to Your Questions",
-    "heading": "Frequently Asked Questions (FAQs)",
-    "subtitle": "Everything you need to know about the Astro Baby app and our prenatal Garbhadhan Sanskar process.",
+    "heading": "Frequently Asked Questions – AstroBaby",
+    "subtitle": "Everything you need to know about getting started, personalized guidance, astrological calculations, and privacy.",
     "items": [
       {
-        "q": "How to start with Astro Baby Garbhadhan Sanskar?",
-        "a": "To start using Astro Baby Garbhadhan Sanskar, simply download the 'Astro Baby' mobile application on your device from the Play Store or App Store. Enter your details for a free trial. You can then choose a plan matching your pregnancy stage."
+        "q": "How do I get started with AstroBaby?",
+        "a": "Simply sign up on AstroBaby and enter basic details such as your pregnancy stage, expected due date, and birth details if you want personalized astrology-based guidance. AstroBaby will then create a customized journey for you."
       },
       {
-        "q": "Can I use Astro Baby on my laptop or desktop computer?",
-        "a": "No, Astro Baby Garbhadhan Sanskar is currently a mobile and tablet application service, fully optimized for Android and iOS devices."
+        "q": "Can AstroBaby provide personalized pregnancy and baby guidance?",
+        "a": "Yes. AstroBaby provides personalized insights, daily or weekly guidance, suggestions, and activities based on your pregnancy stage and the information you provide."
       },
       {
-        "q": "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?",
-        "a": "Whether you are in your 1st month or 9th month, it is never too late to begin. Astro Baby's scientific curriculum allows late joiners to benefit immediately and access all previous months' guidance."
+        "q": "How does AstroBaby use astrology to personalize recommendations?",
+        "a": "AstroBaby uses birth details and astrological calculations to generate personalized insights and recommendations. These insights are designed for guidance and entertainment and should not replace professional medical advice."
       },
       {
-        "q": "What makes Astro Baby Garbhadhan Sanskar unique?",
-        "a": "Astro Baby synthesizes authentic Vedic Garbhadhan Sanskar mantras, daily audio shlokas, and Ayurvedic satvik nutrition with cutting-edge fetal neuroscience and obstetric medical guidance."
+        "q": "Do I need to know my or my partner's exact birth date and time?",
+        "a": "Exact birth details can help provide more personalized astrological insights. However, if some details are unavailable, you can still use AstroBaby and access its general pregnancy and baby guidance features."
+      },
+      {
+        "q": "Can I use AstroBaby if I am planning a baby but not pregnant yet?",
+        "a": "Yes. AstroBaby can also support users who are planning for pregnancy by providing relevant wellness guidance, preparation tips, and personalized astrology-based insights."
+      },
+      {
+        "q": "Is my personal and pregnancy information safe with AstroBaby?",
+        "a": "AstroBaby is designed to handle your information securely and use it to personalize your experience. Your personal details should only be used according to AstroBaby's privacy policy and applicable data protection practices."
       }
     ]
   },

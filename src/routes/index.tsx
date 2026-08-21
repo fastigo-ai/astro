@@ -23,20 +23,28 @@ export default function Home() {
 
   const faqs = [
     {
-      q: t("faqs.items.0.q", "How to start with Astro Baby Garbhadhan Sanskar?"),
-      a: t("faqs.items.0.a", "To start using Astro Baby Garbhadhan Sanskar, simply download the 'Astro Baby' mobile application on your device from the Play Store or App Store. Enter your details for a free trial. You can then choose a plan matching your pregnancy stage."),
+      q: t("faqs.items.0.q", "How do I get started with AstroBaby?"),
+      a: t("faqs.items.0.a", "Simply sign up on AstroBaby and enter basic details such as your pregnancy stage, expected due date, and birth details if you want personalized astrology-based guidance. AstroBaby will then create a customized journey for you."),
     },
     {
-      q: t("faqs.items.1.q", "Can I use Astro Baby on my laptop or desktop computer?"),
-      a: t("faqs.items.1.a", "No, Astro Baby Garbhadhan Sanskar is currently a mobile and tablet application service, fully optimized for Android and iOS devices."),
+      q: t("faqs.items.1.q", "Can AstroBaby provide personalized pregnancy and baby guidance?"),
+      a: t("faqs.items.1.a", "Yes. AstroBaby provides personalized insights, daily or weekly guidance, suggestions, and activities based on your pregnancy stage and the information you provide."),
     },
     {
-      q: t("faqs.items.2.q", "I am in the 5th month of my pregnancy; am I too late to start Garbhadhan Sanskar with Astro Baby?"),
-      a: t("faqs.items.2.a", "Whether you are in your 1st month or 9th month, it is never too late to begin. Astro Baby's scientific curriculum allows late joiners to benefit immediately and access all previous months' guidance."),
+      q: t("faqs.items.2.q", "How does AstroBaby use astrology to personalize recommendations?"),
+      a: t("faqs.items.2.a", "AstroBaby uses birth details and astrological calculations to generate personalized insights and recommendations. These insights are designed for guidance and entertainment and should not replace professional medical advice."),
     },
     {
-      q: t("faqs.items.3.q", "What makes Astro Baby Garbhadhan Sanskar unique?"),
-      a: t("faqs.items.3.a", "Astro Baby synthesizes authentic Vedic Garbhadhan Sanskar mantras, daily audio shlokas, and Ayurvedic satvik nutrition with cutting-edge fetal neuroscience and obstetric medical guidance."),
+      q: t("faqs.items.3.q", "Do I need to know my or my partner's exact birth date and time?"),
+      a: t("faqs.items.3.a", "Exact birth details can help provide more personalized astrological insights. However, if some details are unavailable, you can still use AstroBaby and access its general pregnancy and baby guidance features."),
+    },
+    {
+      q: t("faqs.items.4.q", "Can I use AstroBaby if I am planning a baby but not pregnant yet?"),
+      a: t("faqs.items.4.a", "Yes. AstroBaby can also support users who are planning for pregnancy by providing relevant wellness guidance, preparation tips, and personalized astrology-based insights."),
+    },
+    {
+      q: t("faqs.items.5.q", "Is my personal and pregnancy information safe with AstroBaby?"),
+      a: t("faqs.items.5.a", "AstroBaby is designed to handle your information securely and use it to personalize your experience. Your personal details should only be used according to AstroBaby's privacy policy and applicable data protection practices."),
     },
   ];
 
@@ -81,11 +89,11 @@ export default function Home() {
               <HelpCircle className="h-3.5 w-3.5" /> <span>{t("faqs.badge", "Answers to Your Questions")}</span>
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-[#172554] leading-[1.2] tracking-tight">
-              {t("faqs.heading", "Frequently Asked Questions (FAQs)")}
+              {t("faqs.heading", "Frequently Asked Questions – AstroBaby")}
             </h2>
             <div className="w-20 h-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] rounded-full mx-auto my-2"></div>
             <p className="text-sm md:text-base text-[#475569] font-normal leading-relaxed">
-              {t("faqs.subtitle", "Everything you need to know about the Astro Baby app and our prenatal Garbhadhan Sanskar process.")}
+              {t("faqs.subtitle", "Everything you need to know about getting started, personalized guidance, astrological calculations, and privacy.")}
             </p>
           </motion.div>
 
