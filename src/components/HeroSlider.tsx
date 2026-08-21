@@ -1,17 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { heroSlides } from "@/data/heroSlides";
 import { useAutoSlider } from "@/hooks/useAutoSlider";
 import SliderDots from "@/components/common/SliderDots";
 import SliderArrows from "@/components/common/SliderArrows";
 import PrimaryButton from "@/components/common/PrimaryButton";
 import SecondaryButton from "@/components/common/SecondaryButton";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiX } from "react-icons/fi";
 import { TextEffect } from "@/components/core/text-effect";
 
 export default function HeroSlider() {
   const { t } = useTranslation();
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const { index, setIndex, next, prev, pause, resume } = useAutoSlider({
     count: heroSlides.length,
     interval: 5000,
@@ -21,12 +23,29 @@ export default function HeroSlider() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
+      if (e.key === "Escape") {
+        setActiveVideoId(null);
+      }
+      if (!activeVideoId) {
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, prev]);
+  }, [next, prev, activeVideoId]);
+
+  // Lock body scroll when video is active
+  useEffect(() => {
+    if (activeVideoId) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeVideoId]);
 
   // Determine alignment: even indices (0, 2) left; odd indices (1, 3) right
   const isLeftAligned = index % 2 === 0;
@@ -216,27 +235,32 @@ export default function HeroSlider() {
                 isLeftAligned ? "" : "md:justify-end"
               }`}
             >
-              <PrimaryButton className="relative overflow-hidden w-full max-w-xs sm:max-w-none sm:w-auto justify-center !bg-gradient-to-r !from-[#EA3484] !to-[#F45B8A] !text-white hover:!from-[#D81B60] hover:!to-[#E91E63] border-none shadow-[0_6px_20px_rgba(234,52,132,0.35)] transition-all duration-300 hover:shadow-[0_10px_28px_rgba(234,52,132,0.55)] hover:-translate-y-0.5 px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm md:text-base font-semibold group cursor-pointer rounded-full">
-                <span className="relative z-10 flex items-center gap-2 justify-center">
-                  {t("hero.startJourney", "Start Your Journey")}
-                  <svg
-                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </span>
-                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </PrimaryButton>
+              <Link to="/features" className="w-full max-w-xs sm:max-w-none sm:w-auto">
+                <PrimaryButton className="relative overflow-hidden w-full max-w-xs sm:max-w-none sm:w-auto justify-center !bg-gradient-to-r !from-[#EA3484] !to-[#F45B8A] !text-white hover:!from-[#D81B60] hover:!to-[#E91E63] border-none shadow-[0_6px_20px_rgba(234,52,132,0.35)] transition-all duration-300 hover:shadow-[0_10px_28px_rgba(234,52,132,0.55)] hover:-translate-y-0.5 px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm md:text-base font-semibold group cursor-pointer rounded-full">
+                  <span className="relative z-10 flex items-center gap-2 justify-center">
+                    {t("hero.startJourney", "Start Your Journey")}
+                    <svg
+                      className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </PrimaryButton>
+              </Link>
 
-              <SecondaryButton className="relative overflow-hidden w-full max-w-xs sm:max-w-none sm:w-auto justify-center !bg-white/95 !text-[#172554] hover:!text-[#EA3484] hover:!bg-pink-50/80 !border !border-pink-200 shadow-xs transition-all duration-300 hover:-translate-y-0.5 px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm md:text-base font-semibold flex items-center gap-2 group cursor-pointer rounded-full backdrop-blur-md">
+              <SecondaryButton
+                onClick={() => setActiveVideoId("HSHnKz5Po1w")}
+                className="relative overflow-hidden w-full max-w-xs sm:max-w-none sm:w-auto justify-center !bg-white/95 !text-[#172554] hover:!text-[#EA3484] hover:!bg-pink-50/80 !border !border-pink-200 shadow-xs transition-all duration-300 hover:-translate-y-0.5 px-6 sm:px-8 py-2.5 sm:py-3.5 text-xs sm:text-sm md:text-base font-semibold flex items-center gap-2 group cursor-pointer rounded-full backdrop-blur-md"
+              >
                 <span className="relative z-10 flex items-center gap-2 justify-center">
                   <svg
                     className="w-4 h-4 text-[#EA3484] group-hover:scale-110 transition-transform"
@@ -287,6 +311,57 @@ export default function HeroSlider() {
           </svg>
         </button>
       </div>
+
+      {/* ── Watch Story Video Modal ── */}
+      <AnimatePresence>
+        {activeVideoId && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveVideoId(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-4xl bg-slate-950 rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(234,52,132,0.25)] border border-pink-500/30 cursor-default"
+            >
+              {/* Modal Header / Close Button */}
+              <div className="flex items-center justify-between px-5 py-3.5 bg-slate-900/90 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#EA3484] animate-ping" />
+                  <span className="text-white text-xs sm:text-sm font-bold">
+                    AstroBaby • Sacred Garbh Sanskar Story
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveVideoId(null)}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Close video"
+                >
+                  <FiX className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Video Player Frame */}
+              <div className="relative aspect-video w-full bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&rel=0`}
+                  title="AstroBaby Sacred Story"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
