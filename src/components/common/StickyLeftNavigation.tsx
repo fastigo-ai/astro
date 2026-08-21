@@ -159,17 +159,9 @@ export default function StickyLeftNavigation() {
   };
 
   return (
-    <aside aria-label="Quick Pregnancy Tools Widget" className="fixed left-3 sm:left-5 top-1/2 -translate-y-1/2 z-50">
-      {/* ── Left Sticky Vertical Pill Dock ── */}
-      <div className="relative flex flex-col items-center bg-white/90 backdrop-blur-xl border border-pink-200/90 shadow-[0_15px_45px_rgba(234,52,132,0.18)] rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 gap-2 sm:gap-2.5 select-none transition-all duration-300">
-        {/* Mini Top Tag */}
-        <div className="flex items-center justify-center w-full pb-1 border-b border-pink-100/80">
-          <span className="text-[9px] font-extrabold uppercase tracking-wider text-[#EA3484] flex items-center gap-0.5">
-            <Sparkles className="w-2.5 h-2.5 animate-spin-slow" />
-            <span className="hidden sm:inline">Tools</span>
-          </span>
-        </div>
-
+    <aside aria-label="Quick Pregnancy Tools Widget" className="fixed bottom-0 left-0 right-0 w-full sm:w-auto sm:bottom-auto sm:left-5 sm:top-1/2 sm:-translate-y-1/2 sm:right-auto z-40 sm:z-50">
+      {/* ── Responsive Dock: Full-Width 0-Padding Bottom Bar on Mobile / Sticky Vertical Pill on Desktop ── */}
+      <div className="relative flex flex-row sm:flex-col items-center justify-around sm:justify-center w-full sm:w-auto bg-white/95 backdrop-blur-2xl border-t sm:border border-pink-200/90 shadow-[0_-4px_25px_rgba(234,52,132,0.12)] sm:shadow-[0_10px_35px_rgba(234,52,132,0.22)] rounded-none sm:rounded-3xl py-2 px-1 sm:p-2 gap-1 sm:gap-2.5 select-none transition-all duration-300">
         {/* 5 Tool Links */}
         {TOOLS_CONFIG.map((tool, idx) => {
           const Icon = tool.icon;
@@ -179,7 +171,7 @@ export default function StickyLeftNavigation() {
           return (
             <div
               key={tool.id}
-              className="relative group flex items-center"
+              className="relative group flex items-center justify-center flex-1 sm:flex-none"
               onMouseEnter={() => setHoveredToolId(tool.id)}
               onMouseLeave={() => setHoveredToolId(null)}
             >
@@ -187,18 +179,13 @@ export default function StickyLeftNavigation() {
                 type="button"
                 onClick={() => handleToolClick(tool.id)}
                 aria-label={isHindi ? tool.titleHi : tool.titleEn}
-                className={`relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl transition-all duration-300 transform cursor-pointer group-hover:scale-105 active:scale-95 shadow-xs ${
+                className={`relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl transition-all duration-300 transform cursor-pointer group-hover:scale-105 active:scale-95 shadow-2xs ${
                   isCurrentActive
-                    ? "ring-2 ring-[#EA3484] ring-offset-2 bg-gradient-to-tr " + tool.bgGradient + " text-white shadow-md"
-                    : "bg-gradient-to-br from-pink-50/80 to-white text-[#172554] hover:bg-gradient-to-tr hover:" + tool.bgGradient + " hover:text-white border border-pink-100/90"
+                    ? "ring-2 ring-[#EA3484] ring-offset-2 bg-gradient-to-tr from-[#EA3484] to-[#F45B8A] text-white shadow-[0_4px_14px_rgba(234,52,132,0.38)]"
+                    : "bg-pink-50/80 hover:bg-pink-100/90 text-[#172554] hover:text-[#EA3484] border border-pink-200/70 hover:border-pink-300"
                 }`}
               >
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:rotate-6" />
-
-                {/* Tiny step indicator badge */}
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#172554] text-white text-[9px] font-bold flex items-center justify-center border border-white shadow-xs">
-                  {idx + 1}
-                </span>
               </button>
 
               {/* Smooth Slide-out Tooltip */}
@@ -236,11 +223,11 @@ export default function StickyLeftNavigation() {
         })}
 
         {/* Quick Phone Launcher Button */}
-        <div className="pt-1 border-t border-pink-100/80 flex items-center justify-center">
+        <div className="flex items-center justify-center flex-1 sm:flex-none pl-1 sm:pl-0 sm:pt-1 border-l sm:border-l-0 sm:border-t border-pink-100/80">
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="text-[10px] text-[#475569] hover:text-[#EA3484] p-1 rounded-lg transition-colors cursor-pointer"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-pink-50/80 hover:bg-pink-100/90 text-[#172554] hover:text-[#EA3484] border border-pink-200/70 hover:border-pink-300 flex items-center justify-center transition-all cursor-pointer shadow-2xs"
             title="Toggle Mobile Screen"
           >
             <Smartphone className="w-4 h-4" />
@@ -253,15 +240,15 @@ export default function StickyLeftNavigation() {
         {isOpen && (
           <motion.div
             data-lenis-prevent
-            initial={{ opacity: 0, scale: 0.85, x: -20, transformOrigin: "center left" }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.85, x: -20, transformOrigin: "center left" }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{
               type: "spring",
               damping: 26,
               stiffness: 320,
             }}
-            className="fixed left-16 sm:left-20 top-1/2 -translate-y-1/2 w-[calc(100vw-80px)] max-w-[315px] sm:w-[325px] max-h-[75vh] sm:max-h-[515px] overflow-hidden rounded-[26px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.24)] flex flex-col z-50 text-[#172554] overscroll-contain"
+            className="fixed left-1/2 -translate-x-1/2 bottom-16 sm:bottom-auto sm:left-20 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0 w-[calc(100vw-24px)] max-w-[320px] sm:w-[325px] max-h-[74vh] sm:max-h-[515px] overflow-hidden rounded-[26px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.28)] flex flex-col z-50 text-[#172554] overscroll-contain"
           >
             {/* Phone Top Speaker & Status Notch (Dynamic Island) */}
             <div className="bg-[#172554] px-4 pt-2 pb-1.5 flex items-center justify-between text-white/80 text-[10px] select-none shrink-0 border-b border-slate-850">

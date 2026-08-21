@@ -73,7 +73,7 @@ export default function FloatingContactWidget() {
   };
 
   return (
-    <aside aria-label="Live Contact Support Widget" className="fixed bottom-5 right-4 sm:bottom-6 sm:right-7 z-50">
+    <aside aria-label="Live Contact Support Widget" className="fixed bottom-18 right-3 sm:bottom-6 sm:right-7 z-40 sm:z-50">
       {/* ── Compact Modern Mobile Phone-Shaped Popup ── */}
       <AnimatePresence>
         {isOpen && (
