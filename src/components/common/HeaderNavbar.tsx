@@ -111,14 +111,14 @@ export default function HeaderNavbar() {
       to: "/about-us",
     },
     {
-      label: "Sacred Programs",
+      label: t("nav.programs", "Sacred Programs"),
       to: "/features",
       hasDropdown: true,
       isProgramMenu: true,
       programItems: programCategories,
     },
     {
-      label: "Resources",
+      label: t("nav.resources", "Resources"),
       to: "/garbh-sanskar",
       hasDropdown: true,
       isResourceMenu: true,
@@ -138,7 +138,7 @@ export default function HeaderNavbar() {
           to: "/contact",
         },
         {
-          label: "Newsletter",
+          label: t("nav.newsletter", "Newsletter"),
           to: "/newsletter",
         },
       ],

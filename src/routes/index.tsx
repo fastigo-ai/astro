@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HomeBgDrawings from "@/components/HomeBgDrawings";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
+import StickyLeftNavigation from "@/components/common/StickyLeftNavigation";
 import NewsletterSection from "@/components/common/NewsletterSection";
 import Footer from "@/components/common/Footer";
 import {
@@ -46,6 +47,9 @@ export default function Home() {
 
       {/* Header & Navbar */}
       <HeaderNavbar />
+
+      {/* Sticky Left Navigation Quick Tools */}
+      <StickyLeftNavigation />
 
       {/* Hero */}
       <HeroSlider />

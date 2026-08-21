@@ -28,6 +28,8 @@ export default function FloatingContactWidget() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const shouldReduceMotion = useReducedMotion();
 
+  const WHATSAPP_NUMBER = "919205255631"; // +91 92052 55631
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -54,13 +56,20 @@ export default function FloatingContactWidget() {
       return;
     }
 
+    // Construct formatted WhatsApp message with all filled user information
+    const textMessage = `*New Inquiry from AstroBaby:*\n\n👤 *Name:* ${formData.name.trim()}\n📱 *Phone:* ${formData.phone.trim()}\n💬 *Message:* ${formData.message.trim()}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textMessage)}`;
+
+    // Open WhatsApp with pre-filled message
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
     // Success state
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
       setIsOpen(false);
       setFormData({ name: "", phone: "", message: "" });
-    }, 3000);
+    }, 3500);
   };
 
   return (
@@ -81,59 +90,56 @@ export default function FloatingContactWidget() {
             className="absolute bottom-16 right-0 w-[calc(100vw-32px)] max-w-[320px] sm:w-[335px] max-h-[70vh] sm:max-h-[500px] overflow-hidden rounded-[28px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.22)] flex flex-col z-50 text-[#172554] overscroll-contain"
           >
             {/* Phone Top Speaker & Status Notch */}
-            <div className="bg-[#172554] px-4 pt-2 pb-1.5 flex items-center justify-between text-white/70 text-[10px] select-none shrink-0">
-              <span className="font-semibold text-white/90">9:41</span>
+            <div className="bg-[#172554] px-4 pt-2 pb-1.5 flex items-center justify-between text-white/80 text-[10px] select-none shrink-0 border-b border-slate-850">
+              <span className="font-semibold text-white">9:41</span>
               {/* Dynamic Island Notch */}
-              <div className="w-14 h-3 bg-slate-950/80 rounded-full flex items-center justify-center gap-1 px-1.5">
+              <div className="w-14 h-3 bg-slate-950/90 rounded-full flex items-center justify-center gap-1 px-1.5 shadow-inner">
                 <div className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
-                <div className="w-5 h-0.5 bg-white/20 rounded-full" />
+                <div className="w-5 h-0.5 bg-white/25 rounded-full" />
               </div>
               <div className="flex items-center gap-1">
                 <Wifi className="w-2.5 h-2.5" />
-                <Battery className="w-3 h-3" />
+                <Battery className="w-3 h-3 text-emerald-400" />
               </div>
             </div>
 
-            {/* Header / Brand Profile */}
-            <div className="relative bg-gradient-to-br from-[#172554] via-[#1E3A8A] to-[#EA3484] p-3.5 text-white shrink-0">
+            {/* Header / Brand Profile (Navbar Theme Palette) */}
+            <div className="relative bg-gradient-to-r from-pink-50/95 via-[#FFFDFE] to-pink-50/95 p-3.5 border-b border-pink-200/80 text-[#172554] shrink-0 shadow-2xs backdrop-blur-md">
               {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Close Chat Widget"
-                className="absolute top-3 right-3 h-7 w-7 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-md"
+                className="absolute top-3 right-3 h-7 w-7 rounded-full bg-pink-100/90 hover:bg-pink-200 text-[#172554] hover:text-[#EA3484] flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
 
               <div className="flex items-center gap-2.5">
-                {/* Brand Avatar */}
-                <div className="relative flex-shrink-0">
-                  <div className="h-10 w-10 rounded-xl bg-white p-0.5 shadow-md flex items-center justify-center border border-pink-200">
-                    <img
-                      src="/images/logo.png"
-                      alt="Astro Baby"
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                  <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-500 border-2 border-white ring-1 ring-emerald-400/50" />
+                {/* Brand Logo without background */}
+                <div className="relative flex-shrink-0 flex items-center">
+                  <img
+                    src="/images/logo.png"
+                    alt="Astro Baby"
+                    className="h-11 sm:h-12 w-auto max-w-[54px] object-contain drop-shadow-2xs"
+                  />
                 </div>
 
                 {/* Profile Details */}
                 <div className="pr-6">
-                  <h3 className="font-bold text-sm text-white leading-tight flex items-center gap-1">
+                  <h3 className="font-bold text-sm text-[#172554] leading-tight flex items-center gap-1">
                     {t("chatWidget.headerTitle", "Astro Baby Care")}
-                    <Sparkles className="w-3 h-3 text-[#F6C85F]" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#EA3484]" />
                   </h3>
-                  <div className="flex items-center gap-1 text-[11px] text-pink-100/90 mt-0.5">
-                    <Clock className="w-2.5 h-2.5 text-emerald-300" />
+                  <div className="flex items-center gap-1 text-[11px] text-[#475569] mt-0.5">
+                    <Clock className="w-2.5 h-2.5 text-emerald-600" />
                     <span>{t("chatWidget.repliesIn", "Replies within 5 mins")}</span>
                   </div>
                 </div>
               </div>
 
               {/* Subtitle Banner */}
-              <div className="mt-2 bg-white/10 backdrop-blur-md rounded-lg p-2 border border-white/15 text-[11px] text-white/95 leading-snug font-medium">
+              <div className="mt-2 bg-pink-100/60 rounded-lg p-2 border border-pink-200/80 text-[11px] text-[#172554] leading-snug font-medium">
                 {t("chatWidget.greeting", "👋 Namaste! How can we help with Garbhadhan Sanskar?")}
               </div>
             </div>
@@ -147,7 +153,7 @@ export default function FloatingContactWidget() {
               <div className="grid grid-cols-2 gap-2">
                 {/* WhatsApp Quick Action */}
                 <a
-                  href="https://wa.me/919205255631?text=Hello%20Astro%20Baby%2C%20I%20would%20like%20to%20know%20more%20about%20Garbhadhan%20Sanskar"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Astro Baby, I would like to know more about Garbhadhan Sanskar.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100/80 transition-all font-semibold text-[11px] shadow-2xs group"
