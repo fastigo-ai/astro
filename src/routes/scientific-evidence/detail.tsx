@@ -33,6 +33,7 @@ import {
 import {
   SCIENTIFIC_EVIDENCE_ITEMS,
   getScientificEvidenceBySlug,
+  getLocalizedScientificItem,
   ScientificEvidenceItem,
 } from "@/data/scientificEvidenceData";
 import { downloadResearchPaper } from "@/utils/downloadResearchPaper";
@@ -42,21 +43,24 @@ interface Props {
 }
 
 export default function ScientificEvidenceDetail({ presetSlug }: Props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language || "en";
   const params = useParams<{ slug?: string }>();
   const slug = presetSlug || params.slug || "";
   const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const item = useMemo(() => {
-    return getScientificEvidenceBySlug(slug);
-  }, [slug]);
+    return getScientificEvidenceBySlug(slug, currentLang);
+  }, [slug, currentLang]);
 
   if (!item) {
     return <Navigate to="/scientific-evidence" replace />;
   }
 
-  const relatedItems = SCIENTIFIC_EVIDENCE_ITEMS.filter((i) => i.id !== item.id).slice(0, 3);
+  const relatedItems = SCIENTIFIC_EVIDENCE_ITEMS.filter((i) => i.id !== item.id)
+    .slice(0, 3)
+    .map((rel) => getLocalizedScientificItem(rel, currentLang));
 
   const handleDownload = () => {
     setDownloading(true);
@@ -91,11 +95,11 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
           <nav className="flex items-center gap-2 text-xs text-slate-500 flex-wrap">
             <Link to="/" className="hover:text-[#EA3484] flex items-center gap-1">
               <HomeIcon className="h-3.5 w-3.5" />
-              <span>Home</span>
+              <span>{t("nav.home", "Home")}</span>
             </Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
             <Link to="/scientific-evidence" className="hover:text-[#EA3484]">
-              Scientific Evidence
+              {t("scientificEvidence.badge", "Scientific Evidence")}
             </Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
             <span className="font-semibold text-[#172554] truncate max-w-[280px] sm:max-w-md">
@@ -133,17 +137,23 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-white/95 border border-pink-100/90 shadow-xs">
               <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600">
                 <div>
-                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Journal</span>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">
+                    {t("scientificEvidence.detail.journal", "Journal")}
+                  </span>
                   <strong className="text-[#172554]">{item.journal}</strong>
                 </div>
                 <div className="h-6 w-px bg-slate-200 hidden sm:block" />
                 <div>
-                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Cohort Size</span>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">
+                    {t("scientificEvidence.detail.cohortSize", "Cohort Size")}
+                  </span>
                   <strong className="text-[#172554]">{item.sampleSize}</strong>
                 </div>
                 <div className="h-6 w-px bg-slate-200 hidden sm:block" />
                 <div>
-                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Year</span>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">
+                    {t("scientificEvidence.detail.year", "Year")}
+                  </span>
                   <strong className="text-[#172554]">{item.publishedYear}</strong>
                 </div>
               </div>
@@ -154,7 +164,11 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                   className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <Share2 className="h-3.5 w-3.5" />
-                  <span>{copied ? "Link Copied!" : "Share"}</span>
+                  <span>
+                    {copied
+                      ? t("scientificEvidence.detail.copied", "Link Copied!")
+                      : t("scientificEvidence.detail.share", "Share")}
+                  </span>
                 </button>
 
                 <button
@@ -165,12 +179,12 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                   {downloading ? (
                     <>
                       <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                      <span>Generating Brief...</span>
+                      <span>{t("scientificEvidence.detail.preparingBtn", "Preparing PDF...")}</span>
                     </>
                   ) : (
                     <>
                       <Download className="h-3.5 w-3.5" />
-                      <span>Download Research Paper</span>
+                      <span>{t("scientificEvidence.detail.downloadBtn", "Download Full Paper (PDF)")}</span>
                     </>
                   )}
                 </button>
@@ -194,7 +208,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 border border-pink-100 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
                 <span className="text-[11px] font-bold text-[#EA3484] uppercase tracking-wider block">
-                  Primary Clinical Endpoint & Outcome
+                  {t("scientificEvidence.detail.endpoint", "Primary Clinical Endpoint & Outcome")}
                 </span>
                 <p className="text-xs sm:text-sm font-semibold text-slate-800 mt-0.5">
                   {item.statLabel}
@@ -204,7 +218,9 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                 <span className="text-xl sm:text-2xl font-black text-pink-300 block leading-none">
                   {item.keyStat}
                 </span>
-                <span className="text-[9px] uppercase tracking-widest text-slate-300">Verified Result</span>
+                <span className="text-[9px] uppercase tracking-widest text-slate-300">
+                  {t("scientificEvidence.detail.verified", "Verified Result")}
+                </span>
               </div>
             </div>
           </div>
@@ -217,7 +233,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <section className="bg-white/95 rounded-3xl p-6 sm:p-8 border border-pink-100/90 shadow-sm space-y-3">
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <FileText className="h-5 w-5 text-[#EA3484]" />
-                  <span>1. Structured Clinical Abstract</span>
+                  <span>{t("scientificEvidence.detail.abstract", "1. Structured Clinical Abstract")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-[#EA3484] rounded-full" />
                 <p className="text-sm text-[#475569] leading-relaxed pt-2 font-normal">
@@ -229,7 +245,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <section className="bg-white/95 rounded-3xl p-6 sm:p-8 border border-pink-100/90 shadow-sm space-y-3">
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <Microscope className="h-5 w-5 text-[#EA3484]" />
-                  <span>2. Biological & Neuro-Epigenetic Mechanism</span>
+                  <span>{t("scientificEvidence.detail.mechanism", "2. Biological & Neuro-Epigenetic Mechanism")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-[#EA3484] rounded-full" />
                 <p className="text-sm text-[#475569] leading-relaxed pt-2 font-normal">
@@ -240,11 +256,11 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               {/* Ancient Vedic Garbh Sanskar Correlation */}
               <section className="rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#FFF5F9] via-[#FFFDFE] to-pink-50 border border-pink-200/90 shadow-sm space-y-3">
                 <span className="text-[11px] font-bold text-[#EA3484] uppercase tracking-widest block">
-                  Vedic Wisdom Integration
+                  {t("resources.garbhSanskar.badge", "Vedic Wisdom Integration")}
                 </span>
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-amber-500" />
-                  <span>3. Classical Vedic Garbh Sanskar Foundation</span>
+                  <span>{t("scientificEvidence.detail.vedic", "3. Classical Vedic Garbh Sanskar Foundation")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-amber-500 rounded-full" />
                 <p className="text-sm text-[#475569] leading-relaxed pt-2 italic">
@@ -256,7 +272,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <section className="bg-white/95 rounded-3xl p-6 sm:p-8 border border-pink-100/90 shadow-sm space-y-4">
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                  <span>4. Key Clinical Findings</span>
+                  <span>{t("scientificEvidence.detail.findings", "4. Key Clinical Findings")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-emerald-500 rounded-full" />
 
@@ -276,7 +292,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <section className="bg-white/95 rounded-3xl p-6 sm:p-8 border border-pink-100/90 shadow-sm space-y-4">
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-[#EA3484]" />
-                  <span>5. Actionable Guidance for Parents</span>
+                  <span>{t("scientificEvidence.detail.guidance", "5. Actionable Guidance for Parents")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-[#EA3484] rounded-full" />
 
@@ -299,7 +315,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <section className="bg-white/95 rounded-3xl p-6 sm:p-8 border border-pink-100/90 shadow-sm space-y-4">
                 <h2 className="text-xl font-bold text-[#172554] flex items-center gap-2">
                   <HelpCircle className="h-5 w-5 text-[#EA3484]" />
-                  <span>Frequently Asked Clinical Questions</span>
+                  <span>{t("scientificEvidence.detail.faqs", "Frequently Asked Clinical Questions")}</span>
                 </h2>
                 <div className="w-16 h-1 bg-[#EA3484] rounded-full" />
 
@@ -316,7 +332,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               {/* Academic Citations */}
               <section className="bg-slate-50/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80 space-y-3">
                 <h2 className="text-base font-bold text-[#172554] uppercase tracking-wider">
-                  Peer-Reviewed Citations & References
+                  {t("scientificEvidence.detail.references", "Peer-Reviewed Citations & References")}
                 </h2>
                 <ul className="space-y-2 pt-2">
                   {item.references.map((ref, idx) => (
@@ -346,23 +362,32 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
               <div className="rounded-3xl p-6 bg-white/95 border-2 border-[#EA3484]/30 shadow-md space-y-4">
                 <div className="flex items-center gap-2">
                   <Download className="h-5 w-5 text-[#EA3484]" />
-                  <h3 className="text-base font-bold text-[#172554]">Download Research Paper</h3>
+                  <h3 className="text-base font-bold text-[#172554]">
+                    {t("scientificEvidence.detail.downloadTitle", "Download Research Paper")}
+                  </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Get the official clinical whitepaper summary brief formatted for pediatricians, OB-GYNs, and expecting parents.
+                  {t(
+                    "scientificEvidence.detail.downloadDesc",
+                    "Get the official clinical whitepaper summary brief formatted for pediatricians, OB-GYNs, and expecting parents."
+                  )}
                 </p>
                 <button
                   onClick={handleDownload}
                   disabled={downloading}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#EA3484] to-[#F45B8A] py-3 text-xs font-bold text-white shadow-md hover:brightness-105 transition-all cursor-pointer disabled:opacity-50"
                 >
-                  {downloading ? "Preparing Paper..." : "Download Full Paper (HTML/PDF)"}
+                  {downloading
+                    ? t("scientificEvidence.detail.preparingBtn", "Preparing PDF...")
+                    : t("scientificEvidence.detail.downloadBtn", "Download Full Paper (PDF)")}
                 </button>
               </div>
 
               {/* Related Papers Navigation */}
               <div className="rounded-3xl p-6 bg-white/95 border border-pink-100 shadow-sm space-y-4">
-                <h3 className="text-base font-bold text-[#172554]">Related Evidence Papers</h3>
+                <h3 className="text-base font-bold text-[#172554]">
+                  {t("scientificEvidence.detail.relatedTitle", "Related Evidence Papers")}
+                </h3>
                 <div className="space-y-3">
                   {relatedItems.map((rel) => (
                     <Link
@@ -387,7 +412,7 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                   to="/scientific-evidence"
                   className="block text-center text-xs font-bold text-[#EA3484] hover:underline pt-2"
                 >
-                  View All 10 Research Papers →
+                  {t("scientificEvidence.detail.viewAllPapers", "View All 10 Research Papers →")}
                 </Link>
               </div>
             </div>

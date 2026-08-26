@@ -90,7 +90,49 @@
     "bannerBadge": "Rigorous Evidence-Based Standards",
     "bannerHeadingStart": "Peer-Reviewed Science Meets",
     "bannerHeadingHighlight": "Time-Tested Vedic Wisdom",
-    "bannerDescription": "All AstroBaby scientific papers and clinical summaries are audited by our multidisciplinary board of OB-GYNs, neuroscientists, Ayurvedic physicians, and embryologists to ensure absolute medical safety and clinical integrity."
+    "bannerDescription": "All AstroBaby scientific papers and clinical summaries are audited by our multidisciplinary board of OB-GYNs, neuroscientists, Ayurvedic physicians, and embryologists to ensure absolute medical safety and clinical integrity.",
+    "metrics": {
+      "papers": "Clinical Papers",
+      "rcts": "Evidence RCTs",
+      "indexed": "Indexed Trials"
+    },
+    "hub": {
+      "titleStart": "Scientific Evidence & Clinical Validation of",
+      "titleHighlight": "Garbh Sanskar",
+      "subtitle": "Explore 10 peer-reviewed clinical research papers, in-utero neurodevelopmental trials, and biochemical studies indexed across NIH PubMed, The Lancet, and AYUSH confirming the transformative efficacy of prenatal Vedic practices.",
+      "searchPlaceholder": "Search by topic, keyword (e.g. music, cortisol, yoga, nutrition, sleep)...",
+      "noResults": "No scientific evidence articles found matching your criteria.",
+      "reset": "Reset Filters",
+      "all": "All",
+      "neuroscience": "Neuroscience",
+      "biochemistry": "Biochemistry",
+      "obstetrics": "Obstetrics",
+      "epigenetics": "Epigenetics",
+      "ayurveda": "Ayurvedic Science",
+      "consensus": "Medical Consensus"
+    },
+    "detail": {
+      "abstract": "1. Structured Clinical Abstract",
+      "mechanism": "2. Biological & Neuro-Epigenetic Mechanism",
+      "vedic": "3. Classical Vedic Garbh Sanskar Foundation",
+      "findings": "4. Key Clinical Findings",
+      "guidance": "5. Actionable Guidance for Parents",
+      "faqs": "Frequently Asked Clinical Questions",
+      "references": "Peer-Reviewed Citations & References",
+      "downloadTitle": "Download Research Paper",
+      "downloadDesc": "Get the official clinical whitepaper summary brief formatted for pediatricians, OB-GYNs, and expecting parents.",
+      "downloadBtn": "Download Full Paper (PDF)",
+      "preparingBtn": "Preparing PDF...",
+      "relatedTitle": "Related Evidence Papers",
+      "viewAllPapers": "View All 10 Research Papers →",
+      "endpoint": "Primary Clinical Endpoint & Outcome",
+      "verified": "Verified Result",
+      "share": "Share",
+      "copied": "Link Copied!",
+      "journal": "Journal",
+      "cohortSize": "Cohort Size",
+      "year": "Year"
+    }
   },
   "programs": {
     "garbhadhan": {
