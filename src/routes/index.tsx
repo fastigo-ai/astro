@@ -2,9 +2,11 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { HelpCircle } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
+import ScientificEvidenceSection from "@/components/ScientificEvidenceSection";
 import StoriesSlider from "@/components/StoriesSlider";
 import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import HomeResourcesSection from "@/components/HomeResourcesSection";
 import HomeBgDrawings from "@/components/HomeBgDrawings";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import StickyLeftNavigation from "@/components/common/StickyLeftNavigation";
@@ -68,8 +70,14 @@ export default function Home() {
       {/* Features */}
       <FeaturesSection />
 
+      {/* ── Scientific Evidence & Clinical Validation (Bridging Science with Garbh Sanskar) ── */}
+      <ScientificEvidenceSection />
+
       {/* Stories Slider */}
       <StoriesSlider />
+
+      {/* ── Resources Knowledge Hub (Topics & Important Questions - 6 Points Each) ── */}
+      <HomeResourcesSection />
 
       {/* ── FAQ Section with Custom Theme Accordion ── */}
       <section className="py-16 md:py-24 relative z-10 bg-gradient-to-b from-[#FFF5F9] via-[#FFFDFE] to-[#FFF8FD] border-b border-pink-100/70 overflow-hidden">

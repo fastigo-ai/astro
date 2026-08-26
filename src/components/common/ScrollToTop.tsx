@@ -70,7 +70,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.7, y: shouldReduceMotion ? 0 : 20 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed bottom-21 right-4 sm:bottom-23 sm:right-7 z-50 flex items-center justify-center group"
+          className="fixed bottom-32 right-4.5 sm:bottom-23 sm:right-6.5 z-40 sm:z-50 flex items-center justify-center group"
         >
           <motion.button
             whileHover={shouldReduceMotion ? {} : { scale: 1.08 }}

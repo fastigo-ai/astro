@@ -29,6 +29,7 @@ export default function CylindricalHealthConcernsCarousel({ links }: Props) {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const total = links.length;
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -54,6 +55,24 @@ export default function CylindricalHealthConcernsCarousel({ links }: Props) {
 
   const handleCardClick = (index: number) => {
     setActiveIndex(index);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+    setIsAutoPlay(false);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 45) {
+      nextSlide();
+    } else if (diff < -45) {
+      prevSlide();
+    }
+    setTouchStartX(null);
+    setIsAutoPlay(true);
   };
 
   // 6 Card metadata configuration
@@ -162,9 +181,11 @@ export default function CylindricalHealthConcernsCarousel({ links }: Props) {
 
           {/* ── Right Side: 3D Cylindrical 3-Card Carousel ── */}
           <div
-            className="w-full lg:w-[60%] relative h-[380px] sm:h-[400px] flex items-center justify-center select-none"
+            className="w-full lg:w-[60%] relative h-[380px] sm:h-[400px] flex items-center justify-center select-none touch-pan-y"
             onMouseEnter={() => setIsAutoPlay(false)}
             onMouseLeave={() => setIsAutoPlay(true)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             style={{ perspective: "1100px" }}
           >
             {/* 3D Cylindrical Stage */}

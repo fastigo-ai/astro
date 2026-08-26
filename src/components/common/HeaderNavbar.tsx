@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useLanguage, Language } from "@/context/LanguageContext";
-import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass } from "lucide-react";
+import { Heart, Sparkles, Sun, Baby, ShieldCheck, Smile, Compass, Microscope } from "lucide-react";
 
 export default function HeaderNavbar() {
   const { t } = useTranslation();
@@ -98,6 +98,15 @@ export default function HeaderNavbar() {
       icon: Sparkles,
       iconBg: "bg-purple-50 text-purple-600",
       badge: t("resources.howTo.badge", "Practical Steps"),
+    },
+    {
+      id: "scientific-evidence-hub",
+      title: t("resources.scientificEvidence.title", "Scientific Evidence"),
+      subtitle: t("resources.scientificEvidence.subtitle", "10 Clinical studies & research papers"),
+      to: "/scientific-evidence",
+      icon: Microscope,
+      iconBg: "bg-blue-50 text-blue-600",
+      badge: t("resources.scientificEvidence.badge", "Peer-Reviewed"),
     },
   ];
 

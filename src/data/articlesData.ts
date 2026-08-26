@@ -796,8 +796,171 @@ export const ARTICLES_DATA: Article[] = [
       },
     ],
   },
+  {
+    id: "gs-18",
+    hub: "garbh-sanskar",
+    slug: "garbh-samvad-during-pregnancy",
+    title: "Garbh Samvad: The Sacred Art of Talking to Your Baby in the Womb",
+    metaTitle: "Garbh Samvad During Pregnancy | Sacred Womb Communication Guide",
+    metaDescription: "Master the ancient Vedic art of Garbh Samvad: step-by-step techniques for mother and father to communicate with the fetus, enhancing EQ, IQ, and bonding.",
+    category: "Practices & Rituals",
+    excerpt: "Garbh Samvad is the conscious heart-to-heart dialogue between parents and their unborn child, establishing a lifelong foundation of emotional security, love, and intellectual readiness.",
+    readTime: "6 min read",
+    date: "Jul 15, 2023",
+    author: {
+      name: "Dr. Ananya Sharma",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
+    },
+    featuredImage: "/images/story_thumb_1.png",
+    programCta: {
+      title: "Join Daily Guided Garbh Samvad Audio Sessions",
+      subtitle: "Access 40+ personalized womb dialogue audio modules on Astro Baby.",
+      link: "/features/garbh-sanskar",
+      buttonText: "Start Garbh Samvad Today",
+    },
+    tableOfContents: [
+      { id: "what-is-samvad", title: "What is Garbh Samvad?" },
+      { id: "fetal-hearing-science", title: "Scientific Benefits on Fetal Brain" },
+      { id: "daily-mother-practice", title: "Daily Practice Guide for Mothers" },
+      { id: "father-voice-role", title: "The Special Role of Father's Voice" },
+      { id: "sacred-mantras-dialogue", title: "Mantras & Affirmations for Womb Talk" },
+    ],
+    sections: [
+      {
+        heading: "What is Garbh Samvad?",
+        content: [
+          "Garbh Samvad (गर्भ संवाद) is the ancient Vedic practice of conscious verbal and mental communication with the unborn child in the womb. In Ayurveda, the fetus is considered an active, conscious soul capable of receiving sensory, emotional, and intellectual impressions (Sanskars).",
+          "By speaking, chanting, and lovingly touching the maternal belly, parents transmit feelings of unconditional love, safety, courage, and moral intelligence.",
+        ],
+        highlightQuote: "A mother's spoken words are the first lullabies and lessons that build the subconscious architecture of the baby's mind.",
+        bulletPoints: [
+          "Establishes a deep emotional bond between mother, father, and unborn baby.",
+          "Reduces maternal cortisol and anxiety while flooding the placenta with oxytocin and endorphins.",
+          "Stimulates the baby's auditory cortex, accelerating language acquisition after birth.",
+        ],
+      },
+      {
+        heading: "Scientific Benefits on Fetal Brain",
+        content: [
+          "Modern fetal neuroscience confirms that by the 16th to 20th week of gestation, the auditory apparatus (cochlea and auditory nerve) is fully functional. The fetus actively reacts to maternal voice cadences and heartbeat rhythms.",
+          "Babies who experience daily parental dialogues demonstrate faster cognitive responses, calmer temperaments, and fewer crying bouts after birth.",
+        ],
+        tip: "Talk to your baby in a warm, gentle, and rhythmic tone. Placing both hands on the lower belly while speaking creates a soothing bio-tactile resonance.",
+      },
+      {
+        heading: "Daily Practice Guide for Mothers",
+        content: [
+          "Dedicate 10 to 15 minutes twice daily (morning and evening) in a quiet, serene space. Begin by closing your eyes, taking 3 deep diaphragmatic breaths, and gently rubbing your abdomen.",
+        ],
+        bulletPoints: [
+          "Morning Dialogue (8:00 AM): Wish your baby a joyful good morning, share positive thoughts about the day, and express gratitude for their presence.",
+          "Afternoon Sharing: Talk about the wholesome foods you are eating and describe beautiful sights, flowers, or inspiring music.",
+          "Evening Blessing (9:30 PM): Affirm unconditional love, protection, peace, and health before resting.",
+        ],
+      },
+      {
+        heading: "The Special Role of Father's Voice",
+        content: [
+          "Low-frequency male voices penetrate amniotic fluid with remarkable clarity. When the father speaks, sings, or reads aloud near the mother's abdomen, the fetus recognizes the distinct acoustic vibrations.",
+          "Paternal womb dialogue fosters immediate newborn recognition, making early father-infant bonding effortless.",
+        ],
+      },
+      {
+        heading: "Mantras & Affirmations for Womb Talk",
+        content: [
+          "Accompany your conversation with short, auspicious affirmations and shlokas such as 'Om Shanti', Gayatri Mantra, or simple words of blessing: 'My child, you are healthy, intelligent, peaceful, and deeply loved.'",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When should I begin Garbh Samvad?",
+        answer: "You can start as early as the first trimester with mental affirmations. From the 16th week onwards, spoken dialogues and music should be practiced daily.",
+      },
+      {
+        question: "Does the baby really hear and understand words?",
+        answer: "While the fetus may not comprehend linguistic vocabulary, they deeply perceive tone, emotional frequency, heartbeat changes, and vocal cadences, which program the subconscious mind.",
+      },
+    ],
+  },
+  {
+    id: "gs-19",
+    hub: "garbh-sanskar",
+    slug: "garbh-sanskar-in-marathi",
+    title: "Garbh Sanskar in Marathi: संपूर्ण गर्भसंस्कार विधी आणि माहिती",
+    metaTitle: "Garbh Sanskar in Marathi | मराठीत संपूर्ण गर्भसंस्कार विधी व मार्गदर्शन",
+    metaDescription: "महाराष्ट्रातील पारंपरिक आणि वैदिक गर्भसंस्कार विधी, सात्विक आहार, संगीत, आणि मंत्रांची सविस्तर माहिती मराठीत जाणून घ्या.",
+    category: "Regional Guides",
+    excerpt: "गर्भातील बाळाच्या शारीरिक, मानसिक आणि बौद्धिक विकासासाठी प्राचीन वैदिक आणि आयुर्वेदिक गर्भसंस्कार पद्धतीची मराठीत परिपूर्ण माहिती आणि दैनिक दिनचर्या.",
+    readTime: "7 min read",
+    date: "Aug 05, 2023",
+    author: {
+      name: "Dr. Rameshwar Joshi",
+      role: "Vedic Astrologer & Scholar",
+    },
+    featuredImage: "/images/story_thumb_2.png",
+    programCta: {
+      title: "मराठीत संपूर्ण गर्भसंस्कार कोर्स",
+      subtitle: "अ‍ॅस्ट्रो बेबी अ‍ॅपवर मराठीत मंत्र, संगीत आणि दैनिक मार्गदर्शन मिळवा.",
+      link: "/features/garbh-sanskar",
+      buttonText: "गर्भसंस्कार कोर्स सुरू करा",
+    },
+    tableOfContents: [
+      { id: "marathi-intro", title: "गर्भसंस्कार म्हणजे काय? (What is Garbh Sanskar?)" },
+      { id: "marathi-pillars", title: "गर्भसंस्काराचे ५ मुख्य स्तंभ (5 Core Pillars)" },
+      { id: "marathi-vidhi", title: "दैनंदिन गर्भसंस्कार विधी व दिनचर्या" },
+      { id: "marathi-mantras", title: "शुभ मंत्र आणि राग संगीत" },
+      { id: "marathi-benefits", title: "आई व बाळाला होणारे फायदे" },
+    ],
+    sections: [
+      {
+        heading: "गर्भसंस्कार म्हणजे काय? (What is Garbh Sanskar?)",
+        content: [
+          "गर्भसंस्कार म्हणजे गर्भातील बाळावर सुसंस्कार करणे, त्याचे शारीरिक, मानसिक, भावनिक आणि बौद्धिक (IQ, EQ, SQ) पोषण करणे. आयुर्वेद आणि वैदिक शास्त्रानुसार बाळाचे ९०% व्यक्तिमत्त्व गर्भातच आकारास येते.",
+          "आईच्या विचारांचा, आहाराचा आणि वातावरणाचा बाळावर थेट परिणाम होतो. त्यामुळे गर्भधारणेपासूनच सात्विक आचरण करणे अत्यंत महत्त्वाचे आहे.",
+        ],
+        highlightQuote: "आईचे मन ही बाळाची पहिली शाळा असते आणि तिचे विचार हा बाळाचा पहिला अभ्यासक्रम असतो.",
+      },
+      {
+        heading: "गर्भसंस्काराचे ५ मुख्य स्तंभ (5 Core Pillars)",
+        content: [
+          "वैदिक परंपरेत गर्भसंस्कार ५ मुख्य घटकांवर आधारित आहे:",
+        ],
+        bulletPoints: [
+          "सात्विक आहार: ताज्या फळे, भाज्या, दूध, तूप आणि सुकामेवा यांचा समावेश असलेला पोष्टिक आहार.",
+          "गर्भ संवाद: आई आणि वडिलांनी पोटावर हात ठेवून बाळाशी दररोज प्रेमळ संवाद साधणे.",
+          "मंत्र व राग संगीत: गायत्री मंत्र, महामृत्युंजय मंत्र आणि शास्त्रीय राग ऐकणे.",
+          "प्राणायाम व योगासने: सुलभ प्रसूतीसाठी हलकी योगासने आणि दीर्घ श्वसन.",
+          "सकारात्मक वाचन: संत चरित्रे, रामायण, महाभारत आणि प्रेरणादायी पुस्तके वाचणे.",
+        ],
+      },
+      {
+        heading: "दैनंदिन गर्भसंस्कार विधी व दिनचर्या",
+        content: [
+          "सकाळी लवकर उठून प्रार्थना करणे, सूर्य नमस्कार किंवा हलके चालणे, त्यानंतर सात्विक नाश्ता घेणे. दुपारी प्रेरणादायी वाचन आणि संध्याकाळी मंद संगीतासह योगनिद्रा करणे लाभदायक ठरते.",
+        ],
+        tip: "दररोज रात्री झोपण्यापूर्वी १५ मिनिटे शांत बसून राग यमन किंवा राग भैरव ऐकल्याने मन शांत होते आणि गाढ झोप लागते.",
+      },
+      {
+        heading: "शुभ मंत्र आणि राग संगीत",
+        content: [
+          "गर्भ रक्षा स्तोत्र, संकटनाशन गणेश स्तोत्र, आणि गायत्री मंत्राचा जप गर्भातील बाळाच्या मेंदूतील न्यूरॉन्स सक्रिय करतो.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "गर्भसंस्कार कधीपासून सुरू करावेत?",
+        answer: "गर्भसंस्कार गर्भधारणेपूर्वी (बीज संस्कार) किंवा गर्भधारणा निश्चित झाल्यापासून पहिल्या महिन्यापासूनच सुरू करता येतात.",
+      },
+      {
+        question: "गर्भसंस्कारासाठी दररोज किती वेळ द्यावा लागतो?",
+        answer: "दिवसातून फक्त २० ते ३० मिनिटे नियमितपणे मंत्र, संवाद आणि ध्यान केल्यास बाळावर उत्तम संस्कार होतात.",
+      },
+    ],
+  },
 
-  // ─── 2. PREGNANCY CARE HUB ARTICLES (17 Articles) ────────────────────────
+  // ─── 2. PREGNANCY CARE HUB ARTICLES (20 Articles) ────────────────────────
   {
     id: "pr-1",
     hub: "pregnancy",
@@ -1394,6 +1557,204 @@ export const ARTICLES_DATA: Article[] = [
         content: [
           "Unripe or semi-ripe raw papaya contains latex and papain which may trigger uterine contractions. Raw pineapple in excessive amounts contains bromelain that softens the cervix.",
         ],
+      },
+    ],
+  },
+  {
+    id: "pr-18",
+    hub: "pregnancy",
+    slug: "pregnancy-calculator",
+    title: "Pregnancy Calculator: Due Date, Trimester Milestones & Astrological Nakshatra",
+    metaTitle: "Pregnancy Due Date & Nakshatra Calculator | Astro Baby",
+    metaDescription: "Calculate your Estimated Due Date (EDD), track weekly milestones, and determine auspicious Vedic lunar birth nakshatras for your newborn.",
+    category: "Tools & Milestones",
+    excerpt: "A complete guide to calculating your expected delivery date using Naegele's rule, ultrasound correlation, and calculating astrological planetary alignments.",
+    readTime: "6 min read",
+    date: "Dec 10, 2023",
+    author: {
+      name: "Dr. Rameshwar Joshi",
+      role: "Vedic Astrologer & Mathematician",
+    },
+    featuredImage: "/images/story_thumb_3.png",
+    programCta: {
+      title: "Calculate Your Child's Bhavishya Phal",
+      subtitle: "Get free personalized astrological insights for your child's birth chart.",
+      link: "/features/bhavishya-fal",
+      buttonText: "Open Calculator Tool",
+    },
+    tableOfContents: [
+      { id: "edd-formula", title: "How Due Dates Are Calculated" },
+      { id: "trimester-weeks", title: "Trimester Weeks & Milestone Progression" },
+      { id: "astrological-nakshatra", title: "Determining Auspicious Birth Nakshatras" },
+      { id: "scan-adjustments", title: "When Ultrasounds Change Your Due Date" },
+    ],
+    sections: [
+      {
+        heading: "How Due Dates Are Calculated",
+        content: [
+          "Standard obstetric estimation relies on Naegele's rule: add 280 days (40 weeks) from the first day of your Last Menstrual Period (LMP). If you know your exact ovulation date, adding 266 days provides an accurate biological due date.",
+          "In Vedic astrology, estimating the delivery window allows parents to anticipate the lunar tithi, nakshatra, and planetary transits influencing the child's lagna (ascendant).",
+        ],
+        highlightQuote: "A due date is an auspicious destination window, with 90% of healthy babies arriving safely between 37 and 41 weeks.",
+      },
+      {
+        heading: "Trimester Weeks & Milestone Progression",
+        content: [
+          "Pregnancy is systematically divided into 3 distinct developmental trimesters:",
+        ],
+        bulletPoints: [
+          "First Trimester (Weeks 1-13): Rapid organogenesis, neural tube closure, and heartbeat establishment.",
+          "Second Trimester (Weeks 14-27): Sensory responsiveness, bone ossification, active kick movements, and hearing.",
+          "Third Trimester (Weeks 28-40): Lung maturation, rapid brain fat deposition, immunoglobin transfer, and birth positioning.",
+        ],
+      },
+      {
+        heading: "Determining Auspicious Birth Nakshatras",
+        content: [
+          "The Moon spends approximately 24 hours in each of the 27 Vedic Nakshatras (such as Rohini, Pushya, Hasta, and Revati). Knowing the expected delivery month helps astrologers calculate auspicious names and beneficial gemstone/mantra remedies.",
+        ],
+        tip: "Keep an ultrasound dating scan handy when consulting an astrologer to ensure gestational accuracy.",
+      },
+      {
+        heading: "When Ultrasounds Change Your Due Date",
+        content: [
+          "A first-trimester dating scan (between 7 and 12 weeks) measuring Crown-Rump Length (CRL) is considered the gold standard for clinical due date confirmation.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How accurate is the estimated due date (EDD)?",
+        answer: "Only about 5% of babies are born on their exact EDD; however, approximately 85-90% are born within two weeks before or after.",
+      },
+    ],
+  },
+  {
+    id: "pr-19",
+    hub: "pregnancy",
+    slug: "miscarriage-prevention-and-care",
+    title: "Miscarriage Prevention: Safe Practices, Warning Signs, and Ayurvedic Protection",
+    metaTitle: "Miscarriage Prevention & Early Pregnancy Safety | Astro Baby Care",
+    metaDescription: "Evidence-based obstetric and Ayurvedic guide on protecting early pregnancy: hormonal support, satvik precautions, stress relief, and red flag symptoms.",
+    category: "Health & Safety",
+    excerpt: "Empower your early pregnancy with evidence-based medical precautions, progesterone care, and time-tested Ayurvedic Garbh Sthapaka rasayanas.",
+    readTime: "7 min read",
+    date: "Jan 12, 2024",
+    author: {
+      name: "Dr. Ananya Sharma",
+      role: "Obstetrician & Gynecologist",
+    },
+    featuredImage: "/images/story_thumb_4.png",
+    programCta: {
+      title: "Holistic First Trimester Support",
+      subtitle: "Personalized care plans to ensure peaceful, secure early gestation.",
+      link: "/features/garbh-sanskar",
+      buttonText: "Explore Prenatal Care",
+    },
+    tableOfContents: [
+      { id: "prevention-fundamentals", title: "Key Principles of Early Pregnancy Protection" },
+      { id: "ayurvedic-garbh-sthapaka", title: "Ayurvedic Garbh Sthapaka Herbs" },
+      { id: "warning-signs", title: "Warning Signs Requiring Immediate Doctor Visit" },
+      { id: "lifestyle-precautions", title: "Daily Precautions for Expectant Mothers" },
+    ],
+    sections: [
+      {
+        heading: "Key Principles of Early Pregnancy Protection",
+        content: [
+          "The first 12 weeks of pregnancy are crucial as the embryo implants and the placenta matures. Maintaining optimal progesterone levels, avoiding strenuous jolts, and cultivating calm emotional states are key protective factors.",
+        ],
+        bulletPoints: [
+          "Adequate folic acid supplementation (5mg daily) to prevent neural tube anomalies.",
+          "Early thyroid (TSH) and blood sugar screening to correct underlying metabolic imbalances.",
+          "Avoiding high-stress environments and strenuous abdominal lifting.",
+        ],
+        highlightQuote: "Serenity of the maternal mind is the greatest natural uterine relaxant.",
+      },
+      {
+        heading: "Ayurvedic Garbh Sthapaka Herbs",
+        content: [
+          "Classical Ayurveda describes 'Garbh Sthapaka' herbs that stabilize pregnancy and nourish endometrial receptivity, such as Shatavari, Bala, and pure Cow's Ghee with saffron in doctor-prescribed quantities.",
+        ],
+        tip: "Always consult your obstetrician before starting any Ayurvedic formulations during the first trimester.",
+      },
+      {
+        heading: "Warning Signs Requiring Immediate Doctor Visit",
+        content: [
+          "While mild twinges and light brown spotting can be normal, bright red vaginal bleeding, severe unilateral pelvic pain, or fever require prompt ultrasound evaluation.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is complete bed rest necessary to prevent miscarriage?",
+        answer: "Routine bed rest is not recommended unless specifically advised by your doctor for subchorionic hematoma or cervical insufficiency. Gentle walking and restful lifestyle are ideal.",
+      },
+    ],
+  },
+  {
+    id: "pr-20",
+    hub: "pregnancy",
+    slug: "healthy-pregnancy-diet-chart",
+    title: "Healthy Pregnancy Diet Chart: Month-by-Month Satvik Nutrition Guide",
+    metaTitle: "Complete Pregnancy Diet Chart Month-by-Month | Astro Baby Nutrition",
+    metaDescription: "Complete trimester nutrition chart: daily requirements of iron, protein, calcium, vitamins, and Ayurvedic satvik meal plans for mother and baby.",
+    category: "Nutrition & Diet",
+    excerpt: "A comprehensive, month-by-month pregnancy nutrition plan integrating modern obstetric dietetics and Ayurvedic Ahara principles for vibrant maternal health.",
+    readTime: "8 min read",
+    date: "Feb 02, 2024",
+    author: {
+      name: "Dr. Ananya Sharma",
+      role: "Clinical Nutritionist & Ayurvedic Physician",
+    },
+    featuredImage: "/images/story_thumb_5.png",
+    programCta: {
+      title: "Personalized Trimester Satvik Diet Plans",
+      subtitle: "Get weekly customized meal plans tailored to your dosha and trimester.",
+      link: "/features/garbh-sanskar",
+      buttonText: "Get Your Diet Plan",
+    },
+    tableOfContents: [
+      { id: "nutrition-overview", title: "Core Nutritional Requirements" },
+      { id: "trimester-1-diet", title: "Trimester 1: Nausea Relief & Folic Acid" },
+      { id: "trimester-2-diet", title: "Trimester 2: Iron, Calcium & Brain Growth" },
+      { id: "trimester-3-diet", title: "Trimester 3: Strength, Digestion & Labor Prep" },
+      { id: "daily-meal-timetable", title: "Sample Daily Satvik Meal Timetable" },
+    ],
+    sections: [
+      {
+        heading: "Core Nutritional Requirements",
+        content: [
+          "During pregnancy, a mother's body requires an additional 300 to 450 calories daily, rich in micronutrients rather than empty carbohydrates. Balanced satvik nutrition ensures smooth placenta function, baby's bone mineralization, and steady blood volume expansion.",
+        ],
+        bulletPoints: [
+          "Protein (70-80g daily): Essential for fetal tissue construction (paneer, lentils, almonds, sprouts).",
+          "Iron & Vitamin C: Prevents maternal anemia and enhances fetal oxygenation (spinach, beetroot, pomegranate, amla).",
+          "Calcium (1200mg daily): Builds baby's skeletal structure (milk, curd, sesame seeds, ragi).",
+          "DHA & Healthy Fats: Stimulates brain and retinal neuron formation (A2 cow ghee, soaked walnuts, flaxseed).",
+        ],
+      },
+      {
+        heading: "Trimester 1: Nausea Relief & Folic Acid",
+        content: [
+          "Focus on small, frequent meals. Lukewarm water with lemon, dry roasted makhana, ginger tea, and green leafy vegetables help overcome morning nausea.",
+        ],
+      },
+      {
+        heading: "Sample Daily Satvik Meal Timetable",
+        content: [
+          "Early Morning (7:00 AM): 5 soaked almonds, 2 soaked walnuts, and a glass of warm water.",
+          "Breakfast (8:30 AM): Vegetable poha/oats or moong dal chilla with mint chutney.",
+          "Mid-Morning (11:00 AM): Fresh tender coconut water and a seasonal fruit (apple/pomegranate).",
+          "Lunch (1:00 PM): 2 rotis with A2 ghee, 1 bowl dal, seasonal green subzi, and fresh curd.",
+          "Evening Snack (5:00 PM): Roasted makhana or vegetable soup.",
+          "Dinner (8:00 PM): Light khichdi or vegetable daliya, followed by warm saffron milk before bed.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How much water should I drink daily during pregnancy?",
+        answer: "Aim for 2.5 to 3 liters of fluids daily, including fresh water, coconut water, buttermilk, and warm herbal soups.",
       },
     ],
   },

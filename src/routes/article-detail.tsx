@@ -17,11 +17,14 @@ import {
   ShieldAlert,
   ChevronDown,
   Compass,
+  Languages,
 } from "lucide-react";
 import HeaderNavbar from "@/components/common/HeaderNavbar";
 import Footer from "@/components/common/Footer";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import LazyImage from "@/components/common/LazyImage";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/context/LanguageContext";
 import {
   findArticleAnyHub,
   getRelatedArticles,
@@ -32,6 +35,8 @@ import {
 export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType }) {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
+  const { t } = useTranslation();
+  const { currentLanguage, changeLanguage, languages } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -108,7 +113,7 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
     if (article) {
       document.title = `${article.metaTitle || article.title} | Astro Baby`;
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   }, [article, slug]);
 
   if (!article) {
@@ -203,16 +208,45 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
               </div>
             </div>
 
-            {/* Share Trigger */}
-            <div className="relative">
-              <button
-                onClick={handleShare}
-                className="px-4 py-2 rounded-full bg-white border border-pink-200 text-[#172554] text-xs font-bold hover:bg-pink-50 transition-all flex items-center gap-2 shadow-2xs cursor-pointer"
-                aria-label="Share article"
-              >
-                <Share2 className="w-3.5 h-3.5 text-[#F45B8A]" />
-                <span>Share Guide</span>
-              </button>
+            {/* Language Switcher & Share Trigger */}
+            <div className="flex items-center gap-3 flex-wrap">
+              {/* Language Switcher Button */}
+              <div className="inline-flex items-center gap-1 bg-white border border-pink-200/90 rounded-full p-1 shadow-2xs">
+                <Languages className="w-3.5 h-3.5 text-[#EA3484] ml-2" />
+                <button
+                  type="button"
+                  onClick={() => changeLanguage(languages[0])}
+                  className={`px-3 py-1 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                    currentLanguage.code === "en"
+                      ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-xs"
+                      : "text-slate-600 hover:text-[#EA3484]"
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  onClick={() => changeLanguage(languages[1])}
+                  className={`px-3 py-1 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                    currentLanguage.code === "hi"
+                      ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-xs"
+                      : "text-slate-600 hover:text-[#EA3484]"
+                  }`}
+                >
+                  हिन्दी
+                </button>
+              </div>
+
+              {/* Share Trigger */}
+              <div className="relative">
+                <button
+                  onClick={handleShare}
+                  className="px-4 py-2 rounded-full bg-white border border-pink-200 text-[#172554] text-xs font-bold hover:bg-pink-50 transition-all flex items-center gap-2 shadow-2xs cursor-pointer"
+                  aria-label="Share article"
+                >
+                  <Share2 className="w-3.5 h-3.5 text-[#F45B8A]" />
+                  <span>{currentLanguage.code === "hi" ? "शेयर करें" : "Share Guide"}</span>
+                </button>
 
               {showShareModal && (
                 <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-pink-100 p-3.5 z-50 animate-fadeIn">
@@ -255,7 +289,8 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* ── Main Article Body Layout ── */}
       <section className="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,13 +298,13 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
           {/* Main Article Content (8 cols on lg) */}
           <div className="lg:col-span-8 space-y-8">
             {/* Featured Image */}
-            <div className="rounded-3xl overflow-hidden shadow-md border border-pink-100 aspect-[16/9] bg-slate-100 relative">
+            <div className="rounded-3xl overflow-hidden shadow-md border border-pink-100/80 aspect-[16/9] sm:aspect-[21/9] md:aspect-[16/9] bg-pink-50/30 relative">
               <LazyImage
                 src={article.featuredImage}
                 alt={article.title}
-                fallbackSrc="/images/hero/hero-1.png"
+                fallbackSrc="/images/celestial_mother.png"
                 containerClassName="w-full h-full"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
 
@@ -283,7 +318,7 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
               <div className="lg:hidden bg-white p-6 rounded-3xl border border-pink-100 shadow-sm space-y-3">
                 <div className="font-bold text-[#172554] text-sm flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-[#F45B8A]" />
-                  <span>Table of Contents</span>
+                  <span>{currentLanguage.code === "hi" ? "विषय सूची" : "Table of Contents"}</span>
                 </div>
                 <ul className="space-y-2 text-xs font-semibold text-slate-600 pl-2">
                   {validToc.map((toc, idx) => (
@@ -341,7 +376,7 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
                     <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-emerald-900 text-xs sm:text-sm flex items-start gap-3 my-4">
                       <Sparkles className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                       <div>
-                        <strong>Vedic Tip:</strong> {sec.tip}
+                        <strong>{currentLanguage.code === "hi" ? "वैदिक सुझाव:" : "Vedic Tip:"}</strong> {sec.tip}
                       </div>
                     </div>
                   )}
@@ -349,38 +384,14 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
               ))}
             </div>
 
-            {/* Sacred Program CTA Banner */}
-            <div className="mt-12 bg-gradient-to-r from-[#172554] via-[#1e3a8a] to-[#172554] text-white p-8 sm:p-10 rounded-[32px] shadow-xl relative overflow-hidden border border-white/10">
-              <div className="pointer-events-none absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-[#F45B8A]/30 blur-3xl" />
-              <div className="relative z-10 space-y-4">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Sacred Program</span>
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white !text-white drop-shadow-sm">
-                  {article.programCta.title}
-                </h3>
-                <p className="text-white/85 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-                  {article.programCta.subtitle}
-                </p>
-                <div className="pt-2">
-                  <Link
-                    to={article.programCta.link}
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
-                  >
-                    <span>{article.programCta.buttonText}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* Interactive FAQs Section */}
             {article.faqs && article.faqs.length > 0 && (
               <div className="mt-12 pt-8 border-t border-pink-100 space-y-6">
                 <div className="flex items-center gap-2">
                   <HelpCircle className="w-5 h-5 text-[#F45B8A]" />
-                  <h3 className="text-2xl font-bold text-[#172554]">Frequently Asked Questions</h3>
+                  <h3 className="text-2xl font-bold text-[#172554]">
+                    {currentLanguage.code === "hi" ? "अक्सर पूछे जाने वाले प्रश्न" : "Frequently Asked Questions"}
+                  </h3>
                 </div>
 
                 <div className="space-y-3">

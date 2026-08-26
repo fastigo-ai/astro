@@ -248,7 +248,7 @@ export default function StickyLeftNavigation() {
               damping: 26,
               stiffness: 320,
             }}
-            className="fixed left-1/2 -translate-x-1/2 bottom-16 sm:bottom-auto sm:left-20 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0 w-[calc(100vw-24px)] max-w-[320px] sm:w-[325px] max-h-[74vh] sm:max-h-[515px] overflow-hidden rounded-[26px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.28)] flex flex-col z-50 text-[#172554] overscroll-contain"
+            className="fixed left-1/2 -translate-x-1/2 bottom-18 sm:bottom-auto sm:left-20 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0 w-[calc(100vw-24px)] max-w-[325px] sm:w-[325px] max-h-[76vh] sm:max-h-[520px] overflow-hidden rounded-[26px] bg-white border-2 border-slate-900/10 shadow-[0_20px_50px_rgba(23,37,84,0.28)] flex flex-col z-50 text-[#172554] overscroll-contain"
           >
             {/* Phone Top Speaker & Status Notch (Dynamic Island) */}
             <div className="bg-[#172554] px-4 pt-2 pb-1.5 flex items-center justify-between text-white/80 text-[10px] select-none shrink-0 border-b border-slate-850">

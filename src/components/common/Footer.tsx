@@ -23,6 +23,7 @@ export default function Footer() {
     { name: t("resources.garbhSanskar.title", "Garbh Sanskar Hub"), to: "/garbh-sanskar" },
     { name: t("resources.pregnancy.title", "Pregnancy Care Hub"), to: "/pregnancy" },
     { name: t("resources.howTo.title", "How-To Guides Hub"), to: "/how-to" },
+    { name: "Scientific Evidence Hub", to: "/scientific-evidence" },
     { name: "Vedic Mantras & Music", to: "/garbh-sanskar/garbh-sanskar-mantra" },
     { name: "Trimester Care Guide", to: "/garbh-sanskar/first-trimester" },
     { name: "Garbh Sanskar at Home", to: "/how-to/how-to-do-garbh-sanskar-at-home" },
@@ -267,7 +268,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar — Deep Royal Navy matching Navbar Top Bar */}
-      <div className="bg-[#172554] text-white/80 py-5 border-t border-white/10">
+      <div className="bg-[#172554] text-white/80 pt-5 pb-20 sm:pb-5 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span>{t("footer.allRightsReserved", { year: currentYear, defaultValue: `© ${currentYear} Astro Baby Garbhadhan Sanskar. All rights reserved.` })}</span>

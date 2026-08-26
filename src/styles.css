@@ -161,7 +161,8 @@
     border-color: var(--color-border);
   }
 
-  html {
+  html,
+  body {
     font-family:
       "Inter",
       -apple-system,
@@ -170,24 +171,26 @@
       Roboto,
       sans-serif;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
   }
 
   body {
     background-color: #fffcfe;
     color: #475569;
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      sans-serif;
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
     width: 100%;
+    min-height: 100vh;
   }
 
   /* Lenis Ultra-Smooth Scrolling Core Rules */
@@ -749,5 +752,50 @@ html[lang="hi"] blockquote,
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: rgba(244, 91, 138, 0.8);
 }
+
+/* ── Side Auto-Scroll Infinite Animations (Scientific Evidence & Showcases) ── */
+@keyframes autoScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes autoScrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes autoScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-auto-scroll-up {
+  animation: autoScrollUp 35s linear infinite;
+}
+
+.animate-auto-scroll-down {
+  animation: autoScrollDown 38s linear infinite;
+}
+
+.animate-auto-scroll-left {
+  animation: autoScrollLeft 45s linear infinite;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}
+
 
 

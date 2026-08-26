@@ -27,6 +27,8 @@ const GarbhSanskarHub = lazy(() => import("./routes/garbh-sanskar/index"));
 const PregnancyHub = lazy(() => import("./routes/pregnancy/index"));
 const HowToHub = lazy(() => import("./routes/how-to/index"));
 const ArticleDetailPage = lazy(() => import("./routes/article-detail"));
+const ScientificEvidenceHub = lazy(() => import("./routes/scientific-evidence/index"));
+const ScientificEvidenceDetail = lazy(() => import("./routes/scientific-evidence/detail"));
 
 // Feature Pages
 const BizSanskar = lazy(() => import("./routes/features/biz-sanskar"));
@@ -196,6 +198,24 @@ export default function App() {
           element={
             <Suspense fallback={<BlogPostSkeleton />}>
               <ArticleDetailPage defaultHub="how-to" />
+            </Suspense>
+          }
+        />
+
+        {/* ── Scientific Evidence Hub & Research Routes ── */}
+        <Route
+          path="/scientific-evidence"
+          element={
+            <Suspense fallback={<BlogSkeleton />}>
+              <ScientificEvidenceHub />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/scientific-evidence/:slug"
+          element={
+            <Suspense fallback={<BlogPostSkeleton />}>
+              <ScientificEvidenceDetail />
             </Suspense>
           }
         />

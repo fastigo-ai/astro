@@ -237,7 +237,7 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#FFFDFE] via-[#FFF5F9] to-[#FFF8FD] overflow-hidden border-b border-pink-100/70">
+    <section className="relative pt-16 md:pt-24 pb-8 md:pb-10 bg-gradient-to-b from-[#FFFDFE] via-[#FFF5F9] to-[#FFF8FD] overflow-hidden border-b border-pink-100/70">
       {/* Ambient decorative glowing blobs */}
       <div className="pointer-events-none absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-pink-300/20 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-10 h-96 w-96 rounded-full bg-purple-200/20 blur-3xl" />
@@ -263,7 +263,7 @@ export default function FeaturesSection() {
 
         {/* ── 3D Cylindrical Carousel Container ── */}
         <div
-          className="relative max-w-5xl mx-auto h-[380px] sm:h-[400px] flex items-center justify-center select-none overflow-hidden sm:overflow-visible touch-pan-y"
+          className="relative max-w-5xl mx-auto h-[420px] sm:h-[400px] flex items-center justify-center select-none overflow-hidden sm:overflow-visible touch-pan-y"
           style={{ perspective: "1200px" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -425,7 +425,7 @@ export default function FeaturesSection() {
         </div>
 
         {/* Explore All Features Button */}
-        <div className="flex justify-center mt-12 md:mt-16">
+        <div className="flex justify-center mt-6 md:mt-8">
           <Link
             to="/features"
             className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#F45B8A] to-[#E91E63] hover:shadow-lg hover:shadow-[#F45B8A]/30 px-9 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"

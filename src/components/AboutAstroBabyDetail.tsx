@@ -147,7 +147,7 @@ export default function AboutAstroBabyDetail() {
             </div>
 
             {/* 4 Premium Feature Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 items-stretch">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 pt-3 items-stretch">
               {featureCardStyles.map((card, idx) => {
                 const Icon = card.icon;
                 const title = t(`aboutPage.detail.features.${idx}.title`, "");

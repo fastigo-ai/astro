@@ -64,7 +64,7 @@ export default function AwardsPage() {
 
   return (
     <Layout activeLabel="Awards & Accolades">
-      <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto">
+      <section className="pt-28 pb-6 md:pt-36 max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.98, y: shouldReduceMotion ? 0 : 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

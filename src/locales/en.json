@@ -78,6 +78,20 @@
     "learnMore": "Learn More & Enroll",
     "viewAll": "Explore All 7 Sanskar Programs"
   },
+  "scientificEvidence": {
+    "badge": "Scientific Evidence & Clinical Trials",
+    "heading": "Bridging Ancient Garbh Sanskar with",
+    "headingHighlight": "Modern Medical Science",
+    "subtitle": "Explore peer-reviewed medical studies, neuro-developmental research, and clinical validation across prenatal music, meditation, maternal bonding, and fetal genomics.",
+    "readPaper": "Read Evidence",
+    "downloadPdf": "Paper",
+    "generating": "Preparing...",
+    "viewAll": "Explore All 10 Research Pages",
+    "bannerBadge": "Rigorous Evidence-Based Standards",
+    "bannerHeadingStart": "Peer-Reviewed Science Meets",
+    "bannerHeadingHighlight": "Time-Tested Vedic Wisdom",
+    "bannerDescription": "All AstroBaby scientific papers and clinical summaries are audited by our multidisciplinary board of OB-GYNs, neuroscientists, Ayurvedic physicians, and embryologists to ensure absolute medical safety and clinical integrity."
+  },
   "programs": {
     "garbhadhan": {
       "title": "Garbhadhan Sanskar",
@@ -1612,6 +1626,32 @@
       "pageOf": "Showing {{from}} to {{to}} of {{total}} guides",
       "previous": "Previous",
       "next": "Next"
+    }
+  },
+  "resourcesSection": {
+    "badge": "Knowledge & Resource Hub",
+    "heading": "Sacred Topics & Important Questions – Essential Guides",
+    "subtitle": "Explore fundamental topics and key questions across Garbh Sanskar, Pregnancy Care, and Step-by-Step How-To Guides. Click any topic to dive straight into comprehensive points and expert guidance.",
+    "tabs": {
+      "garbhSanskar": "Garbh Sanskar (6)",
+      "pregnancy": "Pregnancy Care (6)",
+      "howTo": "How-To Guides (6)",
+      "all": "All 18 Topics"
+    },
+    "impQuestionBadge": "Important Question",
+    "keyPointsLabel": "Key Points Breakdown:",
+    "readMore": "Read More",
+    "bannerTag": "Complete Resource Library",
+    "bannerTitle": "Want in-depth trimester guidance and daily routines?",
+    "bannerDesc": "Browse all 40+ Vedic research articles, audio mantras, fetal meditation techniques, and trimester checklists.",
+    "garbhSanskarHubBtn": "Garbh Sanskar Hub",
+    "pregnancyHubBtn": "Pregnancy Hub",
+    "howToHubBtn": "How-To Hub",
+    "hubNames": {
+      "garbhSanskar": "Garbh Sanskar Hub",
+      "pregnancy": "Pregnancy Care Hub",
+      "howTo": "How-To Guides Hub",
+      "all": "All Resources"
     }
   }
 }
