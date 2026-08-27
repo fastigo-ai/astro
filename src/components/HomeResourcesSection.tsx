@@ -11,7 +11,6 @@ import {
   Search,
   X,
   ChevronRight,
-  Compass,
 } from "lucide-react";
 
 export interface ResourceLinkItem {
@@ -220,9 +219,8 @@ export default function HomeResourcesSection() {
               const Icon = col.icon;
               const isSearching = searchQuery.trim().length > 0;
               const isExpanded = isSearching || !!expandedCols[col.id];
-              // On mobile, show first 6 items unless expanded or searching; on desktop show all items
-              const visibleItems = isExpanded ? col.items : col.items.slice(0, 6);
-              const hiddenCount = col.items.length - 6;
+              const visibleItems = isExpanded ? col.items : col.items.slice(0, 9);
+              const hiddenCount = col.items.length - 9;
 
               return (
                 <motion.div
@@ -290,34 +288,22 @@ export default function HomeResourcesSection() {
                       </ul>
                     )}
 
-                    {/* Mobile Show More / Show Less Toggle (only visible on mobile screens when list has > 6 items and not searching) */}
+                    {/* Tap for More Toggle when column has > 9 items and not in active search */}
                     {!isSearching && hiddenCount > 0 && (
-                      <div className="mt-2 pt-1 block md:hidden">
+                      <div className="mt-2.5 pt-1">
                         <button
                           type="button"
                           onClick={() => toggleColExpand(col.id)}
-                          className="w-full py-2 px-3 text-xs font-bold text-[#EA3484] hover:text-[#d94d7a] bg-pink-50/50 hover:bg-pink-100/60 rounded-xl flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                          className="w-full py-2 px-3 text-xs font-bold text-[#EA3484] hover:text-[#d94d7a] bg-pink-50/70 hover:bg-pink-100/80 active:bg-pink-100 rounded-xl flex items-center justify-center gap-1.5 transition-all duration-150 cursor-pointer border border-pink-200/60 hover:border-pink-300 shadow-2xs"
                         >
                           <span>
                             {isExpanded
                               ? "Show Less ↑"
-                              : `+ View ${hiddenCount} More Topics ↓`}
+                              : `+ Tap for more (${hiddenCount} more)`}
                           </span>
                         </button>
                       </div>
                     )}
-                  </div>
-
-                  {/* Bottom Hub Explorer Footer */}
-                  <div className="pt-4 sm:pt-5 mt-3 sm:mt-4 border-t border-pink-100/60">
-                    <Link
-                      to={col.hubLink}
-                      className="w-full py-2.5 px-3 sm:px-4 rounded-xl bg-pink-50/70 hover:bg-pink-100/90 active:scale-[0.99] text-[#EA3484] text-xs font-extrabold flex items-center justify-center gap-1.5 sm:gap-2 transition-all duration-200 shadow-2xs"
-                    >
-                      <Compass className="w-3.5 h-3.5 shrink-0" />
-                      <span className="truncate">Explore Entire {col.title} Hub</span>
-                      <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-                    </Link>
                   </div>
                 </motion.div>
               );

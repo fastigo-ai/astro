@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
   FiAward,
+  FiChevronLeft,
+  FiChevronRight,
   FiGlobe,
   FiHeart,
   FiMapPin,
@@ -27,6 +29,8 @@ const AI_THUMBNAILS = [
 export default function StoriesSlider() {
   const { t } = useTranslation();
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   useLockBodyScroll(Boolean(activeVideo));
@@ -39,21 +43,82 @@ export default function StoriesSlider() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [activeVideo]);
 
+  const scrollToNext = useCallback(() => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cards = container.querySelectorAll<HTMLElement>(".story-card");
+    if (cards.length === 0) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    if (scrollLeft + clientWidth >= scrollWidth - 25) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      const firstCard = cards[0];
+      const cardWidth = firstCard.offsetWidth;
+      const step = cardWidth + 24; // 24px is gap-6
+      container.scrollBy({ left: step, behavior: "smooth" });
+    }
+  }, []);
+
+  const scrollToPrev = useCallback(() => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cards = container.querySelectorAll<HTMLElement>(".story-card");
+    if (cards.length === 0) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    if (scrollLeft <= 15) {
+      container.scrollTo({ left: scrollWidth - clientWidth, behavior: "smooth" });
+    } else {
+      const firstCard = cards[0];
+      const cardWidth = firstCard.offsetWidth;
+      const step = cardWidth + 24;
+      container.scrollBy({ left: -step, behavior: "smooth" });
+    }
+  }, []);
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cards = container.querySelectorAll<HTMLElement>(".story-card");
+    if (cards[index]) {
+      const card = cards[index];
+      container.scrollTo({
+        left: card.offsetLeft - container.offsetLeft - 16,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Track active slide on scroll
   useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const cards = container.querySelectorAll<HTMLElement>(".story-card");
+      if (cards.length === 0) return;
+      const scrollPos = container.scrollLeft;
+      const firstCard = cards[0];
+      const cardWidth = firstCard.offsetWidth + 24;
+      const index = Math.round(scrollPos / cardWidth);
+      setCurrentIndex(Math.min(Math.max(0, index), storiesData.length - 1));
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Automatic Smooth Sliding with pause on hover/interaction
+  useEffect(() => {
+    if (activeVideo || isPaused) return;
+
     const interval = setInterval(() => {
-      if (scrollRef.current && !activeVideo) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        // Scroll back to start if we reached the end
-        if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          // Approximate width of a card + gap
-          scrollRef.current.scrollBy({ left: 370, behavior: "smooth" });
-        }
-      }
-    }, 3000);
+      scrollToNext();
+    }, 3200);
+
     return () => clearInterval(interval);
-  }, [activeVideo]);
+  }, [activeVideo, isPaused, scrollToNext]);
 
   return (
     <section className="relative isolate overflow-hidden bg-[#fcf2f7] pt-10 md:pt-12 pb-20 md:pb-28 border-b border-pink-100/60">
@@ -77,10 +142,37 @@ export default function StoriesSlider() {
           </p>
         </motion.header>
 
+        {/* Carousel Container with Hover/Touch Pause */}
         <div
-          ref={scrollRef}
-          className="stories-track mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="relative mt-8 sm:mt-12 group/slider"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
         >
+          {/* Navigation Arrows */}
+          <button
+            type="button"
+            onClick={scrollToPrev}
+            aria-label="Previous story"
+            className="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-pink-200 text-[#172554] hover:text-[#EA3484] hover:bg-pink-50 shadow-lg flex items-center justify-center transition-all opacity-80 hover:opacity-100 cursor-pointer active:scale-95"
+          >
+            <FiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <button
+            type="button"
+            onClick={scrollToNext}
+            aria-label="Next story"
+            className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-pink-200 text-[#172554] hover:text-[#EA3484] hover:bg-pink-50 shadow-lg flex items-center justify-center transition-all opacity-80 hover:opacity-100 cursor-pointer active:scale-95"
+          >
+            <FiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="stories-track flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 scroll-smooth px-2 sm:px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
           {storiesData.map((story, index) => (
             <motion.article
               key={story.name}
@@ -136,21 +228,27 @@ export default function StoriesSlider() {
                 <p className="mt-4 min-h-16 text-xs sm:text-sm leading-relaxed text-[#475569] font-normal">
                   “{story.quote}”
                 </p>
-                {/* <div className="mt-5 grid grid-cols-3 border-t border-slate-200 pt-5">
-                  {benefits.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex flex-col items-center gap-2 px-1 text-center">
-                      <span className="grid h-8 w-8 place-items-center rounded-full bg-slate-100 text-[#1a3a6c]">
-                        <Icon />
-                      </span>
-                      <span className="text-[10px] font-medium leading-tight text-slate-600">
-                        {label}
-                      </span>
-                    </div>
-                  ))}
-                </div> */}
               </div>
             </motion.article>
           ))}
+        </div>
+
+          {/* Indicator Dots */}
+          <div className="flex justify-center items-center gap-2 mt-4">
+            {storiesData.map((_, dotIdx) => (
+              <button
+                key={`dot-${dotIdx}`}
+                type="button"
+                onClick={() => scrollToIndex(dotIdx)}
+                aria-label={`Go to slide ${dotIdx + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentIndex === dotIdx
+                    ? "w-8 bg-gradient-to-r from-[#F45B8A] to-[#E91E63]"
+                    : "w-2 bg-pink-200 hover:bg-pink-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
