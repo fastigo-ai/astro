@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import {
   Sparkles,
   BookOpen,
-  Download,
+  ExternalLink,
   ArrowRight,
   CheckCircle2,
   Activity,
@@ -26,14 +26,12 @@ import {
   ScientificEvidenceItem,
   getLocalizedScientificItem,
 } from "@/data/scientificEvidenceData";
-import { downloadResearchPaper } from "@/utils/downloadResearchPaper";
 
 export default function ScientificEvidenceHub() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language || "en";
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategoryKey, setSelectedCategoryKey] = useState("all");
-  const [downloadingId, setDownloadingId] = useState<string | null>(null);
 
   const categories = [
     { key: "all", label: t("scientificEvidence.hub.all", "All"), rawCategory: "All" },
@@ -71,16 +69,6 @@ export default function ScientificEvidenceHub() {
 
     return matchesCategory && matchesSearch;
   });
-
-  const handleDownload = (item: ScientificEvidenceItem, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDownloadingId(item.id);
-    downloadResearchPaper(item);
-    setTimeout(() => {
-      setDownloadingId(null);
-    }, 1200);
-  };
 
   return (
     <div className="home-bg min-h-screen text-slate-800 flex flex-col justify-between">
@@ -238,24 +226,18 @@ export default function ScientificEvidenceHub() {
                     <span>{t("scientificEvidence.readPaper", "Read Full Paper")}</span>
                   </Link>
 
-                  <button
-                    onClick={(e) => handleDownload(item, e)}
-                    disabled={downloadingId === item.id}
-                    title="Download Official Clinical Whitepaper (PDF)"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-pink-200/90 bg-pink-50/80 px-3.5 py-2 text-xs font-semibold text-[#EA3484] hover:bg-[#EA3484] hover:text-white transition-all duration-300 disabled:opacity-50 cursor-pointer"
-                  >
-                    {downloadingId === item.id ? (
-                      <>
-                        <div className="h-3 w-3 animate-spin rounded-full border-2 border-[#EA3484] border-t-transparent" />
-                        <span>{t("scientificEvidence.generating", "Preparing...")}</span>
-                      </>
-                    ) : (
-                      <>
-                        <Download className="h-3.5 w-3.5" />
-                        <span>{t("scientificEvidence.downloadPdf", "PDF")}</span>
-                      </>
-                    )}
-                  </button>
+                  {item.externalUrl && (
+                    <a
+                      href={item.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Official Clinical Study / Source"
+                      className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-pink-200/90 bg-pink-50/80 px-3.5 py-2 text-xs font-semibold text-[#EA3484] hover:bg-[#EA3484] hover:text-white transition-all duration-300 cursor-pointer"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      <span>{t("scientificEvidence.source", "Source")}</span>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

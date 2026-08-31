@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import {
   Sparkles,
   BookOpen,
-  Download,
+  ExternalLink,
   ArrowRight,
   CheckCircle2,
   Activity,
@@ -19,12 +19,10 @@ import {
   ScientificEvidenceItem,
   getLocalizedScientificItem,
 } from "@/data/scientificEvidenceData";
-import { downloadResearchPaper } from "@/utils/downloadResearchPaper";
 
 export default function ScientificEvidenceSection() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language || "en";
-  const [downloadingId, setDownloadingId] = useState<string | null>(null);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [isMobilePaused, setIsMobilePaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
@@ -34,16 +32,6 @@ export default function ScientificEvidenceSection() {
   const localizedItems = SCIENTIFIC_EVIDENCE_ITEMS.map((item) =>
     getLocalizedScientificItem(item, currentLang)
   );
-
-  const handleDownload = (item: ScientificEvidenceItem, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDownloadingId(item.id);
-    downloadResearchPaper(item);
-    setTimeout(() => {
-      setDownloadingId(null);
-    }, 1200);
-  };
 
   // Divide 10 items into Left column and Right column sets for desktop side auto scroll
   const leftColumnItems = localizedItems.slice(0, 5);
@@ -157,21 +145,18 @@ export default function ScientificEvidenceSection() {
           <span>{t("scientificEvidence.readPaper", "Read Evidence")}</span>
         </Link>
 
-        <button
-          onClick={(e) => handleDownload(item, e)}
-          disabled={downloadingId === item.id}
-          title="Download Official Research Summary Brief (PDF)"
-          className="inline-flex items-center justify-center gap-1 rounded-xl border border-pink-200/90 bg-pink-50/80 px-3 py-2 text-[11px] font-semibold text-[#EA3484] hover:bg-[#EA3484] hover:text-white transition-all duration-300 disabled:opacity-50 cursor-pointer"
-        >
-          {downloadingId === item.id ? (
-            <div className="h-3 w-3 animate-spin rounded-full border-2 border-[#EA3484] border-t-transparent" />
-          ) : (
-            <>
-              <Download className="h-3 w-3" />
-              <span>{t("scientificEvidence.downloadPdf", "PDF")}</span>
-            </>
-          )}
-        </button>
+        {item.externalUrl && (
+          <a
+            href={item.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Official Clinical Study / Source"
+            className="inline-flex items-center justify-center gap-1 rounded-xl border border-pink-200/90 bg-pink-50/80 px-2.5 py-2 text-[11px] font-semibold text-[#EA3484] hover:bg-[#EA3484] hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            <ExternalLink className="h-3 w-3" />
+            <span>{t("scientificEvidence.source", "Source")}</span>
+          </a>
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import {
   Sparkles,
   BookOpen,
-  Download,
   ArrowLeft,
   CheckCircle2,
   Activity,
@@ -36,7 +35,6 @@ import {
   getLocalizedScientificItem,
   ScientificEvidenceItem,
 } from "@/data/scientificEvidenceData";
-import { downloadResearchPaper } from "@/utils/downloadResearchPaper";
 
 interface Props {
   presetSlug?: string;
@@ -47,7 +45,6 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
   const currentLang = i18n.language || "en";
   const params = useParams<{ slug?: string }>();
   const slug = presetSlug || params.slug || "";
-  const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const item = useMemo(() => {
@@ -61,14 +58,6 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
   const relatedItems = SCIENTIFIC_EVIDENCE_ITEMS.filter((i) => i.id !== item.id)
     .slice(0, 3)
     .map((rel) => getLocalizedScientificItem(rel, currentLang));
-
-  const handleDownload = () => {
-    setDownloading(true);
-    downloadResearchPaper(item);
-    setTimeout(() => {
-      setDownloading(false);
-    }, 1200);
-  };
 
   const handleShare = () => {
     if (navigator.share) {
@@ -171,23 +160,17 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                   </span>
                 </button>
 
-                <button
-                  onClick={handleDownload}
-                  disabled={downloading}
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#EA3484] to-[#F45B8A] px-4 py-2 text-xs font-bold text-white shadow-md hover:shadow-lg hover:brightness-105 transition-all duration-300 disabled:opacity-50 cursor-pointer"
-                >
-                  {downloading ? (
-                    <>
-                      <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                      <span>{t("scientificEvidence.detail.preparingBtn", "Preparing PDF...")}</span>
-                    </>
-                  ) : (
-                    <>
-                      <Download className="h-3.5 w-3.5" />
-                      <span>{t("scientificEvidence.detail.downloadBtn", "Download Full Paper (PDF)")}</span>
-                    </>
-                  )}
-                </button>
+                {item.externalUrl && (
+                  <a
+                    href={item.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#EA3484] to-[#F45B8A] px-4 py-2 text-xs font-bold text-white shadow-md hover:shadow-lg hover:brightness-105 transition-all duration-300 cursor-pointer"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    <span>{t("scientificEvidence.detail.viewSource", "View Official Study")}</span>
+                  </a>
+                )}
               </div>
             </div>
           </header>
@@ -334,17 +317,30 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                 <h2 className="text-base font-bold text-[#172554] uppercase tracking-wider">
                   {t("scientificEvidence.detail.references", "Peer-Reviewed Citations & References")}
                 </h2>
-                <ul className="space-y-2 pt-2">
+                <ul className="space-y-3 pt-2">
                   {item.references.map((ref, idx) => (
                     <li key={idx} className="text-xs text-slate-600 leading-relaxed">
                       <strong>{ref.authors}</strong> ({ref.year}). <em>{ref.title}</em>. {ref.publication}.
+                      {ref.link && (
+                        <div className="mt-1">
+                          <a
+                            href={ref.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-[11px] font-bold text-[#EA3484] hover:underline"
+                          >
+                            <ExternalLink className="h-3 w-3" />
+                            <span>{t("scientificEvidence.detail.visitLink", "View Indexed Medical Record on Source Portal →")}</span>
+                          </a>
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
               </section>
             </div>
 
-            {/* Right 1 Column: Sidebar with Doctor Quote, Download Widget & Other Papers */}
+            {/* Right 1 Column: Sidebar with Doctor Quote, Official Source Widget & Other Papers */}
             <div className="space-y-6">
               {/* Doctor Endorsement Card */}
               <div className="rounded-3xl p-6 bg-gradient-to-br from-[#172554] to-[#1e3a8a] text-white space-y-4 shadow-lg">
@@ -358,29 +354,31 @@ export default function ScientificEvidenceDetail({ presetSlug }: Props) {
                 </div>
               </div>
 
-              {/* Download Whitepaper Widget */}
+              {/* Official Research Source Widget */}
               <div className="rounded-3xl p-6 bg-white/95 border-2 border-[#EA3484]/30 shadow-md space-y-4">
                 <div className="flex items-center gap-2">
-                  <Download className="h-5 w-5 text-[#EA3484]" />
+                  <ExternalLink className="h-5 w-5 text-[#EA3484]" />
                   <h3 className="text-base font-bold text-[#172554]">
-                    {t("scientificEvidence.detail.downloadTitle", "Download Research Paper")}
+                    {t("scientificEvidence.detail.sourceTitle", "Official Research Publication")}
                   </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {t(
-                    "scientificEvidence.detail.downloadDesc",
-                    "Get the official clinical whitepaper summary brief formatted for pediatricians, OB-GYNs, and expecting parents."
+                    "scientificEvidence.detail.sourceDesc",
+                    "Access the original peer-reviewed publication and indexed medical records directly on PubMed, NIH, WHO, or NHS."
                   )}
                 </p>
-                <button
-                  onClick={handleDownload}
-                  disabled={downloading}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#EA3484] to-[#F45B8A] py-3 text-xs font-bold text-white shadow-md hover:brightness-105 transition-all cursor-pointer disabled:opacity-50"
-                >
-                  {downloading
-                    ? t("scientificEvidence.detail.preparingBtn", "Preparing PDF...")
-                    : t("scientificEvidence.detail.downloadBtn", "Download Full Paper (PDF)")}
-                </button>
+                {item.externalUrl && (
+                  <a
+                    href={item.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#EA3484] to-[#F45B8A] py-3 text-xs font-bold text-white shadow-md hover:brightness-105 transition-all cursor-pointer"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    <span>{t("scientificEvidence.detail.visitSourceBtn", "Open Official Study (External Link)")}</span>
+                  </a>
+                )}
               </div>
 
               {/* Related Papers Navigation */}
