@@ -59,7 +59,7 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Feb 10, 2024",
     author: {
-      name: "Dr. Ananya Sharma",
+      name: "Dr. Vinit Kumar",
       role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/hero/hero-1.png",
@@ -147,8 +147,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Jan 18, 2024",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Vedic Astrologer & Prenatal Counselor",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -209,8 +209,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Dec 14, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Obstetrician",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -257,8 +257,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Nov 22, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Ritual Specialist",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -300,8 +300,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Nov 05, 2023",
     author: {
-      name: "Vidushi Meenakshi Iyer",
-      role: "Music Therapist & Vedic Scholar",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -348,8 +348,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Oct 28, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Scholar",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -384,8 +384,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Oct 15, 2023",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Vedic Educator",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -438,8 +438,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Oct 02, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician & Clinical Researcher",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/about_premium.png",
     programCta: {
@@ -474,8 +474,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Sep 20, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Astrologer & Scholar",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/hero/hero-2.png",
     programCta: {
@@ -517,8 +517,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Sep 12, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Astrologer",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -552,8 +552,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Aug 25, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Scholar",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -587,8 +587,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Aug 15, 2023",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Scholar",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -622,8 +622,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Aug 02, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Obstetrician",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -664,8 +664,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jul 20, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Obstetrician",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -700,8 +700,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jul 05, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -736,8 +736,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jun 22, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician & Lactation Consultant",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -772,8 +772,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Jun 10, 2023",
     author: {
-      name: "Astro Baby Research Team",
-      role: "Digital Health Faculty",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/astrobaby_video_spotlight.jpg",
     programCta: {
@@ -808,8 +808,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jul 15, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -895,8 +895,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Aug 05, 2023",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Vedic Astrologer & Scholar",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -973,8 +973,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "May 28, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -1009,8 +1009,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "May 15, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -1044,8 +1044,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Apr 28, 2023",
     author: {
-      name: "Vidushi Meenakshi Iyer",
-      role: "Mindfulness Coach",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -1079,8 +1079,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Apr 14, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -1114,8 +1114,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Mar 30, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Physiotherapist & Obstetrician",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -1150,8 +1150,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Mar 18, 2023",
     author: {
-      name: "Yogacharya Sneha Patil",
-      role: "Certified Prenatal Yoga Specialist",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -1186,8 +1186,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Mar 05, 2023",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Vedic Scholar",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -1221,8 +1221,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Feb 20, 2023",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Family Counselor",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -1256,8 +1256,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Feb 10, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -1291,8 +1291,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jan 28, 2023",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -1326,8 +1326,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jan 15, 2023",
     author: {
-      name: "Yogacharya Sneha Patil",
-      role: "Fitness Instructor",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -1361,8 +1361,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Dec 30, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -1396,8 +1396,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Dec 18, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetric Radiologist & Scholar",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -1431,8 +1431,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "4 min read",
     date: "Dec 05, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Nutritionist",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -1466,8 +1466,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Nov 20, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -1501,8 +1501,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "8 min read",
     date: "Nov 02, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician & Ayurvedic Faculty",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -1537,8 +1537,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Oct 15, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Dietician",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -1572,8 +1572,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Dec 10, 2023",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Vedic Astrologer & Mathematician",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -1641,8 +1641,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Jan 12, 2024",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician & Gynecologist",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -1703,8 +1703,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "8 min read",
     date: "Feb 02, 2024",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Clinical Nutritionist & Ayurvedic Physician",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -1772,8 +1772,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Sep 28, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Preconception Specialist",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -1808,8 +1808,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Sep 14, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Garbh Sanskar Expert",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -1844,8 +1844,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Aug 29, 2022",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Mindfulness Counselor",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {
@@ -1880,8 +1880,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Aug 12, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Ayurvedic Obstetrician",
+      name: "Dr. Vinit Kumar",
+      role: "Ayurvedic Obstetrician & Garbh Sanskar Scholar",
     },
     featuredImage: "/images/story_thumb_4.png",
     programCta: {
@@ -1915,8 +1915,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jul 28, 2022",
     author: {
-      name: "Dr. Ananya Sharma",
-      role: "Obstetrician",
+      name: "Dr. Vishakha Jha",
+      role: "Consultant Perinatologist & Fetal Medicine Specialist",
     },
     featuredImage: "/images/story_thumb_5.png",
     programCta: {
@@ -1951,8 +1951,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "5 min read",
     date: "Jul 10, 2022",
     author: {
-      name: "Vidushi Meenakshi Iyer",
-      role: "Sleep & Mindfulness Coach",
+      name: "Dr. Vishal Tiwari",
+      role: "Senior Researcher in Fetal Epigenetics & Chronobiology",
     },
     featuredImage: "/images/celestial_mother.png",
     programCta: {
@@ -1986,8 +1986,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "Jun 25, 2022",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Corporate Wellness Consultant",
+      name: "Dr. Aditya",
+      role: "Fetal Neurodevelopment Specialist & Radiologist",
     },
     featuredImage: "/images/story_thumb_1.png",
     programCta: {
@@ -2022,8 +2022,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "7 min read",
     date: "Jun 10, 2022",
     author: {
-      name: "Acharya Devendra Shastri",
-      role: "Vedic Scholar",
+      name: "Dr. Sumit",
+      role: "Vedic Scholar & Cognitive Development Researcher",
     },
     featuredImage: "/images/story_thumb_2.png",
     programCta: {
@@ -2066,8 +2066,8 @@ export const ARTICLES_DATA: Article[] = [
     readTime: "6 min read",
     date: "May 25, 2022",
     author: {
-      name: "Dr. Rameshwar Joshi",
-      role: "Family Wellness Counselor",
+      name: "Dr. Akhil Singh",
+      role: "Maternal Health & Obstetric Care Specialist",
     },
     featuredImage: "/images/story_thumb_3.png",
     programCta: {

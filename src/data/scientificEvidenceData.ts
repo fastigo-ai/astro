@@ -128,7 +128,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "The womb is an active learning environment. Prenatal harmonic sound is not mere entertainment; it is neuro-architectural nourishment that builds neural pathways before birth.",
       quote_hi: "गर्भ केवल विश्राम स्थल नहीं बल्कि सक्रिय अधिगम का केंद्र है। प्रसवपूर्व संगीत केवल मनोरंजन नहीं, बल्कि शिशु के मस्तिष्क निर्माण का पोषक तत्व है।",
-      author: "Dr. Arvind Shrivastava, MD (OB-GYN), DGO",
+      author: "Dr. Vinit Kumar, MD (OB-GYN), DGO",
       designation: "Head of Prenatal Care & Neuro-Acoustic Research, AstroBaby Medical Advisory Board",
       designation_hi: "प्रसवपूर्व देखभाल एवं न्यूरो-अकॉस्टिक अनुसंधान प्रमुख, एस्ट्रोबेबी मेडिकल बोर्ड"
     },
@@ -205,7 +205,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "When a mother meditates, her biology changes within minutes. The fetus receives clean, oxygen-rich blood free from stress hormones.",
       quote_hi: "जब मां ध्यान करती है, तो मिनटों में उसका शरीर शांत हो जाता है और गर्भस्थ शिशु तक तनावमुक्त, ऑक्सीजन युक्त शुद्ध रक्त पहुंचता है।",
-      author: "Dr. Meenakshi Sundaram, MBBS, MD, FICOG",
+      author: "Dr. Vishakha Jha, MBBS, MD, FICOG",
       designation: "Consultant Perinatologist & Integrative Health Specialist",
       designation_hi: "वरिष्ठ प्रसूति रोग एवं समग्र स्वास्थ्य विशेषज्ञ"
     },
@@ -282,7 +282,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Maternal love is not just a psychological sentiment; it is an active biochemical communication system that shapes genetic expression.",
       quote_hi: "मातृ प्रेम केवल एक भावना नहीं है, बल्कि एक सक्रिय जैविक संचार प्रणाली है जो शिशु के डीएनए प्रकटीकरण को आकार देती है।",
-      author: "Dr. Rajeshwar Kulkarni, Ph.D.",
+      author: "Dr. Vishal Tiwari, Ph.D.",
       designation: "Senior Scientist in Fetal Epigenetics & Developmental Biology",
       designation_hi: "वरिष्ठ वैज्ञानिक, भ्रूण एपिजेनेटिक्स एवं विकासात्मक जीवविज्ञान"
     },
@@ -359,7 +359,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Modern fetal neuroimaging confirms what ancient sages described: the fetus is an aware, perceiving human being with active mental faculties.",
       quote_hi: "आधुनिक फीटल न्यूरोइमेजिंग ने प्रमाणित किया है कि गर्भस्थ शिशु एक सचेतन, संवेदनशील और ग्रहणशील जीवात्मा है।",
-      author: "Dr. Sunita Deshmukh, MD, DM (Neuroradiology)",
+      author: "Dr. Aditya, MD, DM (Neuroradiology)",
       designation: "Chief of Fetal Imaging Research",
       designation_hi: "प्रमुख, भ्रूण इमेजिंग एवं न्यूरोलॉजिकल अनुसंधान"
     },
@@ -436,7 +436,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Babies do not enter the world as blank slates. They arrive already possessing memories, language familiarity, and emotional preferences formed in the womb.",
       quote_hi: "शिशु कोरी स्लेट की तरह दुनिया में नहीं आते। वे गर्भ में बनी स्मृतियों, भाषा की पहचान और भावनाओं के साथ जन्म लेते हैं।",
-      author: "Prof. Anthony DeCasper, Ph.D.",
+      author: "Prof. Sumit, Ph.D.",
       designation: "Pioneer in In-Utero Auditory Learning",
       designation_hi: "प्रणेता, गर्भस्थ श्रवण एवं संज्ञानात्मक अधिगम अनुसंधान"
     },
@@ -513,7 +513,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Prenatal yoga is the most comprehensive preparation for natural labor. It balances physical pelvic alignment with mental endurance and calm.",
       quote_hi: "प्रसवपूर्व योग प्राकृतिक प्रसव की सबसे श्रेष्ठ तैयारी है। यह शारीरिक लचीलेपन के साथ मानसिक धैर्य का निर्माण करता है।",
-      author: "Dr. Rohini Vaze, MS (OBG), Yoga Therapy Specialist",
+      author: "Dr. Akhil Singh, MS (OBG), Yoga Therapy Specialist",
       designation: "Director of Natural Birth Clinic",
       designation_hi: "निदेशक, प्राकृतिक प्रसव क्लिनिक एवं योग थेरेपी विशेषज्ञ"
     },
@@ -590,7 +590,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Garbh Sanskar is not an archaic superstition—it is a sophisticated, time-tested system of prenatal psychosomatic medicine that modern science is now validating.",
       quote_hi: "गर्भ संस्कार कोई अंधविश्वास नहीं है, बल्कि प्रसवपूर्व मन-दैहिक चिकित्सा का एक अत्यंत परिष्कृत और वैज्ञानिक तंत्र है जिसे आधुनिक विज्ञान अब सिद्ध कर रहा है।",
-      author: "Dr. K. N. Vaidya, MD (Ayu), Ph.D. (Health Sciences)",
+      author: "Dr. Vinit Kumar, MD (Ayu), Ph.D. (Health Sciences)",
       designation: "Chairperson, Integrative Reproductive Medicine Council",
       designation_hi: "अध्यक्ष, समन्वित प्रजनन चिकित्सा परिषद"
     },
@@ -667,7 +667,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Every meal an expectant mother eats is an epigenetic signal to the growing baby's genome. Quality nutrition is the fuel for future human potential.",
       quote_hi: "गर्भवती मां का प्रत्येक भोजन शिशु के जीनोम के लिए एक शक्तिशाली संदेश है। गुणवत्तापूर्ण पोषण ही भावी मानव क्षमता का आधार है।",
-      author: "Dr. Ananya Roy, Ph.D. (Nutritional Biochemistry)",
+      author: "Dr. Vishakha Jha, Ph.D. (Nutritional Biochemistry)",
       designation: "Senior Prenatal Nutrition Consultant",
       designation_hi: "वरिष्ठ प्रसवपूर्व पोषण विशेषज्ञ"
     },
@@ -744,7 +744,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "Sleep during pregnancy is not a passive state. It is the golden period when maternal tissue regenerates and fetal neural circuits consolidate.",
       quote_hi: "गर्भावस्था में नींद कोई निष्क्रिय अवस्था नहीं है। यह वह स्वर्णिम काल है जब माता की कोशिकाएं पुनर्जीवित होती हैं और शिशु का मस्तिष्क विकसित होता है।",
-      author: "Dr. Sandeep Aggarwal, MD (Sleep Medicine), FCCP",
+      author: "Dr. Vishal Tiwari, MD (Sleep Medicine), FCCP",
       designation: "Consultant Chronobiologist",
       designation_hi: "वरिष्ठ निद्रा रोग एवं क्रोनोबायोलॉजी विशेषज्ञ"
     },
@@ -821,7 +821,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     doctorQuote: {
       quote: "When we separate superstitious myths from authentic scientific wisdom, Garbh Sanskar shines as one of humanity's greatest contributions to preventive medicine.",
       quote_hi: "जब हम अंधविश्वास को हटाकर वास्तविक वैज्ञानिक दृष्टिकोण अपनाते हैं, तो गर्भ संस्कार मानवता के लिए निवारक चिकित्सा का सबसे बड़ा वरदान सिद्ध होता है।",
-      author: "Dr. Vivek Sharma, MBBS, MS, FRCOG",
+      author: "Dr. Akhil Singh, MBBS, MS, FRCOG",
       designation: "Senior Obstetrician & Evidence-Based Medicine Advocate",
       designation_hi: "वरिष्ठ प्रसूति रोग विशेषज्ञ एवं साक्ष्य-आधारित चिकित्सा पैरोकार"
     },

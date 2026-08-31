@@ -1170,14 +1170,71 @@
       "breadcrumbPrograms": "Sacred Programs",
       "price": "Expert Guidance"
     },
+    "pillars": {
+      "badge": "5 Core Pillars",
+      "title": "Holistic Guidance for Mindful Parents",
+      "subtitle": "Explore our comprehensive 5 pillars designed to bring balance, spiritual values, and confidence to your family.",
+      "items": [
+        {
+          "title": "Personal Parenting Coach",
+          "tagline": "1-on-1 Certified Child Mentorship",
+          "desc": "Direct access to empathetic parenting mentors who assist you through toddler tantrums, bedtime routines, digital screen limits, and positive reinforcement habits.",
+          "points": [
+            "Custom conflict resolution strategies",
+            "Positive discipline without yelling",
+            "Parent-child emotional bonding techniques"
+          ]
+        },
+        {
+          "title": "Child Development & Milestones",
+          "tagline": "Cognitive, Social & Motor Mastery",
+          "desc": "Age-wise developmental roadmaps combining modern developmental psychology with Vedic value-based nurturing (Sanskaras).",
+          "points": [
+            "Speech & language stimulation routines",
+            "Gross and fine motor coordination games",
+            "Social-emotional awareness & empathy building"
+          ]
+        },
+        {
+          "title": "Child Nutrition Guidance",
+          "tagline": "Holistic Satvik Child Diet",
+          "desc": "Pediatric nutritionists guide you on overcoming picky eating, ensuring micronutrient balance, and creating tasty, nutrient-dense satvik meals.",
+          "points": [
+            "Trimester and toddler growth meal plans",
+            "Ayurvedic immunity-boosting recipes",
+            "Healthy brain food & digestive health"
+          ]
+        },
+        {
+          "title": "Emotional Wellbeing",
+          "tagline": "Mindfulness & Resilience for Family",
+          "desc": "Tools to reduce maternal & paternal burnout, manage everyday family stress, and build an atmosphere of peace, patience, and love at home.",
+          "points": [
+            "Guided parent de-stress meditation",
+            "Anger management & calm communication",
+            "Creating an uplifting home spiritual environment"
+          ]
+        },
+        {
+          "title": "Expert Guidance & Live Sessions",
+          "tagline": "Live Masterclasses with Top Doctors & Psychologists",
+          "desc": "Weekly interactive live sessions with leading pediatricians, child psychologists, educationists, and Vedic scholars.",
+          "points": [
+            "Live Q&A to answer your specific challenges",
+            "Specialized sessions for school readiness",
+            "Sibling harmony & social confidence workshops"
+          ]
+        }
+      ]
+    },
     "sections": {
-      "badge": "5 Core Focus Areas",
+      "badge": "5 Core Pillars",
       "title": "Mindful Parenting for Modern Times",
       "subtitle": "A blend of timeless Vedic values and modern child psychology.",
       "items": [
         {
           "title": "Personal Parenting Coach",
-          "tagline": "1-on-1 Certified Child Guidance",
+          "tagline": "1-on-1 Certified Child Mentorship",
           "desc": "Direct access to empathetic parenting mentors who assist you through toddler tantrums, bedtime routines, digital screen limits, and positive reinforcement habits.",
           "points": [
             "Custom conflict resolution strategies",
