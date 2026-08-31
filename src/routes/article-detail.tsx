@@ -28,13 +28,13 @@ import { useLanguage } from "@/context/LanguageContext";
 import {
   findArticleAnyHub,
   getRelatedArticles,
+  getLocalizedArticle,
   HubType,
   Article,
 } from "@/data/articlesData";
 
 export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType }) {
   const { slug } = useParams<{ slug: string }>();
-  const location = useLocation();
   const { t } = useTranslation();
   const { currentLanguage, changeLanguage, languages } = useLanguage();
   const [copied, setCopied] = useState(false);
@@ -42,10 +42,15 @@ export default function ArticleDetailPage({ defaultHub }: { defaultHub?: HubType
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Match article from database
-  const article: Article | undefined = useMemo(() => {
+  const rawArticle: Article | undefined = useMemo(() => {
     if (!slug) return undefined;
     return findArticleAnyHub(slug);
   }, [slug]);
+
+  const article: Article | undefined = useMemo(() => {
+    if (!rawArticle) return undefined;
+    return getLocalizedArticle(rawArticle, currentLanguage.code);
+  }, [rawArticle, currentLanguage]);
 
   // Determine parent hub
   const hub: HubType = article?.hub || defaultHub || "garbh-sanskar";

@@ -186,9 +186,9 @@ export default function FeaturesPage() {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] leading-[1.25] md:leading-[1.2] tracking-tight py-1">
             {t("featuresPage.hero.title", "Vedic Sanskar Courses &")}{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+            <span className="inline-block py-1 bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
               {t("featuresPage.hero.titleHighlight", "Interactive Features")}
             </span>
           </h1>

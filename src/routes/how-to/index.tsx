@@ -21,7 +21,8 @@ import HeaderNavbar from "@/components/common/HeaderNavbar";
 import Footer from "@/components/common/Footer";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import LazyImage from "@/components/common/LazyImage";
-import { getArticlesByHub } from "@/data/articlesData";
+import { useLanguage } from "@/context/LanguageContext";
+import { getArticlesByHub, getLocalizedArticle } from "@/data/articlesData";
 
 const CHALLENGES_META = [
   {
@@ -56,7 +57,11 @@ const CATEGORY_PILLS_COLORS = [
 
 export default function HowToHubPage() {
   const { t } = useTranslation();
-  const allArticles = useMemo(() => getArticlesByHub("how-to"), []);
+  const { currentLanguage } = useLanguage();
+  const rawArticles = useMemo(() => getArticlesByHub("how-to"), []);
+  const allArticles = useMemo(() => {
+    return rawArticles.map((a) => getLocalizedArticle(a, currentLanguage.code));
+  }, [rawArticles, currentLanguage]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -605,11 +610,10 @@ export default function HowToHubPage() {
             <button
               key={cat}
               onClick={() => handleCategorySelect(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                selectedCategory === cat
+              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${selectedCategory === cat
                   ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-sm"
                   : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50"
-              }`}
+                }`}
             >
               {cat === "All" ? t("howToHubPage.articles.all", "All") : cat}
             </button>
@@ -685,11 +689,10 @@ export default function HowToHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === 1
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === 1
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <ChevronLeft className="w-4 h-4" />
                     <span>
@@ -702,11 +705,10 @@ export default function HowToHubPage() {
                       <button
                         key={pageNum}
                         onClick={() => handlePageChange(pageNum)}
-                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                          currentPage === pageNum
+                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${currentPage === pageNum
                             ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/25"
                             : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50"
-                        }`}
+                          }`}
                       >
                         {pageNum}
                       </button>
@@ -716,11 +718,10 @@ export default function HowToHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === totalPages
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === totalPages
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <span>{t("howToHubPage.articles.next", "Next")}</span>
                     <ChevronRight className="w-4 h-4" />

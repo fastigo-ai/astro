@@ -17,7 +17,8 @@ import Footer from "@/components/common/Footer";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import LazyImage from "@/components/common/LazyImage";
 import CylindricalHealthConcernsCarousel from "@/components/pregnancy/CylindricalHealthConcernsCarousel";
-import { getArticlesByHub } from "@/data/articlesData";
+import { useLanguage } from "@/context/LanguageContext";
+import { getArticlesByHub, getLocalizedArticle } from "@/data/articlesData";
 
 const UNDERSTANDING_LINKS = [
   "/pregnancy/stages-of-pregnancy-month-by-month",
@@ -53,7 +54,11 @@ const FAMILY_LINKS = [
 
 export default function PregnancyHubPage() {
   const { t } = useTranslation();
-  const allArticles = useMemo(() => getArticlesByHub("pregnancy"), []);
+  const { currentLanguage } = useLanguage();
+  const rawArticles = useMemo(() => getArticlesByHub("pregnancy"), []);
+  const allArticles = useMemo(() => {
+    return rawArticles.map((a) => getLocalizedArticle(a, currentLanguage.code));
+  }, [rawArticles, currentLanguage]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -129,97 +134,97 @@ export default function PregnancyHubPage() {
               transition={{ duration: 0.6 }}
               className="relative min-h-[440px] sm:min-h-[480px] md:min-h-[520px] flex items-center justify-end overflow-hidden"
             >
-            {/* Background Banner Image */}
-            <img
-              src="/images/celestial_mother.png"
-              alt="Complete Pregnancy Care Guide"
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
+              {/* Background Banner Image */}
+              <img
+                src="/images/celestial_mother.png"
+                alt="Complete Pregnancy Care Guide"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
 
-            {/* Gradient Overlays for High Text Legibility & Left Artwork Visibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/70 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/80 sm:to-transparent" />
-            <div className="absolute inset-0 bg-slate-950/20 sm:bg-transparent" />
+              {/* Gradient Overlays for High Text Legibility & Left Artwork Visibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/70 to-transparent sm:bg-gradient-to-l sm:from-slate-950/95 sm:via-slate-950/80 sm:to-transparent" />
+              <div className="absolute inset-0 bg-slate-950/20 sm:bg-transparent" />
 
-            {/* Content Container (Aligned to Right Side) */}
-            <div className="relative z-10 w-full flex justify-end p-6 sm:p-10 md:p-14 lg:p-16">
-              <div className="max-w-xl lg:max-w-2xl text-left space-y-5">
-                {/* Badge */}
-                <motion.div
-                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold shadow-sm"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <Heart className="w-3.5 h-3.5 text-pink-300" />
-                  <span>
-                    {t(
-                      "pregnancyHubPage.hero.badge",
-                      "Complete Maternal Wellness Hub"
-                    )}
-                  </span>
-                </motion.div>
-
-                {/* Title */}
-                <motion.h1
-                  className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold text-white leading-tight drop-shadow-md"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  {t("pregnancyHubPage.hero.title", "Complete Pregnancy")}{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF70A6] via-[#F45B8A] to-[#F6C85F]">
-                    {t("pregnancyHubPage.hero.titleHighlight", "Care Guide")}
-                  </span>
-                </motion.h1>
-
-                {/* Description */}
-                <motion.p
-                  className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed font-normal"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {t(
-                    "pregnancyHubPage.hero.subtitle",
-                    "Explore pregnancy symptoms, trimester-by-trimester growth milestones, satvik nutrition, prenatal yoga, meditation, scans, and emotional health support."
-                  )}
-                </motion.p>
-
-                {/* Action CTAs */}
-                <motion.div
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Link
-                    to="/features/garbh-sanskar"
-                    className="px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white text-xs sm:text-sm md:text-base font-bold shadow-lg shadow-[#EA3484]/30 hover:shadow-xl hover:shadow-[#EA3484]/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              {/* Content Container (Aligned to Right Side) */}
+              <div className="relative z-10 w-full flex justify-end p-6 sm:p-10 md:p-14 lg:p-16">
+                <div className="max-w-xl lg:max-w-2xl text-left space-y-5">
+                  {/* Badge */}
+                  <motion.div
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-pink-200 text-xs sm:text-sm font-semibold shadow-sm"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
                   >
+                    <Heart className="w-3.5 h-3.5 text-pink-300" />
                     <span>
                       {t(
-                        "pregnancyHubPage.hero.exploreBtn",
-                        "Explore Holistic Prenatal Care"
+                        "pregnancyHubPage.hero.badge",
+                        "Complete Maternal Wellness Hub"
                       )}
                     </span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <a
-                    href="#pregnancy-articles"
-                    className="px-7 py-3.5 sm:py-4 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm md:text-base font-bold hover:bg-white/25 active:scale-95 transition-all text-center cursor-pointer"
+                  </motion.div>
+
+                  {/* Title */}
+                  <motion.h1
+                    className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold text-white leading-tight drop-shadow-md"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    {t("pregnancyHubPage.hero.title", "Complete Pregnancy")}{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF70A6] via-[#F45B8A] to-[#F6C85F]">
+                      {t("pregnancyHubPage.hero.titleHighlight", "Care Guide")}
+                    </span>
+                  </motion.h1>
+
+                  {/* Description */}
+                  <motion.p
+                    className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed font-normal"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
                   >
                     {t(
-                      "pregnancyHubPage.hero.browseBtn",
-                      "Browse 17+ Pregnancy Guides ↓"
+                      "pregnancyHubPage.hero.subtitle",
+                      "Explore pregnancy symptoms, trimester-by-trimester growth milestones, satvik nutrition, prenatal yoga, meditation, scans, and emotional health support."
                     )}
-                  </a>
-                </motion.div>
+                  </motion.p>
+
+                  {/* Action CTAs */}
+                  <motion.div
+                    className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <Link
+                      to="/features/garbh-sanskar"
+                      className="px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white text-xs sm:text-sm md:text-base font-bold shadow-lg shadow-[#EA3484]/30 hover:shadow-xl hover:shadow-[#EA3484]/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>
+                        {t(
+                          "pregnancyHubPage.hero.exploreBtn",
+                          "Explore Holistic Prenatal Care"
+                        )}
+                      </span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <a
+                      href="#pregnancy-articles"
+                      className="px-7 py-3.5 sm:py-4 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm md:text-base font-bold hover:bg-white/25 active:scale-95 transition-all text-center cursor-pointer"
+                    >
+                      {t(
+                        "pregnancyHubPage.hero.browseBtn",
+                        "Browse 17+ Pregnancy Guides ↓"
+                      )}
+                    </a>
+                  </motion.div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* ── 2. Understanding Pregnancy ── */}
       <section className="py-16 md:py-20 px-4 max-w-7xl mx-auto">
@@ -463,11 +468,10 @@ export default function PregnancyHubPage() {
             <button
               key={cat}
               onClick={() => handleCategorySelect(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                selectedCategory === cat
+              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${selectedCategory === cat
                   ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-md shadow-[#EA3484]/25"
                   : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50 hover:text-[#EA3484]"
-              }`}
+                }`}
             >
               {cat === "All" ? t("pregnancyHubPage.articles.all", "All") : cat}
             </button>
@@ -545,11 +549,10 @@ export default function PregnancyHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === 1
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === 1
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <ChevronLeft className="w-4 h-4" />
                     <span>
@@ -562,11 +565,10 @@ export default function PregnancyHubPage() {
                       <button
                         key={pageNum}
                         onClick={() => handlePageChange(pageNum)}
-                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                          currentPage === pageNum
+                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${currentPage === pageNum
                             ? "bg-gradient-to-r from-[#EA3484] to-[#F45B8A] text-white shadow-md shadow-[#EA3484]/25"
                             : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50"
-                        }`}
+                          }`}
                       >
                         {pageNum}
                       </button>
@@ -576,11 +578,10 @@ export default function PregnancyHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === totalPages
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === totalPages
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <span>{t("pregnancyHubPage.articles.next", "Next")}</span>
                     <ChevronRight className="w-4 h-4" />

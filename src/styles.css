@@ -712,16 +712,34 @@ html[lang="hi"] section,
   -webkit-font-smoothing: antialiased;
 }
 
-/* Enhanced readability for Devanagari/Hindi typography */
+/* Enhanced readability and clipping prevention for Devanagari/Hindi typography */
 html[lang="hi"] h1,
 html[lang="hi"] h2,
 html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] h5,
+html[lang="hi"] h6,
 .font-hindi h1,
 .font-hindi h2,
-.font-hindi h3 {
-  line-height: 1.35;
+.font-hindi h3,
+.font-hindi h4,
+.font-hindi h5,
+.font-hindi h6 {
+  line-height: 1.35 !important;
   letter-spacing: 0.01em;
   font-weight: 700;
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+}
+
+/* Ensure gradient text clipping doesn't cut off Devanagari upper/lower matras */
+html[lang="hi"] .bg-clip-text,
+.font-hindi .bg-clip-text,
+[lang="hi"] .bg-clip-text {
+  padding-top: 0.12em;
+  padding-bottom: 0.12em;
+  line-height: inherit;
+  display: inline-block;
 }
 
 html[lang="hi"] p,

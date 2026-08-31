@@ -43,10 +43,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] tracking-tight leading-[1.1] max-w-4xl mx-auto"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] tracking-tight leading-[1.3] md:leading-[1.2] max-w-4xl mx-auto py-2"
           >
             {t("aboutPage.hero.title", "The Story of")}{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
+            <span className="inline-block py-1 bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
               {t("aboutPage.hero.brand", "Astro Baby")}
             </span>
           </motion.h1>

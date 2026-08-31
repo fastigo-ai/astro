@@ -142,9 +142,9 @@ export default function BlogPage() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#172554] leading-[1.25] md:leading-[1.2] tracking-tight py-1">
             Garbhadhan Sanskar &{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
+            <span className="inline-block py-1 bg-gradient-to-r from-[#172554] via-[#F45B8A] to-[#E91E63] bg-clip-text text-transparent">
               Pregnancy Blog
             </span>
           </h1>

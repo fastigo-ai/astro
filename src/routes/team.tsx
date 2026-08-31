@@ -26,6 +26,7 @@ type Member = {
   title: string;
   category: string;
   experience?: string;
+  degrees?: string;
   bio: string[];
 };
 
@@ -290,9 +291,9 @@ export default function TeamPage() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#172554] tracking-tight leading-[1.15]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#172554] tracking-tight leading-[1.3] md:leading-[1.2] py-1">
             Meet Our Revered{" "}
-            <span className="bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
+            <span className="inline-block py-1 bg-gradient-to-r from-[#172554] via-[#EA3484] to-[#F45B8A] bg-clip-text text-transparent">
               Faculty & Experts
             </span>
           </h1>
@@ -533,7 +534,7 @@ export default function TeamPage() {
                   <div className="space-y-1 text-center sm:text-left">
                     <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#EA3484] uppercase tracking-wider bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-100">
                       <GraduationCap className="w-3 h-3" />
-                      {currentMember.degrees}
+                      {currentMember.degrees || currentMember.experience || currentMember.category}
                     </div>
                     <h4 className="text-base sm:text-lg font-bold text-[#172554]">
                       {currentMember.name}

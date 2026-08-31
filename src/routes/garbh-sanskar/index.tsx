@@ -21,7 +21,8 @@ import HeaderNavbar from "@/components/common/HeaderNavbar";
 import Footer from "@/components/common/Footer";
 import AppDownloadSection from "@/components/common/AppDownloadSection";
 import LazyImage from "@/components/common/LazyImage";
-import { getArticlesByHub } from "@/data/articlesData";
+import { useLanguage } from "@/context/LanguageContext";
+import { getArticlesByHub, getLocalizedArticle } from "@/data/articlesData";
 
 const DAILY_REGIMEN_META = [
   {
@@ -53,7 +54,11 @@ const DAILY_REGIMEN_META = [
 
 export default function GarbhSanskarHubPage() {
   const { t } = useTranslation();
-  const allArticles = useMemo(() => getArticlesByHub("garbh-sanskar"), []);
+  const { currentLanguage } = useLanguage();
+  const rawArticles = useMemo(() => getArticlesByHub("garbh-sanskar"), []);
+  const allArticles = useMemo(() => {
+    return rawArticles.map((a) => getLocalizedArticle(a, currentLanguage.code));
+  }, [rawArticles, currentLanguage]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -552,16 +557,14 @@ export default function GarbhSanskarHubPage() {
                       if (!isCenter) setRegimenIndex(idx);
                     }}
                     style={style}
-                    className={`absolute top-1/2 left-1/2 w-[86vw] max-w-[300px] sm:w-[320px] md:w-[340px] transition-all duration-700 ease-out cursor-pointer ${
-                      isCenter ? "cursor-default" : "hover:brightness-105"
-                    }`}
+                    className={`absolute top-1/2 left-1/2 w-[86vw] max-w-[300px] sm:w-[320px] md:w-[340px] transition-all duration-700 ease-out cursor-pointer ${isCenter ? "cursor-default" : "hover:brightness-105"
+                      }`}
                   >
                     <div
-                      className={`relative flex flex-col justify-between p-6 sm:p-7 rounded-[28px] transition-all duration-500 overflow-hidden min-h-[380px] sm:min-h-[400px] ${
-                        isCenter
+                      className={`relative flex flex-col justify-between p-6 sm:p-7 rounded-[28px] transition-all duration-500 overflow-hidden min-h-[380px] sm:min-h-[400px] ${isCenter
                           ? "bg-white/98 backdrop-blur-2xl border-2 border-[#F45B8A]/70 shadow-[0_22px_55px_rgba(244,91,138,0.18)]"
                           : "bg-white/90 backdrop-blur-md border border-pink-100/90 shadow-[0_10px_30px_rgba(23,37,84,0.05)]"
-                      }`}
+                        }`}
                     >
                       {/* Top Accent Stripe */}
                       {isCenter && (
@@ -640,11 +643,10 @@ export default function GarbhSanskarHubPage() {
                       key={i}
                       onClick={() => setRegimenIndex(i)}
                       aria-label={`Go to slide ${i + 1}`}
-                      className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
-                        i === regimenIndex
+                      className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${i === regimenIndex
                           ? "w-6 bg-gradient-to-r from-[#F45B8A] to-[#E91E63]"
                           : "w-2 bg-slate-200 hover:bg-pink-300"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
@@ -755,11 +757,10 @@ export default function GarbhSanskarHubPage() {
             <button
               key={cat}
               onClick={() => handleCategorySelect(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                selectedCategory === cat
+              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${selectedCategory === cat
                   ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-sm"
                   : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50"
-              }`}
+                }`}
             >
               {cat === "All" ? t("garbhSanskarHubPage.articles.all", "All") : cat}
             </button>
@@ -838,11 +839,10 @@ export default function GarbhSanskarHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === 1
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === 1
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <ChevronLeft className="w-4 h-4" />
                     <span>
@@ -855,11 +855,10 @@ export default function GarbhSanskarHubPage() {
                       <button
                         key={pageNum}
                         onClick={() => handlePageChange(pageNum)}
-                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                          currentPage === pageNum
+                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${currentPage === pageNum
                             ? "bg-gradient-to-r from-[#F45B8A] to-[#E91E63] text-white shadow-md shadow-[#F45B8A]/25"
                             : "bg-white text-slate-700 border border-pink-100 hover:bg-pink-50"
-                        }`}
+                          }`}
                       >
                         {pageNum}
                       </button>
@@ -869,11 +868,10 @@ export default function GarbhSanskarHubPage() {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
-                      currentPage === totalPages
+                    className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${currentPage === totalPages
                         ? "border-slate-200 text-slate-300 cursor-not-allowed bg-slate-50"
                         : "border-pink-200 text-[#172554] hover:bg-pink-50 hover:border-pink-300"
-                    }`}
+                      }`}
                   >
                     <span>{t("garbhSanskarHubPage.articles.next", "Next")}</span>
                     <ChevronRight className="w-4 h-4" />
