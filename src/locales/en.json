@@ -191,7 +191,7 @@
       "f3": "Parent-Child Bonding Exercises"
     },
     "bhavishyaPhal": {
-      "title": "Bhavishya Phal",
+      "title": "Kundli Vishleshan",
       "subtitle": "Astrological Insights for Your Child's Journey",
       "desc": "Complete Janam Kundali + Falit Report (₹3,500) and 1-on-1 Astrologer Consultation (₹3,100).",
       "price": "Starting ₹3,100",
@@ -507,7 +507,7 @@
       },
       {
         "id": "bhavishya-fal",
-        "title": "Bhavishya Phal",
+        "title": "Kundli Vishleshan",
         "subTitle": "Astrological Insights for Your Child's Journey",
         "price": "Starting ₹3,100",
         "desc": "Comprehensive Janam Kundali generation + Falit report (₹3,500) and live 1-on-1 Astrologer Consultation (₹3,100).",
@@ -1293,7 +1293,7 @@
   "bhavishyaFalDetailPage": {
     "hero": {
       "badge": "Vedic Astrological Guidance",
-      "title": "Bhavishya Phal",
+      "title": "Kundli Vishleshan",
       "subtitle": "Astrological Insights for Your Child's Journey. Comprehensive Janam Kundali generation, planetary Nakshatra analysis, and 1-on-1 Astrologer Consultation.",
       "enrollBtn": "Explore Services",
       "tagline": "Astrological Insights for Your Child's Journey",

@@ -63,7 +63,7 @@ export default function HeaderNavbar() {
     },
     {
       id: "bhavishya-fal",
-      title: t("programs.bhavishyaPhal.title", "Bhavishya Phal"),
+      title: t("programs.bhavishyaPhal.title", "Kundli Vishleshan"),
       subtitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Future"),
       to: "/features/bhavishya-fal",
       icon: Compass,

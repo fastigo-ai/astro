@@ -75,7 +75,7 @@ export default function BhavishyaFalPage() {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
             <span className="text-[#172554] font-bold">
-              {t("bhavishyaFalDetailPage.hero.title", "Bhavishya Phal")}
+              {t("bhavishyaFalDetailPage.hero.title", "Kundli Vishleshan")}
             </span>
           </nav>
 
@@ -89,7 +89,7 @@ export default function BhavishyaFalPage() {
             {/* Background Banner Image */}
             <img
               src="/images/baal_bhavish_banner.jpg"
-              alt="Astro Baby Bhavishya Phal"
+              alt="Astro Baby Kundli Vishleshan"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
 
@@ -124,7 +124,7 @@ export default function BhavishyaFalPage() {
                   className="space-y-1.5"
                 >
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-                    {t("bhavishyaFalDetailPage.hero.title", "Bhavishya Phal")}
+                    {t("bhavishyaFalDetailPage.hero.title", "Kundli Vishleshan")}
                   </h1>
                   <span className="text-pink-300 font-semibold text-lg sm:text-2xl md:text-3xl block">
                     {t(

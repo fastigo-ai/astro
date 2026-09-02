@@ -15,7 +15,7 @@ export default function Footer() {
     { name: t("programs.baalSanskar.title", "Baal Sanskar"), to: "/features/baal-sanskar" },
     { name: t("programs.infantCare.title", "Infant Care"), to: "/features/infant-care" },
     { name: t("programs.parenting.title", "Mindful Parenting"), to: "/features/parenting" },
-    { name: t("programs.bhavishyaPhal.title", "Bhavishya Phal"), to: "/features/bhavishya-fal" },
+    { name: t("programs.bhavishyaPhal.title", "Kundli Vishleshan"), to: "/features/bhavishya-fal" },
     { name: t("featuresSection.viewAll", "View All Programs"), to: "/features" },
   ];
 

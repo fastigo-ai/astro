@@ -138,7 +138,7 @@ export default function FeaturesSection() {
     },
     {
       icon: Compass,
-      title: t("programs.bhavishyaPhal.title", "Bhavishya Phal"),
+      title: t("programs.bhavishyaPhal.title", "Kundli Vishleshan"),
       subTitle: t("programs.bhavishyaPhal.subtitle", "Astrological Insights for Your Child's Journey"),
       desc: t("programs.bhavishyaPhal.desc", "Complete Janam Kundali + Falit Report (₹3,500) and 1-on-1 Astrologer Consultation (₹3,100)."),
       price: t("programs.bhavishyaPhal.price", "Starting ₹3,100"),
