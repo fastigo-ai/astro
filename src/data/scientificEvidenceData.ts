@@ -631,7 +631,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     statLabel_hi: "मातृ पोषण एवं भ्रूण विकास हेतु आधिकारिक साक्ष्य-आधारित क्लीनिकल मानक",
     journal: "World Health Organization (WHO) / eLENA",
     doiOrPmid: "WHO / eLENA Guidelines",
-    externalUrl: "https://www.who.int/tools/elena/interventions/nutrition-counselling-pregnancy",
+    externalUrl: "https://www.who.int/publications/i/item/9789241549912?utm_source=chatgpt.com",
     publishedYear: "2023",
     sampleSize: "Global Population Health Evidence",
     studyType: "WHO Evidence-Based Antenatal Care Guideline Synthesis",
@@ -685,7 +685,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
         year: "2023",
         title: "Nutrition counselling and interventions in pregnancy for maternal and fetal health",
         publication: "WHO e-Library of Evidence for Nutrition Actions (eLENA)",
-        link: "https://www.who.int/tools/elena/interventions/nutrition-counselling-pregnancy"
+        link: "https://www.who.int/publications/i/item/9789241549912?utm_source=chatgpt.com"
       }
     ]
   },
@@ -785,7 +785,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
     statLabel_hi: "मातृ एवं भ्रूण देखभाल हेतु साक्ष्य-आधारित चिकित्सीय सिफारिशें",
     journal: "National Health Service (NHS UK)",
     doiOrPmid: "NHS UK Antenatal Care Guidelines",
-    externalUrl: "https://www.nhs.uk/pregnancy/",
+    externalUrl: "https://www.england.nhs.uk/mids-east/wp-content/uploads/sites/7/2018/03/em-regional-maternity-specification.pdf",
     publishedYear: "2024",
     sampleSize: "NHS Clinical Guideline Evidence Synthesis",
     studyType: "National Clinical Evidence-Based Health Standard",
@@ -839,7 +839,7 @@ export const SCIENTIFIC_EVIDENCE_ITEMS: ScientificEvidenceItem[] = [
         year: "2024",
         title: "Pregnancy, Clinical Care, Healthy Habits and Medical Guidance",
         publication: "NHS UK Official Pregnancy Guidance",
-        link: "https://www.nhs.uk/pregnancy/"
+        link: "https://www.england.nhs.uk/mids-east/wp-content/uploads/sites/7/2018/03/em-regional-maternity-specification.pdf"
       }
     ]
   }
