@@ -315,7 +315,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-sm text-white">Direct Helpline Available</h4>
                     <p className="text-[11px] text-slate-300">
-                      Call +91 90185 67465 for immediate queries
+                      Call +919716091296 for immediate queries
                     </p>
                   </div>
                 </div>
