@@ -15,6 +15,7 @@ import {
 const Home = lazy(() => import("./routes/index"));
 const AboutUs = lazy(() => import("./routes/about-us"));
 const Features = lazy(() => import("./routes/features"));
+const Courses = lazy(() => import("./routes/courses"));
 const AwardsAccolades = lazy(() => import("./routes/awardsaccolades"));
 const Testimonial = lazy(() => import("./routes/testimonial"));
 const Blog = lazy(() => import("./routes/blog"));
@@ -145,7 +146,7 @@ export default function App() {
           path="/courses"
           element={
             <Suspense fallback={<FeatureDetailSkeleton title="Courses" />}>
-              <Features />
+              <Courses />
             </Suspense>
           }
         />

@@ -120,8 +120,12 @@ export default function HeaderNavbar() {
       to: "/about-us",
     },
     {
-      label: t("nav.programs", "Sacred Programs"),
+      label: t("nav.features", "Features"),
       to: "/features",
+    },
+    {
+      label: t("nav.programs", "Sacred Programs"),
+      to: "/courses",
       hasDropdown: true,
       isProgramMenu: true,
       programItems: programCategories,
@@ -217,14 +221,14 @@ export default function HeaderNavbar() {
               : "bg-pink-50/95 backdrop-blur-md border-b border-pink-100/60"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-6 xl:px-8">
             <div
               className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
                 scrolled ? "h-16 md:h-[72px]" : "h-20 md:h-24"
               }`}
             >
               {/* Logo */}
-              <div className="flex-shrink-0 flex items-center">
+              <div className="flex-shrink-0 flex items-center -ml-1 sm:-ml-2 md:-ml-3">
                 <Link to="/" className="inline-block">
                   <motion.img
                     whileHover={{ scale: 1.05 }}
@@ -239,7 +243,7 @@ export default function HeaderNavbar() {
               </div>
 
               {/* Desktop Navigation Links */}
-              <div className="hidden md:flex items-center space-x-2 lg:space-x-8">
+              <div className="hidden md:flex items-center space-x-1 lg:space-x-5 xl:space-x-7">
                 {navItems.map((item) => {
                 const active = isActive(item.to);
                 const isHovered = hoveredItem === item.label;
@@ -257,7 +261,7 @@ export default function HeaderNavbar() {
                           e.preventDefault();
                         }
                       }}
-                      className="px-2 py-2 text-[15.5px] font-bold text-gray-800 flex items-center gap-1.5 transition-colors hover:text-[#F45B8A]"
+                      className="px-2 lg:px-2.5 py-2 text-[14px] lg:text-[15px] xl:text-[15.5px] font-bold text-gray-800 flex items-center gap-1 lg:gap-1.5 transition-colors hover:text-[#F45B8A]"
                     >
                       <span>{item.label}</span>
                       {item.hasDropdown && (
